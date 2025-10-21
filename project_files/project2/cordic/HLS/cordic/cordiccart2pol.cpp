@@ -18,11 +18,9 @@ void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
  if (current_y < 0) {
     x_new = -current_y;
     y_new = current_x;
-	current_theta = current_theta + 90;
  } else {
     x_new = current_y;
     y_new = -current_x;
-	current_theta = current_theta - 90;
  }
  current_x = x_new;
  current_y = y_new;
