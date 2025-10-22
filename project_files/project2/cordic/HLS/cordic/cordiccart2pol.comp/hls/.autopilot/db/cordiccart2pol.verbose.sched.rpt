@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol'
 ================================================================
-* Date:           Tue Oct 21 19:08:15 2025
+* Date:           Tue Oct 21 19:18:05 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  7.160 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  6.918 ns|     2.70 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |       54|       54|  0.540 us|  0.540 us|   55|   55|       no|
+    |       37|       37|  0.370 us|  0.370 us|   38|   38|       no|
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -65,55 +65,51 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 4
+* Number of FSM states : 3
 * Pipeline : 0
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 2 
 2 --> 3 
-3 --> 4 
-4 --> 
+3 --> 
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 4.83>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%y_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %y"   --->   Operation 5 'read' 'y_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%x_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %x"   --->   Operation 6 'read' 'x_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%x_new_1_loc = alloca i64 1"   --->   Operation 7 'alloca' 'x_new_1_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%current_theta_2_loc = alloca i64 1"   --->   Operation 8 'alloca' 'current_theta_2_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i32.i32, i32 %y_read, i32 31" [cordiccart2pol.cpp:18]   --->   Operation 9 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (2.55ns)   --->   "%sub_ln19 = sub i32 0, i32 %y_read" [cordiccart2pol.cpp:19]   --->   Operation 10 'sub' 'sub_ln19' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 11 [1/1] (2.55ns)   --->   "%sub_ln24 = sub i32 0, i32 %x_read" [cordiccart2pol.cpp:24]   --->   Operation 11 'sub' 'sub_ln24' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 12 [1/1] (0.73ns)   --->   "%select_ln18 = select i1 %tmp, i31 1304166820, i31 843316828" [cordiccart2pol.cpp:18]   --->   Operation 12 'select' 'select_ln18' <Predicate = true> <Delay = 0.73> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.73> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 13 [1/1] (0.69ns)   --->   "%x_new = select i1 %tmp, i32 %sub_ln19, i32 %y_read" [cordiccart2pol.cpp:18]   --->   Operation 13 'select' 'x_new' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 14 [1/1] (0.69ns)   --->   "%y_new = select i1 %tmp, i32 %x_read, i32 %sub_ln24" [cordiccart2pol.cpp:18]   --->   Operation 14 'select' 'y_new' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 15 [2/2] (1.58ns)   --->   "%call_ln18 = call void @cordiccart2pol_Pipeline_VITIS_LOOP_30_1, i31 %select_ln18, i32 %y_new, i32 %x_new, i32 %current_theta_2_loc, i32 %x_new_1_loc, i30 %Kvalues, i29 %angles" [cordiccart2pol.cpp:18]   --->   Operation 15 'call' 'call_ln18' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Generic Core
+State 1 <SV = 0> <Delay = 4.59>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%y_read = read i24 @_ssdm_op_Read.ap_auto.i24, i24 %y"   --->   Operation 4 'read' 'y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%x_read = read i24 @_ssdm_op_Read.ap_auto.i24, i24 %x"   --->   Operation 5 'read' 'x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%x_new_1_loc = alloca i64 1"   --->   Operation 6 'alloca' 'x_new_1_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%current_theta_2_loc = alloca i64 1"   --->   Operation 7 'alloca' 'current_theta_2_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i24.i32, i24 %y_read, i32 23" [cordiccart2pol.cpp:18]   --->   Operation 8 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (2.31ns)   --->   "%sub_ln19 = sub i24 0, i24 %y_read" [cordiccart2pol.cpp:19]   --->   Operation 9 'sub' 'sub_ln19' <Predicate = true> <Delay = 2.31> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (2.31ns)   --->   "%sub_ln24 = sub i24 0, i24 %x_read" [cordiccart2pol.cpp:24]   --->   Operation 10 'sub' 'sub_ln24' <Predicate = true> <Delay = 2.31> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.31> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (0.69ns)   --->   "%select_ln18 = select i1 %tmp, i23 5094402, i23 3294206" [cordiccart2pol.cpp:18]   --->   Operation 11 'select' 'select_ln18' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.69ns)   --->   "%x_new = select i1 %tmp, i24 %sub_ln19, i24 %y_read" [cordiccart2pol.cpp:18]   --->   Operation 12 'select' 'x_new' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.69ns)   --->   "%y_new = select i1 %tmp, i24 %x_read, i24 %sub_ln24" [cordiccart2pol.cpp:18]   --->   Operation 13 'select' 'y_new' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 14 [2/2] (1.58ns)   --->   "%call_ln18 = call void @cordiccart2pol_Pipeline_VITIS_LOOP_30_1, i23 %select_ln18, i24 %y_new, i24 %x_new, i24 %current_theta_2_loc, i24 %x_new_1_loc, i22 %Kvalues, i21 %angles" [cordiccart2pol.cpp:18]   --->   Operation 14 'call' 'call_ln18' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Generic Core
 
-State 2 <SV = 1> <Delay = 5.57>
-ST_2 : Operation 16 [1/2] (5.57ns)   --->   "%call_ln18 = call void @cordiccart2pol_Pipeline_VITIS_LOOP_30_1, i31 %select_ln18, i32 %y_new, i32 %x_new, i32 %current_theta_2_loc, i32 %x_new_1_loc, i30 %Kvalues, i29 %angles" [cordiccart2pol.cpp:18]   --->   Operation 16 'call' 'call_ln18' <Predicate = true> <Delay = 5.57> <CoreType = "Generic">   --->   Generic Core
+State 2 <SV = 1> <Delay = 5.33>
+ST_2 : Operation 15 [1/2] (5.33ns)   --->   "%call_ln18 = call void @cordiccart2pol_Pipeline_VITIS_LOOP_30_1, i23 %select_ln18, i24 %y_new, i24 %x_new, i24 %current_theta_2_loc, i24 %x_new_1_loc, i22 %Kvalues, i21 %angles" [cordiccart2pol.cpp:18]   --->   Operation 15 'call' 'call_ln18' <Predicate = true> <Delay = 5.33> <CoreType = "Generic">   --->   Generic Core
 
-State 3 <SV = 2> <Delay = 6.91>
-ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%x_new_1_loc_load = load i32 %x_new_1_loc"   --->   Operation 17 'load' 'x_new_1_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%sext_ln50 = sext i32 %x_new_1_loc_load" [cordiccart2pol.cpp:50]   --->   Operation 18 'sext' 'sext_ln50' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 19 [2/2] (6.91ns)   --->   "%mul_ln50 = mul i61 %sext_ln50, i61 325880643" [cordiccart2pol.cpp:50]   --->   Operation 19 'mul' 'mul_ln50' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-
-State 4 <SV = 3> <Delay = 6.91>
-ST_4 : Operation 20 [1/1] (0.00ns)   --->   "%spectopmodule_ln9 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [cordiccart2pol.cpp:9]   --->   Operation 20 'spectopmodule' 'spectopmodule_ln9' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 21 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %x"   --->   Operation 21 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %x, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 23 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %y"   --->   Operation 23 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %y, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %r"   --->   Operation 25 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %theta"   --->   Operation 27 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %theta, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%current_theta_2_loc_load = load i32 %current_theta_2_loc"   --->   Operation 29 'load' 'current_theta_2_loc_load' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 30 [1/2] (6.91ns)   --->   "%mul_ln50 = mul i61 %sext_ln50, i61 325880643" [cordiccart2pol.cpp:50]   --->   Operation 30 'mul' 'mul_ln50' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%trunc_ln1 = partselect i32 @_ssdm_op_PartSelect.i32.i61.i32.i32, i61 %mul_ln50, i32 29, i32 60" [cordiccart2pol.cpp:50]   --->   Operation 31 'partselect' 'trunc_ln1' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%write_ln50 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %r, i32 %trunc_ln1" [cordiccart2pol.cpp:50]   --->   Operation 32 'write' 'write_ln50' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%write_ln51 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %theta, i32 %current_theta_2_loc_load" [cordiccart2pol.cpp:51]   --->   Operation 33 'write' 'write_ln51' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%ret_ln52 = ret" [cordiccart2pol.cpp:52]   --->   Operation 34 'ret' 'ret_ln52' <Predicate = true> <Delay = 0.00>
+State 3 <SV = 2> <Delay = 6.54>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%spectopmodule_ln9 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [cordiccart2pol.cpp:9]   --->   Operation 16 'spectopmodule' 'spectopmodule_ln9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i24 %x"   --->   Operation 17 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %x, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i24 %y"   --->   Operation 19 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %y, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i24 %r"   --->   Operation 21 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i24 %theta"   --->   Operation 23 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i24 %theta, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%current_theta_2_loc_load = load i24 %current_theta_2_loc"   --->   Operation 25 'load' 'current_theta_2_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%x_new_1_loc_load = load i24 %x_new_1_loc"   --->   Operation 26 'load' 'x_new_1_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%sext_ln50 = sext i24 %x_new_1_loc_load" [cordiccart2pol.cpp:50]   --->   Operation 27 'sext' 'sext_ln50' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (6.54ns)   --->   "%mul_ln50 = mul i45 %sext_ln50, i45 1272971" [cordiccart2pol.cpp:50]   --->   Operation 28 'mul' 'mul_ln50' <Predicate = true> <Delay = 6.54> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 6.54> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%trunc_ln1 = partselect i24 @_ssdm_op_PartSelect.i24.i45.i32.i32, i45 %mul_ln50, i32 21, i32 44" [cordiccart2pol.cpp:50]   --->   Operation 29 'partselect' 'trunc_ln1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%write_ln50 = write void @_ssdm_op_Write.ap_auto.i24P0A, i24 %r, i24 %trunc_ln1" [cordiccart2pol.cpp:50]   --->   Operation 30 'write' 'write_ln50' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%write_ln51 = write void @_ssdm_op_Write.ap_auto.i24P0A, i24 %theta, i24 %current_theta_2_loc_load" [cordiccart2pol.cpp:51]   --->   Operation 31 'write' 'write_ln51' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%ret_ln52 = ret" [cordiccart2pol.cpp:52]   --->   Operation 32 'ret' 'ret_ln52' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -121,25 +117,21 @@ ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%ret_ln52 = ret" [cordiccart2pol.cp
 ============================================================
 Target clock period: 10.000ns, clock uncertainty: 2.700ns.
 
- <State 1>: 4.838ns
+ <State 1>: 4.596ns
 The critical path consists of the following:
 	wire read operation ('y_read') on port 'y' [7]  (0.000 ns)
-	'sub' operation 32 bit ('sub_ln19', cordiccart2pol.cpp:19) [21]  (2.552 ns)
-	'select' operation 32 bit ('x_new', cordiccart2pol.cpp:18) [24]  (0.698 ns)
+	'sub' operation 24 bit ('sub_ln19', cordiccart2pol.cpp:19) [21]  (2.314 ns)
+	'select' operation 24 bit ('x_new', cordiccart2pol.cpp:18) [24]  (0.694 ns)
 	'call' operation 0 bit ('call_ln18', cordiccart2pol.cpp:18) to 'cordiccart2pol_Pipeline_VITIS_LOOP_30_1' [26]  (1.588 ns)
 
- <State 2>: 5.572ns
+ <State 2>: 5.330ns
 The critical path consists of the following:
-	'call' operation 0 bit ('call_ln18', cordiccart2pol.cpp:18) to 'cordiccart2pol_Pipeline_VITIS_LOOP_30_1' [26]  (5.572 ns)
+	'call' operation 0 bit ('call_ln18', cordiccart2pol.cpp:18) to 'cordiccart2pol_Pipeline_VITIS_LOOP_30_1' [26]  (5.330 ns)
 
- <State 3>: 6.912ns
+ <State 3>: 6.540ns
 The critical path consists of the following:
-	'load' operation 32 bit ('x_new_1_loc_load') on local variable 'x_new_1_loc' [28]  (0.000 ns)
-	'mul' operation 61 bit ('mul_ln50', cordiccart2pol.cpp:50) [30]  (6.912 ns)
-
- <State 4>: 6.912ns
-The critical path consists of the following:
-	'mul' operation 61 bit ('mul_ln50', cordiccart2pol.cpp:50) [30]  (6.912 ns)
+	'load' operation 24 bit ('x_new_1_loc_load') on local variable 'x_new_1_loc' [28]  (0.000 ns)
+	'mul' operation 45 bit ('mul_ln50', cordiccart2pol.cpp:50) [30]  (6.540 ns)
 
 
 ============================================================
@@ -153,7 +145,6 @@ N/A
 	State 1
 	State 2
 	State 3
-	State 4
 
 
 ============================================================

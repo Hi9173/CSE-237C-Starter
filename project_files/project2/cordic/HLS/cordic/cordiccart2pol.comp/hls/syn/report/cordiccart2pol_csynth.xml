@@ -18,18 +18,18 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.160</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.918</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>54</Best-caseLatency>
-<Average-caseLatency>54</Average-caseLatency>
-<Worst-caseLatency>54</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.540 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.540 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.540 us</Worst-caseRealTimeLatency>
-<Interval-min>55</Interval-min>
-<Interval-max>55</Interval-max>
+<Best-caseLatency>37</Best-caseLatency>
+<Average-caseLatency>37</Average-caseLatency>
+<Worst-caseLatency>37</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.370 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.370 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.370 us</Worst-caseRealTimeLatency>
+<Interval-min>38</Interval-min>
+<Interval-max>38</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
@@ -41,9 +41,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<DSP>12</DSP>
-<FF>1045</FF>
-<LUT>939</LUT>
+<DSP>6</DSP>
+<FF>413</FF>
+<LUT>735</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -130,7 +130,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>32</Bits>
+<Bits>24</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -142,7 +142,7 @@
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>32</Bits>
+<Bits>24</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -154,7 +154,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>32</Bits>
+<Bits>24</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -178,7 +178,7 @@
 <IOProtocol>ap_vld</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>32</Bits>
+<Bits>24</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
