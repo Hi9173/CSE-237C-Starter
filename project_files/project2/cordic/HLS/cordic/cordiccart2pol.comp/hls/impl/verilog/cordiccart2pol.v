@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="cordiccart2pol_cordiccart2pol,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.813750,HLS_SYN_LAT=37,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=346,HLS_SYN_LUT=583,HLS_VERSION=2024_2}" *)
+(* CORE_GENERATION_INFO="cordiccart2pol_cordiccart2pol,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.792000,HLS_SYN_LAT=37,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=278,HLS_SYN_LUT=491,HLS_VERSION=2024_2}" *)
 
 module cordiccart2pol (
         ap_clk,
@@ -33,11 +33,11 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [19:0] x;
-input  [19:0] y;
-output  [19:0] r;
+input  [15:0] x;
+input  [15:0] y;
+output  [15:0] r;
 output   r_ap_vld;
-output  [19:0] theta;
+output  [15:0] theta;
 output   theta_ap_vld;
 
 reg ap_done;
@@ -48,30 +48,30 @@ reg theta_ap_vld;
 
 (* fsm_encoding = "none" *) reg   [2:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [18:0] select_ln18_fu_121_p3;
-reg   [18:0] select_ln18_reg_188;
-wire   [19:0] x_new_fu_130_p3;
-reg   [19:0] x_new_reg_193;
-wire   [19:0] y_new_fu_139_p3;
-reg   [19:0] y_new_reg_198;
+wire   [14:0] select_ln18_fu_121_p3;
+reg   [14:0] select_ln18_reg_188;
+wire   [15:0] x_new_fu_130_p3;
+reg   [15:0] x_new_reg_193;
+wire   [15:0] y_new_fu_139_p3;
+reg   [15:0] y_new_reg_198;
 wire    grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_ap_start;
 wire    grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_ap_done;
 wire    grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_ap_idle;
 wire    grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_ap_ready;
-wire   [19:0] grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_current_theta_2_out;
+wire   [15:0] grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_current_theta_2_out;
 wire    grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_current_theta_2_out_ap_vld;
-wire   [19:0] grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_x_new_1_out;
+wire   [15:0] grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_x_new_1_out;
 wire    grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_x_new_1_out_ap_vld;
 reg    grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_ap_start_reg;
 wire    ap_CS_fsm_state2;
-reg   [19:0] current_theta_2_loc_fu_58;
-reg  signed [19:0] x_new_1_loc_fu_54;
+reg   [15:0] current_theta_2_loc_fu_58;
+reg  signed [15:0] x_new_1_loc_fu_54;
 wire    ap_CS_fsm_state3;
 wire   [0:0] tmp_fu_101_p3;
-wire   [19:0] sub_ln19_fu_109_p2;
-wire   [19:0] sub_ln24_fu_115_p2;
-wire   [17:0] mul_ln50_fu_159_p1;
-wire   [36:0] mul_ln50_fu_159_p2;
+wire   [15:0] sub_ln19_fu_109_p2;
+wire   [15:0] sub_ln24_fu_115_p2;
+wire   [13:0] mul_ln50_fu_159_p1;
+wire   [28:0] mul_ln50_fu_159_p2;
 reg   [2:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 reg    ap_ST_fsm_state2_blk;
@@ -100,13 +100,13 @@ cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_30_1 grp_cordiccart2pol_Pipeli
     .x_new_1_out_ap_vld(grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_x_new_1_out_ap_vld)
 );
 
-cordiccart2pol_mul_20s_18ns_37_1_1 #(
+cordiccart2pol_mul_16s_14ns_29_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .din0_WIDTH( 20 ),
-    .din1_WIDTH( 18 ),
-    .dout_WIDTH( 37 ))
-mul_20s_18ns_37_1_1_U11(
+    .din0_WIDTH( 16 ),
+    .din1_WIDTH( 14 ),
+    .dout_WIDTH( 29 ))
+mul_16s_14ns_29_1_1_U11(
     .din0(x_new_1_loc_fu_54),
     .din1(mul_ln50_fu_159_p1),
     .dout(mul_ln50_fu_159_p2)
@@ -140,7 +140,7 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state1)) begin
-        select_ln18_reg_188[18 : 1] <= select_ln18_fu_121_p3[18 : 1];
+        select_ln18_reg_188[14 : 1] <= select_ln18_fu_121_p3[14 : 1];
         x_new_reg_193 <= x_new_fu_130_p3;
         y_new_reg_198 <= y_new_fu_139_p3;
     end
@@ -243,19 +243,19 @@ assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
 assign grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_ap_start = grp_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_fu_88_ap_start_reg;
 
-assign mul_ln50_fu_159_p1 = 37'd79560;
+assign mul_ln50_fu_159_p1 = 29'd4972;
 
-assign r = {{mul_ln50_fu_159_p2[36:17]}};
+assign r = {{mul_ln50_fu_159_p2[28:13]}};
 
-assign select_ln18_fu_121_p3 = ((tmp_fu_101_p3[0:0] == 1'b1) ? 19'd318401 : 19'd205887);
+assign select_ln18_fu_121_p3 = ((tmp_fu_101_p3[0:0] == 1'b1) ? 15'd19901 : 15'd12867);
 
-assign sub_ln19_fu_109_p2 = (20'd0 - y);
+assign sub_ln19_fu_109_p2 = (16'd0 - y);
 
-assign sub_ln24_fu_115_p2 = (20'd0 - x);
+assign sub_ln24_fu_115_p2 = (16'd0 - x);
 
 assign theta = current_theta_2_loc_fu_58;
 
-assign tmp_fu_101_p3 = y[32'd19];
+assign tmp_fu_101_p3 = y[32'd15];
 
 assign x_new_fu_130_p3 = ((tmp_fu_101_p3[0:0] == 1'b1) ? sub_ln19_fu_109_p2 : y);
 

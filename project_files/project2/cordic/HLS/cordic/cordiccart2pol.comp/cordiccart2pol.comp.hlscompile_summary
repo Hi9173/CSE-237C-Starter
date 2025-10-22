@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Tue Oct 21 19:22:11 2025",
- "timestampMillis": "1761099731413",
+ "dateTimestamp": "Tue Oct 21 19:26:07 2025",
+ "timestampMillis": "1761099967568",
  "buildStep": {
-  "cmdId": "97e5f200-9dff-4d42-a83a-fc35e8590351",
+  "cmdId": "89ac8cd3-9e8a-428e-b6cb-1ffd4b43c40d",
   "name": "vitis-run",
   "logFile": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/logs/hls_compile.log",
   "commandLine": "vitis-run --mode hls --tcl /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.tcl",
@@ -25,10 +25,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Tue Oct 21 19:22:11 2025",
- "timestampMillis": "1761099731414",
+ "dateTimestamp": "Tue Oct 21 19:26:07 2025",
+ "timestampMillis": "1761099967571",
  "status": {
-  "cmdId": "97e5f200-9dff-4d42-a83a-fc35e8590351",
+  "cmdId": "89ac8cd3-9e8a-428e-b6cb-1ffd4b43c40d",
   "state": "CS_RUNNING"
  }
 }
@@ -36,8 +36,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Tue Oct 21 19:22:11 2025",
- "timestampMillis": "1761099731415",
+ "dateTimestamp": "Tue Oct 21 19:26:07 2025",
+ "timestampMillis": "1761099967571",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -72,10 +72,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Tue Oct 21 19:22:11 2025",
- "timestampMillis": "1761099731415",
+ "dateTimestamp": "Tue Oct 21 19:26:07 2025",
+ "timestampMillis": "1761099967572",
  "buildStep": {
-  "cmdId": "ca96bff0-e318-469c-bb5c-0db4dcf9757d",
+  "cmdId": "25436d95-d8c5-4375-9a4c-bd4262a691d2",
   "name": "csynth_design",
   "logFile": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls/hls.log",
   "commandLine": "csynth_design",
@@ -88,10 +88,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Tue Oct 21 19:22:11 2025",
- "timestampMillis": "1761099731417",
+ "dateTimestamp": "Tue Oct 21 19:26:07 2025",
+ "timestampMillis": "1761099967573",
  "status": {
-  "cmdId": "ca96bff0-e318-469c-bb5c-0db4dcf9757d",
+  "cmdId": "25436d95-d8c5-4375-9a4c-bd4262a691d2",
   "state": "CS_RUNNING"
  }
 }
@@ -99,8 +99,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Tue Oct 21 19:22:11 2025",
- "timestampMillis": "1761099731417",
+ "dateTimestamp": "Tue Oct 21 19:26:07 2025",
+ "timestampMillis": "1761099967573",
  "report": {
   "path": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls/hls_data.json",
   "name": "",
@@ -113,8 +113,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Tue Oct 21 19:22:11 2025",
- "timestampMillis": "1761099731419",
+ "dateTimestamp": "Tue Oct 21 19:26:07 2025",
+ "timestampMillis": "1761099967574",
  "report": {
   "path": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls/syn/report/csynth.rpt",
   "name": "",
@@ -127,8 +127,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Tue Oct 21 19:22:11 2025",
- "timestampMillis": "1761099731420",
+ "dateTimestamp": "Tue Oct 21 19:26:07 2025",
+ "timestampMillis": "1761099967577",
  "report": {
   "path": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls/syn/report/csynth.xml",
   "name": "",
@@ -141,8 +141,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Tue Oct 21 19:22:31 2025",
- "timestampMillis": "1761099751013",
+ "dateTimestamp": "Tue Oct 21 19:26:28 2025",
+ "timestampMillis": "1761099988483",
  "report": {
   "path": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls",
   "name": "",
@@ -155,8 +155,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Tue Oct 21 19:22:31 2025",
- "timestampMillis": "1761099751014",
+ "dateTimestamp": "Tue Oct 21 19:26:28 2025",
+ "timestampMillis": "1761099988485",
  "report": {
   "path": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls",
   "name": "",
@@ -169,8 +169,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Tue Oct 21 19:22:31 2025",
- "timestampMillis": "1761099751015",
+ "dateTimestamp": "Tue Oct 21 19:26:28 2025",
+ "timestampMillis": "1761099988489",
  "report": {
   "path": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls",
   "name": "",
@@ -183,10 +183,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Tue Oct 21 19:22:31 2025",
- "timestampMillis": "1761099751015",
+ "dateTimestamp": "Tue Oct 21 19:26:28 2025",
+ "timestampMillis": "1761099988496",
  "status": {
-  "cmdId": "ca96bff0-e318-469c-bb5c-0db4dcf9757d",
+  "cmdId": "25436d95-d8c5-4375-9a4c-bd4262a691d2",
   "state": "CS_PASSED"
  }
 }
@@ -194,10 +194,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Tue Oct 21 19:22:31 2025",
- "timestampMillis": "1761099751030",
+ "dateTimestamp": "Tue Oct 21 19:26:28 2025",
+ "timestampMillis": "1761099988520",
  "status": {
-  "cmdId": "97e5f200-9dff-4d42-a83a-fc35e8590351",
+  "cmdId": "89ac8cd3-9e8a-428e-b6cb-1ffd4b43c40d",
   "state": "CS_PASSED"
  }
 }

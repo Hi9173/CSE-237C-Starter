@@ -5703,7 +5703,7 @@ inline __attribute__((nodebug)) bool operator!=(
 typedef int coef_t;
 
 typedef float acc_t;
-typedef ap_fixed<20, 3> data_t;
+typedef ap_fixed<16, 3> data_t;
 
 __attribute__((sdx_kernel("cordiccart2pol", 0))) void cordiccart2pol(data_t x, data_t y, data_t * r, data_t * theta);
 # 2 "cordiccart2pol.cpp" 2

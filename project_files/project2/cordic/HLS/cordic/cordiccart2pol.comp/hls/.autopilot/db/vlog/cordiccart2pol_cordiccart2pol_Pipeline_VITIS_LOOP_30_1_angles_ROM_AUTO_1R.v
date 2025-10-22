@@ -8,7 +8,7 @@ module cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_angles_ROM_AUTO_1R
     address0, ce0, q0, 
     reset, clk);
 
-parameter DataWidth = 17;
+parameter DataWidth = 13;
 parameter AddressWidth = 4;
 parameter AddressRange = 16;
  
