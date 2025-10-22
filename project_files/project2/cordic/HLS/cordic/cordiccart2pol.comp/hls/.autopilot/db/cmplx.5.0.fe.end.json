@@ -1,4 +1,16 @@
 {
+    "0": {
+        "name": "cordiccart2pol",
+        "file": "cordiccart2pol.cpp",
+        "fileloc": "9",
+        "instructions": "28",
+        "total_instructions": "85",
+        "calls": "1",
+        "basicblocks": "1",
+        "loads": {
+            "L": "2"
+        }
+    },
     "1": {
         "name": "cordiccart2pol_Pipeline_VITIS_LOOP_30_1",
         "file": "cordiccart2pol.cpp",
@@ -16,18 +28,6 @@
         },
         "loops": {
             "L": "1"
-        }
-    },
-    "0": {
-        "name": "cordiccart2pol",
-        "file": "cordiccart2pol.cpp",
-        "fileloc": "9",
-        "instructions": "28",
-        "total_instructions": "85",
-        "calls": "1",
-        "basicblocks": "1",
-        "loads": {
-            "L": "2"
         }
     }
 }

@@ -4,7 +4,7 @@
     "calls": "",
     "file": "cordiccart2pol.cpp",
     "fileloc": 9,
-    "instructions": 337,
+    "instructions": 367,
     "loads": {
       "G": 10
     },
@@ -12,6 +12,6 @@
     "stores": {
       "T": 2
     },
-    "total_instructions": 337
+    "total_instructions": 367
   }
 }

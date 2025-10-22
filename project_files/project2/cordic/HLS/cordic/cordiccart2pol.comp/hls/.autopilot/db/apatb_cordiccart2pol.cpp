@@ -1233,7 +1233,7 @@ void apatb_cordiccart2pol_hw(hls::sim::Byte<2>* __xlx_apatb_param_x, hls::sim::B
 {
   static hls::sim::Register port0 {
     .name = "x",
-    .width = 16,
+    .width = 12,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
@@ -1244,7 +1244,7 @@ void apatb_cordiccart2pol_hw(hls::sim::Byte<2>* __xlx_apatb_param_x, hls::sim::B
 
   static hls::sim::Register port1 {
     .name = "y",
-    .width = 16,
+    .width = 12,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
@@ -1255,7 +1255,7 @@ void apatb_cordiccart2pol_hw(hls::sim::Byte<2>* __xlx_apatb_param_x, hls::sim::B
 
   static hls::sim::Register port2 {
     .name = "r",
-    .width = 16,
+    .width = 12,
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_r),
 #else
@@ -1267,7 +1267,7 @@ void apatb_cordiccart2pol_hw(hls::sim::Byte<2>* __xlx_apatb_param_x, hls::sim::B
 
   static hls::sim::Register port3 {
     .name = "theta",
-    .width = 16,
+    .width = 12,
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_theta),
 #else

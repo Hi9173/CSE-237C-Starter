@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 
-entity cordiccart2pol_mul_16s_14ns_29_1_1 is
+entity cordiccart2pol_mul_12s_10ns_21_1_1 is
 generic (
     ID : INTEGER := 1;
     NUM_STAGE : INTEGER := 0;
@@ -20,7 +20,7 @@ port (
 
 end entity;
 
-architecture behav of cordiccart2pol_mul_16s_14ns_29_1_1 is
+architecture behav of cordiccart2pol_mul_12s_10ns_21_1_1 is
     signal tmp_product : std_logic_vector(dout_WIDTH - 1 downto 0);
     signal a_i : std_logic_vector(din0_WIDTH - 1 downto 0);
     signal b_i : std_logic_vector(din1_WIDTH - 1 downto 0);

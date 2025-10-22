@@ -50,7 +50,7 @@ newFuncRoot:0 %i1 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="9" bw="16" op_0_bw="32">
+<Node id="9" bw="12" op_0_bw="32">
 <![CDATA[
 newFuncRoot:1 %current_x_12 = alloca i32 1
 
@@ -65,7 +65,7 @@ newFuncRoot:1 %current_x_12 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="10" bw="16" op_0_bw="32">
+<Node id="10" bw="12" op_0_bw="32">
 <![CDATA[
 newFuncRoot:2 %current_y_14 = alloca i32 1
 
@@ -80,7 +80,7 @@ newFuncRoot:2 %current_y_14 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="11" bw="16" op_0_bw="32">
+<Node id="11" bw="12" op_0_bw="32">
 <![CDATA[
 newFuncRoot:3 %current_theta5 = alloca i32 1
 
@@ -95,9 +95,9 @@ newFuncRoot:3 %current_theta5 = alloca i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="12" bw="16" op_0_bw="16" op_1_bw="16">
+<Node id="12" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-newFuncRoot:4 %x_new_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %x_new
+newFuncRoot:4 %x_new_read = read i12 @_ssdm_op_Read.ap_auto.i12, i12 %x_new
 
 ]]></Node>
 <StgValue><ssdm name="x_new_read"/></StgValue>
@@ -110,9 +110,9 @@ newFuncRoot:4 %x_new_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %x_new
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="13" bw="16" op_0_bw="16" op_1_bw="16">
+<Node id="13" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-newFuncRoot:5 %y_new_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %y_new
+newFuncRoot:5 %y_new_read = read i12 @_ssdm_op_Read.ap_auto.i12, i12 %y_new
 
 ]]></Node>
 <StgValue><ssdm name="y_new_read"/></StgValue>
@@ -125,9 +125,9 @@ newFuncRoot:5 %y_new_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %y_new
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="14" bw="15" op_0_bw="15" op_1_bw="15">
+<Node id="14" bw="11" op_0_bw="11" op_1_bw="11">
 <![CDATA[
-newFuncRoot:6 %select_ln18_read = read i15 @_ssdm_op_Read.ap_auto.i15, i15 %select_ln18
+newFuncRoot:6 %select_ln18_read = read i11 @_ssdm_op_Read.ap_auto.i11, i11 %select_ln18
 
 ]]></Node>
 <StgValue><ssdm name="select_ln18_read"/></StgValue>
@@ -140,9 +140,9 @@ newFuncRoot:6 %select_ln18_read = read i15 @_ssdm_op_Read.ap_auto.i15, i15 %sele
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="15" bw="16" op_0_bw="15">
+<Node id="15" bw="12" op_0_bw="11">
 <![CDATA[
-newFuncRoot:7 %select_ln18_cast = sext i15 %select_ln18_read
+newFuncRoot:7 %select_ln18_cast = sext i11 %select_ln18_read
 
 ]]></Node>
 <StgValue><ssdm name="select_ln18_cast"/></StgValue>
@@ -155,9 +155,9 @@ newFuncRoot:7 %select_ln18_cast = sext i15 %select_ln18_read
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="16" bw="0" op_0_bw="16" op_1_bw="16">
+<Node id="16" bw="0" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-newFuncRoot:8 %store_ln0 = store i16 %select_ln18_cast, i16 %current_theta5
+newFuncRoot:8 %store_ln0 = store i12 %select_ln18_cast, i12 %current_theta5
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>
@@ -170,9 +170,9 @@ newFuncRoot:8 %store_ln0 = store i16 %select_ln18_cast, i16 %current_theta5
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="17" bw="0" op_0_bw="16" op_1_bw="16">
+<Node id="17" bw="0" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-newFuncRoot:9 %store_ln0 = store i16 %y_new_read, i16 %current_y_14
+newFuncRoot:9 %store_ln0 = store i12 %y_new_read, i12 %current_y_14
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>
@@ -185,9 +185,9 @@ newFuncRoot:9 %store_ln0 = store i16 %y_new_read, i16 %current_y_14
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="18" bw="0" op_0_bw="16" op_1_bw="16">
+<Node id="18" bw="0" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-newFuncRoot:10 %store_ln0 = store i16 %x_new_read, i16 %current_x_12
+newFuncRoot:10 %store_ln0 = store i12 %x_new_read, i12 %current_x_12
 
 ]]></Node>
 <StgValue><ssdm name="store_ln0"/></StgValue>
@@ -260,9 +260,9 @@ for.body.split_ifconv:4 %zext_ln30 = zext i4 %i1_load
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="31" bw="4" op_0_bw="14" op_1_bw="64" op_2_bw="64">
+<Node id="31" bw="4" op_0_bw="10" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-for.body.split_ifconv:9 %Kvalues_addr = getelementptr i14 %Kvalues, i64 0, i64 %zext_ln30
+for.body.split_ifconv:9 %Kvalues_addr = getelementptr i10 %Kvalues, i64 0, i64 %zext_ln30
 
 ]]></Node>
 <StgValue><ssdm name="Kvalues_addr"/></StgValue>
@@ -275,7 +275,7 @@ for.body.split_ifconv:9 %Kvalues_addr = getelementptr i14 %Kvalues, i64 0, i64 %
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="35" bw="14" op_0_bw="4">
+<Node id="35" bw="10" op_0_bw="4">
 <![CDATA[
 for.body.split_ifconv:13 %Kvalues_load = load i4 %Kvalues_addr
 
@@ -337,7 +337,7 @@ for.body.split_ifconv:39 %store_ln30 = store i4 %i, i4 %i1
 
 <Node id="62" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-for.body.split_ifconv:40 %br_ln30 = br i1 %icmp_ln30, void %for.body.split_ifconv, void %_ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1ELS0_5ELS1_3ELi0EEENS2_5RTypeIXT_EXT0_EXT1_EE4multERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.exitStub
+for.body.split_ifconv:40 %br_ln30 = br i1 %icmp_ln30, void %for.body.split_ifconv, void %_ZNK13ap_fixed_baseILi12ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi12ELi3ELb1ELS0_5ELS1_3ELi0EEENS2_5RTypeIXT_EXT0_EXT1_EE4multERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.exitStub
 
 ]]></Node>
 <StgValue><ssdm name="br_ln30"/></StgValue>
@@ -353,7 +353,7 @@ for.body.split_ifconv:40 %br_ln30 = br i1 %icmp_ln30, void %for.body.split_ifcon
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="35" bw="14" op_0_bw="4">
+<Node id="35" bw="10" op_0_bw="4">
 <![CDATA[
 for.body.split_ifconv:13 %Kvalues_load = load i4 %Kvalues_addr
 
@@ -371,9 +371,9 @@ for.body.split_ifconv:13 %Kvalues_load = load i4 %Kvalues_addr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="23" bw="16" op_0_bw="16" op_1_bw="0">
+<Node id="23" bw="12" op_0_bw="12" op_1_bw="0">
 <![CDATA[
-for.body.split_ifconv:1 %current_x_12_load = load i16 %current_x_12
+for.body.split_ifconv:1 %current_x_12_load = load i12 %current_x_12
 
 ]]></Node>
 <StgValue><ssdm name="current_x_12_load"/></StgValue>
@@ -386,9 +386,9 @@ for.body.split_ifconv:1 %current_x_12_load = load i16 %current_x_12
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="24" bw="16" op_0_bw="16" op_1_bw="0">
+<Node id="24" bw="12" op_0_bw="12" op_1_bw="0">
 <![CDATA[
-for.body.split_ifconv:2 %current_y_14_load = load i16 %current_y_14
+for.body.split_ifconv:2 %current_y_14_load = load i12 %current_y_14
 
 ]]></Node>
 <StgValue><ssdm name="current_y_14_load"/></StgValue>
@@ -401,9 +401,9 @@ for.body.split_ifconv:2 %current_y_14_load = load i16 %current_y_14
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="30" bw="1" op_0_bw="1" op_1_bw="16" op_2_bw="32">
+<Node id="30" bw="1" op_0_bw="1" op_1_bw="12" op_2_bw="32">
 <![CDATA[
-for.body.split_ifconv:8 %tmp_4 = bitselect i1 @_ssdm_op_BitSelect.i1.i16.i32, i16 %current_y_14_load, i32 15
+for.body.split_ifconv:8 %tmp_4 = bitselect i1 @_ssdm_op_BitSelect.i1.i12.i32, i12 %current_y_14_load, i32 11
 
 ]]></Node>
 <StgValue><ssdm name="tmp_4"/></StgValue>
@@ -416,9 +416,9 @@ for.body.split_ifconv:8 %tmp_4 = bitselect i1 @_ssdm_op_BitSelect.i1.i16.i32, i1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="34" bw="4" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="34" bw="4" op_0_bw="9" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-for.body.split_ifconv:12 %angles_addr = getelementptr i13 %angles, i64 0, i64 %zext_ln30
+for.body.split_ifconv:12 %angles_addr = getelementptr i9 %angles, i64 0, i64 %zext_ln30
 
 ]]></Node>
 <StgValue><ssdm name="angles_addr"/></StgValue>
@@ -431,7 +431,7 @@ for.body.split_ifconv:12 %angles_addr = getelementptr i13 %angles, i64 0, i64 %z
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="36" bw="13" op_0_bw="4">
+<Node id="36" bw="9" op_0_bw="4">
 <![CDATA[
 for.body.split_ifconv:14 %angles_load = load i4 %angles_addr
 
@@ -446,9 +446,9 @@ for.body.split_ifconv:14 %angles_load = load i4 %angles_addr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="38" bw="29" op_0_bw="14">
+<Node id="38" bw="21" op_0_bw="10">
 <![CDATA[
-for.body.split_ifconv:16 %zext_ln41_1 = zext i14 %Kvalues_load
+for.body.split_ifconv:16 %zext_ln41_1 = zext i10 %Kvalues_load
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln41_1"/></StgValue>
@@ -461,42 +461,42 @@ for.body.split_ifconv:16 %zext_ln41_1 = zext i14 %Kvalues_load
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="39" bw="29" op_0_bw="16">
+<Node id="39" bw="21" op_0_bw="12">
 <![CDATA[
-for.body.split_ifconv:17 %sext_ln41 = sext i16 %current_y_14_load
+for.body.split_ifconv:17 %sext_ln41 = sext i12 %current_y_14_load
 
 ]]></Node>
 <StgValue><ssdm name="sext_ln41"/></StgValue>
 </operation>
 
 <operation id="36" st_id="3" stage="1" lat="1">
-<core>Multiplier</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
-</condition>
-
-<Node id="40" bw="29" op_0_bw="29" op_1_bw="29">
-<![CDATA[
-for.body.split_ifconv:18 %mul_ln42 = mul i29 %zext_ln41_1, i29 %sext_ln41
-
-]]></Node>
-<StgValue><ssdm name="mul_ln42"/></StgValue>
-</operation>
-
-<operation id="37" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="41" bw="29" op_0_bw="16">
+<Node id="40" bw="21" op_0_bw="12">
 <![CDATA[
-for.body.split_ifconv:19 %sext_ln42 = sext i16 %current_x_12_load
+for.body.split_ifconv:18 %sext_ln42 = sext i12 %current_x_12_load
 
 ]]></Node>
 <StgValue><ssdm name="sext_ln42"/></StgValue>
+</operation>
+
+<operation id="37" st_id="3" stage="1" lat="1">
+<core>Multiplier</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="41" bw="21" op_0_bw="21" op_1_bw="21">
+<![CDATA[
+for.body.split_ifconv:19 %mul_ln35 = mul i21 %zext_ln41_1, i21 %sext_ln41
+
+]]></Node>
+<StgValue><ssdm name="mul_ln35"/></StgValue>
 </operation>
 
 <operation id="38" st_id="3" stage="1" lat="1">
@@ -506,12 +506,12 @@ for.body.split_ifconv:19 %sext_ln42 = sext i16 %current_x_12_load
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="42" bw="29" op_0_bw="29" op_1_bw="29">
+<Node id="43" bw="21" op_0_bw="21" op_1_bw="21">
 <![CDATA[
-for.body.split_ifconv:20 %mul_ln35 = mul i29 %zext_ln41_1, i29 %sext_ln42
+for.body.split_ifconv:21 %mul_ln36 = mul i21 %zext_ln41_1, i21 %sext_ln42
 
 ]]></Node>
-<StgValue><ssdm name="mul_ln35"/></StgValue>
+<StgValue><ssdm name="mul_ln36"/></StgValue>
 </operation>
 </state>
 
@@ -524,9 +524,9 @@ for.body.split_ifconv:20 %mul_ln35 = mul i29 %zext_ln41_1, i29 %sext_ln42
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="25" bw="16" op_0_bw="16" op_1_bw="0">
+<Node id="25" bw="12" op_0_bw="12" op_1_bw="0">
 <![CDATA[
-for.body.split_ifconv:3 %current_theta5_load = load i16 %current_theta5
+for.body.split_ifconv:3 %current_theta5_load = load i12 %current_theta5
 
 ]]></Node>
 <StgValue><ssdm name="current_theta5_load"/></StgValue>
@@ -584,9 +584,9 @@ for.body.split_ifconv:7 %specloopname_ln30 = specloopname void @_ssdm_op_SpecLoo
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="32" bw="29" op_0_bw="29" op_1_bw="16" op_2_bw="13">
+<Node id="32" bw="21" op_0_bw="21" op_1_bw="12" op_2_bw="9">
 <![CDATA[
-for.body.split_ifconv:10 %shl_ln = bitconcatenate i29 @_ssdm_op_BitConcatenate.i29.i16.i13, i16 %current_x_12_load, i13 0
+for.body.split_ifconv:10 %shl_ln = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i12.i9, i12 %current_x_12_load, i9 0
 
 ]]></Node>
 <StgValue><ssdm name="shl_ln"/></StgValue>
@@ -599,9 +599,9 @@ for.body.split_ifconv:10 %shl_ln = bitconcatenate i29 @_ssdm_op_BitConcatenate.i
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="33" bw="29" op_0_bw="29" op_1_bw="16" op_2_bw="13">
+<Node id="33" bw="21" op_0_bw="21" op_1_bw="12" op_2_bw="9">
 <![CDATA[
-for.body.split_ifconv:11 %shl_ln1 = bitconcatenate i29 @_ssdm_op_BitConcatenate.i29.i16.i13, i16 %current_y_14_load, i13 0
+for.body.split_ifconv:11 %shl_ln1 = bitconcatenate i21 @_ssdm_op_BitConcatenate.i21.i12.i9, i12 %current_y_14_load, i9 0
 
 ]]></Node>
 <StgValue><ssdm name="shl_ln1"/></StgValue>
@@ -614,7 +614,7 @@ for.body.split_ifconv:11 %shl_ln1 = bitconcatenate i29 @_ssdm_op_BitConcatenate.
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="36" bw="13" op_0_bw="4">
+<Node id="36" bw="9" op_0_bw="4">
 <![CDATA[
 for.body.split_ifconv:14 %angles_load = load i4 %angles_addr
 
@@ -629,9 +629,9 @@ for.body.split_ifconv:14 %angles_load = load i4 %angles_addr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="37" bw="16" op_0_bw="13">
+<Node id="37" bw="12" op_0_bw="9">
 <![CDATA[
-for.body.split_ifconv:15 %zext_ln41 = zext i13 %angles_load
+for.body.split_ifconv:15 %zext_ln41 = zext i9 %angles_load
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln41"/></StgValue>
@@ -645,9 +645,9 @@ for.body.split_ifconv:15 %zext_ln41 = zext i13 %angles_load
 </and_exp></or_exp>
 </condition>
 
-<Node id="43" bw="29" op_0_bw="29" op_1_bw="29">
+<Node id="42" bw="21" op_0_bw="21" op_1_bw="21">
 <![CDATA[
-for.body.split_ifconv:21 %sub_ln35 = sub i29 %shl_ln, i29 %mul_ln42
+for.body.split_ifconv:20 %sub_ln35 = sub i21 %shl_ln, i21 %mul_ln35
 
 ]]></Node>
 <StgValue><ssdm name="sub_ln35"/></StgValue>
@@ -661,9 +661,9 @@ for.body.split_ifconv:21 %sub_ln35 = sub i29 %shl_ln, i29 %mul_ln42
 </and_exp></or_exp>
 </condition>
 
-<Node id="44" bw="29" op_0_bw="29" op_1_bw="29">
+<Node id="44" bw="21" op_0_bw="21" op_1_bw="21">
 <![CDATA[
-for.body.split_ifconv:22 %add_ln36 = add i29 %shl_ln1, i29 %mul_ln35
+for.body.split_ifconv:22 %add_ln36 = add i21 %shl_ln1, i21 %mul_ln36
 
 ]]></Node>
 <StgValue><ssdm name="add_ln36"/></StgValue>
@@ -677,9 +677,9 @@ for.body.split_ifconv:22 %add_ln36 = add i29 %shl_ln1, i29 %mul_ln35
 </and_exp></or_exp>
 </condition>
 
-<Node id="45" bw="16" op_0_bw="16" op_1_bw="16">
+<Node id="45" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-for.body.split_ifconv:23 %current_theta_1 = sub i16 %current_theta5_load, i16 %zext_ln41
+for.body.split_ifconv:23 %current_theta_1 = sub i12 %current_theta5_load, i12 %zext_ln41
 
 ]]></Node>
 <StgValue><ssdm name="current_theta_1"/></StgValue>
@@ -693,9 +693,9 @@ for.body.split_ifconv:23 %current_theta_1 = sub i16 %current_theta5_load, i16 %z
 </and_exp></or_exp>
 </condition>
 
-<Node id="46" bw="29" op_0_bw="29" op_1_bw="29">
+<Node id="46" bw="21" op_0_bw="21" op_1_bw="21">
 <![CDATA[
-for.body.split_ifconv:24 %add_ln41 = add i29 %shl_ln, i29 %mul_ln42
+for.body.split_ifconv:24 %add_ln41 = add i21 %shl_ln, i21 %mul_ln35
 
 ]]></Node>
 <StgValue><ssdm name="add_ln41"/></StgValue>
@@ -709,9 +709,9 @@ for.body.split_ifconv:24 %add_ln41 = add i29 %shl_ln, i29 %mul_ln42
 </and_exp></or_exp>
 </condition>
 
-<Node id="47" bw="29" op_0_bw="29" op_1_bw="29">
+<Node id="47" bw="21" op_0_bw="21" op_1_bw="21">
 <![CDATA[
-for.body.split_ifconv:25 %sub_ln42 = sub i29 %shl_ln1, i29 %mul_ln35
+for.body.split_ifconv:25 %sub_ln42 = sub i21 %shl_ln1, i21 %mul_ln36
 
 ]]></Node>
 <StgValue><ssdm name="sub_ln42"/></StgValue>
@@ -725,9 +725,9 @@ for.body.split_ifconv:25 %sub_ln42 = sub i29 %shl_ln1, i29 %mul_ln35
 </and_exp></or_exp>
 </condition>
 
-<Node id="48" bw="16" op_0_bw="16" op_1_bw="16">
+<Node id="48" bw="12" op_0_bw="12" op_1_bw="12">
 <![CDATA[
-for.body.split_ifconv:26 %current_theta_2 = add i16 %zext_ln41, i16 %current_theta5_load
+for.body.split_ifconv:26 %current_theta_2 = add i12 %zext_ln41, i12 %current_theta5_load
 
 ]]></Node>
 <StgValue><ssdm name="current_theta_2"/></StgValue>
@@ -740,9 +740,9 @@ for.body.split_ifconv:26 %current_theta_2 = add i16 %zext_ln41, i16 %current_the
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="49" bw="16" op_0_bw="1" op_1_bw="16" op_2_bw="16">
+<Node id="49" bw="12" op_0_bw="1" op_1_bw="12" op_2_bw="12">
 <![CDATA[
-for.body.split_ifconv:27 %current_theta = select i1 %tmp_4, i16 %current_theta_1, i16 %current_theta_2
+for.body.split_ifconv:27 %current_theta = select i1 %tmp_4, i12 %current_theta_1, i12 %current_theta_2
 
 ]]></Node>
 <StgValue><ssdm name="current_theta"/></StgValue>
@@ -756,9 +756,9 @@ for.body.split_ifconv:27 %current_theta = select i1 %tmp_4, i16 %current_theta_1
 </and_exp></or_exp>
 </condition>
 
-<Node id="50" bw="16" op_0_bw="16" op_1_bw="29" op_2_bw="32" op_3_bw="32">
+<Node id="50" bw="12" op_0_bw="12" op_1_bw="21" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.body.split_ifconv:28 %tmp = partselect i16 @_ssdm_op_PartSelect.i16.i29.i32.i32, i29 %add_ln36, i32 13, i32 28
+for.body.split_ifconv:28 %tmp = partselect i12 @_ssdm_op_PartSelect.i12.i21.i32.i32, i21 %add_ln36, i32 9, i32 20
 
 ]]></Node>
 <StgValue><ssdm name="tmp"/></StgValue>
@@ -772,9 +772,9 @@ for.body.split_ifconv:28 %tmp = partselect i16 @_ssdm_op_PartSelect.i16.i29.i32.
 </and_exp></or_exp>
 </condition>
 
-<Node id="51" bw="16" op_0_bw="16" op_1_bw="29" op_2_bw="32" op_3_bw="32">
+<Node id="51" bw="12" op_0_bw="12" op_1_bw="21" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.body.split_ifconv:29 %tmp_1 = partselect i16 @_ssdm_op_PartSelect.i16.i29.i32.i32, i29 %sub_ln42, i32 13, i32 28
+for.body.split_ifconv:29 %tmp_1 = partselect i12 @_ssdm_op_PartSelect.i12.i21.i32.i32, i21 %sub_ln42, i32 9, i32 20
 
 ]]></Node>
 <StgValue><ssdm name="tmp_1"/></StgValue>
@@ -787,9 +787,9 @@ for.body.split_ifconv:29 %tmp_1 = partselect i16 @_ssdm_op_PartSelect.i16.i29.i3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="52" bw="16" op_0_bw="1" op_1_bw="16" op_2_bw="16">
+<Node id="52" bw="12" op_0_bw="1" op_1_bw="12" op_2_bw="12">
 <![CDATA[
-for.body.split_ifconv:30 %current_y = select i1 %tmp_4, i16 %tmp, i16 %tmp_1
+for.body.split_ifconv:30 %current_y = select i1 %tmp_4, i12 %tmp, i12 %tmp_1
 
 ]]></Node>
 <StgValue><ssdm name="current_y"/></StgValue>
@@ -803,9 +803,9 @@ for.body.split_ifconv:30 %current_y = select i1 %tmp_4, i16 %tmp, i16 %tmp_1
 </and_exp></or_exp>
 </condition>
 
-<Node id="53" bw="16" op_0_bw="16" op_1_bw="29" op_2_bw="32" op_3_bw="32">
+<Node id="53" bw="12" op_0_bw="12" op_1_bw="21" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.body.split_ifconv:31 %tmp_2 = partselect i16 @_ssdm_op_PartSelect.i16.i29.i32.i32, i29 %sub_ln35, i32 13, i32 28
+for.body.split_ifconv:31 %tmp_2 = partselect i12 @_ssdm_op_PartSelect.i12.i21.i32.i32, i21 %sub_ln35, i32 9, i32 20
 
 ]]></Node>
 <StgValue><ssdm name="tmp_2"/></StgValue>
@@ -819,9 +819,9 @@ for.body.split_ifconv:31 %tmp_2 = partselect i16 @_ssdm_op_PartSelect.i16.i29.i3
 </and_exp></or_exp>
 </condition>
 
-<Node id="54" bw="16" op_0_bw="16" op_1_bw="29" op_2_bw="32" op_3_bw="32">
+<Node id="54" bw="12" op_0_bw="12" op_1_bw="21" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.body.split_ifconv:32 %tmp_3 = partselect i16 @_ssdm_op_PartSelect.i16.i29.i32.i32, i29 %add_ln41, i32 13, i32 28
+for.body.split_ifconv:32 %tmp_3 = partselect i12 @_ssdm_op_PartSelect.i12.i21.i32.i32, i21 %add_ln41, i32 9, i32 20
 
 ]]></Node>
 <StgValue><ssdm name="tmp_3"/></StgValue>
@@ -834,9 +834,9 @@ for.body.split_ifconv:32 %tmp_3 = partselect i16 @_ssdm_op_PartSelect.i16.i29.i3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="16" op_0_bw="1" op_1_bw="16" op_2_bw="16">
+<Node id="55" bw="12" op_0_bw="1" op_1_bw="12" op_2_bw="12">
 <![CDATA[
-for.body.split_ifconv:33 %current_x = select i1 %tmp_4, i16 %tmp_2, i16 %tmp_3
+for.body.split_ifconv:33 %current_x = select i1 %tmp_4, i12 %tmp_2, i12 %tmp_3
 
 ]]></Node>
 <StgValue><ssdm name="current_x"/></StgValue>
@@ -849,9 +849,9 @@ for.body.split_ifconv:33 %current_x = select i1 %tmp_4, i16 %tmp_2, i16 %tmp_3
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="58" bw="0" op_0_bw="16" op_1_bw="16" op_2_bw="0" op_3_bw="0">
+<Node id="58" bw="0" op_0_bw="12" op_1_bw="12" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.body.split_ifconv:36 %store_ln33 = store i16 %current_theta, i16 %current_theta5
+for.body.split_ifconv:36 %store_ln33 = store i12 %current_theta, i12 %current_theta5
 
 ]]></Node>
 <StgValue><ssdm name="store_ln33"/></StgValue>
@@ -864,9 +864,9 @@ for.body.split_ifconv:36 %store_ln33 = store i16 %current_theta, i16 %current_th
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="59" bw="0" op_0_bw="16" op_1_bw="16" op_2_bw="0" op_3_bw="0">
+<Node id="59" bw="0" op_0_bw="12" op_1_bw="12" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.body.split_ifconv:37 %store_ln33 = store i16 %current_y, i16 %current_y_14
+for.body.split_ifconv:37 %store_ln33 = store i12 %current_y, i12 %current_y_14
 
 ]]></Node>
 <StgValue><ssdm name="store_ln33"/></StgValue>
@@ -879,9 +879,9 @@ for.body.split_ifconv:37 %store_ln33 = store i16 %current_y, i16 %current_y_14
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="60" bw="0" op_0_bw="16" op_1_bw="16" op_2_bw="0" op_3_bw="0">
+<Node id="60" bw="0" op_0_bw="12" op_1_bw="12" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.body.split_ifconv:38 %store_ln33 = store i16 %current_x, i16 %current_x_12
+for.body.split_ifconv:38 %store_ln33 = store i12 %current_x, i12 %current_x_12
 
 ]]></Node>
 <StgValue><ssdm name="store_ln33"/></StgValue>
@@ -895,9 +895,9 @@ for.body.split_ifconv:38 %store_ln33 = store i16 %current_x, i16 %current_x_12
 </and_exp></or_exp>
 </condition>
 
-<Node id="64" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16">
+<Node id="64" bw="0" op_0_bw="0" op_1_bw="12" op_2_bw="12">
 <![CDATA[
-_ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1ELS0_5ELS1_3ELi0EEENS2_5RTypeIXT_EXT0_EXT1_EE4multERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.exitStub:0 %write_ln33 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %current_theta_2_out, i16 %current_theta
+_ZNK13ap_fixed_baseILi12ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi12ELi3ELb1ELS0_5ELS1_3ELi0EEENS2_5RTypeIXT_EXT0_EXT1_EE4multERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.exitStub:0 %write_ln33 = write void @_ssdm_op_Write.ap_auto.i12P0A, i12 %current_theta_2_out, i12 %current_theta
 
 ]]></Node>
 <StgValue><ssdm name="write_ln33"/></StgValue>
@@ -911,9 +911,9 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </and_exp></or_exp>
 </condition>
 
-<Node id="65" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16">
+<Node id="65" bw="0" op_0_bw="0" op_1_bw="12" op_2_bw="12">
 <![CDATA[
-_ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1ELS0_5ELS1_3ELi0EEENS2_5RTypeIXT_EXT0_EXT1_EE4multERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.exitStub:1 %write_ln33 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %x_new_1_out, i16 %current_x
+_ZNK13ap_fixed_baseILi12ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi12ELi3ELb1ELS0_5ELS1_3ELi0EEENS2_5RTypeIXT_EXT0_EXT1_EE4multERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.exitStub:1 %write_ln33 = write void @_ssdm_op_Write.ap_auto.i12P0A, i12 %x_new_1_out, i12 %current_x
 
 ]]></Node>
 <StgValue><ssdm name="write_ln33"/></StgValue>
@@ -929,7 +929,7 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 
 <Node id="66" bw="0">
 <![CDATA[
-_ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1ELS0_5ELS1_3ELi0EEENS2_5RTypeIXT_EXT0_EXT1_EE4multERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.exitStub:2 %ret_ln0 = ret
+_ZNK13ap_fixed_baseILi12ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi12ELi3ELb1ELS0_5ELS1_3ELi0EEENS2_5RTypeIXT_EXT0_EXT1_EE4multERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.exitStub:2 %ret_ln0 = ret
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln0"/></StgValue>
@@ -974,15 +974,15 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="89" from="StgValue_85" to="current_theta5" fromId="85" toId="10">
 </dataflow>
-<dataflow id="91" from="_ssdm_op_Read.ap_auto.i16" to="x_new_read" fromId="90" toId="11">
+<dataflow id="91" from="_ssdm_op_Read.ap_auto.i12" to="x_new_read" fromId="90" toId="11">
 </dataflow>
 <dataflow id="92" from="x_new" to="x_new_read" fromId="80" toId="11">
 </dataflow>
-<dataflow id="93" from="_ssdm_op_Read.ap_auto.i16" to="y_new_read" fromId="90" toId="12">
+<dataflow id="93" from="_ssdm_op_Read.ap_auto.i12" to="y_new_read" fromId="90" toId="12">
 </dataflow>
 <dataflow id="94" from="y_new" to="y_new_read" fromId="79" toId="12">
 </dataflow>
-<dataflow id="96" from="_ssdm_op_Read.ap_auto.i15" to="select_ln18_read" fromId="95" toId="13">
+<dataflow id="96" from="_ssdm_op_Read.ap_auto.i11" to="select_ln18_read" fromId="95" toId="13">
 </dataflow>
 <dataflow id="97" from="select_ln18" to="select_ln18_read" fromId="78" toId="13">
 </dataflow>
@@ -1036,7 +1036,7 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="126" from="current_y_14" to="current_y_14_load" fromId="9" toId="30">
 </dataflow>
-<dataflow id="128" from="_ssdm_op_BitSelect.i1.i16.i32" to="tmp_4" fromId="127" toId="31">
+<dataflow id="128" from="_ssdm_op_BitSelect.i1.i12.i32" to="tmp_4" fromId="127" toId="31">
 </dataflow>
 <dataflow id="129" from="current_y_14_load" to="tmp_4" fromId="30" toId="31">
 </dataflow>
@@ -1054,15 +1054,15 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="137" from="current_y_14_load" to="sext_ln41" fromId="30" toId="35">
 </dataflow>
-<dataflow id="138" from="zext_ln41_1" to="mul_ln42" fromId="34" toId="36">
+<dataflow id="138" from="current_x_12_load" to="sext_ln42" fromId="29" toId="36">
 </dataflow>
-<dataflow id="139" from="sext_ln41" to="mul_ln42" fromId="35" toId="36">
+<dataflow id="139" from="zext_ln41_1" to="mul_ln35" fromId="34" toId="37">
 </dataflow>
-<dataflow id="140" from="current_x_12_load" to="sext_ln42" fromId="29" toId="37">
+<dataflow id="140" from="sext_ln41" to="mul_ln35" fromId="35" toId="37">
 </dataflow>
-<dataflow id="141" from="zext_ln41_1" to="mul_ln35" fromId="34" toId="38">
+<dataflow id="141" from="zext_ln41_1" to="mul_ln36" fromId="34" toId="38">
 </dataflow>
-<dataflow id="142" from="sext_ln42" to="mul_ln35" fromId="37" toId="38">
+<dataflow id="142" from="sext_ln42" to="mul_ln36" fromId="36" toId="38">
 </dataflow>
 <dataflow id="143" from="current_theta5" to="current_theta5_load" fromId="10" toId="39">
 </dataflow>
@@ -1090,13 +1090,13 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="163" from="empty_2" to="specloopname_ln30" fromId="162" toId="42">
 </dataflow>
-<dataflow id="165" from="_ssdm_op_BitConcatenate.i29.i16.i13" to="shl_ln" fromId="164" toId="43">
+<dataflow id="165" from="_ssdm_op_BitConcatenate.i21.i12.i9" to="shl_ln" fromId="164" toId="43">
 </dataflow>
 <dataflow id="166" from="current_x_12_load" to="shl_ln" fromId="29" toId="43">
 </dataflow>
 <dataflow id="168" from="StgValue_167" to="shl_ln" fromId="167" toId="43">
 </dataflow>
-<dataflow id="169" from="_ssdm_op_BitConcatenate.i29.i16.i13" to="shl_ln1" fromId="164" toId="44">
+<dataflow id="169" from="_ssdm_op_BitConcatenate.i21.i12.i9" to="shl_ln1" fromId="164" toId="44">
 </dataflow>
 <dataflow id="170" from="current_y_14_load" to="shl_ln1" fromId="30" toId="44">
 </dataflow>
@@ -1108,11 +1108,11 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="174" from="shl_ln" to="sub_ln35" fromId="43" toId="47">
 </dataflow>
-<dataflow id="175" from="mul_ln42" to="sub_ln35" fromId="36" toId="47">
+<dataflow id="175" from="mul_ln35" to="sub_ln35" fromId="37" toId="47">
 </dataflow>
 <dataflow id="176" from="shl_ln1" to="add_ln36" fromId="44" toId="48">
 </dataflow>
-<dataflow id="177" from="mul_ln35" to="add_ln36" fromId="38" toId="48">
+<dataflow id="177" from="mul_ln36" to="add_ln36" fromId="38" toId="48">
 </dataflow>
 <dataflow id="178" from="current_theta5_load" to="current_theta_1" fromId="39" toId="49">
 </dataflow>
@@ -1120,11 +1120,11 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="180" from="shl_ln" to="add_ln41" fromId="43" toId="50">
 </dataflow>
-<dataflow id="181" from="mul_ln42" to="add_ln41" fromId="36" toId="50">
+<dataflow id="181" from="mul_ln35" to="add_ln41" fromId="37" toId="50">
 </dataflow>
 <dataflow id="182" from="shl_ln1" to="sub_ln42" fromId="44" toId="51">
 </dataflow>
-<dataflow id="183" from="mul_ln35" to="sub_ln42" fromId="38" toId="51">
+<dataflow id="183" from="mul_ln36" to="sub_ln42" fromId="38" toId="51">
 </dataflow>
 <dataflow id="184" from="zext_ln41" to="current_theta_2" fromId="46" toId="52">
 </dataflow>
@@ -1136,7 +1136,7 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="188" from="current_theta_2" to="current_theta" fromId="52" toId="53">
 </dataflow>
-<dataflow id="190" from="_ssdm_op_PartSelect.i16.i29.i32.i32" to="tmp" fromId="189" toId="54">
+<dataflow id="190" from="_ssdm_op_PartSelect.i12.i21.i32.i32" to="tmp" fromId="189" toId="54">
 </dataflow>
 <dataflow id="191" from="add_ln36" to="tmp" fromId="48" toId="54">
 </dataflow>
@@ -1144,7 +1144,7 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="195" from="StgValue_194" to="tmp" fromId="194" toId="54">
 </dataflow>
-<dataflow id="196" from="_ssdm_op_PartSelect.i16.i29.i32.i32" to="tmp_1" fromId="189" toId="55">
+<dataflow id="196" from="_ssdm_op_PartSelect.i12.i21.i32.i32" to="tmp_1" fromId="189" toId="55">
 </dataflow>
 <dataflow id="197" from="sub_ln42" to="tmp_1" fromId="51" toId="55">
 </dataflow>
@@ -1158,7 +1158,7 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="202" from="tmp_1" to="current_y" fromId="55" toId="56">
 </dataflow>
-<dataflow id="203" from="_ssdm_op_PartSelect.i16.i29.i32.i32" to="tmp_2" fromId="189" toId="57">
+<dataflow id="203" from="_ssdm_op_PartSelect.i12.i21.i32.i32" to="tmp_2" fromId="189" toId="57">
 </dataflow>
 <dataflow id="204" from="sub_ln35" to="tmp_2" fromId="47" toId="57">
 </dataflow>
@@ -1166,7 +1166,7 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="206" from="StgValue_194" to="tmp_2" fromId="194" toId="57">
 </dataflow>
-<dataflow id="207" from="_ssdm_op_PartSelect.i16.i29.i32.i32" to="tmp_3" fromId="189" toId="58">
+<dataflow id="207" from="_ssdm_op_PartSelect.i12.i21.i32.i32" to="tmp_3" fromId="189" toId="58">
 </dataflow>
 <dataflow id="208" from="add_ln41" to="tmp_3" fromId="50" toId="58">
 </dataflow>
@@ -1192,13 +1192,13 @@ _ZNK13ap_fixed_baseILi16ELi3ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEmlILi16ELi3ELb1E
 </dataflow>
 <dataflow id="219" from="current_x_12" to="store_ln33" fromId="8" toId="62">
 </dataflow>
-<dataflow id="221" from="_ssdm_op_Write.ap_auto.i16P0A" to="write_ln33" fromId="220" toId="63">
+<dataflow id="221" from="_ssdm_op_Write.ap_auto.i12P0A" to="write_ln33" fromId="220" toId="63">
 </dataflow>
 <dataflow id="222" from="current_theta_2_out" to="write_ln33" fromId="81" toId="63">
 </dataflow>
 <dataflow id="223" from="current_theta" to="write_ln33" fromId="53" toId="63">
 </dataflow>
-<dataflow id="224" from="_ssdm_op_Write.ap_auto.i16P0A" to="write_ln33" fromId="220" toId="64">
+<dataflow id="224" from="_ssdm_op_Write.ap_auto.i12P0A" to="write_ln33" fromId="220" toId="64">
 </dataflow>
 <dataflow id="225" from="x_new_1_out" to="write_ln33" fromId="82" toId="64">
 </dataflow>

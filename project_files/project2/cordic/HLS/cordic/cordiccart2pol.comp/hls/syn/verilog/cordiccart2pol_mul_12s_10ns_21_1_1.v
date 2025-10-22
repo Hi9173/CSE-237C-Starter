@@ -2,7 +2,7 @@
 
 `timescale 1 ns / 1 ps
 
- module cordiccart2pol_mul_16s_14ns_29_1_1(din0, din1, dout);
+ module cordiccart2pol_mul_12s_10ns_21_1_1(din0, din1, dout);
 parameter ID = 1;
 parameter NUM_STAGE = 0;
 parameter din0_WIDTH = 14;
