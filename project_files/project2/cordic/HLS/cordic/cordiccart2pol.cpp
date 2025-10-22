@@ -10,19 +10,19 @@ void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
 {
  data_t current_x = x;
  data_t current_y = y;
- data_t current_theta = 0;
+ data_t current_theta = data_t(0);
  
- data_t gain = 0.607;
+ data_t gain = data_t(0.607);
  
  data_t x_new, y_new;
- if (current_y < 0) {
+ if (current_y < data_t(0)) {
     x_new = -current_y;
     y_new = current_x;
-	current_theta = current_theta - 1.5708;
+	current_theta = current_theta - data_t(1.5708);
  } else {
     x_new = current_y;
     y_new = -current_x;
-	current_theta = current_theta + 1.5708;
+	current_theta = current_theta + data_t(1.5708);
  }
  current_x = x_new;
  current_y = y_new;
@@ -30,7 +30,7 @@ void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
  for(int i = 0; i < NO_ITER; i++)
  {
   
-  if(current_y < 0)
+  if(current_y < data_t(0))
   {
    x_new = current_x - (current_y * Kvalues[i]);
    y_new = current_y + (current_x * Kvalues[i]);
