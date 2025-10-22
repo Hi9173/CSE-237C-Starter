@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'cordiccart2pol'
 ================================================================
 + General Information: 
-    * Date:           Tue Oct 21 19:30:03 2025
+    * Date:           Tue Oct 21 19:35:40 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        cordiccart2pol.comp
     * Solution:       hls (Vivado IP Flow Target)
@@ -15,14 +15,14 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +--------------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
-    |                   Modules                  | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |         |           |           |     |
-    |                   & Loops                  | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |    LUT    | URAM|
-    +--------------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
-    |+ cordiccart2pol                            |     -|  1.15|       37|  370.000|         -|       38|     -|        no|     -|   3 (1%)|  208 (~0%)|  389 (~0%)|    -|
-    | + cordiccart2pol_Pipeline_VITIS_LOOP_30_1  |     -|  1.15|       35|  350.000|         -|       35|     -|        no|     -|  2 (~0%)|  148 (~0%)|  304 (~0%)|    -|
-    |  o VITIS_LOOP_30_1                         |    II|  7.30|       33|  330.000|         4|        2|    16|       yes|     -|        -|          -|          -|    -|
-    +--------------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    +--------------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |                   Modules                  | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |    |           |           |     |
+    |                   & Loops                  | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +--------------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ cordiccart2pol                            |     -|  0.81|       36|  360.000|         -|       37|     -|        no|     -|   -|  135 (~0%)|  433 (~0%)|    -|
+    | + cordiccart2pol_Pipeline_VITIS_LOOP_30_1  |     -|  0.81|       34|  340.000|         -|       34|     -|        no|     -|   -|   94 (~0%)|  319 (~0%)|    -|
+    |  o VITIS_LOOP_30_1                         |    II|  7.30|       32|  320.000|         3|        2|    16|       yes|     -|   -|          -|          -|    -|
+    +--------------------------------------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
 
 
 ================================================================
@@ -32,10 +32,10 @@
 +-------+---------+-----------+----------+
 | Port  | Mode    | Direction | Bitwidth |
 +-------+---------+-----------+----------+
-| r     | ap_vld  | out       | 12       |
-| theta | ap_vld  | out       | 12       |
-| x     | ap_none | in        | 12       |
-| y     | ap_none | in        | 12       |
+| r     | ap_vld  | out       | 8        |
+| theta | ap_vld  | out       | 8        |
+| x     | ap_none | in        | 8        |
+| y     | ap_none | in        | 8        |
 +-------+---------+-----------+----------+
 
 * TOP LEVEL CONTROL
@@ -52,14 +52,14 @@
 == SW I/O Information
 ================================================================
 * Top Function Arguments
-+----------+-----------+--------------------------------------+
-| Argument | Direction | Datatype                             |
-+----------+-----------+--------------------------------------+
-| x        | in        | ap_fixed<12, 3, AP_TRN, AP_WRAP, 0>  |
-| y        | in        | ap_fixed<12, 3, AP_TRN, AP_WRAP, 0>  |
-| r        | out       | ap_fixed<12, 3, AP_TRN, AP_WRAP, 0>* |
-| theta    | out       | ap_fixed<12, 3, AP_TRN, AP_WRAP, 0>* |
-+----------+-----------+--------------------------------------+
++----------+-----------+-------------------------------------+
+| Argument | Direction | Datatype                            |
++----------+-----------+-------------------------------------+
+| x        | in        | ap_fixed<8, 3, AP_TRN, AP_WRAP, 0>  |
+| y        | in        | ap_fixed<8, 3, AP_TRN, AP_WRAP, 0>  |
+| r        | out       | ap_fixed<8, 3, AP_TRN, AP_WRAP, 0>* |
+| theta    | out       | ap_fixed<8, 3, AP_TRN, AP_WRAP, 0>* |
++----------+-----------+-------------------------------------+
 
 * SW-to-HW Mapping
 +----------+--------------+---------+
@@ -80,27 +80,27 @@
 +--------------------------------------------+-----+--------+-----------------+--------+----------+---------+
 | Name                                       | DSP | Pragma | Variable        | Op     | Impl     | Latency |
 +--------------------------------------------+-----+--------+-----------------+--------+----------+---------+
-| + cordiccart2pol                           | 3   |        |                 |        |          |         |
+| + cordiccart2pol                           | 0   |        |                 |        |          |         |
 |   sub_ln19_fu_109_p2                       |     |        | sub_ln19        | sub    | fabric   | 0       |
 |   sub_ln24_fu_115_p2                       |     |        | sub_ln24        | sub    | fabric   | 0       |
 |   select_ln18_fu_121_p3                    |     |        | select_ln18     | select | auto_sel | 0       |
 |   x_new_fu_130_p3                          |     |        | x_new           | select | auto_sel | 0       |
 |   y_new_fu_139_p3                          |     |        | y_new           | select | auto_sel | 0       |
-|   mul_12s_10ns_21_1_1_U11                  | 1   |        | mul_ln50        | mul    | auto     | 0       |
-|  + cordiccart2pol_Pipeline_VITIS_LOOP_30_1 | 2   |        |                 |        |          |         |
-|    mul_10ns_12s_21_1_1_U1                  | 1   |        | mul_ln35        | mul    | auto     | 0       |
-|    sub_ln35_fu_241_p2                      |     |        | sub_ln35        | sub    | fabric   | 0       |
-|    mul_10ns_12s_21_1_1_U2                  | 1   |        | mul_ln36        | mul    | auto     | 0       |
-|    add_ln36_fu_246_p2                      |     |        | add_ln36        | add    | fabric   | 0       |
-|    current_theta_1_fu_251_p2               |     |        | current_theta_1 | sub    | fabric   | 0       |
-|    add_ln41_fu_257_p2                      |     |        | add_ln41        | add    | fabric   | 0       |
-|    sub_ln42_fu_262_p2                      |     |        | sub_ln42        | sub    | fabric   | 0       |
-|    current_theta_2_fu_267_p2               |     |        | current_theta_2 | add    | fabric   | 0       |
-|    current_theta_fu_273_p3                 |     |        | current_theta   | select | auto_sel | 0       |
-|    current_y_fu_301_p3                     |     |        | current_y       | select | auto_sel | 0       |
+|   mul_8s_6ns_13_1_1_U11                    |     |        | mul_ln50        | mul    | auto     | 0       |
+|  + cordiccart2pol_Pipeline_VITIS_LOOP_30_1 | 0   |        |                 |        |          |         |
+|    mul_6ns_8s_13_1_1_U1                    |     |        | mul_ln35        | mul    | auto     | 0       |
+|    sub_ln35_fu_242_p2                      |     |        | sub_ln35        | sub    | fabric   | 0       |
+|    mul_6ns_8s_13_1_1_U2                    |     |        | mul_ln36        | mul    | auto     | 0       |
+|    add_ln36_fu_247_p2                      |     |        | add_ln36        | add    | fabric   | 0       |
+|    current_theta_1_fu_252_p2               |     |        | current_theta_1 | sub    | fabric   | 0       |
+|    add_ln41_fu_258_p2                      |     |        | add_ln41        | add    | fabric   | 0       |
+|    sub_ln42_fu_263_p2                      |     |        | sub_ln42        | sub    | fabric   | 0       |
+|    current_theta_2_fu_268_p2               |     |        | current_theta_2 | add    | fabric   | 0       |
+|    current_theta_fu_274_p3                 |     |        | current_theta   | select | auto_sel | 0       |
+|    current_y_fu_302_p3                     |     |        | current_y       | select | auto_sel | 0       |
 |    x_new_1_out                             |     |        | current_x       | select | auto_sel | 0       |
-|    i_fu_166_p2                             |     |        | i               | add    | fabric   | 0       |
-|    icmp_ln30_fu_172_p2                     |     |        | icmp_ln30       | seteq  | auto     | 0       |
+|    i_fu_167_p2                             |     |        | i               | add    | fabric   | 0       |
+|    icmp_ln30_fu_173_p2                     |     |        | icmp_ln30       | seteq  | auto     | 0       |
 +--------------------------------------------+-----+--------+-----------------+--------+----------+---------+
 
 
@@ -113,8 +113,8 @@
 +--------------------------------------------+--------+------+------+------+--------+----------+------+---------+------------------+
 | + cordiccart2pol                           |        |      | 0    | 0    |        |          |      |         |                  |
 |  + cordiccart2pol_Pipeline_VITIS_LOOP_30_1 |        |      | 0    | 0    |        |          |      |         |                  |
-|    Kvalues_U                               | rom_1p |      |      |      |        | Kvalues  | auto | 1       | 10, 16, 1        |
-|    angles_U                                | rom_1p |      |      |      |        | angles   | auto | 1       | 9, 16, 1         |
+|    Kvalues_U                               | rom_1p |      |      |      |        | Kvalues  | auto | 1       | 6, 16, 1         |
+|    angles_U                                | rom_1p |      |      |      |        | angles   | auto | 1       | 5, 16, 1         |
 +--------------------------------------------+--------+------+------+------+--------+----------+------+---------+------------------+
 
 

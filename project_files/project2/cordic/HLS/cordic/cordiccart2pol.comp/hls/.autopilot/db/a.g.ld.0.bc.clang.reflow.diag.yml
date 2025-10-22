@@ -33,7 +33,7 @@ Pass:            inline
 Name:            NeverInline
 Function:        apatb_cordiccart2pol_ir
 Args:            
-  - Callee:          'cordiccart2pol(ap_fixed<12, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<12, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<12, 3, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<12, 3, (ap_q_mode)5, (ap_o_mode)3, 0>*)'
+  - Callee:          'cordiccart2pol(ap_fixed<8, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<8, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<8, 3, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<8, 3, (ap_q_mode)5, (ap_o_mode)3, 0>*)'
     DebugLoc:        { File: cordiccart2pol.cpp, Line: 10, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_cordiccart2pol_ir
