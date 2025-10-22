@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set name cordiccart2pol_mul_24s_22ns_45_1_1
+set name cordiccart2pol_mul_20s_18ns_37_1_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
 }
@@ -25,7 +25,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_x \
     op interface \
-    ports { x { I 24 vector } } \
+    ports { x { I 20 vector } } \
 } "
 }
 
@@ -40,7 +40,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_y \
     op interface \
-    ports { y { I 24 vector } } \
+    ports { y { I 20 vector } } \
 } "
 }
 
@@ -55,7 +55,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r \
     op interface \
-    ports { r { O 24 vector } r_ap_vld { O 1 bit } } \
+    ports { r { O 20 vector } r_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -70,7 +70,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_theta \
     op interface \
-    ports { theta { O 24 vector } theta_ap_vld { O 1 bit } } \
+    ports { theta { O 20 vector } theta_ap_vld { O 1 bit } } \
 } "
 }
 
