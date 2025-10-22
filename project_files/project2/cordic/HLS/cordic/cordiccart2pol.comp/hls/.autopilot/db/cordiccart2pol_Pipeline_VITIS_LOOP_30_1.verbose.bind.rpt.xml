@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'cordiccart2pol_Pipeline_VITIS_LOOP_30_1'" level="0">
-<item name = "Date">Tue Oct 21 19:35:40 2025
+<item name = "Date">Tue Oct 21 19:39:10 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">cordiccart2pol.comp</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.492 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.154 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">34, 34, 0.340 us, 0.340 us, 32, 32, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="">35, 35, 0.350 us, 0.350 us, 32, 32, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_30_1">32, 32, 3, 2, 1, 16, yes</column>
+<column name="- VITIS_LOOP_30_1">33, 33, 4, 2, 1, 16, yes</column>
 </table>
 </item>
 </section>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'cordiccart2pol'" level="0">
-<item name = "Date">Tue Oct 21 19:35:40 2025
+<item name = "Date">Tue Oct 21 19:39:10 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">cordiccart2pol.comp</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.492 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.154 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">36, 36, 0.360 us, 0.360 us, 37, 37, no</column>
+<column name="">37, 37, 0.370 us, 0.370 us, 38, 38, no</column>
 </table>
 </item>
 <item name = "Detail">

@@ -243,9 +243,9 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-struct __cosim_s1__ { char data[1]; };
-extern "C" void cordiccart2pol(__cosim_s1__, __cosim_s1__, volatile void *, volatile void *);
-extern "C" void apatb_cordiccart2pol_hw(__cosim_s1__* __xlx_apatb_param_x, __cosim_s1__* __xlx_apatb_param_y, volatile void * __xlx_apatb_param_r, volatile void * __xlx_apatb_param_theta) {
+struct __cosim_s2__ { char data[2]; };
+extern "C" void cordiccart2pol(__cosim_s2__, __cosim_s2__, volatile void *, volatile void *);
+extern "C" void apatb_cordiccart2pol_hw(__cosim_s2__* __xlx_apatb_param_x, __cosim_s2__* __xlx_apatb_param_y, volatile void * __xlx_apatb_param_r, volatile void * __xlx_apatb_param_theta) {
 using hls::sim::createStream;
   // DUT call
   cordiccart2pol(*__xlx_apatb_param_x, *__xlx_apatb_param_y, __xlx_apatb_param_r, __xlx_apatb_param_theta);

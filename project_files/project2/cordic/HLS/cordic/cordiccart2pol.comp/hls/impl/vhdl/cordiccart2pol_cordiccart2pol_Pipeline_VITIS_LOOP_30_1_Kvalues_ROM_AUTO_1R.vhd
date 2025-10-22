@@ -9,7 +9,7 @@ use ieee.std_logic_unsigned.all;
 
 entity cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_30_1_Kvalues_ROM_AUTO_1R is 
     generic(
-             DataWidth     : integer := 6; 
+             DataWidth     : integer := 10; 
              AddressWidth     : integer := 4; 
              AddressRange    : integer := 16
     ); 
@@ -32,10 +32,10 @@ signal address0_tmp : std_logic_vector(AddressWidth-1 downto 0);
 type mem_array is array (0 to AddressRange-1) of std_logic_vector (DataWidth-1 downto 0); 
 
 signal mem0 : mem_array := (
-    0 => "100000", 1 => "010000", 2 => "001000", 3 => "000100", 
-    4 => "000010", 5 => "000001", 6 => "000000", 7 => "000000", 
-    8 => "000000", 9 => "000000", 10 => "000000", 11 => "000000", 
-    12 => "000000", 13 => "000000", 14 => "000000", 15 => "000000");
+    0 => "1000000000", 1 => "0100000000", 2 => "0010000000", 3 => "0001000000", 
+    4 => "0000100000", 5 => "0000010000", 6 => "0000001000", 7 => "0000000100", 
+    8 => "0000000010", 9 => "0000000001", 10 => "0000000000", 11 => "0000000000", 
+    12 => "0000000000", 13 => "0000000000", 14 => "0000000000", 15 => "0000000000");
 
 
 

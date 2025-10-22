@@ -17,7 +17,7 @@
   },
   "1": {
     "basicblocks": 1,
-    "calls": "3 2",
+    "calls": "2 3",
     "file": "cordiccart2pol.pp.0.cpp",
     "fileloc": 0,
     "instructions": 3,
@@ -28,18 +28,18 @@
     "basicblocks": 1,
     "calls": "",
     "file": "cordiccart2pol.cpp",
-    "fileloc": 6,
+    "fileloc": 4,
     "instructions": 17,
-    "name": "__cxx_global_var_init.1",
-    "total_instructions": 6193
+    "name": "__cxx_global_var_init",
+    "total_instructions": 5857
   },
   "3": {
     "basicblocks": 1,
     "calls": "",
     "file": "cordiccart2pol.cpp",
-    "fileloc": 4,
+    "fileloc": 6,
     "instructions": 17,
-    "name": "__cxx_global_var_init",
-    "total_instructions": 5857
+    "name": "__cxx_global_var_init.1",
+    "total_instructions": 6193
   }
 }
