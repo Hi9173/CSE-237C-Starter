@@ -1,0 +1,201 @@
+{
+  "0": {
+    "basicblocks": 7,
+    "calls": "16",
+    "file": "cordiccart2pol.cpp",
+    "fileloc": 32,
+    "instructions": 70,
+    "loads": {
+      "G": 2
+    },
+    "name": "cordiccart2pol",
+    "stores": {
+      "L": 2,
+      "T": 2
+    },
+    "total_instructions": 33459
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 309,
+    "instructions": 32,
+    "name": "data",
+    "total_instructions": 279
+  },
+  "10": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 303,
+    "instructions": 46,
+    "name": "fp_struct",
+    "total_instructions": 309
+  },
+  "11": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 349,
+    "instructions": 4,
+    "name": "__signbit",
+    "total_instructions": 9
+  },
+  "12": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 283,
+    "instructions": 55,
+    "loads": {
+      "L": 1
+    },
+    "name": "fp_struct",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 318
+  },
+  "13": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "atan2float.cpp",
+    "fileloc": 6,
+    "instructions": 2,
+    "name": "atan2f",
+    "total_instructions": 31631
+  },
+  "14": {
+    "basicblocks": 1,
+    "calls": "17 7",
+    "file": "hls_nan.h",
+    "fileloc": 10,
+    "instructions": 35,
+    "loads": {
+      "L": 3
+    },
+    "name": "generic_nan<float>",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 393
+  },
+  "15": {
+    "basicblocks": 3,
+    "calls": "12",
+    "file": "hls_isnan.h",
+    "fileloc": 16,
+    "instructions": 18,
+    "name": "generic_isnan<float>",
+    "total_instructions": 389
+  },
+  "16": {
+    "basicblocks": 16,
+    "calls": "13",
+    "file": "cordiccart2pol.cpp",
+    "fileloc": 4,
+    "instructions": 123,
+    "loads": {
+      "L": 4
+    },
+    "name": "init_cart2pol_LUTs",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 33023
+  },
+  "17": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 281,
+    "instructions": 4,
+    "name": "fp_struct",
+    "total_instructions": 4
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "hls_cordic_tablescirc.cpp",
+    "fileloc": 166,
+    "instructions": 129,
+    "name": "__cxx_global_var_init.127",
+    "total_instructions": 2177
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "6",
+    "file": "hls_abs.h",
+    "fileloc": 13,
+    "instructions": 2,
+    "name": "generic_abs<float>",
+    "total_instructions": 959
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "2",
+    "file": "hls_cordic_tablescirc.pp.cpp",
+    "fileloc": 0,
+    "instructions": 2,
+    "name": "",
+    "total_instructions": 2179
+  },
+  "5": {
+    "basicblocks": 3,
+    "calls": "12",
+    "file": "hls_isinf.h",
+    "fileloc": 16,
+    "instructions": 18,
+    "name": "generic_isinf<float>",
+    "total_instructions": 388
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "12 12 7",
+    "file": "hls_copysign.h",
+    "fileloc": 10,
+    "instructions": 18,
+    "loads": {
+      "L": 1
+    },
+    "name": "generic_copysign<float>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 957
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "9",
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 2,
+    "name": "to_ieee",
+    "total_instructions": 303
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 340,
+    "instructions": 24,
+    "name": "mantissa",
+    "total_instructions": 178
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "x_hls_utils.h",
+    "fileloc": 322,
+    "instructions": 18,
+    "loads": {
+      "L": 1
+    },
+    "name": "to_float",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 301
+  }
+}
