@@ -43,7 +43,7 @@ Diagnostics:
     FilePath:        cordiccart2pol.cpp
     Replacements:    
       - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp
-        Offset:          1168142
+        Offset:          1138336
         Length:          0
         ReplacementText: 'VITIS_LOOP_18_1: '
 ...

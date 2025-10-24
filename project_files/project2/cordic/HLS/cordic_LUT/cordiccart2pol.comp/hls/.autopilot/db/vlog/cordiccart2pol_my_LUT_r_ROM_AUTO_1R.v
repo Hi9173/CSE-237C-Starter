@@ -8,9 +8,9 @@ module cordiccart2pol_my_LUT_r_ROM_AUTO_1R (
     address0, ce0, q0, 
     reset, clk);
 
-parameter DataWidth = 4;
-parameter AddressWidth = 10;
-parameter AddressRange = 1024;
+parameter DataWidth = 3;
+parameter AddressWidth = 8;
+parameter AddressRange = 256;
  
 input[AddressWidth-1:0] address0;
 input ce0;
