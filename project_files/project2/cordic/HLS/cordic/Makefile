@@ -83,12 +83,12 @@ test: $(EXAMPLES_LOG)
 report: hls
 	cp -f $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt $(CURDIR) || true
 
-
+	
 $(CURDIR)/export_$(TOP).tcl:
     @{ \
-		echo "open_component $(TOP).comp"; \
-      echo "export_design -format ip_catalog -rtl verilog -version 1.0 -ipname $(TOP) "; \
-      echo "exit"; \
+        echo "open_component $(TOP).comp"; \
+        echo "export_design -format ip_catalog -rtl verilog -version 1.0 -ipname $(TOP) "; \
+        echo "exit"; \
     } > $(CURDIR)/export_$(TOP).tcl
 
 
