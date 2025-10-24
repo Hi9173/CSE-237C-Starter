@@ -83,17 +83,16 @@ test: $(EXAMPLES_LOG)
 report: hls
 	cp -f $(TOP).comp/hls/syn/report/$(TOP)_csynth.rpt $(CURDIR) || true
 
-
 $(CURDIR)/export_$(TOP).tcl:
-	@cat > $@ <<'EOF'
-open_component $(TOP).comp
-export_design -format ip_catalog -rtl verilog -version 1.0 -ipname $(TOP)
-exit
-EOF
+    @{ \
+        echo "open_component $(TOP).comp"; \
+        echo "export_design -format ip_catalog -rtl verilog -version 1.0 -ipname $(TOP) "; \
+        echo "exit"; \
+    } > $(CURDIR)/export_$(TOP).tcl
 
 
 ip: hls $(CURDIR)/export_$(TOP).tcl
-	$(HLS_COMPILER) $(CURDIR)/export_$(TOP).tcl || { s=$$?; echo "$(HLS_COMPILER) $(CURDIR)/export_$(TOP).tcl failed $$s" >&2; exit $$s; }
+    $(HLS_COMPILER) $(CURDIR)/export_$(TOP).tcl || { s=$$?; echo "$(HLS_COMPILER) -source $(CURDIR)/export_$(TOP).tcl failed $$s" >&2; exit $$s; }
 
 clean:
 	rm -rf *.o *.log *.bin *.tcl *.comp *.rpt logs hls out.dat
