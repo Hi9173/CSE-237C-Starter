@@ -1,0 +1,133 @@
+
+
+================================================================
+== Synthesis Summary Report of 'cordiccart2pol'
+================================================================
++ General Information: 
+    * Date:           Thu Oct 23 23:42:20 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        cordiccart2pol.comp
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+------------+-----------+-----+
+    |                   Modules                  | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |         |            |           |     |
+    |                   & Loops                  | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF     |    LUT    | URAM|
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+------------+-----------+-----+
+    |+ cordiccart2pol                            |     -|  0.04|      210|  2.100e+03|         -|      211|     -|        no|     -|  10 (4%)|   1305 (1%)|  2124 (3%)|    -|
+    | + cordiccart2pol_Pipeline_VITIS_LOOP_44_1  |     -|  0.04|      203|  2.030e+03|         -|      203|     -|        no|     -|   7 (3%)|  1023 (~0%)|  1518 (2%)|    -|
+    |  o VITIS_LOOP_44_1                         |    II|  7.30|      201|  2.010e+03|        12|       10|    20|       yes|     -|        -|           -|          -|    -|
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+------------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++-------+---------+-----------+----------+
+| Port  | Mode    | Direction | Bitwidth |
++-------+---------+-----------+----------+
+| r     | ap_vld  | out       | 32       |
+| theta | ap_vld  | out       | 32       |
+| x     | ap_none | in        | 32       |
+| y     | ap_none | in        | 32       |
++-------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| x        | in        | float    |
+| y        | in        | float    |
+| r        | out       | float*   |
+| theta    | out       | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| x        | x            | port    |
+| y        | y            | port    |
+| r        | r            | port    |
+| r        | r_ap_vld     | port    |
+| theta    | theta        | port    |
+| theta    | theta_ap_vld | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------------+-----+--------+-----------------+--------+----------+---------+
+| Name                                       | DSP | Pragma | Variable        | Op     | Impl     | Latency |
++--------------------------------------------+-----+--------+-----------------+--------+----------+---------+
+| + cordiccart2pol                           | 10  |        |                 |        |          |         |
+|   icmp_ln32_fu_137_p2                      |     |        | icmp_ln32       | setne  | auto     | 0       |
+|   icmp_ln32_1_fu_143_p2                    |     |        | icmp_ln32_1     | seteq  | auto     | 0       |
+|   or_ln32_fu_149_p2                        |     |        | or_ln32         | or     | auto     | 0       |
+|   fcmp_32ns_32ns_1_2_no_dsp_1_U16          |     |        | tmp_1           | fcmp   | auto     | 1       |
+|   and_ln32_fu_155_p2                       |     |        | and_ln32        | and    | auto     | 0       |
+|   xor_ln33_fu_168_p2                       |     |        | xor_ln33        | xor    | auto     | 0       |
+|   fcmp_32ns_32ns_1_2_no_dsp_1_U16          |     |        | xor_ln38        | xor    | auto     | 0       |
+|   current_theta_fu_224_p3                  |     |        | current_theta   | select | auto_sel | 0       |
+|   x_new_4_fu_233_p3                        |     |        | x_new_4         | select | auto_sel | 0       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U15        |     |        | y_new_4         | select | auto_sel | 0       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U15        | 3   |        | mul             | fmul   | maxdsp   | 3       |
+|  + cordiccart2pol_Pipeline_VITIS_LOOP_44_1 | 7   |        |                 |        |          |         |
+|    icmp_ln47_fu_235_p2                     |     |        | icmp_ln47       | setne  | auto     | 0       |
+|    icmp_ln47_1_fu_241_p2                   |     |        | icmp_ln47_1     | seteq  | auto     | 0       |
+|    or_ln47_fu_247_p2                       |     |        | or_ln47         | or     | auto     | 0       |
+|    and_ln47_fu_253_p2                      |     |        | and_ln47        | and    | auto     | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U4        | 3   |        | mul2            | fmul   | maxdsp   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1   | 2   |        | x_new           | fsub   | fulldsp  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2   | 2   |        | y_new           | fadd   | fulldsp  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1   | 2   |        | current_theta_2 | fsub   | fulldsp  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1   | 2   |        | x_new_1         | fsub   | fulldsp  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2   | 2   |        | y_new_1         | fadd   | fulldsp  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2   | 2   |        | current_theta_3 | fadd   | fulldsp  | 4       |
+|    current_theta_1_fu_259_p3               |     |        | current_theta_1 | select | auto_sel | 0       |
+|    x_new_6_out                             |     |        | current_x       | select | auto_sel | 0       |
+|    current_y_fu_279_p3                     |     |        | current_y       | select | auto_sel | 0       |
+|    i_fu_188_p2                             |     |        | i               | add    | fabric   | 0       |
+|    icmp_ln44_fu_194_p2                     |     |        | icmp_ln44       | seteq  | auto     | 0       |
++--------------------------------------------+-----+--------+-----------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++--------------------------------------------+--------+------+------+------+--------+----------+------+---------+------------------+
+| Name                                       | Usage  | Type | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                                            |        |      |      |      |        |          |      |         | Banks            |
++--------------------------------------------+--------+------+------+------+--------+----------+------+---------+------------------+
+| + cordiccart2pol                           |        |      | 0    | 0    |        |          |      |         |                  |
+|  + cordiccart2pol_Pipeline_VITIS_LOOP_44_1 |        |      | 0    | 0    |        |          |      |         |                  |
+|    Kvalues_U                               | rom_1p |      |      |      |        | Kvalues  | auto | 1       | 32, 20, 1        |
+|    angles_U                                | rom_1p |      |      |      |        | angles   | auto | 1       | 32, 20, 1        |
++--------------------------------------------+--------+------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+  No pragmas found
+

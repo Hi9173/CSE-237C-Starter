@@ -1,0 +1,13 @@
+---
+MainSourceFile:  /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_44_1:  '
+    FileOffset:      44
+    FilePath:        cordiccart2pol.cpp
+    Replacements:    
+      - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp
+        Offset:          11368
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_44_1: '
+...
