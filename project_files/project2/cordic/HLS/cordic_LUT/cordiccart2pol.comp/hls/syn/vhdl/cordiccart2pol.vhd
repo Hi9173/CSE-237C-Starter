@@ -16,11 +16,11 @@ port (
     ap_done : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    x : IN STD_LOGIC_VECTOR (6 downto 0);
-    y : IN STD_LOGIC_VECTOR (6 downto 0);
-    r : OUT STD_LOGIC_VECTOR (6 downto 0);
+    x : IN STD_LOGIC_VECTOR (5 downto 0);
+    y : IN STD_LOGIC_VECTOR (5 downto 0);
+    r : OUT STD_LOGIC_VECTOR (5 downto 0);
     r_ap_vld : OUT STD_LOGIC;
-    theta : OUT STD_LOGIC_VECTOR (6 downto 0);
+    theta : OUT STD_LOGIC_VECTOR (5 downto 0);
     theta_ap_vld : OUT STD_LOGIC );
 end;
 
@@ -28,7 +28,7 @@ end;
 architecture behav of cordiccart2pol is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "cordiccart2pol_cordiccart2pol,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=5.225000,HLS_SYN_LAT=1,HLS_SYN_TPT=none,HLS_SYN_MEM=13,HLS_SYN_DSP=0,HLS_SYN_FF=2,HLS_SYN_LUT=48,HLS_VERSION=2024_2}";
+    "cordiccart2pol_cordiccart2pol,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=5.420000,HLS_SYN_LAT=1,HLS_SYN_TPT=none,HLS_SYN_MEM=4,HLS_SYN_DSP=0,HLS_SYN_FF=2,HLS_SYN_LUT=46,HLS_VERSION=2024_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
@@ -36,9 +36,9 @@ architecture behav of cordiccart2pol is
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
-    constant ap_const_lv32_6 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000110";
-    constant ap_const_lv7_1 : STD_LOGIC_VECTOR (6 downto 0) := "0000001";
     constant ap_const_lv32_5 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000101";
+    constant ap_const_lv6_1 : STD_LOGIC_VECTOR (5 downto 0) := "000001";
+    constant ap_const_lv32_4 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000100";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
 
@@ -47,10 +47,10 @@ architecture behav of cordiccart2pol is
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
-    signal my_LUT_r_address0 : STD_LOGIC_VECTOR (13 downto 0);
-    signal my_LUT_r_q0 : STD_LOGIC_VECTOR (5 downto 0);
-    signal my_LUT_th_address0 : STD_LOGIC_VECTOR (13 downto 0);
-    signal my_LUT_th_q0 : STD_LOGIC_VECTOR (6 downto 0);
+    signal my_LUT_r_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal my_LUT_r_q0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal my_LUT_th_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal my_LUT_th_q0 : STD_LOGIC_VECTOR (5 downto 0);
     signal zext_ln26_fu_259_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
@@ -60,25 +60,25 @@ architecture behav of cordiccart2pol is
     signal tmp_1_fu_117_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal xor_ln11_fu_125_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal and_ln11_fu_131_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal trunc_ln11_fu_149_p1 : STD_LOGIC_VECTOR (4 downto 0);
+    signal trunc_ln11_fu_149_p1 : STD_LOGIC_VECTOR (3 downto 0);
     signal and_ln11_1_fu_137_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal or_ln11_fu_143_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal xor_ln11_1_fu_163_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal fixed_x_1_fu_153_p4 : STD_LOGIC_VECTOR (6 downto 0);
-    signal fixed_x_fu_111_p2 : STD_LOGIC_VECTOR (6 downto 0);
+    signal fixed_x_1_fu_153_p4 : STD_LOGIC_VECTOR (5 downto 0);
+    signal fixed_x_fu_111_p2 : STD_LOGIC_VECTOR (5 downto 0);
     signal tmp_2_fu_177_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal tmp_3_fu_191_p3 : STD_LOGIC_VECTOR (0 downto 0);
     signal xor_ln12_fu_199_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal and_ln12_fu_205_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal trunc_ln12_fu_223_p1 : STD_LOGIC_VECTOR (4 downto 0);
+    signal trunc_ln12_fu_223_p1 : STD_LOGIC_VECTOR (3 downto 0);
     signal and_ln12_1_fu_211_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal or_ln12_fu_217_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal xor_ln12_1_fu_237_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal fixed_y_1_fu_227_p4 : STD_LOGIC_VECTOR (6 downto 0);
-    signal fixed_y_fu_185_p2 : STD_LOGIC_VECTOR (6 downto 0);
-    signal fixed_x_2_fu_169_p3 : STD_LOGIC_VECTOR (6 downto 0);
-    signal fixed_y_2_fu_243_p3 : STD_LOGIC_VECTOR (6 downto 0);
-    signal index_fu_251_p3 : STD_LOGIC_VECTOR (13 downto 0);
+    signal fixed_y_1_fu_227_p4 : STD_LOGIC_VECTOR (5 downto 0);
+    signal fixed_y_fu_185_p2 : STD_LOGIC_VECTOR (5 downto 0);
+    signal fixed_x_2_fu_169_p3 : STD_LOGIC_VECTOR (5 downto 0);
+    signal fixed_y_2_fu_243_p3 : STD_LOGIC_VECTOR (5 downto 0);
+    signal index_fu_251_p3 : STD_LOGIC_VECTOR (11 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (1 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
@@ -92,9 +92,9 @@ architecture behav of cordiccart2pol is
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (13 downto 0);
+        address0 : IN STD_LOGIC_VECTOR (11 downto 0);
         ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (5 downto 0) );
+        q0 : OUT STD_LOGIC_VECTOR (4 downto 0) );
     end component;
 
 
@@ -106,9 +106,9 @@ architecture behav of cordiccart2pol is
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (13 downto 0);
+        address0 : IN STD_LOGIC_VECTOR (11 downto 0);
         ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (6 downto 0) );
+        q0 : OUT STD_LOGIC_VECTOR (5 downto 0) );
     end component;
 
 
@@ -116,9 +116,9 @@ architecture behav of cordiccart2pol is
 begin
     my_LUT_r_U : component cordiccart2pol_my_LUT_r_ROM_AUTO_1R
     generic map (
-        DataWidth => 6,
-        AddressRange => 16384,
-        AddressWidth => 14)
+        DataWidth => 5,
+        AddressRange => 4096,
+        AddressWidth => 12)
     port map (
         clk => ap_clk,
         reset => ap_rst,
@@ -128,9 +128,9 @@ begin
 
     my_LUT_th_U : component cordiccart2pol_my_LUT_th_ROM_AUTO_1R
     generic map (
-        DataWidth => 7,
-        AddressRange => 16384,
-        AddressWidth => 14)
+        DataWidth => 6,
+        AddressRange => 4096,
+        AddressWidth => 12)
     port map (
         clk => ap_clk,
         reset => ap_rst,
@@ -220,14 +220,14 @@ begin
     fixed_x_2_fu_169_p3 <= 
         fixed_x_1_fu_153_p4 when (xor_ln11_1_fu_163_p2(0) = '1') else 
         fixed_x_fu_111_p2;
-    fixed_x_fu_111_p2 <= std_logic_vector(shift_left(unsigned(x),to_integer(unsigned('0' & ap_const_lv7_1(7-1 downto 0)))));
+    fixed_x_fu_111_p2 <= std_logic_vector(shift_left(unsigned(x),to_integer(unsigned('0' & ap_const_lv6_1(6-1 downto 0)))));
     fixed_y_1_fu_227_p4 <= ((tmp_2_fu_177_p3 & trunc_ln12_fu_223_p1) & ap_const_lv1_0);
     fixed_y_2_fu_243_p3 <= 
         fixed_y_1_fu_227_p4 when (xor_ln12_1_fu_237_p2(0) = '1') else 
         fixed_y_fu_185_p2;
-    fixed_y_fu_185_p2 <= std_logic_vector(shift_left(unsigned(y),to_integer(unsigned('0' & ap_const_lv7_1(7-1 downto 0)))));
+    fixed_y_fu_185_p2 <= std_logic_vector(shift_left(unsigned(y),to_integer(unsigned('0' & ap_const_lv6_1(6-1 downto 0)))));
     index_fu_251_p3 <= (fixed_x_2_fu_169_p3 & fixed_y_2_fu_243_p3);
-    my_LUT_r_address0 <= zext_ln26_fu_259_p1(14 - 1 downto 0);
+    my_LUT_r_address0 <= zext_ln26_fu_259_p1(12 - 1 downto 0);
 
     my_LUT_r_ce0_local_assign_proc : process(ap_start, ap_CS_fsm_state1)
     begin
@@ -238,7 +238,7 @@ begin
         end if; 
     end process;
 
-    my_LUT_th_address0 <= zext_ln26_fu_259_p1(14 - 1 downto 0);
+    my_LUT_th_address0 <= zext_ln26_fu_259_p1(12 - 1 downto 0);
 
     my_LUT_th_ce0_local_assign_proc : process(ap_start, ap_CS_fsm_state1)
     begin
@@ -251,7 +251,7 @@ begin
 
     or_ln11_fu_143_p2 <= (tmp_fu_103_p3 or and_ln11_fu_131_p2);
     or_ln12_fu_217_p2 <= (tmp_2_fu_177_p3 or and_ln12_fu_205_p2);
-    r <= std_logic_vector(IEEE.numeric_std.resize(unsigned(my_LUT_r_q0),7));
+    r <= std_logic_vector(IEEE.numeric_std.resize(unsigned(my_LUT_r_q0),6));
 
     r_ap_vld_assign_proc : process(ap_CS_fsm_state2)
     begin
@@ -273,12 +273,12 @@ begin
         end if; 
     end process;
 
-    tmp_1_fu_117_p3 <= x(5 downto 5);
-    tmp_2_fu_177_p3 <= y(6 downto 6);
-    tmp_3_fu_191_p3 <= y(5 downto 5);
-    tmp_fu_103_p3 <= x(6 downto 6);
-    trunc_ln11_fu_149_p1 <= x(5 - 1 downto 0);
-    trunc_ln12_fu_223_p1 <= y(5 - 1 downto 0);
+    tmp_1_fu_117_p3 <= x(4 downto 4);
+    tmp_2_fu_177_p3 <= y(5 downto 5);
+    tmp_3_fu_191_p3 <= y(4 downto 4);
+    tmp_fu_103_p3 <= x(5 downto 5);
+    trunc_ln11_fu_149_p1 <= x(4 - 1 downto 0);
+    trunc_ln12_fu_223_p1 <= y(4 - 1 downto 0);
     xor_ln11_1_fu_163_p2 <= (or_ln11_fu_143_p2 xor and_ln11_1_fu_137_p2);
     xor_ln11_fu_125_p2 <= (tmp_fu_103_p3 xor ap_const_lv1_1);
     xor_ln12_1_fu_237_p2 <= (or_ln12_fu_217_p2 xor and_ln12_1_fu_211_p2);

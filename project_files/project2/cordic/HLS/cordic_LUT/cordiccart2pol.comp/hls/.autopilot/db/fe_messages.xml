@@ -5,8 +5,8 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cordiccart2pol.cpp:20:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="cordiccart2pol" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cordiccart2pol.cpp:9:0" msg_body="Unrolling loop 'VITIS_LOOP_18_1' (cordiccart2pol.cpp:18:22) in function 'cordiccart2pol' completely with a factor of 7">
-        <args Factor="7" LoopLoc="cordiccart2pol.cpp:18:22" LoopName="VITIS_LOOP_18_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cordiccart2pol.cpp:9:0" msg_body="Unrolling loop 'VITIS_LOOP_18_1' (cordiccart2pol.cpp:18:22) in function 'cordiccart2pol' completely with a factor of 6">
+        <args Factor="6" LoopLoc="cordiccart2pol.cpp:18:22" LoopName="VITIS_LOOP_18_1"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

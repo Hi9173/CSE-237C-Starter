@@ -23,9 +23,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="16" bw="7" op_0_bw="7" op_1_bw="7">
+<Node id="16" bw="6" op_0_bw="6" op_1_bw="6">
 <![CDATA[
-entry_ifconv:9 %y_read = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %y
+entry_ifconv:9 %y_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %y
 
 ]]></Node>
 <StgValue><ssdm name="y_read"/></StgValue>
@@ -38,9 +38,9 @@ entry_ifconv:9 %y_read = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %y
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="17" bw="7" op_0_bw="7" op_1_bw="7">
+<Node id="17" bw="6" op_0_bw="6" op_1_bw="6">
 <![CDATA[
-entry_ifconv:10 %x_read = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %x
+entry_ifconv:10 %x_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %x
 
 ]]></Node>
 <StgValue><ssdm name="x_read"/></StgValue>
@@ -53,9 +53,9 @@ entry_ifconv:10 %x_read = read i7 @_ssdm_op_Read.ap_auto.i7, i7 %x
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="18" bw="1" op_0_bw="1" op_1_bw="7" op_2_bw="32">
+<Node id="18" bw="1" op_0_bw="1" op_1_bw="6" op_2_bw="32">
 <![CDATA[
-entry_ifconv:11 %tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %x_read, i32 6
+entry_ifconv:11 %tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %x_read, i32 5
 
 ]]></Node>
 <StgValue><ssdm name="tmp"/></StgValue>
@@ -68,9 +68,9 @@ entry_ifconv:11 %tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %x_read, i
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="19" bw="7" op_0_bw="7" op_1_bw="7">
+<Node id="19" bw="6" op_0_bw="6" op_1_bw="6">
 <![CDATA[
-entry_ifconv:12 %fixed_x = shl i7 %x_read, i7 1
+entry_ifconv:12 %fixed_x = shl i6 %x_read, i6 1
 
 ]]></Node>
 <StgValue><ssdm name="fixed_x"/></StgValue>
@@ -83,9 +83,9 @@ entry_ifconv:12 %fixed_x = shl i7 %x_read, i7 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="20" bw="1" op_0_bw="1" op_1_bw="7" op_2_bw="32">
+<Node id="20" bw="1" op_0_bw="1" op_1_bw="6" op_2_bw="32">
 <![CDATA[
-entry_ifconv:13 %tmp_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %x_read, i32 5
+entry_ifconv:13 %tmp_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %x_read, i32 4
 
 ]]></Node>
 <StgValue><ssdm name="tmp_1"/></StgValue>
@@ -158,9 +158,9 @@ entry_ifconv:17 %or_ln11 = or i1 %tmp, i1 %and_ln11
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="25" bw="5" op_0_bw="7">
+<Node id="25" bw="4" op_0_bw="6">
 <![CDATA[
-entry_ifconv:18 %trunc_ln11 = trunc i7 %x_read
+entry_ifconv:18 %trunc_ln11 = trunc i6 %x_read
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln11"/></StgValue>
@@ -173,9 +173,9 @@ entry_ifconv:18 %trunc_ln11 = trunc i7 %x_read
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="26" bw="7" op_0_bw="7" op_1_bw="1" op_2_bw="5" op_3_bw="1">
+<Node id="26" bw="6" op_0_bw="6" op_1_bw="1" op_2_bw="4" op_3_bw="1">
 <![CDATA[
-entry_ifconv:19 %fixed_x_1 = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i1.i5.i1, i1 %tmp, i5 %trunc_ln11, i1 0
+entry_ifconv:19 %fixed_x_1 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i1.i4.i1, i1 %tmp, i4 %trunc_ln11, i1 0
 
 ]]></Node>
 <StgValue><ssdm name="fixed_x_1"/></StgValue>
@@ -203,9 +203,9 @@ entry_ifconv:20 %xor_ln11_1 = xor i1 %and_ln11_1, i1 %or_ln11
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="28" bw="7" op_0_bw="1" op_1_bw="7" op_2_bw="7">
+<Node id="28" bw="6" op_0_bw="1" op_1_bw="6" op_2_bw="6">
 <![CDATA[
-entry_ifconv:21 %fixed_x_2 = select i1 %xor_ln11_1, i7 %fixed_x_1, i7 %fixed_x
+entry_ifconv:21 %fixed_x_2 = select i1 %xor_ln11_1, i6 %fixed_x_1, i6 %fixed_x
 
 ]]></Node>
 <StgValue><ssdm name="fixed_x_2"/></StgValue>
@@ -218,9 +218,9 @@ entry_ifconv:21 %fixed_x_2 = select i1 %xor_ln11_1, i7 %fixed_x_1, i7 %fixed_x
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="29" bw="1" op_0_bw="1" op_1_bw="7" op_2_bw="32">
+<Node id="29" bw="1" op_0_bw="1" op_1_bw="6" op_2_bw="32">
 <![CDATA[
-entry_ifconv:22 %tmp_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %y_read, i32 6
+entry_ifconv:22 %tmp_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %y_read, i32 5
 
 ]]></Node>
 <StgValue><ssdm name="tmp_2"/></StgValue>
@@ -233,9 +233,9 @@ entry_ifconv:22 %tmp_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %y_read,
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="30" bw="7" op_0_bw="7" op_1_bw="7">
+<Node id="30" bw="6" op_0_bw="6" op_1_bw="6">
 <![CDATA[
-entry_ifconv:23 %fixed_y = shl i7 %y_read, i7 1
+entry_ifconv:23 %fixed_y = shl i6 %y_read, i6 1
 
 ]]></Node>
 <StgValue><ssdm name="fixed_y"/></StgValue>
@@ -248,9 +248,9 @@ entry_ifconv:23 %fixed_y = shl i7 %y_read, i7 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="31" bw="1" op_0_bw="1" op_1_bw="7" op_2_bw="32">
+<Node id="31" bw="1" op_0_bw="1" op_1_bw="6" op_2_bw="32">
 <![CDATA[
-entry_ifconv:24 %tmp_3 = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %y_read, i32 5
+entry_ifconv:24 %tmp_3 = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %y_read, i32 4
 
 ]]></Node>
 <StgValue><ssdm name="tmp_3"/></StgValue>
@@ -323,9 +323,9 @@ entry_ifconv:28 %or_ln12 = or i1 %tmp_2, i1 %and_ln12
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="36" bw="5" op_0_bw="7">
+<Node id="36" bw="4" op_0_bw="6">
 <![CDATA[
-entry_ifconv:29 %trunc_ln12 = trunc i7 %y_read
+entry_ifconv:29 %trunc_ln12 = trunc i6 %y_read
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln12"/></StgValue>
@@ -338,9 +338,9 @@ entry_ifconv:29 %trunc_ln12 = trunc i7 %y_read
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="37" bw="7" op_0_bw="7" op_1_bw="1" op_2_bw="5" op_3_bw="1">
+<Node id="37" bw="6" op_0_bw="6" op_1_bw="1" op_2_bw="4" op_3_bw="1">
 <![CDATA[
-entry_ifconv:30 %fixed_y_1 = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i1.i5.i1, i1 %tmp_2, i5 %trunc_ln12, i1 0
+entry_ifconv:30 %fixed_y_1 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i1.i4.i1, i1 %tmp_2, i4 %trunc_ln12, i1 0
 
 ]]></Node>
 <StgValue><ssdm name="fixed_y_1"/></StgValue>
@@ -368,9 +368,9 @@ entry_ifconv:31 %xor_ln12_1 = xor i1 %and_ln12_1, i1 %or_ln12
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="39" bw="7" op_0_bw="1" op_1_bw="7" op_2_bw="7">
+<Node id="39" bw="6" op_0_bw="1" op_1_bw="6" op_2_bw="6">
 <![CDATA[
-entry_ifconv:32 %fixed_y_2 = select i1 %xor_ln12_1, i7 %fixed_y_1, i7 %fixed_y
+entry_ifconv:32 %fixed_y_2 = select i1 %xor_ln12_1, i6 %fixed_y_1, i6 %fixed_y
 
 ]]></Node>
 <StgValue><ssdm name="fixed_y_2"/></StgValue>
@@ -383,9 +383,9 @@ entry_ifconv:32 %fixed_y_2 = select i1 %xor_ln12_1, i7 %fixed_y_1, i7 %fixed_y
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="40" bw="14" op_0_bw="14" op_1_bw="7" op_2_bw="7">
+<Node id="40" bw="12" op_0_bw="12" op_1_bw="6" op_2_bw="6">
 <![CDATA[
-entry_ifconv:33 %index = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i7.i7, i7 %fixed_x_2, i7 %fixed_y_2
+entry_ifconv:33 %index = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i6.i6, i6 %fixed_x_2, i6 %fixed_y_2
 
 ]]></Node>
 <StgValue><ssdm name="index"/></StgValue>
@@ -398,9 +398,9 @@ entry_ifconv:33 %index = bitconcatenate i14 @_ssdm_op_BitConcatenate.i14.i7.i7, 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="41" bw="64" op_0_bw="14">
+<Node id="41" bw="64" op_0_bw="12">
 <![CDATA[
-entry_ifconv:34 %zext_ln26 = zext i14 %index
+entry_ifconv:34 %zext_ln26 = zext i12 %index
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln26"/></StgValue>
@@ -413,9 +413,9 @@ entry_ifconv:34 %zext_ln26 = zext i14 %index
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="42" bw="14" op_0_bw="6" op_1_bw="64" op_2_bw="64">
+<Node id="42" bw="12" op_0_bw="5" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-entry_ifconv:35 %my_LUT_r_addr = getelementptr i6 %my_LUT_r, i64 0, i64 %zext_ln26
+entry_ifconv:35 %my_LUT_r_addr = getelementptr i5 %my_LUT_r, i64 0, i64 %zext_ln26
 
 ]]></Node>
 <StgValue><ssdm name="my_LUT_r_addr"/></StgValue>
@@ -428,9 +428,9 @@ entry_ifconv:35 %my_LUT_r_addr = getelementptr i6 %my_LUT_r, i64 0, i64 %zext_ln
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="43" bw="6" op_0_bw="14">
+<Node id="43" bw="5" op_0_bw="12">
 <![CDATA[
-entry_ifconv:36 %my_LUT_r_load = load i14 %my_LUT_r_addr
+entry_ifconv:36 %my_LUT_r_load = load i12 %my_LUT_r_addr
 
 ]]></Node>
 <StgValue><ssdm name="my_LUT_r_load"/></StgValue>
@@ -443,9 +443,9 @@ entry_ifconv:36 %my_LUT_r_load = load i14 %my_LUT_r_addr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="46" bw="14" op_0_bw="7" op_1_bw="64" op_2_bw="64">
+<Node id="46" bw="12" op_0_bw="6" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-entry_ifconv:39 %my_LUT_th_addr = getelementptr i7 %my_LUT_th, i64 0, i64 %zext_ln26
+entry_ifconv:39 %my_LUT_th_addr = getelementptr i6 %my_LUT_th, i64 0, i64 %zext_ln26
 
 ]]></Node>
 <StgValue><ssdm name="my_LUT_th_addr"/></StgValue>
@@ -458,9 +458,9 @@ entry_ifconv:39 %my_LUT_th_addr = getelementptr i7 %my_LUT_th, i64 0, i64 %zext_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="47" bw="7" op_0_bw="14">
+<Node id="47" bw="6" op_0_bw="12">
 <![CDATA[
-entry_ifconv:40 %my_LUT_th_load = load i14 %my_LUT_th_addr
+entry_ifconv:40 %my_LUT_th_load = load i12 %my_LUT_th_addr
 
 ]]></Node>
 <StgValue><ssdm name="my_LUT_th_load"/></StgValue>
@@ -491,9 +491,9 @@ entry_ifconv:0 %spectopmodule_ln8 = spectopmodule void @_ssdm_op_SpecTopModule, 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="0" op_0_bw="0" op_1_bw="7">
+<Node id="8" bw="0" op_0_bw="0" op_1_bw="6">
 <![CDATA[
-entry_ifconv:1 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i7 %x
+entry_ifconv:1 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %x
 
 ]]></Node>
 <StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
@@ -506,9 +506,9 @@ entry_ifconv:1 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i7 %x
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="9" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<Node id="9" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry_ifconv:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i7 %x, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0
+entry_ifconv:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %x, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -521,9 +521,9 @@ entry_ifconv:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="10" bw="0" op_0_bw="0" op_1_bw="7">
+<Node id="10" bw="0" op_0_bw="0" op_1_bw="6">
 <![CDATA[
-entry_ifconv:3 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i7 %y
+entry_ifconv:3 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %y
 
 ]]></Node>
 <StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
@@ -536,9 +536,9 @@ entry_ifconv:3 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i7 %y
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="11" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<Node id="11" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry_ifconv:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i7 %y, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0
+entry_ifconv:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %y, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -551,9 +551,9 @@ entry_ifconv:4 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="12" bw="0" op_0_bw="0" op_1_bw="7">
+<Node id="12" bw="0" op_0_bw="0" op_1_bw="6">
 <![CDATA[
-entry_ifconv:5 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i7 %r
+entry_ifconv:5 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %r
 
 ]]></Node>
 <StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
@@ -566,9 +566,9 @@ entry_ifconv:5 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i7 %r
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="13" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<Node id="13" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry_ifconv:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i7 %r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0
+entry_ifconv:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -581,9 +581,9 @@ entry_ifconv:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="14" bw="0" op_0_bw="0" op_1_bw="7">
+<Node id="14" bw="0" op_0_bw="0" op_1_bw="6">
 <![CDATA[
-entry_ifconv:7 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i7 %theta
+entry_ifconv:7 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %theta
 
 ]]></Node>
 <StgValue><ssdm name="specbitsmap_ln0"/></StgValue>
@@ -596,9 +596,9 @@ entry_ifconv:7 %specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i7 %th
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="15" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
+<Node id="15" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0" op_17_bw="32" op_18_bw="32" op_19_bw="32">
 <![CDATA[
-entry_ifconv:8 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i7 %theta, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0
+entry_ifconv:8 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %theta, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -611,9 +611,9 @@ entry_ifconv:8 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, 
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="43" bw="6" op_0_bw="14">
+<Node id="43" bw="5" op_0_bw="12">
 <![CDATA[
-entry_ifconv:36 %my_LUT_r_load = load i14 %my_LUT_r_addr
+entry_ifconv:36 %my_LUT_r_load = load i12 %my_LUT_r_addr
 
 ]]></Node>
 <StgValue><ssdm name="my_LUT_r_load"/></StgValue>
@@ -626,9 +626,9 @@ entry_ifconv:36 %my_LUT_r_load = load i14 %my_LUT_r_addr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="44" bw="7" op_0_bw="6">
+<Node id="44" bw="6" op_0_bw="5">
 <![CDATA[
-entry_ifconv:37 %zext_ln26_1 = zext i6 %my_LUT_r_load
+entry_ifconv:37 %zext_ln26_1 = zext i5 %my_LUT_r_load
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln26_1"/></StgValue>
@@ -641,9 +641,9 @@ entry_ifconv:37 %zext_ln26_1 = zext i6 %my_LUT_r_load
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="45" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="7">
+<Node id="45" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="6">
 <![CDATA[
-entry_ifconv:38 %write_ln26 = write void @_ssdm_op_Write.ap_auto.i7P0A, i7 %r, i7 %zext_ln26_1
+entry_ifconv:38 %write_ln26 = write void @_ssdm_op_Write.ap_auto.i6P0A, i6 %r, i6 %zext_ln26_1
 
 ]]></Node>
 <StgValue><ssdm name="write_ln26"/></StgValue>
@@ -656,9 +656,9 @@ entry_ifconv:38 %write_ln26 = write void @_ssdm_op_Write.ap_auto.i7P0A, i7 %r, i
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="47" bw="7" op_0_bw="14">
+<Node id="47" bw="6" op_0_bw="12">
 <![CDATA[
-entry_ifconv:40 %my_LUT_th_load = load i14 %my_LUT_th_addr
+entry_ifconv:40 %my_LUT_th_load = load i12 %my_LUT_th_addr
 
 ]]></Node>
 <StgValue><ssdm name="my_LUT_th_load"/></StgValue>
@@ -671,9 +671,9 @@ entry_ifconv:40 %my_LUT_th_load = load i14 %my_LUT_th_addr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="48" bw="0" op_0_bw="0" op_1_bw="7" op_2_bw="7">
+<Node id="48" bw="0" op_0_bw="0" op_1_bw="6" op_2_bw="6">
 <![CDATA[
-entry_ifconv:41 %write_ln27 = write void @_ssdm_op_Write.ap_auto.i7P0A, i7 %theta, i7 %my_LUT_th_load
+entry_ifconv:41 %write_ln27 = write void @_ssdm_op_Write.ap_auto.i6P0A, i6 %theta, i6 %my_LUT_th_load
 
 ]]></Node>
 <StgValue><ssdm name="write_ln27"/></StgValue>
@@ -722,15 +722,15 @@ entry_ifconv:42 %ret_ln28 = ret
 
 
 <dataflows>
-<dataflow id="56" from="_ssdm_op_Read.ap_auto.i7" to="y_read" fromId="55" toId="3">
+<dataflow id="56" from="_ssdm_op_Read.ap_auto.i6" to="y_read" fromId="55" toId="3">
 </dataflow>
 <dataflow id="57" from="y" to="y_read" fromId="50" toId="3">
 </dataflow>
-<dataflow id="58" from="_ssdm_op_Read.ap_auto.i7" to="x_read" fromId="55" toId="4">
+<dataflow id="58" from="_ssdm_op_Read.ap_auto.i6" to="x_read" fromId="55" toId="4">
 </dataflow>
 <dataflow id="59" from="x" to="x_read" fromId="49" toId="4">
 </dataflow>
-<dataflow id="61" from="_ssdm_op_BitSelect.i1.i7.i32" to="tmp" fromId="60" toId="5">
+<dataflow id="61" from="_ssdm_op_BitSelect.i1.i6.i32" to="tmp" fromId="60" toId="5">
 </dataflow>
 <dataflow id="62" from="x_read" to="tmp" fromId="4" toId="5">
 </dataflow>
@@ -740,7 +740,7 @@ entry_ifconv:42 %ret_ln28 = ret
 </dataflow>
 <dataflow id="67" from="StgValue_66" to="fixed_x" fromId="66" toId="6">
 </dataflow>
-<dataflow id="68" from="_ssdm_op_BitSelect.i1.i7.i32" to="tmp_1" fromId="60" toId="7">
+<dataflow id="68" from="_ssdm_op_BitSelect.i1.i6.i32" to="tmp_1" fromId="60" toId="7">
 </dataflow>
 <dataflow id="69" from="x_read" to="tmp_1" fromId="4" toId="7">
 </dataflow>
@@ -764,7 +764,7 @@ entry_ifconv:42 %ret_ln28 = ret
 </dataflow>
 <dataflow id="81" from="x_read" to="trunc_ln11" fromId="4" toId="12">
 </dataflow>
-<dataflow id="83" from="_ssdm_op_BitConcatenate.i7.i1.i5.i1" to="fixed_x_1" fromId="82" toId="13">
+<dataflow id="83" from="_ssdm_op_BitConcatenate.i6.i1.i4.i1" to="fixed_x_1" fromId="82" toId="13">
 </dataflow>
 <dataflow id="84" from="tmp" to="fixed_x_1" fromId="5" toId="13">
 </dataflow>
@@ -782,7 +782,7 @@ entry_ifconv:42 %ret_ln28 = ret
 </dataflow>
 <dataflow id="92" from="fixed_x" to="fixed_x_2" fromId="6" toId="15">
 </dataflow>
-<dataflow id="93" from="_ssdm_op_BitSelect.i1.i7.i32" to="tmp_2" fromId="60" toId="16">
+<dataflow id="93" from="_ssdm_op_BitSelect.i1.i6.i32" to="tmp_2" fromId="60" toId="16">
 </dataflow>
 <dataflow id="94" from="y_read" to="tmp_2" fromId="3" toId="16">
 </dataflow>
@@ -792,7 +792,7 @@ entry_ifconv:42 %ret_ln28 = ret
 </dataflow>
 <dataflow id="97" from="StgValue_66" to="fixed_y" fromId="66" toId="17">
 </dataflow>
-<dataflow id="98" from="_ssdm_op_BitSelect.i1.i7.i32" to="tmp_3" fromId="60" toId="18">
+<dataflow id="98" from="_ssdm_op_BitSelect.i1.i6.i32" to="tmp_3" fromId="60" toId="18">
 </dataflow>
 <dataflow id="99" from="y_read" to="tmp_3" fromId="3" toId="18">
 </dataflow>
@@ -816,7 +816,7 @@ entry_ifconv:42 %ret_ln28 = ret
 </dataflow>
 <dataflow id="109" from="y_read" to="trunc_ln12" fromId="3" toId="23">
 </dataflow>
-<dataflow id="110" from="_ssdm_op_BitConcatenate.i7.i1.i5.i1" to="fixed_y_1" fromId="82" toId="24">
+<dataflow id="110" from="_ssdm_op_BitConcatenate.i6.i1.i4.i1" to="fixed_y_1" fromId="82" toId="24">
 </dataflow>
 <dataflow id="111" from="tmp_2" to="fixed_y_1" fromId="16" toId="24">
 </dataflow>
@@ -834,7 +834,7 @@ entry_ifconv:42 %ret_ln28 = ret
 </dataflow>
 <dataflow id="118" from="fixed_y" to="fixed_y_2" fromId="17" toId="26">
 </dataflow>
-<dataflow id="120" from="_ssdm_op_BitConcatenate.i14.i7.i7" to="index" fromId="119" toId="27">
+<dataflow id="120" from="_ssdm_op_BitConcatenate.i12.i6.i6" to="index" fromId="119" toId="27">
 </dataflow>
 <dataflow id="121" from="fixed_x_2" to="index" fromId="15" toId="27">
 </dataflow>
@@ -1042,7 +1042,7 @@ entry_ifconv:42 %ret_ln28 = ret
 </dataflow>
 <dataflow id="232" from="my_LUT_r_load" to="zext_ln26_1" fromId="42" toId="43">
 </dataflow>
-<dataflow id="234" from="_ssdm_op_Write.ap_auto.i7P0A" to="write_ln26" fromId="233" toId="44">
+<dataflow id="234" from="_ssdm_op_Write.ap_auto.i6P0A" to="write_ln26" fromId="233" toId="44">
 </dataflow>
 <dataflow id="235" from="r" to="write_ln26" fromId="51" toId="44">
 </dataflow>
@@ -1050,7 +1050,7 @@ entry_ifconv:42 %ret_ln28 = ret
 </dataflow>
 <dataflow id="237" from="my_LUT_th_addr" to="my_LUT_th_load" fromId="31" toId="45">
 </dataflow>
-<dataflow id="238" from="_ssdm_op_Write.ap_auto.i7P0A" to="write_ln27" fromId="233" toId="46">
+<dataflow id="238" from="_ssdm_op_Write.ap_auto.i6P0A" to="write_ln27" fromId="233" toId="46">
 </dataflow>
 <dataflow id="239" from="theta" to="write_ln27" fromId="52" toId="46">
 </dataflow>
