@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AdditionalInfo>
   <CTypeInfo>
-      <RtlPort>
-        <name>r</name>
-        <type>Floating-point</type>
-        <fractionWidth>24</fractionWidth>
-      </RtlPort>
-      <RtlPort>
-        <name>r_ap_vld</name>
-        <type>bool</type>
-        <fractionWidth>0</fractionWidth>
-      </RtlPort>
-      <RtlPort>
-        <name>theta</name>
-        <type>Floating-point</type>
-        <fractionWidth>24</fractionWidth>
-      </RtlPort>
-      <RtlPort>
-        <name>theta_ap_vld</name>
-        <type>bool</type>
-        <fractionWidth>0</fractionWidth>
-      </RtlPort>
-      <RtlPort>
-        <name>x</name>
-        <type>Floating-point</type>
-        <fractionWidth>24</fractionWidth>
-      </RtlPort>
-      <RtlPort>
-        <name>y</name>
-        <type>Floating-point</type>
-        <fractionWidth>24</fractionWidth>
-      </RtlPort>
   </CTypeInfo>
   <DesignConstraint>
     <clk_period>10</clk_period>

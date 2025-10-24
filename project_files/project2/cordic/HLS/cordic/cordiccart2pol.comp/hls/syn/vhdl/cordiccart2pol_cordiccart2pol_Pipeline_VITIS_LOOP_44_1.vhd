@@ -23,15 +23,15 @@ port (
     current_theta_2_out_ap_vld : OUT STD_LOGIC;
     x_new_6_out : OUT STD_LOGIC_VECTOR (31 downto 0);
     x_new_6_out_ap_vld : OUT STD_LOGIC;
-    grp_fu_109_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_109_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_109_p_dout0 : IN STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_109_p_ce : OUT STD_LOGIC;
-    grp_fu_114_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_114_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    grp_fu_114_p_opcode : OUT STD_LOGIC_VECTOR (4 downto 0);
-    grp_fu_114_p_dout0 : IN STD_LOGIC_VECTOR (0 downto 0);
-    grp_fu_114_p_ce : OUT STD_LOGIC );
+    grp_fu_123_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_123_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_123_p_dout0 : IN STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_123_p_ce : OUT STD_LOGIC;
+    grp_fu_128_p_din0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_128_p_din1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+    grp_fu_128_p_opcode : OUT STD_LOGIC_VECTOR (4 downto 0);
+    grp_fu_128_p_dout0 : IN STD_LOGIC_VECTOR (0 downto 0);
+    grp_fu_128_p_ce : OUT STD_LOGIC );
 end;
 
 
@@ -501,7 +501,7 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_pp0_stage5_11001) and (ap_const_logic_1 = ap_CS_fsm_pp0_stage5))) then
                 and_ln47_reg_370 <= and_ln47_fu_253_p2;
-                mul1_reg_377 <= grp_fu_109_p_dout0;
+                mul1_reg_377 <= grp_fu_123_p_dout0;
                 mul2_reg_382 <= grp_fu_142_p2;
             end if;
         end if;
@@ -622,7 +622,7 @@ begin
         end if; 
     end process;
 
-    and_ln47_fu_253_p2 <= (or_ln47_fu_247_p2 and grp_fu_114_p_dout0);
+    and_ln47_fu_253_p2 <= (or_ln47_fu_247_p2 and grp_fu_128_p_dout0);
     angles_address0 <= zext_ln44_fu_182_p1(5 - 1 downto 0);
 
     angles_ce0_local_assign_proc : process(ap_CS_fsm_pp0_stage0, ap_enable_reg_pp0_iter0, ap_block_pp0_stage0_11001)
@@ -794,13 +794,13 @@ begin
     current_y_fu_279_p3 <= 
         reg_155 when (and_ln47_reg_370(0) = '1') else 
         reg_155;
-    grp_fu_109_p_ce <= ap_const_logic_1;
-    grp_fu_109_p_din0 <= current_y_19_fu_68;
-    grp_fu_109_p_din1 <= Kvalues_load_reg_338;
-    grp_fu_114_p_ce <= ap_const_logic_1;
-    grp_fu_114_p_din0 <= current_y_19_load_reg_362;
-    grp_fu_114_p_din1 <= ap_const_lv32_0;
-    grp_fu_114_p_opcode <= ap_const_lv5_4;
+    grp_fu_123_p_ce <= ap_const_logic_1;
+    grp_fu_123_p_din0 <= current_y_19_fu_68;
+    grp_fu_123_p_din1 <= Kvalues_load_reg_338;
+    grp_fu_128_p_ce <= ap_const_logic_1;
+    grp_fu_128_p_din0 <= current_y_19_load_reg_362;
+    grp_fu_128_p_din1 <= ap_const_lv32_0;
+    grp_fu_128_p_opcode <= ap_const_lv5_4;
 
     grp_fu_130_opcode_assign_proc : process(ap_enable_reg_pp0_iter0_reg, ap_CS_fsm_pp0_stage6, and_ln47_reg_370, ap_CS_fsm_pp0_stage2, ap_block_pp0_stage6_00001, ap_block_pp0_stage2_00001)
     begin

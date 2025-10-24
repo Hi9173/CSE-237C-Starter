@@ -49,15 +49,15 @@ set portList {
 	{ current_theta_2_out_ap_vld sc_out sc_logic 1 outvld 3 } 
 	{ x_new_6_out sc_out sc_lv 32 signal 4 } 
 	{ x_new_6_out_ap_vld sc_out sc_logic 1 outvld 4 } 
-	{ grp_fu_109_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_109_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_109_p_dout0 sc_in sc_lv 32 signal -1 } 
-	{ grp_fu_109_p_ce sc_out sc_logic 1 signal -1 } 
-	{ grp_fu_114_p_din0 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_114_p_din1 sc_out sc_lv 32 signal -1 } 
-	{ grp_fu_114_p_opcode sc_out sc_lv 5 signal -1 } 
-	{ grp_fu_114_p_dout0 sc_in sc_lv 1 signal -1 } 
-	{ grp_fu_114_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_123_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_123_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_123_p_dout0 sc_in sc_lv 32 signal -1 } 
+	{ grp_fu_123_p_ce sc_out sc_logic 1 signal -1 } 
+	{ grp_fu_128_p_din0 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_128_p_din1 sc_out sc_lv 32 signal -1 } 
+	{ grp_fu_128_p_opcode sc_out sc_lv 5 signal -1 } 
+	{ grp_fu_128_p_dout0 sc_in sc_lv 1 signal -1 } 
+	{ grp_fu_128_p_ce sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -73,15 +73,15 @@ set NewPortList {[
  	{ "name": "current_theta_2_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "current_theta_2_out", "role": "ap_vld" }} , 
  	{ "name": "x_new_6_out", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "x_new_6_out", "role": "default" }} , 
  	{ "name": "x_new_6_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "x_new_6_out", "role": "ap_vld" }} , 
- 	{ "name": "grp_fu_109_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_109_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_109_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_109_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_109_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_109_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_109_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_109_p_ce", "role": "default" }} , 
- 	{ "name": "grp_fu_114_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_114_p_din0", "role": "default" }} , 
- 	{ "name": "grp_fu_114_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_114_p_din1", "role": "default" }} , 
- 	{ "name": "grp_fu_114_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "grp_fu_114_p_opcode", "role": "default" }} , 
- 	{ "name": "grp_fu_114_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_114_p_dout0", "role": "default" }} , 
- 	{ "name": "grp_fu_114_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_114_p_ce", "role": "default" }}  ]}
+ 	{ "name": "grp_fu_123_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_123_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_123_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_123_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_123_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_123_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_123_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_123_p_ce", "role": "default" }} , 
+ 	{ "name": "grp_fu_128_p_din0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_128_p_din0", "role": "default" }} , 
+ 	{ "name": "grp_fu_128_p_din1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "grp_fu_128_p_din1", "role": "default" }} , 
+ 	{ "name": "grp_fu_128_p_opcode", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "grp_fu_128_p_opcode", "role": "default" }} , 
+ 	{ "name": "grp_fu_128_p_dout0", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_128_p_dout0", "role": "default" }} , 
+ 	{ "name": "grp_fu_128_p_ce", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "grp_fu_128_p_ce", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6"],

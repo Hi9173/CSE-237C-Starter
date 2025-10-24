@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol_Pipeline_VITIS_LOOP_44_1'
 ================================================================
-* Date:           Thu Oct 23 23:42:20 2025
+* Date:           Fri Oct 24 16:48:47 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp
@@ -182,15 +182,15 @@
 |ap_done                     |  out|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
 |ap_idle                     |  out|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
 |ap_ready                    |  out|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_109_p_din0           |  out|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_109_p_din1           |  out|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_109_p_dout0          |   in|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_109_p_ce             |  out|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_114_p_din0           |  out|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_114_p_din1           |  out|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_114_p_opcode         |  out|    5|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_114_p_dout0          |   in|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
-|grp_fu_114_p_ce             |  out|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_123_p_din0           |  out|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_123_p_din1           |  out|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_123_p_dout0          |   in|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_123_p_ce             |  out|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_128_p_din0           |  out|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_128_p_din1           |  out|   32|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_128_p_opcode         |  out|    5|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_128_p_dout0          |   in|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
+|grp_fu_128_p_ce             |  out|    1|  ap_ctrl_hs|  cordiccart2pol_Pipeline_VITIS_LOOP_44_1|  return value|
 |y_new_5                     |   in|   32|     ap_none|                                  y_new_5|        scalar|
 |x_new_5                     |   in|   32|     ap_none|                                  x_new_5|        scalar|
 |current_theta               |   in|   32|     ap_none|                            current_theta|        scalar|
@@ -349,9 +349,9 @@ ST_11 : Operation 89 [1/5] (7.25ns)   --->   "%x_new_1 = fadd i32 %current_x_17_
 ST_11 : Operation 90 [1/5] (7.25ns)   --->   "%y_new_1 = fsub i32 %current_y_19_load, i32 %mul2" [cordiccart2pol.cpp:56]   --->   Operation 90 'fsub' 'y_new_1' <Predicate = (!and_ln47)> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
 
 State 12 <SV = 11> <Delay = 2.28>
-ST_12 : Operation 91 [1/1] (0.00ns)   --->   "%specpipeline_ln26 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [cordiccart2pol.cpp:26]   --->   Operation 91 'specpipeline' 'specpipeline_ln26' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 91 [1/1] (0.00ns)   --->   "%specpipeline_ln26 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_3" [cordiccart2pol.cpp:26]   --->   Operation 91 'specpipeline' 'specpipeline_ln26' <Predicate = true> <Delay = 0.00>
 ST_12 : Operation 92 [1/1] (0.00ns)   --->   "%speclooptripcount_ln26 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 20, i64 20, i64 20" [cordiccart2pol.cpp:26]   --->   Operation 92 'speclooptripcount' 'speclooptripcount_ln26' <Predicate = true> <Delay = 0.00>
-ST_12 : Operation 93 [1/1] (0.00ns)   --->   "%specloopname_ln44 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [cordiccart2pol.cpp:44]   --->   Operation 93 'specloopname' 'specloopname_ln44' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 93 [1/1] (0.00ns)   --->   "%specloopname_ln44 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9" [cordiccart2pol.cpp:44]   --->   Operation 93 'specloopname' 'specloopname_ln44' <Predicate = true> <Delay = 0.00>
 ST_12 : Operation 94 [1/1] (0.69ns)   --->   "%current_x = select i1 %and_ln47, i32 %x_new, i32 %x_new_1" [cordiccart2pol.cpp:47]   --->   Operation 94 'select' 'current_x' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_12 : Operation 95 [1/1] (0.69ns)   --->   "%current_y = select i1 %and_ln47, i32 %y_new, i32 %y_new_1" [cordiccart2pol.cpp:47]   --->   Operation 95 'select' 'current_y' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
 ST_12 : Operation 96 [1/1] (1.58ns)   --->   "%store_ln47 = store i32 %current_y, i32 %current_y_19" [cordiccart2pol.cpp:47]   --->   Operation 96 'store' 'store_ln47' <Predicate = true> <Delay = 1.58>
@@ -648,7 +648,7 @@ ret_ln0                (ret              ) [ 0000000000000]
 <pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_0"/></StgValue>
+<StgValue><ssdm name="empty_3"/></StgValue>
 </bind>
 </comp>
 
@@ -684,7 +684,7 @@ ret_ln0                (ret              ) [ 0000000000000]
 <pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_2"/></StgValue>
+<StgValue><ssdm name="empty_9"/></StgValue>
 </bind>
 </comp>
 

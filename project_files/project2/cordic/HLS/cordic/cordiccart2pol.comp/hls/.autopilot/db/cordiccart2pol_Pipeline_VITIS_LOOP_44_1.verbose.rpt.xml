@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'cordiccart2pol_Pipeline_VITIS_LOOP_44_1'" level="0">
-<item name = "Date">Thu Oct 23 23:42:20 2025
+<item name = "Date">Fri Oct 24 16:48:47 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">cordiccart2pol.comp</item>
@@ -153,15 +153,15 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_109_p_din0">out, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_109_p_din1">out, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_109_p_dout0">in, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_109_p_ce">out, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_114_p_din0">out, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_114_p_din1">out, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_114_p_opcode">out, 5, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_114_p_dout0">in, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
-<column name="grp_fu_114_p_ce">out, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_123_p_din0">out, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_123_p_din1">out, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_123_p_dout0">in, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_123_p_ce">out, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_128_p_din0">out, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_128_p_din1">out, 32, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_128_p_opcode">out, 5, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_128_p_dout0">in, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
+<column name="grp_fu_128_p_ce">out, 1, ap_ctrl_hs, cordiccart2pol_Pipeline_VITIS_LOOP_44_1, return value</column>
 <column name="y_new_5">in, 32, ap_none, y_new_5, scalar</column>
 <column name="x_new_5">in, 32, ap_none, x_new_5, scalar</column>
 <column name="current_theta">in, 32, ap_none, current_theta, scalar</column>

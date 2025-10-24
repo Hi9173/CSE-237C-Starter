@@ -11,6 +11,7 @@ set SynModuleInfo {
   {SRCNAME cordiccart2pol MODELNAME cordiccart2pol RTLNAME cordiccart2pol IS_TOP 1
     SUBMODULES {
       {MODELNAME cordiccart2pol_fcmp_32ns_32ns_1_2_no_dsp_1 RTLNAME cordiccart2pol_fcmp_32ns_32ns_1_2_no_dsp_1 BINDTYPE op TYPE fcmp IMPL auto LATENCY 1 ALLOW_PRAGMA 1}
+      {MODELNAME cordiccart2pol_control_s_axi RTLNAME cordiccart2pol_control_s_axi BINDTYPE interface TYPE interface_s_axilite}
     }
   }
 }

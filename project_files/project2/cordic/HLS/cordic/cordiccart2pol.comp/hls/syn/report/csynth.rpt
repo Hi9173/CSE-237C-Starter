@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'cordiccart2pol'
 ================================================================
 + General Information: 
-    * Date:           Thu Oct 23 23:42:20 2025
+    * Date:           Fri Oct 24 16:48:48 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        cordiccart2pol.comp
     * Solution:       hls (Vivado IP Flow Target)
@@ -19,7 +19,7 @@
     |                   Modules                  | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |         |            |           |     |
     |                   & Loops                  | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF     |    LUT    | URAM|
     +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+------------+-----------+-----+
-    |+ cordiccart2pol                            |     -|  0.04|      210|  2.100e+03|         -|      211|     -|        no|     -|  10 (4%)|   1305 (1%)|  2124 (3%)|    -|
+    |+ cordiccart2pol                            |     -|  0.04|      210|  2.100e+03|         -|      211|     -|        no|     -|  10 (4%)|   1525 (1%)|  2420 (4%)|    -|
     | + cordiccart2pol_Pipeline_VITIS_LOOP_44_1  |     -|  0.04|      203|  2.030e+03|         -|      203|     -|        no|     -|   7 (3%)|  1023 (~0%)|  1518 (2%)|    -|
     |  o VITIS_LOOP_44_1                         |    II|  7.30|      201|  2.010e+03|        12|       10|    20|       yes|     -|        -|           -|          -|    -|
     +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+------------+-----------+-----+
@@ -28,24 +28,38 @@
 ================================================================
 == HW Interfaces
 ================================================================
-* Other Ports
-+-------+---------+-----------+----------+
-| Port  | Mode    | Direction | Bitwidth |
-+-------+---------+-----------+----------+
-| r     | ap_vld  | out       | 32       |
-| theta | ap_vld  | out       | 32       |
-| x     | ap_none | in        | 32       |
-| y     | ap_none | in        | 32       |
-+-------+---------+-----------+----------+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | x          | 0x10   | 32    | W      | Data signal of x                 |                                                                      |
+| s_axi_control | y          | 0x18   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | r          | 0x20   | 32    | R      | Data signal of r                 |                                                                      |
+| s_axi_control | r_ctrl     | 0x24   | 32    | R      | Control signal of r              | 0=r_ap_vld                                                           |
+| s_axi_control | theta      | 0x30   | 32    | R      | Data signal of theta             |                                                                      |
+| s_axi_control | theta_ctrl | 0x34   | 32    | R      | Control signal of theta          | 0=theta_ap_vld                                                       |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
 
 * TOP LEVEL CONTROL
-+-----------+------------+-----------------------------------+
-| Interface | Type       | Ports                             |
-+-----------+------------+-----------------------------------+
-| ap_clk    | clock      | ap_clk                            |
-| ap_rst    | reset      | ap_rst                            |
-| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
-+-----------+------------+-----------------------------------+
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
 
 
 ================================================================
@@ -62,16 +76,16 @@
 +----------+-----------+----------+
 
 * SW-to-HW Mapping
-+----------+--------------+---------+
-| Argument | HW Interface | HW Type |
-+----------+--------------+---------+
-| x        | x            | port    |
-| y        | y            | port    |
-| r        | r            | port    |
-| r        | r_ap_vld     | port    |
-| theta    | theta        | port    |
-| theta    | theta_ap_vld | port    |
-+----------+--------------+---------+
++----------+---------------+----------+--------------------------------------+
+| Argument | HW Interface  | HW Type  | HW Info                              |
++----------+---------------+----------+--------------------------------------+
+| x        | s_axi_control | register | name=x offset=0x10 range=32          |
+| y        | s_axi_control | register | name=y offset=0x18 range=32          |
+| r        | s_axi_control | register | name=r offset=0x20 range=32          |
+| r        | s_axi_control | register | name=r_ctrl offset=0x24 range=32     |
+| theta    | s_axi_control | register | name=theta offset=0x30 range=32      |
+| theta    | s_axi_control | register | name=theta_ctrl offset=0x34 range=32 |
++----------+---------------+----------+--------------------------------------+
 
 
 ================================================================
@@ -81,16 +95,16 @@
 | Name                                       | DSP | Pragma | Variable        | Op     | Impl     | Latency |
 +--------------------------------------------+-----+--------+-----------------+--------+----------+---------+
 | + cordiccart2pol                           | 10  |        |                 |        |          |         |
-|   icmp_ln32_fu_137_p2                      |     |        | icmp_ln32       | setne  | auto     | 0       |
-|   icmp_ln32_1_fu_143_p2                    |     |        | icmp_ln32_1     | seteq  | auto     | 0       |
-|   or_ln32_fu_149_p2                        |     |        | or_ln32         | or     | auto     | 0       |
+|   icmp_ln32_fu_151_p2                      |     |        | icmp_ln32       | setne  | auto     | 0       |
+|   icmp_ln32_1_fu_157_p2                    |     |        | icmp_ln32_1     | seteq  | auto     | 0       |
+|   or_ln32_fu_163_p2                        |     |        | or_ln32         | or     | auto     | 0       |
 |   fcmp_32ns_32ns_1_2_no_dsp_1_U16          |     |        | tmp_1           | fcmp   | auto     | 1       |
-|   and_ln32_fu_155_p2                       |     |        | and_ln32        | and    | auto     | 0       |
-|   xor_ln33_fu_168_p2                       |     |        | xor_ln33        | xor    | auto     | 0       |
-|   fcmp_32ns_32ns_1_2_no_dsp_1_U16          |     |        | xor_ln38        | xor    | auto     | 0       |
-|   current_theta_fu_224_p3                  |     |        | current_theta   | select | auto_sel | 0       |
-|   x_new_4_fu_233_p3                        |     |        | x_new_4         | select | auto_sel | 0       |
-|   fmul_32ns_32ns_32_4_max_dsp_1_U15        |     |        | y_new_4         | select | auto_sel | 0       |
+|   and_ln32_fu_169_p2                       |     |        | and_ln32        | and    | auto     | 0       |
+|   xor_ln33_fu_182_p2                       |     |        | xor_ln33        | xor    | auto     | 0       |
+|   xor_ln38_fu_215_p2                       |     |        | xor_ln38        | xor    | auto     | 0       |
+|   current_theta_fu_237_p3                  |     |        | current_theta   | select | auto_sel | 0       |
+|   x_new_4_fu_246_p3                        |     |        | x_new_4         | select | auto_sel | 0       |
+|   y_new_4_fu_254_p3                        |     |        | y_new_4         | select | auto_sel | 0       |
 |   fmul_32ns_32ns_32_4_max_dsp_1_U15        | 3   |        | mul             | fmul   | maxdsp   | 3       |
 |  + cordiccart2pol_Pipeline_VITIS_LOOP_44_1 | 7   |        |                 |        |          |         |
 |    icmp_ln47_fu_235_p2                     |     |        | icmp_ln47       | setne  | auto     | 0       |
@@ -115,19 +129,30 @@
 ================================================================
 == Storage Report
 ================================================================
-+--------------------------------------------+--------+------+------+------+--------+----------+------+---------+------------------+
-| Name                                       | Usage  | Type | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
-|                                            |        |      |      |      |        |          |      |         | Banks            |
-+--------------------------------------------+--------+------+------+------+--------+----------+------+---------+------------------+
-| + cordiccart2pol                           |        |      | 0    | 0    |        |          |      |         |                  |
-|  + cordiccart2pol_Pipeline_VITIS_LOOP_44_1 |        |      | 0    | 0    |        |          |      |         |                  |
-|    Kvalues_U                               | rom_1p |      |      |      |        | Kvalues  | auto | 1       | 32, 20, 1        |
-|    angles_U                                | rom_1p |      |      |      |        | angles   | auto | 1       | 32, 20, 1        |
-+--------------------------------------------+--------+------+------+------+--------+----------+------+---------+------------------+
++--------------------------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name                                       | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                                            |           |           |      |      |        |          |      |         | Banks            |
++--------------------------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + cordiccart2pol                           |           |           | 0    | 0    |        |          |      |         |                  |
+|   control_s_axi_U                          | interface | s_axilite |      |      |        |          |      |         |                  |
+|  + cordiccart2pol_Pipeline_VITIS_LOOP_44_1 |           |           | 0    | 0    |        |          |      |         |                  |
+|    Kvalues_U                               | rom_1p    |           |      |      |        | Kvalues  | auto | 1       | 32, 20, 1        |
+|    angles_U                                | rom_1p    |           |      |      |        | angles   | auto | 1       | 32, 20, 1        |
++--------------------------------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
 
 
 ================================================================
 == Pragma Report
 ================================================================
-  No pragmas found
+* Valid Pragma Syntax
++-----------+----------------------------+-------------------------------------------------+
+| Type      | Options                    | Location                                        |
++-----------+----------------------------+-------------------------------------------------+
+| interface | mode=s_axilite port=return | cordiccart2pol.cpp:63 in cordiccart2pol, return |
+| interface | mode=s_axilite port=x      | cordiccart2pol.cpp:64 in cordiccart2pol, x      |
+| interface | mode=s_axilite port=y      | cordiccart2pol.cpp:65 in cordiccart2pol, y      |
+| interface | mode=s_axilite port=r      | cordiccart2pol.cpp:66 in cordiccart2pol, r      |
+| interface | mode=s_axilite port=theta  | cordiccart2pol.cpp:67 in cordiccart2pol, theta  |
++-----------+----------------------------+-------------------------------------------------+
+
 

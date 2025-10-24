@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'cordiccart2pol'" level="0">
-<item name = "Date">Thu Oct 23 23:42:19 2025
+<item name = "Date">Fri Oct 24 16:48:47 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">cordiccart2pol.comp</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_cordiccart2pol_Pipeline_VITIS_LOOP_44_1_fu_96">cordiccart2pol_Pipeline_VITIS_LOOP_44_1, 203, 203, 2.030 us, 2.030 us, 200, 200, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_cordiccart2pol_Pipeline_VITIS_LOOP_44_1_fu_110">cordiccart2pol_Pipeline_VITIS_LOOP_44_1, 203, 203, 2.030 us, 2.030 us, 200, 200, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

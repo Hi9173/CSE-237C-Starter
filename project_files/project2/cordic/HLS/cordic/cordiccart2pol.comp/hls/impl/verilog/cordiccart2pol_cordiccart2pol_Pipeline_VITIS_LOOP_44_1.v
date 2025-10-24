@@ -20,15 +20,15 @@ module cordiccart2pol_cordiccart2pol_Pipeline_VITIS_LOOP_44_1 (
         current_theta_2_out_ap_vld,
         x_new_6_out,
         x_new_6_out_ap_vld,
-        grp_fu_109_p_din0,
-        grp_fu_109_p_din1,
-        grp_fu_109_p_dout0,
-        grp_fu_109_p_ce,
-        grp_fu_114_p_din0,
-        grp_fu_114_p_din1,
-        grp_fu_114_p_opcode,
-        grp_fu_114_p_dout0,
-        grp_fu_114_p_ce
+        grp_fu_123_p_din0,
+        grp_fu_123_p_din1,
+        grp_fu_123_p_dout0,
+        grp_fu_123_p_ce,
+        grp_fu_128_p_din0,
+        grp_fu_128_p_din1,
+        grp_fu_128_p_opcode,
+        grp_fu_128_p_dout0,
+        grp_fu_128_p_ce
 );
 
 parameter    ap_ST_fsm_pp0_stage0 = 10'd1;
@@ -55,15 +55,15 @@ output  [31:0] current_theta_2_out;
 output   current_theta_2_out_ap_vld;
 output  [31:0] x_new_6_out;
 output   x_new_6_out_ap_vld;
-output  [31:0] grp_fu_109_p_din0;
-output  [31:0] grp_fu_109_p_din1;
-input  [31:0] grp_fu_109_p_dout0;
-output   grp_fu_109_p_ce;
-output  [31:0] grp_fu_114_p_din0;
-output  [31:0] grp_fu_114_p_din1;
-output  [4:0] grp_fu_114_p_opcode;
-input  [0:0] grp_fu_114_p_dout0;
-output   grp_fu_114_p_ce;
+output  [31:0] grp_fu_123_p_din0;
+output  [31:0] grp_fu_123_p_din1;
+input  [31:0] grp_fu_123_p_dout0;
+output   grp_fu_123_p_ce;
+output  [31:0] grp_fu_128_p_din0;
+output  [31:0] grp_fu_128_p_din1;
+output  [4:0] grp_fu_128_p_opcode;
+input  [0:0] grp_fu_128_p_dout0;
+output   grp_fu_128_p_ce;
 
 reg ap_idle;
 reg current_theta_2_out_ap_vld;
@@ -364,7 +364,7 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage5_11001) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
         and_ln47_reg_370 <= and_ln47_fu_253_p2;
-        mul1_reg_377 <= grp_fu_109_p_dout0;
+        mul1_reg_377 <= grp_fu_123_p_dout0;
         mul2_reg_382 <= grp_fu_142_p2;
     end
 end
@@ -650,7 +650,7 @@ end
 
 assign Kvalues_address0 = zext_ln44_fu_182_p1;
 
-assign and_ln47_fu_253_p2 = (or_ln47_fu_247_p2 & grp_fu_114_p_dout0);
+assign and_ln47_fu_253_p2 = (or_ln47_fu_247_p2 & grp_fu_128_p_dout0);
 
 assign angles_address0 = zext_ln44_fu_182_p1;
 
@@ -742,19 +742,19 @@ assign current_x_fu_271_p3 = ((and_ln47_reg_370[0:0] == 1'b1) ? reg_151 : reg_15
 
 assign current_y_fu_279_p3 = ((and_ln47_reg_370[0:0] == 1'b1) ? reg_155 : reg_155);
 
-assign grp_fu_109_p_ce = 1'b1;
+assign grp_fu_123_p_ce = 1'b1;
 
-assign grp_fu_109_p_din0 = current_y_19_fu_68;
+assign grp_fu_123_p_din0 = current_y_19_fu_68;
 
-assign grp_fu_109_p_din1 = Kvalues_load_reg_338;
+assign grp_fu_123_p_din1 = Kvalues_load_reg_338;
 
-assign grp_fu_114_p_ce = 1'b1;
+assign grp_fu_128_p_ce = 1'b1;
 
-assign grp_fu_114_p_din0 = current_y_19_load_reg_362;
+assign grp_fu_128_p_din0 = current_y_19_load_reg_362;
 
-assign grp_fu_114_p_din1 = 32'd0;
+assign grp_fu_128_p_din1 = 32'd0;
 
-assign grp_fu_114_p_opcode = 5'd4;
+assign grp_fu_128_p_opcode = 5'd4;
 
 assign i_fu_188_p2 = (ap_sig_allocacmp_i4_load + 5'd1);
 
