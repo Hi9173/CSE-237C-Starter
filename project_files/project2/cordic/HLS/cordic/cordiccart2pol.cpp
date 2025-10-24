@@ -60,7 +60,12 @@ void cordiccart2pol(data_t x, data_t y, data_t * r,  data_t * theta)
 	current_x = x_new;
 	current_y = y_new;
 	}
-	
+	#pragma HLS INTERFACE mode=s_axilite port=return
+	#pragma HLS INTERFACE mode=s_axilite port=x
+	#pragma HLS INTERFACE mode=s_axilite port=y
+	#pragma HLS INTERFACE mode=s_axilite port=r
+	#pragma HLS INTERFACE mode=s_axilite port=theta
+
 	*r = current_x * gain;
 	*theta = current_theta;
 }
