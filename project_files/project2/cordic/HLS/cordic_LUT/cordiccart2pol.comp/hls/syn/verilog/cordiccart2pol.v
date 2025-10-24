@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="cordiccart2pol_cordiccart2pol,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=5.480000,HLS_SYN_LAT=1,HLS_SYN_TPT=none,HLS_SYN_MEM=60,HLS_SYN_DSP=0,HLS_SYN_FF=2,HLS_SYN_LUT=50,HLS_VERSION=2024_2}" *)
+(* CORE_GENERATION_INFO="cordiccart2pol_cordiccart2pol,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=5.225000,HLS_SYN_LAT=1,HLS_SYN_TPT=none,HLS_SYN_MEM=13,HLS_SYN_DSP=0,HLS_SYN_FF=2,HLS_SYN_LUT=48,HLS_VERSION=2024_2}" *)
 
 module cordiccart2pol (
         ap_clk,
@@ -32,11 +32,11 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [7:0] x;
-input  [7:0] y;
-output  [7:0] r;
+input  [6:0] x;
+input  [6:0] y;
+output  [6:0] r;
 output   r_ap_vld;
-output  [7:0] theta;
+output  [6:0] theta;
 output   theta_ap_vld;
 
 reg ap_done;
@@ -47,10 +47,10 @@ reg theta_ap_vld;
 
 (* fsm_encoding = "none" *) reg   [1:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [15:0] my_LUT_r_address0;
-wire   [6:0] my_LUT_r_q0;
-wire   [15:0] my_LUT_th_address0;
-wire   [7:0] my_LUT_th_q0;
+wire   [13:0] my_LUT_r_address0;
+wire   [5:0] my_LUT_r_q0;
+wire   [13:0] my_LUT_th_address0;
+wire   [6:0] my_LUT_th_q0;
 wire   [63:0] zext_ln26_fu_259_p1;
 wire    ap_CS_fsm_state2;
 reg    my_LUT_r_ce0_local;
@@ -59,25 +59,25 @@ wire   [0:0] tmp_fu_103_p3;
 wire   [0:0] tmp_1_fu_117_p3;
 wire   [0:0] xor_ln11_fu_125_p2;
 wire   [0:0] and_ln11_fu_131_p2;
-wire   [5:0] trunc_ln11_fu_149_p1;
+wire   [4:0] trunc_ln11_fu_149_p1;
 wire   [0:0] and_ln11_1_fu_137_p2;
 wire   [0:0] or_ln11_fu_143_p2;
 wire   [0:0] xor_ln11_1_fu_163_p2;
-wire   [7:0] fixed_x_1_fu_153_p4;
-wire   [7:0] fixed_x_fu_111_p2;
+wire   [6:0] fixed_x_1_fu_153_p4;
+wire   [6:0] fixed_x_fu_111_p2;
 wire   [0:0] tmp_2_fu_177_p3;
 wire   [0:0] tmp_3_fu_191_p3;
 wire   [0:0] xor_ln12_fu_199_p2;
 wire   [0:0] and_ln12_fu_205_p2;
-wire   [5:0] trunc_ln12_fu_223_p1;
+wire   [4:0] trunc_ln12_fu_223_p1;
 wire   [0:0] and_ln12_1_fu_211_p2;
 wire   [0:0] or_ln12_fu_217_p2;
 wire   [0:0] xor_ln12_1_fu_237_p2;
-wire   [7:0] fixed_y_1_fu_227_p4;
-wire   [7:0] fixed_y_fu_185_p2;
-wire   [7:0] fixed_x_2_fu_169_p3;
-wire   [7:0] fixed_y_2_fu_243_p3;
-wire   [15:0] index_fu_251_p3;
+wire   [6:0] fixed_y_1_fu_227_p4;
+wire   [6:0] fixed_y_fu_185_p2;
+wire   [6:0] fixed_x_2_fu_169_p3;
+wire   [6:0] fixed_y_2_fu_243_p3;
+wire   [13:0] index_fu_251_p3;
 reg   [1:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 wire    ap_ST_fsm_state2_blk;
@@ -89,9 +89,9 @@ initial begin
 end
 
 cordiccart2pol_my_LUT_r_ROM_AUTO_1R #(
-    .DataWidth( 7 ),
-    .AddressRange( 65536 ),
-    .AddressWidth( 16 ))
+    .DataWidth( 6 ),
+    .AddressRange( 16384 ),
+    .AddressWidth( 14 ))
 my_LUT_r_U(
     .clk(ap_clk),
     .reset(ap_rst),
@@ -101,9 +101,9 @@ my_LUT_r_U(
 );
 
 cordiccart2pol_my_LUT_th_ROM_AUTO_1R #(
-    .DataWidth( 8 ),
-    .AddressRange( 65536 ),
-    .AddressWidth( 16 ))
+    .DataWidth( 7 ),
+    .AddressRange( 16384 ),
+    .AddressWidth( 14 ))
 my_LUT_th_U(
     .clk(ap_clk),
     .reset(ap_rst),
@@ -220,13 +220,13 @@ assign fixed_x_1_fu_153_p4 = {{{tmp_fu_103_p3}, {trunc_ln11_fu_149_p1}}, {1'd0}}
 
 assign fixed_x_2_fu_169_p3 = ((xor_ln11_1_fu_163_p2[0:0] == 1'b1) ? fixed_x_1_fu_153_p4 : fixed_x_fu_111_p2);
 
-assign fixed_x_fu_111_p2 = x << 8'd1;
+assign fixed_x_fu_111_p2 = x << 7'd1;
 
 assign fixed_y_1_fu_227_p4 = {{{tmp_2_fu_177_p3}, {trunc_ln12_fu_223_p1}}, {1'd0}};
 
 assign fixed_y_2_fu_243_p3 = ((xor_ln12_1_fu_237_p2[0:0] == 1'b1) ? fixed_y_1_fu_227_p4 : fixed_y_fu_185_p2);
 
-assign fixed_y_fu_185_p2 = y << 8'd1;
+assign fixed_y_fu_185_p2 = y << 7'd1;
 
 assign index_fu_251_p3 = {{fixed_x_2_fu_169_p3}, {fixed_y_2_fu_243_p3}};
 
@@ -242,17 +242,17 @@ assign r = my_LUT_r_q0;
 
 assign theta = my_LUT_th_q0;
 
-assign tmp_1_fu_117_p3 = x[32'd6];
+assign tmp_1_fu_117_p3 = x[32'd5];
 
-assign tmp_2_fu_177_p3 = y[32'd7];
+assign tmp_2_fu_177_p3 = y[32'd6];
 
-assign tmp_3_fu_191_p3 = y[32'd6];
+assign tmp_3_fu_191_p3 = y[32'd5];
 
-assign tmp_fu_103_p3 = x[32'd7];
+assign tmp_fu_103_p3 = x[32'd6];
 
-assign trunc_ln11_fu_149_p1 = x[5:0];
+assign trunc_ln11_fu_149_p1 = x[4:0];
 
-assign trunc_ln12_fu_223_p1 = y[5:0];
+assign trunc_ln12_fu_223_p1 = y[4:0];
 
 assign xor_ln11_1_fu_163_p2 = (or_ln11_fu_143_p2 ^ and_ln11_1_fu_137_p2);
 

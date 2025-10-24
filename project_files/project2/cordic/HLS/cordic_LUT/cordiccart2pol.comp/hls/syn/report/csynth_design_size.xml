@@ -5,8 +5,8 @@
             <column name="Compile/Link">, 435, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll, 108, user unroll pragmas are applied</column>
-            <column name="">(2) simplification,  84, simplification of applied user unroll pragmas</column>
+            <column name="">(1) unroll, 104, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  80, simplification of applied user unroll pragmas</column>
             <column name="">(3) inline,  51, user inline pragmas are applied</column>
             <column name="">(4) simplification,  51, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
@@ -25,14 +25,14 @@
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
             <column name="">(1) lowering,  57, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations,  54, high level synthesis optimizations</column>
+            <column name="">(2) optimizations,  58, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="cordiccart2pol" col1="cordiccart2pol.cpp:8" col2="435" col3="51" col4="51" col5="51" col6="54"/>
+                <row id="0" col0="cordiccart2pol" col1="cordiccart2pol.cpp:8" col2="435" col3="51" col4="51" col5="51" col6="58"/>
             </rows>
             <notes/>
         </hiertable>

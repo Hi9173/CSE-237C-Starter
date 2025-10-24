@@ -6,7 +6,7 @@ DebugLoc:        { File: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-
 Function:        _GLOBAL__sub_I_cordiccart2pol.pp.0.cpp
 Args:            
   - Callee:          __cxx_global_var_init
-    DebugLoc:        { File: ./cordic_LUTs.hpp, Line: 39, Column: 0 }
+    DebugLoc:        { File: ./cordic_LUTs.hpp, Line: 32, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          _GLOBAL__sub_I_cordiccart2pol.pp.0.cpp
     DebugLoc:        { File: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp, 
@@ -21,7 +21,7 @@ DebugLoc:        { File: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-
 Function:        _GLOBAL__sub_I_cordiccart2pol.pp.0.cpp
 Args:            
   - Callee:          __cxx_global_var_init.1
-    DebugLoc:        { File: ./cordic_LUTs.hpp, Line: 40, Column: 0 }
+    DebugLoc:        { File: ./cordic_LUTs.hpp, Line: 33, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          _GLOBAL__sub_I_cordiccart2pol.pp.0.cpp
     DebugLoc:        { File: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp, 
@@ -32,7 +32,7 @@ Args:
 Pass:            reflow-pragma-loop-unroll
 Name:            PragmaFullyUnroll
 DebugLoc:        { File: cordiccart2pol.cpp, Line: 9, Column: 0 }
-Function:        _Z14cordiccart2pol8ap_fixedILi8ELi3EL9ap_q_mode5EL9ap_o_mode3ELi0EES2_PS2_S3_
+Function:        _Z14cordiccart2pol8ap_fixedILi7ELi3EL9ap_q_mode5EL9ap_o_mode3ELi0EES2_PS2_S3_
 Args:            
   - String:          'Unrolling loop '''
   - LoopName:        VITIS_LOOP_18_1
@@ -42,14 +42,14 @@ Args:
   - String:          'in function '''
   - String:          cordiccart2pol
   - String:          ''' completely with a factor of '
-  - Factor:          '8'
+  - Factor:          '7'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 Function:        apatb_cordiccart2pol_ir
 Args:            
-  - Callee:          'cordiccart2pol(ap_fixed<8, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<8, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<8, 3, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<8, 3, (ap_q_mode)5, (ap_o_mode)3, 0>*)'
+  - Callee:          'cordiccart2pol(ap_fixed<7, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<7, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<7, 3, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<7, 3, (ap_q_mode)5, (ap_o_mode)3, 0>*)'
     DebugLoc:        { File: cordiccart2pol.cpp, Line: 9, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_cordiccart2pol_ir

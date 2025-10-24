@@ -18,19 +18,19 @@ set C_modelName {cordiccart2pol}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
 set C_modelArgList {
-	{ x int 8 regular  }
-	{ y int 8 regular  }
-	{ r int 8 regular {pointer 1}  }
-	{ theta int 8 regular {pointer 1}  }
+	{ x int 7 regular  }
+	{ y int 7 regular  }
+	{ r int 7 regular {pointer 1}  }
+	{ theta int 7 regular {pointer 1}  }
 }
 set hasAXIMCache 0
 set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "x", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
- 	{ "Name" : "y", "interface" : "wire", "bitwidth" : 8, "direction" : "READONLY"} , 
- 	{ "Name" : "r", "interface" : "wire", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "theta", "interface" : "wire", "bitwidth" : 8, "direction" : "WRITEONLY"} ]}
+	{ "Name" : "x", "interface" : "wire", "bitwidth" : 7, "direction" : "READONLY"} , 
+ 	{ "Name" : "y", "interface" : "wire", "bitwidth" : 7, "direction" : "READONLY"} , 
+ 	{ "Name" : "r", "interface" : "wire", "bitwidth" : 7, "direction" : "WRITEONLY"} , 
+ 	{ "Name" : "theta", "interface" : "wire", "bitwidth" : 7, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
 set portNum 12
 set portList { 
@@ -40,11 +40,11 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ x sc_in sc_lv 8 signal 0 } 
-	{ y sc_in sc_lv 8 signal 1 } 
-	{ r sc_out sc_lv 8 signal 2 } 
+	{ x sc_in sc_lv 7 signal 0 } 
+	{ y sc_in sc_lv 7 signal 1 } 
+	{ r sc_out sc_lv 7 signal 2 } 
 	{ r_ap_vld sc_out sc_logic 1 outvld 2 } 
-	{ theta sc_out sc_lv 8 signal 3 } 
+	{ theta sc_out sc_lv 7 signal 3 } 
 	{ theta_ap_vld sc_out sc_logic 1 outvld 3 } 
 }
 set NewPortList {[ 
@@ -54,11 +54,11 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "x", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "x", "role": "default" }} , 
- 	{ "name": "y", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "y", "role": "default" }} , 
- 	{ "name": "r", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "r", "role": "default" }} , 
+ 	{ "name": "x", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "x", "role": "default" }} , 
+ 	{ "name": "y", "direction": "in", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "y", "role": "default" }} , 
+ 	{ "name": "r", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "r", "role": "default" }} , 
  	{ "name": "r_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "r", "role": "ap_vld" }} , 
- 	{ "name": "theta", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "theta", "role": "default" }} , 
+ 	{ "name": "theta", "direction": "out", "datatype": "sc_lv", "bitwidth":7, "type": "signal", "bundle":{"name": "theta", "role": "default" }} , 
  	{ "name": "theta_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "theta", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -107,10 +107,10 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	x { ap_none {  { x in_data 0 8 } } }
-	y { ap_none {  { y in_data 0 8 } } }
-	r { ap_vld {  { r out_data 1 8 }  { r_ap_vld out_vld 1 1 } } }
-	theta { ap_vld {  { theta out_data 1 8 }  { theta_ap_vld out_vld 1 1 } } }
+	x { ap_none {  { x in_data 0 7 } } }
+	y { ap_none {  { y in_data 0 7 } } }
+	r { ap_vld {  { r out_data 1 7 }  { r_ap_vld out_vld 1 1 } } }
+	theta { ap_vld {  { theta out_data 1 7 }  { theta_ap_vld out_vld 1 1 } } }
 }
 
 set maxi_interface_dict [dict create]

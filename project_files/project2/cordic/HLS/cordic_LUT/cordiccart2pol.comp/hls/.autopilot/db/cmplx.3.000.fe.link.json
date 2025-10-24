@@ -17,29 +17,29 @@
   },
   "1": {
     "basicblocks": 1,
-    "calls": "2 3",
+    "calls": "",
+    "file": "cordic_LUTs.hpp",
+    "fileloc": 33,
+    "instructions": 16385,
+    "name": "__cxx_global_var_init.1",
+    "total_instructions": 6340609
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "3 1",
     "file": "cordiccart2pol.pp.0.cpp",
     "fileloc": 0,
     "instructions": 3,
     "name": "",
-    "total_instructions": 50724869
-  },
-  "2": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "cordic_LUTs.hpp",
-    "fileloc": 39,
-    "instructions": 65537,
-    "name": "__cxx_global_var_init",
-    "total_instructions": 25362433
+    "total_instructions": 12681221
   },
   "3": {
     "basicblocks": 1,
     "calls": "",
     "file": "cordic_LUTs.hpp",
-    "fileloc": 40,
-    "instructions": 65537,
-    "name": "__cxx_global_var_init.1",
-    "total_instructions": 25362433
+    "fileloc": 32,
+    "instructions": 16385,
+    "name": "__cxx_global_var_init",
+    "total_instructions": 6340609
   }
 }

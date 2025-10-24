@@ -29,7 +29,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_x \
     op interface \
-    ports { x { I 8 vector } } \
+    ports { x { I 7 vector } } \
 } "
 }
 
@@ -44,7 +44,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_y \
     op interface \
-    ports { y { I 8 vector } } \
+    ports { y { I 7 vector } } \
 } "
 }
 
@@ -59,7 +59,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_r \
     op interface \
-    ports { r { O 8 vector } r_ap_vld { O 1 bit } } \
+    ports { r { O 7 vector } r_ap_vld { O 1 bit } } \
 } "
 }
 
@@ -74,7 +74,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_theta \
     op interface \
-    ports { theta { O 8 vector } theta_ap_vld { O 1 bit } } \
+    ports { theta { O 7 vector } theta_ap_vld { O 1 bit } } \
 } "
 }
 
