@@ -38,30 +38,12 @@ Diagnostics:
         Length:          0
         ReplacementText: 'VITIS_LOOP_1248_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_7_1:  '
-    FileOffset:      7
+    Message:         'Added loop label VITIS_LOOP_18_1:  '
+    FileOffset:      18
     FilePath:        cordiccart2pol.cpp
     Replacements:    
       - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp
-        Offset:          1128436
+        Offset:          3739869
         Length:          0
-        ReplacementText: 'VITIS_LOOP_7_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_12_2:  '
-    FileOffset:      12
-    FilePath:        cordiccart2pol.cpp
-    Replacements:    
-      - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp
-        Offset:          1128595
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_12_2: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_46_1:  '
-    FileOffset:      46
-    FilePath:        cordiccart2pol.cpp
-    Replacements:    
-      - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp
-        Offset:          1129518
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_46_1: '
+        ReplacementText: 'VITIS_LOOP_18_1: '
 ...

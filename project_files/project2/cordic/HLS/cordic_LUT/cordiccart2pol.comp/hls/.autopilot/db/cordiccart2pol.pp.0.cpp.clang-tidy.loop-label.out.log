@@ -18,18 +18,8 @@
       ^~~
       VITIS_LOOP_1248_1: 
 /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:3921:7: note: FIX-IT applied suggested code changes
-/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:12374:2: warning: Added loop label VITIS_LOOP_7_1:   [xilinx-label-all-loops]
- for(int i=0; i<(1 << (8 << 1)); i++){
- ^~~
- VITIS_LOOP_7_1: 
-/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:12374:2: note: FIX-IT applied suggested code changes
-/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:12379:3: warning: Added loop label VITIS_LOOP_12_2:   [xilinx-label-all-loops]
-  for(int j = 0; j < 8; j++)
-  ^~~
-  VITIS_LOOP_12_2: 
-/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:12379:3: note: FIX-IT applied suggested code changes
-/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:12417:2: warning: Added loop label VITIS_LOOP_46_1:   [xilinx-label-all-loops]
- for(int i = 0; i < 8; i++)
- ^~~
- VITIS_LOOP_46_1: 
-/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:12417:2: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:12385:5: warning: Added loop label VITIS_LOOP_18_1:   [xilinx-label-all-loops]
+    for(int i = 0; i < 8; i++)
+    ^~~
+    VITIS_LOOP_18_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project2/cordic/HLS/cordic_LUT/cordiccart2pol.comp/hls/.autopilot/db/cordiccart2pol.pp.0.cpp:12385:5: note: FIX-IT applied suggested code changes

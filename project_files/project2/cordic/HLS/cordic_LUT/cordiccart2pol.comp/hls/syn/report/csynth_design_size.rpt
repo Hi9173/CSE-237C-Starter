@@ -2,27 +2,42 @@
 == Design Size Report
 ================================================================
 
-* C-Synthesis has not completed!
-
 * Total Instructions per Compilation Phase
-+---------------+--------------+----------------------------------------------------------------------------------+
-| Phase         | Instructions | Description                                                                      |
-+---------------+--------------+----------------------------------------------------------------------------------+
-| Compile/Link  | 33,459       | After all functions are compiled and linked into a single design                 |
-| Unroll/Inline | pending      | After user unroll and inline pragmas are applied                                 |
-| Array/Struct  |              | After user array partition and struct aggregate/disaggregate pragmas are applied |
-| Performance   |              | After transformations are applied to meet performance pragma targets             |
-| HW Transforms |              | After hardware transfomations                                                    |
-+---------------+--------------+----------------------------------------------------------------------------------+
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Phase         | Step                        | Instructions | Description                                                                            |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
+| Compile/Link  |                             | 435          | After all functions are compiled and linked into a single design                       |
+|               |                             |              |                                                                                        |
+| Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
+|               | (1) unroll                  | 108          | user unroll pragmas are applied                                                        |
+|               | (2) simplification          |  84          | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |  51          | user inline pragmas are applied                                                        |
+|               | (4) simplification          |  51          | simplification of applied user inline pragmas                                          |
+|               |                             |              |                                                                                        |
+| Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
+|               | (1) array partition         |  51          | user array partition pragmas are applied                                               |
+|               | (2) simplification          |  51          | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  |  51          | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           |  51          | apply array reshape pragmas                                                            |
+|               | (5) access patterns         |  51          | array access pattern optmizations                                                      |
+|               |                             |              |                                                                                        |
+| Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
+|               | (1) loop simplification     |  51          | loop and instruction simplification                                                    |
+|               | (2) parallelization         |  51          | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         |  51          | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          |  51          | simplification of design after performance transformations                             |
+|               |                             |              |                                                                                        |
+| HW Transforms |                             |              | After hardware transfomations                                                          |
+|               | (1) lowering                |  57          | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           |  54          | high level synthesis optimizations                                                     |
++---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
-+-----------------------+-----------------------+--------------+
-| Function              | Location              | Compile/Link |
-+-----------------------+-----------------------+--------------+
-| + cordiccart2pol      | cordiccart2pol.cpp:32 | 33,459       |
-|  + init_cart2pol_LUTs | cordiccart2pol.cpp:4  | 33,023       |
-|     atan2f            | atan2float.cpp:6      | 31,631       |
-+-----------------------+-----------------------+--------------+
++------------------+----------------------+--------------+---------------+--------------+-------------+---------------+
+| Function         | Location             | Compile/Link | Unroll/Inline | Array/Struct | Performance | HW Transforms |
++------------------+----------------------+--------------+---------------+--------------+-------------+---------------+
+|   cordiccart2pol | cordiccart2pol.cpp:8 | 435          | 51            | 51           | 51          | 54            |
++------------------+----------------------+--------------+---------------+--------------+-------------+---------------+
 
 * Design Size Message Settings
 +---------------------------------------------+--------+------------------------------------------------------------------+

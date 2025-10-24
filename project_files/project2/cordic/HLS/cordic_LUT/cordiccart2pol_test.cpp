@@ -35,9 +35,9 @@ Rmse rmse_r;
 int main()
 {
 
-#ifndef SYNTHESIS
-	init_cart2pol_LUTs(my_LUT_th, my_LUT_r); // Fill in the LUT for simulation results
-#endif
+//#ifndef SYNTHESIS
+//	init_cart2pol_LUTs(my_LUT_th, my_LUT_r); // Fill in the LUT for simulation results
+//#endif
 
 	// Compare results from cordiccart2pol against the ground truth
 	float x;
