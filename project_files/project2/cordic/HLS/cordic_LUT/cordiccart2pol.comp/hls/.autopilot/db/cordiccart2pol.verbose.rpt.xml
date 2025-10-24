@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'cordiccart2pol'" level="0">
-<item name = "Date">Thu Oct 23 18:11:50 2025
+<item name = "Date">Thu Oct 23 18:15:21 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">cordiccart2pol.comp</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 5.420 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 5.447 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -47,14 +47,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 32, -</column>
+<column name="Expression">-, -, 0, 30, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
-<column name="Memory">4, -, 0, 0, -</column>
+<column name="Memory">2, -, 0, 0, -</column>
 <column name="Multiplexer">-, -, 0, 14, -</column>
 <column name="Register">-, -, 2, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">1, 0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, ~0, ~0, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -69,8 +69,8 @@
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
 <keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
-<column name="my_LUT_r_U">my_LUT_r_ROM_AUTO_1R, 2, 0, 0, 0, 4096, 5, 1, 20480</column>
-<column name="my_LUT_th_U">my_LUT_th_ROM_AUTO_1R, 2, 0, 0, 0, 4096, 6, 1, 24576</column>
+<column name="my_LUT_r_U">my_LUT_r_ROM_AUTO_1R, 1, 0, 0, 0, 1024, 4, 1, 4096</column>
+<column name="my_LUT_th_U">my_LUT_th_ROM_AUTO_1R, 1, 0, 0, 0, 1024, 5, 1, 5120</column>
 </table>
 </item>
 <item name = "FIFO"><table name="" hasTotal="1">
@@ -85,8 +85,8 @@
 <column name="and_ln12_fu_205_p2">and, 0, 0, 2, 1, 1</column>
 <column name="or_ln11_fu_143_p2">or, 0, 0, 2, 1, 1</column>
 <column name="or_ln12_fu_217_p2">or, 0, 0, 2, 1, 1</column>
-<column name="fixed_x_2_fu_169_p3">select, 0, 0, 6, 1, 6</column>
-<column name="fixed_y_2_fu_243_p3">select, 0, 0, 6, 1, 6</column>
+<column name="fixed_x_2_fu_169_p3">select, 0, 0, 5, 1, 5</column>
+<column name="fixed_y_2_fu_243_p3">select, 0, 0, 5, 1, 5</column>
 <column name="xor_ln11_1_fu_163_p2">xor, 0, 0, 2, 1, 1</column>
 <column name="xor_ln11_fu_125_p2">xor, 0, 0, 2, 1, 2</column>
 <column name="xor_ln12_1_fu_237_p2">xor, 0, 0, 2, 1, 1</column>
@@ -116,11 +116,11 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, cordiccart2pol, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, cordiccart2pol, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, cordiccart2pol, return value</column>
-<column name="x">in, 6, ap_none, x, scalar</column>
-<column name="y">in, 6, ap_none, y, scalar</column>
-<column name="r">out, 6, ap_vld, r, pointer</column>
+<column name="x">in, 5, ap_none, x, scalar</column>
+<column name="y">in, 5, ap_none, y, scalar</column>
+<column name="r">out, 5, ap_vld, r, pointer</column>
 <column name="r_ap_vld">out, 1, ap_vld, r, pointer</column>
-<column name="theta">out, 6, ap_vld, theta, pointer</column>
+<column name="theta">out, 5, ap_vld, theta, pointer</column>
 <column name="theta_ap_vld">out, 1, ap_vld, theta, pointer</column>
 </table>
 </item>

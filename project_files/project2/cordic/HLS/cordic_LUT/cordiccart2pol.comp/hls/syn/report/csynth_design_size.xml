@@ -5,8 +5,8 @@
             <column name="Compile/Link">, 435, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll, 100, user unroll pragmas are applied</column>
-            <column name="">(2) simplification,  76, simplification of applied user unroll pragmas</column>
+            <column name="">(1) unroll,  96, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,  72, simplification of applied user unroll pragmas</column>
             <column name="">(3) inline,  51, user inline pragmas are applied</column>
             <column name="">(4) simplification,  51, simplification of applied user inline pragmas</column>
             <column name="">, , </column>

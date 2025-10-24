@@ -3,49 +3,49 @@ source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:2048-i4096:4096-n8:16:32:64-S128-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024"
 target triple = "fpga64-xilinx-none"
 
-%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>" = type { %"struct.ap_fixed_base<6, 3, true, AP_TRN, AP_WRAP, 0>" }
-%"struct.ap_fixed_base<6, 3, true, AP_TRN, AP_WRAP, 0>" = type { %"struct.ssdm_int<6, true>" }
-%"struct.ssdm_int<6, true>" = type { i6 }
+%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>" = type { %"struct.ap_fixed_base<5, 3, true, AP_TRN, AP_WRAP, 0>" }
+%"struct.ap_fixed_base<5, 3, true, AP_TRN, AP_WRAP, 0>" = type { %"struct.ssdm_int<5, true>" }
+%"struct.ssdm_int<5, true>" = type { i5 }
 
 ; Function Attrs: argmemonly noinline willreturn
-define void @apatb_cordiccart2pol_ir(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* nocapture readonly %x, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* nocapture readonly %y, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias nocapture nonnull %r, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias nocapture nonnull %theta) local_unnamed_addr #0 {
+define void @apatb_cordiccart2pol_ir(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* nocapture readonly %x, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* nocapture readonly %y, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias nocapture nonnull %r, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias nocapture nonnull %theta) local_unnamed_addr #0 {
 entry:
-  %r_copy = alloca i6, align 512
-  %theta_copy = alloca i6, align 512
-  call fastcc void @copy_in(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* nonnull %r, i6* nonnull align 512 %r_copy, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* nonnull %theta, i6* nonnull align 512 %theta_copy)
-  call void @apatb_cordiccart2pol_hw(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %x, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %y, i6* %r_copy, i6* %theta_copy)
-  call void @copy_back(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %r, i6* %r_copy, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %theta, i6* %theta_copy)
+  %r_copy = alloca i5, align 512
+  %theta_copy = alloca i5, align 512
+  call fastcc void @copy_in(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* nonnull %r, i5* nonnull align 512 %r_copy, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* nonnull %theta, i5* nonnull align 512 %theta_copy)
+  call void @apatb_cordiccart2pol_hw(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %x, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %y, i5* %r_copy, i5* %theta_copy)
+  call void @copy_back(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %r, i5* %r_copy, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %theta, i5* %theta_copy)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_in(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias readonly "unpacked"="0", i6* noalias nocapture align 512 "unpacked"="1.0", %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias readonly "unpacked"="2", i6* noalias nocapture align 512 "unpacked"="3.0") unnamed_addr #1 {
+define internal fastcc void @copy_in(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias readonly "unpacked"="0", i5* noalias nocapture align 512 "unpacked"="1.0", %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias readonly "unpacked"="2", i5* noalias nocapture align 512 "unpacked"="3.0") unnamed_addr #1 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>.11"(i6* align 512 %1, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %0)
-  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>.11"(i6* align 512 %3, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %2)
+  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>.11"(i5* align 512 %1, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %0)
+  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>.11"(i5* align 512 %3, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %2)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_out(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="0", i6* noalias nocapture readonly align 512 "unpacked"="1.0", %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="2", i6* noalias nocapture readonly align 512 "unpacked"="3.0") unnamed_addr #2 {
+define internal fastcc void @copy_out(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="0", i5* noalias nocapture readonly align 512 "unpacked"="1.0", %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="2", i5* noalias nocapture readonly align 512 "unpacked"="3.0") unnamed_addr #2 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %0, i6* align 512 %1)
-  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %2, i6* align 512 %3)
+  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %0, i5* align 512 %1)
+  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %2, i5* align 512 %3)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="0" %dst, i6* noalias nocapture readonly align 512 "unpacked"="1.0" %src) unnamed_addr #3 {
+define internal fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="0" %dst, i5* noalias nocapture readonly align 512 "unpacked"="1.0" %src) unnamed_addr #3 {
 entry:
-  %0 = icmp eq %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %dst, null
+  %0 = icmp eq %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %dst, null
   br i1 %0, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  %dst.0.0.04 = getelementptr %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>", %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %dst, i64 0, i32 0, i32 0, i32 0
-  %1 = bitcast i6* %src to i8*
+  %dst.0.0.04 = getelementptr %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>", %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %dst, i64 0, i32 0, i32 0, i32 0
+  %1 = bitcast i5* %src to i8*
   %2 = load i8, i8* %1
-  %3 = trunc i8 %2 to i6
-  store i6 %3, i6* %dst.0.0.04, align 1
+  %3 = trunc i8 %2 to i5
+  store i5 %3, i5* %dst.0.0.04, align 1
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -53,17 +53,17 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>.11"(i6* noalias nocapture align 512 "unpacked"="0.0" %dst, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias readonly "unpacked"="1" %src) unnamed_addr #3 {
+define internal fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>.11"(i5* noalias nocapture align 512 "unpacked"="0.0" %dst, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias readonly "unpacked"="1" %src) unnamed_addr #3 {
 entry:
-  %0 = icmp eq %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %src, null
+  %0 = icmp eq %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %src, null
   br i1 %0, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  %src.0.0.03 = getelementptr %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>", %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %src, i64 0, i32 0, i32 0, i32 0
-  %1 = bitcast i6* %src.0.0.03 to i8*
+  %src.0.0.03 = getelementptr %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>", %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %src, i64 0, i32 0, i32 0, i32 0
+  %1 = bitcast i5* %src.0.0.03 to i8*
   %2 = load i8, i8* %1
-  %3 = trunc i8 %2 to i6
-  store i6 %3, i6* %dst, align 512
+  %3 = trunc i8 %2 to i5
+  store i5 %3, i5* %dst, align 512
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -74,27 +74,27 @@ declare i8* @malloc(i64)
 
 declare void @free(i8*)
 
-declare void @apatb_cordiccart2pol_hw(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"*, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"*, i6*, i6*)
+declare void @apatb_cordiccart2pol_hw(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"*, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"*, i5*, i5*)
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_back(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="0", i6* noalias nocapture readonly align 512 "unpacked"="1.0", %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="2", i6* noalias nocapture readonly align 512 "unpacked"="3.0") unnamed_addr #2 {
+define internal fastcc void @copy_back(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="0", i5* noalias nocapture readonly align 512 "unpacked"="1.0", %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias "unpacked"="2", i5* noalias nocapture readonly align 512 "unpacked"="3.0") unnamed_addr #2 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %0, i6* align 512 %1)
-  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %2, i6* align 512 %3)
+  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %0, i5* align 512 %1)
+  call fastcc void @"onebyonecpy_hls.p0struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %2, i5* align 512 %3)
   ret void
 }
 
-declare void @cordiccart2pol_hw_stub(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* nocapture readonly, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* nocapture readonly, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias nocapture nonnull, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* noalias nocapture nonnull)
+declare void @cordiccart2pol_hw_stub(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* nocapture readonly, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* nocapture readonly, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias nocapture nonnull, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* noalias nocapture nonnull)
 
-define void @cordiccart2pol_hw_stub_wrapper(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"*, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"*, i6*, i6*) #4 {
+define void @cordiccart2pol_hw_stub_wrapper(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"*, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"*, i5*, i5*) #4 {
 entry:
   %4 = call i8* @malloc(i64 1)
-  %5 = bitcast i8* %4 to %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"*
+  %5 = bitcast i8* %4 to %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"*
   %6 = call i8* @malloc(i64 1)
-  %7 = bitcast i8* %6 to %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"*
-  call void @copy_out(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %5, i6* %2, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %7, i6* %3)
-  call void @cordiccart2pol_hw_stub(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %0, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %1, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %5, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %7)
-  call void @copy_in(%"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %5, i6* %2, %"struct.ap_fixed<6, 3, AP_TRN, AP_WRAP, 0>"* %7, i6* %3)
+  %7 = bitcast i8* %6 to %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"*
+  call void @copy_out(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %5, i5* %2, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %7, i5* %3)
+  call void @cordiccart2pol_hw_stub(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %0, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %1, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %5, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %7)
+  call void @copy_in(%"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %5, i5* %2, %"struct.ap_fixed<5, 3, AP_TRN, AP_WRAP, 0>"* %7, i5* %3)
   call void @free(i8* %4)
   call void @free(i8* %6)
   ret void

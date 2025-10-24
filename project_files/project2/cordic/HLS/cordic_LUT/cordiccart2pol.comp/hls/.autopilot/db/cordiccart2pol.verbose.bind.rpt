@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'cordiccart2pol'
 ================================================================
-* Date:           Thu Oct 23 18:11:50 2025
+* Date:           Thu Oct 23 18:15:21 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        cordiccart2pol.comp
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  5.420 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  5.447 ns|     2.70 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -75,53 +75,53 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 5.42>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%y_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %y" [cordiccart2pol.cpp:8]   --->   Operation 3 'read' 'y_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%x_read = read i6 @_ssdm_op_Read.ap_auto.i6, i6 %x" [cordiccart2pol.cpp:8]   --->   Operation 4 'read' 'x_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %x_read, i32 5" [cordiccart2pol.cpp:11]   --->   Operation 5 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns) (grouped into LUT with out node fixed_x_2)   --->   "%fixed_x = shl i6 %x_read, i6 1" [cordiccart2pol.cpp:11]   --->   Operation 6 'shl' 'fixed_x' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tmp_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %x_read, i32 4" [cordiccart2pol.cpp:11]   --->   Operation 7 'bitselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+State 1 <SV = 0> <Delay = 5.44>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%y_read = read i5 @_ssdm_op_Read.ap_auto.i5, i5 %y" [cordiccart2pol.cpp:8]   --->   Operation 3 'read' 'y_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%x_read = read i5 @_ssdm_op_Read.ap_auto.i5, i5 %x" [cordiccart2pol.cpp:8]   --->   Operation 4 'read' 'x_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i5.i32, i5 %x_read, i32 4" [cordiccart2pol.cpp:11]   --->   Operation 5 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns) (grouped into LUT with out node fixed_x_2)   --->   "%fixed_x = shl i5 %x_read, i5 1" [cordiccart2pol.cpp:11]   --->   Operation 6 'shl' 'fixed_x' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%tmp_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i5.i32, i5 %x_read, i32 3" [cordiccart2pol.cpp:11]   --->   Operation 7 'bitselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 8 [1/1] (0.00ns) (grouped into LUT with out node xor_ln11_1)   --->   "%xor_ln11 = xor i1 %tmp, i1 1" [cordiccart2pol.cpp:11]   --->   Operation 8 'xor' 'xor_ln11' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 9 [1/1] (0.00ns) (grouped into LUT with out node xor_ln11_1)   --->   "%and_ln11 = and i1 %tmp_1, i1 %xor_ln11" [cordiccart2pol.cpp:11]   --->   Operation 9 'and' 'and_ln11' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 10 [1/1] (0.00ns) (grouped into LUT with out node xor_ln11_1)   --->   "%and_ln11_1 = and i1 %tmp_1, i1 %tmp" [cordiccart2pol.cpp:11]   --->   Operation 10 'and' 'and_ln11_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 11 [1/1] (0.00ns) (grouped into LUT with out node xor_ln11_1)   --->   "%or_ln11 = or i1 %tmp, i1 %and_ln11" [cordiccart2pol.cpp:11]   --->   Operation 11 'or' 'or_ln11' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node fixed_x_2)   --->   "%trunc_ln11 = trunc i6 %x_read" [cordiccart2pol.cpp:11]   --->   Operation 12 'trunc' 'trunc_ln11' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns) (grouped into LUT with out node fixed_x_2)   --->   "%fixed_x_1 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i1.i4.i1, i1 %tmp, i4 %trunc_ln11, i1 0" [cordiccart2pol.cpp:11]   --->   Operation 13 'bitconcatenate' 'fixed_x_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node fixed_x_2)   --->   "%trunc_ln11 = trunc i5 %x_read" [cordiccart2pol.cpp:11]   --->   Operation 12 'trunc' 'trunc_ln11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns) (grouped into LUT with out node fixed_x_2)   --->   "%fixed_x_1 = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i1.i3.i1, i1 %tmp, i3 %trunc_ln11, i1 0" [cordiccart2pol.cpp:11]   --->   Operation 13 'bitconcatenate' 'fixed_x_1' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 14 [1/1] (0.97ns) (out node of the LUT)   --->   "%xor_ln11_1 = xor i1 %and_ln11_1, i1 %or_ln11" [cordiccart2pol.cpp:11]   --->   Operation 14 'xor' 'xor_ln11_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 15 [1/1] (1.18ns) (out node of the LUT)   --->   "%fixed_x_2 = select i1 %xor_ln11_1, i6 %fixed_x_1, i6 %fixed_x" [cordiccart2pol.cpp:11]   --->   Operation 15 'select' 'fixed_x_2' <Predicate = true> <Delay = 1.18> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %y_read, i32 5" [cordiccart2pol.cpp:12]   --->   Operation 16 'bitselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.00ns) (grouped into LUT with out node fixed_y_2)   --->   "%fixed_y = shl i6 %y_read, i6 1" [cordiccart2pol.cpp:12]   --->   Operation 17 'shl' 'fixed_y' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_3 = bitselect i1 @_ssdm_op_BitSelect.i1.i6.i32, i6 %y_read, i32 4" [cordiccart2pol.cpp:12]   --->   Operation 18 'bitselect' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.21ns) (out node of the LUT)   --->   "%fixed_x_2 = select i1 %xor_ln11_1, i5 %fixed_x_1, i5 %fixed_x" [cordiccart2pol.cpp:11]   --->   Operation 15 'select' 'fixed_x_2' <Predicate = true> <Delay = 1.21> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.21> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_2 = bitselect i1 @_ssdm_op_BitSelect.i1.i5.i32, i5 %y_read, i32 4" [cordiccart2pol.cpp:12]   --->   Operation 16 'bitselect' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns) (grouped into LUT with out node fixed_y_2)   --->   "%fixed_y = shl i5 %y_read, i5 1" [cordiccart2pol.cpp:12]   --->   Operation 17 'shl' 'fixed_y' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_3 = bitselect i1 @_ssdm_op_BitSelect.i1.i5.i32, i5 %y_read, i32 3" [cordiccart2pol.cpp:12]   --->   Operation 18 'bitselect' 'tmp_3' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 19 [1/1] (0.00ns) (grouped into LUT with out node xor_ln12_1)   --->   "%xor_ln12 = xor i1 %tmp_2, i1 1" [cordiccart2pol.cpp:12]   --->   Operation 19 'xor' 'xor_ln12' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 20 [1/1] (0.00ns) (grouped into LUT with out node xor_ln12_1)   --->   "%and_ln12 = and i1 %tmp_3, i1 %xor_ln12" [cordiccart2pol.cpp:12]   --->   Operation 20 'and' 'and_ln12' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 21 [1/1] (0.00ns) (grouped into LUT with out node xor_ln12_1)   --->   "%and_ln12_1 = and i1 %tmp_3, i1 %tmp_2" [cordiccart2pol.cpp:12]   --->   Operation 21 'and' 'and_ln12_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 22 [1/1] (0.00ns) (grouped into LUT with out node xor_ln12_1)   --->   "%or_ln12 = or i1 %tmp_2, i1 %and_ln12" [cordiccart2pol.cpp:12]   --->   Operation 22 'or' 'or_ln12' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 23 [1/1] (0.00ns) (grouped into LUT with out node fixed_y_2)   --->   "%trunc_ln12 = trunc i6 %y_read" [cordiccart2pol.cpp:12]   --->   Operation 23 'trunc' 'trunc_ln12' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node fixed_y_2)   --->   "%fixed_y_1 = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i1.i4.i1, i1 %tmp_2, i4 %trunc_ln12, i1 0" [cordiccart2pol.cpp:12]   --->   Operation 24 'bitconcatenate' 'fixed_y_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns) (grouped into LUT with out node fixed_y_2)   --->   "%trunc_ln12 = trunc i5 %y_read" [cordiccart2pol.cpp:12]   --->   Operation 23 'trunc' 'trunc_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node fixed_y_2)   --->   "%fixed_y_1 = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i1.i3.i1, i1 %tmp_2, i3 %trunc_ln12, i1 0" [cordiccart2pol.cpp:12]   --->   Operation 24 'bitconcatenate' 'fixed_y_1' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 25 [1/1] (0.97ns) (out node of the LUT)   --->   "%xor_ln12_1 = xor i1 %and_ln12_1, i1 %or_ln12" [cordiccart2pol.cpp:12]   --->   Operation 25 'xor' 'xor_ln12_1' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 26 [1/1] (1.18ns) (out node of the LUT)   --->   "%fixed_y_2 = select i1 %xor_ln12_1, i6 %fixed_y_1, i6 %fixed_y" [cordiccart2pol.cpp:12]   --->   Operation 26 'select' 'fixed_y_2' <Predicate = true> <Delay = 1.18> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%index = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i6.i6, i6 %fixed_x_2, i6 %fixed_y_2" [cordiccart2pol.cpp:22]   --->   Operation 27 'bitconcatenate' 'index' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%zext_ln26 = zext i12 %index" [cordiccart2pol.cpp:26]   --->   Operation 28 'zext' 'zext_ln26' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%my_LUT_r_addr = getelementptr i5 %my_LUT_r, i64 0, i64 %zext_ln26" [cordiccart2pol.cpp:26]   --->   Operation 29 'getelementptr' 'my_LUT_r_addr' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 30 [2/2] (3.25ns)   --->   "%my_LUT_r_load = load i12 %my_LUT_r_addr" [cordiccart2pol.cpp:26]   --->   Operation 30 'load' 'my_LUT_r_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 94 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 5> <Depth = 4096> <ROM>
-ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%my_LUT_th_addr = getelementptr i6 %my_LUT_th, i64 0, i64 %zext_ln26" [cordiccart2pol.cpp:27]   --->   Operation 31 'getelementptr' 'my_LUT_th_addr' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 32 [2/2] (3.25ns)   --->   "%my_LUT_th_load = load i12 %my_LUT_th_addr" [cordiccart2pol.cpp:27]   --->   Operation 32 'load' 'my_LUT_th_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 94 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 4096> <ROM>
+ST_1 : Operation 26 [1/1] (1.21ns) (out node of the LUT)   --->   "%fixed_y_2 = select i1 %xor_ln12_1, i5 %fixed_y_1, i5 %fixed_y" [cordiccart2pol.cpp:12]   --->   Operation 26 'select' 'fixed_y_2' <Predicate = true> <Delay = 1.21> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.21> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%index = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i5.i5, i5 %fixed_x_2, i5 %fixed_y_2" [cordiccart2pol.cpp:22]   --->   Operation 27 'bitconcatenate' 'index' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%zext_ln26 = zext i10 %index" [cordiccart2pol.cpp:26]   --->   Operation 28 'zext' 'zext_ln26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%my_LUT_r_addr = getelementptr i4 %my_LUT_r, i64 0, i64 %zext_ln26" [cordiccart2pol.cpp:26]   --->   Operation 29 'getelementptr' 'my_LUT_r_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [2/2] (3.25ns)   --->   "%my_LUT_r_load = load i10 %my_LUT_r_addr" [cordiccart2pol.cpp:26]   --->   Operation 30 'load' 'my_LUT_r_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 94 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 4> <Depth = 1024> <ROM>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%my_LUT_th_addr = getelementptr i5 %my_LUT_th, i64 0, i64 %zext_ln26" [cordiccart2pol.cpp:27]   --->   Operation 31 'getelementptr' 'my_LUT_th_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [2/2] (3.25ns)   --->   "%my_LUT_th_load = load i10 %my_LUT_th_addr" [cordiccart2pol.cpp:27]   --->   Operation 32 'load' 'my_LUT_th_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 94 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 5> <Depth = 1024> <ROM>
 
 State 2 <SV = 1> <Delay = 3.25>
 ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%spectopmodule_ln8 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [cordiccart2pol.cpp:8]   --->   Operation 33 'spectopmodule' 'spectopmodule_ln8' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %x"   --->   Operation 34 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %x, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %y"   --->   Operation 36 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %y, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %r"   --->   Operation 38 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i6 %theta"   --->   Operation 40 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i6 %theta, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 42 [1/2] ( I:3.25ns O:3.25ns )   --->   "%my_LUT_r_load = load i12 %my_LUT_r_addr" [cordiccart2pol.cpp:26]   --->   Operation 42 'load' 'my_LUT_r_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 94 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 5> <Depth = 4096> <ROM>
-ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%zext_ln26_1 = zext i5 %my_LUT_r_load" [cordiccart2pol.cpp:26]   --->   Operation 43 'zext' 'zext_ln26_1' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.ap_auto.i6P0A, i6 %r, i6 %zext_ln26_1" [cordiccart2pol.cpp:26]   --->   Operation 44 'write' 'write_ln26' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 45 [1/2] ( I:3.25ns O:3.25ns )   --->   "%my_LUT_th_load = load i12 %my_LUT_th_addr" [cordiccart2pol.cpp:27]   --->   Operation 45 'load' 'my_LUT_th_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 94 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 6> <Depth = 4096> <ROM>
-ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%write_ln27 = write void @_ssdm_op_Write.ap_auto.i6P0A, i6 %theta, i6 %my_LUT_th_load" [cordiccart2pol.cpp:27]   --->   Operation 46 'write' 'write_ln27' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i5 %x"   --->   Operation 34 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i5 %x, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i5 %y"   --->   Operation 36 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i5 %y, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i5 %r"   --->   Operation 38 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i5 %r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 39 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i5 %theta"   --->   Operation 40 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i5 %theta, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 41 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/2] ( I:3.25ns O:3.25ns )   --->   "%my_LUT_r_load = load i10 %my_LUT_r_addr" [cordiccart2pol.cpp:26]   --->   Operation 42 'load' 'my_LUT_r_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 94 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 4> <Depth = 1024> <ROM>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%zext_ln26_1 = zext i4 %my_LUT_r_load" [cordiccart2pol.cpp:26]   --->   Operation 43 'zext' 'zext_ln26_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%write_ln26 = write void @_ssdm_op_Write.ap_auto.i5P0A, i5 %r, i5 %zext_ln26_1" [cordiccart2pol.cpp:26]   --->   Operation 44 'write' 'write_ln26' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/2] ( I:3.25ns O:3.25ns )   --->   "%my_LUT_th_load = load i10 %my_LUT_th_addr" [cordiccart2pol.cpp:27]   --->   Operation 45 'load' 'my_LUT_th_load' <Predicate = true> <Delay = 3.25> <CoreInst = "ROM">   --->   Core 94 'ROM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 5> <Depth = 1024> <ROM>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%write_ln27 = write void @_ssdm_op_Write.ap_auto.i5P0A, i5 %theta, i5 %my_LUT_th_load" [cordiccart2pol.cpp:27]   --->   Operation 46 'write' 'write_ln27' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%ret_ln28 = ret" [cordiccart2pol.cpp:28]   --->   Operation 47 'ret' 'ret_ln28' <Predicate = true> <Delay = 0.00>
 
 
@@ -257,7 +257,7 @@ ret_ln28          (ret           ) [ 000]
 <pin id="13" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i6"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i5"/></StgValue>
 </bind>
 </comp>
 
@@ -266,7 +266,7 @@ ret_ln28          (ret           ) [ 000]
 <pin id="15" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_BitSelect.i1.i6.i32"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_BitSelect.i1.i5.i32"/></StgValue>
 </bind>
 </comp>
 
@@ -311,7 +311,7 @@ ret_ln28          (ret           ) [ 000]
 <pin id="25" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_BitConcatenate.i6.i1.i4.i1"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i5.i1.i3.i1"/></StgValue>
 </bind>
 </comp>
 
@@ -329,7 +329,7 @@ ret_ln28          (ret           ) [ 000]
 <pin id="29" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_BitConcatenate.i12.i6.i6"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i10.i5.i5"/></StgValue>
 </bind>
 </comp>
 
@@ -419,15 +419,15 @@ ret_ln28          (ret           ) [ 000]
 <pin id="49" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Write.ap_auto.i6P0A"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Write.ap_auto.i5P0A"/></StgValue>
 </bind>
 </comp>
 
 <comp id="50" class="1004" name="y_read_read_fu_50">
 <pin_list>
-<pin id="51" dir="0" index="0" bw="6" slack="0"/>
-<pin id="52" dir="0" index="1" bw="6" slack="0"/>
-<pin id="53" dir="1" index="2" bw="6" slack="0"/>
+<pin id="51" dir="0" index="0" bw="5" slack="0"/>
+<pin id="52" dir="0" index="1" bw="5" slack="0"/>
+<pin id="53" dir="1" index="2" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -437,9 +437,9 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="56" class="1004" name="x_read_read_fu_56">
 <pin_list>
-<pin id="57" dir="0" index="0" bw="6" slack="0"/>
-<pin id="58" dir="0" index="1" bw="6" slack="0"/>
-<pin id="59" dir="1" index="2" bw="6" slack="0"/>
+<pin id="57" dir="0" index="0" bw="5" slack="0"/>
+<pin id="58" dir="0" index="1" bw="5" slack="0"/>
+<pin id="59" dir="1" index="2" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -450,8 +450,8 @@ ret_ln28          (ret           ) [ 000]
 <comp id="62" class="1004" name="write_ln26_write_fu_62">
 <pin_list>
 <pin id="63" dir="0" index="0" bw="0" slack="0"/>
-<pin id="64" dir="0" index="1" bw="6" slack="0"/>
-<pin id="65" dir="0" index="2" bw="5" slack="0"/>
+<pin id="64" dir="0" index="1" bw="5" slack="0"/>
+<pin id="65" dir="0" index="2" bw="4" slack="0"/>
 <pin id="66" dir="1" index="3" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
@@ -463,8 +463,8 @@ ret_ln28          (ret           ) [ 000]
 <comp id="69" class="1004" name="write_ln27_write_fu_69">
 <pin_list>
 <pin id="70" dir="0" index="0" bw="0" slack="0"/>
-<pin id="71" dir="0" index="1" bw="6" slack="0"/>
-<pin id="72" dir="0" index="2" bw="6" slack="0"/>
+<pin id="71" dir="0" index="1" bw="5" slack="0"/>
+<pin id="72" dir="0" index="2" bw="5" slack="0"/>
 <pin id="73" dir="1" index="3" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
@@ -475,10 +475,10 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="76" class="1004" name="my_LUT_r_addr_gep_fu_76">
 <pin_list>
-<pin id="77" dir="0" index="0" bw="5" slack="0"/>
+<pin id="77" dir="0" index="0" bw="4" slack="0"/>
 <pin id="78" dir="0" index="1" bw="1" slack="0"/>
-<pin id="79" dir="0" index="2" bw="12" slack="0"/>
-<pin id="80" dir="1" index="3" bw="12" slack="0"/>
+<pin id="79" dir="0" index="2" bw="10" slack="0"/>
+<pin id="80" dir="1" index="3" bw="10" slack="0"/>
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
@@ -488,10 +488,10 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="83" class="1004" name="grp_access_fu_83">
 <pin_list>
-<pin id="84" dir="0" index="0" bw="12" slack="0"/>
-<pin id="85" dir="0" index="1" bw="5" slack="2147483647"/>
+<pin id="84" dir="0" index="0" bw="10" slack="0"/>
+<pin id="85" dir="0" index="1" bw="4" slack="2147483647"/>
 <pin id="86" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="87" dir="1" index="3" bw="5" slack="0"/>
+<pin id="87" dir="1" index="3" bw="4" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -501,10 +501,10 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="89" class="1004" name="my_LUT_th_addr_gep_fu_89">
 <pin_list>
-<pin id="90" dir="0" index="0" bw="6" slack="0"/>
+<pin id="90" dir="0" index="0" bw="5" slack="0"/>
 <pin id="91" dir="0" index="1" bw="1" slack="0"/>
-<pin id="92" dir="0" index="2" bw="12" slack="0"/>
-<pin id="93" dir="1" index="3" bw="12" slack="0"/>
+<pin id="92" dir="0" index="2" bw="10" slack="0"/>
+<pin id="93" dir="1" index="3" bw="10" slack="0"/>
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
@@ -514,10 +514,10 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="96" class="1004" name="grp_access_fu_96">
 <pin_list>
-<pin id="97" dir="0" index="0" bw="12" slack="0"/>
-<pin id="98" dir="0" index="1" bw="6" slack="2147483647"/>
+<pin id="97" dir="0" index="0" bw="10" slack="0"/>
+<pin id="98" dir="0" index="1" bw="5" slack="2147483647"/>
 <pin id="99" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="100" dir="1" index="3" bw="6" slack="0"/>
+<pin id="100" dir="1" index="3" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -528,7 +528,7 @@ ret_ln28          (ret           ) [ 000]
 <comp id="103" class="1004" name="tmp_fu_103">
 <pin_list>
 <pin id="104" dir="0" index="0" bw="1" slack="0"/>
-<pin id="105" dir="0" index="1" bw="6" slack="0"/>
+<pin id="105" dir="0" index="1" bw="5" slack="0"/>
 <pin id="106" dir="0" index="2" bw="4" slack="0"/>
 <pin id="107" dir="1" index="3" bw="1" slack="0"/>
 </pin_list>
@@ -540,9 +540,9 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="111" class="1004" name="fixed_x_fu_111">
 <pin_list>
-<pin id="112" dir="0" index="0" bw="6" slack="0"/>
+<pin id="112" dir="0" index="0" bw="5" slack="0"/>
 <pin id="113" dir="0" index="1" bw="1" slack="0"/>
-<pin id="114" dir="1" index="2" bw="6" slack="0"/>
+<pin id="114" dir="1" index="2" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="shl(20) " fcode="shl"/>
@@ -553,8 +553,8 @@ ret_ln28          (ret           ) [ 000]
 <comp id="117" class="1004" name="tmp_1_fu_117">
 <pin_list>
 <pin id="118" dir="0" index="0" bw="1" slack="0"/>
-<pin id="119" dir="0" index="1" bw="6" slack="0"/>
-<pin id="120" dir="0" index="2" bw="4" slack="0"/>
+<pin id="119" dir="0" index="1" bw="5" slack="0"/>
+<pin id="120" dir="0" index="2" bw="3" slack="0"/>
 <pin id="121" dir="1" index="3" bw="1" slack="0"/>
 </pin_list>
 <bind>
@@ -613,8 +613,8 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="149" class="1004" name="trunc_ln11_fu_149">
 <pin_list>
-<pin id="150" dir="0" index="0" bw="6" slack="0"/>
-<pin id="151" dir="1" index="1" bw="4" slack="0"/>
+<pin id="150" dir="0" index="0" bw="5" slack="0"/>
+<pin id="151" dir="1" index="1" bw="3" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
@@ -624,11 +624,11 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="153" class="1004" name="fixed_x_1_fu_153">
 <pin_list>
-<pin id="154" dir="0" index="0" bw="6" slack="0"/>
+<pin id="154" dir="0" index="0" bw="5" slack="0"/>
 <pin id="155" dir="0" index="1" bw="1" slack="0"/>
-<pin id="156" dir="0" index="2" bw="4" slack="0"/>
+<pin id="156" dir="0" index="2" bw="3" slack="0"/>
 <pin id="157" dir="0" index="3" bw="1" slack="0"/>
-<pin id="158" dir="1" index="4" bw="6" slack="0"/>
+<pin id="158" dir="1" index="4" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
@@ -651,9 +651,9 @@ ret_ln28          (ret           ) [ 000]
 <comp id="169" class="1004" name="fixed_x_2_fu_169">
 <pin_list>
 <pin id="170" dir="0" index="0" bw="1" slack="0"/>
-<pin id="171" dir="0" index="1" bw="6" slack="0"/>
-<pin id="172" dir="0" index="2" bw="6" slack="0"/>
-<pin id="173" dir="1" index="3" bw="6" slack="0"/>
+<pin id="171" dir="0" index="1" bw="5" slack="0"/>
+<pin id="172" dir="0" index="2" bw="5" slack="0"/>
+<pin id="173" dir="1" index="3" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
@@ -664,7 +664,7 @@ ret_ln28          (ret           ) [ 000]
 <comp id="177" class="1004" name="tmp_2_fu_177">
 <pin_list>
 <pin id="178" dir="0" index="0" bw="1" slack="0"/>
-<pin id="179" dir="0" index="1" bw="6" slack="0"/>
+<pin id="179" dir="0" index="1" bw="5" slack="0"/>
 <pin id="180" dir="0" index="2" bw="4" slack="0"/>
 <pin id="181" dir="1" index="3" bw="1" slack="0"/>
 </pin_list>
@@ -676,9 +676,9 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="185" class="1004" name="fixed_y_fu_185">
 <pin_list>
-<pin id="186" dir="0" index="0" bw="6" slack="0"/>
+<pin id="186" dir="0" index="0" bw="5" slack="0"/>
 <pin id="187" dir="0" index="1" bw="1" slack="0"/>
-<pin id="188" dir="1" index="2" bw="6" slack="0"/>
+<pin id="188" dir="1" index="2" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="shl(20) " fcode="shl"/>
@@ -689,8 +689,8 @@ ret_ln28          (ret           ) [ 000]
 <comp id="191" class="1004" name="tmp_3_fu_191">
 <pin_list>
 <pin id="192" dir="0" index="0" bw="1" slack="0"/>
-<pin id="193" dir="0" index="1" bw="6" slack="0"/>
-<pin id="194" dir="0" index="2" bw="4" slack="0"/>
+<pin id="193" dir="0" index="1" bw="5" slack="0"/>
+<pin id="194" dir="0" index="2" bw="3" slack="0"/>
 <pin id="195" dir="1" index="3" bw="1" slack="0"/>
 </pin_list>
 <bind>
@@ -749,8 +749,8 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="223" class="1004" name="trunc_ln12_fu_223">
 <pin_list>
-<pin id="224" dir="0" index="0" bw="6" slack="0"/>
-<pin id="225" dir="1" index="1" bw="4" slack="0"/>
+<pin id="224" dir="0" index="0" bw="5" slack="0"/>
+<pin id="225" dir="1" index="1" bw="3" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
@@ -760,11 +760,11 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="227" class="1004" name="fixed_y_1_fu_227">
 <pin_list>
-<pin id="228" dir="0" index="0" bw="6" slack="0"/>
+<pin id="228" dir="0" index="0" bw="5" slack="0"/>
 <pin id="229" dir="0" index="1" bw="1" slack="0"/>
-<pin id="230" dir="0" index="2" bw="4" slack="0"/>
+<pin id="230" dir="0" index="2" bw="3" slack="0"/>
 <pin id="231" dir="0" index="3" bw="1" slack="0"/>
-<pin id="232" dir="1" index="4" bw="6" slack="0"/>
+<pin id="232" dir="1" index="4" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
@@ -787,9 +787,9 @@ ret_ln28          (ret           ) [ 000]
 <comp id="243" class="1004" name="fixed_y_2_fu_243">
 <pin_list>
 <pin id="244" dir="0" index="0" bw="1" slack="0"/>
-<pin id="245" dir="0" index="1" bw="6" slack="0"/>
-<pin id="246" dir="0" index="2" bw="6" slack="0"/>
-<pin id="247" dir="1" index="3" bw="6" slack="0"/>
+<pin id="245" dir="0" index="1" bw="5" slack="0"/>
+<pin id="246" dir="0" index="2" bw="5" slack="0"/>
+<pin id="247" dir="1" index="3" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
@@ -799,10 +799,10 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="251" class="1004" name="index_fu_251">
 <pin_list>
-<pin id="252" dir="0" index="0" bw="12" slack="0"/>
-<pin id="253" dir="0" index="1" bw="6" slack="0"/>
-<pin id="254" dir="0" index="2" bw="6" slack="0"/>
-<pin id="255" dir="1" index="3" bw="12" slack="0"/>
+<pin id="252" dir="0" index="0" bw="10" slack="0"/>
+<pin id="253" dir="0" index="1" bw="5" slack="0"/>
+<pin id="254" dir="0" index="2" bw="5" slack="0"/>
+<pin id="255" dir="1" index="3" bw="10" slack="0"/>
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
@@ -812,7 +812,7 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="259" class="1004" name="zext_ln26_fu_259">
 <pin_list>
-<pin id="260" dir="0" index="0" bw="12" slack="0"/>
+<pin id="260" dir="0" index="0" bw="10" slack="0"/>
 <pin id="261" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
@@ -823,8 +823,8 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="265" class="1004" name="zext_ln26_1_fu_265">
 <pin_list>
-<pin id="266" dir="0" index="0" bw="5" slack="0"/>
-<pin id="267" dir="1" index="1" bw="6" slack="0"/>
+<pin id="266" dir="0" index="0" bw="4" slack="0"/>
+<pin id="267" dir="1" index="1" bw="5" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
@@ -834,8 +834,8 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="270" class="1005" name="my_LUT_r_addr_reg_270">
 <pin_list>
-<pin id="271" dir="0" index="0" bw="12" slack="1"/>
-<pin id="272" dir="1" index="1" bw="12" slack="1"/>
+<pin id="271" dir="0" index="0" bw="10" slack="1"/>
+<pin id="272" dir="1" index="1" bw="10" slack="1"/>
 </pin_list>
 <bind>
 <opset="my_LUT_r_addr "/>
@@ -844,8 +844,8 @@ ret_ln28          (ret           ) [ 000]
 
 <comp id="275" class="1005" name="my_LUT_th_addr_reg_275">
 <pin_list>
-<pin id="276" dir="0" index="0" bw="12" slack="1"/>
-<pin id="277" dir="1" index="1" bw="12" slack="1"/>
+<pin id="276" dir="0" index="0" bw="10" slack="1"/>
+<pin id="277" dir="1" index="1" bw="10" slack="1"/>
 </pin_list>
 <bind>
 <opset="my_LUT_th_addr "/>
@@ -1063,8 +1063,8 @@ ret_ln28          (ret           ) [ 000]
 |----------|------------------------|---------|---------|
 | Operation|     Functional Unit    |    FF   |   LUT   |
 |----------|------------------------|---------|---------|
-|  select  |    fixed_x_2_fu_169    |    0    |    6    |
-|          |    fixed_y_2_fu_243    |    0    |    6    |
+|  select  |    fixed_x_2_fu_169    |    0    |    5    |
+|          |    fixed_y_2_fu_243    |    0    |    5    |
 |----------|------------------------|---------|---------|
 |          |     xor_ln11_fu_125    |    0    |    2    |
 |    xor   |    xor_ln11_1_fu_163   |    0    |    2    |
@@ -1103,37 +1103,37 @@ ret_ln28          (ret           ) [ 000]
 |   zext   |    zext_ln26_fu_259    |    0    |    0    |
 |          |   zext_ln26_1_fu_265   |    0    |    0    |
 |----------|------------------------|---------|---------|
-|   Total  |                        |    0    |    32   |
+|   Total  |                        |    0    |    30   |
 |----------|------------------------|---------|---------|
 
 Memories:
 +---------+--------+--------+--------+
 |         |  BRAM  |   FF   |   LUT  |
 +---------+--------+--------+--------+
-| my_LUT_r|    2   |    0   |    0   |
-|my_LUT_th|    2   |    0   |    0   |
+| my_LUT_r|    1   |    0   |    0   |
+|my_LUT_th|    1   |    0   |    0   |
 +---------+--------+--------+--------+
-|  Total  |    4   |    0   |    0   |
+|  Total  |    2   |    0   |    0   |
 +---------+--------+--------+--------+
 
 * Register list:
 +----------------------+--------+
 |                      |   FF   |
 +----------------------+--------+
-| my_LUT_r_addr_reg_270|   12   |
-|my_LUT_th_addr_reg_275|   12   |
+| my_LUT_r_addr_reg_270|   10   |
+|my_LUT_th_addr_reg_275|   10   |
 +----------------------+--------+
-|         Total        |   24   |
+|         Total        |   20   |
 +----------------------+--------+
 
 * Multiplexer (MUX) list: 
 |------------------|------|------|------|--------||---------||---------||---------|
 |       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||    FF   ||   LUT   |
 |------------------|------|------|------|--------||---------||---------||---------|
-| grp_access_fu_83 |  p0  |   2  |  12  |   24   ||    0    ||    9    |
-| grp_access_fu_96 |  p0  |   2  |  12  |   24   ||    0    ||    9    |
+| grp_access_fu_83 |  p0  |   2  |  10  |   20   ||    0    ||    9    |
+| grp_access_fu_96 |  p0  |   2  |  10  |   20   ||    0    ||    9    |
 |------------------|------|------|------|--------||---------||---------||---------|
-|       Total      |      |      |      |   48   ||  3.176  ||    0    ||    18   |
+|       Total      |      |      |      |   40   ||  3.176  ||    0    ||    18   |
 |------------------|------|------|------|--------||---------||---------||---------|
 
 
@@ -1142,10 +1142,10 @@ Memories:
 +-----------+--------+--------+--------+--------+
 |           |  BRAM  |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+
-|  Function |    -   |    -   |    0   |   32   |
-|   Memory  |    4   |    -   |    0   |    0   |
+|  Function |    -   |    -   |    0   |   30   |
+|   Memory  |    2   |    -   |    0   |    0   |
 |Multiplexer|    -   |    3   |    0   |   18   |
-|  Register |    -   |    -   |   24   |    -   |
+|  Register |    -   |    -   |   20   |    -   |
 +-----------+--------+--------+--------+--------+
-|   Total   |    4   |    3   |   24   |   50   |
+|   Total   |    2   |    3   |   20   |   48   |
 +-----------+--------+--------+--------+--------+
