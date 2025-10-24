@@ -16,6 +16,7 @@ void init_cart2pol_LUTs(data_t my_LUT_th[LUT_SIZE], data_t my_LUT_r[LUT_SIZE])
 			}
 
 		float _x = fixed_x;
+		
 		float _y = fixed_y;
 
 		if((_x == 0) & (_y == 0)){
