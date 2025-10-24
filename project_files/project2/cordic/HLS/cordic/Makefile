@@ -91,6 +91,7 @@ export_design -format ip_catalog -rtl verilog -version 1.0 -ipname $(TOP)
 exit
 EOF
 
+
 ip: hls $(CURDIR)/export_$(TOP).tcl
 	$(HLS_COMPILER) $(CURDIR)/export_$(TOP).tcl || { s=$$?; echo "$(HLS_COMPILER) $(CURDIR)/export_$(TOP).tcl failed $$s" >&2; exit $$s; }
 
