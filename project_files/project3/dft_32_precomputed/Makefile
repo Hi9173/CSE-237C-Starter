@@ -4,7 +4,7 @@
 #
 
 # select the HLS compiler to use (vivado_hls or vitis)
-TOP = mul
+TOP = dft
 # -------------------------------------------------------
 
 USE_VITIS=1
@@ -43,7 +43,7 @@ LD_PATH_NEW = /usr/lib/x86_64-linux-gnu
 LD_LIBRARY_PATH := $(shell echo $(value LD_LIBRARY_PATH) | grep -q $(LD_PATH_NEW) || echo $(LD_PATH_NEW):)$(value LD_LIBRARY_PATH)
 
 # ------------ Set the script path to generate tcl scripts ----------------
-GEN_TCL = $(CURDIR)/../scripts/gen_hls_runner_script.py
+GEN_TCL = $(CURDIR)/../../scripts/gen_hls_runner_script.py
 # -------------------------------------------------------------------------
 
 #HLS_CONFIG_FILE = $(CURDIR)/__hls_config__.ini
@@ -89,7 +89,7 @@ report: hls
 $(CURDIR)/export_$(TOP).tcl:
 	@{ \
 	    echo "open_component $(TOP).comp"; \
-		echo "export_design -format ip_catalog -rtl verilog -version 1.0 -ipname mul "; \
+		echo "export_design -format ip_catalog -rtl verilog -version 1.0 -ipname $(TOP) "; \
 		echo "exit"; \
 	} > $(CURDIR)/export_$(TOP).tcl
 
@@ -104,3 +104,4 @@ clean:
 
 # Prevent make from deleting the .bin intermediate files
 .PRECIOUS: %.bin %.tcl 
+
