@@ -13,7 +13,7 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DT
  for (i = 0; i < SIZE; i += 1) {
   real_op[i] = 0;
   imag_op[i] = 0;
-  w = (2.0 * 3.3.14159265358979323846264338327950288419716939937510 / SIZE) * (DTYPE)i;
+  w = (2.0 * 3.14159265358979323846264338327950288419716939937510 / SIZE) * (DTYPE)i;
   for (j = 0; j < SIZE; j += 1) {
    c = cos(j * w);
    s = -sin(j * w);
