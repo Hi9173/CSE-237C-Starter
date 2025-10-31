@@ -1,0 +1,23 @@
+{
+    "0": {
+        "name": "dft",
+        "file": "dft.cpp",
+        "fileloc": "6",
+        "instructions": "81",
+        "total_instructions": "81",
+        "calls": "",
+        "basicblocks": "5",
+        "loads": {
+            "G": "2",
+            "L": "6",
+            "T": "2"
+        },
+        "stores": {
+            "L": "12",
+            "T": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_dft_ir
+Args:            
+  - Callee:          'dft(float*, float*, float*, float*)'
+    DebugLoc:        { File: dft.cpp, Line: 7, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_dft_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_18_2
+  - String:          '> at '
+  - LoopLoc:         'dft.cpp:18:20'
+  - String:          ' '
+...
