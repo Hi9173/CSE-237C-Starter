@@ -6,17 +6,22 @@
 void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DTYPE imag_op[SIZE])
 {
  int i, j;
- DTYPE w;
+ const double PI = 3.14159265358979323846264338327950288419716939937510;
+ double w_double;
+ double c_double, s_double;
  DTYPE c, s;
  
  // Question 6a: Baseline implementation with math functions
+ // Use double precision for calculations, then convert to DTYPE (float)
  for (i = 0; i < SIZE; i += 1) {
   real_op[i] = 0;
   imag_op[i] = 0;
-  w = (2.0 * 3.14159265358979323846264338327950288419716939937510 / SIZE) * (DTYPE)i;
+  w_double = (2.0 * PI / SIZE) * (double)i;
   for (j = 0; j < SIZE; j += 1) {
-   c = cos(j * w);
-   s = -sin(j * w);
+   c_double = cos((double)j * w_double);
+   s_double = -sin((double)j * w_double);
+   c = (DTYPE)c_double;
+   s = (DTYPE)s_double;
    real_op[i] += (real_sample[j] * c - imag_sample[j] * s);
    imag_op[i] += (real_sample[j] * s + imag_sample[j] * c);
   }
