@@ -1,38 +1,33 @@
-#include<math.h>
+// dft.cpp
+#include <cmath>
 #include "dft.h"
-#include"coefficients1024.h"
 
-
-void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DTYPE imag_op[SIZE])
+void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],
+         DTYPE real_op[SIZE],   DTYPE imag_op[SIZE])
 {
- int i, j;
- int idx;
- DTYPE c, s;
- 
- // for (i = 0; i < SIZE; i += 1) {
- //  real_op[i] = 0;
- //  imag_op[i] = 0;
- //  for (j = 0; j < SIZE; j += 1) {
- //   idx = (i * j) % SIZE;
- //   c = cos_coefficients_table[idx];
- //   s = sin_coefficients_table[idx];
- //   real_op[i] += (real_sample[j] * c - imag_sample[j] * s);
- //   imag_op[i] += (real_sample[j] * s + imag_sample[j] * c);
- //  }
- // }
- 
- //Question 6a: Baseline implementation with math functions
- DTYPE w;
- for (i = 0; i < SIZE; i += 1) {
-  real_op[i] = 0;
-  imag_op[i] = 0;
-  w = (2.0 * 3.141592653589 / SIZE) * (DTYPE)i;
-  for (j = 0; j < SIZE; j += 1) {
-   c = cos(j * w);
-   s = sin(j * w);
-   real_op[i] += (real_sample[j] * c + imag_sample[j] * s);
-   imag_op[i] += (imag_sample[j] * c - real_sample[j] * s);
-  }
- }
- 
+    // Use double precision for twiddle/accumulation to match golden closely,
+    // then cast back to DTYPE (float) at the outputs.
+    const double TWO_PI_OVER_N = 2.0 * 3.14159265358979323846264338327950288419716939937510 / (double)SIZE;
+
+    for (int i = 0; i < SIZE; ++i) {
+        double accR = 0.0;
+        double accI = 0.0;
+
+        const double w = TWO_PI_OVER_N * (double)i;  // 2π * i / N
+
+        for (int j = 0; j < SIZE; ++j) {
+            const double jw = (double)j * w;
+            const double c  = std::cos(jw);
+            const double s  = -std::sin(jw);          // forward DFT: e^{-j2πkn/N}
+
+            const double xr = (double)real_sample[j];
+            const double xi = (double)imag_sample[j];
+
+            accR += xr * c - xi * s;
+            accI += xr * s + xi * c;
+        }
+
+        real_op[i] = (DTYPE)accR;
+        imag_op[i] = (DTYPE)accI;
+    }
 }
