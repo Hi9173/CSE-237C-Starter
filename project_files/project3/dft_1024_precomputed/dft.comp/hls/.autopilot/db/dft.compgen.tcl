@@ -1,5 +1,41 @@
 # This script segment is generated automatically by AutoPilot
 
+set name dft_faddfsub_32ns_32ns_32_5_full_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fsub} IMPL {fulldsp} LATENCY 4 ALLOW_PRAGMA 1
+}
+
+
+set name dft_fadd_32ns_32ns_32_5_full_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fadd} IMPL {fulldsp} LATENCY 4 ALLOW_PRAGMA 1
+}
+
+
+set name dft_fmul_32ns_32ns_32_4_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 3 ALLOW_PRAGMA 1
+}
+
+
+set name dft_fptrunc_64ns_32_2_no_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fptrunc} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
+}
+
+
+set name dft_dmul_64ns_64ns_64_7_max_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {dmul} IMPL {maxdsp} LATENCY 6 ALLOW_PRAGMA 1
+}
+
+
+set name dft_sitodp_32ns_64_6_no_dsp_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {sitodp} IMPL {auto} LATENCY 5 ALLOW_PRAGMA 1
+}
+
+
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -12,7 +48,7 @@ set axilite_register_dict [dict create]
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 22 \
+    id 82 \
     name real_sample \
     reset_level 1 \
     sync_rst true \
@@ -31,7 +67,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 23 \
+    id 83 \
     name imag_sample \
     reset_level 1 \
     sync_rst true \
@@ -50,14 +86,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 24 \
+    id 84 \
     name real_op \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename real_op \
     op interface \
-    ports { real_op_address0 { O 10 vector } real_op_ce0 { O 1 bit } real_op_we0 { O 1 bit } real_op_d0 { O 32 vector } real_op_address1 { O 10 vector } real_op_ce1 { O 1 bit } real_op_q1 { I 32 vector } } \
+    ports { real_op_address0 { O 10 vector } real_op_ce0 { O 1 bit } real_op_we0 { O 1 bit } real_op_d0 { O 32 vector } real_op_q0 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'real_op'"
@@ -69,14 +105,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 25 \
+    id 85 \
     name imag_op \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename imag_op \
     op interface \
-    ports { imag_op_address0 { O 10 vector } imag_op_ce0 { O 1 bit } imag_op_we0 { O 1 bit } imag_op_d0 { O 32 vector } imag_op_address1 { O 10 vector } imag_op_ce1 { O 1 bit } imag_op_q1 { I 32 vector } } \
+    ports { imag_op_address0 { O 10 vector } imag_op_ce0 { O 1 bit } imag_op_we0 { O 1 bit } imag_op_d0 { O 32 vector } imag_op_q0 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'imag_op'"

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dft'" level="0">
-<item name = "Date">Tue Nov  4 15:05:18 2025
+<item name = "Date">Tue Nov  4 15:33:44 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">dft.comp</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1049624, 1049624, 10.496 ms, 10.496 ms, 1049625, 1049625, no</column>
+<column name="">106962948, 113254404, 1.070 sec, 1.133 sec, 106962949, 113254405, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,6 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_17_2">106961920, 113253376, 104455 ~ 110599, -, -, 1024, no</column>
+<column name=" + VITIS_LOOP_18_3">104448, 110592, 102 ~ 108, -, -, 1024, no</column>
 </table>
 </item>
 </section>
