@@ -15,7 +15,6 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE], DTYPE real_op[SIZE], 
     }
 
     for (j = 0; j < SIZE; j += 1) {
-        #pragma HLS PIPELINE II=1
         for (i = 0; i < SIZE; i += 1) {
             w_double = (2.0 * PI * (double)i * (double)j) / (double)SIZE;
 
