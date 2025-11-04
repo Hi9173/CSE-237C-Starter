@@ -1,0 +1,10 @@
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_32_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp:252:2: warning: Added loop label VITIS_LOOP_16_1:   [xilinx-label-all-loops]
+ for (i = 0; i < 32; i+= 1) {
+ ^~~
+ VITIS_LOOP_16_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_32_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp:252:2: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_32_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp:256:3: warning: Added loop label VITIS_LOOP_20_2:   [xilinx-label-all-loops]
+  for (j = 0; j < 32; j += 1) {
+  ^~~
+  VITIS_LOOP_20_2: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_32_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp:256:3: note: FIX-IT applied suggested code changes

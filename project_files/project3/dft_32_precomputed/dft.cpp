@@ -1,4 +1,4 @@
-\#include "dft.h"
+#include "dft.h"
 #include"coefficients32_2D.h"
 
 void dft(DTYPE input_R[SIZE], DTYPE input_I[SIZE], DTYPE output_R[SIZE], DTYPE output_I[SIZE])
@@ -14,13 +14,12 @@ void dft(DTYPE input_R[SIZE], DTYPE input_I[SIZE], DTYPE output_R[SIZE], DTYPE o
 	DTYPE c, s;
 	
 	for (i = 0; i < SIZE; i+= 1) {
-		#pragma HLS PIPELINE II=1
 		output_R[i] = 0;
 		output_I[i] = 0;
 
 		for (j = 0; j < SIZE; j += 1) {
 
-			#pragma HLS UNROLL factor=1
+			#pragma HLS UNROLL factor=32
 			c = cos_coeff_table[i][j];
 			s = sin_coeff_table[i][j];
 

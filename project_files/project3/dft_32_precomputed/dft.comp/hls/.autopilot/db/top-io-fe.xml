@@ -1,0 +1,401 @@
+<root versionMajor = "1" versionMinor = "5">
+  <kernel src_name="dft" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+    <args>
+      <arg id="0" access_type="r" src_name="input_R" src_type="float*" src_isptr="1" src_bitwidth="32" src_size_or_depth="32">
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_0" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_1" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_2" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_3" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_4" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_5" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_6" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_7" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_8" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_9" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_10" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_11" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_12" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_13" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_14" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_15" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_16" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_17" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_18" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_19" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_20" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_21" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_22" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_23" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_24" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_25" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_26" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_27" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_28" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_29" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_30" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_R_31" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="1" access_type="r" src_name="input_I" src_type="float*" src_isptr="1" src_bitwidth="32" src_size_or_depth="32">
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_0" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_1" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_2" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_3" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_4" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_5" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_6" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_7" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_8" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_9" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_10" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_11" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_12" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_13" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_14" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_15" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_16" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_17" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_18" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_19" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_20" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_21" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_22" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_23" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_24" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_25" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_26" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_27" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_28" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_29" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_30" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="input_I_31" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="2" access_type="w" src_name="output_R" src_type="float*" src_isptr="1" src_bitwidth="32" src_size_or_depth="32">
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_0" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_1" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_2" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_3" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_4" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_5" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_6" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_7" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_8" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_9" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_10" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_11" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_12" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_13" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_14" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_15" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_16" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_17" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_18" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_19" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_20" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_21" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_22" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_23" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_24" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_25" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_26" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_27" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_28" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_29" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_30" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_R_31" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+      <arg id="3" access_type="w" src_name="output_I" src_type="float*" src_isptr="1" src_bitwidth="32" src_size_or_depth="32">
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_0" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_1" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_2" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_3" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_4" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_5" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_6" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_7" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_8" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_9" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_10" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_11" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_12" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_13" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_14" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_15" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_16" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_17" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_18" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_19" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_20" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_21" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_22" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_23" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_24" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_25" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_26" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_27" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_28" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_29" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_30" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="output_I_31" hw_bitwidth="32" hw_size_or_depth="1" hw_kernel_support="false">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+      </arg>
+    </args>
+    <return src_type="void" src_bitwidth="0" offset="0x0">
+      <hw hw_usage="data" hw_interface="" hw_name="" hw_bitwidth="0" hw_kernel_support="true"/>
+    </return>
+  </kernel>
+</root>
