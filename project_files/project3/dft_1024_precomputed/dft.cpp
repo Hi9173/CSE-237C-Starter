@@ -1,36 +1,33 @@
 #include <math.h>
 #include "dft.h"
-#include "coefficients32.h"
+#include "coefficients1024.h"
 
 void dft(DTYPE sample_real[SIZE], DTYPE sample_imag[SIZE])
 {
-    int i, j;
-    DTYPE w;
-    DTYPE c, s;
+	int i, j;
+	DTYPE w;
+	DTYPE c, s;
+	
+	DTYPE temp_real[SIZE];
+	DTYPE temp_imag[SIZE];
+	
+	for (i = 0; i < SIZE; i+= 1) {
+		temp_real[i] = 0;
+		temp_imag[i] = 0;
 
-    DTYPE temp_real[SIZE];
-    DTYPE temp_imag[SIZE];
+		w = (2.0 * 3.141592653589 / SIZE) * (DTYPE)i;
 
-    for (i = 0; i < SIZE; i += 1) {
-        temp_real[i] = 0;
-        temp_imag[i] = 0;
-    }
+		for (j = 0; j < SIZE; j += 1) {
 
-    // Loop-interchanged version: j outer, i inner
-    for (j = 0; j < SIZE; j += 1) {
-        w = (2.0 * 3.141592653589 / SIZE) * (DTYPE)j;
-
-        for (i = 0; i < SIZE; i += 1) {
-            c = cos(i * w);
-            s = -sin(i * w);
-
-            temp_real[i] += (sample_real[j] * c - sample_imag[j] * s);
-            temp_imag[i] += (sample_real[j] * s + sample_imag[j] * c);
-        }
-    }
-
-    for (i = 0; i < SIZE; i += 1) {
-        sample_real[i] = temp_real[i];
-        sample_imag[i] = temp_imag[i];
-    }
+			c = cos(j * w);
+			s = -sin(j * w);
+            
+			temp_real[i] += (sample_real[j] * c - sample_imag[j] * s);
+			temp_imag[i] += (sample_real[j] * s + sample_imag[j] * c);
+		}
+	}
+	for (i = 0; i < SIZE; i+= 1) {
+		sample_real[i] = temp_real[i];
+		sample_imag[i] = temp_imag[i];
+	}
 }
