@@ -1,5 +1,3 @@
-
 typedef float DTYPE;
 #define SIZE 32 		/* SIZE OF DFT */
-void dft(DTYPE XX_R[SIZE], DTYPE XX_I[SIZE]);
-
+void dft(DTYPE input_R[SIZE], DTYPE input_I[SIZE], DTYPE output_R[SIZE], DTYPE output_I[SIZE]);
