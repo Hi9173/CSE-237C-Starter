@@ -6,7 +6,7 @@
 // 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 `timescale 1ns / 1ps
 
-module dft_sparsemux_9_5_32_1_1 (din0,din1,din2,din3,def,sel,dout);
+module dft_sparsemux_17_5_32_1_1 (din0,din1,din2,din3,din4,din5,din6,din7,def,sel,dout);
 
 parameter din0_WIDTH = 1;
 
@@ -15,6 +15,14 @@ parameter din1_WIDTH = 1;
 parameter din2_WIDTH = 1;
 
 parameter din3_WIDTH = 1;
+
+parameter din4_WIDTH = 1;
+
+parameter din5_WIDTH = 1;
+
+parameter din6_WIDTH = 1;
+
+parameter din7_WIDTH = 1;
 
 parameter def_WIDTH = 1;
 parameter sel_WIDTH = 1;
@@ -28,6 +36,14 @@ parameter [sel_WIDTH-1:0] CASE2 = 1;
 
 parameter [sel_WIDTH-1:0] CASE3 = 1;
 
+parameter [sel_WIDTH-1:0] CASE4 = 1;
+
+parameter [sel_WIDTH-1:0] CASE5 = 1;
+
+parameter [sel_WIDTH-1:0] CASE6 = 1;
+
+parameter [sel_WIDTH-1:0] CASE7 = 1;
+
 parameter ID = 1;
 parameter NUM_STAGE = 1;
 
@@ -40,6 +56,14 @@ input [din1_WIDTH-1:0] din1;
 input [din2_WIDTH-1:0] din2;
 
 input [din3_WIDTH-1:0] din3;
+
+input [din4_WIDTH-1:0] din4;
+
+input [din5_WIDTH-1:0] din5;
+
+input [din6_WIDTH-1:0] din6;
+
+input [din7_WIDTH-1:0] din7;
 
 input [def_WIDTH-1:0] def;
 input [sel_WIDTH-1:0] sel;
@@ -61,6 +85,14 @@ always @ (*) begin
     CASE2 : dout_tmp = din2;
     
     CASE3 : dout_tmp = din3;
+    
+    CASE4 : dout_tmp = din4;
+    
+    CASE5 : dout_tmp = din5;
+    
+    CASE6 : dout_tmp = din6;
+    
+    CASE7 : dout_tmp = din7;
     
     default : dout_tmp = def;
 endcase

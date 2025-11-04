@@ -7,7 +7,7 @@ library ieee;
 use ieee.std_logic_1164.all; 
 use ieee.std_logic_unsigned.all;
 
-entity dft_p_ZL15cos_coeff_table_11_ROM_AUTO_1R is 
+entity dft_p_ZL15cos_coeff_table_21_ROM_AUTO_1R is 
     generic(
              DataWidth     : integer := 32; 
              AddressWidth     : integer := 5; 
@@ -25,7 +25,7 @@ entity dft_p_ZL15cos_coeff_table_11_ROM_AUTO_1R is
 end entity; 
 
 
-architecture rtl of dft_p_ZL15cos_coeff_table_11_ROM_AUTO_1R is 
+architecture rtl of dft_p_ZL15cos_coeff_table_21_ROM_AUTO_1R is 
  
 signal address0_tmp : std_logic_vector(AddressWidth-1 downto 0); 
 

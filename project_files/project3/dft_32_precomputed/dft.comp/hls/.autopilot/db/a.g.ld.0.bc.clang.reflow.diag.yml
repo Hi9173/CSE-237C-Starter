@@ -14,7 +14,7 @@ Args:
   - String:          ''' partially '
   - String:          ''
   - String:          'with a factor of '
-  - Factor:          '8'
+  - Factor:          '4'
 ...
 --- !Missed
 Pass:            inline
