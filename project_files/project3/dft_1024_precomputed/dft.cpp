@@ -1,34 +1,35 @@
-#include<math.h>
+#include <math.h>
 #include "dft.h"
-#include"coefficients1024.h"
-
+#include "coefficients1024.h"
 
 void dft(DTYPE sample_real[SIZE], DTYPE sample_imag[SIZE])
 {
-	int i, j;
-	DTYPE w;
-	DTYPE c, s;
-	
-	DTYPE temp_real[SIZE];
-	DTYPE temp_imag[SIZE];
-	
-	for (i = 0; i < SIZE; i+= 1) {
-		temp_real[i] = 0;
-		temp_imag[i] = 0;
+    int i, j;
+    DTYPE w;
+    DTYPE c, s;
 
-		w = (2.0 * 3.141592653589 / SIZE) * (DTYPE)i;
+    DTYPE temp_real[SIZE];
+    DTYPE temp_imag[SIZE];
 
-		for (j = 0; j < SIZE; j += 1) {
+    for (i = 0; i < SIZE; i += 1) {
+        temp_real[i] = 0;
+        temp_imag[i] = 0;
 
-			c = cosf(j * w);
-			s = -sinf(j * w);
-            
-			temp_real[i] += (sample_real[j] * c - sample_imag[j] * s);
-			temp_imag[i] += (sample_real[j] * s + sample_imag[j] * c);
-		}
-	}
-	for (i = 0; i < SIZE; i+= 1) {
-		sample_real[i] = temp_real[i];
-		sample_imag[i] = temp_imag[i];
-	}
+        // keep math in float
+        const DTYPE TWO_PI = (DTYPE)6.28318530717958647692f;
+        w = (TWO_PI / (DTYPE)SIZE) * (DTYPE)i;
+
+        for (j = 0; j < SIZE; j += 1) {
+            c = cosf((DTYPE)j * w);
+            s = sinf((DTYPE)j * w);     // <-- flip sign to match your golden
+
+            temp_real[i] += (sample_real[j] * c - sample_imag[j] * s);
+            temp_imag[i] += (sample_real[j] * s + sample_imag[j] * c);
+        }
+    }
+
+    for (i = 0; i < SIZE; i += 1) {
+        sample_real[i] = temp_real[i];
+        sample_imag[i] = temp_imag[i];
+    }
 }
