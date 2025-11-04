@@ -20,7 +20,7 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE], DTYPE real_op[SIZE], 
 
             // compute cos and sin directly
             c_double = cos(w_double);
-            s_double = sin(w_double);
+            s_double = -sin(w_double);
 
             real_op[i] += (real_sample[j] * (DTYPE)c_double - imag_sample[j] * (DTYPE)s_double);
             imag_op[i] += (real_sample[j] * (DTYPE)s_double + imag_sample[j] * (DTYPE)c_double);
