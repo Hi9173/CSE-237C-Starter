@@ -9,7 +9,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity dft_sparsemux_17_5_32_1_1 is
+entity dft_sparsemux_33_5_32_1_1 is
 generic (
 
     din0_WIDTH : INTEGER := 1;
@@ -27,6 +27,22 @@ generic (
     din6_WIDTH : INTEGER := 1;
 
     din7_WIDTH : INTEGER := 1;
+
+    din8_WIDTH : INTEGER := 1;
+
+    din9_WIDTH : INTEGER := 1;
+
+    din10_WIDTH : INTEGER := 1;
+
+    din11_WIDTH : INTEGER := 1;
+
+    din12_WIDTH : INTEGER := 1;
+
+    din13_WIDTH : INTEGER := 1;
+
+    din14_WIDTH : INTEGER := 1;
+
+    din15_WIDTH : INTEGER := 1;
 
     def_WIDTH : INTEGER := 1;
     sel_WIDTH : INTEGER := 1;
@@ -47,6 +63,22 @@ generic (
     CASE6 : std_logic_vector(4 downto 0);
     
     CASE7 : std_logic_vector(4 downto 0);
+    
+    CASE8 : std_logic_vector(4 downto 0);
+    
+    CASE9 : std_logic_vector(4 downto 0);
+    
+    CASE10 : std_logic_vector(4 downto 0);
+    
+    CASE11 : std_logic_vector(4 downto 0);
+    
+    CASE12 : std_logic_vector(4 downto 0);
+    
+    CASE13 : std_logic_vector(4 downto 0);
+    
+    CASE14 : std_logic_vector(4 downto 0);
+    
+    CASE15 : std_logic_vector(4 downto 0);
     
     ID : INTEGER := 1;
     NUM_STAGE : INTEGER := 1
@@ -70,19 +102,35 @@ port (
 
     din7 : in std_logic_vector (din7_WIDTH-1 downto 0);
 
+    din8 : in std_logic_vector (din8_WIDTH-1 downto 0);
+
+    din9 : in std_logic_vector (din9_WIDTH-1 downto 0);
+
+    din10 : in std_logic_vector (din10_WIDTH-1 downto 0);
+
+    din11 : in std_logic_vector (din11_WIDTH-1 downto 0);
+
+    din12 : in std_logic_vector (din12_WIDTH-1 downto 0);
+
+    din13 : in std_logic_vector (din13_WIDTH-1 downto 0);
+
+    din14 : in std_logic_vector (din14_WIDTH-1 downto 0);
+
+    din15 : in std_logic_vector (din15_WIDTH-1 downto 0);
+
     def   : in std_logic_vector (def_WIDTH-1 downto 0);
     sel   : in std_logic_vector (4 downto 0);
     dout  : out std_logic_vector (dout_WIDTH-1 downto 0)
 );
 end entity;
 
-architecture behav of dft_sparsemux_17_5_32_1_1 is
+architecture behav of dft_sparsemux_33_5_32_1_1 is
     signal dout_tmp : std_logic_vector (dout_WIDTH-1 downto 0);
 
 
 begin
 
-    process(din0, din1, din2, din3, din4, din5, din6, din7, sel) is
+    process(din0, din1, din2, din3, din4, din5, din6, din7, din8, din9, din10, din11, din12, din13, din14, din15, sel) is
     begin
         case sel is
             
@@ -109,6 +157,30 @@ begin
             
             when CASE7 =>
                 dout_tmp <= din7;
+            
+            when CASE8 =>
+                dout_tmp <= din8;
+            
+            when CASE9 =>
+                dout_tmp <= din9;
+            
+            when CASE10 =>
+                dout_tmp <= din10;
+            
+            when CASE11 =>
+                dout_tmp <= din11;
+            
+            when CASE12 =>
+                dout_tmp <= din12;
+            
+            when CASE13 =>
+                dout_tmp <= din13;
+            
+            when CASE14 =>
+                dout_tmp <= din14;
+            
+            when CASE15 =>
+                dout_tmp <= din15;
             
             when others =>
                 dout_tmp <= def;

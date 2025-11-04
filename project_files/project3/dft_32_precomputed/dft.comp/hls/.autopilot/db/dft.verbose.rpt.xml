@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dft'" level="0">
-<item name = "Date">Tue Nov  4 13:44:54 2025
+<item name = "Date">Tue Nov  4 13:46:37 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">dft.comp</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 8.495 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.256 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">5953, 5953, 59.530 us, 59.530 us, 5954, 5954, no</column>
+<column name="">6209, 6209, 62.090 us, 62.090 us, 6210, 6210, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164">dft_Pipeline_VITIS_LOOP_20_2, 182, 182, 1.820 us, 1.820 us, 181, 181, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164">dft_Pipeline_VITIS_LOOP_20_2, 190, 190, 1.900 us, 1.900 us, 187, 187, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_16_1">5952, 5952, 186, -, -, 32, no</column>
+<column name="- VITIS_LOOP_16_1">6208, 6208, 194, -, -, 32, no</column>
 </table>
 </item>
 </section>
@@ -51,19 +51,19 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 28, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 7, 1576, 2227, -</column>
+<column name="Instance">-, 5, 1044, 1553, -</column>
 <column name="Memory">64, -, 0, 0, -</column>
 <column name="Multiplexer">-, -, 0, 40, -</column>
 <column name="Register">-, -, 4151, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">22, 3, 5, 4, 0</specialColumn>
+<specialColumn name="Utilization (%)">22, 2, 4, 3, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164">dft_Pipeline_VITIS_LOOP_20_2, 0, 7, 1576, 2227, 0</column>
+<column name="grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164">dft_Pipeline_VITIS_LOOP_20_2, 0, 5, 1044, 1553, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -74,6 +74,8 @@
 <keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
 <column name="p_ZL15cos_coeff_table_0_U">p_ZL15cos_coeff_table_0_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_10_U">p_ZL15cos_coeff_table_10_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
+<column name="p_ZL15cos_coeff_table_11_U">p_ZL15cos_coeff_table_11_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
+<column name="p_ZL15cos_coeff_table_21_U">p_ZL15cos_coeff_table_11_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_12_U">p_ZL15cos_coeff_table_12_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_13_U">p_ZL15cos_coeff_table_13_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_14_U">p_ZL15cos_coeff_table_14_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
@@ -84,13 +86,9 @@
 <column name="p_ZL15cos_coeff_table_19_U">p_ZL15cos_coeff_table_19_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_1_U">p_ZL15cos_coeff_table_1_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_20_U">p_ZL15cos_coeff_table_20_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
-<column name="p_ZL15cos_coeff_table_21_U">p_ZL15cos_coeff_table_21_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
-<column name="p_ZL15cos_coeff_table_11_U">p_ZL15cos_coeff_table_21_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_22_U">p_ZL15cos_coeff_table_22_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_23_U">p_ZL15cos_coeff_table_23_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_24_U">p_ZL15cos_coeff_table_24_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
-<column name="p_ZL15cos_coeff_table_25_U">p_ZL15cos_coeff_table_25_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
-<column name="p_ZL15cos_coeff_table_7_U">p_ZL15cos_coeff_table_25_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_26_U">p_ZL15cos_coeff_table_26_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_27_U">p_ZL15cos_coeff_table_27_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_28_U">p_ZL15cos_coeff_table_28_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
@@ -102,6 +100,8 @@
 <column name="p_ZL15cos_coeff_table_4_U">p_ZL15cos_coeff_table_4_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_5_U">p_ZL15cos_coeff_table_5_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_6_U">p_ZL15cos_coeff_table_6_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
+<column name="p_ZL15cos_coeff_table_7_U">p_ZL15cos_coeff_table_7_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
+<column name="p_ZL15cos_coeff_table_25_U">p_ZL15cos_coeff_table_7_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_8_U">p_ZL15cos_coeff_table_8_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15cos_coeff_table_9_U">p_ZL15cos_coeff_table_9_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
 <column name="p_ZL15sin_coeff_table_0_U">p_ZL15sin_coeff_table_0_ROM_AUTO_1R, 1, 0, 0, 0, 32, 32, 1, 1024</column>
@@ -257,69 +257,69 @@
 <column name="grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_ap_start_reg">1, 0, 1, 0</column>
 <column name="i_fu_488">6, 0, 6, 0</column>
 <column name="p_ZL15cos_coeff_table_0_load_reg_3463">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_10_load_reg_3633">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_11_load_reg_3713">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_12_load_reg_3478">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_13_load_reg_3558">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_14_load_reg_3638">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_15_load_reg_3718">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_16_load_reg_3483">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_17_load_reg_3563">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_18_load_reg_3643">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_19_load_reg_3723">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_1_load_reg_3543">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_20_load_reg_3488">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_21_load_reg_3568">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_22_load_reg_3648">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_23_load_reg_3728">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_24_load_reg_3493">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_25_load_reg_3573">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_26_load_reg_3653">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_27_load_reg_3733">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_28_load_reg_3498">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_29_load_reg_3578">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_2_load_reg_3623">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_30_load_reg_3658">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_31_load_reg_3738">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_3_load_reg_3703">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_4_load_reg_3468">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_5_load_reg_3548">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_6_load_reg_3628">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_7_load_reg_3708">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_8_load_reg_3473">32, 0, 32, 0</column>
-<column name="p_ZL15cos_coeff_table_9_load_reg_3553">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_0_load_reg_3503">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_10_load_reg_3673">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_11_load_reg_3753">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_12_load_reg_3518">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_13_load_reg_3598">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_14_load_reg_3678">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_15_load_reg_3758">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_16_load_reg_3523">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_17_load_reg_3603">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_18_load_reg_3683">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_19_load_reg_3763">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_1_load_reg_3583">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_20_load_reg_3528">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_21_load_reg_3608">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_22_load_reg_3688">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_23_load_reg_3768">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_24_load_reg_3533">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_25_load_reg_3613">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_26_load_reg_3693">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_27_load_reg_3773">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_28_load_reg_3538">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_29_load_reg_3618">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_2_load_reg_3663">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_30_load_reg_3698">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_10_load_reg_3488">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_11_load_reg_3648">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_12_load_reg_3493">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_13_load_reg_3653">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_14_load_reg_3498">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_15_load_reg_3658">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_16_load_reg_3503">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_17_load_reg_3663">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_18_load_reg_3508">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_19_load_reg_3668">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_1_load_reg_3623">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_20_load_reg_3513">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_21_load_reg_3673">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_22_load_reg_3518">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_23_load_reg_3678">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_24_load_reg_3523">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_25_load_reg_3683">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_26_load_reg_3528">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_27_load_reg_3688">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_28_load_reg_3533">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_29_load_reg_3693">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_2_load_reg_3468">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_30_load_reg_3538">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_31_load_reg_3698">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_3_load_reg_3628">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_4_load_reg_3473">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_5_load_reg_3633">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_6_load_reg_3478">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_7_load_reg_3638">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_8_load_reg_3483">32, 0, 32, 0</column>
+<column name="p_ZL15cos_coeff_table_9_load_reg_3643">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_0_load_reg_3543">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_10_load_reg_3568">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_11_load_reg_3728">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_12_load_reg_3573">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_13_load_reg_3733">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_14_load_reg_3578">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_15_load_reg_3738">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_16_load_reg_3583">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_17_load_reg_3743">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_18_load_reg_3588">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_19_load_reg_3748">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_1_load_reg_3703">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_20_load_reg_3593">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_21_load_reg_3753">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_22_load_reg_3598">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_23_load_reg_3758">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_24_load_reg_3603">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_25_load_reg_3763">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_26_load_reg_3608">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_27_load_reg_3768">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_28_load_reg_3613">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_29_load_reg_3773">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_2_load_reg_3548">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_30_load_reg_3618">32, 0, 32, 0</column>
 <column name="p_ZL15sin_coeff_table_31_load_reg_3778">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_3_load_reg_3743">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_4_load_reg_3508">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_5_load_reg_3588">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_6_load_reg_3668">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_7_load_reg_3748">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_8_load_reg_3513">32, 0, 32, 0</column>
-<column name="p_ZL15sin_coeff_table_9_load_reg_3593">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_3_load_reg_3708">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_4_load_reg_3553">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_5_load_reg_3713">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_6_load_reg_3558">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_7_load_reg_3718">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_8_load_reg_3563">32, 0, 32, 0</column>
+<column name="p_ZL15sin_coeff_table_9_load_reg_3723">32, 0, 32, 0</column>
 <column name="trunc_ln16_reg_3139">5, 0, 5, 0</column>
 </table>
 </item>

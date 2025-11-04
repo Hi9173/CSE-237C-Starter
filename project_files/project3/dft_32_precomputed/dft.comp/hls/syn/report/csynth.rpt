@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'dft'
 ================================================================
 + General Information: 
-    * Date:           Tue Nov  4 13:44:55 2025
+    * Date:           Tue Nov  4 13:46:37 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        dft.comp
     * Solution:       hls (Vivado IP Flow Target)
@@ -15,15 +15,15 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +----------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+--------+-----------+-----------+-----+
-    |              Modules             |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |        |           |           |     |
-    |              & Loops             |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |   DSP  |     FF    |    LUT    | URAM|
-    +----------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+--------+-----------+-----------+-----+
-    |+ dft                             |  Timing|  -1.19|     5953|  5.953e+04|         -|     5954|     -|        no|  64 (22%)|  7 (3%)|  5727 (5%)|  2295 (4%)|    -|
-    | o VITIS_LOOP_16_1                |       -|   7.30|     5952|  5.952e+04|       186|        -|    32|        no|         -|       -|          -|          -|    -|
-    |  + dft_Pipeline_VITIS_LOOP_20_2  |  Timing|  -1.19|      182|  1.820e+03|         -|      182|     -|        no|         -|  7 (3%)|  1576 (1%)|  2227 (4%)|    -|
-    |   o VITIS_LOOP_20_2              |      II|   7.30|      180|  1.800e+03|        34|       21|     8|       yes|         -|       -|          -|          -|    -|
-    +----------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+--------+-----------+-----------+-----+
+    +----------------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+--------+------------+-----------+-----+
+    |              Modules             | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |          |        |            |           |     |
+    |              & Loops             | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |   DSP  |     FF     |    LUT    | URAM|
+    +----------------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+--------+------------+-----------+-----+
+    |+ dft                             |     -|  0.04|     6209|  6.209e+04|         -|     6210|     -|        no|  64 (22%)|  5 (2%)|   5195 (4%)|  1621 (3%)|    -|
+    | o VITIS_LOOP_16_1                |     -|  7.30|     6208|  6.208e+04|       194|        -|    32|        no|         -|       -|           -|          -|    -|
+    |  + dft_Pipeline_VITIS_LOOP_20_2  |     -|  0.04|      190|  1.900e+03|         -|      190|     -|        no|         -|  5 (2%)|  1044 (~0%)|  1553 (2%)|    -|
+    |   o VITIS_LOOP_20_2              |    II|  7.30|      188|  1.880e+03|        24|       11|    16|       yes|         -|       -|           -|          -|    -|
+    +----------------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+--------+------------+-----------+-----+
 
 
 ================================================================
@@ -391,59 +391,35 @@
 +------------------------------------------+-----+--------+-----------+-----------+--------------------------+---------+
 | Name                                     | DSP | Pragma | Variable  | Op        | Impl                     | Latency |
 +------------------------------------------+-----+--------+-----------+-----------+--------------------------+---------+
-| + dft                                    | 7   |        |           |           |                          |         |
+| + dft                                    | 5   |        |           |           |                          |         |
 |   icmp_ln16_fu_2626_p2                   |     |        | icmp_ln16 | seteq     | auto                     | 0       |
 |   add_ln16_fu_2632_p2                    |     |        | add_ln16  | add       | fabric                   | 0       |
-|  + dft_Pipeline_VITIS_LOOP_20_2          | 7   |        |           |           |                          |         |
-|    sparsemux_17_5_32_1_1_U4              |     |        | c         | sparsemux | compactencoding_dontcare | 0       |
-|    sparsemux_17_5_32_1_1_U5              |     |        | s         | sparsemux | compactencoding_dontcare | 0       |
-|    sparsemux_17_5_32_1_1_U6              |     |        | tmp       | sparsemux | compactencoding_dontcare | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul       | fmul      | maxdsp                   | 3       |
-|    sparsemux_17_5_32_1_1_U7              |     |        | tmp_1     | sparsemux | compactencoding_dontcare | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul1      | fmul      | maxdsp                   | 3       |
+|  + dft_Pipeline_VITIS_LOOP_20_2          | 5   |        |           |           |                          |         |
+|    sparsemux_33_5_32_1_1_U3              |     |        | c         | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_33_5_32_1_1_U4              |     |        | s         | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_33_5_32_1_1_U5              |     |        | tmp       | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2      | 3   |        | mul       | fmul      | maxdsp                   | 3       |
+|    sparsemux_33_5_32_1_1_U6              |     |        | tmp_1     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2      | 3   |        | mul1      | fmul      | maxdsp                   | 3       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub       | fsub      | fulldsp                  | 4       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add       | fsub      | fulldsp                  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul2      | fmul      | maxdsp                   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul3      | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2      | 3   |        | mul2      | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2      | 3   |        | mul3      | fmul      | maxdsp                   | 3       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add1      | fsub      | fulldsp                  | 4       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add2      | fsub      | fulldsp                  | 4       |
-|    sparsemux_17_5_32_1_1_U8              |     |        | c_1       | sparsemux | compactencoding_dontcare | 0       |
-|    sparsemux_17_5_32_1_1_U9              |     |        | s_1       | sparsemux | compactencoding_dontcare | 0       |
-|    sparsemux_17_5_32_1_1_U10             |     |        | tmp_4     | sparsemux | compactencoding_dontcare | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_1     | fmul      | maxdsp                   | 3       |
-|    sparsemux_17_5_32_1_1_U11             |     |        | tmp_5     | sparsemux | compactencoding_dontcare | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_1   | fmul      | maxdsp                   | 3       |
+|    sparsemux_33_5_32_1_1_U7              |     |        | c_1       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_33_5_32_1_1_U8              |     |        | s_1       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_33_5_32_1_1_U9              |     |        | tmp_4     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2      | 3   |        | mul_1     | fmul      | maxdsp                   | 3       |
+|    sparsemux_33_5_32_1_1_U10             |     |        | tmp_5     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2      | 3   |        | mul18_1   | fmul      | maxdsp                   | 3       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_1     | fsub      | fulldsp                  | 4       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_1     | fsub      | fulldsp                  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_1   | fmul      | maxdsp                   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_1   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2      | 3   |        | mul23_1   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U2      | 3   |        | mul26_1   | fmul      | maxdsp                   | 3       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_1   | fsub      | fulldsp                  | 4       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_1   | fsub      | fulldsp                  | 4       |
-|    sparsemux_17_5_32_1_1_U12             |     |        | c_2       | sparsemux | compactencoding_dontcare | 0       |
-|    sparsemux_17_5_32_1_1_U13             |     |        | s_2       | sparsemux | compactencoding_dontcare | 0       |
-|    sparsemux_17_5_32_1_1_U14             |     |        | tmp_8     | sparsemux | compactencoding_dontcare | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_2     | fmul      | maxdsp                   | 3       |
-|    sparsemux_17_5_32_1_1_U15             |     |        | tmp_9     | sparsemux | compactencoding_dontcare | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_2   | fmul      | maxdsp                   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_2     | fsub      | fulldsp                  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_2     | fsub      | fulldsp                  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_2   | fmul      | maxdsp                   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_2   | fmul      | maxdsp                   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_2   | fadd      | fulldsp                  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_2   | fsub      | fulldsp                  | 4       |
-|    sparsemux_17_5_32_1_1_U16             |     |        | c_3       | sparsemux | compactencoding_dontcare | 0       |
-|    sparsemux_17_5_32_1_1_U17             |     |        | s_3       | sparsemux | compactencoding_dontcare | 0       |
-|    sparsemux_17_5_32_1_1_U18             |     |        | tmp_s     | sparsemux | compactencoding_dontcare | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_3     | fmul      | maxdsp                   | 3       |
-|    sparsemux_17_5_32_1_1_U19             |     |        | tmp_2     | sparsemux | compactencoding_dontcare | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_3   | fmul      | maxdsp                   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_3     | fadd      | fulldsp                  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_3     | fsub      | fulldsp                  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_3   | fmul      | maxdsp                   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_3   | fmul      | maxdsp                   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_3   | fsub      | fulldsp                  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_3   | fsub      | fulldsp                  | 4       |
-|    add_ln20_fu_1839_p2                   |     |        | add_ln20  | add       | fabric                   | 0       |
+|    add_ln20_fu_1754_p2                   |     |        | add_ln20  | add       | fabric                   | 0       |
 +------------------------------------------+-----+--------+-----------+-----------+--------------------------+---------+
 
 
@@ -456,68 +432,68 @@
 +------------------------------+--------+------+------+------+--------+--------------------------+------+---------+------------------+
 | + dft                        |        |      | 64   | 0    |        |                          |      |         |                  |
 |   p_ZL15cos_coeff_table_0_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_0  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_4_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_4  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_8_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_8  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_12_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_12 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_16_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_16 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_20_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_20 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_24_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_24 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_28_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_28 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_0_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_0  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_4_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_4  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_8_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_8  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_12_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_12 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_16_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_16 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_20_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_20 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_24_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_24 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_28_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_28 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_1_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_1  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_5_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_5  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_9_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_9  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_13_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_13 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_17_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_17 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_21_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_21 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_25_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_25 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_29_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_29 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_1_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_1  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_5_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_5  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_9_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_9  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_13_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_13 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_17_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_17 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_21_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_21 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_25_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_25 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_29_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_29 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_2_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_2  | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_4_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_4  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_6_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_6  | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_8_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_8  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_10_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_10 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_12_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_12 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_14_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_14 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_16_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_16 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_18_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_18 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_20_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_20 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_22_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_22 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_24_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_24 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_26_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_26 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_28_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_28 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_30_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_30 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_0_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_0  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_2_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_2  | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_4_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_4  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_6_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_6  | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_8_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_8  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_10_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_10 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_12_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_12 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_14_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_14 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_16_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_16 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_18_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_18 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_20_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_20 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_22_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_22 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_24_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_24 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_26_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_26 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_28_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_28 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_30_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_30 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_1_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_1  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_3_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_3  | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_5_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_5  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_7_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_7  | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_9_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_9  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_11_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_11 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_13_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_13 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_15_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_15 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_17_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_17 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_19_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_19 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_21_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_21 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_23_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_23 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_25_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_25 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_27_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_27 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_29_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_29 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_31_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_31 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_1_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_1  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_3_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_3  | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_5_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_5  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_7_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_7  | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_9_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_9  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_11_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_11 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_13_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_13 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_15_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_15 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_17_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_17 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_19_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_19 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_21_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_21 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_23_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_23 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_25_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_25 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_27_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_27 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_29_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_29 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_31_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_31 | auto | 1       | 32, 32, 1        |
 +------------------------------+--------+------+------+------+--------+--------------------------+------+---------+------------------+
 
@@ -535,7 +511,7 @@
 | array_partition | variable=output_I type=block factor=32              | dft.cpp:9 in dft, output_I         |
 | array_partition | variable=cos_coeff_table type=block factor=32 dim=2 | dft.cpp:10 in dft, cos_coeff_table |
 | array_partition | variable=sin_coeff_table type=block factor=32 dim=2 | dft.cpp:11 in dft, sin_coeff_table |
-| unroll          | factor=4                                            | dft.cpp:22 in dft                  |
+| unroll          | factor=2                                            | dft.cpp:22 in dft                  |
 +-----------------+-----------------------------------------------------+------------------------------------+
 
 

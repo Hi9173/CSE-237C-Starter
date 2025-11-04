@@ -6,7 +6,7 @@
 // 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 `timescale 1ns / 1ps
 
-module dft_sparsemux_17_5_32_1_1 (din0,din1,din2,din3,din4,din5,din6,din7,def,sel,dout);
+module dft_sparsemux_33_5_32_1_1 (din0,din1,din2,din3,din4,din5,din6,din7,din8,din9,din10,din11,din12,din13,din14,din15,def,sel,dout);
 
 parameter din0_WIDTH = 1;
 
@@ -23,6 +23,22 @@ parameter din5_WIDTH = 1;
 parameter din6_WIDTH = 1;
 
 parameter din7_WIDTH = 1;
+
+parameter din8_WIDTH = 1;
+
+parameter din9_WIDTH = 1;
+
+parameter din10_WIDTH = 1;
+
+parameter din11_WIDTH = 1;
+
+parameter din12_WIDTH = 1;
+
+parameter din13_WIDTH = 1;
+
+parameter din14_WIDTH = 1;
+
+parameter din15_WIDTH = 1;
 
 parameter def_WIDTH = 1;
 parameter sel_WIDTH = 1;
@@ -44,6 +60,22 @@ parameter [sel_WIDTH-1:0] CASE6 = 1;
 
 parameter [sel_WIDTH-1:0] CASE7 = 1;
 
+parameter [sel_WIDTH-1:0] CASE8 = 1;
+
+parameter [sel_WIDTH-1:0] CASE9 = 1;
+
+parameter [sel_WIDTH-1:0] CASE10 = 1;
+
+parameter [sel_WIDTH-1:0] CASE11 = 1;
+
+parameter [sel_WIDTH-1:0] CASE12 = 1;
+
+parameter [sel_WIDTH-1:0] CASE13 = 1;
+
+parameter [sel_WIDTH-1:0] CASE14 = 1;
+
+parameter [sel_WIDTH-1:0] CASE15 = 1;
+
 parameter ID = 1;
 parameter NUM_STAGE = 1;
 
@@ -64,6 +96,22 @@ input [din5_WIDTH-1:0] din5;
 input [din6_WIDTH-1:0] din6;
 
 input [din7_WIDTH-1:0] din7;
+
+input [din8_WIDTH-1:0] din8;
+
+input [din9_WIDTH-1:0] din9;
+
+input [din10_WIDTH-1:0] din10;
+
+input [din11_WIDTH-1:0] din11;
+
+input [din12_WIDTH-1:0] din12;
+
+input [din13_WIDTH-1:0] din13;
+
+input [din14_WIDTH-1:0] din14;
+
+input [din15_WIDTH-1:0] din15;
 
 input [def_WIDTH-1:0] def;
 input [sel_WIDTH-1:0] sel;
@@ -93,6 +141,22 @@ always @ (*) begin
     CASE6 : dout_tmp = din6;
     
     CASE7 : dout_tmp = din7;
+    
+    CASE8 : dout_tmp = din8;
+    
+    CASE9 : dout_tmp = din9;
+    
+    CASE10 : dout_tmp = din10;
+    
+    CASE11 : dout_tmp = din11;
+    
+    CASE12 : dout_tmp = din12;
+    
+    CASE13 : dout_tmp = din13;
+    
+    CASE14 : dout_tmp = din14;
+    
+    CASE15 : dout_tmp = din15;
     
     default : dout_tmp = def;
 endcase

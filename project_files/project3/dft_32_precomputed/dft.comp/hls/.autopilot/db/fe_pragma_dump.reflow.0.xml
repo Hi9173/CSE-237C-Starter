@@ -1,5 +1,5 @@
 <pragmas>
-<pragma file="dft.cpp" line="22" pragmaType="unroll" parentfunction="dft" factor="4" skip_exit_check="0"/>
+<pragma file="dft.cpp" line="22" pragmaType="unroll" parentfunction="dft" factor="2" skip_exit_check="0"/>
 <pragma file="dft.cpp" line="6" pragmaType="array_partition" parentfunction="dft" dim="1" factor="32" mode="block" dynamic="0" variable="input_R"/>
 <pragma file="dft.cpp" line="7" pragmaType="array_partition" parentfunction="dft" dim="1" factor="32" mode="block" dynamic="0" variable="input_I"/>
 <pragma file="dft.cpp" line="8" pragmaType="array_partition" parentfunction="dft" dim="1" factor="32" mode="block" dynamic="0" variable="output_R"/>

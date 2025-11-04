@@ -4,7 +4,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1 ns / 1 ps
-module dft_p_ZL15cos_coeff_table_25_ROM_AUTO_1R (
+module dft_p_ZL15cos_coeff_table_7_ROM_AUTO_1R (
     address0, ce0, q0, 
     reset, clk);
 
@@ -25,7 +25,7 @@ reg [DataWidth-1:0] rom0[0:AddressRange-1];
 
 initial begin
      
-    $readmemh("./dft_p_ZL15cos_coeff_table_25_ROM_AUTO_1R.dat", rom0);
+    $readmemh("./dft_p_ZL15cos_coeff_table_7_ROM_AUTO_1R.dat", rom0);
 end
 
   

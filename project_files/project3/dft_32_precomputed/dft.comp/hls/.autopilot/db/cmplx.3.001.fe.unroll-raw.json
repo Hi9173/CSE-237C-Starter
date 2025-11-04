@@ -4,15 +4,15 @@
     "calls": "",
     "file": "dft.cpp",
     "fileloc": 4,
-    "instructions": 141,
+    "instructions": 87,
     "loads": {
-      "G": 8,
-      "T": 18
+      "G": 4,
+      "T": 10
     },
     "name": "dft",
     "stores": {
       "T": 4
     },
-    "total_instructions": 141
+    "total_instructions": 87
   }
 }

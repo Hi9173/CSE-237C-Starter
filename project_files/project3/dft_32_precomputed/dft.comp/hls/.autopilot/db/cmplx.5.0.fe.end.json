@@ -3,8 +3,8 @@
         "name": "dft_Pipeline_VITIS_LOOP_20_2",
         "file": "dft.cpp",
         "fileloc": "13",
-        "instructions": "202",
-        "total_instructions": "202",
+        "instructions": "178",
+        "total_instructions": "178",
         "calls": "",
         "basicblocks": "4",
         "loads": {
@@ -22,7 +22,7 @@
         "file": "dft.cpp",
         "fileloc": "4",
         "instructions": "631",
-        "total_instructions": "833",
+        "total_instructions": "809",
         "calls": "1",
         "basicblocks": "37",
         "loads": {
