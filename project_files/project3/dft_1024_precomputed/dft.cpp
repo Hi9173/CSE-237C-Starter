@@ -4,10 +4,10 @@
 
 void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DTYPE imag_op[SIZE])
 {
-#pragma HLS ARRAY_PARTITION variable=input_R type=block factor=32
-#pragma HLS ARRAY_PARTITION variable=input_I type=block factor=32
-#pragma HLS ARRAY_PARTITION variable=output_R type=block factor=32
-#pragma HLS ARRAY_PARTITION variable=output_I type=block factor=32
+#pragma HLS ARRAY_PARTITION variable=real_sample type=block factor=32
+#pragma HLS ARRAY_PARTITION variable=imag_sample type=block factor=32
+#pragma HLS ARRAY_PARTITION variable=real_op type=block factor=32
+#pragma HLS ARRAY_PARTITION variable=imag_op type=block factor=32
 #pragma HLS ARRAY_PARTITION variable=cos_coeff_table type=block factor=32 dim=2
 #pragma HLS ARRAY_PARTITION variable=sin_coeff_table type=block factor=32 dim=2
  int i, j;
