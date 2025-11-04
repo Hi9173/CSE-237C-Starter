@@ -21,7 +21,7 @@ void dft(DTYPE sample_real[SIZE], DTYPE sample_imag[SIZE])
 		for (j = 0; j < SIZE; j += 1) {
 
 			c = cosf(j * w);
-			s = sinf(j * w);
+			s = -sinf(j * w);
             
 			temp_real[i] += (sample_real[j] * c - sample_imag[j] * s);
 			temp_imag[i] += (sample_real[j] * s + sample_imag[j] * c);
