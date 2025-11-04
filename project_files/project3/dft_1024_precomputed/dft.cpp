@@ -4,6 +4,12 @@
 
 void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DTYPE imag_op[SIZE])
 {
+#pragma HLS ARRAY_PARTITION variable=input_R type=block factor=32
+#pragma HLS ARRAY_PARTITION variable=input_I type=block factor=32
+#pragma HLS ARRAY_PARTITION variable=output_R type=block factor=32
+#pragma HLS ARRAY_PARTITION variable=output_I type=block factor=32
+#pragma HLS ARRAY_PARTITION variable=cos_coeff_table type=block factor=32 dim=2
+#pragma HLS ARRAY_PARTITION variable=sin_coeff_table type=block factor=32 dim=2
  int i, j;
  const double PI = 3.14159265358979323846264338327950288419716939937510;
  double w_double;
@@ -12,11 +18,11 @@ void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DT
  int idx;
  
  for (i = 0; i < SIZE; i += 1) {
-    #pragma HLS UNROLL factor=32   
+    #pragma HLS UNROLL factor=16   
     real_op[i] = 0;
     imag_op[i] = 0;
     for (j = 0; j < SIZE; j += 1) {
-        #pragma HLS UNROLL factor=32   
+        #pragma HLS UNROLL factor=16  
         idx = (i * j) % SIZE;
         c = cos_coefficients_table[idx];
         s = sin_coefficients_table[idx];
