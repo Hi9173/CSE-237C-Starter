@@ -15,30 +15,29 @@
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
+<PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.256</EstimatedClockPeriod>
+<EstimatedClockPeriod>9.591</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>203</Best-caseLatency>
-<Average-caseLatency>203</Average-caseLatency>
-<Worst-caseLatency>203</Worst-caseLatency>
-<Best-caseRealTimeLatency>2.030 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>2.030 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>2.030 us</Worst-caseRealTimeLatency>
-<Interval-min>32</Interval-min>
-<Interval-max>32</Interval-max>
+<Best-caseLatency>5761</Best-caseLatency>
+<Average-caseLatency>5761</Average-caseLatency>
+<Worst-caseLatency>5761</Worst-caseLatency>
+<Best-caseRealTimeLatency>57.610 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>57.610 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>57.610 us</Worst-caseRealTimeLatency>
+<Interval-min>5762</Interval-min>
+<Interval-max>5762</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_16_1>
 <Slack>7.30</Slack>
 <TripCount>32</TripCount>
-<Latency>201</Latency>
-<AbsoluteTimeLatency>2010</AbsoluteTimeLatency>
-<PipelineII>1</PipelineII>
-<PipelineDepth>171</PipelineDepth>
+<Latency>5760</Latency>
+<AbsoluteTimeLatency>57600</AbsoluteTimeLatency>
+<IterationLatency>180</IterationLatency>
 <InstanceList>
 </InstanceList>
 </VITIS_LOOP_16_1>
@@ -46,7 +45,7 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>dft.cpp:4</SourceLocation>
+<SourceLocation>dft.cpp:13</SourceLocation>
 <SummaryOfLoopViolations>
 <VITIS_LOOP_16_1>
 <Name>VITIS_LOOP_16_1</Name>
@@ -61,9 +60,9 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>64</BRAM_18K>
-<DSP>640</DSP>
-<FF>61509</FF>
-<LUT>93250</LUT>
+<DSP>7</DSP>
+<FF>8507</FF>
+<LUT>4339</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

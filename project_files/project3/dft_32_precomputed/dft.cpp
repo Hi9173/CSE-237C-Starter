@@ -19,7 +19,7 @@ void dft(DTYPE input_R[SIZE], DTYPE input_I[SIZE], DTYPE output_R[SIZE], DTYPE o
 
 		for (j = 0; j < SIZE; j += 1) {
 
-			#pragma HLS UNROLL factor=32
+			#pragma HLS UNROLL factor=16
 			c = cos_coeff_table[i][j];
 			s = sin_coeff_table[i][j];
 

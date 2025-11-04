@@ -255,7 +255,7 @@ __attribute__((sdx_kernel("dft", 0))) void dft(DTYPE input_R[32], DTYPE input_I[
 
   VITIS_LOOP_20_2: for (j = 0; j < 32; j += 1) {
 
-#pragma HLS UNROLL factor=32
+#pragma HLS UNROLL factor=16
  c = cos_coeff_table[i][j];
    s = sin_coeff_table[i][j];
 

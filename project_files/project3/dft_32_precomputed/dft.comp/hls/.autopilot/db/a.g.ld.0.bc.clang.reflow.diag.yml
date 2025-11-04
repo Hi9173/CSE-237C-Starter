@@ -1,6 +1,6 @@
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
-Name:            PragmaPartially2FullyUnroll
+Name:            PragmaPartiallyUnroll
 DebugLoc:        { File: dft.cpp, Line: 5, Column: 0 }
 Function:        _Z3dftPfS_S_S_
 Args:            
@@ -11,27 +11,10 @@ Args:
   - String:          ') '
   - String:          'in function '''
   - String:          dft
-  - String:          ''': changing partial unrolling into complete unrolling since the unrolling factor (='
-  - Factor:          '32'
-  - String:          ') is no less than the loop trip count (='
-  - TripCount:       '32'
-  - String:          ').'
-...
---- !Passed
-Pass:            reflow-pragma-loop-unroll
-Name:            PragmaFullyUnroll
-DebugLoc:        { File: dft.cpp, Line: 5, Column: 0 }
-Function:        _Z3dftPfS_S_S_
-Args:            
-  - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_20_2
-  - String:          ''' ('
-  - LoopLoc:         'dft.cpp:20:20'
-  - String:          ') '
-  - String:          'in function '''
-  - String:          dft
-  - String:          ''' completely with a factor of '
-  - Factor:          '32'
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '16'
 ...
 --- !Missed
 Pass:            inline
@@ -157,8 +140,8 @@ Pass:            auto-loop-pipeline
 Name:            AutoLoopPipeline
 Args:            
   - String:          'automatically set the pipeline for Loop< '
-  - LoopName:        VITIS_LOOP_16_1
+  - LoopName:        VITIS_LOOP_20_2
   - String:          '> at '
-  - LoopLoc:         'dft.cpp:16:19'
+  - LoopLoc:         'dft.cpp:20:20'
   - String:          ' '
 ...

@@ -21,13 +21,10 @@
         <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sin_coeff_table type=block factor=32 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:22:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=32" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=16" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-359" msg_severity="INFO" msg_loc="dft.cpp:5:0" msg_body="Unrolling loop 'VITIS_LOOP_20_2' (dft.cpp:20:20) in function 'dft': changing partial unrolling into complete unrolling since the unrolling factor (=32) is no less than the loop trip count (=32).">
-        <args Factor="32" LoopLoc="dft.cpp:20:20" LoopName="VITIS_LOOP_20_2" TripCount="32"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="dft.cpp:5:0" msg_body="Unrolling loop 'VITIS_LOOP_20_2' (dft.cpp:20:20) in function 'dft' completely with a factor of 32">
-        <args Factor="32" LoopLoc="dft.cpp:20:20" LoopName="VITIS_LOOP_20_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="dft.cpp:5:0" msg_body="Unrolling loop 'VITIS_LOOP_20_2' (dft.cpp:20:20) in function 'dft' partially with a factor of 16">
+        <args Factor="16" LoopLoc="dft.cpp:20:20" LoopName="VITIS_LOOP_20_2"/>
     </msg>
     <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="./coefficients32_2D.h:39:0" msg_body="Applying array_partition to '_ZL15sin_coeff_table': Complete partitioning on dimension 2.">
         <args Dim="2" Mode="Complete" UOName="_ZL15sin_coeff_table"/>
