@@ -1,33 +1,5 @@
 # This script segment is generated automatically by AutoPilot
 
-set name dft_faddfsub_32ns_32ns_32_5_full_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fsub} IMPL {fulldsp} LATENCY 4 ALLOW_PRAGMA 1
-}
-
-
-set name dft_fmul_32ns_32ns_32_4_max_dsp_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fmul} IMPL {maxdsp} LATENCY 3 ALLOW_PRAGMA 1
-}
-
-
-set name dft_mul_10s_10s_10_1_1
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler dft_cos_coefficients_table_ROM_AUTO_1R BINDTYPE {storage} TYPE {rom} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler dft_sin_coefficients_table_ROM_AUTO_1R BINDTYPE {storage} TYPE {rom} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
-}
-
-
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -40,7 +12,7 @@ set axilite_register_dict [dict create]
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 9 \
+    id 22 \
     name real_sample \
     reset_level 1 \
     sync_rst true \
@@ -59,7 +31,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 10 \
+    id 23 \
     name imag_sample \
     reset_level 1 \
     sync_rst true \
@@ -78,14 +50,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 11 \
+    id 24 \
     name real_op \
     reset_level 1 \
     sync_rst true \
-    dir O \
+    dir IO \
     corename real_op \
     op interface \
-    ports { real_op_address0 { O 10 vector } real_op_ce0 { O 1 bit } real_op_we0 { O 1 bit } real_op_d0 { O 32 vector } } \
+    ports { real_op_address0 { O 10 vector } real_op_ce0 { O 1 bit } real_op_we0 { O 1 bit } real_op_d0 { O 32 vector } real_op_address1 { O 10 vector } real_op_ce1 { O 1 bit } real_op_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'real_op'"
@@ -97,14 +69,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 12 \
+    id 25 \
     name imag_op \
     reset_level 1 \
     sync_rst true \
-    dir O \
+    dir IO \
     corename imag_op \
     op interface \
-    ports { imag_op_address0 { O 10 vector } imag_op_ce0 { O 1 bit } imag_op_we0 { O 1 bit } imag_op_d0 { O 32 vector } } \
+    ports { imag_op_address0 { O 10 vector } imag_op_ce0 { O 1 bit } imag_op_we0 { O 1 bit } imag_op_d0 { O 32 vector } imag_op_address1 { O 10 vector } imag_op_ce1 { O 1 bit } imag_op_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'imag_op'"
@@ -173,27 +145,6 @@ if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
     AESL_LIB_XILADAPTER::native_axis_end
-}
-
-
-# flow_control definition:
-set InstName dft_flow_control_loop_delay_pipe_U
-set CompName dft_flow_control_loop_delay_pipe
-set name flow_control_loop_delay_pipe
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control] == "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control { \
-    name ${name} \
-    prefix dft_ \
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $CompName BINDTYPE interface TYPE internal_upc_flow_control INSTNAME $InstName
 }
 
 

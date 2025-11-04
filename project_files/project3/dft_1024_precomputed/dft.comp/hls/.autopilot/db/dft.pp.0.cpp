@@ -12364,29 +12364,31 @@ const float sin_coefficients_table[]={0.000000,-0.006136,-0.012272,-0.018407,-0.
 # 4 "dft.cpp" 2
 
 
-__attribute__((sdx_kernel("dft", 0))) void dft(DTYPE real_sample[1024], DTYPE imag_sample[1024],DTYPE real_op[1024],DTYPE imag_op[1024])
+__attribute__((sdx_kernel("dft", 0))) void dft(DTYPE real_sample[1024], DTYPE imag_sample[1024], DTYPE real_op[1024], DTYPE imag_op[1024])
 {
 #line 9 "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.tcl"
 #pragma HLSDIRECTIVE TOP name=dft
 # 7 "dft.cpp"
 
- int i, j;
- const double PI = 3.14159265358979323846264338327950288419716939937510;
- double w_double;
- double c_double, s_double;
- DTYPE c, s;
- int idx;
+    int i, j;
+    const double PI = 3.14159265358979323846264338327950288419716939937510;
+    double w_double;
+    double c_double, s_double;
+    DTYPE c, s;
+    int idx;
 
- VITIS_LOOP_15_1: for (i = 0; i < 1024; i += 1) {
-  real_op[i] = 0;
-  imag_op[i] = 0;
-  VITIS_LOOP_18_2: for (j = 0; j < 1024; j += 1) {
-   idx = (i * j) % 1024;
-   c = cos_coefficients_table[idx];
-   s = sin_coefficients_table[idx];
-   real_op[i] += (real_sample[j] * c - imag_sample[j] * s);
-   imag_op[i] += (real_sample[j] * s + imag_sample[j] * c);
-  }
- }
+    VITIS_LOOP_15_1: for (i = 0; i < 1024; i += 1) {
+        real_op[i] = 0;
+        imag_op[i] = 0;
+    }
 
+    VITIS_LOOP_20_2: for (j = 0; j < 1024; j += 1) {
+        VITIS_LOOP_21_3: for (i = 0; i < 1024; i += 1) {
+            idx = (i * j) % 1024;
+            c = cos_coefficients_table[idx];
+            s = sin_coefficients_table[idx];
+            real_op[i] += (real_sample[j] * c - imag_sample[j] * s);
+            imag_op[i] += (real_sample[j] * s + imag_sample[j] * c);
+        }
+    }
 }

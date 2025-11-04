@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dft'" level="0">
-<item name = "Date">Fri Oct 31 16:26:16 2025
+<item name = "Date">Tue Nov  4 15:05:18 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">dft.comp</item>
@@ -24,18 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">6291472, 6291472, 62.915 ms, 62.915 ms, 6291476, 6291476, loop auto-rewind stp (delay=20 clock cycles(s))</column>
+<column name="">1049624, 1049624, 10.496 ms, 10.496 ms, 1049625, 1049625, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_dft_Pipeline_VITIS_LOOP_15_1_fu_32">dft_Pipeline_VITIS_LOOP_15_1, 1026, 1026, 10.260 us, 10.260 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_dft_Pipeline_VITIS_LOOP_20_2_VITIS_LOOP_21_3_fu_40">dft_Pipeline_VITIS_LOOP_20_2_VITIS_LOOP_21_3, 1048595, 1048595, 10.486 ms, 10.486 ms, 1048577, 1048577, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_15_1_VITIS_LOOP_18_2">6291470, 6291470, 21, 6, 1, 1048576, yes</column>
 </table>
 </item>
 </section>

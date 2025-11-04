@@ -16,58 +16,97 @@ INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.13 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.73 seconds; current allocated memory: 659.031 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.12 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.72 seconds; current allocated memory: 658.984 MB.
 INFO: [HLS 200-10] Analyzing design file 'dft.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.94 seconds. CPU system time: 1.02 seconds. Elapsed time: 6.41 seconds; current allocated memory: 660.371 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.25 seconds. CPU system time: 0.8 seconds. Elapsed time: 5.3 seconds; current allocated memory: 660.355 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 59 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 58 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 40 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 39 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 39 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 37 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 37 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 37 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 37 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 39 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 39 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 37 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 37 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 37 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 49 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 57 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_18_2> at dft.cpp:18:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.24 seconds. CPU system time: 0.77 seconds. Elapsed time: 9.94 seconds; current allocated memory: 670.000 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.000 MB.
+INFO: [HLS 200-1995] There were 67 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 60 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 48 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 46 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 60 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 72 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_15_1> at dft.cpp:15:22 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_21_3> at dft.cpp:21:26 
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.34 seconds. CPU system time: 0.63 seconds. Elapsed time: 8.83 seconds; current allocated memory: 669.941 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 669.941 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 670.035 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 669.992 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.059 MB.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 690.992 MB.
-INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_15_1'(dft.cpp:15:19) and 'VITIS_LOOP_18_2'(dft.cpp:18:20) in function 'dft' into perfectly nested loops.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_15_1' (dft.cpp:15:19) in function 'dft'.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 690.992 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 670.016 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 690.750 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_20_2'(dft.cpp:20:22) and 'VITIS_LOOP_21_3'(dft.cpp:21:26) in function 'dft' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_20_2' (dft.cpp:20:22) in function 'dft'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 700.898 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'dft' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dft' 
+INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_15_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_15_1_VITIS_LOOP_18_2'.
-WARNING: [HLS 200-880] The II Violation in module 'dft' (loop 'VITIS_LOOP_15_1_VITIS_LOOP_18_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('add2745_write_ln23', dft.cpp:23) of variable 'add2', dft.cpp:23 on local variable 'add2745' and 'load' operation 32 bit ('add2745_load', dft.cpp:8) on local variable 'add2745'.
-WARNING: [HLS 200-880] The II Violation in module 'dft' (loop 'VITIS_LOOP_15_1_VITIS_LOOP_18_2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation 0 bit ('add2745_write_ln23', dft.cpp:23) of variable 'add2', dft.cpp:23 on local variable 'add2745' and 'load' operation 32 bit ('add2745_load', dft.cpp:8) on local variable 'add2745'.
-WARNING: [HLS 200-880] The II Violation in module 'dft' (loop 'VITIS_LOOP_15_1_VITIS_LOOP_18_2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation 0 bit ('add2745_write_ln23', dft.cpp:23) of variable 'add2', dft.cpp:23 on local variable 'add2745' and 'load' operation 32 bit ('add2745_load', dft.cpp:8) on local variable 'add2745'.
-WARNING: [HLS 200-880] The II Violation in module 'dft' (loop 'VITIS_LOOP_15_1_VITIS_LOOP_18_2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation 0 bit ('add2745_write_ln23', dft.cpp:23) of variable 'add2', dft.cpp:23 on local variable 'add2745' and 'load' operation 32 bit ('add2745_load', dft.cpp:8) on local variable 'add2745'.
-WARNING: [HLS 200-880] The II Violation in module 'dft' (loop 'VITIS_LOOP_15_1_VITIS_LOOP_18_2'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 0) between 'store' operation 0 bit ('add2745_write_ln23', dft.cpp:23) of variable 'add2', dft.cpp:23 on local variable 'add2745' and 'load' operation 32 bit ('add2745_load', dft.cpp:8) on local variable 'add2745'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 21, loop 'VITIS_LOOP_15_1_VITIS_LOOP_18_2'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_15_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_15_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.35 seconds; current allocated memory: 690.992 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.14 seconds; current allocated memory: 701.680 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 690.992 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 701.680 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_20_2_VITIS_LOOP_21_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_20_2_VITIS_LOOP_21_3'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 19, loop 'VITIS_LOOP_20_2_VITIS_LOOP_21_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 701.887 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 701.887 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dft' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 701.887 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 701.887 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_15_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_15_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 701.887 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_20_2_VITIS_LOOP_21_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dft_Pipeline_VITIS_LOOP_20_2_VITIS_LOOP_21_3' pipeline 'VITIS_LOOP_20_2_VITIS_LOOP_21_3' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_10s_10_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_20_2_VITIS_LOOP_21_3'.
+INFO: [RTMG 210-279] Implementing memory 'dft_dft_Pipeline_VITIS_LOOP_20_2_VITIS_LOOP_21_3_cos_coefficients_table_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'dft_dft_Pipeline_VITIS_LOOP_20_2_VITIS_LOOP_21_3_sin_coefficients_table_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.25 seconds; current allocated memory: 702.164 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -76,18 +115,12 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_sample' to 'ap_me
 INFO: [RTGEN 206-500] Setting interface mode on port 'dft/real_op' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'dft/imag_op' to 'ap_memory'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_hs'.
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dft' pipeline 'VITIS_LOOP_15_1_VITIS_LOOP_18_2' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_10s_10s_10_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
-INFO: [RTMG 210-279] Implementing memory 'dft_cos_coefficients_table_ROM_AUTO_1R' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'dft_sin_coefficients_table_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 690.992 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.46 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.79 seconds; current allocated memory: 690.992 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.45 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.71 seconds; current allocated memory: 690.992 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 702.930 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.28 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.67 seconds; current allocated memory: 705.918 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.47 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.72 seconds; current allocated memory: 708.484 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for dft.
 INFO: [VLOG 209-307] Generating Verilog RTL for dft.
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:21; Allocated memory: 47.961 MB.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:19; Allocated memory: 65.500 MB.

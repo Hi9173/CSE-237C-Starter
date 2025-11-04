@@ -16,9 +16,15 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("real_op_ce0", 1, hls_out, 2, "ap_memory", "mem_ce", 1),
 	Port_Property("real_op_we0", 1, hls_out, 2, "ap_memory", "mem_we", 1),
 	Port_Property("real_op_d0", 32, hls_out, 2, "ap_memory", "mem_din", 1),
+	Port_Property("real_op_address1", 10, hls_out, 2, "ap_memory", "MemPortADDR2", 1),
+	Port_Property("real_op_ce1", 1, hls_out, 2, "ap_memory", "MemPortCE2", 1),
+	Port_Property("real_op_q1", 32, hls_in, 2, "ap_memory", "MemPortDOUT2", 1),
 	Port_Property("imag_op_address0", 10, hls_out, 3, "ap_memory", "mem_address", 1),
 	Port_Property("imag_op_ce0", 1, hls_out, 3, "ap_memory", "mem_ce", 1),
 	Port_Property("imag_op_we0", 1, hls_out, 3, "ap_memory", "mem_we", 1),
 	Port_Property("imag_op_d0", 32, hls_out, 3, "ap_memory", "mem_din", 1),
+	Port_Property("imag_op_address1", 10, hls_out, 3, "ap_memory", "MemPortADDR2", 1),
+	Port_Property("imag_op_ce1", 1, hls_out, 3, "ap_memory", "MemPortCE2", 1),
+	Port_Property("imag_op_q1", 32, hls_in, 3, "ap_memory", "MemPortDOUT2", 1),
 };
 const char* HLS_Design_Meta::dut_name = "dft";
