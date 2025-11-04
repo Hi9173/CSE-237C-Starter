@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dft'
 ================================================================
-* Date:           Tue Nov  4 13:46:37 2025
+* Date:           Tue Nov  4 13:47:59 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        dft.comp
@@ -29,7 +29,7 @@
     |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
     |   min   |   max   |    min    |    max    |  min |  max |   Type  |
     +---------+---------+-----------+-----------+------+------+---------+
-    |     6209|     6209|  62.090 us|  62.090 us|  6210|  6210|       no|
+    |     6721|     6721|  67.210 us|  67.210 us|  6722|  6722|       no|
     +---------+---------+-----------+-----------+------+------+---------+
 
     + Detail: 
@@ -38,7 +38,7 @@
         |                                          |                              |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
         |                 Instance                 |            Module            |   min   |   max   |    min   |    max   | min | max |                      Type                      |
         +------------------------------------------+------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
-        |grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164  |dft_Pipeline_VITIS_LOOP_20_2  |      190|      190|  1.900 us|  1.900 us|  187|  187|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164  |dft_Pipeline_VITIS_LOOP_20_2  |      206|      206|  2.060 us|  2.060 us|  198|  198|  loop auto-rewind stp (delay=0 clock cycles(s))|
         +------------------------------------------+------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
 
         * Loop: 
@@ -46,7 +46,7 @@
         |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +-------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_16_1  |     6208|     6208|       194|          -|          -|    32|        no|
+        |- VITIS_LOOP_16_1  |     6720|     6720|       210|          -|          -|    32|        no|
         +-------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -61,12 +61,12 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       0|     28|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |        -|    5|    1044|   1553|    -|
+|Instance         |        -|    5|     753|   1528|    -|
 |Memory           |       64|    -|       0|      0|    -|
 |Multiplexer      |        -|    -|       0|     40|    -|
 |Register         |        -|    -|    4151|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |       64|    5|    5195|   1621|    0|
+|Total            |       64|    5|    4904|   1596|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -75,13 +75,13 @@
 
 + Detail: 
     * Instance: 
-    +------------------------------------------+------------------------------+---------+----+------+------+-----+
-    |                 Instance                 |            Module            | BRAM_18K| DSP|  FF  |  LUT | URAM|
-    +------------------------------------------+------------------------------+---------+----+------+------+-----+
-    |grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164  |dft_Pipeline_VITIS_LOOP_20_2  |        0|   5|  1044|  1553|    0|
-    +------------------------------------------+------------------------------+---------+----+------+------+-----+
-    |Total                                     |                              |        0|   5|  1044|  1553|    0|
-    +------------------------------------------+------------------------------+---------+----+------+------+-----+
+    +------------------------------------------+------------------------------+---------+----+-----+------+-----+
+    |                 Instance                 |            Module            | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +------------------------------------------+------------------------------+---------+----+-----+------+-----+
+    |grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164  |dft_Pipeline_VITIS_LOOP_20_2  |        0|   5|  753|  1528|    0|
+    +------------------------------------------+------------------------------+---------+----+-----+------+-----+
+    |Total                                     |                              |        0|   5|  753|  1528|    0|
+    +------------------------------------------+------------------------------+---------+----+-----+------+-----+
 
     * DSP: 
     N/A
@@ -286,69 +286,69 @@
     |grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_ap_start_reg  |   1|   0|    1|          0|
     |i_fu_488                                               |   6|   0|    6|          0|
     |p_ZL15cos_coeff_table_0_load_reg_3463                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_10_load_reg_3488                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_11_load_reg_3648                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_12_load_reg_3493                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_13_load_reg_3653                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_14_load_reg_3498                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_15_load_reg_3658                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_16_load_reg_3503                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_17_load_reg_3663                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_18_load_reg_3508                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_19_load_reg_3668                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_1_load_reg_3623                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_20_load_reg_3513                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_21_load_reg_3673                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_22_load_reg_3518                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_23_load_reg_3678                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_24_load_reg_3523                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_25_load_reg_3683                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_26_load_reg_3528                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_27_load_reg_3688                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_28_load_reg_3533                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_29_load_reg_3693                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_2_load_reg_3468                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_30_load_reg_3538                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_31_load_reg_3698                 |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_3_load_reg_3628                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_4_load_reg_3473                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_5_load_reg_3633                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_6_load_reg_3478                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_7_load_reg_3638                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_8_load_reg_3483                  |  32|   0|   32|          0|
-    |p_ZL15cos_coeff_table_9_load_reg_3643                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_0_load_reg_3543                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_10_load_reg_3568                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_11_load_reg_3728                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_12_load_reg_3573                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_13_load_reg_3733                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_14_load_reg_3578                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_15_load_reg_3738                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_16_load_reg_3583                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_17_load_reg_3743                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_18_load_reg_3588                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_19_load_reg_3748                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_1_load_reg_3703                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_20_load_reg_3593                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_21_load_reg_3753                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_22_load_reg_3598                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_23_load_reg_3758                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_24_load_reg_3603                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_25_load_reg_3763                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_26_load_reg_3608                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_27_load_reg_3768                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_28_load_reg_3613                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_29_load_reg_3773                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_2_load_reg_3548                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_30_load_reg_3618                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_10_load_reg_3513                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_11_load_reg_3518                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_12_load_reg_3523                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_13_load_reg_3528                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_14_load_reg_3533                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_15_load_reg_3538                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_16_load_reg_3543                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_17_load_reg_3548                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_18_load_reg_3553                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_19_load_reg_3558                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_1_load_reg_3468                  |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_20_load_reg_3563                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_21_load_reg_3568                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_22_load_reg_3573                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_23_load_reg_3578                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_24_load_reg_3583                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_25_load_reg_3588                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_26_load_reg_3593                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_27_load_reg_3598                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_28_load_reg_3603                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_29_load_reg_3608                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_2_load_reg_3473                  |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_30_load_reg_3613                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_31_load_reg_3618                 |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_3_load_reg_3478                  |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_4_load_reg_3483                  |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_5_load_reg_3488                  |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_6_load_reg_3493                  |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_7_load_reg_3498                  |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_8_load_reg_3503                  |  32|   0|   32|          0|
+    |p_ZL15cos_coeff_table_9_load_reg_3508                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_0_load_reg_3623                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_10_load_reg_3673                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_11_load_reg_3678                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_12_load_reg_3683                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_13_load_reg_3688                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_14_load_reg_3693                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_15_load_reg_3698                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_16_load_reg_3703                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_17_load_reg_3708                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_18_load_reg_3713                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_19_load_reg_3718                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_1_load_reg_3628                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_20_load_reg_3723                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_21_load_reg_3728                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_22_load_reg_3733                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_23_load_reg_3738                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_24_load_reg_3743                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_25_load_reg_3748                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_26_load_reg_3753                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_27_load_reg_3758                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_28_load_reg_3763                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_29_load_reg_3768                 |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_2_load_reg_3633                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_30_load_reg_3773                 |  32|   0|   32|          0|
     |p_ZL15sin_coeff_table_31_load_reg_3778                 |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_3_load_reg_3708                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_4_load_reg_3553                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_5_load_reg_3713                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_6_load_reg_3558                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_7_load_reg_3718                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_8_load_reg_3563                  |  32|   0|   32|          0|
-    |p_ZL15sin_coeff_table_9_load_reg_3723                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_3_load_reg_3638                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_4_load_reg_3643                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_5_load_reg_3648                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_6_load_reg_3653                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_7_load_reg_3658                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_8_load_reg_3663                  |  32|   0|   32|          0|
+    |p_ZL15sin_coeff_table_9_load_reg_3668                  |  32|   0|   32|          0|
     |trunc_ln16_reg_3139                                    |   5|   0|    5|          0|
     +-------------------------------------------------------+----+----+-----+-----------+
     |Total                                                  |4151|   0| 4151|          0|

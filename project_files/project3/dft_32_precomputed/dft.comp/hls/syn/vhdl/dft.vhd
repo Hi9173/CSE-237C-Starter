@@ -214,7 +214,7 @@ end;
 architecture behav of dft is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "dft_dft,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.256000,HLS_SYN_LAT=6209,HLS_SYN_TPT=none,HLS_SYN_MEM=64,HLS_SYN_DSP=0,HLS_SYN_FF=5195,HLS_SYN_LUT=1621,HLS_VERSION=2024_2}";
+    "dft_dft,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.256000,HLS_SYN_LAT=6721,HLS_SYN_TPT=none,HLS_SYN_MEM=64,HLS_SYN_DSP=0,HLS_SYN_FF=4904,HLS_SYN_LUT=1596,HLS_VERSION=2024_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (4 downto 0) := "00001";
@@ -272,130 +272,130 @@ architecture behav of dft is
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
     signal p_ZL15cos_coeff_table_0_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_0_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_2_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_2_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_4_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_4_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_6_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_6_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_8_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_8_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_10_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_10_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_12_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_12_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_14_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_14_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_16_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_16_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_18_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_18_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_20_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_20_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_22_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_22_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_24_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_24_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_26_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_26_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_28_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_28_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_30_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15cos_coeff_table_30_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_0_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_0_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_2_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_2_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_4_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_4_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_6_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_6_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_8_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_8_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_10_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_10_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_12_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_12_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_14_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_14_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_16_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_16_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_18_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_18_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_20_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_20_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_22_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_22_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_24_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_24_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_26_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_26_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_28_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_28_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_30_address0 : STD_LOGIC_VECTOR (4 downto 0);
-    signal p_ZL15sin_coeff_table_30_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_1_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_1_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_2_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_2_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_3_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_3_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_4_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_4_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_5_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_5_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_6_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_6_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_7_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_7_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_8_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_8_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_9_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_9_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_10_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_10_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_11_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_11_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_12_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_12_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_13_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_13_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_14_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_14_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_15_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_15_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_16_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_16_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_17_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_17_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_18_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_18_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_19_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_19_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_20_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_20_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_21_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_21_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_22_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_22_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_23_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_23_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_24_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_24_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_25_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_25_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_26_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_26_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_27_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_27_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_28_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_28_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_29_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_29_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_30_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15cos_coeff_table_30_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15cos_coeff_table_31_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15cos_coeff_table_31_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_0_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_0_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_1_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_1_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_2_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_2_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_3_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_3_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_4_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_4_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_5_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_5_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_6_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_6_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_7_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_7_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_8_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_8_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_9_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_9_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_10_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_10_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_11_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_11_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_12_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_12_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_13_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_13_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_14_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_14_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_15_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_15_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_16_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_16_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_17_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_17_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_18_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_18_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_19_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_19_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_20_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_20_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_21_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_21_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_22_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_22_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_23_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_23_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_24_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_24_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_25_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_25_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_26_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_26_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_27_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_27_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_28_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_28_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_29_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_29_q0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_30_address0 : STD_LOGIC_VECTOR (4 downto 0);
+    signal p_ZL15sin_coeff_table_30_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_31_address0 : STD_LOGIC_VECTOR (4 downto 0);
     signal p_ZL15sin_coeff_table_31_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal empty_fu_2362_p1 : STD_LOGIC_VECTOR (31 downto 0);
@@ -535,68 +535,68 @@ architecture behav of dft is
     signal p_ZL15cos_coeff_table_0_load_reg_3463 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal p_ZL15cos_coeff_table_2_load_reg_3468 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_4_load_reg_3473 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_6_load_reg_3478 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_8_load_reg_3483 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_10_load_reg_3488 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_12_load_reg_3493 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_14_load_reg_3498 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_16_load_reg_3503 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_18_load_reg_3508 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_20_load_reg_3513 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_22_load_reg_3518 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_24_load_reg_3523 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_26_load_reg_3528 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_28_load_reg_3533 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_30_load_reg_3538 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_0_load_reg_3543 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_2_load_reg_3548 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_4_load_reg_3553 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_6_load_reg_3558 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_8_load_reg_3563 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_10_load_reg_3568 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_12_load_reg_3573 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_14_load_reg_3578 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_16_load_reg_3583 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_18_load_reg_3588 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_20_load_reg_3593 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_22_load_reg_3598 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_24_load_reg_3603 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_26_load_reg_3608 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_28_load_reg_3613 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_30_load_reg_3618 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_1_load_reg_3623 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_3_load_reg_3628 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_5_load_reg_3633 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_7_load_reg_3638 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_9_load_reg_3643 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_11_load_reg_3648 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_13_load_reg_3653 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_15_load_reg_3658 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_17_load_reg_3663 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_19_load_reg_3668 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_21_load_reg_3673 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_23_load_reg_3678 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_25_load_reg_3683 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_27_load_reg_3688 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_29_load_reg_3693 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15cos_coeff_table_31_load_reg_3698 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_1_load_reg_3703 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_3_load_reg_3708 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_5_load_reg_3713 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_7_load_reg_3718 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_9_load_reg_3723 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_11_load_reg_3728 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_13_load_reg_3733 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_15_load_reg_3738 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_17_load_reg_3743 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_19_load_reg_3748 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_21_load_reg_3753 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_23_load_reg_3758 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_25_load_reg_3763 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_27_load_reg_3768 : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_ZL15sin_coeff_table_29_load_reg_3773 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_1_load_reg_3468 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_2_load_reg_3473 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_3_load_reg_3478 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_4_load_reg_3483 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_5_load_reg_3488 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_6_load_reg_3493 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_7_load_reg_3498 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_8_load_reg_3503 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_9_load_reg_3508 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_10_load_reg_3513 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_11_load_reg_3518 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_12_load_reg_3523 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_13_load_reg_3528 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_14_load_reg_3533 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_15_load_reg_3538 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_16_load_reg_3543 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_17_load_reg_3548 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_18_load_reg_3553 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_19_load_reg_3558 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_20_load_reg_3563 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_21_load_reg_3568 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_22_load_reg_3573 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_23_load_reg_3578 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_24_load_reg_3583 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_25_load_reg_3588 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_26_load_reg_3593 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_27_load_reg_3598 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_28_load_reg_3603 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_29_load_reg_3608 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_30_load_reg_3613 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15cos_coeff_table_31_load_reg_3618 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_0_load_reg_3623 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_1_load_reg_3628 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_2_load_reg_3633 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_3_load_reg_3638 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_4_load_reg_3643 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_5_load_reg_3648 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_6_load_reg_3653 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_7_load_reg_3658 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_8_load_reg_3663 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_9_load_reg_3668 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_10_load_reg_3673 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_11_load_reg_3678 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_12_load_reg_3683 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_13_load_reg_3688 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_14_load_reg_3693 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_15_load_reg_3698 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_16_load_reg_3703 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_17_load_reg_3708 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_18_load_reg_3713 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_19_load_reg_3718 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_20_load_reg_3723 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_21_load_reg_3728 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_22_load_reg_3733 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_23_load_reg_3738 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_24_load_reg_3743 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_25_load_reg_3748 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_26_load_reg_3753 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_27_load_reg_3758 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_28_load_reg_3763 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_29_load_reg_3768 : STD_LOGIC_VECTOR (31 downto 0);
+    signal p_ZL15sin_coeff_table_30_load_reg_3773 : STD_LOGIC_VECTOR (31 downto 0);
     signal p_ZL15sin_coeff_table_31_load_reg_3778 : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_ap_start : STD_LOGIC;
     signal grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_ap_done : STD_LOGIC;
@@ -649,68 +649,68 @@ architecture behav of dft is
     signal ap_predicate_pred1452_state5 : BOOLEAN;
     signal ap_predicate_pred1457_state5 : BOOLEAN;
     signal p_ZL15cos_coeff_table_0_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_2_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_4_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_6_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_8_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_10_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_12_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_14_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_16_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_18_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_20_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_22_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_24_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_26_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_28_ce0_local : STD_LOGIC;
-    signal p_ZL15cos_coeff_table_30_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_0_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_2_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_4_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_6_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_8_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_10_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_12_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_14_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_16_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_18_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_20_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_22_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_24_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_26_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_28_ce0_local : STD_LOGIC;
-    signal p_ZL15sin_coeff_table_30_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_1_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_2_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_3_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_4_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_5_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_6_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_7_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_8_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_9_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_10_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_11_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_12_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_13_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_14_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_15_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_16_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_17_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_18_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_19_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_20_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_21_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_22_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_23_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_24_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_25_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_26_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_27_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_28_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_29_ce0_local : STD_LOGIC;
+    signal p_ZL15cos_coeff_table_30_ce0_local : STD_LOGIC;
     signal p_ZL15cos_coeff_table_31_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_0_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_1_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_2_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_3_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_4_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_5_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_6_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_7_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_8_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_9_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_10_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_11_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_12_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_13_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_14_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_15_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_16_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_17_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_18_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_19_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_20_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_21_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_22_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_23_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_24_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_25_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_26_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_27_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_28_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_29_ce0_local : STD_LOGIC;
+    signal p_ZL15sin_coeff_table_30_ce0_local : STD_LOGIC;
     signal p_ZL15sin_coeff_table_31_ce0_local : STD_LOGIC;
     signal ap_NS_fsm : STD_LOGIC_VECTOR (4 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
@@ -729,37 +729,69 @@ architecture behav of dft is
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         p_ZL15cos_coeff_table_0_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_1_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_2_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_3_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_4_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_5_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_6_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_7_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_8_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_9_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_10_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_11_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_12_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_13_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_14_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_15_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_16_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_17_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_18_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_19_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_20_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_21_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_22_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_23_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_24_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_25_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_26_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_27_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_28_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_29_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15cos_coeff_table_30_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15cos_coeff_table_31_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_0_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_1_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_2_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_3_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_4_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_5_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_6_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_7_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_8_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_9_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_10_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_11_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_12_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_13_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_14_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_15_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_16_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_17_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_18_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_19_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_20_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_21_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_22_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_23_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_24_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_25_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_26_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_27_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_28_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_29_load : IN STD_LOGIC_VECTOR (31 downto 0);
         p_ZL15sin_coeff_table_30_load : IN STD_LOGIC_VECTOR (31 downto 0);
+        p_ZL15sin_coeff_table_31_load : IN STD_LOGIC_VECTOR (31 downto 0);
         empty_7 : IN STD_LOGIC_VECTOR (31 downto 0);
         empty_8 : IN STD_LOGIC_VECTOR (31 downto 0);
         empty_9 : IN STD_LOGIC_VECTOR (31 downto 0);
@@ -792,38 +824,6 @@ architecture behav of dft is
         empty_36 : IN STD_LOGIC_VECTOR (31 downto 0);
         empty_37 : IN STD_LOGIC_VECTOR (31 downto 0);
         empty_38 : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_1_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_3_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_5_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_7_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_9_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_11_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_13_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_15_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_17_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_19_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_21_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_23_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_25_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_27_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_29_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15cos_coeff_table_31_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_1_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_3_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_5_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_7_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_9_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_11_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_13_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_15_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_17_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_19_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_21_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_23_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_25_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_27_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_29_load : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_ZL15sin_coeff_table_31_load : IN STD_LOGIC_VECTOR (31 downto 0);
         empty_39 : IN STD_LOGIC_VECTOR (31 downto 0);
         empty_40 : IN STD_LOGIC_VECTOR (31 downto 0);
         empty_41 : IN STD_LOGIC_VECTOR (31 downto 0);
@@ -877,7 +877,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15cos_coeff_table_1_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15cos_coeff_table_2_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15cos_coeff_table_3_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -905,7 +933,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15cos_coeff_table_5_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15cos_coeff_table_6_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15cos_coeff_table_7_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -933,7 +989,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15cos_coeff_table_9_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15cos_coeff_table_10_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15cos_coeff_table_11_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -961,7 +1045,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15cos_coeff_table_13_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15cos_coeff_table_14_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15cos_coeff_table_15_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -989,7 +1101,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15cos_coeff_table_17_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15cos_coeff_table_18_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15cos_coeff_table_19_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1031,6 +1171,20 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15cos_coeff_table_23_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15cos_coeff_table_24_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
@@ -1059,413 +1213,21 @@ architecture behav of dft is
     end component;
 
 
-    component dft_p_ZL15cos_coeff_table_28_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_30_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_0_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_2_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_4_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_6_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_8_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_10_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_12_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_14_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_16_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_18_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_20_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_22_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_24_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_26_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_28_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15sin_coeff_table_30_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_1_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_3_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_5_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_7_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_9_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_11_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_13_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_15_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_17_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_19_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
-    component dft_p_ZL15cos_coeff_table_23_ROM_AUTO_1R IS
-    generic (
-        DataWidth : INTEGER;
-        AddressRange : INTEGER;
-        AddressWidth : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
-        ce0 : IN STD_LOGIC;
-        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
-    end component;
-
-
     component dft_p_ZL15cos_coeff_table_27_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15cos_coeff_table_28_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1493,7 +1255,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15cos_coeff_table_30_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15cos_coeff_table_31_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15sin_coeff_table_0_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1521,7 +1311,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15sin_coeff_table_2_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15sin_coeff_table_3_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15sin_coeff_table_4_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1549,7 +1367,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15sin_coeff_table_6_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15sin_coeff_table_7_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15sin_coeff_table_8_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1577,7 +1423,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15sin_coeff_table_10_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15sin_coeff_table_11_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15sin_coeff_table_12_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1605,7 +1479,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15sin_coeff_table_14_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15sin_coeff_table_15_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15sin_coeff_table_16_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1633,7 +1535,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15sin_coeff_table_18_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15sin_coeff_table_19_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15sin_coeff_table_20_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1661,7 +1591,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15sin_coeff_table_22_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15sin_coeff_table_23_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15sin_coeff_table_24_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1689,6 +1647,20 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15sin_coeff_table_26_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15sin_coeff_table_27_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
@@ -1703,7 +1675,35 @@ architecture behav of dft is
     end component;
 
 
+    component dft_p_ZL15sin_coeff_table_28_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
     component dft_p_ZL15sin_coeff_table_29_ROM_AUTO_1R IS
+    generic (
+        DataWidth : INTEGER;
+        AddressRange : INTEGER;
+        AddressWidth : INTEGER );
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        address0 : IN STD_LOGIC_VECTOR (4 downto 0);
+        ce0 : IN STD_LOGIC;
+        q0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
+    end component;
+
+
+    component dft_p_ZL15sin_coeff_table_30_ROM_AUTO_1R IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -1745,378 +1745,6 @@ begin
         ce0 => p_ZL15cos_coeff_table_0_ce0_local,
         q0 => p_ZL15cos_coeff_table_0_q0);
 
-    p_ZL15cos_coeff_table_2_U : component dft_p_ZL15cos_coeff_table_2_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_2_address0,
-        ce0 => p_ZL15cos_coeff_table_2_ce0_local,
-        q0 => p_ZL15cos_coeff_table_2_q0);
-
-    p_ZL15cos_coeff_table_4_U : component dft_p_ZL15cos_coeff_table_4_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_4_address0,
-        ce0 => p_ZL15cos_coeff_table_4_ce0_local,
-        q0 => p_ZL15cos_coeff_table_4_q0);
-
-    p_ZL15cos_coeff_table_6_U : component dft_p_ZL15cos_coeff_table_6_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_6_address0,
-        ce0 => p_ZL15cos_coeff_table_6_ce0_local,
-        q0 => p_ZL15cos_coeff_table_6_q0);
-
-    p_ZL15cos_coeff_table_8_U : component dft_p_ZL15cos_coeff_table_8_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_8_address0,
-        ce0 => p_ZL15cos_coeff_table_8_ce0_local,
-        q0 => p_ZL15cos_coeff_table_8_q0);
-
-    p_ZL15cos_coeff_table_10_U : component dft_p_ZL15cos_coeff_table_10_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_10_address0,
-        ce0 => p_ZL15cos_coeff_table_10_ce0_local,
-        q0 => p_ZL15cos_coeff_table_10_q0);
-
-    p_ZL15cos_coeff_table_12_U : component dft_p_ZL15cos_coeff_table_12_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_12_address0,
-        ce0 => p_ZL15cos_coeff_table_12_ce0_local,
-        q0 => p_ZL15cos_coeff_table_12_q0);
-
-    p_ZL15cos_coeff_table_14_U : component dft_p_ZL15cos_coeff_table_14_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_14_address0,
-        ce0 => p_ZL15cos_coeff_table_14_ce0_local,
-        q0 => p_ZL15cos_coeff_table_14_q0);
-
-    p_ZL15cos_coeff_table_16_U : component dft_p_ZL15cos_coeff_table_16_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_16_address0,
-        ce0 => p_ZL15cos_coeff_table_16_ce0_local,
-        q0 => p_ZL15cos_coeff_table_16_q0);
-
-    p_ZL15cos_coeff_table_18_U : component dft_p_ZL15cos_coeff_table_18_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_18_address0,
-        ce0 => p_ZL15cos_coeff_table_18_ce0_local,
-        q0 => p_ZL15cos_coeff_table_18_q0);
-
-    p_ZL15cos_coeff_table_20_U : component dft_p_ZL15cos_coeff_table_20_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_20_address0,
-        ce0 => p_ZL15cos_coeff_table_20_ce0_local,
-        q0 => p_ZL15cos_coeff_table_20_q0);
-
-    p_ZL15cos_coeff_table_22_U : component dft_p_ZL15cos_coeff_table_22_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_22_address0,
-        ce0 => p_ZL15cos_coeff_table_22_ce0_local,
-        q0 => p_ZL15cos_coeff_table_22_q0);
-
-    p_ZL15cos_coeff_table_24_U : component dft_p_ZL15cos_coeff_table_24_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_24_address0,
-        ce0 => p_ZL15cos_coeff_table_24_ce0_local,
-        q0 => p_ZL15cos_coeff_table_24_q0);
-
-    p_ZL15cos_coeff_table_26_U : component dft_p_ZL15cos_coeff_table_26_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_26_address0,
-        ce0 => p_ZL15cos_coeff_table_26_ce0_local,
-        q0 => p_ZL15cos_coeff_table_26_q0);
-
-    p_ZL15cos_coeff_table_28_U : component dft_p_ZL15cos_coeff_table_28_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_28_address0,
-        ce0 => p_ZL15cos_coeff_table_28_ce0_local,
-        q0 => p_ZL15cos_coeff_table_28_q0);
-
-    p_ZL15cos_coeff_table_30_U : component dft_p_ZL15cos_coeff_table_30_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15cos_coeff_table_30_address0,
-        ce0 => p_ZL15cos_coeff_table_30_ce0_local,
-        q0 => p_ZL15cos_coeff_table_30_q0);
-
-    p_ZL15sin_coeff_table_0_U : component dft_p_ZL15sin_coeff_table_0_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_0_address0,
-        ce0 => p_ZL15sin_coeff_table_0_ce0_local,
-        q0 => p_ZL15sin_coeff_table_0_q0);
-
-    p_ZL15sin_coeff_table_2_U : component dft_p_ZL15sin_coeff_table_2_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_2_address0,
-        ce0 => p_ZL15sin_coeff_table_2_ce0_local,
-        q0 => p_ZL15sin_coeff_table_2_q0);
-
-    p_ZL15sin_coeff_table_4_U : component dft_p_ZL15sin_coeff_table_4_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_4_address0,
-        ce0 => p_ZL15sin_coeff_table_4_ce0_local,
-        q0 => p_ZL15sin_coeff_table_4_q0);
-
-    p_ZL15sin_coeff_table_6_U : component dft_p_ZL15sin_coeff_table_6_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_6_address0,
-        ce0 => p_ZL15sin_coeff_table_6_ce0_local,
-        q0 => p_ZL15sin_coeff_table_6_q0);
-
-    p_ZL15sin_coeff_table_8_U : component dft_p_ZL15sin_coeff_table_8_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_8_address0,
-        ce0 => p_ZL15sin_coeff_table_8_ce0_local,
-        q0 => p_ZL15sin_coeff_table_8_q0);
-
-    p_ZL15sin_coeff_table_10_U : component dft_p_ZL15sin_coeff_table_10_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_10_address0,
-        ce0 => p_ZL15sin_coeff_table_10_ce0_local,
-        q0 => p_ZL15sin_coeff_table_10_q0);
-
-    p_ZL15sin_coeff_table_12_U : component dft_p_ZL15sin_coeff_table_12_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_12_address0,
-        ce0 => p_ZL15sin_coeff_table_12_ce0_local,
-        q0 => p_ZL15sin_coeff_table_12_q0);
-
-    p_ZL15sin_coeff_table_14_U : component dft_p_ZL15sin_coeff_table_14_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_14_address0,
-        ce0 => p_ZL15sin_coeff_table_14_ce0_local,
-        q0 => p_ZL15sin_coeff_table_14_q0);
-
-    p_ZL15sin_coeff_table_16_U : component dft_p_ZL15sin_coeff_table_16_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_16_address0,
-        ce0 => p_ZL15sin_coeff_table_16_ce0_local,
-        q0 => p_ZL15sin_coeff_table_16_q0);
-
-    p_ZL15sin_coeff_table_18_U : component dft_p_ZL15sin_coeff_table_18_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_18_address0,
-        ce0 => p_ZL15sin_coeff_table_18_ce0_local,
-        q0 => p_ZL15sin_coeff_table_18_q0);
-
-    p_ZL15sin_coeff_table_20_U : component dft_p_ZL15sin_coeff_table_20_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_20_address0,
-        ce0 => p_ZL15sin_coeff_table_20_ce0_local,
-        q0 => p_ZL15sin_coeff_table_20_q0);
-
-    p_ZL15sin_coeff_table_22_U : component dft_p_ZL15sin_coeff_table_22_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_22_address0,
-        ce0 => p_ZL15sin_coeff_table_22_ce0_local,
-        q0 => p_ZL15sin_coeff_table_22_q0);
-
-    p_ZL15sin_coeff_table_24_U : component dft_p_ZL15sin_coeff_table_24_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_24_address0,
-        ce0 => p_ZL15sin_coeff_table_24_ce0_local,
-        q0 => p_ZL15sin_coeff_table_24_q0);
-
-    p_ZL15sin_coeff_table_26_U : component dft_p_ZL15sin_coeff_table_26_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_26_address0,
-        ce0 => p_ZL15sin_coeff_table_26_ce0_local,
-        q0 => p_ZL15sin_coeff_table_26_q0);
-
-    p_ZL15sin_coeff_table_28_U : component dft_p_ZL15sin_coeff_table_28_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_28_address0,
-        ce0 => p_ZL15sin_coeff_table_28_ce0_local,
-        q0 => p_ZL15sin_coeff_table_28_q0);
-
-    p_ZL15sin_coeff_table_30_U : component dft_p_ZL15sin_coeff_table_30_ROM_AUTO_1R
-    generic map (
-        DataWidth => 32,
-        AddressRange => 32,
-        AddressWidth => 5)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        address0 => p_ZL15sin_coeff_table_30_address0,
-        ce0 => p_ZL15sin_coeff_table_30_ce0_local,
-        q0 => p_ZL15sin_coeff_table_30_q0);
-
     p_ZL15cos_coeff_table_1_U : component dft_p_ZL15cos_coeff_table_1_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2128,6 +1756,18 @@ begin
         address0 => p_ZL15cos_coeff_table_1_address0,
         ce0 => p_ZL15cos_coeff_table_1_ce0_local,
         q0 => p_ZL15cos_coeff_table_1_q0);
+
+    p_ZL15cos_coeff_table_2_U : component dft_p_ZL15cos_coeff_table_2_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_2_address0,
+        ce0 => p_ZL15cos_coeff_table_2_ce0_local,
+        q0 => p_ZL15cos_coeff_table_2_q0);
 
     p_ZL15cos_coeff_table_3_U : component dft_p_ZL15cos_coeff_table_3_ROM_AUTO_1R
     generic map (
@@ -2141,6 +1781,18 @@ begin
         ce0 => p_ZL15cos_coeff_table_3_ce0_local,
         q0 => p_ZL15cos_coeff_table_3_q0);
 
+    p_ZL15cos_coeff_table_4_U : component dft_p_ZL15cos_coeff_table_4_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_4_address0,
+        ce0 => p_ZL15cos_coeff_table_4_ce0_local,
+        q0 => p_ZL15cos_coeff_table_4_q0);
+
     p_ZL15cos_coeff_table_5_U : component dft_p_ZL15cos_coeff_table_5_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2152,6 +1804,18 @@ begin
         address0 => p_ZL15cos_coeff_table_5_address0,
         ce0 => p_ZL15cos_coeff_table_5_ce0_local,
         q0 => p_ZL15cos_coeff_table_5_q0);
+
+    p_ZL15cos_coeff_table_6_U : component dft_p_ZL15cos_coeff_table_6_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_6_address0,
+        ce0 => p_ZL15cos_coeff_table_6_ce0_local,
+        q0 => p_ZL15cos_coeff_table_6_q0);
 
     p_ZL15cos_coeff_table_7_U : component dft_p_ZL15cos_coeff_table_7_ROM_AUTO_1R
     generic map (
@@ -2165,6 +1829,18 @@ begin
         ce0 => p_ZL15cos_coeff_table_7_ce0_local,
         q0 => p_ZL15cos_coeff_table_7_q0);
 
+    p_ZL15cos_coeff_table_8_U : component dft_p_ZL15cos_coeff_table_8_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_8_address0,
+        ce0 => p_ZL15cos_coeff_table_8_ce0_local,
+        q0 => p_ZL15cos_coeff_table_8_q0);
+
     p_ZL15cos_coeff_table_9_U : component dft_p_ZL15cos_coeff_table_9_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2176,6 +1852,18 @@ begin
         address0 => p_ZL15cos_coeff_table_9_address0,
         ce0 => p_ZL15cos_coeff_table_9_ce0_local,
         q0 => p_ZL15cos_coeff_table_9_q0);
+
+    p_ZL15cos_coeff_table_10_U : component dft_p_ZL15cos_coeff_table_10_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_10_address0,
+        ce0 => p_ZL15cos_coeff_table_10_ce0_local,
+        q0 => p_ZL15cos_coeff_table_10_q0);
 
     p_ZL15cos_coeff_table_11_U : component dft_p_ZL15cos_coeff_table_11_ROM_AUTO_1R
     generic map (
@@ -2189,6 +1877,18 @@ begin
         ce0 => p_ZL15cos_coeff_table_11_ce0_local,
         q0 => p_ZL15cos_coeff_table_11_q0);
 
+    p_ZL15cos_coeff_table_12_U : component dft_p_ZL15cos_coeff_table_12_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_12_address0,
+        ce0 => p_ZL15cos_coeff_table_12_ce0_local,
+        q0 => p_ZL15cos_coeff_table_12_q0);
+
     p_ZL15cos_coeff_table_13_U : component dft_p_ZL15cos_coeff_table_13_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2200,6 +1900,18 @@ begin
         address0 => p_ZL15cos_coeff_table_13_address0,
         ce0 => p_ZL15cos_coeff_table_13_ce0_local,
         q0 => p_ZL15cos_coeff_table_13_q0);
+
+    p_ZL15cos_coeff_table_14_U : component dft_p_ZL15cos_coeff_table_14_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_14_address0,
+        ce0 => p_ZL15cos_coeff_table_14_ce0_local,
+        q0 => p_ZL15cos_coeff_table_14_q0);
 
     p_ZL15cos_coeff_table_15_U : component dft_p_ZL15cos_coeff_table_15_ROM_AUTO_1R
     generic map (
@@ -2213,6 +1925,18 @@ begin
         ce0 => p_ZL15cos_coeff_table_15_ce0_local,
         q0 => p_ZL15cos_coeff_table_15_q0);
 
+    p_ZL15cos_coeff_table_16_U : component dft_p_ZL15cos_coeff_table_16_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_16_address0,
+        ce0 => p_ZL15cos_coeff_table_16_ce0_local,
+        q0 => p_ZL15cos_coeff_table_16_q0);
+
     p_ZL15cos_coeff_table_17_U : component dft_p_ZL15cos_coeff_table_17_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2224,6 +1948,18 @@ begin
         address0 => p_ZL15cos_coeff_table_17_address0,
         ce0 => p_ZL15cos_coeff_table_17_ce0_local,
         q0 => p_ZL15cos_coeff_table_17_q0);
+
+    p_ZL15cos_coeff_table_18_U : component dft_p_ZL15cos_coeff_table_18_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_18_address0,
+        ce0 => p_ZL15cos_coeff_table_18_ce0_local,
+        q0 => p_ZL15cos_coeff_table_18_q0);
 
     p_ZL15cos_coeff_table_19_U : component dft_p_ZL15cos_coeff_table_19_ROM_AUTO_1R
     generic map (
@@ -2237,6 +1973,18 @@ begin
         ce0 => p_ZL15cos_coeff_table_19_ce0_local,
         q0 => p_ZL15cos_coeff_table_19_q0);
 
+    p_ZL15cos_coeff_table_20_U : component dft_p_ZL15cos_coeff_table_20_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_20_address0,
+        ce0 => p_ZL15cos_coeff_table_20_ce0_local,
+        q0 => p_ZL15cos_coeff_table_20_q0);
+
     p_ZL15cos_coeff_table_21_U : component dft_p_ZL15cos_coeff_table_11_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2248,6 +1996,18 @@ begin
         address0 => p_ZL15cos_coeff_table_21_address0,
         ce0 => p_ZL15cos_coeff_table_21_ce0_local,
         q0 => p_ZL15cos_coeff_table_21_q0);
+
+    p_ZL15cos_coeff_table_22_U : component dft_p_ZL15cos_coeff_table_22_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_22_address0,
+        ce0 => p_ZL15cos_coeff_table_22_ce0_local,
+        q0 => p_ZL15cos_coeff_table_22_q0);
 
     p_ZL15cos_coeff_table_23_U : component dft_p_ZL15cos_coeff_table_23_ROM_AUTO_1R
     generic map (
@@ -2261,6 +2021,18 @@ begin
         ce0 => p_ZL15cos_coeff_table_23_ce0_local,
         q0 => p_ZL15cos_coeff_table_23_q0);
 
+    p_ZL15cos_coeff_table_24_U : component dft_p_ZL15cos_coeff_table_24_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_24_address0,
+        ce0 => p_ZL15cos_coeff_table_24_ce0_local,
+        q0 => p_ZL15cos_coeff_table_24_q0);
+
     p_ZL15cos_coeff_table_25_U : component dft_p_ZL15cos_coeff_table_7_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2272,6 +2044,18 @@ begin
         address0 => p_ZL15cos_coeff_table_25_address0,
         ce0 => p_ZL15cos_coeff_table_25_ce0_local,
         q0 => p_ZL15cos_coeff_table_25_q0);
+
+    p_ZL15cos_coeff_table_26_U : component dft_p_ZL15cos_coeff_table_26_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_26_address0,
+        ce0 => p_ZL15cos_coeff_table_26_ce0_local,
+        q0 => p_ZL15cos_coeff_table_26_q0);
 
     p_ZL15cos_coeff_table_27_U : component dft_p_ZL15cos_coeff_table_27_ROM_AUTO_1R
     generic map (
@@ -2285,6 +2069,18 @@ begin
         ce0 => p_ZL15cos_coeff_table_27_ce0_local,
         q0 => p_ZL15cos_coeff_table_27_q0);
 
+    p_ZL15cos_coeff_table_28_U : component dft_p_ZL15cos_coeff_table_28_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_28_address0,
+        ce0 => p_ZL15cos_coeff_table_28_ce0_local,
+        q0 => p_ZL15cos_coeff_table_28_q0);
+
     p_ZL15cos_coeff_table_29_U : component dft_p_ZL15cos_coeff_table_29_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2296,6 +2092,18 @@ begin
         address0 => p_ZL15cos_coeff_table_29_address0,
         ce0 => p_ZL15cos_coeff_table_29_ce0_local,
         q0 => p_ZL15cos_coeff_table_29_q0);
+
+    p_ZL15cos_coeff_table_30_U : component dft_p_ZL15cos_coeff_table_30_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15cos_coeff_table_30_address0,
+        ce0 => p_ZL15cos_coeff_table_30_ce0_local,
+        q0 => p_ZL15cos_coeff_table_30_q0);
 
     p_ZL15cos_coeff_table_31_U : component dft_p_ZL15cos_coeff_table_31_ROM_AUTO_1R
     generic map (
@@ -2309,6 +2117,18 @@ begin
         ce0 => p_ZL15cos_coeff_table_31_ce0_local,
         q0 => p_ZL15cos_coeff_table_31_q0);
 
+    p_ZL15sin_coeff_table_0_U : component dft_p_ZL15sin_coeff_table_0_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_0_address0,
+        ce0 => p_ZL15sin_coeff_table_0_ce0_local,
+        q0 => p_ZL15sin_coeff_table_0_q0);
+
     p_ZL15sin_coeff_table_1_U : component dft_p_ZL15sin_coeff_table_1_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2320,6 +2140,18 @@ begin
         address0 => p_ZL15sin_coeff_table_1_address0,
         ce0 => p_ZL15sin_coeff_table_1_ce0_local,
         q0 => p_ZL15sin_coeff_table_1_q0);
+
+    p_ZL15sin_coeff_table_2_U : component dft_p_ZL15sin_coeff_table_2_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_2_address0,
+        ce0 => p_ZL15sin_coeff_table_2_ce0_local,
+        q0 => p_ZL15sin_coeff_table_2_q0);
 
     p_ZL15sin_coeff_table_3_U : component dft_p_ZL15sin_coeff_table_3_ROM_AUTO_1R
     generic map (
@@ -2333,6 +2165,18 @@ begin
         ce0 => p_ZL15sin_coeff_table_3_ce0_local,
         q0 => p_ZL15sin_coeff_table_3_q0);
 
+    p_ZL15sin_coeff_table_4_U : component dft_p_ZL15sin_coeff_table_4_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_4_address0,
+        ce0 => p_ZL15sin_coeff_table_4_ce0_local,
+        q0 => p_ZL15sin_coeff_table_4_q0);
+
     p_ZL15sin_coeff_table_5_U : component dft_p_ZL15sin_coeff_table_5_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2344,6 +2188,18 @@ begin
         address0 => p_ZL15sin_coeff_table_5_address0,
         ce0 => p_ZL15sin_coeff_table_5_ce0_local,
         q0 => p_ZL15sin_coeff_table_5_q0);
+
+    p_ZL15sin_coeff_table_6_U : component dft_p_ZL15sin_coeff_table_6_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_6_address0,
+        ce0 => p_ZL15sin_coeff_table_6_ce0_local,
+        q0 => p_ZL15sin_coeff_table_6_q0);
 
     p_ZL15sin_coeff_table_7_U : component dft_p_ZL15sin_coeff_table_7_ROM_AUTO_1R
     generic map (
@@ -2357,6 +2213,18 @@ begin
         ce0 => p_ZL15sin_coeff_table_7_ce0_local,
         q0 => p_ZL15sin_coeff_table_7_q0);
 
+    p_ZL15sin_coeff_table_8_U : component dft_p_ZL15sin_coeff_table_8_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_8_address0,
+        ce0 => p_ZL15sin_coeff_table_8_ce0_local,
+        q0 => p_ZL15sin_coeff_table_8_q0);
+
     p_ZL15sin_coeff_table_9_U : component dft_p_ZL15sin_coeff_table_9_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2368,6 +2236,18 @@ begin
         address0 => p_ZL15sin_coeff_table_9_address0,
         ce0 => p_ZL15sin_coeff_table_9_ce0_local,
         q0 => p_ZL15sin_coeff_table_9_q0);
+
+    p_ZL15sin_coeff_table_10_U : component dft_p_ZL15sin_coeff_table_10_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_10_address0,
+        ce0 => p_ZL15sin_coeff_table_10_ce0_local,
+        q0 => p_ZL15sin_coeff_table_10_q0);
 
     p_ZL15sin_coeff_table_11_U : component dft_p_ZL15sin_coeff_table_11_ROM_AUTO_1R
     generic map (
@@ -2381,6 +2261,18 @@ begin
         ce0 => p_ZL15sin_coeff_table_11_ce0_local,
         q0 => p_ZL15sin_coeff_table_11_q0);
 
+    p_ZL15sin_coeff_table_12_U : component dft_p_ZL15sin_coeff_table_12_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_12_address0,
+        ce0 => p_ZL15sin_coeff_table_12_ce0_local,
+        q0 => p_ZL15sin_coeff_table_12_q0);
+
     p_ZL15sin_coeff_table_13_U : component dft_p_ZL15sin_coeff_table_13_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2392,6 +2284,18 @@ begin
         address0 => p_ZL15sin_coeff_table_13_address0,
         ce0 => p_ZL15sin_coeff_table_13_ce0_local,
         q0 => p_ZL15sin_coeff_table_13_q0);
+
+    p_ZL15sin_coeff_table_14_U : component dft_p_ZL15sin_coeff_table_14_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_14_address0,
+        ce0 => p_ZL15sin_coeff_table_14_ce0_local,
+        q0 => p_ZL15sin_coeff_table_14_q0);
 
     p_ZL15sin_coeff_table_15_U : component dft_p_ZL15sin_coeff_table_15_ROM_AUTO_1R
     generic map (
@@ -2405,6 +2309,18 @@ begin
         ce0 => p_ZL15sin_coeff_table_15_ce0_local,
         q0 => p_ZL15sin_coeff_table_15_q0);
 
+    p_ZL15sin_coeff_table_16_U : component dft_p_ZL15sin_coeff_table_16_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_16_address0,
+        ce0 => p_ZL15sin_coeff_table_16_ce0_local,
+        q0 => p_ZL15sin_coeff_table_16_q0);
+
     p_ZL15sin_coeff_table_17_U : component dft_p_ZL15sin_coeff_table_17_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2416,6 +2332,18 @@ begin
         address0 => p_ZL15sin_coeff_table_17_address0,
         ce0 => p_ZL15sin_coeff_table_17_ce0_local,
         q0 => p_ZL15sin_coeff_table_17_q0);
+
+    p_ZL15sin_coeff_table_18_U : component dft_p_ZL15sin_coeff_table_18_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_18_address0,
+        ce0 => p_ZL15sin_coeff_table_18_ce0_local,
+        q0 => p_ZL15sin_coeff_table_18_q0);
 
     p_ZL15sin_coeff_table_19_U : component dft_p_ZL15sin_coeff_table_19_ROM_AUTO_1R
     generic map (
@@ -2429,6 +2357,18 @@ begin
         ce0 => p_ZL15sin_coeff_table_19_ce0_local,
         q0 => p_ZL15sin_coeff_table_19_q0);
 
+    p_ZL15sin_coeff_table_20_U : component dft_p_ZL15sin_coeff_table_20_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_20_address0,
+        ce0 => p_ZL15sin_coeff_table_20_ce0_local,
+        q0 => p_ZL15sin_coeff_table_20_q0);
+
     p_ZL15sin_coeff_table_21_U : component dft_p_ZL15sin_coeff_table_21_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2440,6 +2380,18 @@ begin
         address0 => p_ZL15sin_coeff_table_21_address0,
         ce0 => p_ZL15sin_coeff_table_21_ce0_local,
         q0 => p_ZL15sin_coeff_table_21_q0);
+
+    p_ZL15sin_coeff_table_22_U : component dft_p_ZL15sin_coeff_table_22_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_22_address0,
+        ce0 => p_ZL15sin_coeff_table_22_ce0_local,
+        q0 => p_ZL15sin_coeff_table_22_q0);
 
     p_ZL15sin_coeff_table_23_U : component dft_p_ZL15sin_coeff_table_23_ROM_AUTO_1R
     generic map (
@@ -2453,6 +2405,18 @@ begin
         ce0 => p_ZL15sin_coeff_table_23_ce0_local,
         q0 => p_ZL15sin_coeff_table_23_q0);
 
+    p_ZL15sin_coeff_table_24_U : component dft_p_ZL15sin_coeff_table_24_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_24_address0,
+        ce0 => p_ZL15sin_coeff_table_24_ce0_local,
+        q0 => p_ZL15sin_coeff_table_24_q0);
+
     p_ZL15sin_coeff_table_25_U : component dft_p_ZL15sin_coeff_table_25_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2464,6 +2428,18 @@ begin
         address0 => p_ZL15sin_coeff_table_25_address0,
         ce0 => p_ZL15sin_coeff_table_25_ce0_local,
         q0 => p_ZL15sin_coeff_table_25_q0);
+
+    p_ZL15sin_coeff_table_26_U : component dft_p_ZL15sin_coeff_table_26_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_26_address0,
+        ce0 => p_ZL15sin_coeff_table_26_ce0_local,
+        q0 => p_ZL15sin_coeff_table_26_q0);
 
     p_ZL15sin_coeff_table_27_U : component dft_p_ZL15sin_coeff_table_27_ROM_AUTO_1R
     generic map (
@@ -2477,6 +2453,18 @@ begin
         ce0 => p_ZL15sin_coeff_table_27_ce0_local,
         q0 => p_ZL15sin_coeff_table_27_q0);
 
+    p_ZL15sin_coeff_table_28_U : component dft_p_ZL15sin_coeff_table_28_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_28_address0,
+        ce0 => p_ZL15sin_coeff_table_28_ce0_local,
+        q0 => p_ZL15sin_coeff_table_28_q0);
+
     p_ZL15sin_coeff_table_29_U : component dft_p_ZL15sin_coeff_table_29_ROM_AUTO_1R
     generic map (
         DataWidth => 32,
@@ -2488,6 +2476,18 @@ begin
         address0 => p_ZL15sin_coeff_table_29_address0,
         ce0 => p_ZL15sin_coeff_table_29_ce0_local,
         q0 => p_ZL15sin_coeff_table_29_q0);
+
+    p_ZL15sin_coeff_table_30_U : component dft_p_ZL15sin_coeff_table_30_ROM_AUTO_1R
+    generic map (
+        DataWidth => 32,
+        AddressRange => 32,
+        AddressWidth => 5)
+    port map (
+        clk => ap_clk,
+        reset => ap_rst,
+        address0 => p_ZL15sin_coeff_table_30_address0,
+        ce0 => p_ZL15sin_coeff_table_30_ce0_local,
+        q0 => p_ZL15sin_coeff_table_30_q0);
 
     p_ZL15sin_coeff_table_31_U : component dft_p_ZL15sin_coeff_table_31_ROM_AUTO_1R
     generic map (
@@ -2510,37 +2510,69 @@ begin
         ap_idle => grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_ap_idle,
         ap_ready => grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_ap_ready,
         p_ZL15cos_coeff_table_0_load => p_ZL15cos_coeff_table_0_load_reg_3463,
-        p_ZL15cos_coeff_table_2_load => p_ZL15cos_coeff_table_2_load_reg_3468,
-        p_ZL15cos_coeff_table_4_load => p_ZL15cos_coeff_table_4_load_reg_3473,
-        p_ZL15cos_coeff_table_6_load => p_ZL15cos_coeff_table_6_load_reg_3478,
-        p_ZL15cos_coeff_table_8_load => p_ZL15cos_coeff_table_8_load_reg_3483,
-        p_ZL15cos_coeff_table_10_load => p_ZL15cos_coeff_table_10_load_reg_3488,
-        p_ZL15cos_coeff_table_12_load => p_ZL15cos_coeff_table_12_load_reg_3493,
-        p_ZL15cos_coeff_table_14_load => p_ZL15cos_coeff_table_14_load_reg_3498,
-        p_ZL15cos_coeff_table_16_load => p_ZL15cos_coeff_table_16_load_reg_3503,
-        p_ZL15cos_coeff_table_18_load => p_ZL15cos_coeff_table_18_load_reg_3508,
-        p_ZL15cos_coeff_table_20_load => p_ZL15cos_coeff_table_20_load_reg_3513,
-        p_ZL15cos_coeff_table_22_load => p_ZL15cos_coeff_table_22_load_reg_3518,
-        p_ZL15cos_coeff_table_24_load => p_ZL15cos_coeff_table_24_load_reg_3523,
-        p_ZL15cos_coeff_table_26_load => p_ZL15cos_coeff_table_26_load_reg_3528,
-        p_ZL15cos_coeff_table_28_load => p_ZL15cos_coeff_table_28_load_reg_3533,
-        p_ZL15cos_coeff_table_30_load => p_ZL15cos_coeff_table_30_load_reg_3538,
-        p_ZL15sin_coeff_table_0_load => p_ZL15sin_coeff_table_0_load_reg_3543,
-        p_ZL15sin_coeff_table_2_load => p_ZL15sin_coeff_table_2_load_reg_3548,
-        p_ZL15sin_coeff_table_4_load => p_ZL15sin_coeff_table_4_load_reg_3553,
-        p_ZL15sin_coeff_table_6_load => p_ZL15sin_coeff_table_6_load_reg_3558,
-        p_ZL15sin_coeff_table_8_load => p_ZL15sin_coeff_table_8_load_reg_3563,
-        p_ZL15sin_coeff_table_10_load => p_ZL15sin_coeff_table_10_load_reg_3568,
-        p_ZL15sin_coeff_table_12_load => p_ZL15sin_coeff_table_12_load_reg_3573,
-        p_ZL15sin_coeff_table_14_load => p_ZL15sin_coeff_table_14_load_reg_3578,
-        p_ZL15sin_coeff_table_16_load => p_ZL15sin_coeff_table_16_load_reg_3583,
-        p_ZL15sin_coeff_table_18_load => p_ZL15sin_coeff_table_18_load_reg_3588,
-        p_ZL15sin_coeff_table_20_load => p_ZL15sin_coeff_table_20_load_reg_3593,
-        p_ZL15sin_coeff_table_22_load => p_ZL15sin_coeff_table_22_load_reg_3598,
-        p_ZL15sin_coeff_table_24_load => p_ZL15sin_coeff_table_24_load_reg_3603,
-        p_ZL15sin_coeff_table_26_load => p_ZL15sin_coeff_table_26_load_reg_3608,
-        p_ZL15sin_coeff_table_28_load => p_ZL15sin_coeff_table_28_load_reg_3613,
-        p_ZL15sin_coeff_table_30_load => p_ZL15sin_coeff_table_30_load_reg_3618,
+        p_ZL15cos_coeff_table_1_load => p_ZL15cos_coeff_table_1_load_reg_3468,
+        p_ZL15cos_coeff_table_2_load => p_ZL15cos_coeff_table_2_load_reg_3473,
+        p_ZL15cos_coeff_table_3_load => p_ZL15cos_coeff_table_3_load_reg_3478,
+        p_ZL15cos_coeff_table_4_load => p_ZL15cos_coeff_table_4_load_reg_3483,
+        p_ZL15cos_coeff_table_5_load => p_ZL15cos_coeff_table_5_load_reg_3488,
+        p_ZL15cos_coeff_table_6_load => p_ZL15cos_coeff_table_6_load_reg_3493,
+        p_ZL15cos_coeff_table_7_load => p_ZL15cos_coeff_table_7_load_reg_3498,
+        p_ZL15cos_coeff_table_8_load => p_ZL15cos_coeff_table_8_load_reg_3503,
+        p_ZL15cos_coeff_table_9_load => p_ZL15cos_coeff_table_9_load_reg_3508,
+        p_ZL15cos_coeff_table_10_load => p_ZL15cos_coeff_table_10_load_reg_3513,
+        p_ZL15cos_coeff_table_11_load => p_ZL15cos_coeff_table_11_load_reg_3518,
+        p_ZL15cos_coeff_table_12_load => p_ZL15cos_coeff_table_12_load_reg_3523,
+        p_ZL15cos_coeff_table_13_load => p_ZL15cos_coeff_table_13_load_reg_3528,
+        p_ZL15cos_coeff_table_14_load => p_ZL15cos_coeff_table_14_load_reg_3533,
+        p_ZL15cos_coeff_table_15_load => p_ZL15cos_coeff_table_15_load_reg_3538,
+        p_ZL15cos_coeff_table_16_load => p_ZL15cos_coeff_table_16_load_reg_3543,
+        p_ZL15cos_coeff_table_17_load => p_ZL15cos_coeff_table_17_load_reg_3548,
+        p_ZL15cos_coeff_table_18_load => p_ZL15cos_coeff_table_18_load_reg_3553,
+        p_ZL15cos_coeff_table_19_load => p_ZL15cos_coeff_table_19_load_reg_3558,
+        p_ZL15cos_coeff_table_20_load => p_ZL15cos_coeff_table_20_load_reg_3563,
+        p_ZL15cos_coeff_table_21_load => p_ZL15cos_coeff_table_21_load_reg_3568,
+        p_ZL15cos_coeff_table_22_load => p_ZL15cos_coeff_table_22_load_reg_3573,
+        p_ZL15cos_coeff_table_23_load => p_ZL15cos_coeff_table_23_load_reg_3578,
+        p_ZL15cos_coeff_table_24_load => p_ZL15cos_coeff_table_24_load_reg_3583,
+        p_ZL15cos_coeff_table_25_load => p_ZL15cos_coeff_table_25_load_reg_3588,
+        p_ZL15cos_coeff_table_26_load => p_ZL15cos_coeff_table_26_load_reg_3593,
+        p_ZL15cos_coeff_table_27_load => p_ZL15cos_coeff_table_27_load_reg_3598,
+        p_ZL15cos_coeff_table_28_load => p_ZL15cos_coeff_table_28_load_reg_3603,
+        p_ZL15cos_coeff_table_29_load => p_ZL15cos_coeff_table_29_load_reg_3608,
+        p_ZL15cos_coeff_table_30_load => p_ZL15cos_coeff_table_30_load_reg_3613,
+        p_ZL15cos_coeff_table_31_load => p_ZL15cos_coeff_table_31_load_reg_3618,
+        p_ZL15sin_coeff_table_0_load => p_ZL15sin_coeff_table_0_load_reg_3623,
+        p_ZL15sin_coeff_table_1_load => p_ZL15sin_coeff_table_1_load_reg_3628,
+        p_ZL15sin_coeff_table_2_load => p_ZL15sin_coeff_table_2_load_reg_3633,
+        p_ZL15sin_coeff_table_3_load => p_ZL15sin_coeff_table_3_load_reg_3638,
+        p_ZL15sin_coeff_table_4_load => p_ZL15sin_coeff_table_4_load_reg_3643,
+        p_ZL15sin_coeff_table_5_load => p_ZL15sin_coeff_table_5_load_reg_3648,
+        p_ZL15sin_coeff_table_6_load => p_ZL15sin_coeff_table_6_load_reg_3653,
+        p_ZL15sin_coeff_table_7_load => p_ZL15sin_coeff_table_7_load_reg_3658,
+        p_ZL15sin_coeff_table_8_load => p_ZL15sin_coeff_table_8_load_reg_3663,
+        p_ZL15sin_coeff_table_9_load => p_ZL15sin_coeff_table_9_load_reg_3668,
+        p_ZL15sin_coeff_table_10_load => p_ZL15sin_coeff_table_10_load_reg_3673,
+        p_ZL15sin_coeff_table_11_load => p_ZL15sin_coeff_table_11_load_reg_3678,
+        p_ZL15sin_coeff_table_12_load => p_ZL15sin_coeff_table_12_load_reg_3683,
+        p_ZL15sin_coeff_table_13_load => p_ZL15sin_coeff_table_13_load_reg_3688,
+        p_ZL15sin_coeff_table_14_load => p_ZL15sin_coeff_table_14_load_reg_3693,
+        p_ZL15sin_coeff_table_15_load => p_ZL15sin_coeff_table_15_load_reg_3698,
+        p_ZL15sin_coeff_table_16_load => p_ZL15sin_coeff_table_16_load_reg_3703,
+        p_ZL15sin_coeff_table_17_load => p_ZL15sin_coeff_table_17_load_reg_3708,
+        p_ZL15sin_coeff_table_18_load => p_ZL15sin_coeff_table_18_load_reg_3713,
+        p_ZL15sin_coeff_table_19_load => p_ZL15sin_coeff_table_19_load_reg_3718,
+        p_ZL15sin_coeff_table_20_load => p_ZL15sin_coeff_table_20_load_reg_3723,
+        p_ZL15sin_coeff_table_21_load => p_ZL15sin_coeff_table_21_load_reg_3728,
+        p_ZL15sin_coeff_table_22_load => p_ZL15sin_coeff_table_22_load_reg_3733,
+        p_ZL15sin_coeff_table_23_load => p_ZL15sin_coeff_table_23_load_reg_3738,
+        p_ZL15sin_coeff_table_24_load => p_ZL15sin_coeff_table_24_load_reg_3743,
+        p_ZL15sin_coeff_table_25_load => p_ZL15sin_coeff_table_25_load_reg_3748,
+        p_ZL15sin_coeff_table_26_load => p_ZL15sin_coeff_table_26_load_reg_3753,
+        p_ZL15sin_coeff_table_27_load => p_ZL15sin_coeff_table_27_load_reg_3758,
+        p_ZL15sin_coeff_table_28_load => p_ZL15sin_coeff_table_28_load_reg_3763,
+        p_ZL15sin_coeff_table_29_load => p_ZL15sin_coeff_table_29_load_reg_3768,
+        p_ZL15sin_coeff_table_30_load => p_ZL15sin_coeff_table_30_load_reg_3773,
+        p_ZL15sin_coeff_table_31_load => p_ZL15sin_coeff_table_31_load_reg_3778,
         empty_7 => empty_reg_2811,
         empty_8 => empty_70_reg_2816,
         empty_9 => empty_71_reg_2821,
@@ -2573,38 +2605,6 @@ begin
         empty_36 => empty_98_reg_2956,
         empty_37 => empty_99_reg_2961,
         empty_38 => empty_100_reg_2966,
-        p_ZL15cos_coeff_table_1_load => p_ZL15cos_coeff_table_1_load_reg_3623,
-        p_ZL15cos_coeff_table_3_load => p_ZL15cos_coeff_table_3_load_reg_3628,
-        p_ZL15cos_coeff_table_5_load => p_ZL15cos_coeff_table_5_load_reg_3633,
-        p_ZL15cos_coeff_table_7_load => p_ZL15cos_coeff_table_7_load_reg_3638,
-        p_ZL15cos_coeff_table_9_load => p_ZL15cos_coeff_table_9_load_reg_3643,
-        p_ZL15cos_coeff_table_11_load => p_ZL15cos_coeff_table_11_load_reg_3648,
-        p_ZL15cos_coeff_table_13_load => p_ZL15cos_coeff_table_13_load_reg_3653,
-        p_ZL15cos_coeff_table_15_load => p_ZL15cos_coeff_table_15_load_reg_3658,
-        p_ZL15cos_coeff_table_17_load => p_ZL15cos_coeff_table_17_load_reg_3663,
-        p_ZL15cos_coeff_table_19_load => p_ZL15cos_coeff_table_19_load_reg_3668,
-        p_ZL15cos_coeff_table_21_load => p_ZL15cos_coeff_table_21_load_reg_3673,
-        p_ZL15cos_coeff_table_23_load => p_ZL15cos_coeff_table_23_load_reg_3678,
-        p_ZL15cos_coeff_table_25_load => p_ZL15cos_coeff_table_25_load_reg_3683,
-        p_ZL15cos_coeff_table_27_load => p_ZL15cos_coeff_table_27_load_reg_3688,
-        p_ZL15cos_coeff_table_29_load => p_ZL15cos_coeff_table_29_load_reg_3693,
-        p_ZL15cos_coeff_table_31_load => p_ZL15cos_coeff_table_31_load_reg_3698,
-        p_ZL15sin_coeff_table_1_load => p_ZL15sin_coeff_table_1_load_reg_3703,
-        p_ZL15sin_coeff_table_3_load => p_ZL15sin_coeff_table_3_load_reg_3708,
-        p_ZL15sin_coeff_table_5_load => p_ZL15sin_coeff_table_5_load_reg_3713,
-        p_ZL15sin_coeff_table_7_load => p_ZL15sin_coeff_table_7_load_reg_3718,
-        p_ZL15sin_coeff_table_9_load => p_ZL15sin_coeff_table_9_load_reg_3723,
-        p_ZL15sin_coeff_table_11_load => p_ZL15sin_coeff_table_11_load_reg_3728,
-        p_ZL15sin_coeff_table_13_load => p_ZL15sin_coeff_table_13_load_reg_3733,
-        p_ZL15sin_coeff_table_15_load => p_ZL15sin_coeff_table_15_load_reg_3738,
-        p_ZL15sin_coeff_table_17_load => p_ZL15sin_coeff_table_17_load_reg_3743,
-        p_ZL15sin_coeff_table_19_load => p_ZL15sin_coeff_table_19_load_reg_3748,
-        p_ZL15sin_coeff_table_21_load => p_ZL15sin_coeff_table_21_load_reg_3753,
-        p_ZL15sin_coeff_table_23_load => p_ZL15sin_coeff_table_23_load_reg_3758,
-        p_ZL15sin_coeff_table_25_load => p_ZL15sin_coeff_table_25_load_reg_3763,
-        p_ZL15sin_coeff_table_27_load => p_ZL15sin_coeff_table_27_load_reg_3768,
-        p_ZL15sin_coeff_table_29_load => p_ZL15sin_coeff_table_29_load_reg_3773,
-        p_ZL15sin_coeff_table_31_load => p_ZL15sin_coeff_table_31_load_reg_3778,
         empty_39 => empty_101_reg_2971,
         empty_40 => empty_102_reg_2976,
         empty_41 => empty_103_reg_2981,
@@ -2808,69 +2808,69 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state3)) then
                 p_ZL15cos_coeff_table_0_load_reg_3463 <= p_ZL15cos_coeff_table_0_q0;
-                p_ZL15cos_coeff_table_10_load_reg_3488 <= p_ZL15cos_coeff_table_10_q0;
-                p_ZL15cos_coeff_table_11_load_reg_3648 <= p_ZL15cos_coeff_table_11_q0;
-                p_ZL15cos_coeff_table_12_load_reg_3493 <= p_ZL15cos_coeff_table_12_q0;
-                p_ZL15cos_coeff_table_13_load_reg_3653 <= p_ZL15cos_coeff_table_13_q0;
-                p_ZL15cos_coeff_table_14_load_reg_3498 <= p_ZL15cos_coeff_table_14_q0;
-                p_ZL15cos_coeff_table_15_load_reg_3658 <= p_ZL15cos_coeff_table_15_q0;
-                p_ZL15cos_coeff_table_16_load_reg_3503 <= p_ZL15cos_coeff_table_16_q0;
-                p_ZL15cos_coeff_table_17_load_reg_3663 <= p_ZL15cos_coeff_table_17_q0;
-                p_ZL15cos_coeff_table_18_load_reg_3508 <= p_ZL15cos_coeff_table_18_q0;
-                p_ZL15cos_coeff_table_19_load_reg_3668 <= p_ZL15cos_coeff_table_19_q0;
-                p_ZL15cos_coeff_table_1_load_reg_3623 <= p_ZL15cos_coeff_table_1_q0;
-                p_ZL15cos_coeff_table_20_load_reg_3513 <= p_ZL15cos_coeff_table_20_q0;
-                p_ZL15cos_coeff_table_21_load_reg_3673 <= p_ZL15cos_coeff_table_21_q0;
-                p_ZL15cos_coeff_table_22_load_reg_3518 <= p_ZL15cos_coeff_table_22_q0;
-                p_ZL15cos_coeff_table_23_load_reg_3678 <= p_ZL15cos_coeff_table_23_q0;
-                p_ZL15cos_coeff_table_24_load_reg_3523 <= p_ZL15cos_coeff_table_24_q0;
-                p_ZL15cos_coeff_table_25_load_reg_3683 <= p_ZL15cos_coeff_table_25_q0;
-                p_ZL15cos_coeff_table_26_load_reg_3528 <= p_ZL15cos_coeff_table_26_q0;
-                p_ZL15cos_coeff_table_27_load_reg_3688 <= p_ZL15cos_coeff_table_27_q0;
-                p_ZL15cos_coeff_table_28_load_reg_3533 <= p_ZL15cos_coeff_table_28_q0;
-                p_ZL15cos_coeff_table_29_load_reg_3693 <= p_ZL15cos_coeff_table_29_q0;
-                p_ZL15cos_coeff_table_2_load_reg_3468 <= p_ZL15cos_coeff_table_2_q0;
-                p_ZL15cos_coeff_table_30_load_reg_3538 <= p_ZL15cos_coeff_table_30_q0;
-                p_ZL15cos_coeff_table_31_load_reg_3698 <= p_ZL15cos_coeff_table_31_q0;
-                p_ZL15cos_coeff_table_3_load_reg_3628 <= p_ZL15cos_coeff_table_3_q0;
-                p_ZL15cos_coeff_table_4_load_reg_3473 <= p_ZL15cos_coeff_table_4_q0;
-                p_ZL15cos_coeff_table_5_load_reg_3633 <= p_ZL15cos_coeff_table_5_q0;
-                p_ZL15cos_coeff_table_6_load_reg_3478 <= p_ZL15cos_coeff_table_6_q0;
-                p_ZL15cos_coeff_table_7_load_reg_3638 <= p_ZL15cos_coeff_table_7_q0;
-                p_ZL15cos_coeff_table_8_load_reg_3483 <= p_ZL15cos_coeff_table_8_q0;
-                p_ZL15cos_coeff_table_9_load_reg_3643 <= p_ZL15cos_coeff_table_9_q0;
-                p_ZL15sin_coeff_table_0_load_reg_3543 <= p_ZL15sin_coeff_table_0_q0;
-                p_ZL15sin_coeff_table_10_load_reg_3568 <= p_ZL15sin_coeff_table_10_q0;
-                p_ZL15sin_coeff_table_11_load_reg_3728 <= p_ZL15sin_coeff_table_11_q0;
-                p_ZL15sin_coeff_table_12_load_reg_3573 <= p_ZL15sin_coeff_table_12_q0;
-                p_ZL15sin_coeff_table_13_load_reg_3733 <= p_ZL15sin_coeff_table_13_q0;
-                p_ZL15sin_coeff_table_14_load_reg_3578 <= p_ZL15sin_coeff_table_14_q0;
-                p_ZL15sin_coeff_table_15_load_reg_3738 <= p_ZL15sin_coeff_table_15_q0;
-                p_ZL15sin_coeff_table_16_load_reg_3583 <= p_ZL15sin_coeff_table_16_q0;
-                p_ZL15sin_coeff_table_17_load_reg_3743 <= p_ZL15sin_coeff_table_17_q0;
-                p_ZL15sin_coeff_table_18_load_reg_3588 <= p_ZL15sin_coeff_table_18_q0;
-                p_ZL15sin_coeff_table_19_load_reg_3748 <= p_ZL15sin_coeff_table_19_q0;
-                p_ZL15sin_coeff_table_1_load_reg_3703 <= p_ZL15sin_coeff_table_1_q0;
-                p_ZL15sin_coeff_table_20_load_reg_3593 <= p_ZL15sin_coeff_table_20_q0;
-                p_ZL15sin_coeff_table_21_load_reg_3753 <= p_ZL15sin_coeff_table_21_q0;
-                p_ZL15sin_coeff_table_22_load_reg_3598 <= p_ZL15sin_coeff_table_22_q0;
-                p_ZL15sin_coeff_table_23_load_reg_3758 <= p_ZL15sin_coeff_table_23_q0;
-                p_ZL15sin_coeff_table_24_load_reg_3603 <= p_ZL15sin_coeff_table_24_q0;
-                p_ZL15sin_coeff_table_25_load_reg_3763 <= p_ZL15sin_coeff_table_25_q0;
-                p_ZL15sin_coeff_table_26_load_reg_3608 <= p_ZL15sin_coeff_table_26_q0;
-                p_ZL15sin_coeff_table_27_load_reg_3768 <= p_ZL15sin_coeff_table_27_q0;
-                p_ZL15sin_coeff_table_28_load_reg_3613 <= p_ZL15sin_coeff_table_28_q0;
-                p_ZL15sin_coeff_table_29_load_reg_3773 <= p_ZL15sin_coeff_table_29_q0;
-                p_ZL15sin_coeff_table_2_load_reg_3548 <= p_ZL15sin_coeff_table_2_q0;
-                p_ZL15sin_coeff_table_30_load_reg_3618 <= p_ZL15sin_coeff_table_30_q0;
+                p_ZL15cos_coeff_table_10_load_reg_3513 <= p_ZL15cos_coeff_table_10_q0;
+                p_ZL15cos_coeff_table_11_load_reg_3518 <= p_ZL15cos_coeff_table_11_q0;
+                p_ZL15cos_coeff_table_12_load_reg_3523 <= p_ZL15cos_coeff_table_12_q0;
+                p_ZL15cos_coeff_table_13_load_reg_3528 <= p_ZL15cos_coeff_table_13_q0;
+                p_ZL15cos_coeff_table_14_load_reg_3533 <= p_ZL15cos_coeff_table_14_q0;
+                p_ZL15cos_coeff_table_15_load_reg_3538 <= p_ZL15cos_coeff_table_15_q0;
+                p_ZL15cos_coeff_table_16_load_reg_3543 <= p_ZL15cos_coeff_table_16_q0;
+                p_ZL15cos_coeff_table_17_load_reg_3548 <= p_ZL15cos_coeff_table_17_q0;
+                p_ZL15cos_coeff_table_18_load_reg_3553 <= p_ZL15cos_coeff_table_18_q0;
+                p_ZL15cos_coeff_table_19_load_reg_3558 <= p_ZL15cos_coeff_table_19_q0;
+                p_ZL15cos_coeff_table_1_load_reg_3468 <= p_ZL15cos_coeff_table_1_q0;
+                p_ZL15cos_coeff_table_20_load_reg_3563 <= p_ZL15cos_coeff_table_20_q0;
+                p_ZL15cos_coeff_table_21_load_reg_3568 <= p_ZL15cos_coeff_table_21_q0;
+                p_ZL15cos_coeff_table_22_load_reg_3573 <= p_ZL15cos_coeff_table_22_q0;
+                p_ZL15cos_coeff_table_23_load_reg_3578 <= p_ZL15cos_coeff_table_23_q0;
+                p_ZL15cos_coeff_table_24_load_reg_3583 <= p_ZL15cos_coeff_table_24_q0;
+                p_ZL15cos_coeff_table_25_load_reg_3588 <= p_ZL15cos_coeff_table_25_q0;
+                p_ZL15cos_coeff_table_26_load_reg_3593 <= p_ZL15cos_coeff_table_26_q0;
+                p_ZL15cos_coeff_table_27_load_reg_3598 <= p_ZL15cos_coeff_table_27_q0;
+                p_ZL15cos_coeff_table_28_load_reg_3603 <= p_ZL15cos_coeff_table_28_q0;
+                p_ZL15cos_coeff_table_29_load_reg_3608 <= p_ZL15cos_coeff_table_29_q0;
+                p_ZL15cos_coeff_table_2_load_reg_3473 <= p_ZL15cos_coeff_table_2_q0;
+                p_ZL15cos_coeff_table_30_load_reg_3613 <= p_ZL15cos_coeff_table_30_q0;
+                p_ZL15cos_coeff_table_31_load_reg_3618 <= p_ZL15cos_coeff_table_31_q0;
+                p_ZL15cos_coeff_table_3_load_reg_3478 <= p_ZL15cos_coeff_table_3_q0;
+                p_ZL15cos_coeff_table_4_load_reg_3483 <= p_ZL15cos_coeff_table_4_q0;
+                p_ZL15cos_coeff_table_5_load_reg_3488 <= p_ZL15cos_coeff_table_5_q0;
+                p_ZL15cos_coeff_table_6_load_reg_3493 <= p_ZL15cos_coeff_table_6_q0;
+                p_ZL15cos_coeff_table_7_load_reg_3498 <= p_ZL15cos_coeff_table_7_q0;
+                p_ZL15cos_coeff_table_8_load_reg_3503 <= p_ZL15cos_coeff_table_8_q0;
+                p_ZL15cos_coeff_table_9_load_reg_3508 <= p_ZL15cos_coeff_table_9_q0;
+                p_ZL15sin_coeff_table_0_load_reg_3623 <= p_ZL15sin_coeff_table_0_q0;
+                p_ZL15sin_coeff_table_10_load_reg_3673 <= p_ZL15sin_coeff_table_10_q0;
+                p_ZL15sin_coeff_table_11_load_reg_3678 <= p_ZL15sin_coeff_table_11_q0;
+                p_ZL15sin_coeff_table_12_load_reg_3683 <= p_ZL15sin_coeff_table_12_q0;
+                p_ZL15sin_coeff_table_13_load_reg_3688 <= p_ZL15sin_coeff_table_13_q0;
+                p_ZL15sin_coeff_table_14_load_reg_3693 <= p_ZL15sin_coeff_table_14_q0;
+                p_ZL15sin_coeff_table_15_load_reg_3698 <= p_ZL15sin_coeff_table_15_q0;
+                p_ZL15sin_coeff_table_16_load_reg_3703 <= p_ZL15sin_coeff_table_16_q0;
+                p_ZL15sin_coeff_table_17_load_reg_3708 <= p_ZL15sin_coeff_table_17_q0;
+                p_ZL15sin_coeff_table_18_load_reg_3713 <= p_ZL15sin_coeff_table_18_q0;
+                p_ZL15sin_coeff_table_19_load_reg_3718 <= p_ZL15sin_coeff_table_19_q0;
+                p_ZL15sin_coeff_table_1_load_reg_3628 <= p_ZL15sin_coeff_table_1_q0;
+                p_ZL15sin_coeff_table_20_load_reg_3723 <= p_ZL15sin_coeff_table_20_q0;
+                p_ZL15sin_coeff_table_21_load_reg_3728 <= p_ZL15sin_coeff_table_21_q0;
+                p_ZL15sin_coeff_table_22_load_reg_3733 <= p_ZL15sin_coeff_table_22_q0;
+                p_ZL15sin_coeff_table_23_load_reg_3738 <= p_ZL15sin_coeff_table_23_q0;
+                p_ZL15sin_coeff_table_24_load_reg_3743 <= p_ZL15sin_coeff_table_24_q0;
+                p_ZL15sin_coeff_table_25_load_reg_3748 <= p_ZL15sin_coeff_table_25_q0;
+                p_ZL15sin_coeff_table_26_load_reg_3753 <= p_ZL15sin_coeff_table_26_q0;
+                p_ZL15sin_coeff_table_27_load_reg_3758 <= p_ZL15sin_coeff_table_27_q0;
+                p_ZL15sin_coeff_table_28_load_reg_3763 <= p_ZL15sin_coeff_table_28_q0;
+                p_ZL15sin_coeff_table_29_load_reg_3768 <= p_ZL15sin_coeff_table_29_q0;
+                p_ZL15sin_coeff_table_2_load_reg_3633 <= p_ZL15sin_coeff_table_2_q0;
+                p_ZL15sin_coeff_table_30_load_reg_3773 <= p_ZL15sin_coeff_table_30_q0;
                 p_ZL15sin_coeff_table_31_load_reg_3778 <= p_ZL15sin_coeff_table_31_q0;
-                p_ZL15sin_coeff_table_3_load_reg_3708 <= p_ZL15sin_coeff_table_3_q0;
-                p_ZL15sin_coeff_table_4_load_reg_3553 <= p_ZL15sin_coeff_table_4_q0;
-                p_ZL15sin_coeff_table_5_load_reg_3713 <= p_ZL15sin_coeff_table_5_q0;
-                p_ZL15sin_coeff_table_6_load_reg_3558 <= p_ZL15sin_coeff_table_6_q0;
-                p_ZL15sin_coeff_table_7_load_reg_3718 <= p_ZL15sin_coeff_table_7_q0;
-                p_ZL15sin_coeff_table_8_load_reg_3563 <= p_ZL15sin_coeff_table_8_q0;
-                p_ZL15sin_coeff_table_9_load_reg_3723 <= p_ZL15sin_coeff_table_9_q0;
+                p_ZL15sin_coeff_table_3_load_reg_3638 <= p_ZL15sin_coeff_table_3_q0;
+                p_ZL15sin_coeff_table_4_load_reg_3643 <= p_ZL15sin_coeff_table_4_q0;
+                p_ZL15sin_coeff_table_5_load_reg_3648 <= p_ZL15sin_coeff_table_5_q0;
+                p_ZL15sin_coeff_table_6_load_reg_3653 <= p_ZL15sin_coeff_table_6_q0;
+                p_ZL15sin_coeff_table_7_load_reg_3658 <= p_ZL15sin_coeff_table_7_q0;
+                p_ZL15sin_coeff_table_8_load_reg_3663 <= p_ZL15sin_coeff_table_8_q0;
+                p_ZL15sin_coeff_table_9_load_reg_3668 <= p_ZL15sin_coeff_table_9_q0;
             end if;
         end if;
     end process;
@@ -2965,69 +2965,69 @@ begin
 
     bitcast_ln26_fu_2716_p1 <= grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_add5_out;
     bitcast_ln27_fu_2752_p1 <= grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_add306_out;
-    empty_100_fu_2486_p1 <= input_I_30;
-    empty_101_fu_2490_p1 <= input_R_1;
-    empty_102_fu_2494_p1 <= input_R_3;
-    empty_103_fu_2498_p1 <= input_R_5;
-    empty_104_fu_2502_p1 <= input_R_7;
-    empty_105_fu_2506_p1 <= input_R_9;
-    empty_106_fu_2510_p1 <= input_R_11;
-    empty_107_fu_2514_p1 <= input_R_13;
-    empty_108_fu_2518_p1 <= input_R_15;
-    empty_109_fu_2522_p1 <= input_R_17;
-    empty_110_fu_2526_p1 <= input_R_19;
-    empty_111_fu_2530_p1 <= input_R_21;
-    empty_112_fu_2534_p1 <= input_R_23;
-    empty_113_fu_2538_p1 <= input_R_25;
-    empty_114_fu_2542_p1 <= input_R_27;
-    empty_115_fu_2546_p1 <= input_R_29;
-    empty_116_fu_2550_p1 <= input_R_31;
-    empty_117_fu_2554_p1 <= input_I_1;
-    empty_118_fu_2558_p1 <= input_I_3;
-    empty_119_fu_2562_p1 <= input_I_5;
-    empty_120_fu_2566_p1 <= input_I_7;
-    empty_121_fu_2570_p1 <= input_I_9;
-    empty_122_fu_2574_p1 <= input_I_11;
-    empty_123_fu_2578_p1 <= input_I_13;
-    empty_124_fu_2582_p1 <= input_I_15;
-    empty_125_fu_2586_p1 <= input_I_17;
-    empty_126_fu_2590_p1 <= input_I_19;
-    empty_127_fu_2594_p1 <= input_I_21;
-    empty_128_fu_2598_p1 <= input_I_23;
-    empty_129_fu_2602_p1 <= input_I_25;
-    empty_130_fu_2606_p1 <= input_I_27;
-    empty_131_fu_2610_p1 <= input_I_29;
+    empty_100_fu_2486_p1 <= input_R_31;
+    empty_101_fu_2490_p1 <= input_I_0;
+    empty_102_fu_2494_p1 <= input_I_1;
+    empty_103_fu_2498_p1 <= input_I_2;
+    empty_104_fu_2502_p1 <= input_I_3;
+    empty_105_fu_2506_p1 <= input_I_4;
+    empty_106_fu_2510_p1 <= input_I_5;
+    empty_107_fu_2514_p1 <= input_I_6;
+    empty_108_fu_2518_p1 <= input_I_7;
+    empty_109_fu_2522_p1 <= input_I_8;
+    empty_110_fu_2526_p1 <= input_I_9;
+    empty_111_fu_2530_p1 <= input_I_10;
+    empty_112_fu_2534_p1 <= input_I_11;
+    empty_113_fu_2538_p1 <= input_I_12;
+    empty_114_fu_2542_p1 <= input_I_13;
+    empty_115_fu_2546_p1 <= input_I_14;
+    empty_116_fu_2550_p1 <= input_I_15;
+    empty_117_fu_2554_p1 <= input_I_16;
+    empty_118_fu_2558_p1 <= input_I_17;
+    empty_119_fu_2562_p1 <= input_I_18;
+    empty_120_fu_2566_p1 <= input_I_19;
+    empty_121_fu_2570_p1 <= input_I_20;
+    empty_122_fu_2574_p1 <= input_I_21;
+    empty_123_fu_2578_p1 <= input_I_22;
+    empty_124_fu_2582_p1 <= input_I_23;
+    empty_125_fu_2586_p1 <= input_I_24;
+    empty_126_fu_2590_p1 <= input_I_25;
+    empty_127_fu_2594_p1 <= input_I_26;
+    empty_128_fu_2598_p1 <= input_I_27;
+    empty_129_fu_2602_p1 <= input_I_28;
+    empty_130_fu_2606_p1 <= input_I_29;
+    empty_131_fu_2610_p1 <= input_I_30;
     empty_132_fu_2614_p1 <= input_I_31;
-    empty_70_fu_2366_p1 <= input_R_2;
-    empty_71_fu_2370_p1 <= input_R_4;
-    empty_72_fu_2374_p1 <= input_R_6;
-    empty_73_fu_2378_p1 <= input_R_8;
-    empty_74_fu_2382_p1 <= input_R_10;
-    empty_75_fu_2386_p1 <= input_R_12;
-    empty_76_fu_2390_p1 <= input_R_14;
-    empty_77_fu_2394_p1 <= input_R_16;
-    empty_78_fu_2398_p1 <= input_R_18;
-    empty_79_fu_2402_p1 <= input_R_20;
-    empty_80_fu_2406_p1 <= input_R_22;
-    empty_81_fu_2410_p1 <= input_R_24;
-    empty_82_fu_2414_p1 <= input_R_26;
-    empty_83_fu_2418_p1 <= input_R_28;
-    empty_84_fu_2422_p1 <= input_R_30;
-    empty_85_fu_2426_p1 <= input_I_0;
-    empty_86_fu_2430_p1 <= input_I_2;
-    empty_87_fu_2434_p1 <= input_I_4;
-    empty_88_fu_2438_p1 <= input_I_6;
-    empty_89_fu_2442_p1 <= input_I_8;
-    empty_90_fu_2446_p1 <= input_I_10;
-    empty_91_fu_2450_p1 <= input_I_12;
-    empty_92_fu_2454_p1 <= input_I_14;
-    empty_93_fu_2458_p1 <= input_I_16;
-    empty_94_fu_2462_p1 <= input_I_18;
-    empty_95_fu_2466_p1 <= input_I_20;
-    empty_96_fu_2470_p1 <= input_I_22;
-    empty_97_fu_2474_p1 <= input_I_24;
-    empty_98_fu_2478_p1 <= input_I_26;
-    empty_99_fu_2482_p1 <= input_I_28;
+    empty_70_fu_2366_p1 <= input_R_1;
+    empty_71_fu_2370_p1 <= input_R_2;
+    empty_72_fu_2374_p1 <= input_R_3;
+    empty_73_fu_2378_p1 <= input_R_4;
+    empty_74_fu_2382_p1 <= input_R_5;
+    empty_75_fu_2386_p1 <= input_R_6;
+    empty_76_fu_2390_p1 <= input_R_7;
+    empty_77_fu_2394_p1 <= input_R_8;
+    empty_78_fu_2398_p1 <= input_R_9;
+    empty_79_fu_2402_p1 <= input_R_10;
+    empty_80_fu_2406_p1 <= input_R_11;
+    empty_81_fu_2410_p1 <= input_R_12;
+    empty_82_fu_2414_p1 <= input_R_13;
+    empty_83_fu_2418_p1 <= input_R_14;
+    empty_84_fu_2422_p1 <= input_R_15;
+    empty_85_fu_2426_p1 <= input_R_16;
+    empty_86_fu_2430_p1 <= input_R_17;
+    empty_87_fu_2434_p1 <= input_R_18;
+    empty_88_fu_2438_p1 <= input_R_19;
+    empty_89_fu_2442_p1 <= input_R_20;
+    empty_90_fu_2446_p1 <= input_R_21;
+    empty_91_fu_2450_p1 <= input_R_22;
+    empty_92_fu_2454_p1 <= input_R_23;
+    empty_93_fu_2458_p1 <= input_R_24;
+    empty_94_fu_2462_p1 <= input_R_25;
+    empty_95_fu_2466_p1 <= input_R_26;
+    empty_96_fu_2470_p1 <= input_R_27;
+    empty_97_fu_2474_p1 <= input_R_28;
+    empty_98_fu_2478_p1 <= input_R_29;
+    empty_99_fu_2482_p1 <= input_R_30;
     empty_fu_2362_p1 <= input_R_0;
     grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_ap_start <= grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164_ap_start_reg;
     icmp_ln16_fu_2626_p2 <= "1" when (i_fu_488 = ap_const_lv6_20) else "0";

@@ -6,7 +6,7 @@
 // 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 `timescale 1ns / 1ps
 
-module dft_sparsemux_33_5_32_1_1 (din0,din1,din2,din3,din4,din5,din6,din7,din8,din9,din10,din11,din12,din13,din14,din15,def,sel,dout);
+module dft_sparsemux_65_5_32_1_1 (din0,din1,din2,din3,din4,din5,din6,din7,din8,din9,din10,din11,din12,din13,din14,din15,din16,din17,din18,din19,din20,din21,din22,din23,din24,din25,din26,din27,din28,din29,din30,din31,def,sel,dout);
 
 parameter din0_WIDTH = 1;
 
@@ -39,6 +39,38 @@ parameter din13_WIDTH = 1;
 parameter din14_WIDTH = 1;
 
 parameter din15_WIDTH = 1;
+
+parameter din16_WIDTH = 1;
+
+parameter din17_WIDTH = 1;
+
+parameter din18_WIDTH = 1;
+
+parameter din19_WIDTH = 1;
+
+parameter din20_WIDTH = 1;
+
+parameter din21_WIDTH = 1;
+
+parameter din22_WIDTH = 1;
+
+parameter din23_WIDTH = 1;
+
+parameter din24_WIDTH = 1;
+
+parameter din25_WIDTH = 1;
+
+parameter din26_WIDTH = 1;
+
+parameter din27_WIDTH = 1;
+
+parameter din28_WIDTH = 1;
+
+parameter din29_WIDTH = 1;
+
+parameter din30_WIDTH = 1;
+
+parameter din31_WIDTH = 1;
 
 parameter def_WIDTH = 1;
 parameter sel_WIDTH = 1;
@@ -76,6 +108,38 @@ parameter [sel_WIDTH-1:0] CASE14 = 1;
 
 parameter [sel_WIDTH-1:0] CASE15 = 1;
 
+parameter [sel_WIDTH-1:0] CASE16 = 1;
+
+parameter [sel_WIDTH-1:0] CASE17 = 1;
+
+parameter [sel_WIDTH-1:0] CASE18 = 1;
+
+parameter [sel_WIDTH-1:0] CASE19 = 1;
+
+parameter [sel_WIDTH-1:0] CASE20 = 1;
+
+parameter [sel_WIDTH-1:0] CASE21 = 1;
+
+parameter [sel_WIDTH-1:0] CASE22 = 1;
+
+parameter [sel_WIDTH-1:0] CASE23 = 1;
+
+parameter [sel_WIDTH-1:0] CASE24 = 1;
+
+parameter [sel_WIDTH-1:0] CASE25 = 1;
+
+parameter [sel_WIDTH-1:0] CASE26 = 1;
+
+parameter [sel_WIDTH-1:0] CASE27 = 1;
+
+parameter [sel_WIDTH-1:0] CASE28 = 1;
+
+parameter [sel_WIDTH-1:0] CASE29 = 1;
+
+parameter [sel_WIDTH-1:0] CASE30 = 1;
+
+parameter [sel_WIDTH-1:0] CASE31 = 1;
+
 parameter ID = 1;
 parameter NUM_STAGE = 1;
 
@@ -112,6 +176,38 @@ input [din13_WIDTH-1:0] din13;
 input [din14_WIDTH-1:0] din14;
 
 input [din15_WIDTH-1:0] din15;
+
+input [din16_WIDTH-1:0] din16;
+
+input [din17_WIDTH-1:0] din17;
+
+input [din18_WIDTH-1:0] din18;
+
+input [din19_WIDTH-1:0] din19;
+
+input [din20_WIDTH-1:0] din20;
+
+input [din21_WIDTH-1:0] din21;
+
+input [din22_WIDTH-1:0] din22;
+
+input [din23_WIDTH-1:0] din23;
+
+input [din24_WIDTH-1:0] din24;
+
+input [din25_WIDTH-1:0] din25;
+
+input [din26_WIDTH-1:0] din26;
+
+input [din27_WIDTH-1:0] din27;
+
+input [din28_WIDTH-1:0] din28;
+
+input [din29_WIDTH-1:0] din29;
+
+input [din30_WIDTH-1:0] din30;
+
+input [din31_WIDTH-1:0] din31;
 
 input [def_WIDTH-1:0] def;
 input [sel_WIDTH-1:0] sel;
@@ -157,6 +253,38 @@ always @ (*) begin
     CASE14 : dout_tmp = din14;
     
     CASE15 : dout_tmp = din15;
+    
+    CASE16 : dout_tmp = din16;
+    
+    CASE17 : dout_tmp = din17;
+    
+    CASE18 : dout_tmp = din18;
+    
+    CASE19 : dout_tmp = din19;
+    
+    CASE20 : dout_tmp = din20;
+    
+    CASE21 : dout_tmp = din21;
+    
+    CASE22 : dout_tmp = din22;
+    
+    CASE23 : dout_tmp = din23;
+    
+    CASE24 : dout_tmp = din24;
+    
+    CASE25 : dout_tmp = din25;
+    
+    CASE26 : dout_tmp = din26;
+    
+    CASE27 : dout_tmp = din27;
+    
+    CASE28 : dout_tmp = din28;
+    
+    CASE29 : dout_tmp = din29;
+    
+    CASE30 : dout_tmp = din30;
+    
+    CASE31 : dout_tmp = din31;
     
     default : dout_tmp = def;
 endcase

@@ -1,21 +1,3 @@
---- !Passed
-Pass:            reflow-pragma-loop-unroll
-Name:            PragmaPartiallyUnroll
-DebugLoc:        { File: dft.cpp, Line: 5, Column: 0 }
-Function:        _Z3dftPfS_S_S_
-Args:            
-  - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_20_2
-  - String:          ''' ('
-  - LoopLoc:         'dft.cpp:20:20'
-  - String:          ') '
-  - String:          'in function '''
-  - String:          dft
-  - String:          ''' partially '
-  - String:          ''
-  - String:          'with a factor of '
-  - Factor:          '2'
-...
 --- !Missed
 Pass:            inline
 Name:            NeverInline

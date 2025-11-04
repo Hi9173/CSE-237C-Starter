@@ -688,7 +688,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "6209", "EstimateLatencyMax" : "6209",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "6721", "EstimateLatencyMax" : "6721",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -826,143 +826,143 @@ set RtlHierarchyInfo {[
 			{"Name" : "output_I_30", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "output_I_31", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "p_ZL15cos_coeff_table_0", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_2", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_4", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_6", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_8", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_10", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_12", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_14", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_16", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_18", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_20", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_22", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_24", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_26", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_28", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_30", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_0", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_2", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_4", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_6", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_8", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_10", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_12", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_14", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_16", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_18", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_20", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_22", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_24", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_26", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_28", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_30", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_1", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_2", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_3", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_4", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_5", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_6", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_7", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_8", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_9", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_10", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_11", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_12", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_13", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_14", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_15", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_16", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_17", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_18", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_19", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_20", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_21", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_22", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_23", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_24", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_25", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_26", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_27", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_28", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_29", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_30", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_31", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_0", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_1", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_2", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_3", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_4", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_5", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_6", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_7", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_8", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_9", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_10", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_11", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_12", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_13", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_14", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_15", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_16", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_17", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_18", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_19", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_20", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_21", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_22", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_23", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_24", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_25", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_26", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_27", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_28", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_29", "Type" : "Memory", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_30", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_31", "Type" : "Memory", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_16_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_0_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_2_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_4_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_6_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_8_U", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_10_U", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_12_U", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_14_U", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_16_U", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_18_U", "Parent" : "0"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_20_U", "Parent" : "0"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_22_U", "Parent" : "0"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_24_U", "Parent" : "0"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_26_U", "Parent" : "0"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_28_U", "Parent" : "0"},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_30_U", "Parent" : "0"},
-	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_0_U", "Parent" : "0"},
-	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_2_U", "Parent" : "0"},
-	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_4_U", "Parent" : "0"},
-	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_6_U", "Parent" : "0"},
-	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_8_U", "Parent" : "0"},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_10_U", "Parent" : "0"},
-	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_12_U", "Parent" : "0"},
-	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_14_U", "Parent" : "0"},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_16_U", "Parent" : "0"},
-	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_18_U", "Parent" : "0"},
-	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_20_U", "Parent" : "0"},
-	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_22_U", "Parent" : "0"},
-	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_24_U", "Parent" : "0"},
-	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_26_U", "Parent" : "0"},
-	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_28_U", "Parent" : "0"},
-	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_30_U", "Parent" : "0"},
-	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_1_U", "Parent" : "0"},
-	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_3_U", "Parent" : "0"},
-	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_5_U", "Parent" : "0"},
-	{"ID" : "36", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_7_U", "Parent" : "0"},
-	{"ID" : "37", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_9_U", "Parent" : "0"},
-	{"ID" : "38", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_11_U", "Parent" : "0"},
-	{"ID" : "39", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_13_U", "Parent" : "0"},
-	{"ID" : "40", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_15_U", "Parent" : "0"},
-	{"ID" : "41", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_17_U", "Parent" : "0"},
-	{"ID" : "42", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_19_U", "Parent" : "0"},
-	{"ID" : "43", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_21_U", "Parent" : "0"},
-	{"ID" : "44", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_23_U", "Parent" : "0"},
-	{"ID" : "45", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_25_U", "Parent" : "0"},
-	{"ID" : "46", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_27_U", "Parent" : "0"},
-	{"ID" : "47", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_29_U", "Parent" : "0"},
-	{"ID" : "48", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_31_U", "Parent" : "0"},
-	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_1_U", "Parent" : "0"},
-	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_3_U", "Parent" : "0"},
-	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_5_U", "Parent" : "0"},
-	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_7_U", "Parent" : "0"},
-	{"ID" : "53", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_9_U", "Parent" : "0"},
-	{"ID" : "54", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_11_U", "Parent" : "0"},
-	{"ID" : "55", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_13_U", "Parent" : "0"},
-	{"ID" : "56", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_15_U", "Parent" : "0"},
-	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_17_U", "Parent" : "0"},
-	{"ID" : "58", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_19_U", "Parent" : "0"},
-	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_21_U", "Parent" : "0"},
-	{"ID" : "60", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_23_U", "Parent" : "0"},
-	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_25_U", "Parent" : "0"},
-	{"ID" : "62", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_27_U", "Parent" : "0"},
-	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_29_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_1_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_2_U", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_3_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_4_U", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_5_U", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_6_U", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_7_U", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_8_U", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_9_U", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_10_U", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_11_U", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_12_U", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_13_U", "Parent" : "0"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_14_U", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_15_U", "Parent" : "0"},
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_16_U", "Parent" : "0"},
+	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_17_U", "Parent" : "0"},
+	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_18_U", "Parent" : "0"},
+	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_19_U", "Parent" : "0"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_20_U", "Parent" : "0"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_21_U", "Parent" : "0"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_22_U", "Parent" : "0"},
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_23_U", "Parent" : "0"},
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_24_U", "Parent" : "0"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_25_U", "Parent" : "0"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_26_U", "Parent" : "0"},
+	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_27_U", "Parent" : "0"},
+	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_28_U", "Parent" : "0"},
+	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_29_U", "Parent" : "0"},
+	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_30_U", "Parent" : "0"},
+	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15cos_coeff_table_31_U", "Parent" : "0"},
+	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_0_U", "Parent" : "0"},
+	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_1_U", "Parent" : "0"},
+	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_2_U", "Parent" : "0"},
+	{"ID" : "36", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_3_U", "Parent" : "0"},
+	{"ID" : "37", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_4_U", "Parent" : "0"},
+	{"ID" : "38", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_5_U", "Parent" : "0"},
+	{"ID" : "39", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_6_U", "Parent" : "0"},
+	{"ID" : "40", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_7_U", "Parent" : "0"},
+	{"ID" : "41", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_8_U", "Parent" : "0"},
+	{"ID" : "42", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_9_U", "Parent" : "0"},
+	{"ID" : "43", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_10_U", "Parent" : "0"},
+	{"ID" : "44", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_11_U", "Parent" : "0"},
+	{"ID" : "45", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_12_U", "Parent" : "0"},
+	{"ID" : "46", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_13_U", "Parent" : "0"},
+	{"ID" : "47", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_14_U", "Parent" : "0"},
+	{"ID" : "48", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_15_U", "Parent" : "0"},
+	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_16_U", "Parent" : "0"},
+	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_17_U", "Parent" : "0"},
+	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_18_U", "Parent" : "0"},
+	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_19_U", "Parent" : "0"},
+	{"ID" : "53", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_20_U", "Parent" : "0"},
+	{"ID" : "54", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_21_U", "Parent" : "0"},
+	{"ID" : "55", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_22_U", "Parent" : "0"},
+	{"ID" : "56", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_23_U", "Parent" : "0"},
+	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_24_U", "Parent" : "0"},
+	{"ID" : "58", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_25_U", "Parent" : "0"},
+	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_26_U", "Parent" : "0"},
+	{"ID" : "60", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_27_U", "Parent" : "0"},
+	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_28_U", "Parent" : "0"},
+	{"ID" : "62", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_29_U", "Parent" : "0"},
+	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_30_U", "Parent" : "0"},
 	{"ID" : "64", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL15sin_coeff_table_31_U", "Parent" : "0"},
-	{"ID" : "65", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164", "Parent" : "0", "Child" : ["66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76"],
+	{"ID" : "65", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164", "Parent" : "0", "Child" : ["66", "67", "68", "69", "70", "71", "72"],
 		"CDFG" : "dft_Pipeline_VITIS_LOOP_20_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "190", "EstimateLatencyMax" : "190",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "206", "EstimateLatencyMax" : "206",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -972,37 +972,69 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "p_ZL15cos_coeff_table_0_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_1_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_2_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_3_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_4_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_5_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_6_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_7_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_8_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_9_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_10_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_11_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_12_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_13_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_14_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_15_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_16_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_17_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_18_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_19_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_20_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_21_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_22_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_23_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_24_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_25_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_26_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_27_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_28_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_29_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15cos_coeff_table_30_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15cos_coeff_table_31_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_0_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_1_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_2_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_3_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_4_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_5_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_6_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_7_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_8_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_9_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_10_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_11_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_12_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_13_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_14_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_15_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_16_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_17_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_18_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_19_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_20_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_21_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_22_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_23_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_24_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_25_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_26_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_27_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_28_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_29_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL15sin_coeff_table_30_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "p_ZL15sin_coeff_table_31_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty_7", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty_8", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty_9", "Type" : "None", "Direction" : "I"},
@@ -1035,38 +1067,6 @@ set RtlHierarchyInfo {[
 			{"Name" : "empty_36", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty_37", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty_38", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_1_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_3_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_5_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_7_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_9_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_11_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_13_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_15_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_17_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_19_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_21_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_23_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_25_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_27_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_29_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15cos_coeff_table_31_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_1_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_3_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_5_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_7_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_9_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_11_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_13_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_15_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_17_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_19_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_21_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_23_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_25_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_27_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_29_load", "Type" : "None", "Direction" : "I"},
-			{"Name" : "p_ZL15sin_coeff_table_31_load", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty_39", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty_40", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty_41", "Type" : "None", "Direction" : "I"},
@@ -1103,18 +1103,14 @@ set RtlHierarchyInfo {[
 			{"Name" : "add5_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_20_2", "PipelineType" : "UPC",
-				"LoopDec" : {"FSMBitwidth" : "11", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage1", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage1_subdone", "QuitState" : "ap_ST_fsm_pp0_stage1", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage1_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+				"LoopDec" : {"FSMBitwidth" : "6", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter3", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter3", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
 	{"ID" : "66", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.faddfsub_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "65"},
 	{"ID" : "67", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.fmul_32ns_32ns_32_4_max_dsp_1_U2", "Parent" : "65"},
-	{"ID" : "68", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_33_5_32_1_1_U3", "Parent" : "65"},
-	{"ID" : "69", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_33_5_32_1_1_U4", "Parent" : "65"},
-	{"ID" : "70", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_33_5_32_1_1_U5", "Parent" : "65"},
-	{"ID" : "71", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_33_5_32_1_1_U6", "Parent" : "65"},
-	{"ID" : "72", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_33_5_32_1_1_U7", "Parent" : "65"},
-	{"ID" : "73", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_33_5_32_1_1_U8", "Parent" : "65"},
-	{"ID" : "74", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_33_5_32_1_1_U9", "Parent" : "65"},
-	{"ID" : "75", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_33_5_32_1_1_U10", "Parent" : "65"},
-	{"ID" : "76", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.flow_control_loop_pipe_sequential_init_U", "Parent" : "65"}]}
+	{"ID" : "68", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_65_5_32_1_1_U3", "Parent" : "65"},
+	{"ID" : "69", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_65_5_32_1_1_U4", "Parent" : "65"},
+	{"ID" : "70", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_65_5_32_1_1_U5", "Parent" : "65"},
+	{"ID" : "71", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.sparsemux_65_5_32_1_1_U6", "Parent" : "65"},
+	{"ID" : "72", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_20_2_fu_2164.flow_control_loop_pipe_sequential_init_U", "Parent" : "65"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -1248,102 +1244,134 @@ set ArgLastReadFirstWriteLatency {
 		output_I_30 {Type O LastRead -1 FirstWrite 4}
 		output_I_31 {Type O LastRead -1 FirstWrite 4}
 		p_ZL15cos_coeff_table_0 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_2 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_4 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_6 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_8 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_10 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_12 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_14 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_16 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_18 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_20 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_22 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_24 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_26 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_28 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15cos_coeff_table_30 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_0 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_2 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_4 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_6 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_8 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_10 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_12 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_14 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_16 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_18 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_20 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_22 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_24 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_26 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_28 {Type I LastRead -1 FirstWrite -1}
-		p_ZL15sin_coeff_table_30 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_1 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_2 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_3 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_4 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_5 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_6 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_7 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_8 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_9 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_10 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_11 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_12 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_13 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_14 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_15 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_16 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_17 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_18 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_19 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_20 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_21 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_22 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_23 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_24 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_25 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_26 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_27 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_28 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_29 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15cos_coeff_table_30 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15cos_coeff_table_31 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_0 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_1 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_2 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_3 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_4 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_5 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_6 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_7 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_8 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_9 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_10 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_11 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_12 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_13 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_14 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_15 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_16 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_17 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_18 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_19 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_20 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_21 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_22 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_23 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_24 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_25 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_26 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_27 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_28 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_29 {Type I LastRead -1 FirstWrite -1}
+		p_ZL15sin_coeff_table_30 {Type I LastRead -1 FirstWrite -1}
 		p_ZL15sin_coeff_table_31 {Type I LastRead -1 FirstWrite -1}}
 	dft_Pipeline_VITIS_LOOP_20_2 {
 		p_ZL15cos_coeff_table_0_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_1_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_2_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_3_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_4_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_5_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_6_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_7_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_8_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_9_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_10_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_11_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_12_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_13_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_14_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_15_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_16_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_17_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_18_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_19_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_20_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_21_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_22_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_23_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_24_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_25_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_26_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_27_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_28_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_29_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15cos_coeff_table_30_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15cos_coeff_table_31_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_0_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_1_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_2_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_3_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_4_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_5_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_6_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_7_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_8_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_9_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_10_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_11_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_12_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_13_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_14_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_15_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_16_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_17_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_18_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_19_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_20_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_21_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_22_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_23_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_24_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_25_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_26_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_27_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_28_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_29_load {Type I LastRead 0 FirstWrite -1}
 		p_ZL15sin_coeff_table_30_load {Type I LastRead 0 FirstWrite -1}
+		p_ZL15sin_coeff_table_31_load {Type I LastRead 0 FirstWrite -1}
 		empty_7 {Type I LastRead 0 FirstWrite -1}
 		empty_8 {Type I LastRead 0 FirstWrite -1}
 		empty_9 {Type I LastRead 0 FirstWrite -1}
@@ -1376,38 +1404,6 @@ set ArgLastReadFirstWriteLatency {
 		empty_36 {Type I LastRead 0 FirstWrite -1}
 		empty_37 {Type I LastRead 0 FirstWrite -1}
 		empty_38 {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_1_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_3_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_5_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_7_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_9_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_11_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_13_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_15_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_17_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_19_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_21_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_23_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_25_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_27_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_29_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15cos_coeff_table_31_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_1_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_3_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_5_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_7_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_9_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_11_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_13_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_15_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_17_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_19_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_21_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_23_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_25_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_27_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_29_load {Type I LastRead 0 FirstWrite -1}
-		p_ZL15sin_coeff_table_31_load {Type I LastRead 0 FirstWrite -1}
 		empty_39 {Type I LastRead 0 FirstWrite -1}
 		empty_40 {Type I LastRead 0 FirstWrite -1}
 		empty_41 {Type I LastRead 0 FirstWrite -1}
@@ -1446,8 +1442,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "6209", "Max" : "6209"}
-	, {"Name" : "Interval", "Min" : "6210", "Max" : "6210"}
+	{"Name" : "Latency", "Min" : "6721", "Max" : "6721"}
+	, {"Name" : "Interval", "Min" : "6722", "Max" : "6722"}
 ]}
 
 set PipelineEnableSignalInfo {[
