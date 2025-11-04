@@ -1,6 +1,7 @@
-#include <math.h>
+#include<math.h>
 #include "dft.h"
-#include "coefficients1024.h"
+#include"coefficients1024.h"
+
 
 void dft(DTYPE sample_real[SIZE], DTYPE sample_imag[SIZE])
 {
