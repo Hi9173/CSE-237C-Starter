@@ -1,27 +1,36 @@
-#include<math.h>
+#include <math.h>
 #include "dft.h"
-#include"coefficients1024.h"
+#include "coefficients32.h"
 
-// Question 6a: Baseline DFT1024 using sin() and cos() math functions (no HLS pragmas)
-void dft(DTYPE real_sample[SIZE], DTYPE imag_sample[SIZE],DTYPE real_op[SIZE],DTYPE imag_op[SIZE])
+void dft(DTYPE sample_real[SIZE], DTYPE sample_imag[SIZE])
 {
- int i, j;
- const double PI = 3.14159265358979323846264338327950288419716939937510;
- double w_double;
- double c_double, s_double;
- DTYPE c, s;
- int idx;
- 
- for (i = 0; i < SIZE; i += 1) {
-  real_op[i] = 0;
-  imag_op[i] = 0;
-  for (j = 0; j < SIZE; j += 1) {
-   idx = (i * j) % SIZE;
-   c = cos_coefficients_table[idx];
-   s = sin_coefficients_table[idx];
-   real_op[i] += (real_sample[j] * c - imag_sample[j] * s);
-   imag_op[i] += (real_sample[j] * s + imag_sample[j] * c);
-  }
- }
- 
+    int i, j;
+    DTYPE w;
+    DTYPE c, s;
+
+    DTYPE temp_real[SIZE];
+    DTYPE temp_imag[SIZE];
+
+    for (i = 0; i < SIZE; i += 1) {
+        temp_real[i] = 0;
+        temp_imag[i] = 0;
+    }
+
+    // Loop-interchanged version: j outer, i inner
+    for (j = 0; j < SIZE; j += 1) {
+        w = (2.0 * 3.141592653589 / SIZE) * (DTYPE)j;
+
+        for (i = 0; i < SIZE; i += 1) {
+            c = cos(i * w);
+            s = -sin(i * w);
+
+            temp_real[i] += (sample_real[j] * c - sample_imag[j] * s);
+            temp_imag[i] += (sample_real[j] * s + sample_imag[j] * c);
+        }
+    }
+
+    for (i = 0; i < SIZE; i += 1) {
+        sample_real[i] = temp_real[i];
+        sample_imag[i] = temp_imag[i];
+    }
 }
