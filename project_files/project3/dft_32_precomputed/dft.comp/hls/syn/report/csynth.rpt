@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'dft'
 ================================================================
 + General Information: 
-    * Date:           Tue Nov  4 13:37:09 2025
+    * Date:           Tue Nov  4 13:42:14 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        dft.comp
     * Solution:       hls (Vivado IP Flow Target)
@@ -19,10 +19,10 @@
     |              Modules             |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |        |           |           |     |
     |              & Loops             |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |   DSP  |     FF    |    LUT    | URAM|
     +----------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+--------+-----------+-----------+-----+
-    |+ dft                             |  Timing|  -2.29|     5761|  5.761e+04|         -|     5762|     -|        no|  64 (22%)|  7 (3%)|  8507 (7%)|  4339 (8%)|    -|
-    | o VITIS_LOOP_16_1                |       -|   7.30|     5760|  5.760e+04|       180|        -|    32|        no|         -|       -|          -|          -|    -|
-    |  + dft_Pipeline_VITIS_LOOP_20_2  |  Timing|  -2.29|      176|  1.760e+03|         -|      176|     -|        no|         -|  7 (3%)|  4356 (4%)|  4271 (8%)|    -|
-    |   o VITIS_LOOP_20_2              |      II|   7.30|      174|  1.740e+03|        94|       81|     2|       yes|         -|       -|          -|          -|    -|
+    |+ dft                             |  Timing|  -2.00|     5825|  5.825e+04|         -|     5826|     -|        no|  64 (22%)|  7 (3%)|  6259 (5%)|  2413 (4%)|    -|
+    | o VITIS_LOOP_16_1                |       -|   7.30|     5824|  5.824e+04|       182|        -|    32|        no|         -|       -|          -|          -|    -|
+    |  + dft_Pipeline_VITIS_LOOP_20_2  |  Timing|  -2.00|      178|  1.780e+03|         -|      178|     -|        no|         -|  7 (3%)|  2108 (1%)|  2345 (4%)|    -|
+    |   o VITIS_LOOP_20_2              |      II|   7.30|      176|  1.760e+03|        54|       41|     4|       yes|         -|       -|          -|          -|    -|
     +----------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+--------+-----------+-----------+-----+
 
 
@@ -388,208 +388,111 @@
 ================================================================
 == Bind Op Report
 ================================================================
-+------------------------------------------+-----+--------+----------------+--------+----------+---------+
-| Name                                     | DSP | Pragma | Variable       | Op     | Impl     | Latency |
-+------------------------------------------+-----+--------+----------------+--------+----------+---------+
-| + dft                                    | 7   |        |                |        |          |         |
-|   icmp_ln16_fu_2370_p2                   |     |        | icmp_ln16      | seteq  | auto     | 0       |
-|   add_ln16_fu_2376_p2                    |     |        | add_ln16       | add    | fabric   | 0       |
-|  + dft_Pipeline_VITIS_LOOP_20_2          | 7   |        |                |        |          |         |
-|    icmp_ln23_fu_1209_p2                  |     |        | icmp_ln23      | seteq  | auto     | 0       |
-|    c_fu_1215_p3                          |     |        | c              | select | auto_sel | 0       |
-|    s_fu_1223_p3                          |     |        | s              | select | auto_sel | 0       |
-|    select_ln26_fu_1231_p3                |     |        | select_ln26    | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul            | fmul   | maxdsp   | 3       |
-|    select_ln26_1_fu_1239_p3              |     |        | select_ln26_1  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul1           | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub            | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add            | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul2           | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul3           | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add1           | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add2           | fsub   | fulldsp  | 4       |
-|    c_1_fu_1247_p3                        |     |        | c_1            | select | auto_sel | 0       |
-|    s_1_fu_1255_p3                        |     |        | s_1            | select | auto_sel | 0       |
-|    select_ln26_2_fu_1263_p3              |     |        | select_ln26_2  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_1          | fmul   | maxdsp   | 3       |
-|    select_ln26_3_fu_1271_p3              |     |        | select_ln26_3  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_1        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_1          | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_1          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_1        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_1        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_1        | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_1        | fsub   | fulldsp  | 4       |
-|    c_2_fu_1279_p3                        |     |        | c_2            | select | auto_sel | 0       |
-|    s_2_fu_1287_p3                        |     |        | s_2            | select | auto_sel | 0       |
-|    select_ln26_4_fu_1295_p3              |     |        | select_ln26_4  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_2          | fmul   | maxdsp   | 3       |
-|    select_ln26_5_fu_1303_p3              |     |        | select_ln26_5  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_2        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_2          | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_2          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_2        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_2        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_2        | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_2        | fsub   | fulldsp  | 4       |
-|    c_3_fu_1311_p3                        |     |        | c_3            | select | auto_sel | 0       |
-|    s_3_fu_1319_p3                        |     |        | s_3            | select | auto_sel | 0       |
-|    select_ln26_6_fu_1327_p3              |     |        | select_ln26_6  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_3          | fmul   | maxdsp   | 3       |
-|    select_ln26_7_fu_1335_p3              |     |        | select_ln26_7  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_3        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_3          | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_3          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_3        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_3        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_3        | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_3        | fsub   | fulldsp  | 4       |
-|    c_4_fu_1343_p3                        |     |        | c_4            | select | auto_sel | 0       |
-|    s_4_fu_1351_p3                        |     |        | s_4            | select | auto_sel | 0       |
-|    select_ln26_8_fu_1359_p3              |     |        | select_ln26_8  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_4          | fmul   | maxdsp   | 3       |
-|    select_ln26_9_fu_1367_p3              |     |        | select_ln26_9  | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_4        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_4          | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_4          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_4        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_4        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_4        | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_4        | fsub   | fulldsp  | 4       |
-|    c_5_fu_1375_p3                        |     |        | c_5            | select | auto_sel | 0       |
-|    s_5_fu_1383_p3                        |     |        | s_5            | select | auto_sel | 0       |
-|    select_ln26_10_fu_1391_p3             |     |        | select_ln26_10 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_5          | fmul   | maxdsp   | 3       |
-|    select_ln26_11_fu_1399_p3             |     |        | select_ln26_11 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_5        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_5          | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_5          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_5        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_5        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_5        | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_5        | fsub   | fulldsp  | 4       |
-|    c_6_fu_1407_p3                        |     |        | c_6            | select | auto_sel | 0       |
-|    s_6_fu_1415_p3                        |     |        | s_6            | select | auto_sel | 0       |
-|    select_ln26_12_fu_1423_p3             |     |        | select_ln26_12 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_6          | fmul   | maxdsp   | 3       |
-|    select_ln26_13_fu_1431_p3             |     |        | select_ln26_13 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_6        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_6          | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_6          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_6        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_6        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_6        | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_6        | fsub   | fulldsp  | 4       |
-|    c_7_fu_1439_p3                        |     |        | c_7            | select | auto_sel | 0       |
-|    s_7_fu_1447_p3                        |     |        | s_7            | select | auto_sel | 0       |
-|    select_ln26_14_fu_1455_p3             |     |        | select_ln26_14 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_7          | fmul   | maxdsp   | 3       |
-|    select_ln26_15_fu_1463_p3             |     |        | select_ln26_15 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_7        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_7          | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_7          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_7        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_7        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_7        | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_7        | fsub   | fulldsp  | 4       |
-|    c_8_fu_1471_p3                        |     |        | c_8            | select | auto_sel | 0       |
-|    s_8_fu_1479_p3                        |     |        | s_8            | select | auto_sel | 0       |
-|    select_ln26_16_fu_1487_p3             |     |        | select_ln26_16 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_8          | fmul   | maxdsp   | 3       |
-|    select_ln26_17_fu_1495_p3             |     |        | select_ln26_17 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_8        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_8          | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_8          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_8        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_8        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_8        | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_8        | fsub   | fulldsp  | 4       |
-|    c_9_fu_1503_p3                        |     |        | c_9            | select | auto_sel | 0       |
-|    s_9_fu_1511_p3                        |     |        | s_9            | select | auto_sel | 0       |
-|    select_ln26_18_fu_1519_p3             |     |        | select_ln26_18 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_9          | fmul   | maxdsp   | 3       |
-|    select_ln26_19_fu_1527_p3             |     |        | select_ln26_19 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_9        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_9          | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_9          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_9        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_9        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_9        | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_9        | fsub   | fulldsp  | 4       |
-|    c_10_fu_1535_p3                       |     |        | c_10           | select | auto_sel | 0       |
-|    s_10_fu_1543_p3                       |     |        | s_10           | select | auto_sel | 0       |
-|    select_ln26_20_fu_1551_p3             |     |        | select_ln26_20 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_s          | fmul   | maxdsp   | 3       |
-|    select_ln26_21_fu_1559_p3             |     |        | select_ln26_21 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_s        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_s          | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_s          | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_s        | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_s        | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_s        | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_s        | fsub   | fulldsp  | 4       |
-|    c_11_fu_1567_p3                       |     |        | c_11           | select | auto_sel | 0       |
-|    s_11_fu_1575_p3                       |     |        | s_11           | select | auto_sel | 0       |
-|    select_ln26_22_fu_1583_p3             |     |        | select_ln26_22 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_10         | fmul   | maxdsp   | 3       |
-|    select_ln26_23_fu_1591_p3             |     |        | select_ln26_23 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_10       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_10         | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_10         | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_10       | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_10       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_10       | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_10       | fsub   | fulldsp  | 4       |
-|    c_12_fu_1599_p3                       |     |        | c_12           | select | auto_sel | 0       |
-|    s_12_fu_1607_p3                       |     |        | s_12           | select | auto_sel | 0       |
-|    select_ln26_24_fu_1615_p3             |     |        | select_ln26_24 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_11         | fmul   | maxdsp   | 3       |
-|    select_ln26_25_fu_1623_p3             |     |        | select_ln26_25 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_11       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_11         | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_11         | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_11       | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_11       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_11       | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_11       | fsub   | fulldsp  | 4       |
-|    c_13_fu_1631_p3                       |     |        | c_13           | select | auto_sel | 0       |
-|    s_13_fu_1639_p3                       |     |        | s_13           | select | auto_sel | 0       |
-|    select_ln26_26_fu_1647_p3             |     |        | select_ln26_26 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_12         | fmul   | maxdsp   | 3       |
-|    select_ln26_27_fu_1655_p3             |     |        | select_ln26_27 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_12       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_12         | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_12         | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_12       | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_12       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_12       | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_12       | fsub   | fulldsp  | 4       |
-|    c_14_fu_1663_p3                       |     |        | c_14           | select | auto_sel | 0       |
-|    s_14_fu_1671_p3                       |     |        | s_14           | select | auto_sel | 0       |
-|    select_ln26_28_fu_1679_p3             |     |        | select_ln26_28 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_13         | fmul   | maxdsp   | 3       |
-|    select_ln26_29_fu_1687_p3             |     |        | select_ln26_29 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_13       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_13         | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_13         | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_13       | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_13       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_13       | fsub   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_13       | fsub   | fulldsp  | 4       |
-|    c_15_fu_1695_p3                       |     |        | c_15           | select | auto_sel | 0       |
-|    s_15_fu_1703_p3                       |     |        | s_15           | select | auto_sel | 0       |
-|    select_ln26_30_fu_1711_p3             |     |        | select_ln26_30 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_14         | fmul   | maxdsp   | 3       |
-|    select_ln26_31_fu_1719_p3             |     |        | select_ln26_31 | select | auto_sel | 0       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_14       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_14         | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_14         | fsub   | fulldsp  | 4       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_14       | fmul   | maxdsp   | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_14       | fmul   | maxdsp   | 3       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_14       | fadd   | fulldsp  | 4       |
-|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_14       | fsub   | fulldsp  | 4       |
-|    add_ln20_fu_1727_p2                   |     |        | add_ln20       | add    | fabric   | 0       |
-+------------------------------------------+-----+--------+----------------+--------+----------+---------+
++------------------------------------------+-----+--------+-----------+-----------+--------------------------+---------+
+| Name                                     | DSP | Pragma | Variable  | Op        | Impl                     | Latency |
++------------------------------------------+-----+--------+-----------+-----------+--------------------------+---------+
+| + dft                                    | 7   |        |           |           |                          |         |
+|   icmp_ln16_fu_2626_p2                   |     |        | icmp_ln16 | seteq     | auto                     | 0       |
+|   add_ln16_fu_2632_p2                    |     |        | add_ln16  | add       | fabric                   | 0       |
+|  + dft_Pipeline_VITIS_LOOP_20_2          | 7   |        |           |           |                          |         |
+|    sparsemux_9_5_32_1_1_U4               |     |        | c         | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U5               |     |        | s         | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U6               |     |        | tmp       | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul       | fmul      | maxdsp                   | 3       |
+|    sparsemux_9_5_32_1_1_U7               |     |        | tmp_1     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul1      | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub       | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add       | fsub      | fulldsp                  | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul2      | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul3      | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add1      | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add2      | fsub      | fulldsp                  | 4       |
+|    sparsemux_9_5_32_1_1_U8               |     |        | c_1       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U9               |     |        | s_1       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U10              |     |        | tmp_4     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_1     | fmul      | maxdsp                   | 3       |
+|    sparsemux_9_5_32_1_1_U11              |     |        | tmp_5     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_1   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_1     | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_1     | fsub      | fulldsp                  | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_1   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_1   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_1   | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_1   | fsub      | fulldsp                  | 4       |
+|    sparsemux_9_5_32_1_1_U12              |     |        | c_2       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U13              |     |        | s_2       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U14              |     |        | tmp_8     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_2     | fmul      | maxdsp                   | 3       |
+|    sparsemux_9_5_32_1_1_U15              |     |        | tmp_9     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_2   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_2     | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_2     | fsub      | fulldsp                  | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_2   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_2   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_2   | fadd      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_2   | fsub      | fulldsp                  | 4       |
+|    sparsemux_9_5_32_1_1_U16              |     |        | c_3       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U17              |     |        | s_3       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U18              |     |        | tmp_s     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_3     | fmul      | maxdsp                   | 3       |
+|    sparsemux_9_5_32_1_1_U19              |     |        | tmp_2     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_3   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_3     | fadd      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_3     | fsub      | fulldsp                  | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_3   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_3   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_3   | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_3   | fsub      | fulldsp                  | 4       |
+|    sparsemux_9_5_32_1_1_U20              |     |        | c_4       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U21              |     |        | s_4       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U22              |     |        | tmp_3     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_4     | fmul      | maxdsp                   | 3       |
+|    sparsemux_9_5_32_1_1_U23              |     |        | tmp_6     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_4   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_4     | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_4     | fsub      | fulldsp                  | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_4   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_4   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_4   | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_4   | fsub      | fulldsp                  | 4       |
+|    sparsemux_9_5_32_1_1_U24              |     |        | c_5       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U25              |     |        | s_5       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U26              |     |        | tmp_7     | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_5     | fmul      | maxdsp                   | 3       |
+|    sparsemux_9_5_32_1_1_U27              |     |        | tmp_10    | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_5   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | sub_5     | fadd      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_5     | fsub      | fulldsp                  | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_5   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_5   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_5   | fadd      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_5   | fsub      | fulldsp                  | 4       |
+|    sparsemux_9_5_32_1_1_U28              |     |        | c_6       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U29              |     |        | s_6       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U30              |     |        | tmp_11    | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_6     | fmul      | maxdsp                   | 3       |
+|    sparsemux_9_5_32_1_1_U31              |     |        | tmp_12    | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_6   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_6     | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_6     | fsub      | fulldsp                  | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_6   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_6   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add27_6   | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_6   | fsub      | fulldsp                  | 4       |
+|    sparsemux_9_5_32_1_1_U32              |     |        | c_7       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U33              |     |        | s_7       | sparsemux | compactencoding_dontcare | 0       |
+|    sparsemux_9_5_32_1_1_U34              |     |        | tmp_13    | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul_7     | fmul      | maxdsp                   | 3       |
+|    sparsemux_9_5_32_1_1_U35              |     |        | tmp_14    | sparsemux | compactencoding_dontcare | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul18_7   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | sub_7     | fsub      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add_7     | fsub      | fulldsp                  | 4       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul23_7   | fmul      | maxdsp                   | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U3      | 3   |        | mul26_7   | fmul      | maxdsp                   | 3       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U2 | 2   |        | add27_7   | fadd      | fulldsp                  | 4       |
+|    faddfsub_32ns_32ns_32_5_full_dsp_1_U1 | 2   |        | add30_7   | fsub      | fulldsp                  | 4       |
+|    add_ln20_fu_1981_p2                   |     |        | add_ln20  | add       | fabric                   | 0       |
++------------------------------------------+-----+--------+-----------+-----------+--------------------------+---------+
 
 
 ================================================================
@@ -601,68 +504,68 @@
 +------------------------------+--------+------+------+------+--------+--------------------------+------+---------+------------------+
 | + dft                        |        |      | 64   | 0    |        |                          |      |         |                  |
 |   p_ZL15cos_coeff_table_0_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_0  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_16_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_16 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_0_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_0  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_16_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_16 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_1_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_1  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_17_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_17 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_1_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_1  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_17_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_17 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_2_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_2  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_18_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_18 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_2_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_2  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_18_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_18 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_3_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_3  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_19_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_19 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_3_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_3  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_19_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_19 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_4_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_4  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_20_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_20 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_4_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_4  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_20_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_20 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_5_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_5  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_21_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_21 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_5_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_5  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_21_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_21 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_6_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_6  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_22_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_22 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_6_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_6  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_22_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_22 | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_7_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_7  | auto | 1       | 32, 32, 1        |
-|   p_ZL15cos_coeff_table_23_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_23 | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_7_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_7  | auto | 1       | 32, 32, 1        |
-|   p_ZL15sin_coeff_table_23_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_23 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_8_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_8  | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_16_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_16 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_24_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_24 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_0_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_0  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_8_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_8  | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_16_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_16 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_24_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_24 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_1_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_1  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_9_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_9  | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_17_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_17 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_25_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_25 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_1_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_1  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_9_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_9  | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_17_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_17 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_25_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_25 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_2_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_2  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_10_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_10 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_18_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_18 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_26_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_26 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_2_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_2  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_10_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_10 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_18_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_18 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_26_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_26 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_3_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_3  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_11_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_11 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_19_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_19 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_27_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_27 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_3_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_3  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_11_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_11 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_19_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_19 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_27_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_27 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_4_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_4  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_12_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_12 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_20_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_20 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_28_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_28 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_4_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_4  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_12_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_12 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_20_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_20 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_28_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_28 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_5_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_5  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_13_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_13 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_21_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_21 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_29_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_29 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_5_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_5  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_13_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_13 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_21_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_21 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_29_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_29 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_6_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_6  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_14_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_14 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_22_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_22 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_30_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_30 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_6_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_6  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_14_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_14 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_22_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_22 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_30_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_30 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_7_U  | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_7  | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_15_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_15 | auto | 1       | 32, 32, 1        |
+|   p_ZL15cos_coeff_table_23_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_23 | auto | 1       | 32, 32, 1        |
 |   p_ZL15cos_coeff_table_31_U | rom_1p |      | 1    |      |        | p_ZL15cos_coeff_table_31 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_7_U  | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_7  | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_15_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_15 | auto | 1       | 32, 32, 1        |
+|   p_ZL15sin_coeff_table_23_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_23 | auto | 1       | 32, 32, 1        |
 |   p_ZL15sin_coeff_table_31_U | rom_1p |      | 1    |      |        | p_ZL15sin_coeff_table_31 | auto | 1       | 32, 32, 1        |
 +------------------------------+--------+------+------+------+--------+--------------------------+------+---------+------------------+
 
@@ -680,7 +583,7 @@
 | array_partition | variable=output_I type=block factor=32              | dft.cpp:9 in dft, output_I         |
 | array_partition | variable=cos_coeff_table type=block factor=32 dim=2 | dft.cpp:10 in dft, cos_coeff_table |
 | array_partition | variable=sin_coeff_table type=block factor=32 dim=2 | dft.cpp:11 in dft, sin_coeff_table |
-| unroll          | factor=16                                           | dft.cpp:22 in dft                  |
+| unroll          | factor=8                                            | dft.cpp:22 in dft                  |
 +-----------------+-----------------------------------------------------+------------------------------------+
 
 

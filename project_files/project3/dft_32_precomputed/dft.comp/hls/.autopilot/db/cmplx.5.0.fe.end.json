@@ -1,28 +1,10 @@
 {
-    "1": {
-        "name": "dft_Pipeline_VITIS_LOOP_20_2",
-        "file": "dft.cpp",
-        "fileloc": "13",
-        "instructions": "378",
-        "total_instructions": "378",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "5"
-        },
-        "stores": {
-            "L": "6"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
     "0": {
         "name": "dft",
         "file": "dft.cpp",
         "fileloc": "4",
-        "instructions": "567",
-        "total_instructions": "945",
+        "instructions": "631",
+        "total_instructions": "881",
         "calls": "1",
         "basicblocks": "37",
         "loads": {
@@ -31,6 +13,24 @@
         },
         "stores": {
             "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "1": {
+        "name": "dft_Pipeline_VITIS_LOOP_20_2",
+        "file": "dft.cpp",
+        "fileloc": "13",
+        "instructions": "250",
+        "total_instructions": "250",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "5"
+        },
+        "stores": {
+            "L": "6"
         },
         "loops": {
             "L": "1"
