@@ -1,29 +1,18 @@
 {
   "0": {
-    "basicblocks": 10,
-    "calls": "1 1",
+    "basicblocks": 172,
+    "calls": "",
     "file": "dft.cpp",
     "fileloc": 5,
-    "instructions": 75,
+    "instructions": 5026,
     "loads": {
-      "T": 4
+      "G": 128,
+      "T": 1024
     },
     "name": "dft",
     "stores": {
-      "T": 4
+      "T": 128
     },
-    "total_instructions": 655
-  },
-  "1": {
-    "basicblocks": 32,
-    "calls": "",
-    "file": "hls_hotbm.h",
-    "fileloc": 209,
-    "instructions": 290,
-    "loads": {
-      "G": 6
-    },
-    "name": "sin_or_cos<double>",
-    "total_instructions": 290
+    "total_instructions": 5026
   }
 }
