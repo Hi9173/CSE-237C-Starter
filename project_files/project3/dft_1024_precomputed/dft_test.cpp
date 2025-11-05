@@ -1,12 +1,3 @@
-/*
-This is DFT computation using matrix vector multiplication form.
-INPUT:
-	In_R, In_I[]: Real and Imag parts of Complex signal in time domain.
-OUTPUT:
-	In_R, In_I[]: Real and Imag parts of Complex signal in frequency domain.
-
-*/
-
 #include<stdio.h>
 #include <stdlib.h>
 #include<iostream>
@@ -34,28 +25,39 @@ struct Rmse
 
 Rmse rmse_R,  rmse_I;
 
-DTYPE In_R[SIZE], In_I[SIZE];
-DTYPE Out_R[SIZE], Out_I[SIZE];
+DTYPE In_R[SIZE], In_I[SIZE], Out_R[SIZE], Out_I[SIZE];
 
 int main()
 {
 	int index;
-	DTYPE gold_R, gold_I;
+	float gold_R, gold_I;
 
 	FILE * fp = fopen("out.gold.dat","r");
 
-	// getting input data
+	hls::stream<DTYPE> input_real_stream("input_real");
+	hls::stream<DTYPE> input_imag_stream("input_imag");
+	hls::stream<DTYPE> output_real_stream("output_real");
+	hls::stream<DTYPE> output_imag_stream("output_imag");
+
 	for(int i=0; i<SIZE; i++)
 	{
 		In_R[i] = i;
 		In_I[i] = 0.0;
-
+		input_real_stream.write(In_R[i]);
+		input_imag_stream.write(In_I[i]);
 	}
 	
 
-	// DFT
-	dft(In_R, In_I, Out_R, Out_I);
+	// DFT with streaming interface
+	dft(input_real_stream, input_imag_stream, output_real_stream, output_imag_stream);
 
+	
+	// Read output from streams
+	for(int i=0; i<SIZE; i++)
+	{
+		Out_R[i] = output_real_stream.read();
+		Out_I[i] = output_imag_stream.read();
+	}
 
 	// comparing with golden output
 	for(int i=0; i<SIZE; i++)
