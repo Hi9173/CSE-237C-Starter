@@ -1,18 +1,18 @@
 {
   "0": {
-    "basicblocks": 20,
+    "basicblocks": 9,
     "calls": "",
     "file": "dft.cpp",
-    "fileloc": 5,
-    "instructions": 2048,
+    "fileloc": 4,
+    "instructions": 62,
     "loads": {
-      "G": 128,
-      "T": 272
+      "G": 2,
+      "L": 4
     },
     "name": "dft",
     "stores": {
-      "T": 32
+      "L": 2
     },
-    "total_instructions": 2048
+    "total_instructions": 62
   }
 }

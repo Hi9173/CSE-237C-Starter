@@ -1,10 +1,5 @@
 <pragmas>
-<pragma file="dft.cpp" line="21" pragmaType="unroll" parentfunction="dft" factor="8" skip_exit_check="0"/>
-<pragma file="dft.cpp" line="25" pragmaType="unroll" parentfunction="dft" factor="8" skip_exit_check="0"/>
-<pragma file="dft.cpp" line="7" pragmaType="array_partition" parentfunction="dft" dim="1" factor="8" mode="block" dynamic="0" variable="real_sample"/>
-<pragma file="dft.cpp" line="8" pragmaType="array_partition" parentfunction="dft" dim="1" factor="8" mode="block" dynamic="0" variable="imag_sample"/>
-<pragma file="dft.cpp" line="9" pragmaType="array_partition" parentfunction="dft" dim="1" factor="8" mode="block" dynamic="0" variable="real_op"/>
-<pragma file="dft.cpp" line="10" pragmaType="array_partition" parentfunction="dft" dim="1" factor="8" mode="block" dynamic="0" variable="imag_op"/>
-<pragma file="dft.cpp" line="11" pragmaType="array_partition" parentfunction="dft" dim="2" factor="8" mode="block" dynamic="0" variable="_ZL22cos_coefficients_table"/>
-<pragma file="dft.cpp" line="12" pragmaType="array_partition" parentfunction="dft" dim="2" factor="8" mode="block" dynamic="0" variable="_ZL22sin_coefficients_table"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
 </pragmas>

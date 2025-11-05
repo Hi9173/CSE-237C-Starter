@@ -7,7 +7,7 @@ Diagnostics:
     FilePath:        /software/common/Xilinx_Vitis/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
     Replacements:    
       - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp
-        Offset:          474907
+        Offset:          281026
         Length:          0
         ReplacementText: 'VITIS_LOOP_676_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -16,7 +16,7 @@ Diagnostics:
     FilePath:        /software/common/Xilinx_Vitis/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
     Replacements:    
       - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp
-        Offset:          475373
+        Offset:          281492
         Length:          0
         ReplacementText: 'VITIS_LOOP_690_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -25,7 +25,7 @@ Diagnostics:
     FilePath:        /software/common/Xilinx_Vitis/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
     Replacements:    
       - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp
-        Offset:          475840
+        Offset:          281959
         Length:          0
         ReplacementText: 'VITIS_LOOP_704_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -34,25 +34,7 @@ Diagnostics:
     FilePath:        /software/common/Xilinx_Vitis/Vitis/2024.2/common/technology/autopilot/etc/ap_fixed_base.h
     Replacements:    
       - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp
-        Offset:          759863
+        Offset:          565982
         Length:          0
         ReplacementText: 'VITIS_LOOP_1248_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_20_1:  '
-    FileOffset:      20
-    FilePath:        dft.cpp
-    Replacements:    
-      - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp
-        Offset:          1148853
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_20_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_24_2:  '
-    FileOffset:      24
-    FilePath:        dft.cpp
-    Replacements:    
-      - FilePath:        /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/.autopilot/db/dft.pp.0.cpp
-        Offset:          1148954
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_24_2: '
 ...

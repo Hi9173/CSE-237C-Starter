@@ -2,53 +2,5 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.tcl:9:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=dft" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:7:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=real_sample type=block factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:8:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=imag_sample type=block factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:9:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=real_op type=block factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:10:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=imag_op type=block factor=8" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:11:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=cos_coefficients_table type=block factor=8 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:12:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=sin_coefficients_table type=block factor=8 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:21:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=8" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="dft.cpp:25:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="dft" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=8" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="dft.cpp:6:0" msg_body="Unrolling loop 'VITIS_LOOP_20_1' (dft.cpp:20:19) in function 'dft' partially with a factor of 8">
-        <args Factor="8" LoopLoc="dft.cpp:20:19" LoopName="VITIS_LOOP_20_1"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="dft.cpp:6:0" msg_body="Unrolling loop 'VITIS_LOOP_24_2' (dft.cpp:24:22) in function 'dft' partially with a factor of 8">
-        <args Factor="8" LoopLoc="dft.cpp:24:22" LoopName="VITIS_LOOP_24_2"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="dft.cpp:12:9" msg_body="Ignored unsupported array_partition pragma on variable 'sin_coefficients_table'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
-        <args Name="sin_coefficients_table" PragmaName="array_partition"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-253" msg_severity="WARNING" msg_loc="dft.cpp:11:9" msg_body="Ignored unsupported array_partition pragma on variable 'cos_coefficients_table'. This can happen when applying a pragma on a function argument with mismatched array size w.r.t. its call site, or when providing a dim too deep on an array of insufficient dimension.">
-        <args Name="cos_coefficients_table" PragmaName="array_partition"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft.cpp:6:0" msg_body="Applying array_partition to 'real_sample': Block partitioning with factor 8 on dimension 1.">
-        <args Dim="1" Factor="8" Mode="Block" UOName="real_sample"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft.cpp:6:0" msg_body="Applying array_partition to 'imag_sample': Block partitioning with factor 8 on dimension 1.">
-        <args Dim="1" Factor="8" Mode="Block" UOName="imag_sample"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft.cpp:6:0" msg_body="Applying array_partition to 'real_op': Block partitioning with factor 8 on dimension 1.">
-        <args Dim="1" Factor="8" Mode="Block" UOName="real_op"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="dft.cpp:6:0" msg_body="Applying array_partition to 'imag_op': Block partitioning with factor 8 on dimension 1.">
-        <args Dim="1" Factor="8" Mode="Block" UOName="imag_op"/>
-    </msg>
 </xilinx:hls_fe_msgs>
 

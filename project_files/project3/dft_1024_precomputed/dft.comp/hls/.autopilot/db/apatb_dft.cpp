@@ -20,89 +20,23 @@
 using namespace std;
 
 // wrapc file define:
-#define AUTOTB_TVIN_real_sample_0 "../tv/cdatafile/c.dft.autotvin_real_sample_0.dat"
-#define AUTOTB_TVOUT_real_sample_0 "../tv/cdatafile/c.dft.autotvout_real_sample_0.dat"
-#define AUTOTB_TVIN_real_sample_1 "../tv/cdatafile/c.dft.autotvin_real_sample_1.dat"
-#define AUTOTB_TVOUT_real_sample_1 "../tv/cdatafile/c.dft.autotvout_real_sample_1.dat"
-#define AUTOTB_TVIN_real_sample_2 "../tv/cdatafile/c.dft.autotvin_real_sample_2.dat"
-#define AUTOTB_TVOUT_real_sample_2 "../tv/cdatafile/c.dft.autotvout_real_sample_2.dat"
-#define AUTOTB_TVIN_real_sample_3 "../tv/cdatafile/c.dft.autotvin_real_sample_3.dat"
-#define AUTOTB_TVOUT_real_sample_3 "../tv/cdatafile/c.dft.autotvout_real_sample_3.dat"
-#define AUTOTB_TVIN_real_sample_4 "../tv/cdatafile/c.dft.autotvin_real_sample_4.dat"
-#define AUTOTB_TVOUT_real_sample_4 "../tv/cdatafile/c.dft.autotvout_real_sample_4.dat"
-#define AUTOTB_TVIN_real_sample_5 "../tv/cdatafile/c.dft.autotvin_real_sample_5.dat"
-#define AUTOTB_TVOUT_real_sample_5 "../tv/cdatafile/c.dft.autotvout_real_sample_5.dat"
-#define AUTOTB_TVIN_real_sample_6 "../tv/cdatafile/c.dft.autotvin_real_sample_6.dat"
-#define AUTOTB_TVOUT_real_sample_6 "../tv/cdatafile/c.dft.autotvout_real_sample_6.dat"
-#define AUTOTB_TVIN_real_sample_7 "../tv/cdatafile/c.dft.autotvin_real_sample_7.dat"
-#define AUTOTB_TVOUT_real_sample_7 "../tv/cdatafile/c.dft.autotvout_real_sample_7.dat"
-#define AUTOTB_TVIN_imag_sample_0 "../tv/cdatafile/c.dft.autotvin_imag_sample_0.dat"
-#define AUTOTB_TVOUT_imag_sample_0 "../tv/cdatafile/c.dft.autotvout_imag_sample_0.dat"
-#define AUTOTB_TVIN_imag_sample_1 "../tv/cdatafile/c.dft.autotvin_imag_sample_1.dat"
-#define AUTOTB_TVOUT_imag_sample_1 "../tv/cdatafile/c.dft.autotvout_imag_sample_1.dat"
-#define AUTOTB_TVIN_imag_sample_2 "../tv/cdatafile/c.dft.autotvin_imag_sample_2.dat"
-#define AUTOTB_TVOUT_imag_sample_2 "../tv/cdatafile/c.dft.autotvout_imag_sample_2.dat"
-#define AUTOTB_TVIN_imag_sample_3 "../tv/cdatafile/c.dft.autotvin_imag_sample_3.dat"
-#define AUTOTB_TVOUT_imag_sample_3 "../tv/cdatafile/c.dft.autotvout_imag_sample_3.dat"
-#define AUTOTB_TVIN_imag_sample_4 "../tv/cdatafile/c.dft.autotvin_imag_sample_4.dat"
-#define AUTOTB_TVOUT_imag_sample_4 "../tv/cdatafile/c.dft.autotvout_imag_sample_4.dat"
-#define AUTOTB_TVIN_imag_sample_5 "../tv/cdatafile/c.dft.autotvin_imag_sample_5.dat"
-#define AUTOTB_TVOUT_imag_sample_5 "../tv/cdatafile/c.dft.autotvout_imag_sample_5.dat"
-#define AUTOTB_TVIN_imag_sample_6 "../tv/cdatafile/c.dft.autotvin_imag_sample_6.dat"
-#define AUTOTB_TVOUT_imag_sample_6 "../tv/cdatafile/c.dft.autotvout_imag_sample_6.dat"
-#define AUTOTB_TVIN_imag_sample_7 "../tv/cdatafile/c.dft.autotvin_imag_sample_7.dat"
-#define AUTOTB_TVOUT_imag_sample_7 "../tv/cdatafile/c.dft.autotvout_imag_sample_7.dat"
-#define AUTOTB_TVIN_real_op_0 "../tv/cdatafile/c.dft.autotvin_real_op_0.dat"
-#define AUTOTB_TVOUT_real_op_0 "../tv/cdatafile/c.dft.autotvout_real_op_0.dat"
-#define AUTOTB_TVIN_real_op_1 "../tv/cdatafile/c.dft.autotvin_real_op_1.dat"
-#define AUTOTB_TVOUT_real_op_1 "../tv/cdatafile/c.dft.autotvout_real_op_1.dat"
-#define AUTOTB_TVIN_real_op_2 "../tv/cdatafile/c.dft.autotvin_real_op_2.dat"
-#define AUTOTB_TVOUT_real_op_2 "../tv/cdatafile/c.dft.autotvout_real_op_2.dat"
-#define AUTOTB_TVIN_real_op_3 "../tv/cdatafile/c.dft.autotvin_real_op_3.dat"
-#define AUTOTB_TVOUT_real_op_3 "../tv/cdatafile/c.dft.autotvout_real_op_3.dat"
-#define AUTOTB_TVIN_real_op_4 "../tv/cdatafile/c.dft.autotvin_real_op_4.dat"
-#define AUTOTB_TVOUT_real_op_4 "../tv/cdatafile/c.dft.autotvout_real_op_4.dat"
-#define AUTOTB_TVIN_real_op_5 "../tv/cdatafile/c.dft.autotvin_real_op_5.dat"
-#define AUTOTB_TVOUT_real_op_5 "../tv/cdatafile/c.dft.autotvout_real_op_5.dat"
-#define AUTOTB_TVIN_real_op_6 "../tv/cdatafile/c.dft.autotvin_real_op_6.dat"
-#define AUTOTB_TVOUT_real_op_6 "../tv/cdatafile/c.dft.autotvout_real_op_6.dat"
-#define AUTOTB_TVIN_real_op_7 "../tv/cdatafile/c.dft.autotvin_real_op_7.dat"
-#define AUTOTB_TVOUT_real_op_7 "../tv/cdatafile/c.dft.autotvout_real_op_7.dat"
-#define AUTOTB_TVIN_imag_op_0 "../tv/cdatafile/c.dft.autotvin_imag_op_0.dat"
-#define AUTOTB_TVOUT_imag_op_0 "../tv/cdatafile/c.dft.autotvout_imag_op_0.dat"
-#define AUTOTB_TVIN_imag_op_1 "../tv/cdatafile/c.dft.autotvin_imag_op_1.dat"
-#define AUTOTB_TVOUT_imag_op_1 "../tv/cdatafile/c.dft.autotvout_imag_op_1.dat"
-#define AUTOTB_TVIN_imag_op_2 "../tv/cdatafile/c.dft.autotvin_imag_op_2.dat"
-#define AUTOTB_TVOUT_imag_op_2 "../tv/cdatafile/c.dft.autotvout_imag_op_2.dat"
-#define AUTOTB_TVIN_imag_op_3 "../tv/cdatafile/c.dft.autotvin_imag_op_3.dat"
-#define AUTOTB_TVOUT_imag_op_3 "../tv/cdatafile/c.dft.autotvout_imag_op_3.dat"
-#define AUTOTB_TVIN_imag_op_4 "../tv/cdatafile/c.dft.autotvin_imag_op_4.dat"
-#define AUTOTB_TVOUT_imag_op_4 "../tv/cdatafile/c.dft.autotvout_imag_op_4.dat"
-#define AUTOTB_TVIN_imag_op_5 "../tv/cdatafile/c.dft.autotvin_imag_op_5.dat"
-#define AUTOTB_TVOUT_imag_op_5 "../tv/cdatafile/c.dft.autotvout_imag_op_5.dat"
-#define AUTOTB_TVIN_imag_op_6 "../tv/cdatafile/c.dft.autotvin_imag_op_6.dat"
-#define AUTOTB_TVOUT_imag_op_6 "../tv/cdatafile/c.dft.autotvout_imag_op_6.dat"
-#define AUTOTB_TVIN_imag_op_7 "../tv/cdatafile/c.dft.autotvin_imag_op_7.dat"
-#define AUTOTB_TVOUT_imag_op_7 "../tv/cdatafile/c.dft.autotvout_imag_op_7.dat"
+#define AUTOTB_TVIN_input_real "../tv/cdatafile/c.dft.autotvin_input_real.dat"
+#define WRAPC_STREAM_SIZE_IN_input_real "../tv/stream_size/stream_size_in_input_real.dat"
+#define WRAPC_STREAM_INGRESS_STATUS_input_real "../tv/stream_size/stream_ingress_status_input_real.dat"
+#define AUTOTB_TVIN_input_imag "../tv/cdatafile/c.dft.autotvin_input_imag.dat"
+#define WRAPC_STREAM_SIZE_IN_input_imag "../tv/stream_size/stream_size_in_input_imag.dat"
+#define WRAPC_STREAM_INGRESS_STATUS_input_imag "../tv/stream_size/stream_ingress_status_input_imag.dat"
+#define AUTOTB_TVOUT_output_real "../tv/cdatafile/c.dft.autotvout_output_real.dat"
+#define WRAPC_STREAM_SIZE_OUT_output_real "../tv/stream_size/stream_size_out_output_real.dat"
+#define WRAPC_STREAM_EGRESS_STATUS_output_real "../tv/stream_size/stream_egress_status_output_real.dat"
+#define AUTOTB_TVOUT_output_imag "../tv/cdatafile/c.dft.autotvout_output_imag.dat"
+#define WRAPC_STREAM_SIZE_OUT_output_imag "../tv/stream_size/stream_size_out_output_imag.dat"
+#define WRAPC_STREAM_EGRESS_STATUS_output_imag "../tv/stream_size/stream_egress_status_output_imag.dat"
 
 
 // tvout file define:
-#define AUTOTB_TVOUT_PC_real_op_0 "../tv/rtldatafile/rtl.dft.autotvout_real_op_0.dat"
-#define AUTOTB_TVOUT_PC_real_op_1 "../tv/rtldatafile/rtl.dft.autotvout_real_op_1.dat"
-#define AUTOTB_TVOUT_PC_real_op_2 "../tv/rtldatafile/rtl.dft.autotvout_real_op_2.dat"
-#define AUTOTB_TVOUT_PC_real_op_3 "../tv/rtldatafile/rtl.dft.autotvout_real_op_3.dat"
-#define AUTOTB_TVOUT_PC_real_op_4 "../tv/rtldatafile/rtl.dft.autotvout_real_op_4.dat"
-#define AUTOTB_TVOUT_PC_real_op_5 "../tv/rtldatafile/rtl.dft.autotvout_real_op_5.dat"
-#define AUTOTB_TVOUT_PC_real_op_6 "../tv/rtldatafile/rtl.dft.autotvout_real_op_6.dat"
-#define AUTOTB_TVOUT_PC_real_op_7 "../tv/rtldatafile/rtl.dft.autotvout_real_op_7.dat"
-#define AUTOTB_TVOUT_PC_imag_op_0 "../tv/rtldatafile/rtl.dft.autotvout_imag_op_0.dat"
-#define AUTOTB_TVOUT_PC_imag_op_1 "../tv/rtldatafile/rtl.dft.autotvout_imag_op_1.dat"
-#define AUTOTB_TVOUT_PC_imag_op_2 "../tv/rtldatafile/rtl.dft.autotvout_imag_op_2.dat"
-#define AUTOTB_TVOUT_PC_imag_op_3 "../tv/rtldatafile/rtl.dft.autotvout_imag_op_3.dat"
-#define AUTOTB_TVOUT_PC_imag_op_4 "../tv/rtldatafile/rtl.dft.autotvout_imag_op_4.dat"
-#define AUTOTB_TVOUT_PC_imag_op_5 "../tv/rtldatafile/rtl.dft.autotvout_imag_op_5.dat"
-#define AUTOTB_TVOUT_PC_imag_op_6 "../tv/rtldatafile/rtl.dft.autotvout_imag_op_6.dat"
-#define AUTOTB_TVOUT_PC_imag_op_7 "../tv/rtldatafile/rtl.dft.autotvout_imag_op_7.dat"
+#define AUTOTB_TVOUT_PC_output_real "../tv/rtldatafile/rtl.dft.autotvout_output_real.dat"
+#define AUTOTB_TVOUT_PC_output_imag "../tv/rtldatafile/rtl.dft.autotvout_output_imag.dat"
 
 
 namespace hls::sim
@@ -1296,1029 +1230,97 @@ namespace hls::sim
 
 
 extern "C"
-void dft_hw_stub_wrapper(void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*, void*);
+void dft_hw_stub_wrapper(void*, void*, void*, void*);
 
 extern "C"
-void apatb_dft_hw(void* __xlx_apatb_param_real_sample_0, void* __xlx_apatb_param_real_sample_1, void* __xlx_apatb_param_real_sample_2, void* __xlx_apatb_param_real_sample_3, void* __xlx_apatb_param_real_sample_4, void* __xlx_apatb_param_real_sample_5, void* __xlx_apatb_param_real_sample_6, void* __xlx_apatb_param_real_sample_7, void* __xlx_apatb_param_imag_sample_0, void* __xlx_apatb_param_imag_sample_1, void* __xlx_apatb_param_imag_sample_2, void* __xlx_apatb_param_imag_sample_3, void* __xlx_apatb_param_imag_sample_4, void* __xlx_apatb_param_imag_sample_5, void* __xlx_apatb_param_imag_sample_6, void* __xlx_apatb_param_imag_sample_7, void* __xlx_apatb_param_real_op_0, void* __xlx_apatb_param_real_op_1, void* __xlx_apatb_param_real_op_2, void* __xlx_apatb_param_real_op_3, void* __xlx_apatb_param_real_op_4, void* __xlx_apatb_param_real_op_5, void* __xlx_apatb_param_real_op_6, void* __xlx_apatb_param_real_op_7, void* __xlx_apatb_param_imag_op_0, void* __xlx_apatb_param_imag_op_1, void* __xlx_apatb_param_imag_op_2, void* __xlx_apatb_param_imag_op_3, void* __xlx_apatb_param_imag_op_4, void* __xlx_apatb_param_imag_op_5, void* __xlx_apatb_param_imag_op_6, void* __xlx_apatb_param_imag_op_7)
+void apatb_dft_hw(void* __xlx_apatb_param_input_real, void* __xlx_apatb_param_input_imag, void* __xlx_apatb_param_output_real, void* __xlx_apatb_param_output_imag)
 {
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port0 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port0 {
-#endif
+  static hls::sim::Stream<float> port0 {
     .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_sample_0" },
+    .name = "input_real",
 #ifdef POST_CHECK
+    .reader = new hls::sim::Reader(WRAPC_STREAM_SIZE_IN_input_real),
 #else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_sample_0),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_sample_0),
+    .writer = new hls::sim::Writer(AUTOTB_TVIN_input_real),
+    .swriter = new hls::sim::Writer(WRAPC_STREAM_SIZE_IN_input_real),
+    .gwriter = new hls::sim::Writer(WRAPC_STREAM_INGRESS_STATUS_input_real),
 #endif
-#endif
-    .hasWrite = { false },
   };
-  port0.param = { __xlx_apatb_param_real_sample_0 };
-  port0.mname = { "real_sample_0" };
-  port0.nbytes = { 512 };
+  port0.param = (hls::stream<float>*)__xlx_apatb_param_input_real;
+  port0.hasWrite = false;
 
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port1 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port1 {
-#endif
+  static hls::sim::Stream<float> port1 {
     .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_sample_1" },
+    .name = "input_imag",
 #ifdef POST_CHECK
+    .reader = new hls::sim::Reader(WRAPC_STREAM_SIZE_IN_input_imag),
 #else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_sample_1),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_sample_1),
+    .writer = new hls::sim::Writer(AUTOTB_TVIN_input_imag),
+    .swriter = new hls::sim::Writer(WRAPC_STREAM_SIZE_IN_input_imag),
+    .gwriter = new hls::sim::Writer(WRAPC_STREAM_INGRESS_STATUS_input_imag),
 #endif
-#endif
-    .hasWrite = { false },
   };
-  port1.param = { __xlx_apatb_param_real_sample_1 };
-  port1.mname = { "real_sample_1" };
-  port1.nbytes = { 512 };
+  port1.param = (hls::stream<float>*)__xlx_apatb_param_input_imag;
+  port1.hasWrite = false;
 
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port2 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port2 {
-#endif
+  static hls::sim::Stream<float> port2 {
     .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_sample_2" },
+    .name = "output_real",
 #ifdef POST_CHECK
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_output_real),
 #else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_sample_2),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_sample_2),
+    .writer = new hls::sim::Writer(AUTOTB_TVOUT_output_real),
+    .swriter = new hls::sim::Writer(WRAPC_STREAM_SIZE_OUT_output_real),
+    .gwriter = new hls::sim::Writer(WRAPC_STREAM_EGRESS_STATUS_output_real),
 #endif
-#endif
-    .hasWrite = { false },
   };
-  port2.param = { __xlx_apatb_param_real_sample_2 };
-  port2.mname = { "real_sample_2" };
-  port2.nbytes = { 512 };
+  port2.param = (hls::stream<float>*)__xlx_apatb_param_output_real;
+  port2.hasWrite = true;
 
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port3 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port3 {
-#endif
+  static hls::sim::Stream<float> port3 {
     .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_sample_3" },
+    .name = "output_imag",
 #ifdef POST_CHECK
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_output_imag),
 #else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_sample_3),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_sample_3),
+    .writer = new hls::sim::Writer(AUTOTB_TVOUT_output_imag),
+    .swriter = new hls::sim::Writer(WRAPC_STREAM_SIZE_OUT_output_imag),
+    .gwriter = new hls::sim::Writer(WRAPC_STREAM_EGRESS_STATUS_output_imag),
 #endif
-#endif
-    .hasWrite = { false },
   };
-  port3.param = { __xlx_apatb_param_real_sample_3 };
-  port3.mname = { "real_sample_3" };
-  port3.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port4 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port4 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_sample_4" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_sample_4),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_sample_4),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port4.param = { __xlx_apatb_param_real_sample_4 };
-  port4.mname = { "real_sample_4" };
-  port4.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port5 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port5 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_sample_5" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_sample_5),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_sample_5),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port5.param = { __xlx_apatb_param_real_sample_5 };
-  port5.mname = { "real_sample_5" };
-  port5.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port6 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port6 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_sample_6" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_sample_6),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_sample_6),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port6.param = { __xlx_apatb_param_real_sample_6 };
-  port6.mname = { "real_sample_6" };
-  port6.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port7 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port7 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_sample_7" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_sample_7),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_sample_7),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port7.param = { __xlx_apatb_param_real_sample_7 };
-  port7.mname = { "real_sample_7" };
-  port7.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port8 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port8 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_sample_0" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_sample_0),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_sample_0),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port8.param = { __xlx_apatb_param_imag_sample_0 };
-  port8.mname = { "imag_sample_0" };
-  port8.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port9 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port9 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_sample_1" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_sample_1),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_sample_1),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port9.param = { __xlx_apatb_param_imag_sample_1 };
-  port9.mname = { "imag_sample_1" };
-  port9.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port10 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port10 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_sample_2" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_sample_2),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_sample_2),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port10.param = { __xlx_apatb_param_imag_sample_2 };
-  port10.mname = { "imag_sample_2" };
-  port10.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port11 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port11 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_sample_3" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_sample_3),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_sample_3),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port11.param = { __xlx_apatb_param_imag_sample_3 };
-  port11.mname = { "imag_sample_3" };
-  port11.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port12 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port12 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_sample_4" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_sample_4),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_sample_4),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port12.param = { __xlx_apatb_param_imag_sample_4 };
-  port12.mname = { "imag_sample_4" };
-  port12.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port13 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port13 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_sample_5" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_sample_5),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_sample_5),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port13.param = { __xlx_apatb_param_imag_sample_5 };
-  port13.mname = { "imag_sample_5" };
-  port13.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port14 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port14 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_sample_6" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_sample_6),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_sample_6),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port14.param = { __xlx_apatb_param_imag_sample_6 };
-  port14.mname = { "imag_sample_6" };
-  port14.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port15 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port15 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_sample_7" },
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_sample_7),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_sample_7),
-#endif
-#endif
-    .hasWrite = { false },
-  };
-  port15.param = { __xlx_apatb_param_imag_sample_7 };
-  port15.mname = { "imag_sample_7" };
-  port15.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port16 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port16 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_op_0" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_op_0),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_op_0),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_op_0),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_op_0),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_op_0),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_op_0),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port16.param = { __xlx_apatb_param_real_op_0 };
-  port16.mname = { "real_op_0" };
-  port16.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port17 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port17 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_op_1" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_op_1),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_op_1),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_op_1),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_op_1),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_op_1),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_op_1),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port17.param = { __xlx_apatb_param_real_op_1 };
-  port17.mname = { "real_op_1" };
-  port17.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port18 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port18 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_op_2" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_op_2),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_op_2),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_op_2),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_op_2),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_op_2),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_op_2),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port18.param = { __xlx_apatb_param_real_op_2 };
-  port18.mname = { "real_op_2" };
-  port18.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port19 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port19 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_op_3" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_op_3),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_op_3),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_op_3),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_op_3),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_op_3),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_op_3),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port19.param = { __xlx_apatb_param_real_op_3 };
-  port19.mname = { "real_op_3" };
-  port19.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port20 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port20 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_op_4" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_op_4),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_op_4),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_op_4),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_op_4),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_op_4),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_op_4),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port20.param = { __xlx_apatb_param_real_op_4 };
-  port20.mname = { "real_op_4" };
-  port20.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port21 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port21 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_op_5" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_op_5),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_op_5),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_op_5),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_op_5),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_op_5),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_op_5),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port21.param = { __xlx_apatb_param_real_op_5 };
-  port21.mname = { "real_op_5" };
-  port21.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port22 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port22 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_op_6" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_op_6),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_op_6),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_op_6),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_op_6),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_op_6),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_op_6),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port22.param = { __xlx_apatb_param_real_op_6 };
-  port22.mname = { "real_op_6" };
-  port22.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port23 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port23 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "real_op_7" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_op_7),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_op_7),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_op_7),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_op_7),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_op_7),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_op_7),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port23.param = { __xlx_apatb_param_real_op_7 };
-  port23.mname = { "real_op_7" };
-  port23.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port24 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port24 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_op_0" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag_op_0),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag_op_0),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag_op_0),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag_op_0),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_op_0),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_op_0),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port24.param = { __xlx_apatb_param_imag_op_0 };
-  port24.mname = { "imag_op_0" };
-  port24.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port25 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port25 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_op_1" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag_op_1),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag_op_1),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag_op_1),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag_op_1),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_op_1),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_op_1),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port25.param = { __xlx_apatb_param_imag_op_1 };
-  port25.mname = { "imag_op_1" };
-  port25.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port26 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port26 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_op_2" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag_op_2),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag_op_2),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag_op_2),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag_op_2),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_op_2),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_op_2),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port26.param = { __xlx_apatb_param_imag_op_2 };
-  port26.mname = { "imag_op_2" };
-  port26.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port27 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port27 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_op_3" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag_op_3),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag_op_3),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag_op_3),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag_op_3),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_op_3),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_op_3),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port27.param = { __xlx_apatb_param_imag_op_3 };
-  port27.mname = { "imag_op_3" };
-  port27.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port28 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port28 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_op_4" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag_op_4),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag_op_4),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag_op_4),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag_op_4),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_op_4),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_op_4),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port28.param = { __xlx_apatb_param_imag_op_4 };
-  port28.mname = { "imag_op_4" };
-  port28.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port29 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port29 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_op_5" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag_op_5),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag_op_5),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag_op_5),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag_op_5),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_op_5),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_op_5),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port29.param = { __xlx_apatb_param_imag_op_5 };
-  port29.mname = { "imag_op_5" };
-  port29.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port30 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port30 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_op_6" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag_op_6),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag_op_6),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag_op_6),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag_op_6),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_op_6),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_op_6),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port30.param = { __xlx_apatb_param_imag_op_6 };
-  port30.mname = { "imag_op_6" };
-  port30.nbytes = { 512 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port31 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port31 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "imag_op_7" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag_op_7),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag_op_7),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag_op_7),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag_op_7),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag_op_7),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag_op_7),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port31.param = { __xlx_apatb_param_imag_op_7 };
-  port31.mname = { "imag_op_7" };
-  port31.nbytes = { 512 };
+  port3.param = (hls::stream<float>*)__xlx_apatb_param_output_imag;
+  port3.hasWrite = true;
 
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port16);
-    check(port17);
-    check(port18);
-    check(port19);
-    check(port20);
-    check(port21);
-    check(port22);
-    check(port23);
-    check(port24);
-    check(port25);
-    check(port26);
-    check(port27);
-    check(port28);
-    check(port29);
-    check(port30);
-    check(port31);
+    check(port0);
+    check(port1);
+    check(port2);
+    check(port3);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     tcl.containsVLA = 0;
     CodeState = DUMP_INPUTS;
-    dump(port0, port0.iwriter, tcl.AESL_transaction);
-    dump(port1, port1.iwriter, tcl.AESL_transaction);
-    dump(port2, port2.iwriter, tcl.AESL_transaction);
-    dump(port3, port3.iwriter, tcl.AESL_transaction);
-    dump(port4, port4.iwriter, tcl.AESL_transaction);
-    dump(port5, port5.iwriter, tcl.AESL_transaction);
-    dump(port6, port6.iwriter, tcl.AESL_transaction);
-    dump(port7, port7.iwriter, tcl.AESL_transaction);
-    dump(port8, port8.iwriter, tcl.AESL_transaction);
-    dump(port9, port9.iwriter, tcl.AESL_transaction);
-    dump(port10, port10.iwriter, tcl.AESL_transaction);
-    dump(port11, port11.iwriter, tcl.AESL_transaction);
-    dump(port12, port12.iwriter, tcl.AESL_transaction);
-    dump(port13, port13.iwriter, tcl.AESL_transaction);
-    dump(port14, port14.iwriter, tcl.AESL_transaction);
-    dump(port15, port15.iwriter, tcl.AESL_transaction);
-    dump(port16, port16.iwriter, tcl.AESL_transaction);
-    dump(port17, port17.iwriter, tcl.AESL_transaction);
-    dump(port18, port18.iwriter, tcl.AESL_transaction);
-    dump(port19, port19.iwriter, tcl.AESL_transaction);
-    dump(port20, port20.iwriter, tcl.AESL_transaction);
-    dump(port21, port21.iwriter, tcl.AESL_transaction);
-    dump(port22, port22.iwriter, tcl.AESL_transaction);
-    dump(port23, port23.iwriter, tcl.AESL_transaction);
-    dump(port24, port24.iwriter, tcl.AESL_transaction);
-    dump(port25, port25.iwriter, tcl.AESL_transaction);
-    dump(port26, port26.iwriter, tcl.AESL_transaction);
-    dump(port27, port27.iwriter, tcl.AESL_transaction);
-    dump(port28, port28.iwriter, tcl.AESL_transaction);
-    dump(port29, port29.iwriter, tcl.AESL_transaction);
-    dump(port30, port30.iwriter, tcl.AESL_transaction);
-    dump(port31, port31.iwriter, tcl.AESL_transaction);
+    port0.markSize();
+    port1.markSize();
+    port0.buffer();
+    port1.buffer();
+    port2.markSize();
+    port3.markSize();
+    CodeState = CALL_C_DUT;
+    dft_hw_stub_wrapper(__xlx_apatb_param_input_real, __xlx_apatb_param_input_imag, __xlx_apatb_param_output_real, __xlx_apatb_param_output_imag);
+    port2.buffer();
+    port3.buffer();
+    dump(port0, tcl.AESL_transaction);
+    dump(port1, tcl.AESL_transaction);
     port0.doTCL(tcl);
     port1.doTCL(tcl);
+    CodeState = DUMP_OUTPUTS;
+    dump(port2, tcl.AESL_transaction);
+    dump(port3, tcl.AESL_transaction);
     port2.doTCL(tcl);
     port3.doTCL(tcl);
-    port4.doTCL(tcl);
-    port5.doTCL(tcl);
-    port6.doTCL(tcl);
-    port7.doTCL(tcl);
-    port8.doTCL(tcl);
-    port9.doTCL(tcl);
-    port10.doTCL(tcl);
-    port11.doTCL(tcl);
-    port12.doTCL(tcl);
-    port13.doTCL(tcl);
-    port14.doTCL(tcl);
-    port15.doTCL(tcl);
-    port16.doTCL(tcl);
-    port17.doTCL(tcl);
-    port18.doTCL(tcl);
-    port19.doTCL(tcl);
-    port20.doTCL(tcl);
-    port21.doTCL(tcl);
-    port22.doTCL(tcl);
-    port23.doTCL(tcl);
-    port24.doTCL(tcl);
-    port25.doTCL(tcl);
-    port26.doTCL(tcl);
-    port27.doTCL(tcl);
-    port28.doTCL(tcl);
-    port29.doTCL(tcl);
-    port30.doTCL(tcl);
-    port31.doTCL(tcl);
-    CodeState = CALL_C_DUT;
-    dft_hw_stub_wrapper(__xlx_apatb_param_real_sample_0, __xlx_apatb_param_real_sample_1, __xlx_apatb_param_real_sample_2, __xlx_apatb_param_real_sample_3, __xlx_apatb_param_real_sample_4, __xlx_apatb_param_real_sample_5, __xlx_apatb_param_real_sample_6, __xlx_apatb_param_real_sample_7, __xlx_apatb_param_imag_sample_0, __xlx_apatb_param_imag_sample_1, __xlx_apatb_param_imag_sample_2, __xlx_apatb_param_imag_sample_3, __xlx_apatb_param_imag_sample_4, __xlx_apatb_param_imag_sample_5, __xlx_apatb_param_imag_sample_6, __xlx_apatb_param_imag_sample_7, __xlx_apatb_param_real_op_0, __xlx_apatb_param_real_op_1, __xlx_apatb_param_real_op_2, __xlx_apatb_param_real_op_3, __xlx_apatb_param_real_op_4, __xlx_apatb_param_real_op_5, __xlx_apatb_param_real_op_6, __xlx_apatb_param_real_op_7, __xlx_apatb_param_imag_op_0, __xlx_apatb_param_imag_op_1, __xlx_apatb_param_imag_op_2, __xlx_apatb_param_imag_op_3, __xlx_apatb_param_imag_op_4, __xlx_apatb_param_imag_op_5, __xlx_apatb_param_imag_op_6, __xlx_apatb_param_imag_op_7);
-    CodeState = DUMP_OUTPUTS;
-    dump(port16, port16.owriter, tcl.AESL_transaction);
-    dump(port17, port17.owriter, tcl.AESL_transaction);
-    dump(port18, port18.owriter, tcl.AESL_transaction);
-    dump(port19, port19.owriter, tcl.AESL_transaction);
-    dump(port20, port20.owriter, tcl.AESL_transaction);
-    dump(port21, port21.owriter, tcl.AESL_transaction);
-    dump(port22, port22.owriter, tcl.AESL_transaction);
-    dump(port23, port23.owriter, tcl.AESL_transaction);
-    dump(port24, port24.owriter, tcl.AESL_transaction);
-    dump(port25, port25.owriter, tcl.AESL_transaction);
-    dump(port26, port26.owriter, tcl.AESL_transaction);
-    dump(port27, port27.owriter, tcl.AESL_transaction);
-    dump(port28, port28.owriter, tcl.AESL_transaction);
-    dump(port29, port29.owriter, tcl.AESL_transaction);
-    dump(port30, port30.owriter, tcl.AESL_transaction);
-    dump(port31, port31.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {
