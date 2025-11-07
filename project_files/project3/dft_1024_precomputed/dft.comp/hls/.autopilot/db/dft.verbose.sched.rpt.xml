@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dft'" level="0">
-<item name = "Date">Thu Nov  6 17:33:11 2025
+<item name = "Date">Thu Nov  6 17:53:32 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">dft.comp</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">6292502, 6292502, 62.925 ms, 62.925 ms, 6292503, 6292503, no</column>
+<column name="">6292504, 6292504, 62.925 ms, 62.925 ms, 6292505, 6292505, no</column>
 </table>
 </item>
 <item name = "Detail">

@@ -16,7 +16,7 @@ Args:
   - String:          'automatically set the pipeline for Loop< '
   - LoopName:        READ_INPUT
   - String:          '> at '
-  - LoopLoc:         'dft.cpp:14:14'
+  - LoopLoc:         'dft.cpp:16:14'
   - String:          ' '
 ...
 --- !HLSReportInfo
@@ -26,6 +26,6 @@ Args:
   - String:          'automatically set the pipeline for Loop< '
   - LoopName:        INNER_LOOP
   - String:          '> at '
-  - LoopLoc:         'dft.cpp:23:15'
+  - LoopLoc:         'dft.cpp:25:15'
   - String:          ' '
 ...

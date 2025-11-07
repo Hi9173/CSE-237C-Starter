@@ -20,18 +20,18 @@ set ap_memory_interface_dict [dict create]
 dict set ap_memory_interface_dict real_sample { MEM_WIDTH 32 MEM_SIZE 4096 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 0 }
 dict set ap_memory_interface_dict imag_sample { MEM_WIDTH 32 MEM_SIZE 4096 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 0 }
 set C_modelArgList {
-	{ input_real int 32 regular {fifo 0 volatile }  }
+	{ input_real int 32 regular {axi_s 0 volatile  { input_real Data } }  }
 	{ real_sample float 32 regular {array 1024 { 0 3 } 0 1 }  }
-	{ input_imag int 32 regular {fifo 0 volatile }  }
+	{ input_imag int 32 regular {axi_s 0 volatile  { input_imag Data } }  }
 	{ imag_sample float 32 regular {array 1024 { 0 3 } 0 1 }  }
 }
 set hasAXIMCache 0
 set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "input_real", "interface" : "fifo", "bitwidth" : 32, "direction" : "READONLY"} , 
+	{ "Name" : "input_real", "interface" : "axis", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "real_sample", "interface" : "memory", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
- 	{ "Name" : "input_imag", "interface" : "fifo", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "input_imag", "interface" : "axis", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "imag_sample", "interface" : "memory", "bitwidth" : 32, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
 set portNum 20
@@ -42,16 +42,16 @@ set portList {
 	{ ap_done sc_out sc_logic 1 predone -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ input_real_dout sc_in sc_lv 32 signal 0 } 
-	{ input_real_empty_n sc_in sc_logic 1 signal 0 } 
-	{ input_real_read sc_out sc_logic 1 signal 0 } 
-	{ input_imag_dout sc_in sc_lv 32 signal 2 } 
-	{ input_imag_empty_n sc_in sc_logic 1 signal 2 } 
-	{ input_imag_read sc_out sc_logic 1 signal 2 } 
+	{ input_real_TVALID sc_in sc_logic 1 invld 0 } 
+	{ input_imag_TVALID sc_in sc_logic 1 invld 2 } 
+	{ input_real_TDATA sc_in sc_lv 32 signal 0 } 
+	{ input_real_TREADY sc_out sc_logic 1 inacc 0 } 
 	{ real_sample_address0 sc_out sc_lv 10 signal 1 } 
 	{ real_sample_ce0 sc_out sc_logic 1 signal 1 } 
 	{ real_sample_we0 sc_out sc_logic 1 signal 1 } 
 	{ real_sample_d0 sc_out sc_lv 32 signal 1 } 
+	{ input_imag_TDATA sc_in sc_lv 32 signal 2 } 
+	{ input_imag_TREADY sc_out sc_logic 1 inacc 2 } 
 	{ imag_sample_address0 sc_out sc_lv 10 signal 3 } 
 	{ imag_sample_ce0 sc_out sc_logic 1 signal 3 } 
 	{ imag_sample_we0 sc_out sc_logic 1 signal 3 } 
@@ -64,16 +64,16 @@ set NewPortList {[
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "input_real_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "input_real", "role": "dout" }} , 
- 	{ "name": "input_real_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "input_real", "role": "empty_n" }} , 
- 	{ "name": "input_real_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "input_real", "role": "read" }} , 
- 	{ "name": "input_imag_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "input_imag", "role": "dout" }} , 
- 	{ "name": "input_imag_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "input_imag", "role": "empty_n" }} , 
- 	{ "name": "input_imag_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "input_imag", "role": "read" }} , 
+ 	{ "name": "input_real_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "input_real", "role": "TVALID" }} , 
+ 	{ "name": "input_imag_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "input_imag", "role": "TVALID" }} , 
+ 	{ "name": "input_real_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "input_real", "role": "TDATA" }} , 
+ 	{ "name": "input_real_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "input_real", "role": "TREADY" }} , 
  	{ "name": "real_sample_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "real_sample", "role": "address0" }} , 
  	{ "name": "real_sample_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "real_sample", "role": "ce0" }} , 
  	{ "name": "real_sample_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "real_sample", "role": "we0" }} , 
  	{ "name": "real_sample_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "real_sample", "role": "d0" }} , 
+ 	{ "name": "input_imag_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "input_imag", "role": "TDATA" }} , 
+ 	{ "name": "input_imag_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "input_imag", "role": "TREADY" }} , 
  	{ "name": "imag_sample_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "imag_sample", "role": "address0" }} , 
  	{ "name": "imag_sample_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imag_sample", "role": "ce0" }} , 
  	{ "name": "imag_sample_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "imag_sample", "role": "we0" }} , 
@@ -95,13 +95,13 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "input_real", "Type" : "Fifo", "Direction" : "I",
+			{"Name" : "input_real", "Type" : "Axis", "Direction" : "I",
 				"BlockSignal" : [
-					{"Name" : "input_real_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "input_real_TDATA_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "real_sample", "Type" : "Memory", "Direction" : "O"},
-			{"Name" : "input_imag", "Type" : "Fifo", "Direction" : "I",
+			{"Name" : "input_imag", "Type" : "Axis", "Direction" : "I",
 				"BlockSignal" : [
-					{"Name" : "input_imag_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "input_imag_TDATA_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "imag_sample", "Type" : "Memory", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "READ_INPUT", "PipelineType" : "UPC",
@@ -128,8 +128,8 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	input_real { ap_fifo {  { input_real_dout fifo_data_in 0 32 }  { input_real_empty_n fifo_status 0 1 }  { input_real_read fifo_port_we 1 1 } } }
+	input_real { axis {  { input_real_TVALID in_vld 0 1 }  { input_real_TDATA in_data 0 32 }  { input_real_TREADY in_acc 1 1 } } }
 	real_sample { ap_memory {  { real_sample_address0 mem_address 1 10 }  { real_sample_ce0 mem_ce 1 1 }  { real_sample_we0 mem_we 1 1 }  { real_sample_d0 mem_din 1 32 } } }
-	input_imag { ap_fifo {  { input_imag_dout fifo_data_in 0 32 }  { input_imag_empty_n fifo_status 0 1 }  { input_imag_read fifo_port_we 1 1 } } }
+	input_imag { axis {  { input_imag_TVALID in_vld 0 1 }  { input_imag_TDATA in_data 0 32 }  { input_imag_TREADY in_acc 1 1 } } }
 	imag_sample { ap_memory {  { imag_sample_address0 mem_address 1 10 }  { imag_sample_ce0 mem_ce 1 1 }  { imag_sample_we0 mem_we 1 1 }  { imag_sample_d0 mem_din 1 32 } } }
 }

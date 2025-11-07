@@ -31,7 +31,7 @@
               <control/>
               <opType/>
               <implIndex/>
-              <coreName>FIFO</coreName>
+              <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -40,7 +40,7 @@
             <bitwidth>32</bitwidth>
           </Value>
           <direction>1</direction>
-          <if_type>3</if_type>
+          <if_type>0</if_type>
           <array_size>0</array_size>
           <bit_vecs class_id="7" tracking_level="0" version="0">
             <count>0</count>
@@ -67,7 +67,7 @@
               <control/>
               <opType/>
               <implIndex/>
-              <coreName>FIFO</coreName>
+              <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
               <coreId>4294967295</coreId>
@@ -76,7 +76,7 @@
             <bitwidth>32</bitwidth>
           </Value>
           <direction>1</direction>
-          <if_type>3</if_type>
+          <if_type>0</if_type>
           <array_size>0</array_size>
           <bit_vecs>
             <count>0</count>
@@ -167,7 +167,7 @@
               <name>temp_real</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>20</lineNumber>
+              <lineNumber>22</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -183,7 +183,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>20</second>
+                      <second>22</second>
                     </item>
                   </second>
                 </item>
@@ -223,7 +223,7 @@
               <name>temp_imag</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>21</lineNumber>
+              <lineNumber>23</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -239,7 +239,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>21</second>
+                      <second>23</second>
                     </item>
                   </second>
                 </item>
@@ -279,7 +279,7 @@
               <name>j_1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -295,7 +295,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
@@ -335,7 +335,7 @@
               <name>i</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -351,7 +351,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
@@ -473,10 +473,10 @@
             <Obj>
               <type>0</type>
               <id>15</id>
-              <name>i_write_ln7</name>
+              <name>i_write_ln9</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -492,7 +492,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
@@ -530,10 +530,10 @@
             <Obj>
               <type>0</type>
               <id>16</id>
-              <name>j_1_write_ln7</name>
+              <name>j_1_write_ln9</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -549,7 +549,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
@@ -587,10 +587,10 @@
             <Obj>
               <type>0</type>
               <id>17</id>
-              <name>temp_imag_write_ln21</name>
+              <name>temp_imag_write_ln23</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>21</lineNumber>
+              <lineNumber>23</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -606,7 +606,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>21</second>
+                      <second>23</second>
                     </item>
                   </second>
                 </item>
@@ -644,10 +644,10 @@
             <Obj>
               <type>0</type>
               <id>18</id>
-              <name>temp_real_write_ln20</name>
+              <name>temp_real_write_ln22</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>20</lineNumber>
+              <lineNumber>22</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -663,7 +663,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>20</second>
+                      <second>22</second>
                     </item>
                   </second>
                 </item>
@@ -746,7 +746,7 @@
               <name>indvar_flatten_load</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>21</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -762,7 +762,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>19</second>
+                      <second>21</second>
                     </item>
                   </second>
                 </item>
@@ -784,7 +784,7 @@
             <count>2</count>
             <item_version>0</item_version>
             <item>99</item>
-            <item>267</item>
+            <item>268</item>
           </oprand_edges>
           <opcode>load</opcode>
           <m_Display>0</m_Display>
@@ -800,10 +800,10 @@
             <Obj>
               <type>0</type>
               <id>22</id>
-              <name>icmp_ln19</name>
+              <name>icmp_ln21</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>21</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -819,13 +819,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>19</second>
+                      <second>21</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln19_fu_179_p2</rtlName>
+              <rtlName>icmp_ln21_fu_181_p2</rtlName>
               <control>auto</control>
               <opType>seteq</opType>
               <implIndex>auto</implIndex>
@@ -857,10 +857,10 @@
             <Obj>
               <type>0</type>
               <id>23</id>
-              <name>add_ln19</name>
+              <name>add_ln21</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>21</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -876,13 +876,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>19</second>
+                      <second>21</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln19_fu_185_p2</rtlName>
+              <rtlName>add_ln21_fu_187_p2</rtlName>
               <control>auto</control>
               <opType>add</opType>
               <implIndex>fabric</implIndex>
@@ -914,10 +914,10 @@
             <Obj>
               <type>0</type>
               <id>24</id>
-              <name>br_ln19</name>
+              <name>br_ln21</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>21</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -933,7 +933,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>19</second>
+                      <second>21</second>
                     </item>
                   </second>
                 </item>
@@ -975,7 +975,7 @@
               <name>temp_real_load</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -991,7 +991,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
@@ -1013,7 +1013,7 @@
             <count>2</count>
             <item_version>0</item_version>
             <item>128</item>
-            <item>271</item>
+            <item>272</item>
           </oprand_edges>
           <opcode>load</opcode>
           <m_Display>1</m_Display>
@@ -1032,7 +1032,7 @@
               <name>temp_imag_load</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1048,7 +1048,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
@@ -1070,7 +1070,7 @@
             <count>2</count>
             <item_version>0</item_version>
             <item>129</item>
-            <item>270</item>
+            <item>271</item>
           </oprand_edges>
           <opcode>load</opcode>
           <m_Display>0</m_Display>
@@ -1089,7 +1089,7 @@
               <name>j_1_load</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>23</lineNumber>
+              <lineNumber>25</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1105,7 +1105,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>23</second>
+                      <second>25</second>
                     </item>
                   </second>
                 </item>
@@ -1127,7 +1127,7 @@
             <count>2</count>
             <item_version>0</item_version>
             <item>130</item>
-            <item>269</item>
+            <item>270</item>
           </oprand_edges>
           <opcode>load</opcode>
           <m_Display>0</m_Display>
@@ -1146,7 +1146,7 @@
               <name>i_load</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>21</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1162,7 +1162,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>19</second>
+                      <second>21</second>
                     </item>
                   </second>
                 </item>
@@ -1184,7 +1184,7 @@
             <count>2</count>
             <item_version>0</item_version>
             <item>131</item>
-            <item>268</item>
+            <item>269</item>
           </oprand_edges>
           <opcode>load</opcode>
           <m_Display>0</m_Display>
@@ -1200,10 +1200,10 @@
             <Obj>
               <type>0</type>
               <id>32</id>
-              <name>icmp_ln23</name>
+              <name>icmp_ln25</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>23</lineNumber>
+              <lineNumber>25</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1219,13 +1219,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>23</second>
+                      <second>25</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln23_fu_194_p2</rtlName>
+              <rtlName>icmp_ln25_fu_196_p2</rtlName>
               <control>auto</control>
               <opType>seteq</opType>
               <implIndex>auto</implIndex>
@@ -1257,10 +1257,10 @@
             <Obj>
               <type>0</type>
               <id>33</id>
-              <name>select_ln7</name>
+              <name>select_ln9</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1276,13 +1276,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>select_ln7_fu_200_p3</rtlName>
+              <rtlName>select_ln9_fu_202_p3</rtlName>
               <control>auto</control>
               <opType>select</opType>
               <implIndex>auto_sel</implIndex>
@@ -1315,10 +1315,10 @@
             <Obj>
               <type>0</type>
               <id>34</id>
-              <name>select_ln7_1</name>
+              <name>select_ln9_1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1334,13 +1334,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>select_ln7_1_fu_288_p3</rtlName>
+              <rtlName>select_ln9_1_fu_290_p3</rtlName>
               <control>auto</control>
               <opType>select</opType>
               <implIndex>auto_sel</implIndex>
@@ -1373,10 +1373,10 @@
             <Obj>
               <type>0</type>
               <id>35</id>
-              <name>select_ln7_2</name>
+              <name>select_ln9_2</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1392,13 +1392,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>7</second>
+                      <second>9</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>select_ln7_2_fu_278_p3</rtlName>
+              <rtlName>select_ln9_2_fu_280_p3</rtlName>
               <control>auto</control>
               <opType>select</opType>
               <implIndex>auto_sel</implIndex>
@@ -1431,10 +1431,10 @@
             <Obj>
               <type>0</type>
               <id>36</id>
-              <name>add_ln19_1</name>
+              <name>add_ln21_1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>21</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1450,13 +1450,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>19</second>
+                      <second>21</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln19_1_fu_243_p2</rtlName>
+              <rtlName>add_ln21_1_fu_245_p2</rtlName>
               <control>auto</control>
               <opType>add</opType>
               <implIndex>fabric</implIndex>
@@ -1488,10 +1488,10 @@
             <Obj>
               <type>0</type>
               <id>37</id>
-              <name>select_ln19</name>
+              <name>select_ln21</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>19</lineNumber>
+              <lineNumber>21</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1507,13 +1507,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>19</second>
+                      <second>21</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>select_ln19_fu_249_p3</rtlName>
+              <rtlName>select_ln21_fu_251_p3</rtlName>
               <control>auto</control>
               <opType>select</opType>
               <implIndex>auto_sel</implIndex>
@@ -1546,10 +1546,10 @@
             <Obj>
               <type>0</type>
               <id>38</id>
-              <name>trunc_ln24</name>
+              <name>trunc_ln26</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>24</lineNumber>
+              <lineNumber>26</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1565,13 +1565,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>24</second>
+                      <second>26</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>idx_fu_260_p1</rtlName>
+              <rtlName>idx_fu_262_p1</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -1602,10 +1602,10 @@
             <Obj>
               <type>0</type>
               <id>39</id>
-              <name>zext_ln23</name>
+              <name>zext_ln25</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>23</lineNumber>
+              <lineNumber>25</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1621,13 +1621,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>23</second>
+                      <second>25</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln23_fu_208_p1</rtlName>
+              <rtlName>zext_ln25_fu_210_p1</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -1658,10 +1658,10 @@
             <Obj>
               <type>0</type>
               <id>40</id>
-              <name>trunc_ln24_1</name>
+              <name>trunc_ln26_1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>24</lineNumber>
+              <lineNumber>26</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1677,13 +1677,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>24</second>
+                      <second>26</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>trunc_ln24_1_fu_214_p1</rtlName>
+              <rtlName>trunc_ln26_1_fu_216_p1</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -1717,7 +1717,7 @@
               <name>idx</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>24</lineNumber>
+              <lineNumber>26</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1733,7 +1733,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>24</second>
+                      <second>26</second>
                     </item>
                   </second>
                 </item>
@@ -1771,10 +1771,10 @@
             <Obj>
               <type>0</type>
               <id>43</id>
-              <name>zext_ln25</name>
+              <name>zext_ln27</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>25</lineNumber>
+              <lineNumber>27</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1790,13 +1790,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>25</second>
+                      <second>27</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>zext_ln25_fu_270_p1</rtlName>
+              <rtlName>zext_ln27_fu_272_p1</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -1830,7 +1830,7 @@
               <name>cos_coefficients_table_addr</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>25</lineNumber>
+              <lineNumber>27</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1846,7 +1846,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>25</second>
+                      <second>27</second>
                     </item>
                   </second>
                 </item>
@@ -1888,7 +1888,7 @@
               <name>c</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>25</lineNumber>
+              <lineNumber>27</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1904,7 +1904,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>25</second>
+                      <second>27</second>
                     </item>
                   </second>
                 </item>
@@ -1944,7 +1944,7 @@
               <name>sin_coefficients_table_addr</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>26</lineNumber>
+              <lineNumber>28</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -1960,7 +1960,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>26</second>
+                      <second>28</second>
                     </item>
                   </second>
                 </item>
@@ -2002,7 +2002,7 @@
               <name>s</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>26</lineNumber>
+              <lineNumber>28</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2018,7 +2018,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>26</second>
+                      <second>28</second>
                     </item>
                   </second>
                 </item>
@@ -2058,7 +2058,7 @@
               <name>real_sample_addr</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>27</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2074,7 +2074,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>27</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2116,7 +2116,7 @@
               <name>real_sample_load</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>27</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2132,7 +2132,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>27</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2172,7 +2172,7 @@
               <name>mul</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>27</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2188,7 +2188,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>27</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2229,7 +2229,7 @@
               <name>imag_sample_addr</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>27</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2245,7 +2245,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>27</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2287,7 +2287,7 @@
               <name>imag_sample_load</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>27</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2303,7 +2303,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>27</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2343,7 +2343,7 @@
               <name>mul1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>27</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2359,7 +2359,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>27</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2400,7 +2400,7 @@
               <name>sub</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>27</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2416,7 +2416,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>27</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2457,7 +2457,7 @@
               <name>temp_real_1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>27</lineNumber>
+              <lineNumber>29</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2473,7 +2473,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>27</second>
+                      <second>29</second>
                     </item>
                   </second>
                 </item>
@@ -2514,7 +2514,7 @@
               <name>mul2</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>30</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2530,7 +2530,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>28</second>
+                      <second>30</second>
                     </item>
                   </second>
                 </item>
@@ -2571,7 +2571,7 @@
               <name>mul3</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>30</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2587,7 +2587,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>28</second>
+                      <second>30</second>
                     </item>
                   </second>
                 </item>
@@ -2628,7 +2628,7 @@
               <name>add1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>30</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2644,7 +2644,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>28</second>
+                      <second>30</second>
                     </item>
                   </second>
                 </item>
@@ -2685,7 +2685,7 @@
               <name>temp_imag_1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>28</lineNumber>
+              <lineNumber>30</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2701,7 +2701,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>28</second>
+                      <second>30</second>
                     </item>
                   </second>
                 </item>
@@ -2739,10 +2739,10 @@
             <Obj>
               <type>0</type>
               <id>60</id>
-              <name>add_ln23</name>
+              <name>add_ln25</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>23</lineNumber>
+              <lineNumber>25</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2758,13 +2758,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>23</second>
+                      <second>25</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>add_ln23_fu_218_p2</rtlName>
+              <rtlName>add_ln25_fu_220_p2</rtlName>
               <control>auto</control>
               <opType>add</opType>
               <implIndex>fabric</implIndex>
@@ -2796,10 +2796,10 @@
             <Obj>
               <type>0</type>
               <id>61</id>
-              <name>icmp_ln23_1</name>
+              <name>icmp_ln25_1</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>23</lineNumber>
+              <lineNumber>25</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2815,13 +2815,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>23</second>
+                      <second>25</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>icmp_ln23_1_fu_224_p2</rtlName>
+              <rtlName>icmp_ln25_1_fu_226_p2</rtlName>
               <control>auto</control>
               <opType>seteq</opType>
               <implIndex>auto</implIndex>
@@ -2853,10 +2853,10 @@
             <Obj>
               <type>0</type>
               <id>62</id>
-              <name>bitcast_ln31</name>
+              <name>bitcast_ln33</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>31</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2872,13 +2872,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>31</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>output_real_din</rtlName>
+              <rtlName>output_real_TDATA</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -2909,10 +2909,10 @@
             <Obj>
               <type>0</type>
               <id>63</id>
-              <name>bitcast_ln32</name>
+              <name>bitcast_ln34</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>32</lineNumber>
+              <lineNumber>34</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2928,13 +2928,13 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>32</second>
+                      <second>34</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>output_imag_din</rtlName>
+              <rtlName>output_imag_TDATA</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -2965,10 +2965,10 @@
             <Obj>
               <type>0</type>
               <id>64</id>
-              <name>br_ln23</name>
+              <name>br_ln25</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>23</lineNumber>
+              <lineNumber>25</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -2984,7 +2984,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>23</second>
+                      <second>25</second>
                     </item>
                   </second>
                 </item>
@@ -3023,10 +3023,10 @@
             <Obj>
               <type>0</type>
               <id>66</id>
-              <name>output_real_write_ln31</name>
+              <name>output_real_write_ln33</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>31</lineNumber>
+              <lineNumber>33</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -3042,7 +3042,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>31</second>
+                      <second>33</second>
                     </item>
                   </second>
                 </item>
@@ -3050,12 +3050,12 @@
               <originalName/>
               <rtlName/>
               <control>auto</control>
-              <opType>fifo</opType>
-              <implIndex>memory</implIndex>
-              <coreName>FIFO</coreName>
+              <opType>adapter</opType>
+              <implIndex>reg_slice</implIndex>
+              <coreName>regslice</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>77</coreId>
+              <coreId>135</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -3072,7 +3072,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>3.47</m_delay>
+          <m_delay>1.29</m_delay>
           <m_topoIndex>57</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -3081,10 +3081,10 @@
             <Obj>
               <type>0</type>
               <id>67</id>
-              <name>output_imag_write_ln32</name>
+              <name>output_imag_write_ln34</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>32</lineNumber>
+              <lineNumber>34</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -3100,7 +3100,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>32</second>
+                      <second>34</second>
                     </item>
                   </second>
                 </item>
@@ -3108,12 +3108,12 @@
               <originalName/>
               <rtlName/>
               <control>auto</control>
-              <opType>fifo</opType>
-              <implIndex>memory</implIndex>
-              <coreName>FIFO</coreName>
+              <opType>adapter</opType>
+              <implIndex>reg_slice</implIndex>
+              <coreName>regslice</coreName>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>77</coreId>
+              <coreId>135</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -3130,7 +3130,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>3.47</m_delay>
+          <m_delay>1.29</m_delay>
           <m_topoIndex>58</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -3139,10 +3139,10 @@
             <Obj>
               <type>0</type>
               <id>68</id>
-              <name>br_ln23</name>
+              <name>br_ln25</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>23</lineNumber>
+              <lineNumber>25</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -3158,7 +3158,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>23</second>
+                      <second>25</second>
                     </item>
                   </second>
                 </item>
@@ -3195,184 +3195,7 @@
             <Obj>
               <type>0</type>
               <id>70</id>
-              <name>indvar_flatten_write_ln19</name>
-              <fileName>dft.cpp</fileName>
-              <fileDirectory>../.</fileDirectory>
-              <lineNumber>19</lineNumber>
-              <contextFuncName>dft</contextFuncName>
-              <contextNormFuncName>dft</contextNormFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>dft.cpp</first>
-                        <second>dft</second>
-                      </first>
-                      <second>19</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <control/>
-              <opType/>
-              <implIndex/>
-              <coreName/>
-              <isStorage>0</isStorage>
-              <storageDepth>0</storageDepth>
-              <coreId>4294967295</coreId>
-              <rtlModuleName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>109</item>
-            <item>110</item>
-            <item>272</item>
-            <item>277</item>
-          </oprand_edges>
-          <opcode>store</opcode>
-          <m_Display>0</m_Display>
-          <m_isOnCriticalPath>0</m_isOnCriticalPath>
-          <m_isLCDNode>0</m_isLCDNode>
-          <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.58</m_delay>
-          <m_topoIndex>28</m_topoIndex>
-          <m_clusterGroupNumber>-1</m_clusterGroupNumber>
-        </item>
-        <item class_id_reference="9" object_id="_60">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>71</id>
-              <name>i_write_ln7</name>
-              <fileName>dft.cpp</fileName>
-              <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
-              <contextFuncName>dft</contextFuncName>
-              <contextNormFuncName>dft</contextNormFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>dft.cpp</first>
-                        <second>dft</second>
-                      </first>
-                      <second>7</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <control/>
-              <opType/>
-              <implIndex/>
-              <coreName/>
-              <isStorage>0</isStorage>
-              <storageDepth>0</storageDepth>
-              <coreId>4294967295</coreId>
-              <rtlModuleName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>111</item>
-            <item>112</item>
-            <item>273</item>
-            <item>281</item>
-          </oprand_edges>
-          <opcode>store</opcode>
-          <m_Display>0</m_Display>
-          <m_isOnCriticalPath>0</m_isOnCriticalPath>
-          <m_isLCDNode>0</m_isLCDNode>
-          <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.58</m_delay>
-          <m_topoIndex>35</m_topoIndex>
-          <m_clusterGroupNumber>-1</m_clusterGroupNumber>
-        </item>
-        <item class_id_reference="9" object_id="_61">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>72</id>
-              <name>j_1_write_ln7</name>
-              <fileName>dft.cpp</fileName>
-              <fileDirectory>../.</fileDirectory>
-              <lineNumber>7</lineNumber>
-              <contextFuncName>dft</contextFuncName>
-              <contextNormFuncName>dft</contextNormFuncName>
-              <inlineStackInfo>
-                <count>1</count>
-                <item_version>0</item_version>
-                <item>
-                  <first>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</first>
-                  <second>
-                    <count>1</count>
-                    <item_version>0</item_version>
-                    <item>
-                      <first>
-                        <first>dft.cpp</first>
-                        <second>dft</second>
-                      </first>
-                      <second>7</second>
-                    </item>
-                  </second>
-                </item>
-              </inlineStackInfo>
-              <originalName/>
-              <rtlName/>
-              <control/>
-              <opType/>
-              <implIndex/>
-              <coreName/>
-              <isStorage>0</isStorage>
-              <storageDepth>0</storageDepth>
-              <coreId>4294967295</coreId>
-              <rtlModuleName/>
-            </Obj>
-            <bitwidth>0</bitwidth>
-          </Value>
-          <oprand_edges>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>113</item>
-            <item>114</item>
-            <item>274</item>
-            <item>280</item>
-          </oprand_edges>
-          <opcode>store</opcode>
-          <m_Display>0</m_Display>
-          <m_isOnCriticalPath>0</m_isOnCriticalPath>
-          <m_isLCDNode>0</m_isLCDNode>
-          <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>1.58</m_delay>
-          <m_topoIndex>29</m_topoIndex>
-          <m_clusterGroupNumber>-1</m_clusterGroupNumber>
-        </item>
-        <item class_id_reference="9" object_id="_62">
-          <Value>
-            <Obj>
-              <type>0</type>
-              <id>73</id>
-              <name>temp_imag_write_ln21</name>
+              <name>indvar_flatten_write_ln21</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
               <lineNumber>21</lineNumber>
@@ -3412,10 +3235,10 @@
           <oprand_edges>
             <count>4</count>
             <item_version>0</item_version>
-            <item>115</item>
-            <item>116</item>
-            <item>275</item>
-            <item>279</item>
+            <item>109</item>
+            <item>110</item>
+            <item>273</item>
+            <item>278</item>
           </oprand_edges>
           <opcode>store</opcode>
           <m_Display>0</m_Display>
@@ -3423,18 +3246,18 @@
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
           <m_delay>1.58</m_delay>
-          <m_topoIndex>60</m_topoIndex>
+          <m_topoIndex>28</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
-        <item class_id_reference="9" object_id="_63">
+        <item class_id_reference="9" object_id="_60">
           <Value>
             <Obj>
               <type>0</type>
-              <id>74</id>
-              <name>temp_real_write_ln20</name>
+              <id>71</id>
+              <name>i_write_ln9</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>20</lineNumber>
+              <lineNumber>9</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -3450,7 +3273,184 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>20</second>
+                      <second>9</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <control/>
+              <opType/>
+              <implIndex/>
+              <coreName/>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>4</count>
+            <item_version>0</item_version>
+            <item>111</item>
+            <item>112</item>
+            <item>274</item>
+            <item>282</item>
+          </oprand_edges>
+          <opcode>store</opcode>
+          <m_Display>0</m_Display>
+          <m_isOnCriticalPath>0</m_isOnCriticalPath>
+          <m_isLCDNode>0</m_isLCDNode>
+          <m_isStartOfPath>0</m_isStartOfPath>
+          <m_delay>1.58</m_delay>
+          <m_topoIndex>35</m_topoIndex>
+          <m_clusterGroupNumber>-1</m_clusterGroupNumber>
+        </item>
+        <item class_id_reference="9" object_id="_61">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>72</id>
+              <name>j_1_write_ln9</name>
+              <fileName>dft.cpp</fileName>
+              <fileDirectory>../.</fileDirectory>
+              <lineNumber>9</lineNumber>
+              <contextFuncName>dft</contextFuncName>
+              <contextNormFuncName>dft</contextNormFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>dft.cpp</first>
+                        <second>dft</second>
+                      </first>
+                      <second>9</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <control/>
+              <opType/>
+              <implIndex/>
+              <coreName/>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>4</count>
+            <item_version>0</item_version>
+            <item>113</item>
+            <item>114</item>
+            <item>275</item>
+            <item>281</item>
+          </oprand_edges>
+          <opcode>store</opcode>
+          <m_Display>0</m_Display>
+          <m_isOnCriticalPath>0</m_isOnCriticalPath>
+          <m_isLCDNode>0</m_isLCDNode>
+          <m_isStartOfPath>0</m_isStartOfPath>
+          <m_delay>1.58</m_delay>
+          <m_topoIndex>29</m_topoIndex>
+          <m_clusterGroupNumber>-1</m_clusterGroupNumber>
+        </item>
+        <item class_id_reference="9" object_id="_62">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>73</id>
+              <name>temp_imag_write_ln23</name>
+              <fileName>dft.cpp</fileName>
+              <fileDirectory>../.</fileDirectory>
+              <lineNumber>23</lineNumber>
+              <contextFuncName>dft</contextFuncName>
+              <contextNormFuncName>dft</contextNormFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>dft.cpp</first>
+                        <second>dft</second>
+                      </first>
+                      <second>23</second>
+                    </item>
+                  </second>
+                </item>
+              </inlineStackInfo>
+              <originalName/>
+              <rtlName/>
+              <control/>
+              <opType/>
+              <implIndex/>
+              <coreName/>
+              <isStorage>0</isStorage>
+              <storageDepth>0</storageDepth>
+              <coreId>4294967295</coreId>
+              <rtlModuleName/>
+            </Obj>
+            <bitwidth>0</bitwidth>
+          </Value>
+          <oprand_edges>
+            <count>4</count>
+            <item_version>0</item_version>
+            <item>115</item>
+            <item>116</item>
+            <item>276</item>
+            <item>280</item>
+          </oprand_edges>
+          <opcode>store</opcode>
+          <m_Display>0</m_Display>
+          <m_isOnCriticalPath>0</m_isOnCriticalPath>
+          <m_isLCDNode>0</m_isLCDNode>
+          <m_isStartOfPath>0</m_isStartOfPath>
+          <m_delay>1.58</m_delay>
+          <m_topoIndex>60</m_topoIndex>
+          <m_clusterGroupNumber>-1</m_clusterGroupNumber>
+        </item>
+        <item class_id_reference="9" object_id="_63">
+          <Value>
+            <Obj>
+              <type>0</type>
+              <id>74</id>
+              <name>temp_real_write_ln22</name>
+              <fileName>dft.cpp</fileName>
+              <fileDirectory>../.</fileDirectory>
+              <lineNumber>22</lineNumber>
+              <contextFuncName>dft</contextFuncName>
+              <contextNormFuncName>dft</contextNormFuncName>
+              <inlineStackInfo>
+                <count>1</count>
+                <item_version>0</item_version>
+                <item>
+                  <first>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</first>
+                  <second>
+                    <count>1</count>
+                    <item_version>0</item_version>
+                    <item>
+                      <first>
+                        <first>dft.cpp</first>
+                        <second>dft</second>
+                      </first>
+                      <second>22</second>
                     </item>
                   </second>
                 </item>
@@ -3473,8 +3473,8 @@
             <item_version>0</item_version>
             <item>117</item>
             <item>118</item>
-            <item>276</item>
-            <item>278</item>
+            <item>277</item>
+            <item>279</item>
             <item>2147483647</item>
           </oprand_edges>
           <opcode>store</opcode>
@@ -3491,10 +3491,10 @@
             <Obj>
               <type>0</type>
               <id>75</id>
-              <name>br_ln23</name>
+              <name>br_ln25</name>
               <fileName>dft.cpp</fileName>
               <fileDirectory>../.</fileDirectory>
-              <lineNumber>23</lineNumber>
+              <lineNumber>25</lineNumber>
               <contextFuncName>dft</contextFuncName>
               <contextNormFuncName>dft</contextNormFuncName>
               <inlineStackInfo>
@@ -3510,7 +3510,7 @@
                         <first>dft.cpp</first>
                         <second>dft</second>
                       </first>
-                      <second>23</second>
+                      <second>25</second>
                     </item>
                   </second>
                 </item>
@@ -3587,7 +3587,7 @@
           <Value>
             <Obj>
               <type>0</type>
-              <id>282</id>
+              <id>283</id>
               <name>cos_coefficients_table</name>
               <fileName/>
               <fileDirectory/>
@@ -3628,7 +3628,7 @@
           <Value>
             <Obj>
               <type>0</type>
-              <id>283</id>
+              <id>284</id>
               <name>sin_coefficients_table</name>
               <fileName/>
               <fileDirectory/>
@@ -4947,154 +4947,154 @@
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_190">
-          <id>260</id>
+          <id>261</id>
           <edge_type>2</edge_type>
           <source_obj>20</source_obj>
           <sink_obj>25</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_191">
-          <id>261</id>
+          <id>262</id>
           <edge_type>2</edge_type>
           <source_obj>25</source_obj>
           <sink_obj>78</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_192">
-          <id>262</id>
+          <id>263</id>
           <edge_type>2</edge_type>
           <source_obj>25</source_obj>
           <sink_obj>65</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_193">
-          <id>263</id>
+          <id>264</id>
           <edge_type>2</edge_type>
           <source_obj>65</source_obj>
           <sink_obj>69</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_194">
-          <id>264</id>
+          <id>265</id>
           <edge_type>2</edge_type>
           <source_obj>65</source_obj>
           <sink_obj>76</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_195">
-          <id>265</id>
+          <id>266</id>
           <edge_type>2</edge_type>
           <source_obj>69</source_obj>
           <sink_obj>76</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_196">
-          <id>266</id>
+          <id>267</id>
           <edge_type>2</edge_type>
           <source_obj>76</source_obj>
           <sink_obj>25</sink_obj>
           <is_back_edge>1</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_197">
-          <id>267</id>
+          <id>268</id>
           <edge_type>4</edge_type>
           <source_obj>14</source_obj>
           <sink_obj>21</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_198">
-          <id>268</id>
+          <id>269</id>
           <edge_type>4</edge_type>
           <source_obj>15</source_obj>
           <sink_obj>29</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_199">
-          <id>269</id>
+          <id>270</id>
           <edge_type>4</edge_type>
           <source_obj>16</source_obj>
           <sink_obj>28</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_200">
-          <id>270</id>
+          <id>271</id>
           <edge_type>4</edge_type>
           <source_obj>17</source_obj>
           <sink_obj>27</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_201">
-          <id>271</id>
+          <id>272</id>
           <edge_type>4</edge_type>
           <source_obj>18</source_obj>
           <sink_obj>26</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_202">
-          <id>272</id>
+          <id>273</id>
           <edge_type>4</edge_type>
           <source_obj>14</source_obj>
           <sink_obj>70</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_203">
-          <id>273</id>
+          <id>274</id>
           <edge_type>4</edge_type>
           <source_obj>15</source_obj>
           <sink_obj>71</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_204">
-          <id>274</id>
+          <id>275</id>
           <edge_type>4</edge_type>
           <source_obj>16</source_obj>
           <sink_obj>72</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_205">
-          <id>275</id>
+          <id>276</id>
           <edge_type>4</edge_type>
           <source_obj>17</source_obj>
           <sink_obj>73</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_206">
-          <id>276</id>
+          <id>277</id>
           <edge_type>4</edge_type>
           <source_obj>18</source_obj>
           <sink_obj>74</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_207">
-          <id>277</id>
+          <id>278</id>
           <edge_type>4</edge_type>
           <source_obj>21</source_obj>
           <sink_obj>70</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_208">
-          <id>278</id>
+          <id>279</id>
           <edge_type>4</edge_type>
           <source_obj>26</source_obj>
           <sink_obj>74</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_209">
-          <id>279</id>
+          <id>280</id>
           <edge_type>4</edge_type>
           <source_obj>27</source_obj>
           <sink_obj>73</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_210">
-          <id>280</id>
+          <id>281</id>
           <edge_type>4</edge_type>
           <source_obj>28</source_obj>
           <sink_obj>72</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_211">
-          <id>281</id>
+          <id>282</id>
           <edge_type>4</edge_type>
           <source_obj>29</source_obj>
           <sink_obj>71</sink_obj>
@@ -6252,7 +6252,7 @@
         <count>16</count>
         <item_version>0</item_version>
         <item>
-          <first>add_ln19_1_fu_243_p2 ( + ) </first>
+          <first>add_ln21_1_fu_245_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6275,7 +6275,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln19_fu_185_p2 ( + ) </first>
+          <first>add_ln21_fu_187_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6298,7 +6298,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln23_fu_218_p2 ( + ) </first>
+          <first>add_ln25_fu_220_p2 ( + ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6459,7 +6459,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln19_fu_179_p2 ( icmp ) </first>
+          <first>icmp_ln21_fu_181_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6482,7 +6482,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln23_1_fu_224_p2 ( icmp ) </first>
+          <first>icmp_ln25_1_fu_226_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6505,7 +6505,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln23_fu_194_p2 ( icmp ) </first>
+          <first>icmp_ln25_fu_196_p2 ( icmp ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -6528,7 +6528,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln19_fu_249_p3 ( select ) </first>
+          <first>select_ln21_fu_251_p3 ( select ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -6555,7 +6555,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln7_1_fu_288_p3 ( select ) </first>
+          <first>select_ln9_1_fu_290_p3 ( select ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -6582,7 +6582,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln7_2_fu_278_p3 ( select ) </first>
+          <first>select_ln9_2_fu_280_p3 ( select ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -6609,7 +6609,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln7_fu_200_p3 ( select ) </first>
+          <first>select_ln9_fu_202_p3 ( select ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7015,7 +7015,7 @@
           </second>
         </item>
         <item>
-          <first>grp_fu_138_opcode</first>
+          <first>grp_fu_140_opcode</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7042,7 +7042,7 @@
           </second>
         </item>
         <item>
-          <first>grp_fu_138_p0</first>
+          <first>grp_fu_140_p0</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7069,7 +7069,7 @@
           </second>
         </item>
         <item>
-          <first>grp_fu_138_p1</first>
+          <first>grp_fu_140_p1</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7096,7 +7096,7 @@
           </second>
         </item>
         <item>
-          <first>grp_fu_142_p0</first>
+          <first>grp_fu_144_p0</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7123,7 +7123,7 @@
           </second>
         </item>
         <item>
-          <first>grp_fu_142_p1</first>
+          <first>grp_fu_144_p1</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7150,7 +7150,7 @@
           </second>
         </item>
         <item>
-          <first>i_fu_64</first>
+          <first>i_fu_66</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7177,7 +7177,7 @@
           </second>
         </item>
         <item>
-          <first>indvar_flatten_fu_68</first>
+          <first>indvar_flatten_fu_70</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7204,7 +7204,7 @@
           </second>
         </item>
         <item>
-          <first>j_1_fu_60</first>
+          <first>j_1_fu_62</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7231,7 +7231,7 @@
           </second>
         </item>
         <item>
-          <first>output_imag_blk_n</first>
+          <first>output_imag_TDATA_blk_n</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7258,7 +7258,7 @@
           </second>
         </item>
         <item>
-          <first>output_real_blk_n</first>
+          <first>output_real_TDATA_blk_n</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7285,7 +7285,7 @@
           </second>
         </item>
         <item>
-          <first>temp_imag_fu_56</first>
+          <first>temp_imag_fu_58</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7312,7 +7312,7 @@
           </second>
         </item>
         <item>
-          <first>temp_real_fu_52</first>
+          <first>temp_real_fu_54</first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -7552,7 +7552,7 @@
           </second>
         </item>
         <item>
-          <first>c_reg_403</first>
+          <first>c_reg_405</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7571,7 +7571,7 @@
           </second>
         </item>
         <item>
-          <first>i_fu_64</first>
+          <first>i_fu_66</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7590,7 +7590,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln19_reg_348</first>
+          <first>icmp_ln21_reg_350</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7609,7 +7609,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln23_1_reg_374</first>
+          <first>icmp_ln25_1_reg_376</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7628,7 +7628,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln23_reg_352</first>
+          <first>icmp_ln25_reg_354</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7647,7 +7647,7 @@
           </second>
         </item>
         <item>
-          <first>idx_reg_378</first>
+          <first>idx_reg_380</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7666,7 +7666,7 @@
           </second>
         </item>
         <item>
-          <first>imag_sample_load_reg_388</first>
+          <first>imag_sample_load_reg_390</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7685,7 +7685,7 @@
           </second>
         </item>
         <item>
-          <first>indvar_flatten_fu_68</first>
+          <first>indvar_flatten_fu_70</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7704,7 +7704,7 @@
           </second>
         </item>
         <item>
-          <first>j_1_fu_60</first>
+          <first>j_1_fu_62</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7723,7 +7723,7 @@
           </second>
         </item>
         <item>
-          <first>mul1_reg_418</first>
+          <first>mul1_reg_420</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7742,7 +7742,7 @@
           </second>
         </item>
         <item>
-          <first>mul2_reg_423</first>
+          <first>mul2_reg_425</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7761,7 +7761,7 @@
           </second>
         </item>
         <item>
-          <first>mul3_reg_428</first>
+          <first>mul3_reg_430</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7780,7 +7780,7 @@
           </second>
         </item>
         <item>
-          <first>mul_reg_413</first>
+          <first>mul_reg_415</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7799,7 +7799,7 @@
           </second>
         </item>
         <item>
-          <first>real_sample_load_reg_383</first>
+          <first>real_sample_load_reg_385</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7818,7 +7818,7 @@
           </second>
         </item>
         <item>
-          <first>reg_146</first>
+          <first>reg_148</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7837,7 +7837,7 @@
           </second>
         </item>
         <item>
-          <first>s_reg_408</first>
+          <first>s_reg_410</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7856,7 +7856,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln7_1_reg_443</first>
+          <first>select_ln9_1_reg_445</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7875,7 +7875,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln7_2_reg_433</first>
+          <first>select_ln9_2_reg_435</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7894,7 +7894,7 @@
           </second>
         </item>
         <item>
-          <first>sub_reg_438</first>
+          <first>sub_reg_440</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7913,7 +7913,7 @@
           </second>
         </item>
         <item>
-          <first>temp_imag_fu_56</first>
+          <first>temp_imag_fu_58</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7932,7 +7932,7 @@
           </second>
         </item>
         <item>
-          <first>temp_real_1_reg_448</first>
+          <first>temp_real_1_reg_450</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7951,7 +7951,7 @@
           </second>
         </item>
         <item>
-          <first>temp_real_fu_52</first>
+          <first>temp_real_fu_54</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -7970,7 +7970,7 @@
           </second>
         </item>
         <item>
-          <first>trunc_ln24_1_reg_359</first>
+          <first>trunc_ln26_1_reg_361</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -8059,7 +8059,7 @@
         <count>10</count>
         <item_version>0</item_version>
         <item>
-          <first>add_ln19_1_fu_243_p2 ( + ) </first>
+          <first>add_ln21_1_fu_245_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8067,7 +8067,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln19_fu_185_p2 ( + ) </first>
+          <first>add_ln21_fu_187_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8075,7 +8075,7 @@
           </second>
         </item>
         <item>
-          <first>add_ln23_fu_218_p2 ( + ) </first>
+          <first>add_ln25_fu_220_p2 ( + ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8083,7 +8083,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln19_fu_179_p2 ( icmp ) </first>
+          <first>icmp_ln21_fu_181_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8091,7 +8091,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln23_1_fu_224_p2 ( icmp ) </first>
+          <first>icmp_ln25_1_fu_226_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8099,7 +8099,7 @@
           </second>
         </item>
         <item>
-          <first>icmp_ln23_fu_194_p2 ( icmp ) </first>
+          <first>icmp_ln25_fu_196_p2 ( icmp ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8107,7 +8107,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln19_fu_249_p3 ( select ) </first>
+          <first>select_ln21_fu_251_p3 ( select ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8115,7 +8115,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln7_1_fu_288_p3 ( select ) </first>
+          <first>select_ln9_1_fu_290_p3 ( select ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8123,7 +8123,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln7_2_fu_278_p3 ( select ) </first>
+          <first>select_ln9_2_fu_280_p3 ( select ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8131,7 +8131,7 @@
           </second>
         </item>
         <item>
-          <first>select_ln7_fu_200_p3 ( select ) </first>
+          <first>select_ln9_fu_202_p3 ( select ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -8151,7 +8151,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>81</item>
+            <item>79</item>
           </second>
         </item>
         <item>
@@ -8159,7 +8159,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>88</item>
+            <item>86</item>
           </second>
         </item>
       </dp_memory_map>
@@ -8595,14 +8595,14 @@
         </second>
       </item>
       <item>
-        <first>282</first>
+        <first>283</first>
         <second>
           <first>0</first>
           <second>2</second>
         </second>
       </item>
       <item>
-        <first>283</first>
+        <first>284</first>
         <second>
           <first>0</first>
           <second>2</second>
@@ -8650,8 +8650,8 @@
       <item>
         <first>78</first>
         <second>
-          <first>2</first>
-          <second>2</second>
+          <first>23</first>
+          <second>23</second>
         </second>
       </item>
     </bblk_ent_exit>
@@ -8826,7 +8826,7 @@
       <count>49</count>
       <item_version>0</item_version>
       <item class_id="56" tracking_level="0" version="0">
-        <first>52</first>
+        <first>54</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8834,7 +8834,7 @@
         </second>
       </item>
       <item>
-        <first>56</first>
+        <first>58</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8842,7 +8842,7 @@
         </second>
       </item>
       <item>
-        <first>60</first>
+        <first>62</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8850,7 +8850,7 @@
         </second>
       </item>
       <item>
-        <first>64</first>
+        <first>66</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8858,7 +8858,7 @@
         </second>
       </item>
       <item>
-        <first>68</first>
+        <first>70</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8866,7 +8866,7 @@
         </second>
       </item>
       <item>
-        <first>72</first>
+        <first>74</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8874,7 +8874,7 @@
         </second>
       </item>
       <item>
-        <first>79</first>
+        <first>81</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8882,7 +8882,7 @@
         </second>
       </item>
       <item>
-        <first>86</first>
+        <first>88</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8890,7 +8890,7 @@
         </second>
       </item>
       <item>
-        <first>93</first>
+        <first>95</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -8899,7 +8899,7 @@
         </second>
       </item>
       <item>
-        <first>99</first>
+        <first>101</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8907,7 +8907,7 @@
         </second>
       </item>
       <item>
-        <first>106</first>
+        <first>108</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -8916,7 +8916,7 @@
         </second>
       </item>
       <item>
-        <first>112</first>
+        <first>114</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8924,7 +8924,7 @@
         </second>
       </item>
       <item>
-        <first>119</first>
+        <first>121</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -8933,7 +8933,7 @@
         </second>
       </item>
       <item>
-        <first>125</first>
+        <first>127</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -8941,7 +8941,7 @@
         </second>
       </item>
       <item>
-        <first>132</first>
+        <first>134</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -8950,7 +8950,7 @@
         </second>
       </item>
       <item>
-        <first>138</first>
+        <first>140</first>
         <second>
           <count>20</count>
           <item_version>0</item_version>
@@ -8977,7 +8977,7 @@
         </second>
       </item>
       <item>
-        <first>142</first>
+        <first>144</first>
         <second>
           <count>16</count>
           <item_version>0</item_version>
@@ -9000,7 +9000,7 @@
         </second>
       </item>
       <item>
-        <first>151</first>
+        <first>153</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9008,7 +9008,7 @@
         </second>
       </item>
       <item>
-        <first>156</first>
+        <first>158</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9016,7 +9016,7 @@
         </second>
       </item>
       <item>
-        <first>161</first>
+        <first>163</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9024,7 +9024,7 @@
         </second>
       </item>
       <item>
-        <first>166</first>
+        <first>168</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9032,7 +9032,7 @@
         </second>
       </item>
       <item>
-        <first>171</first>
+        <first>173</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9040,7 +9040,7 @@
         </second>
       </item>
       <item>
-        <first>176</first>
+        <first>178</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9048,7 +9048,7 @@
         </second>
       </item>
       <item>
-        <first>179</first>
+        <first>181</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9056,7 +9056,7 @@
         </second>
       </item>
       <item>
-        <first>185</first>
+        <first>187</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9064,7 +9064,7 @@
         </second>
       </item>
       <item>
-        <first>191</first>
+        <first>193</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9072,7 +9072,7 @@
         </second>
       </item>
       <item>
-        <first>194</first>
+        <first>196</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9080,7 +9080,7 @@
         </second>
       </item>
       <item>
-        <first>200</first>
+        <first>202</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9088,7 +9088,7 @@
         </second>
       </item>
       <item>
-        <first>208</first>
+        <first>210</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9096,7 +9096,7 @@
         </second>
       </item>
       <item>
-        <first>214</first>
+        <first>216</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9104,7 +9104,7 @@
         </second>
       </item>
       <item>
-        <first>218</first>
+        <first>220</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9112,7 +9112,7 @@
         </second>
       </item>
       <item>
-        <first>224</first>
+        <first>226</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9120,7 +9120,7 @@
         </second>
       </item>
       <item>
-        <first>230</first>
+        <first>232</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9128,7 +9128,7 @@
         </second>
       </item>
       <item>
-        <first>235</first>
+        <first>237</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9136,7 +9136,7 @@
         </second>
       </item>
       <item>
-        <first>240</first>
+        <first>242</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9144,7 +9144,7 @@
         </second>
       </item>
       <item>
-        <first>243</first>
+        <first>245</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9152,7 +9152,7 @@
         </second>
       </item>
       <item>
-        <first>249</first>
+        <first>251</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9160,7 +9160,7 @@
         </second>
       </item>
       <item>
-        <first>256</first>
+        <first>258</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9168,7 +9168,7 @@
         </second>
       </item>
       <item>
-        <first>260</first>
+        <first>262</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9176,7 +9176,7 @@
         </second>
       </item>
       <item>
-        <first>265</first>
+        <first>267</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9184,7 +9184,7 @@
         </second>
       </item>
       <item>
-        <first>270</first>
+        <first>272</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9192,7 +9192,7 @@
         </second>
       </item>
       <item>
-        <first>275</first>
+        <first>277</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9200,7 +9200,7 @@
         </second>
       </item>
       <item>
-        <first>278</first>
+        <first>280</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9208,7 +9208,7 @@
         </second>
       </item>
       <item>
-        <first>285</first>
+        <first>287</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9216,7 +9216,7 @@
         </second>
       </item>
       <item>
-        <first>288</first>
+        <first>290</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9224,7 +9224,7 @@
         </second>
       </item>
       <item>
-        <first>295</first>
+        <first>297</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9232,7 +9232,7 @@
         </second>
       </item>
       <item>
-        <first>299</first>
+        <first>301</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9240,7 +9240,7 @@
         </second>
       </item>
       <item>
-        <first>303</first>
+        <first>305</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9248,7 +9248,7 @@
         </second>
       </item>
       <item>
-        <first>308</first>
+        <first>310</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9260,7 +9260,7 @@
       <count>26</count>
       <item_version>0</item_version>
       <item class_id="59" tracking_level="0" version="0">
-        <first>add_ln19_1_fu_243</first>
+        <first>add_ln21_1_fu_245</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9268,7 +9268,7 @@
         </second>
       </item>
       <item>
-        <first>add_ln19_fu_185</first>
+        <first>add_ln21_fu_187</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9276,7 +9276,7 @@
         </second>
       </item>
       <item>
-        <first>add_ln23_fu_218</first>
+        <first>add_ln25_fu_220</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9284,7 +9284,7 @@
         </second>
       </item>
       <item>
-        <first>bitcast_ln31_fu_299</first>
+        <first>bitcast_ln33_fu_301</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9292,7 +9292,7 @@
         </second>
       </item>
       <item>
-        <first>bitcast_ln32_fu_303</first>
+        <first>bitcast_ln34_fu_305</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9300,7 +9300,7 @@
         </second>
       </item>
       <item>
-        <first>cos_coefficients_table_addr_gep_fu_112</first>
+        <first>cos_coefficients_table_addr_gep_fu_114</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9308,7 +9308,7 @@
         </second>
       </item>
       <item>
-        <first>i_fu_64</first>
+        <first>i_fu_66</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9316,7 +9316,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln19_fu_179</first>
+        <first>icmp_ln21_fu_181</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9324,7 +9324,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln23_1_fu_224</first>
+        <first>icmp_ln25_1_fu_226</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9332,7 +9332,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln23_fu_194</first>
+        <first>icmp_ln25_fu_196</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9340,7 +9340,7 @@
         </second>
       </item>
       <item>
-        <first>idx_fu_260</first>
+        <first>idx_fu_262</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9348,7 +9348,7 @@
         </second>
       </item>
       <item>
-        <first>imag_sample_addr_gep_fu_99</first>
+        <first>imag_sample_addr_gep_fu_101</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9356,7 +9356,7 @@
         </second>
       </item>
       <item>
-        <first>indvar_flatten_fu_68</first>
+        <first>indvar_flatten_fu_70</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9364,7 +9364,7 @@
         </second>
       </item>
       <item>
-        <first>j_1_fu_60</first>
+        <first>j_1_fu_62</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9372,7 +9372,7 @@
         </second>
       </item>
       <item>
-        <first>real_sample_addr_gep_fu_86</first>
+        <first>real_sample_addr_gep_fu_88</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9380,7 +9380,7 @@
         </second>
       </item>
       <item>
-        <first>select_ln19_fu_249</first>
+        <first>select_ln21_fu_251</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9388,7 +9388,7 @@
         </second>
       </item>
       <item>
-        <first>select_ln7_1_fu_288</first>
+        <first>select_ln9_1_fu_290</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9396,7 +9396,7 @@
         </second>
       </item>
       <item>
-        <first>select_ln7_2_fu_278</first>
+        <first>select_ln9_2_fu_280</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9404,7 +9404,7 @@
         </second>
       </item>
       <item>
-        <first>select_ln7_fu_200</first>
+        <first>select_ln9_fu_202</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9412,7 +9412,7 @@
         </second>
       </item>
       <item>
-        <first>sin_coefficients_table_addr_gep_fu_125</first>
+        <first>sin_coefficients_table_addr_gep_fu_127</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9420,7 +9420,7 @@
         </second>
       </item>
       <item>
-        <first>temp_imag_fu_56</first>
+        <first>temp_imag_fu_58</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9428,7 +9428,7 @@
         </second>
       </item>
       <item>
-        <first>temp_real_fu_52</first>
+        <first>temp_real_fu_54</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9436,7 +9436,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln24_1_fu_214</first>
+        <first>trunc_ln26_1_fu_216</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9444,7 +9444,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln24_fu_256</first>
+        <first>trunc_ln26_fu_258</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9452,7 +9452,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln23_fu_208</first>
+        <first>zext_ln25_fu_210</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9460,7 +9460,7 @@
         </second>
       </item>
       <item>
-        <first>zext_ln25_fu_270</first>
+        <first>zext_ln27_fu_272</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9472,7 +9472,7 @@
       <count>2</count>
       <item_version>0</item_version>
       <item>
-        <first>grp_fu_138</first>
+        <first>grp_fu_140</first>
         <second>
           <count>20</count>
           <item_version>0</item_version>
@@ -9499,7 +9499,7 @@
         </second>
       </item>
       <item>
-        <first>grp_fu_142</first>
+        <first>grp_fu_144</first>
         <second>
           <count>16</count>
           <item_version>0</item_version>
@@ -9526,7 +9526,7 @@
       <count>17</count>
       <item_version>0</item_version>
       <item>
-        <first>i_load_load_fu_240</first>
+        <first>i_load_load_fu_242</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9534,7 +9534,7 @@
         </second>
       </item>
       <item>
-        <first>indvar_flatten_load_load_fu_176</first>
+        <first>indvar_flatten_load_load_fu_178</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9542,7 +9542,7 @@
         </second>
       </item>
       <item>
-        <first>j_1_load_load_fu_191</first>
+        <first>j_1_load_load_fu_193</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9550,7 +9550,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln0_store_fu_151</first>
+        <first>store_ln0_store_fu_153</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9558,7 +9558,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln19_store_fu_230</first>
+        <first>store_ln21_store_fu_232</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9566,7 +9566,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln20_store_fu_171</first>
+        <first>store_ln22_store_fu_173</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9574,7 +9574,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln20_store_fu_295</first>
+        <first>store_ln22_store_fu_297</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9582,7 +9582,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln21_store_fu_166</first>
+        <first>store_ln23_store_fu_168</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9590,7 +9590,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln21_store_fu_308</first>
+        <first>store_ln23_store_fu_310</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9598,7 +9598,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln7_store_fu_156</first>
+        <first>store_ln9_store_fu_158</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9606,7 +9606,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln7_store_fu_161</first>
+        <first>store_ln9_store_fu_163</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9614,7 +9614,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln7_store_fu_235</first>
+        <first>store_ln9_store_fu_237</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9622,7 +9622,7 @@
         </second>
       </item>
       <item>
-        <first>store_ln7_store_fu_265</first>
+        <first>store_ln9_store_fu_267</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9630,7 +9630,7 @@
         </second>
       </item>
       <item>
-        <first>temp_imag_load_load_fu_285</first>
+        <first>temp_imag_load_load_fu_287</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9638,7 +9638,7 @@
         </second>
       </item>
       <item>
-        <first>temp_real_load_load_fu_275</first>
+        <first>temp_real_load_load_fu_277</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9646,7 +9646,7 @@
         </second>
       </item>
       <item>
-        <first>write_ln31_write_fu_72</first>
+        <first>write_ln33_write_fu_74</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9654,7 +9654,7 @@
         </second>
       </item>
       <item>
-        <first>write_ln32_write_fu_79</first>
+        <first>write_ln34_write_fu_81</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9722,7 +9722,7 @@
       <count>27</count>
       <item_version>0</item_version>
       <item>
-        <first>146</first>
+        <first>148</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -9731,7 +9731,7 @@
         </second>
       </item>
       <item>
-        <first>313</first>
+        <first>315</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9739,7 +9739,7 @@
         </second>
       </item>
       <item>
-        <first>320</first>
+        <first>322</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9747,7 +9747,7 @@
         </second>
       </item>
       <item>
-        <first>327</first>
+        <first>329</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9755,7 +9755,7 @@
         </second>
       </item>
       <item>
-        <first>334</first>
+        <first>336</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9763,7 +9763,7 @@
         </second>
       </item>
       <item>
-        <first>341</first>
+        <first>343</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9771,7 +9771,7 @@
         </second>
       </item>
       <item>
-        <first>348</first>
+        <first>350</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9779,7 +9779,7 @@
         </second>
       </item>
       <item>
-        <first>352</first>
+        <first>354</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9787,7 +9787,7 @@
         </second>
       </item>
       <item>
-        <first>359</first>
+        <first>361</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9795,7 +9795,7 @@
         </second>
       </item>
       <item>
-        <first>364</first>
+        <first>366</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9803,7 +9803,7 @@
         </second>
       </item>
       <item>
-        <first>369</first>
+        <first>371</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9811,7 +9811,7 @@
         </second>
       </item>
       <item>
-        <first>374</first>
+        <first>376</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9819,7 +9819,7 @@
         </second>
       </item>
       <item>
-        <first>378</first>
+        <first>380</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9827,7 +9827,7 @@
         </second>
       </item>
       <item>
-        <first>383</first>
+        <first>385</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9835,7 +9835,7 @@
         </second>
       </item>
       <item>
-        <first>388</first>
+        <first>390</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9843,7 +9843,7 @@
         </second>
       </item>
       <item>
-        <first>393</first>
+        <first>395</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9851,7 +9851,7 @@
         </second>
       </item>
       <item>
-        <first>398</first>
+        <first>400</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9859,7 +9859,7 @@
         </second>
       </item>
       <item>
-        <first>403</first>
+        <first>405</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9867,7 +9867,7 @@
         </second>
       </item>
       <item>
-        <first>408</first>
+        <first>410</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9875,7 +9875,7 @@
         </second>
       </item>
       <item>
-        <first>413</first>
+        <first>415</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9883,7 +9883,7 @@
         </second>
       </item>
       <item>
-        <first>418</first>
+        <first>420</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9891,7 +9891,7 @@
         </second>
       </item>
       <item>
-        <first>423</first>
+        <first>425</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9899,7 +9899,7 @@
         </second>
       </item>
       <item>
-        <first>428</first>
+        <first>430</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9907,7 +9907,7 @@
         </second>
       </item>
       <item>
-        <first>433</first>
+        <first>435</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9915,7 +9915,7 @@
         </second>
       </item>
       <item>
-        <first>438</first>
+        <first>440</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9923,7 +9923,7 @@
         </second>
       </item>
       <item>
-        <first>443</first>
+        <first>445</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9931,7 +9931,7 @@
         </second>
       </item>
       <item>
-        <first>448</first>
+        <first>450</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9943,7 +9943,7 @@
       <count>27</count>
       <item_version>0</item_version>
       <item>
-        <first>c_reg_403</first>
+        <first>c_reg_405</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9951,7 +9951,7 @@
         </second>
       </item>
       <item>
-        <first>cos_coefficients_table_addr_reg_393</first>
+        <first>cos_coefficients_table_addr_reg_395</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9959,7 +9959,7 @@
         </second>
       </item>
       <item>
-        <first>i_reg_334</first>
+        <first>i_reg_336</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9967,7 +9967,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln19_reg_348</first>
+        <first>icmp_ln21_reg_350</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9975,7 +9975,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln23_1_reg_374</first>
+        <first>icmp_ln25_1_reg_376</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9983,7 +9983,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln23_reg_352</first>
+        <first>icmp_ln25_reg_354</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9991,7 +9991,7 @@
         </second>
       </item>
       <item>
-        <first>idx_reg_378</first>
+        <first>idx_reg_380</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -9999,7 +9999,7 @@
         </second>
       </item>
       <item>
-        <first>imag_sample_addr_reg_369</first>
+        <first>imag_sample_addr_reg_371</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10007,7 +10007,7 @@
         </second>
       </item>
       <item>
-        <first>imag_sample_load_reg_388</first>
+        <first>imag_sample_load_reg_390</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10015,7 +10015,7 @@
         </second>
       </item>
       <item>
-        <first>indvar_flatten_reg_341</first>
+        <first>indvar_flatten_reg_343</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10023,7 +10023,7 @@
         </second>
       </item>
       <item>
-        <first>j_1_reg_327</first>
+        <first>j_1_reg_329</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10031,7 +10031,7 @@
         </second>
       </item>
       <item>
-        <first>mul1_reg_418</first>
+        <first>mul1_reg_420</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10039,7 +10039,7 @@
         </second>
       </item>
       <item>
-        <first>mul2_reg_423</first>
+        <first>mul2_reg_425</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10047,7 +10047,7 @@
         </second>
       </item>
       <item>
-        <first>mul3_reg_428</first>
+        <first>mul3_reg_430</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10055,7 +10055,7 @@
         </second>
       </item>
       <item>
-        <first>mul_reg_413</first>
+        <first>mul_reg_415</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10063,7 +10063,7 @@
         </second>
       </item>
       <item>
-        <first>real_sample_addr_reg_364</first>
+        <first>real_sample_addr_reg_366</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10071,7 +10071,7 @@
         </second>
       </item>
       <item>
-        <first>real_sample_load_reg_383</first>
+        <first>real_sample_load_reg_385</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10079,7 +10079,7 @@
         </second>
       </item>
       <item>
-        <first>reg_146</first>
+        <first>reg_148</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -10088,7 +10088,7 @@
         </second>
       </item>
       <item>
-        <first>s_reg_408</first>
+        <first>s_reg_410</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10096,7 +10096,7 @@
         </second>
       </item>
       <item>
-        <first>select_ln7_1_reg_443</first>
+        <first>select_ln9_1_reg_445</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10104,7 +10104,7 @@
         </second>
       </item>
       <item>
-        <first>select_ln7_2_reg_433</first>
+        <first>select_ln9_2_reg_435</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10112,7 +10112,7 @@
         </second>
       </item>
       <item>
-        <first>sin_coefficients_table_addr_reg_398</first>
+        <first>sin_coefficients_table_addr_reg_400</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10120,7 +10120,7 @@
         </second>
       </item>
       <item>
-        <first>sub_reg_438</first>
+        <first>sub_reg_440</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10128,7 +10128,7 @@
         </second>
       </item>
       <item>
-        <first>temp_imag_reg_320</first>
+        <first>temp_imag_reg_322</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10136,7 +10136,7 @@
         </second>
       </item>
       <item>
-        <first>temp_real_1_reg_448</first>
+        <first>temp_real_1_reg_450</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10144,7 +10144,7 @@
         </second>
       </item>
       <item>
-        <first>temp_real_reg_313</first>
+        <first>temp_real_reg_315</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10152,7 +10152,7 @@
         </second>
       </item>
       <item>
-        <first>trunc_ln24_1_reg_359</first>
+        <first>trunc_ln26_1_reg_361</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -10235,22 +10235,8 @@
       </item>
     </dp_port_io_nodes>
     <port2core>
-      <count>4</count>
+      <count>2</count>
       <item_version>0</item_version>
-      <item>
-        <first>1</first>
-        <second>
-          <first>666</first>
-          <second>7</second>
-        </second>
-      </item>
-      <item>
-        <first>2</first>
-        <second>
-          <first>666</first>
-          <second>7</second>
-        </second>
-      </item>
       <item>
         <first>3</first>
         <second>
@@ -10433,15 +10419,15 @@
       <item>
         <first>66</first>
         <second>
-          <first>666</first>
-          <second>7</second>
+          <first>888</first>
+          <second>176</second>
         </second>
       </item>
       <item>
         <first>67</first>
         <second>
-          <first>666</first>
-          <second>7</second>
+          <first>888</first>
+          <second>176</second>
         </second>
       </item>
     </node2core>

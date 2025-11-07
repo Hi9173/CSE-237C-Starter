@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dft'
 ================================================================
-* Date:           Thu Nov  6 17:33:11 2025
+* Date:           Thu Nov  6 17:53:32 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        dft.comp
@@ -29,7 +29,7 @@
     |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
     |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
     +---------+---------+-----------+-----------+---------+---------+---------+
-    |  6292502|  6292502|  62.925 ms|  62.925 ms|  6292503|  6292503|       no|
+    |  6292504|  6292504|  62.925 ms|  62.925 ms|  6292505|  6292505|       no|
     +---------+---------+-----------+-----------+---------+---------+---------+
 
     + Detail: 
@@ -65,7 +65,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 4
+* Number of FSM states : 6
 * Pipeline : 0
 * Dataflow Pipeline: 0
 
@@ -73,33 +73,40 @@ IsGatedGlobalClock: 0
 1 --> 2 
 2 --> 3 
 3 --> 4 
-4 --> 
+4 --> 5 
+5 --> 6 
+6 --> 
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%real_sample = alloca i64 1" [dft.cpp:11]   --->   Operation 5 'alloca' 'real_sample' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%imag_sample = alloca i64 1" [dft.cpp:12]   --->   Operation 6 'alloca' 'imag_sample' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [2/2] (0.00ns)   --->   "%call_ln0 = call void @dft_Pipeline_READ_INPUT, i32 %input_real, i32 %real_sample, i32 %input_imag, i32 %imag_sample"   --->   Operation 7 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%real_sample = alloca i64 1" [dft.cpp:13]   --->   Operation 7 'alloca' 'real_sample' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%imag_sample = alloca i64 1" [dft.cpp:14]   --->   Operation 8 'alloca' 'imag_sample' <Predicate = true> <Delay = 0.00>
 
-State 2 <SV = 1> <Delay = 4.81>
-ST_2 : Operation 8 [1/2] (4.81ns)   --->   "%call_ln0 = call void @dft_Pipeline_READ_INPUT, i32 %input_real, i32 %real_sample, i32 %input_imag, i32 %imag_sample"   --->   Operation 8 'call' 'call_ln0' <Predicate = true> <Delay = 4.81> <CoreType = "Generic">   --->   Generic Core
+State 2 <SV = 1> <Delay = 3.77>
+ST_2 : Operation 9 [2/2] (3.77ns)   --->   "%call_ln0 = call void @dft_Pipeline_READ_INPUT, i32 %input_real, i32 %real_sample, i32 %input_imag, i32 %imag_sample"   --->   Operation 9 'call' 'call_ln0' <Predicate = true> <Delay = 3.77> <CoreType = "Generic">   --->   Generic Core
 
-State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 9 [2/2] (0.00ns)   --->   "%call_ln0 = call void @dft_Pipeline_COMPUTE_DFT_INNER_LOOP, i32 %output_real, i32 %output_imag, i32 %real_sample, i32 %imag_sample, i32 %cos_coefficients_table, i32 %sin_coefficients_table"   --->   Operation 9 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+State 3 <SV = 2> <Delay = 4.81>
+ST_3 : Operation 10 [1/2] (4.81ns)   --->   "%call_ln0 = call void @dft_Pipeline_READ_INPUT, i32 %input_real, i32 %real_sample, i32 %input_imag, i32 %imag_sample"   --->   Operation 10 'call' 'call_ln0' <Predicate = true> <Delay = 4.81> <CoreType = "Generic">   --->   Generic Core
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 10 [1/1] (0.00ns)   --->   "%spectopmodule_ln4 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [dft.cpp:4]   --->   Operation 10 'spectopmodule' 'spectopmodule_ln4' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %input_real, void @empty_0, i32 0, i32 0, void @empty, i32 0, i32 0, void @empty, void @empty, void @empty, i32 0, i32 0, i32 0, i32 0, void @empty, void @empty, i32 4294967295, i32 0, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 12 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %input_real"   --->   Operation 12 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %input_imag, void @empty_0, i32 0, i32 0, void @empty, i32 0, i32 0, void @empty, void @empty, void @empty, i32 0, i32 0, i32 0, i32 0, void @empty, void @empty, i32 4294967295, i32 0, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %input_imag"   --->   Operation 14 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %output_real, void @empty_0, i32 0, i32 0, void @empty, i32 0, i32 0, void @empty, void @empty, void @empty, i32 0, i32 0, i32 0, i32 0, void @empty, void @empty, i32 4294967295, i32 0, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %output_real"   --->   Operation 16 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %output_imag, void @empty_0, i32 0, i32 0, void @empty, i32 0, i32 0, void @empty, void @empty, void @empty, i32 0, i32 0, i32 0, i32 0, void @empty, void @empty, i32 4294967295, i32 0, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 18 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %output_imag"   --->   Operation 18 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 19 [1/2] (0.00ns)   --->   "%call_ln0 = call void @dft_Pipeline_COMPUTE_DFT_INNER_LOOP, i32 %output_real, i32 %output_imag, i32 %real_sample, i32 %imag_sample, i32 %cos_coefficients_table, i32 %sin_coefficients_table"   --->   Operation 19 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_4 : Operation 20 [1/1] (0.00ns)   --->   "%ret_ln34 = ret" [dft.cpp:34]   --->   Operation 20 'ret' 'ret_ln34' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 11 [2/2] (0.00ns)   --->   "%call_ln0 = call void @dft_Pipeline_COMPUTE_DFT_INNER_LOOP, i32 %output_real, i32 %output_imag, i32 %real_sample, i32 %imag_sample, i32 %cos_coefficients_table, i32 %sin_coefficients_table"   --->   Operation 11 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 12 [1/2] (0.00ns)   --->   "%call_ln0 = call void @dft_Pipeline_COMPUTE_DFT_INNER_LOOP, i32 %output_real, i32 %output_imag, i32 %real_sample, i32 %imag_sample, i32 %cos_coefficients_table, i32 %sin_coefficients_table"   --->   Operation 12 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 13 [1/1] (0.00ns)   --->   "%spectopmodule_ln4 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_4" [dft.cpp:4]   --->   Operation 13 'spectopmodule' 'spectopmodule_ln4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %input_real, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 15 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %input_real"   --->   Operation 15 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %input_imag, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 17 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %input_imag"   --->   Operation 17 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %output_real, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %output_real"   --->   Operation 19 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %output_imag, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 21 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %output_imag"   --->   Operation 21 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_3, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%ret_ln36 = ret" [dft.cpp:36]   --->   Operation 23 'ret' 'ret_ln36' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -110,14 +117,21 @@ Target clock period: 10.000ns, clock uncertainty: 2.700ns.
  <State 1>: 0.000ns
 The critical path consists of the following:
 
- <State 2>: 4.815ns
+ <State 2>: 3.772ns
 The critical path consists of the following:
-	'call' operation 0 bit ('call_ln0') to 'dft_Pipeline_READ_INPUT' [18]  (4.815 ns)
+	'call' operation 0 bit ('call_ln0') to 'dft_Pipeline_READ_INPUT' [19]  (3.772 ns)
 
- <State 3>: 0.000ns
+ <State 3>: 4.815ns
 The critical path consists of the following:
+	'call' operation 0 bit ('call_ln0') to 'dft_Pipeline_READ_INPUT' [19]  (4.815 ns)
 
  <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 0.000ns
+The critical path consists of the following:
+
+ <State 6>: 0.000ns
 The critical path consists of the following:
 
 
@@ -133,6 +147,8 @@ N/A
 	State 2
 	State 3
 	State 4
+	State 5
+	State 6
 
 
 ============================================================

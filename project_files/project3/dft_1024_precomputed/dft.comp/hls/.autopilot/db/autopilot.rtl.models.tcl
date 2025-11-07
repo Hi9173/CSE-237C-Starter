@@ -16,6 +16,8 @@ set SynModuleInfo {
   {SRCNAME dft MODELNAME dft RTLNAME dft IS_TOP 1
     SUBMODULES {
       {MODELNAME dft_real_sample_RAM_AUTO_1R1W RTLNAME dft_real_sample_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME dft_control_s_axi RTLNAME dft_control_s_axi BINDTYPE interface TYPE interface_s_axilite}
+      {MODELNAME dft_regslice_both RTLNAME dft_regslice_both BINDTYPE interface TYPE adapter IMPL reg_slice}
     }
   }
 }

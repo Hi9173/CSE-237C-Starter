@@ -5848,6 +5848,8 @@ __attribute__((sdx_kernel("dft", 0))) void dft(hls::stream<DTYPE> &input_real, h
 #pragma HLSDIRECTIVE TOP name=dft
 # 6 "dft.cpp"
 
+#pragma HLS INTERFACE mode=axis port=input_real,input_imag,output_real,output_imag
+#pragma HLS INTERFACE mode=s_axilite port=return
  int i, j;
  int idx;
  DTYPE c, s;

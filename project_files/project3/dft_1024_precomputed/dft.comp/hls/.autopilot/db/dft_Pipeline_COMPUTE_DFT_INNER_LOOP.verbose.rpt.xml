@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dft_Pipeline_COMPUTE_DFT_INNER_LOOP'" level="0">
-<item name = "Date">Thu Nov  6 17:33:12 2025
+<item name = "Date">Thu Nov  6 17:53:33 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">dft.comp</item>
@@ -83,21 +83,21 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln19_1_fu_243_p2">+, 0, 0, 12, 11, 1</column>
-<column name="add_ln19_fu_185_p2">+, 0, 0, 28, 21, 1</column>
-<column name="add_ln23_fu_218_p2">+, 0, 0, 12, 11, 1</column>
+<column name="add_ln21_1_fu_245_p2">+, 0, 0, 12, 11, 1</column>
+<column name="add_ln21_fu_187_p2">+, 0, 0, 28, 21, 1</column>
+<column name="add_ln25_fu_220_p2">+, 0, 0, 12, 11, 1</column>
 <column name="ap_block_pp0_stage3_00001_grp2">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage3_01001_grp1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_pp0_stage3_11001">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state22_pp0_stage3_iter3_grp1">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state22_pp0_stage3_iter3_grp2">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln19_fu_179_p2">icmp, 0, 0, 29, 21, 22</column>
-<column name="icmp_ln23_1_fu_224_p2">icmp, 0, 0, 12, 11, 12</column>
-<column name="icmp_ln23_fu_194_p2">icmp, 0, 0, 12, 11, 12</column>
-<column name="select_ln19_fu_249_p3">select, 0, 0, 11, 1, 11</column>
-<column name="select_ln7_1_fu_288_p3">select, 0, 0, 32, 1, 1</column>
-<column name="select_ln7_2_fu_278_p3">select, 0, 0, 32, 1, 1</column>
-<column name="select_ln7_fu_200_p3">select, 0, 0, 11, 1, 1</column>
+<column name="icmp_ln21_fu_181_p2">icmp, 0, 0, 29, 21, 22</column>
+<column name="icmp_ln25_1_fu_226_p2">icmp, 0, 0, 12, 11, 12</column>
+<column name="icmp_ln25_fu_196_p2">icmp, 0, 0, 12, 11, 12</column>
+<column name="select_ln21_fu_251_p3">select, 0, 0, 11, 1, 11</column>
+<column name="select_ln9_1_fu_290_p3">select, 0, 0, 32, 1, 1</column>
+<column name="select_ln9_2_fu_280_p3">select, 0, 0, 32, 1, 1</column>
+<column name="select_ln9_fu_202_p3">select, 0, 0, 11, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -114,18 +114,18 @@
 <column name="ap_sig_allocacmp_j_1_load">9, 2, 11, 22</column>
 <column name="ap_sig_allocacmp_temp_imag_load">9, 2, 32, 64</column>
 <column name="ap_sig_allocacmp_temp_real_load">9, 2, 32, 64</column>
-<column name="grp_fu_138_opcode">14, 3, 2, 6</column>
-<column name="grp_fu_138_p0">25, 5, 32, 160</column>
-<column name="grp_fu_138_p1">25, 5, 32, 160</column>
-<column name="grp_fu_142_p0">14, 3, 32, 96</column>
-<column name="grp_fu_142_p1">14, 3, 32, 96</column>
-<column name="i_fu_64">9, 2, 11, 22</column>
-<column name="indvar_flatten_fu_68">9, 2, 21, 42</column>
-<column name="j_1_fu_60">9, 2, 11, 22</column>
-<column name="output_imag_blk_n">9, 2, 1, 2</column>
-<column name="output_real_blk_n">9, 2, 1, 2</column>
-<column name="temp_imag_fu_56">9, 2, 32, 64</column>
-<column name="temp_real_fu_52">9, 2, 32, 64</column>
+<column name="grp_fu_140_opcode">14, 3, 2, 6</column>
+<column name="grp_fu_140_p0">25, 5, 32, 160</column>
+<column name="grp_fu_140_p1">25, 5, 32, 160</column>
+<column name="grp_fu_144_p0">14, 3, 32, 96</column>
+<column name="grp_fu_144_p1">14, 3, 32, 96</column>
+<column name="i_fu_66">9, 2, 11, 22</column>
+<column name="indvar_flatten_fu_70">9, 2, 21, 42</column>
+<column name="j_1_fu_62">9, 2, 11, 22</column>
+<column name="output_imag_TDATA_blk_n">9, 2, 1, 2</column>
+<column name="output_real_TDATA_blk_n">9, 2, 1, 2</column>
+<column name="temp_imag_fu_58">9, 2, 32, 64</column>
+<column name="temp_real_fu_54">9, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -141,32 +141,32 @@
 <column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter2_reg">1, 0, 1, 0</column>
-<column name="c_reg_403">32, 0, 32, 0</column>
-<column name="i_fu_64">11, 0, 11, 0</column>
-<column name="icmp_ln19_reg_348">1, 0, 1, 0</column>
-<column name="icmp_ln23_1_reg_374">1, 0, 1, 0</column>
-<column name="icmp_ln23_reg_352">1, 0, 1, 0</column>
-<column name="idx_reg_378">10, 0, 10, 0</column>
-<column name="imag_sample_load_reg_388">32, 0, 32, 0</column>
-<column name="indvar_flatten_fu_68">21, 0, 21, 0</column>
-<column name="j_1_fu_60">11, 0, 11, 0</column>
-<column name="mul1_reg_418">32, 0, 32, 0</column>
-<column name="mul2_reg_423">32, 0, 32, 0</column>
-<column name="mul3_reg_428">32, 0, 32, 0</column>
-<column name="mul_reg_413">32, 0, 32, 0</column>
-<column name="real_sample_load_reg_383">32, 0, 32, 0</column>
-<column name="reg_146">32, 0, 32, 0</column>
-<column name="s_reg_408">32, 0, 32, 0</column>
-<column name="select_ln7_1_reg_443">32, 0, 32, 0</column>
-<column name="select_ln7_2_reg_433">32, 0, 32, 0</column>
-<column name="sub_reg_438">32, 0, 32, 0</column>
-<column name="temp_imag_fu_56">32, 0, 32, 0</column>
-<column name="temp_real_1_reg_448">32, 0, 32, 0</column>
-<column name="temp_real_fu_52">32, 0, 32, 0</column>
-<column name="trunc_ln24_1_reg_359">10, 0, 10, 0</column>
-<column name="icmp_ln19_reg_348">64, 32, 1, 0</column>
-<column name="icmp_ln23_1_reg_374">64, 32, 1, 0</column>
-<column name="icmp_ln23_reg_352">64, 32, 1, 0</column>
+<column name="c_reg_405">32, 0, 32, 0</column>
+<column name="i_fu_66">11, 0, 11, 0</column>
+<column name="icmp_ln21_reg_350">1, 0, 1, 0</column>
+<column name="icmp_ln25_1_reg_376">1, 0, 1, 0</column>
+<column name="icmp_ln25_reg_354">1, 0, 1, 0</column>
+<column name="idx_reg_380">10, 0, 10, 0</column>
+<column name="imag_sample_load_reg_390">32, 0, 32, 0</column>
+<column name="indvar_flatten_fu_70">21, 0, 21, 0</column>
+<column name="j_1_fu_62">11, 0, 11, 0</column>
+<column name="mul1_reg_420">32, 0, 32, 0</column>
+<column name="mul2_reg_425">32, 0, 32, 0</column>
+<column name="mul3_reg_430">32, 0, 32, 0</column>
+<column name="mul_reg_415">32, 0, 32, 0</column>
+<column name="real_sample_load_reg_385">32, 0, 32, 0</column>
+<column name="reg_148">32, 0, 32, 0</column>
+<column name="s_reg_410">32, 0, 32, 0</column>
+<column name="select_ln9_1_reg_445">32, 0, 32, 0</column>
+<column name="select_ln9_2_reg_435">32, 0, 32, 0</column>
+<column name="sub_reg_440">32, 0, 32, 0</column>
+<column name="temp_imag_fu_58">32, 0, 32, 0</column>
+<column name="temp_real_1_reg_450">32, 0, 32, 0</column>
+<column name="temp_real_fu_54">32, 0, 32, 0</column>
+<column name="trunc_ln26_1_reg_361">10, 0, 10, 0</column>
+<column name="icmp_ln21_reg_350">64, 32, 1, 0</column>
+<column name="icmp_ln25_1_reg_376">64, 32, 1, 0</column>
+<column name="icmp_ln25_reg_354">64, 32, 1, 0</column>
 </table>
 </item>
 </section>
@@ -182,12 +182,12 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, dft_Pipeline_COMPUTE_DFT_INNER_LOOP, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, dft_Pipeline_COMPUTE_DFT_INNER_LOOP, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, dft_Pipeline_COMPUTE_DFT_INNER_LOOP, return value</column>
-<column name="output_real_din">out, 32, ap_fifo, output_real, pointer</column>
-<column name="output_real_full_n">in, 1, ap_fifo, output_real, pointer</column>
-<column name="output_real_write">out, 1, ap_fifo, output_real, pointer</column>
-<column name="output_imag_din">out, 32, ap_fifo, output_imag, pointer</column>
-<column name="output_imag_full_n">in, 1, ap_fifo, output_imag, pointer</column>
-<column name="output_imag_write">out, 1, ap_fifo, output_imag, pointer</column>
+<column name="output_real_TDATA">out, 32, axis, output_real, pointer</column>
+<column name="output_real_TVALID">out, 1, axis, output_real, pointer</column>
+<column name="output_real_TREADY">in, 1, axis, output_real, pointer</column>
+<column name="output_imag_TDATA">out, 32, axis, output_imag, pointer</column>
+<column name="output_imag_TVALID">out, 1, axis, output_imag, pointer</column>
+<column name="output_imag_TREADY">in, 1, axis, output_imag, pointer</column>
 <column name="real_sample_address0">out, 10, ap_memory, real_sample, array</column>
 <column name="real_sample_ce0">out, 1, ap_memory, real_sample, array</column>
 <column name="real_sample_q0">in, 32, ap_memory, real_sample, array</column>

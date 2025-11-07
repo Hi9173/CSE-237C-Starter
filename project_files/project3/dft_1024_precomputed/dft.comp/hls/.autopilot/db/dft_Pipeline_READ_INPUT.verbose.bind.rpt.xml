@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dft_Pipeline_READ_INPUT'" level="0">
-<item name = "Date">Thu Nov  6 17:33:10 2025
+<item name = "Date">Thu Nov  6 17:53:32 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">dft.comp</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.731 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 4.815 ns, 2.70 ns</column>
 </table>
 </item>
 </section>

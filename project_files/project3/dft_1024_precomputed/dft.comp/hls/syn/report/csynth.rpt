@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'dft'
 ================================================================
 + General Information: 
-    * Date:           Thu Nov  6 17:33:12 2025
+    * Date:           Thu Nov  6 17:53:33 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        dft.comp
     * Solution:       hls (Vivado IP Flow Target)
@@ -19,10 +19,10 @@
     |                 Modules                | Issue|      | Latency |  Latency  | Iteration|         |   Trip  |          |        |        |           |           |     |
     |                 & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval|  Count  | Pipelined|  BRAM  |   DSP  |     FF    |    LUT    | URAM|
     +----------------------------------------+------+------+---------+-----------+----------+---------+---------+----------+--------+--------+-----------+-----------+-----+
-    |+ dft                                   |     -|  0.04|  6292502|  6.293e+07|         -|  6292503|        -|        no|  8 (2%)|  5 (2%)|  1133 (1%)|  1538 (2%)|    -|
-    | + dft_Pipeline_READ_INPUT              |     -|  0.57|     1026|  1.026e+04|         -|     1026|        -|        no|       -|       -|   25 (~0%)|   84 (~0%)|    -|
+    |+ dft                                   |     -|  0.04|  6292504|  6.293e+07|         -|  6292505|        -|        no|  8 (2%)|  5 (2%)|  1235 (1%)|  1636 (3%)|    -|
+    | + dft_Pipeline_READ_INPUT              |     -|  2.48|     1026|  1.026e+04|         -|     1026|        -|        no|       -|       -|   25 (~0%)|   84 (~0%)|    -|
     |  o READ_INPUT                          |     -|  7.30|     1024|  1.024e+04|         2|        1|     1024|       yes|       -|       -|          -|          -|    -|
-    | + dft_Pipeline_COMPUTE_DFT_INNER_LOOP  |     -|  0.04|  6291473|  6.291e+07|         -|  6291473|        -|        no|  4 (1%)|  5 (2%)|  1102 (1%)|  1355 (2%)|    -|
+    | + dft_Pipeline_COMPUTE_DFT_INNER_LOOP  |     -|  0.04|  6291473|  6.291e+07|         -|  6291473|        -|        no|  4 (1%)|  5 (2%)|  1102 (1%)|  1359 (2%)|    -|
     |  o COMPUTE_DFT_INNER_LOOP              |    II|  7.30|  6291471|  6.291e+07|        22|        6|  1048576|       yes|       -|       -|          -|          -|    -|
     +----------------------------------------+------+------+---------+-----------+----------+---------+---------+----------+--------+--------+-----------+-----------+-----+
 
@@ -30,24 +30,42 @@
 ================================================================
 == HW Interfaces
 ================================================================
-* AP_FIFO
-+-------------+-----------+------------+
-| Interface   | Direction | Data Width |
-+-------------+-----------+------------+
-| input_imag  | in        | 32         |
-| input_real  | in        | 32         |
-| output_imag | out       | 32         |
-| output_real | out       | 32         |
-+-------------+-----------+------------+
+* S_AXILITE Interfaces
++---------------+------------+---------------+
+| Interface     | Data Width | Address Width |
++---------------+------------+---------------+
+| s_axi_control | 32         | 4             |
++---------------+------------+---------------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++-------------+-----------+---------------+-------+--------+--------+
+| Interface   | Direction | Register Mode | TDATA | TREADY | TVALID |
++-------------+-----------+---------------+-------+--------+--------+
+| input_imag  | in        | both          | 32    | 1      | 1      |
+| input_real  | in        | both          | 32    | 1      | 1      |
+| output_imag | out       | both          | 32    | 1      | 1      |
+| output_real | out       | both          | 32    | 1      | 1      |
++-------------+-----------+---------------+-------+--------+--------+
 
 * TOP LEVEL CONTROL
-+-----------+------------+-----------------------------------+
-| Interface | Type       | Ports                             |
-+-----------+------------+-----------------------------------+
-| ap_clk    | clock      | ap_clk                            |
-| ap_rst    | reset      | ap_rst                            |
-| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
-+-----------+------------+-----------------------------------+
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
 
 
 ================================================================
@@ -82,17 +100,17 @@
 +------------------------------------------+-----+--------+--------------+--------+----------+---------+
 | + dft                                    | 5   |        |              |        |          |         |
 |  + dft_Pipeline_READ_INPUT               | 0   |        |              |        |          |         |
-|    icmp_ln14_fu_90_p2                    |     |        | icmp_ln14    | seteq  | auto     | 0       |
-|    add_ln14_fu_96_p2                     |     |        | add_ln14     | add    | fabric   | 0       |
+|    icmp_ln16_fu_92_p2                    |     |        | icmp_ln16    | seteq  | auto     | 0       |
+|    add_ln16_fu_98_p2                     |     |        | add_ln16     | add    | fabric   | 0       |
 |  + dft_Pipeline_COMPUTE_DFT_INNER_LOOP   | 5   |        |              |        |          |         |
-|    icmp_ln19_fu_179_p2                   |     |        | icmp_ln19    | seteq  | auto     | 0       |
-|    add_ln19_fu_185_p2                    |     |        | add_ln19     | add    | fabric   | 0       |
-|    icmp_ln23_fu_194_p2                   |     |        | icmp_ln23    | seteq  | auto     | 0       |
-|    select_ln7_fu_200_p3                  |     |        | select_ln7   | select | auto_sel | 0       |
-|    select_ln7_1_fu_288_p3                |     |        | select_ln7_1 | select | auto_sel | 0       |
-|    select_ln7_2_fu_278_p3                |     |        | select_ln7_2 | select | auto_sel | 0       |
-|    add_ln19_1_fu_243_p2                  |     |        | add_ln19_1   | add    | fabric   | 0       |
-|    select_ln19_fu_249_p3                 |     |        | select_ln19  | select | auto_sel | 0       |
+|    icmp_ln21_fu_181_p2                   |     |        | icmp_ln21    | seteq  | auto     | 0       |
+|    add_ln21_fu_187_p2                    |     |        | add_ln21     | add    | fabric   | 0       |
+|    icmp_ln25_fu_196_p2                   |     |        | icmp_ln25    | seteq  | auto     | 0       |
+|    select_ln9_fu_202_p3                  |     |        | select_ln9   | select | auto_sel | 0       |
+|    select_ln9_1_fu_290_p3                |     |        | select_ln9_1 | select | auto_sel | 0       |
+|    select_ln9_2_fu_280_p3                |     |        | select_ln9_2 | select | auto_sel | 0       |
+|    add_ln21_1_fu_245_p2                  |     |        | add_ln21_1   | add    | fabric   | 0       |
+|    select_ln21_fu_251_p3                 |     |        | select_ln21  | select | auto_sel | 0       |
 |    mul_10s_10s_10_1_1_U7                 |     |        | idx          | mul    | auto     | 0       |
 |    fmul_32ns_32ns_32_4_max_dsp_1_U6      | 3   |        | mul          | fmul   | maxdsp   | 3       |
 |    fmul_32ns_32ns_32_4_max_dsp_1_U6      | 3   |        | mul1         | fmul   | maxdsp   | 3       |
@@ -102,29 +120,37 @@
 |    fmul_32ns_32ns_32_4_max_dsp_1_U6      | 3   |        | mul3         | fmul   | maxdsp   | 3       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U5 | 2   |        | add1         | fsub   | fulldsp  | 4       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U5 | 2   |        | temp_imag_1  | fsub   | fulldsp  | 4       |
-|    add_ln23_fu_218_p2                    |     |        | add_ln23     | add    | fabric   | 0       |
-|    icmp_ln23_1_fu_224_p2                 |     |        | icmp_ln23_1  | seteq  | auto     | 0       |
+|    add_ln25_fu_220_p2                    |     |        | add_ln25     | add    | fabric   | 0       |
+|    icmp_ln25_1_fu_226_p2                 |     |        | icmp_ln25_1  | seteq  | auto     | 0       |
 +------------------------------------------+-----+--------+--------------+--------+----------+---------+
 
 
 ================================================================
 == Storage Report
 ================================================================
-+----------------------------------------+--------------+------+------+------+--------+------------------------+------+---------+------------------+
-| Name                                   | Usage        | Type | BRAM | URAM | Pragma | Variable               | Impl | Latency | Bitwidth, Depth, |
-|                                        |              |      |      |      |        |                        |      |         | Banks            |
-+----------------------------------------+--------------+------+------+------+--------+------------------------+------+---------+------------------+
-| + dft                                  |              |      | 8    | 0    |        |                        |      |         |                  |
-|   real_sample_U                        | ram_1p array |      | 2    |      |        | real_sample            | auto | 1       | 32, 1024, 1      |
-|   imag_sample_U                        | ram_1p array |      | 2    |      |        | imag_sample            | auto | 1       | 32, 1024, 1      |
-|  + dft_Pipeline_COMPUTE_DFT_INNER_LOOP |              |      | 4    | 0    |        |                        |      |         |                  |
-|    cos_coefficients_table_U            | rom_1p       |      | 2    |      |        | cos_coefficients_table | auto | 1       | 32, 1024, 1      |
-|    sin_coefficients_table_U            | rom_1p       |      | 2    |      |        | sin_coefficients_table | auto | 1       | 32, 1024, 1      |
-+----------------------------------------+--------------+------+------+------+--------+------------------------+------+---------+------------------+
++----------------------------------------+--------------+-----------+------+------+--------+------------------------+------+---------+------------------+
+| Name                                   | Usage        | Type      | BRAM | URAM | Pragma | Variable               | Impl | Latency | Bitwidth, Depth, |
+|                                        |              |           |      |      |        |                        |      |         | Banks            |
++----------------------------------------+--------------+-----------+------+------+--------+------------------------+------+---------+------------------+
+| + dft                                  |              |           | 8    | 0    |        |                        |      |         |                  |
+|   control_s_axi_U                      | interface    | s_axilite |      |      |        |                        |      |         |                  |
+|   real_sample_U                        | ram_1p array |           | 2    |      |        | real_sample            | auto | 1       | 32, 1024, 1      |
+|   imag_sample_U                        | ram_1p array |           | 2    |      |        | imag_sample            | auto | 1       | 32, 1024, 1      |
+|  + dft_Pipeline_COMPUTE_DFT_INNER_LOOP |              |           | 4    | 0    |        |                        |      |         |                  |
+|    cos_coefficients_table_U            | rom_1p       |           | 2    |      |        | cos_coefficients_table | auto | 1       | 32, 1024, 1      |
+|    sin_coefficients_table_U            | rom_1p       |           | 2    |      |        | sin_coefficients_table | auto | 1       | 32, 1024, 1      |
++----------------------------------------+--------------+-----------+------+------+--------+------------------------+------+---------+------------------+
 
 
 ================================================================
 == Pragma Report
 ================================================================
-  No pragmas found
+* Valid Pragma Syntax
++-----------+--------------------------------------------------------------+-----------------------------------------------------------------+
+| Type      | Options                                                      | Location                                                        |
++-----------+--------------------------------------------------------------+-----------------------------------------------------------------+
+| interface | mode=axis port=input_real,input_imag,output_real,output_imag | dft.cpp:7 in dft, input_real,input_imag,output_real,output_imag |
+| interface | mode=s_axilite port=return                                   | dft.cpp:8 in dft, return                                        |
++-----------+--------------------------------------------------------------+-----------------------------------------------------------------+
+
 

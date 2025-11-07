@@ -40,7 +40,7 @@
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>3</if_type>
+				<if_type>0</if_type>
 				<array_size>0</array_size>
 				<bit_vecs class_id="7" tracking_level="0" version="0">
 					<count>0</count>
@@ -112,7 +112,7 @@
 					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
-				<if_type>3</if_type>
+				<if_type>0</if_type>
 				<array_size>0</array_size>
 				<bit_vecs>
 					<count>0</count>
@@ -167,7 +167,7 @@
 						<name>j</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>7</lineNumber>
+						<lineNumber>9</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -183,7 +183,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>7</second>
+										<second>9</second>
 									</item>
 								</second>
 							</item>
@@ -220,10 +220,10 @@
 					<Obj>
 						<type>0</type>
 						<id>8</id>
-						<name>j_write_ln7</name>
+						<name>j_write_ln9</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>7</lineNumber>
+						<lineNumber>9</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -239,7 +239,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>7</second>
+										<second>9</second>
 									</item>
 								</second>
 							</item>
@@ -277,10 +277,10 @@
 					<Obj>
 						<type>0</type>
 						<id>9</id>
-						<name>br_ln14</name>
+						<name>br_ln16</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>16</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -296,7 +296,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>14</second>
+										<second>16</second>
 									</item>
 								</second>
 							</item>
@@ -336,7 +336,7 @@
 						<name>j_1</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>16</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -352,7 +352,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>14</second>
+										<second>16</second>
 									</item>
 								</second>
 							</item>
@@ -374,7 +374,7 @@
 					<count>2</count>
 					<item_version>0</item_version>
 					<item>39</item>
-					<item>137</item>
+					<item>138</item>
 				</oprand_edges>
 				<opcode>load</opcode>
 				<m_Display>0</m_Display>
@@ -390,10 +390,10 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>icmp_ln14</name>
+						<name>icmp_ln16</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>16</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -409,7 +409,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>14</second>
+										<second>16</second>
 									</item>
 								</second>
 							</item>
@@ -447,10 +447,10 @@
 					<Obj>
 						<type>0</type>
 						<id>13</id>
-						<name>add_ln14</name>
+						<name>add_ln16</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>16</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -466,7 +466,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>14</second>
+										<second>16</second>
 									</item>
 								</second>
 							</item>
@@ -504,10 +504,10 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>br_ln14</name>
+						<name>br_ln16</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>16</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -523,7 +523,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>14</second>
+										<second>16</second>
 									</item>
 								</second>
 							</item>
@@ -562,10 +562,10 @@
 					<Obj>
 						<type>0</type>
 						<id>16</id>
-						<name>zext_ln14</name>
+						<name>zext_ln16</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>16</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -581,7 +581,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>14</second>
+										<second>16</second>
 									</item>
 								</second>
 							</item>
@@ -621,7 +621,7 @@
 						<name>input_real_read</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -637,7 +637,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>15</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -666,7 +666,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.47</m_delay>
+				<m_delay>0.51</m_delay>
 				<m_topoIndex>11</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -675,10 +675,10 @@
 					<Obj>
 						<type>0</type>
 						<id>21</id>
-						<name>bitcast_ln15</name>
+						<name>bitcast_ln17</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -694,7 +694,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>15</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -734,7 +734,7 @@
 						<name>real_sample_addr</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -750,7 +750,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>15</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -789,10 +789,10 @@
 					<Obj>
 						<type>0</type>
 						<id>23</id>
-						<name>real_sample_addr_write_ln15</name>
+						<name>real_sample_addr_write_ln17</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>17</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -808,7 +808,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>15</second>
+										<second>17</second>
 									</item>
 								</second>
 							</item>
@@ -849,7 +849,7 @@
 						<name>input_imag_read</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -865,7 +865,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>16</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -894,7 +894,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.47</m_delay>
+				<m_delay>0.51</m_delay>
 				<m_topoIndex>15</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -903,10 +903,10 @@
 					<Obj>
 						<type>0</type>
 						<id>25</id>
-						<name>bitcast_ln16</name>
+						<name>bitcast_ln18</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -922,7 +922,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>16</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -962,7 +962,7 @@
 						<name>imag_sample_addr</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -978,7 +978,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>16</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -1017,10 +1017,10 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>imag_sample_addr_write_ln16</name>
+						<name>imag_sample_addr_write_ln18</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>16</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -1036,7 +1036,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>16</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -1074,10 +1074,10 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>j_write_ln7</name>
+						<name>j_write_ln9</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>7</lineNumber>
+						<lineNumber>9</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -1093,7 +1093,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>7</second>
+										<second>9</second>
 									</item>
 								</second>
 							</item>
@@ -1116,8 +1116,8 @@
 					<item_version>0</item_version>
 					<item>68</item>
 					<item>69</item>
-					<item>138</item>
 					<item>139</item>
+					<item>140</item>
 				</oprand_edges>
 				<opcode>store</opcode>
 				<m_Display>0</m_Display>
@@ -1133,10 +1133,10 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>br_ln14</name>
+						<name>br_ln16</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>16</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -1152,7 +1152,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>14</second>
+										<second>16</second>
 									</item>
 								</second>
 							</item>
@@ -1742,49 +1742,49 @@
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_63">
-				<id>133</id>
+				<id>134</id>
 				<edge_type>2</edge_type>
 				<source_obj>10</source_obj>
 				<sink_obj>15</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_64">
-				<id>134</id>
+				<id>135</id>
 				<edge_type>2</edge_type>
 				<source_obj>15</source_obj>
 				<sink_obj>32</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_65">
-				<id>135</id>
+				<id>136</id>
 				<edge_type>2</edge_type>
 				<source_obj>15</source_obj>
 				<sink_obj>30</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_66">
-				<id>136</id>
+				<id>137</id>
 				<edge_type>2</edge_type>
 				<source_obj>30</source_obj>
 				<sink_obj>15</sink_obj>
 				<is_back_edge>1</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_67">
-				<id>137</id>
+				<id>138</id>
 				<edge_type>4</edge_type>
 				<source_obj>8</source_obj>
 				<sink_obj>11</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_68">
-				<id>138</id>
+				<id>139</id>
 				<edge_type>4</edge_type>
 				<source_obj>8</source_obj>
 				<sink_obj>28</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_69">
-				<id>139</id>
+				<id>140</id>
 				<edge_type>4</edge_type>
 				<source_obj>11</source_obj>
 				<sink_obj>28</sink_obj>

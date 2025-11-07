@@ -2,62 +2,62 @@
 <AdditionalInfo>
   <CTypeInfo>
       <RtlPort>
-        <name>input_imag_dout</name>
+        <name>input_imag_TDATA</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>input_imag_empty_n</name>
+        <name>input_imag_TREADY</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>input_imag_read</name>
+        <name>input_imag_TVALID</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>input_real_dout</name>
+        <name>input_real_TDATA</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>input_real_empty_n</name>
+        <name>input_real_TREADY</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>input_real_read</name>
+        <name>input_real_TVALID</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>output_imag_din</name>
+        <name>output_imag_TDATA</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>output_imag_full_n</name>
+        <name>output_imag_TREADY</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>output_imag_write</name>
+        <name>output_imag_TVALID</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>output_real_din</name>
+        <name>output_real_TDATA</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>output_real_full_n</name>
+        <name>output_real_TREADY</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
-        <name>output_real_write</name>
+        <name>output_real_TVALID</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
@@ -68,7 +68,7 @@
   <Machine>64</Machine>
   <modelParameters>
     <combinational>0</combinational>
-    <latency>6292502</latency>
-    <II>6292503</II>
+    <latency>6292504</latency>
+    <II>6292505</II>
   </modelParameters>
 </AdditionalInfo>

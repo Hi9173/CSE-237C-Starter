@@ -1,8 +1,17 @@
 {
+    "0": {
+        "name": "dft",
+        "file": "dft.cpp",
+        "fileloc": "4",
+        "instructions": "15",
+        "total_instructions": "105",
+        "calls": "1 2",
+        "basicblocks": "1"
+    },
     "1": {
         "name": "dft_Pipeline_READ_INPUT",
         "file": "dft.cpp",
-        "fileloc": "7",
+        "fileloc": "9",
         "instructions": "24",
         "total_instructions": "24",
         "calls": "",
@@ -17,19 +26,10 @@
             "L": "1"
         }
     },
-    "0": {
-        "name": "dft",
-        "file": "dft.cpp",
-        "fileloc": "4",
-        "instructions": "14",
-        "total_instructions": "104",
-        "calls": "1 2",
-        "basicblocks": "1"
-    },
     "2": {
         "name": "dft_Pipeline_COMPUTE_DFT_INNER_LOOP",
         "file": "dft.cpp",
-        "fileloc": "7",
+        "fileloc": "9",
         "instructions": "66",
         "total_instructions": "66",
         "calls": "",

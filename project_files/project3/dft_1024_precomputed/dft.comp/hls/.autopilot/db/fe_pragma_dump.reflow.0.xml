@@ -1,5 +1,10 @@
 <pragmas>
-<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="dft.cpp" line="7" pragmaType="interface" parentfunction="dft" mode="axis" port="output_imag" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="dft.cpp" line="7" pragmaType="interface" parentfunction="dft" mode="axis" port="output_real" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="dft.cpp" line="7" pragmaType="interface" parentfunction="dft" mode="axis" port="input_imag" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="dft.cpp" line="7" pragmaType="interface" parentfunction="dft" mode="axis" port="input_real" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="dft.cpp" line="8" pragmaType="interface" parentfunction="dft" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
 </pragmas>

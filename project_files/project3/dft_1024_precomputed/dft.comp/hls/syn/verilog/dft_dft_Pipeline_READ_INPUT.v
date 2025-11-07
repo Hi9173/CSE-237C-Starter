@@ -13,16 +13,16 @@ module dft_dft_Pipeline_READ_INPUT (
         ap_done,
         ap_idle,
         ap_ready,
-        input_real_dout,
-        input_real_empty_n,
-        input_real_read,
-        input_imag_dout,
-        input_imag_empty_n,
-        input_imag_read,
+        input_real_TVALID,
+        input_imag_TVALID,
+        input_real_TDATA,
+        input_real_TREADY,
         real_sample_address0,
         real_sample_ce0,
         real_sample_we0,
         real_sample_d0,
+        input_imag_TDATA,
+        input_imag_TREADY,
         imag_sample_address0,
         imag_sample_ce0,
         imag_sample_we0,
@@ -37,24 +37,24 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-input  [31:0] input_real_dout;
-input   input_real_empty_n;
-output   input_real_read;
-input  [31:0] input_imag_dout;
-input   input_imag_empty_n;
-output   input_imag_read;
+input   input_real_TVALID;
+input   input_imag_TVALID;
+input  [31:0] input_real_TDATA;
+output   input_real_TREADY;
 output  [9:0] real_sample_address0;
 output   real_sample_ce0;
 output   real_sample_we0;
 output  [31:0] real_sample_d0;
+input  [31:0] input_imag_TDATA;
+output   input_imag_TREADY;
 output  [9:0] imag_sample_address0;
 output   imag_sample_ce0;
 output   imag_sample_we0;
 output  [31:0] imag_sample_d0;
 
 reg ap_idle;
-reg input_real_read;
-reg input_imag_read;
+reg input_real_TREADY;
+reg input_imag_TREADY;
 
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
@@ -63,27 +63,27 @@ reg    ap_enable_reg_pp0_iter1;
 reg    ap_idle_pp0;
 reg    ap_block_state2_pp0_stage0_iter1_grp1;
 reg    ap_block_pp0_stage0_subdone;
-wire   [0:0] icmp_ln14_fu_90_p2;
+wire   [0:0] icmp_ln16_fu_92_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
-reg    input_real_blk_n;
+reg    input_real_TDATA_blk_n;
 wire    ap_block_pp0_stage0_grp1;
-reg    input_imag_blk_n;
-reg   [10:0] j_1_reg_129;
+reg    input_imag_TDATA_blk_n;
+reg   [10:0] j_1_reg_131;
 reg    ap_block_pp0_stage0_11001;
-wire   [63:0] zext_ln14_fu_107_p1;
-reg   [10:0] j_fu_40;
-wire   [10:0] add_ln14_fu_96_p2;
+wire   [63:0] zext_ln16_fu_109_p1;
+reg   [10:0] j_fu_42;
+wire   [10:0] add_ln16_fu_98_p2;
 wire    ap_loop_init;
 reg   [10:0] ap_sig_allocacmp_j_1;
 wire    ap_block_pp0_stage0;
 reg    ap_block_pp0_stage0_11001_grp1;
 reg    real_sample_we0_local;
-wire   [31:0] bitcast_ln15_fu_112_p1;
+wire   [31:0] bitcast_ln17_fu_114_p1;
 reg    real_sample_ce0_local;
 reg    imag_sample_we0_local;
-wire   [31:0] bitcast_ln16_fu_117_p1;
+wire   [31:0] bitcast_ln18_fu_119_p1;
 reg    imag_sample_ce0_local;
 reg    ap_done_reg;
 wire    ap_continue_int;
@@ -99,7 +99,7 @@ wire    ap_ce_reg;
 initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
-#0 j_fu_40 = 11'd0;
+#0 j_fu_42 = 11'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -152,22 +152,22 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((icmp_ln14_fu_90_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            j_fu_40 <= add_ln14_fu_96_p2;
+        if (((icmp_ln16_fu_92_p2 == 1'd0) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+            j_fu_42 <= add_ln16_fu_98_p2;
         end else if ((ap_loop_init == 1'b1)) begin
-            j_fu_40 <= 11'd0;
+            j_fu_42 <= 11'd0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        j_1_reg_129 <= ap_sig_allocacmp_j_1;
+        j_1_reg_131 <= ap_sig_allocacmp_j_1;
     end
 end
 
 always @ (*) begin
-    if (((icmp_ln14_fu_90_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((icmp_ln16_fu_92_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -210,7 +210,7 @@ always @ (*) begin
     if (((ap_loop_init == 1'b1) & (1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_sig_allocacmp_j_1 = 11'd0;
     end else begin
-        ap_sig_allocacmp_j_1 = j_fu_40;
+        ap_sig_allocacmp_j_1 = j_fu_42;
     end
 end
 
@@ -232,33 +232,33 @@ end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_grp1) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        input_imag_blk_n = input_imag_empty_n;
+        input_imag_TDATA_blk_n = input_imag_TVALID;
     end else begin
-        input_imag_blk_n = 1'b1;
+        input_imag_TDATA_blk_n = 1'b1;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001_grp1) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        input_imag_read = 1'b1;
+        input_imag_TREADY = 1'b1;
     end else begin
-        input_imag_read = 1'b0;
+        input_imag_TREADY = 1'b0;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_grp1) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        input_real_blk_n = input_real_empty_n;
+        input_real_TDATA_blk_n = input_real_TVALID;
     end else begin
-        input_real_blk_n = 1'b1;
+        input_real_TDATA_blk_n = 1'b1;
     end
 end
 
 always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0_11001_grp1) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        input_real_read = 1'b1;
+        input_real_TREADY = 1'b1;
     end else begin
-        input_real_read = 1'b0;
+        input_real_TREADY = 1'b0;
     end
 end
 
@@ -289,7 +289,7 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln14_fu_96_p2 = (ap_sig_allocacmp_j_1 + 11'd1);
+assign add_ln16_fu_98_p2 = (ap_sig_allocacmp_j_1 + 11'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -310,7 +310,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    ap_block_state2_pp0_stage0_iter1_grp1 = ((input_imag_empty_n == 1'b0) | (input_real_empty_n == 1'b0));
+    ap_block_state2_pp0_stage0_iter1_grp1 = ((input_imag_TVALID == 1'b0) | (input_real_TVALID == 1'b0));
 end
 
 assign ap_done = ap_done_sig;
@@ -323,28 +323,28 @@ assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign ap_ready = ap_ready_sig;
 
-assign bitcast_ln15_fu_112_p1 = input_real_dout;
+assign bitcast_ln17_fu_114_p1 = input_real_TDATA;
 
-assign bitcast_ln16_fu_117_p1 = input_imag_dout;
+assign bitcast_ln18_fu_119_p1 = input_imag_TDATA;
 
-assign icmp_ln14_fu_90_p2 = ((ap_sig_allocacmp_j_1 == 11'd1024) ? 1'b1 : 1'b0);
+assign icmp_ln16_fu_92_p2 = ((ap_sig_allocacmp_j_1 == 11'd1024) ? 1'b1 : 1'b0);
 
-assign imag_sample_address0 = zext_ln14_fu_107_p1;
+assign imag_sample_address0 = zext_ln16_fu_109_p1;
 
 assign imag_sample_ce0 = imag_sample_ce0_local;
 
-assign imag_sample_d0 = bitcast_ln16_fu_117_p1;
+assign imag_sample_d0 = bitcast_ln18_fu_119_p1;
 
 assign imag_sample_we0 = imag_sample_we0_local;
 
-assign real_sample_address0 = zext_ln14_fu_107_p1;
+assign real_sample_address0 = zext_ln16_fu_109_p1;
 
 assign real_sample_ce0 = real_sample_ce0_local;
 
-assign real_sample_d0 = bitcast_ln15_fu_112_p1;
+assign real_sample_d0 = bitcast_ln17_fu_114_p1;
 
 assign real_sample_we0 = real_sample_we0_local;
 
-assign zext_ln14_fu_107_p1 = j_1_reg_129;
+assign zext_ln16_fu_109_p1 = j_1_reg_131;
 
 endmodule //dft_dft_Pipeline_READ_INPUT

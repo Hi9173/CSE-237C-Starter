@@ -6,59 +6,96 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="dft_dft,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.256000,HLS_SYN_LAT=6292502,HLS_SYN_TPT=none,HLS_SYN_MEM=8,HLS_SYN_DSP=0,HLS_SYN_FF=1133,HLS_SYN_LUT=1538,HLS_VERSION=2024_2}" *)
+(* CORE_GENERATION_INFO="dft_dft,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.256000,HLS_SYN_LAT=6292504,HLS_SYN_TPT=none,HLS_SYN_MEM=8,HLS_SYN_DSP=0,HLS_SYN_FF=1235,HLS_SYN_LUT=1632,HLS_VERSION=2024_2}" *)
 
 module dft (
         ap_clk,
-        ap_rst,
-        ap_start,
-        ap_done,
-        ap_idle,
-        ap_ready,
-        input_real_dout,
-        input_real_empty_n,
-        input_real_read,
-        input_imag_dout,
-        input_imag_empty_n,
-        input_imag_read,
-        output_real_din,
-        output_real_full_n,
-        output_real_write,
-        output_imag_din,
-        output_imag_full_n,
-        output_imag_write
+        ap_rst_n,
+        input_real_TDATA,
+        input_real_TVALID,
+        input_real_TREADY,
+        input_imag_TDATA,
+        input_imag_TVALID,
+        input_imag_TREADY,
+        output_real_TDATA,
+        output_real_TVALID,
+        output_real_TREADY,
+        output_imag_TDATA,
+        output_imag_TVALID,
+        output_imag_TREADY,
+        s_axi_control_AWVALID,
+        s_axi_control_AWREADY,
+        s_axi_control_AWADDR,
+        s_axi_control_WVALID,
+        s_axi_control_WREADY,
+        s_axi_control_WDATA,
+        s_axi_control_WSTRB,
+        s_axi_control_ARVALID,
+        s_axi_control_ARREADY,
+        s_axi_control_ARADDR,
+        s_axi_control_RVALID,
+        s_axi_control_RREADY,
+        s_axi_control_RDATA,
+        s_axi_control_RRESP,
+        s_axi_control_BVALID,
+        s_axi_control_BREADY,
+        s_axi_control_BRESP,
+        interrupt
 );
 
-parameter    ap_ST_fsm_state1 = 4'd1;
-parameter    ap_ST_fsm_state2 = 4'd2;
-parameter    ap_ST_fsm_state3 = 4'd4;
-parameter    ap_ST_fsm_state4 = 4'd8;
+parameter    ap_ST_fsm_state1 = 6'd1;
+parameter    ap_ST_fsm_state2 = 6'd2;
+parameter    ap_ST_fsm_state3 = 6'd4;
+parameter    ap_ST_fsm_state4 = 6'd8;
+parameter    ap_ST_fsm_state5 = 6'd16;
+parameter    ap_ST_fsm_state6 = 6'd32;
+parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
+parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 4;
+parameter    C_S_AXI_DATA_WIDTH = 32;
+
+parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
+parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
 
 input   ap_clk;
-input   ap_rst;
-input   ap_start;
-output   ap_done;
-output   ap_idle;
-output   ap_ready;
-input  [31:0] input_real_dout;
-input   input_real_empty_n;
-output   input_real_read;
-input  [31:0] input_imag_dout;
-input   input_imag_empty_n;
-output   input_imag_read;
-output  [31:0] output_real_din;
-input   output_real_full_n;
-output   output_real_write;
-output  [31:0] output_imag_din;
-input   output_imag_full_n;
-output   output_imag_write;
+input   ap_rst_n;
+input  [31:0] input_real_TDATA;
+input   input_real_TVALID;
+output   input_real_TREADY;
+input  [31:0] input_imag_TDATA;
+input   input_imag_TVALID;
+output   input_imag_TREADY;
+output  [31:0] output_real_TDATA;
+output   output_real_TVALID;
+input   output_real_TREADY;
+output  [31:0] output_imag_TDATA;
+output   output_imag_TVALID;
+input   output_imag_TREADY;
+input   s_axi_control_AWVALID;
+output   s_axi_control_AWREADY;
+input  [C_S_AXI_CONTROL_ADDR_WIDTH - 1:0] s_axi_control_AWADDR;
+input   s_axi_control_WVALID;
+output   s_axi_control_WREADY;
+input  [C_S_AXI_CONTROL_DATA_WIDTH - 1:0] s_axi_control_WDATA;
+input  [C_S_AXI_CONTROL_WSTRB_WIDTH - 1:0] s_axi_control_WSTRB;
+input   s_axi_control_ARVALID;
+output   s_axi_control_ARREADY;
+input  [C_S_AXI_CONTROL_ADDR_WIDTH - 1:0] s_axi_control_ARADDR;
+output   s_axi_control_RVALID;
+input   s_axi_control_RREADY;
+output  [C_S_AXI_CONTROL_DATA_WIDTH - 1:0] s_axi_control_RDATA;
+output  [1:0] s_axi_control_RRESP;
+output   s_axi_control_BVALID;
+input   s_axi_control_BREADY;
+output  [1:0] s_axi_control_BRESP;
+output   interrupt;
 
-reg ap_done;
-reg ap_idle;
-reg ap_ready;
-
-(* fsm_encoding = "none" *) reg   [3:0] ap_CS_fsm;
+ reg    ap_rst_n_inv;
+wire    ap_start;
+reg    ap_done;
+reg    ap_idle;
+(* fsm_encoding = "none" *) reg   [5:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
+reg    ap_ready;
 reg   [9:0] real_sample_address0;
 reg    real_sample_ce0;
 reg    real_sample_we0;
@@ -67,49 +104,76 @@ reg   [9:0] imag_sample_address0;
 reg    imag_sample_ce0;
 reg    imag_sample_we0;
 wire   [31:0] imag_sample_q0;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_ap_start;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_ap_done;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_ap_idle;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_ap_ready;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_input_real_read;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_input_imag_read;
-wire   [9:0] grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_address0;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_ce0;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_we0;
-wire   [31:0] grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_d0;
-wire   [9:0] grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_address0;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_ce0;
-wire    grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_we0;
-wire   [31:0] grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_d0;
-wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start;
-wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_done;
-wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_idle;
-wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_ready;
-wire   [31:0] grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_real_din;
-wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_real_write;
-wire   [31:0] grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_imag_din;
-wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_imag_write;
-wire   [9:0] grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_real_sample_address0;
-wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_real_sample_ce0;
-wire   [9:0] grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_imag_sample_address0;
-wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_imag_sample_ce0;
-reg    grp_dft_Pipeline_READ_INPUT_fu_42_ap_start_reg;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_ap_start;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_ap_done;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_ap_idle;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_ap_ready;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_input_real_TREADY;
+wire   [9:0] grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_address0;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_ce0;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_we0;
+wire   [31:0] grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_d0;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_input_imag_TREADY;
+wire   [9:0] grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_address0;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_ce0;
+wire    grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_we0;
+wire   [31:0] grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_d0;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_done;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_idle;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_ready;
+wire   [31:0] grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TDATA;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TVALID;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TREADY;
+wire   [31:0] grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TDATA;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TVALID;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TREADY;
+wire   [9:0] grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_real_sample_address0;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_real_sample_ce0;
+wire   [9:0] grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_imag_sample_address0;
+wire    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_imag_sample_ce0;
+reg    grp_dft_Pipeline_READ_INPUT_fu_50_ap_start_reg;
 wire    ap_CS_fsm_state2;
-reg    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start_reg;
 wire    ap_CS_fsm_state3;
+reg    grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start_reg;
 wire    ap_CS_fsm_state4;
-reg   [3:0] ap_NS_fsm;
+reg   [31:0] output_real_TDATA_reg;
+wire    ap_CS_fsm_state5;
+reg   [31:0] output_imag_TDATA_reg;
+wire    ap_CS_fsm_state6;
+wire    regslice_both_output_real_U_apdone_blk;
+wire    regslice_both_output_imag_U_apdone_blk;
+reg    ap_block_state6;
+reg   [5:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
-reg    ap_ST_fsm_state2_blk;
-wire    ap_ST_fsm_state3_blk;
-reg    ap_ST_fsm_state4_blk;
+wire    ap_ST_fsm_state2_blk;
+reg    ap_ST_fsm_state3_blk;
+wire    ap_ST_fsm_state4_blk;
+reg    ap_ST_fsm_state5_blk;
+reg    ap_ST_fsm_state6_blk;
+wire    regslice_both_input_real_U_apdone_blk;
+wire   [31:0] input_real_TDATA_int_regslice;
+wire    input_real_TVALID_int_regslice;
+reg    input_real_TREADY_int_regslice;
+wire    regslice_both_input_real_U_ack_in;
+wire    regslice_both_input_imag_U_apdone_blk;
+wire   [31:0] input_imag_TDATA_int_regslice;
+wire    input_imag_TVALID_int_regslice;
+reg    input_imag_TREADY_int_regslice;
+wire    regslice_both_input_imag_U_ack_in;
+reg   [31:0] output_real_TDATA_int_regslice;
+wire    output_real_TREADY_int_regslice;
+wire    regslice_both_output_real_U_vld_out;
+reg   [31:0] output_imag_TDATA_int_regslice;
+wire    output_imag_TREADY_int_regslice;
+wire    regslice_both_output_imag_U_vld_out;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 4'd1;
-#0 grp_dft_Pipeline_READ_INPUT_fu_42_ap_start_reg = 1'b0;
-#0 grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start_reg = 1'b0;
+#0 ap_CS_fsm = 6'd1;
+#0 grp_dft_Pipeline_READ_INPUT_fu_50_ap_start_reg = 1'b0;
+#0 grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start_reg = 1'b0;
 end
 
 dft_real_sample_RAM_AUTO_1R1W #(
@@ -118,11 +182,11 @@ dft_real_sample_RAM_AUTO_1R1W #(
     .AddressWidth( 10 ))
 real_sample_U(
     .clk(ap_clk),
-    .reset(ap_rst),
+    .reset(ap_rst_n_inv),
     .address0(real_sample_address0),
     .ce0(real_sample_ce0),
     .we0(real_sample_we0),
-    .d0(grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_d0),
+    .d0(grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_d0),
     .q0(real_sample_q0)
 );
 
@@ -132,60 +196,147 @@ dft_real_sample_RAM_AUTO_1R1W #(
     .AddressWidth( 10 ))
 imag_sample_U(
     .clk(ap_clk),
-    .reset(ap_rst),
+    .reset(ap_rst_n_inv),
     .address0(imag_sample_address0),
     .ce0(imag_sample_ce0),
     .we0(imag_sample_we0),
-    .d0(grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_d0),
+    .d0(grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_d0),
     .q0(imag_sample_q0)
 );
 
-dft_dft_Pipeline_READ_INPUT grp_dft_Pipeline_READ_INPUT_fu_42(
+dft_dft_Pipeline_READ_INPUT grp_dft_Pipeline_READ_INPUT_fu_50(
     .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_dft_Pipeline_READ_INPUT_fu_42_ap_start),
-    .ap_done(grp_dft_Pipeline_READ_INPUT_fu_42_ap_done),
-    .ap_idle(grp_dft_Pipeline_READ_INPUT_fu_42_ap_idle),
-    .ap_ready(grp_dft_Pipeline_READ_INPUT_fu_42_ap_ready),
-    .input_real_dout(input_real_dout),
-    .input_real_empty_n(input_real_empty_n),
-    .input_real_read(grp_dft_Pipeline_READ_INPUT_fu_42_input_real_read),
-    .input_imag_dout(input_imag_dout),
-    .input_imag_empty_n(input_imag_empty_n),
-    .input_imag_read(grp_dft_Pipeline_READ_INPUT_fu_42_input_imag_read),
-    .real_sample_address0(grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_address0),
-    .real_sample_ce0(grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_ce0),
-    .real_sample_we0(grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_we0),
-    .real_sample_d0(grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_d0),
-    .imag_sample_address0(grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_address0),
-    .imag_sample_ce0(grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_ce0),
-    .imag_sample_we0(grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_we0),
-    .imag_sample_d0(grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_d0)
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_dft_Pipeline_READ_INPUT_fu_50_ap_start),
+    .ap_done(grp_dft_Pipeline_READ_INPUT_fu_50_ap_done),
+    .ap_idle(grp_dft_Pipeline_READ_INPUT_fu_50_ap_idle),
+    .ap_ready(grp_dft_Pipeline_READ_INPUT_fu_50_ap_ready),
+    .input_real_TVALID(input_real_TVALID_int_regslice),
+    .input_imag_TVALID(input_imag_TVALID_int_regslice),
+    .input_real_TDATA(input_real_TDATA_int_regslice),
+    .input_real_TREADY(grp_dft_Pipeline_READ_INPUT_fu_50_input_real_TREADY),
+    .real_sample_address0(grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_address0),
+    .real_sample_ce0(grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_ce0),
+    .real_sample_we0(grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_we0),
+    .real_sample_d0(grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_d0),
+    .input_imag_TDATA(input_imag_TDATA_int_regslice),
+    .input_imag_TREADY(grp_dft_Pipeline_READ_INPUT_fu_50_input_imag_TREADY),
+    .imag_sample_address0(grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_address0),
+    .imag_sample_ce0(grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_ce0),
+    .imag_sample_we0(grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_we0),
+    .imag_sample_d0(grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_d0)
 );
 
-dft_dft_Pipeline_COMPUTE_DFT_INNER_LOOP grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54(
+dft_dft_Pipeline_COMPUTE_DFT_INNER_LOOP grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60(
     .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start),
-    .ap_done(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_done),
-    .ap_idle(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_idle),
-    .ap_ready(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_ready),
-    .output_real_din(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_real_din),
-    .output_real_full_n(output_real_full_n),
-    .output_real_write(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_real_write),
-    .output_imag_din(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_imag_din),
-    .output_imag_full_n(output_imag_full_n),
-    .output_imag_write(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_imag_write),
-    .real_sample_address0(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_real_sample_address0),
-    .real_sample_ce0(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_real_sample_ce0),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start),
+    .ap_done(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_done),
+    .ap_idle(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_idle),
+    .ap_ready(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_ready),
+    .output_real_TDATA(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TDATA),
+    .output_real_TVALID(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TVALID),
+    .output_real_TREADY(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TREADY),
+    .output_imag_TDATA(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TDATA),
+    .output_imag_TVALID(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TVALID),
+    .output_imag_TREADY(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TREADY),
+    .real_sample_address0(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_real_sample_address0),
+    .real_sample_ce0(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_real_sample_ce0),
     .real_sample_q0(real_sample_q0),
-    .imag_sample_address0(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_imag_sample_address0),
-    .imag_sample_ce0(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_imag_sample_ce0),
+    .imag_sample_address0(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_imag_sample_address0),
+    .imag_sample_ce0(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_imag_sample_ce0),
     .imag_sample_q0(imag_sample_q0)
 );
 
+dft_control_s_axi #(
+    .C_S_AXI_ADDR_WIDTH( C_S_AXI_CONTROL_ADDR_WIDTH ),
+    .C_S_AXI_DATA_WIDTH( C_S_AXI_CONTROL_DATA_WIDTH ))
+control_s_axi_U(
+    .AWVALID(s_axi_control_AWVALID),
+    .AWREADY(s_axi_control_AWREADY),
+    .AWADDR(s_axi_control_AWADDR),
+    .WVALID(s_axi_control_WVALID),
+    .WREADY(s_axi_control_WREADY),
+    .WDATA(s_axi_control_WDATA),
+    .WSTRB(s_axi_control_WSTRB),
+    .ARVALID(s_axi_control_ARVALID),
+    .ARREADY(s_axi_control_ARREADY),
+    .ARADDR(s_axi_control_ARADDR),
+    .RVALID(s_axi_control_RVALID),
+    .RREADY(s_axi_control_RREADY),
+    .RDATA(s_axi_control_RDATA),
+    .RRESP(s_axi_control_RRESP),
+    .BVALID(s_axi_control_BVALID),
+    .BREADY(s_axi_control_BREADY),
+    .BRESP(s_axi_control_BRESP),
+    .ACLK(ap_clk),
+    .ARESET(ap_rst_n_inv),
+    .ACLK_EN(1'b1),
+    .ap_start(ap_start),
+    .interrupt(interrupt),
+    .ap_ready(ap_ready),
+    .ap_done(ap_done),
+    .ap_idle(ap_idle)
+);
+
+dft_regslice_both #(
+    .DataWidth( 32 ))
+regslice_both_input_real_U(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .data_in(input_real_TDATA),
+    .vld_in(input_real_TVALID),
+    .ack_in(regslice_both_input_real_U_ack_in),
+    .data_out(input_real_TDATA_int_regslice),
+    .vld_out(input_real_TVALID_int_regslice),
+    .ack_out(input_real_TREADY_int_regslice),
+    .apdone_blk(regslice_both_input_real_U_apdone_blk)
+);
+
+dft_regslice_both #(
+    .DataWidth( 32 ))
+regslice_both_input_imag_U(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .data_in(input_imag_TDATA),
+    .vld_in(input_imag_TVALID),
+    .ack_in(regslice_both_input_imag_U_ack_in),
+    .data_out(input_imag_TDATA_int_regslice),
+    .vld_out(input_imag_TVALID_int_regslice),
+    .ack_out(input_imag_TREADY_int_regslice),
+    .apdone_blk(regslice_both_input_imag_U_apdone_blk)
+);
+
+dft_regslice_both #(
+    .DataWidth( 32 ))
+regslice_both_output_real_U(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .data_in(output_real_TDATA_int_regslice),
+    .vld_in(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TVALID),
+    .ack_in(output_real_TREADY_int_regslice),
+    .data_out(output_real_TDATA),
+    .vld_out(regslice_both_output_real_U_vld_out),
+    .ack_out(output_real_TREADY),
+    .apdone_blk(regslice_both_output_real_U_apdone_blk)
+);
+
+dft_regslice_both #(
+    .DataWidth( 32 ))
+regslice_both_output_imag_U(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .data_in(output_imag_TDATA_int_regslice),
+    .vld_in(grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TVALID),
+    .ack_in(output_imag_TREADY_int_regslice),
+    .data_out(output_imag_TDATA),
+    .vld_out(regslice_both_output_imag_U_vld_out),
+    .ack_out(output_imag_TREADY),
+    .apdone_blk(regslice_both_output_imag_U_apdone_blk)
+);
+
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
+    if (ap_rst_n_inv == 1'b1) begin
         ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
@@ -193,26 +344,38 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start_reg <= 1'b0;
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state3)) begin
-            grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start_reg <= 1'b1;
-        end else if ((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_ready == 1'b1)) begin
-            grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state4)) begin
+            grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start_reg <= 1'b1;
+        end else if ((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_ready == 1'b1)) begin
+            grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_dft_Pipeline_READ_INPUT_fu_42_ap_start_reg <= 1'b0;
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_dft_Pipeline_READ_INPUT_fu_50_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
-            grp_dft_Pipeline_READ_INPUT_fu_42_ap_start_reg <= 1'b1;
-        end else if ((grp_dft_Pipeline_READ_INPUT_fu_42_ap_ready == 1'b1)) begin
-            grp_dft_Pipeline_READ_INPUT_fu_42_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state2)) begin
+            grp_dft_Pipeline_READ_INPUT_fu_50_ap_start_reg <= 1'b1;
+        end else if ((grp_dft_Pipeline_READ_INPUT_fu_50_ap_ready == 1'b1)) begin
+            grp_dft_Pipeline_READ_INPUT_fu_50_ap_start_reg <= 1'b0;
         end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TVALID == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        output_imag_TDATA_reg <= grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TDATA;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TVALID == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        output_real_TDATA_reg <= grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TDATA;
     end
 end
 
@@ -224,26 +387,36 @@ always @ (*) begin
     end
 end
 
+assign ap_ST_fsm_state2_blk = 1'b0;
+
 always @ (*) begin
-    if ((grp_dft_Pipeline_READ_INPUT_fu_42_ap_done == 1'b0)) begin
-        ap_ST_fsm_state2_blk = 1'b1;
+    if ((grp_dft_Pipeline_READ_INPUT_fu_50_ap_done == 1'b0)) begin
+        ap_ST_fsm_state3_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state2_blk = 1'b0;
+        ap_ST_fsm_state3_blk = 1'b0;
     end
 end
 
-assign ap_ST_fsm_state3_blk = 1'b0;
+assign ap_ST_fsm_state4_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_done == 1'b0)) begin
-        ap_ST_fsm_state4_blk = 1'b1;
+    if ((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_done == 1'b0)) begin
+        ap_ST_fsm_state5_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state4_blk = 1'b0;
+        ap_ST_fsm_state5_blk = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
+    if ((1'b1 == ap_block_state6)) begin
+        ap_ST_fsm_state6_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state6_blk = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state6) & (1'b0 == ap_block_state6))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -251,7 +424,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -259,7 +432,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
+    if (((1'b1 == ap_CS_fsm_state6) & (1'b0 == ap_block_state6))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -267,56 +440,88 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        imag_sample_address0 = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_imag_sample_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        imag_sample_address0 = grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_address0;
+    if ((1'b1 == ap_CS_fsm_state5)) begin
+        imag_sample_address0 = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_imag_sample_address0;
+    end else if ((1'b1 == ap_CS_fsm_state3)) begin
+        imag_sample_address0 = grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_address0;
     end else begin
         imag_sample_address0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        imag_sample_ce0 = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_imag_sample_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        imag_sample_ce0 = grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_ce0;
+    if ((1'b1 == ap_CS_fsm_state5)) begin
+        imag_sample_ce0 = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_imag_sample_ce0;
+    end else if ((1'b1 == ap_CS_fsm_state3)) begin
+        imag_sample_ce0 = grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_ce0;
     end else begin
         imag_sample_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        imag_sample_we0 = grp_dft_Pipeline_READ_INPUT_fu_42_imag_sample_we0;
+    if ((1'b1 == ap_CS_fsm_state3)) begin
+        imag_sample_we0 = grp_dft_Pipeline_READ_INPUT_fu_50_imag_sample_we0;
     end else begin
         imag_sample_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        real_sample_address0 = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_real_sample_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        real_sample_address0 = grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_address0;
+    if ((1'b1 == ap_CS_fsm_state3)) begin
+        input_imag_TREADY_int_regslice = grp_dft_Pipeline_READ_INPUT_fu_50_input_imag_TREADY;
+    end else begin
+        input_imag_TREADY_int_regslice = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state3)) begin
+        input_real_TREADY_int_regslice = grp_dft_Pipeline_READ_INPUT_fu_50_input_real_TREADY;
+    end else begin
+        input_real_TREADY_int_regslice = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TVALID == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        output_imag_TDATA_int_regslice = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TDATA;
+    end else begin
+        output_imag_TDATA_int_regslice = output_imag_TDATA_reg;
+    end
+end
+
+always @ (*) begin
+    if (((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TVALID == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+        output_real_TDATA_int_regslice = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TDATA;
+    end else begin
+        output_real_TDATA_int_regslice = output_real_TDATA_reg;
+    end
+end
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state5)) begin
+        real_sample_address0 = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_real_sample_address0;
+    end else if ((1'b1 == ap_CS_fsm_state3)) begin
+        real_sample_address0 = grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_address0;
     end else begin
         real_sample_address0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        real_sample_ce0 = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_real_sample_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        real_sample_ce0 = grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_ce0;
+    if ((1'b1 == ap_CS_fsm_state5)) begin
+        real_sample_ce0 = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_real_sample_ce0;
+    end else if ((1'b1 == ap_CS_fsm_state3)) begin
+        real_sample_ce0 = grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_ce0;
     end else begin
         real_sample_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        real_sample_we0 = grp_dft_Pipeline_READ_INPUT_fu_42_real_sample_we0;
+    if ((1'b1 == ap_CS_fsm_state3)) begin
+        real_sample_we0 = grp_dft_Pipeline_READ_INPUT_fu_50_real_sample_we0;
     end else begin
         real_sample_we0 = 1'b0;
     end
@@ -325,27 +530,37 @@ end
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((grp_dft_Pipeline_READ_INPUT_fu_42_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
-                ap_NS_fsm = ap_ST_fsm_state3;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state2;
-            end
+            ap_NS_fsm = ap_ST_fsm_state3;
         end
         ap_ST_fsm_state3 : begin
-            ap_NS_fsm = ap_ST_fsm_state4;
+            if (((grp_dft_Pipeline_READ_INPUT_fu_50_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end
         end
         ap_ST_fsm_state4 : begin
-            if (((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
+            ap_NS_fsm = ap_ST_fsm_state5;
+        end
+        ap_ST_fsm_state5 : begin
+            if (((grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+                ap_NS_fsm = ap_ST_fsm_state6;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state5;
+            end
+        end
+        ap_ST_fsm_state6 : begin
+            if (((1'b1 == ap_CS_fsm_state6) & (1'b0 == ap_block_state6))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state4;
+                ap_NS_fsm = ap_ST_fsm_state6;
             end
         end
         default : begin
@@ -362,20 +577,39 @@ assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
 assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
-assign grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_ap_start_reg;
+assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
 
-assign grp_dft_Pipeline_READ_INPUT_fu_42_ap_start = grp_dft_Pipeline_READ_INPUT_fu_42_ap_start_reg;
+assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
 
-assign input_imag_read = grp_dft_Pipeline_READ_INPUT_fu_42_input_imag_read;
+always @ (*) begin
+    ap_block_state6 = ((regslice_both_output_imag_U_apdone_blk == 1'b1) | (regslice_both_output_real_U_apdone_blk == 1'b1));
+end
 
-assign input_real_read = grp_dft_Pipeline_READ_INPUT_fu_42_input_real_read;
+always @ (*) begin
+    ap_rst_n_inv = ~ap_rst_n;
+end
 
-assign output_imag_din = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_imag_din;
+assign grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_ap_start_reg;
 
-assign output_imag_write = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_imag_write;
+assign grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_imag_TREADY = (output_imag_TREADY_int_regslice & ap_CS_fsm_state5);
 
-assign output_real_din = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_real_din;
+assign grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60_output_real_TREADY = (output_real_TREADY_int_regslice & ap_CS_fsm_state5);
 
-assign output_real_write = grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_54_output_real_write;
+assign grp_dft_Pipeline_READ_INPUT_fu_50_ap_start = grp_dft_Pipeline_READ_INPUT_fu_50_ap_start_reg;
+
+assign input_imag_TREADY = regslice_both_input_imag_U_ack_in;
+
+assign input_real_TREADY = regslice_both_input_real_U_ack_in;
+
+assign output_imag_TVALID = regslice_both_output_imag_U_vld_out;
+
+assign output_real_TVALID = regslice_both_output_real_U_vld_out;
+
+
+reg find_kernel_block = 0;
+// synthesis translate_off
+`include "dft_hls_deadlock_kernel_monitor_top.vh"
+// synthesis translate_on
 
 endmodule //dft
+

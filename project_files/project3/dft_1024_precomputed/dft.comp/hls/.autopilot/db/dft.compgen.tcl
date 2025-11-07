@@ -13,79 +13,116 @@ if {${::AESL::PGuard_autoexp_gen}} {
 }
 
 set axilite_register_dict [dict create]
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 18 \
-    name input_real \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_input_real \
-    op interface \
-    ports { input_real_dout { I 32 vector } input_real_empty_n { I 1 bit } input_real_read { O 1 bit } } \
-} "
+set port_control {
+ap_start { }
+ap_done { }
+ap_ready { }
+ap_idle { }
+interrupt {
+}
+}
+dict set axilite_register_dict control $port_control
+
+
+# Native S_AXILite:
+if {${::AESL::PGuard_simmodel_gen}} {
+	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
+		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
+			id 18 \
+			corename dft_control_axilite \
+			name dft_control_s_axi \
+			ports {$port_control} \
+			op interface \
+			interrupt_clear_mode TOW \
+			interrupt_trigger_type default \
+			is_flushable 0 \
+			is_datawidth64 0 \
+			is_addrwidth64 1 \
+		} "
+	} else {
+		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'control'"
+	}
 }
 
-# Direct connection:
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler dft_control_s_axi BINDTYPE interface TYPE interface_s_axilite
+}
+
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     id 19 \
-    name input_imag \
-    type fifo \
-    dir I \
-    reset_level 1 \
+    name input_real \
+    reset_level 0 \
     sync_rst true \
-    corename dc_input_imag \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { input_imag_dout { I 32 vector } input_imag_empty_n { I 1 bit } input_imag_read { O 1 bit } } \
+    ports { input_real_TDATA { I 32 vector } input_real_TVALID { I 1 bit } input_real_TREADY { O 1 bit } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'input_real'"
+}
 }
 
-# Direct connection:
+
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     id 20 \
-    name output_real \
-    type fifo \
-    dir O \
-    reset_level 1 \
+    name input_imag \
+    reset_level 0 \
     sync_rst true \
-    corename dc_output_real \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { output_real_din { O 32 vector } output_real_full_n { I 1 bit } output_real_write { O 1 bit } } \
+    ports { input_imag_TDATA { I 32 vector } input_imag_TVALID { I 1 bit } input_imag_TREADY { O 1 bit } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'input_imag'"
+}
 }
 
-# Direct connection:
+
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
     id 21 \
-    name output_imag \
-    type fifo \
-    dir O \
-    reset_level 1 \
+    name output_real \
+    reset_level 0 \
     sync_rst true \
-    corename dc_output_imag \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { output_imag_din { O 32 vector } output_imag_full_n { I 1 bit } output_imag_write { O 1 bit } } \
+    ports { output_real_TDATA { O 32 vector } output_real_TVALID { O 1 bit } output_real_TREADY { I 1 bit } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_real'"
+}
 }
 
-# Direct connection:
+
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id -1 \
-    name ap_ctrl \
-    type ap_ctrl \
-    reset_level 1 \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 22 \
+    name output_imag \
+    reset_level 0 \
     sync_rst true \
-    corename ap_ctrl \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+    ports { output_imag_TDATA { O 32 vector } output_imag_TVALID { O 1 bit } output_imag_TREADY { I 1 bit } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_imag'"
 }
+}
+
 
 
 # Adapter definition:
@@ -94,9 +131,9 @@ set DataWd 1
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_clock"} {
 eval "cg_default_interface_gen_clock { \
-    id -2 \
+    id -1 \
     name ${PortName} \
-    reset_level 1 \
+    reset_level 0 \
     sync_rst true \
     corename apif_ap_clk \
     data_wd ${DataWd} \
@@ -109,16 +146,16 @@ puts "@W \[IMPL-113\] Cannot find bus interface model in the library. Ignored ge
 
 
 # Adapter definition:
-set PortName ap_rst
+set PortName ap_rst_n
 set DataWd 1 
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
-    id -3 \
+    id -2 \
     name ${PortName} \
-    reset_level 1 \
+    reset_level 0 \
     sync_rst true \
-    corename apif_ap_rst \
+    corename apif_ap_rst_n \
     data_wd ${DataWd} \
     op interface \
 }"
@@ -134,6 +171,26 @@ if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
     AESL_LIB_XILADAPTER::native_axis_end
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler dft_regslice_both BINDTYPE {interface} TYPE {adapter} IMPL {reg_slice}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler dft_regslice_both BINDTYPE {interface} TYPE {adapter} IMPL {reg_slice}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler dft_regslice_both BINDTYPE {interface} TYPE {adapter} IMPL {reg_slice}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler dft_regslice_both BINDTYPE {interface} TYPE {adapter} IMPL {reg_slice}
 }
 
 
