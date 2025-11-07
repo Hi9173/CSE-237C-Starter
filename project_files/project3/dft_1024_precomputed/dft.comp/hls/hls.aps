@@ -6,7 +6,6 @@
         <value string="dft.comp"/>
     </project>
     <flowTarget value="vivado"/>
-    <writeConfigIni value="true"/>
     <targetInfo>
         <TargetInfo value="xc7z020:-clg400:-1"/>
     </targetInfo>
@@ -14,7 +13,11 @@
         <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
     </libraryList>
     <clockList>
-        <clock name="default" period="10" default="false"/>
+        <clock name="default" period="10ns" default="false"/>
     </clockList>
+    <writeConfigIni value="true"/>
+    <config>
+        <config_export format="ip_catalog" ipname="dft" rtl="verilog" version="1.0"/>
+    </config>
 </AutoPilot:solution>
 
