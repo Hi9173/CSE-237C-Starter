@@ -4,6 +4,8 @@
 void dft(hls::stream<DTYPE> &input_real, hls::stream<DTYPE> &input_imag,
          hls::stream<DTYPE> &output_real, hls::stream<DTYPE> &output_imag)
 {
+    #pragma HLS INTERFACE mode=axis port=input_real,input_imag,output_real,output_imag
+    #pragma HLS INTERFACE mode=s_axilite port=return
 	int i, j;
 	int idx;
 	DTYPE c, s;
