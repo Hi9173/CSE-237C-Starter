@@ -1,0 +1,20 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool operator==<1, false>(ap_int_base<1, false> const&, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_last_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_strb_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<1, false>::operator==<32, true>(ap_int_base<32, true> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="/software/common/Xilinx_Vitis/Vitis/2024.2/common/technology/autopilot/etc/ap_common.h" line="515" pragmaType="inline" parentfunction="ssdm_int<32, true>::ssdm_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_data_ptr" off="0" region="0" recursive="0"/>
+<pragma file="axis_fp_example.cpp" line="11" pragmaType="interface" parentfunction="axis_fp_example" mode="axis" port="D" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="axis_fp_example.cpp" line="11" pragmaType="interface" parentfunction="axis_fp_example" mode="axis" port="C" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="axis_fp_example.cpp" line="11" pragmaType="interface" parentfunction="axis_fp_example" mode="axis" port="B" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="axis_fp_example.cpp" line="11" pragmaType="interface" parentfunction="axis_fp_example" mode="axis" port="A" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="axis_fp_example.cpp" line="12" pragmaType="interface" parentfunction="axis_fp_example" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_keep_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_dest_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_id_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="get_user_ptr" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+</pragmas>

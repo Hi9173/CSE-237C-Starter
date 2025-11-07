@@ -1,0 +1,49 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_axis_fp_example_ir
+Args:            
+  - Callee:          'axis_fp_example(hls::stream<hls::axis<float, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<float, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<float, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<float, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: axis_fp_example.cpp, Line: 10, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_axis_fp_example_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: axis_fp_example.cpp, Line: 17, Column: 19 }
+Function:        _Z15axis_fp_exampleRN3hls6streamINS_4axisIfLm0ELm0ELm0ELh56ELb0EEELi0EEES4_S4_S4_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_17_1
+  - String:          ' '
+  - LoopLoc:         'axis_fp_example.cpp:17:19'
+  - String:          ' '
+  - Function:        'axis_fp_example(hls::stream<hls::axis<float, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<float, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<float, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<float, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)'
+    DebugLoc:        { File: axis_fp_example.cpp, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-occurrence-inference
+Name:            NonComputableLoopForm
+DebugLoc:        { File: axis_fp_example.cpp, Line: 17, Column: 19 }
+Function:        _Z15axis_fp_exampleRN3hls6streamINS_4axisIfLm0ELm0ELm0ELh56ELb0EEELi0EEES4_S4_S4_
+Args:            
+  - String:          'Could not analyze occurrence information within '''
+  - LoopName:        VITIS_LOOP_17_1
+  - String:          '''('
+  - LoopLoc:         'axis_fp_example.cpp:17:19'
+  - String:          ') . Requires loop in simplify form and with single exit.'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_17_1
+  - String:          '> at '
+  - LoopLoc:         'axis_fp_example.cpp:17:19'
+  - String:          ' '
+...

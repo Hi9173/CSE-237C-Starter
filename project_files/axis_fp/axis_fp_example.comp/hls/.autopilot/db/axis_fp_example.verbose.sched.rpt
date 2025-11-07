@@ -1,0 +1,230 @@
+
+
+================================================================
+== Vitis HLS Report for 'axis_fp_example'
+================================================================
+* Date:           Fri Nov  7 15:10:30 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        axis_fp_example.comp
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |        ?|        ?|         ?|         ?|    0|    0|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_17_1  |        ?|        ?|         8|          1|          1|     ?|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 8
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 8, States = { 1 2 3 4 5 6 7 8 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.49>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%spectopmodule_ln5 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_8" [axis_fp_example.cpp:5]   --->   Operation 11 'spectopmodule' 'spectopmodule_ln5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %A_V_data_V, i4 %A_V_keep_V, i4 %A_V_strb_V, i1 %A_V_last_V, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %A_V_data_V"   --->   Operation 13 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %A_V_keep_V"   --->   Operation 14 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %A_V_strb_V"   --->   Operation 15 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %A_V_last_V"   --->   Operation 16 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %B_V_data_V, i4 %B_V_keep_V, i4 %B_V_strb_V, i1 %B_V_last_V, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %B_V_data_V"   --->   Operation 18 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %B_V_keep_V"   --->   Operation 19 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %B_V_strb_V"   --->   Operation 20 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %B_V_last_V"   --->   Operation 21 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %C_V_data_V, i4 %C_V_keep_V, i4 %C_V_strb_V, i1 %C_V_last_V, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %C_V_data_V"   --->   Operation 23 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %C_V_keep_V"   --->   Operation 24 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %C_V_strb_V"   --->   Operation 25 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %C_V_last_V"   --->   Operation 26 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %D_V_data_V, i4 %D_V_keep_V, i4 %D_V_strb_V, i1 %D_V_last_V, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %D_V_data_V"   --->   Operation 28 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %D_V_keep_V"   --->   Operation 29 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %D_V_strb_V"   --->   Operation 30 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %D_V_last_V"   --->   Operation 31 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_2, i32 0, i32 0, void @empty_1, i32 0, i32 0, void @empty_3, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln17 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %C_V_data_V, i4 %C_V_keep_V, i4 %C_V_strb_V, i1 0, i1 %C_V_last_V, i1 0, i1 0, void @empty_4" [axis_fp_example.cpp:17]   --->   Operation 33 'specaxissidechannel' 'specaxissidechannel_ln17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln17 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %D_V_data_V, i4 %D_V_keep_V, i4 %D_V_strb_V, i1 0, i1 %D_V_last_V, i1 0, i1 0, void @empty_5" [axis_fp_example.cpp:17]   --->   Operation 34 'specaxissidechannel' 'specaxissidechannel_ln17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln17 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %B_V_data_V, i4 %B_V_keep_V, i4 %B_V_strb_V, i1 0, i1 %B_V_last_V, i1 0, i1 0, void @empty_6" [axis_fp_example.cpp:17]   --->   Operation 35 'specaxissidechannel' 'specaxissidechannel_ln17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln17 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %A_V_data_V, i4 %A_V_keep_V, i4 %A_V_strb_V, i1 0, i1 %A_V_last_V, i1 0, i1 0, void @empty_7" [axis_fp_example.cpp:17]   --->   Operation 36 'specaxissidechannel' 'specaxissidechannel_ln17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln17 = br void %while.body" [axis_fp_example.cpp:17]   --->   Operation 37 'br' 'br_ln17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.51ns)   --->   "%empty = read i41 @_ssdm_op_Read.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %A_V_data_V, i4 %A_V_keep_V, i4 %A_V_strb_V, i1 %A_V_last_V" [axis_fp_example.cpp:18]   --->   Operation 38 'read' 'empty' <Predicate = true> <Delay = 0.51> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%p_0 = extractvalue i41 %empty" [axis_fp_example.cpp:18]   --->   Operation 39 'extractvalue' 'p_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%Apkt_keep = extractvalue i41 %empty" [axis_fp_example.cpp:18]   --->   Operation 40 'extractvalue' 'Apkt_keep' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%Apkt_strb = extractvalue i41 %empty" [axis_fp_example.cpp:18]   --->   Operation 41 'extractvalue' 'Apkt_strb' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%Apkt_last = extractvalue i41 %empty" [axis_fp_example.cpp:18]   --->   Operation 42 'extractvalue' 'Apkt_last' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.51ns)   --->   "%empty_12 = read i41 @_ssdm_op_Read.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %B_V_data_V, i4 %B_V_keep_V, i4 %B_V_strb_V, i1 %B_V_last_V" [axis_fp_example.cpp:19]   --->   Operation 43 'read' 'empty_12' <Predicate = true> <Delay = 0.51> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%p_3 = extractvalue i41 %empty_12" [axis_fp_example.cpp:19]   --->   Operation 44 'extractvalue' 'p_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%Bpkt_keep = extractvalue i41 %empty_12" [axis_fp_example.cpp:19]   --->   Operation 45 'extractvalue' 'Bpkt_keep' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%Bpkt_strb = extractvalue i41 %empty_12" [axis_fp_example.cpp:19]   --->   Operation 46 'extractvalue' 'Bpkt_strb' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%Bpkt_last = extractvalue i41 %empty_12" [axis_fp_example.cpp:19]   --->   Operation 47 'extractvalue' 'Bpkt_last' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.97ns)   --->   "%or_ln33 = or i1 %Apkt_last, i1 %Bpkt_last" [axis_fp_example.cpp:33]   --->   Operation 48 'or' 'or_ln33' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%br_ln33 = br i1 %or_ln33, void %if.end, void %while.end" [axis_fp_example.cpp:33]   --->   Operation 49 'br' 'br_ln33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%specpipeline_ln17 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_1" [axis_fp_example.cpp:17]   --->   Operation 50 'specpipeline' 'specpipeline_ln17' <Predicate = (!or_ln33)> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%specloopname_ln17 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9" [axis_fp_example.cpp:17]   --->   Operation 51 'specloopname' 'specloopname_ln17' <Predicate = (!or_ln33)> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%br_ln17 = br void %while.body" [axis_fp_example.cpp:17]   --->   Operation 52 'br' 'br_ln17' <Predicate = (!or_ln33)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.25>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%Apkt_data_1 = bitcast i32 %p_0" [axis_fp_example.cpp:18]   --->   Operation 53 'bitcast' 'Apkt_data_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%Bpkt_data_1 = bitcast i32 %p_3" [axis_fp_example.cpp:19]   --->   Operation 54 'bitcast' 'Bpkt_data_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 55 [5/5] (7.25ns)   --->   "%Cdata = fadd i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:24]   --->   Operation 55 'fadd' 'Cdata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 56 [5/5] (7.25ns)   --->   "%Ddata = fsub i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:25]   --->   Operation 56 'fsub' 'Ddata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 7.25>
+ST_3 : Operation 57 [4/5] (7.25ns)   --->   "%Cdata = fadd i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:24]   --->   Operation 57 'fadd' 'Cdata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 58 [4/5] (7.25ns)   --->   "%Ddata = fsub i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:25]   --->   Operation 58 'fsub' 'Ddata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 7.25>
+ST_4 : Operation 59 [3/5] (7.25ns)   --->   "%Cdata = fadd i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:24]   --->   Operation 59 'fadd' 'Cdata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 60 [3/5] (7.25ns)   --->   "%Ddata = fsub i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:25]   --->   Operation 60 'fsub' 'Ddata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 7.25>
+ST_5 : Operation 61 [2/5] (7.25ns)   --->   "%Cdata = fadd i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:24]   --->   Operation 61 'fadd' 'Cdata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 62 [2/5] (7.25ns)   --->   "%Ddata = fsub i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:25]   --->   Operation 62 'fsub' 'Ddata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 7.25>
+ST_6 : Operation 63 [1/5] (7.25ns)   --->   "%Cdata = fadd i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:24]   --->   Operation 63 'fadd' 'Cdata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 64 [1/5] (7.25ns)   --->   "%Ddata = fsub i32 %Apkt_data_1, i32 %Bpkt_data_1" [axis_fp_example.cpp:25]   --->   Operation 64 'fsub' 'Ddata' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 1.29>
+ST_7 : Operation 65 [1/1] (0.00ns)   --->   "%bitcast_ln31 = bitcast i32 %Cdata" [axis_fp_example.cpp:31]   --->   Operation 65 'bitcast' 'bitcast_ln31' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 66 [2/2] (1.29ns)   --->   "%write_ln31 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %C_V_data_V, i4 %C_V_keep_V, i4 %C_V_strb_V, i1 %C_V_last_V, i32 %bitcast_ln31, i4 %Apkt_keep, i4 %Apkt_strb, i1 %Apkt_last" [axis_fp_example.cpp:31]   --->   Operation 66 'write' 'write_ln31' <Predicate = true> <Delay = 1.29> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
+ST_7 : Operation 67 [1/1] (0.00ns)   --->   "%bitcast_ln32 = bitcast i32 %Ddata" [axis_fp_example.cpp:32]   --->   Operation 67 'bitcast' 'bitcast_ln32' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 68 [2/2] (1.29ns)   --->   "%write_ln32 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %D_V_data_V, i4 %D_V_keep_V, i4 %D_V_strb_V, i1 %D_V_last_V, i32 %bitcast_ln32, i4 %Bpkt_keep, i4 %Bpkt_strb, i1 %Bpkt_last" [axis_fp_example.cpp:32]   --->   Operation 68 'write' 'write_ln32' <Predicate = true> <Delay = 1.29> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
+
+State 8 <SV = 7> <Delay = 1.58>
+ST_8 : Operation 69 [1/2] (1.29ns)   --->   "%write_ln31 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %C_V_data_V, i4 %C_V_keep_V, i4 %C_V_strb_V, i1 %C_V_last_V, i32 %bitcast_ln31, i4 %Apkt_keep, i4 %Apkt_strb, i1 %Apkt_last" [axis_fp_example.cpp:31]   --->   Operation 69 'write' 'write_ln31' <Predicate = true> <Delay = 1.29> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
+ST_8 : Operation 70 [1/2] (1.29ns)   --->   "%write_ln32 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %D_V_data_V, i4 %D_V_keep_V, i4 %D_V_strb_V, i1 %D_V_last_V, i32 %bitcast_ln32, i4 %Bpkt_keep, i4 %Bpkt_strb, i1 %Bpkt_last" [axis_fp_example.cpp:32]   --->   Operation 70 'write' 'write_ln32' <Predicate = true> <Delay = 1.29> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
+ST_8 : Operation 71 [1/1] (1.58ns)   --->   "%ret_ln38 = ret" [axis_fp_example.cpp:38]   --->   Operation 71 'ret' 'ret_ln38' <Predicate = (or_ln33)> <Delay = 1.58>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.496ns
+The critical path consists of the following:
+	axis read operation ('empty', axis_fp_example.cpp:18) on port 'A_V_data_V' (axis_fp_example.cpp:18) [45]  (0.518 ns)
+	'or' operation 1 bit ('or_ln33', axis_fp_example.cpp:33) [63]  (0.978 ns)
+
+ <State 2>: 7.256ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('Cdata', axis_fp_example.cpp:24) [57]  (7.256 ns)
+
+ <State 3>: 7.256ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('Cdata', axis_fp_example.cpp:24) [57]  (7.256 ns)
+
+ <State 4>: 7.256ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('Cdata', axis_fp_example.cpp:24) [57]  (7.256 ns)
+
+ <State 5>: 7.256ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('Cdata', axis_fp_example.cpp:24) [57]  (7.256 ns)
+
+ <State 6>: 7.256ns
+The critical path consists of the following:
+	'fadd' operation 32 bit ('Cdata', axis_fp_example.cpp:24) [57]  (7.256 ns)
+
+ <State 7>: 1.290ns
+The critical path consists of the following:
+	axis write operation ('write_ln31', axis_fp_example.cpp:31) on port 'C_V_data_V' (axis_fp_example.cpp:31) [60]  (1.290 ns)
+
+ <State 8>: 1.588ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,17 @@
+{
+  "0": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "axis_fp_example.cpp",
+    "fileloc": 5,
+    "instructions": 142,
+    "loads": {
+      "L": 8
+    },
+    "name": "axis_fp_example",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 142
+  }
+}

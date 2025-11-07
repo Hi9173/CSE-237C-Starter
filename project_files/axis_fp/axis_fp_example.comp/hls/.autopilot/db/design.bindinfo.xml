@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op fadd" ID="" IMPL="fulldsp" LATENCY="4" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U1" SOURCE="axis_fp_example.cpp:24" VARIABLE="Cdata" MODULE="axis_fp_example" LOOP="VITIS_LOOP_17_1" BUNDLEDNAME="" DSP="2" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op fsub" ID="" IMPL="fulldsp" LATENCY="4" OPTYPE="fsub" PRAGMA="" RTLNAME="fsub_32ns_32ns_32_5_full_dsp_1_U2" SOURCE="axis_fp_example.cpp:25" VARIABLE="Ddata" MODULE="axis_fp_example" LOOP="VITIS_LOOP_17_1" BUNDLEDNAME="" DSP="2" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op or" ID="" IMPL="auto" LATENCY="0" OPTYPE="or" PRAGMA="" RTLNAME="or_ln33_fu_174_p2" SOURCE="axis_fp_example.cpp:33" VARIABLE="or_ln33" MODULE="axis_fp_example" LOOP="VITIS_LOOP_17_1" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0" USAGE="" STORAGESUBTYPE="" STORAGESIZE=""/>
+	<BindNode BINDTYPE="adapter" DISPLAY="bind_adapter axilite" ID="" IMPL="" LATENCY="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" VARIABLE="" MODULE="axis_fp_example" LOOP="" BUNDLEDNAME="control" DSP="0" BRAM="0" URAM="0" USAGE="interface" STORAGESUBTYPE="s_axilite" STORAGESIZE=""/>
+</BindInfo>

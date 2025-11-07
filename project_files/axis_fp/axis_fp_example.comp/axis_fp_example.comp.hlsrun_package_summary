@@ -1,0 +1,120 @@
+<ENTRY>
+{
+ "thisFile": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/axis_fp/axis_fp_example.comp/axis_fp_example.comp.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Nov  7 15:11:04 2025",
+ "timestampMillis": "1762557064217",
+ "buildStep": {
+  "cmdId": "e1f7cd64-ca6f-4f81-9a20-52163a71c7e7",
+  "name": "vitis-run",
+  "logFile": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/axis_fp/logs/hls_run_package.log",
+  "commandLine": "vitis-run --mode hls --tcl /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/axis_fp/export_axis_fp_example.tcl",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/axis_fp"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 15:11:04 2025",
+ "timestampMillis": "1762557064219",
+ "status": {
+  "cmdId": "e1f7cd64-ca6f-4f81-9a20-52163a71c7e7",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Nov  7 15:11:04 2025",
+ "timestampMillis": "1762557064221",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "axis_fp_example",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/axis_fp/axis_fp_example.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov  7 15:11:04 2025",
+ "timestampMillis": "1762557064222",
+ "buildStep": {
+  "cmdId": "3af66b70-d23b-43ec-955c-f27abda65c11",
+  "name": "export_design",
+  "logFile": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/axis_fp/axis_fp_example.comp/hls/hls.log",
+  "commandLine": "export_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/axis_fp"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 15:11:04 2025",
+ "timestampMillis": "1762557064223",
+ "status": {
+  "cmdId": "3af66b70-d23b-43ec-955c-f27abda65c11",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 15:11:50 2025",
+ "timestampMillis": "1762557110739",
+ "status": {
+  "cmdId": "3af66b70-d23b-43ec-955c-f27abda65c11",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov  7 15:11:50 2025",
+ "timestampMillis": "1762557110747",
+ "status": {
+  "cmdId": "e1f7cd64-ca6f-4f81-9a20-52163a71c7e7",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
