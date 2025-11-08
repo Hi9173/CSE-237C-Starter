@@ -1,10 +1,10 @@
 set ModuleHierarchy {[{
 "Name" : "dft","ID" : "0","Type" : "sequential",
 "SubInsts" : [
-	{"Name" : "grp_dft_Pipeline_READ_INPUT_fu_50","ID" : "1","Type" : "sequential",
+	{"Name" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92","ID" : "1","Type" : "sequential",
 		"SubLoops" : [
-		{"Name" : "READ_INPUT","ID" : "2","Type" : "pipeline"},]},
-	{"Name" : "grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60","ID" : "3","Type" : "sequential",
+		{"Name" : "VITIS_LOOP_27_1","ID" : "2","Type" : "pipeline"},]},
+	{"Name" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116","ID" : "3","Type" : "sequential",
 		"SubLoops" : [
-		{"Name" : "COMPUTE_DFT_INNER_LOOP","ID" : "4","Type" : "pipeline"},]},]
+		{"Name" : "VITIS_LOOP_35_2_VITIS_LOOP_39_3","ID" : "4","Type" : "pipeline"},]},]
 }]}

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dft'" level="0">
-<item name = "Date">Thu Nov  6 17:53:32 2025
+<item name = "Date">Fri Nov  7 16:16:58 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">dft.comp</item>
@@ -31,8 +31,8 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dft_Pipeline_READ_INPUT_fu_50">dft_Pipeline_READ_INPUT, 1026, 1026, 10.260 us, 10.260 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60">dft_Pipeline_COMPUTE_DFT_INNER_LOOP, 6291473, 6291473, 62.915 ms, 62.915 ms, 6291462, 6291462, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92">dft_Pipeline_VITIS_LOOP_27_1, 1026, 1026, 10.260 us, 10.260 us, 1025, 1025, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116">dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3, 6291473, 6291473, 62.915 ms, 62.915 ms, 6291462, 6291462, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

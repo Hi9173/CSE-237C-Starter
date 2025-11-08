@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ps
 
-module dft_hls_deadlock_idx2_monitor ( // for module dft_dft_inst.grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60
+module dft_hls_deadlock_idx2_monitor ( // for module dft_dft_inst.grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116
     input wire clock,
     input wire reset,
     input wire [3:0] axis_block_sigs,

@@ -34,7 +34,7 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>dft.cpp:4</SourceLocation>
+<SourceLocation>dft.cpp:6</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
@@ -42,8 +42,8 @@
 <Resources>
 <BRAM_18K>8</BRAM_18K>
 <DSP>5</DSP>
-<FF>1235</FF>
-<LUT>1632</LUT>
+<FF>1290</FF>
+<LUT>1690</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
@@ -57,198 +57,11 @@
 
 <InterfaceSummary>
 <RtlPorts>
-<name>s_axi_control_AWVALID</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_AWREADY</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_AWADDR</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>4</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_WVALID</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_WREADY</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_WDATA</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>32</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_WSTRB</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>4</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_ARVALID</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_ARREADY</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_ARADDR</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>4</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_RVALID</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_RREADY</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_RDATA</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>out</Dir>
-<Bits>32</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_RRESP</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>out</Dir>
-<Bits>2</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_BVALID</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_BREADY</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>in</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
-<name>s_axi_control_BRESP</name>
-<Object>control</Object>
-<Type>return void</Type>
-<IOProtocol>s_axi</IOProtocol>
-<Dir>out</Dir>
-<Bits>2</Bits>
-<Attribute>unknown</Attribute>
-<CType>unknown</CType>
-<HasCtrl>1</HasCtrl>
-</RtlPorts>
-<RtlPorts>
 <name>ap_clk</name>
 <Object>dft</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
@@ -259,26 +72,15 @@
 <Object>dft</Object>
 <Type>return value</Type>
 <Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOProtocol>ap_ctrl_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>interrupt</name>
-<Object>dft</Object>
-<Type>return value</Type>
-<Scope></Scope>
-<IOProtocol>ap_ctrl_hs</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>out</Dir>
-<Bits>1</Bits>
-<Attribute>unknown</Attribute>
-</RtlPorts>
-<RtlPorts>
 <name>input_real_TDATA</name>
-<Object>input_real</Object>
+<Object>input_real_V_data_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -290,7 +92,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>input_real_TVALID</name>
-<Object>input_real</Object>
+<Object>input_real_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -302,7 +104,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>input_real_TREADY</name>
-<Object>input_real</Object>
+<Object>input_real_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -313,8 +115,44 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
+<name>input_real_TLAST</name>
+<Object>input_real_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>input_real_TKEEP</name>
+<Object>input_real_V_keep_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>input_real_TSTRB</name>
+<Object>input_real_V_strb_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
 <name>input_imag_TDATA</name>
-<Object>input_imag</Object>
+<Object>input_imag_V_data_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -326,7 +164,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>input_imag_TVALID</name>
-<Object>input_imag</Object>
+<Object>input_imag_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -338,7 +176,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>input_imag_TREADY</name>
-<Object>input_imag</Object>
+<Object>input_imag_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -349,8 +187,44 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
+<name>input_imag_TLAST</name>
+<Object>input_imag_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>input_imag_TKEEP</name>
+<Object>input_imag_V_keep_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>input_imag_TSTRB</name>
+<Object>input_imag_V_strb_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>in</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
 <name>output_real_TDATA</name>
-<Object>output_real</Object>
+<Object>output_real_V_data_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -362,7 +236,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>output_real_TVALID</name>
-<Object>output_real</Object>
+<Object>output_real_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -374,7 +248,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>output_real_TREADY</name>
-<Object>output_real</Object>
+<Object>output_real_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -385,8 +259,44 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
+<name>output_real_TLAST</name>
+<Object>output_real_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>output_real_TKEEP</name>
+<Object>output_real_V_keep_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>output_real_TSTRB</name>
+<Object>output_real_V_strb_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
 <name>output_imag_TDATA</name>
-<Object>output_imag</Object>
+<Object>output_imag_V_data_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -398,7 +308,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>output_imag_TVALID</name>
-<Object>output_imag</Object>
+<Object>output_imag_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -410,7 +320,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>output_imag_TREADY</name>
-<Object>output_imag</Object>
+<Object>output_imag_V_last_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -418,6 +328,42 @@
 <Dir>in</Dir>
 <Bits>1</Bits>
 <Attribute>control</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>output_imag_TLAST</name>
+<Object>output_imag_V_last_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>output_imag_TKEEP</name>
+<Object>output_imag_V_keep_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>output_imag_TSTRB</name>
+<Object>output_imag_V_strb_V</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>axis</IOProtocol>
+<IOConfig>register, both mode</IOConfig>
+<Dir>out</Dir>
+<Bits>4</Bits>
+<Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
 </InterfaceSummary>

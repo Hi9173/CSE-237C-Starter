@@ -25,20 +25,19 @@ INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
   **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Thu Nov  6 17:54:15 2025
+  **** Start of session at: Fri Nov  7 16:17:56 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source run_ippack.tcl -notrace
 INFO: calling package_hls_ip ip_types=vitis sysgen json_file=/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/hls_data.json outdir=/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip srcdir=/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls sort_interfaces_ports=false
 INFO: Copied 1 ipmisc file(s) to /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/misc
-INFO: Copied 18 verilog file(s) to /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/hdl/verilog
-INFO: Copied 12 vhdl file(s) to /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/hdl/vhdl
-INFO: Copied 10 swdriver file(s) to /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/drivers
+INFO: Copied 17 verilog file(s) to /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/hdl/verilog
+INFO: Copied 11 vhdl file(s) to /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/hdl/vhdl
 Generating 2 subcores in /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/hdl/ip.tmp:
 impl/misc/dft_faddfsub_32ns_32ns_32_5_full_dsp_1_ip.tcl
 impl/misc/dft_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl
-create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1494.965 ; gain = 24.871 ; free physical = 9873 ; free virtual = 20185
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1493.902 ; gain = 14.871 ; free physical = 9543 ; free virtual = 16986
 INFO: Using COE_DIR=/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/hdl/verilog
 INFO: Generating dft_faddfsub_32ns_32ns_32_5_full_dsp_1_ip via file impl/misc/dft_faddfsub_32ns_32ns_32_5_full_dsp_1_ip.tcl
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -52,25 +51,23 @@ INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'dft_fmul_32ns_32ns
 INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'dft_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
 INFO: Done generating dft_fmul_32ns_32ns_32_4_max_dsp_1_ip via file impl/misc/dft_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl
 INFO: Import ports from HDL: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/hdl/vhdl/dft.vhd (dft)
-INFO: Add axi4lite interface s_axi_control
 INFO: Add clock interface ap_clk
 INFO: Add reset interface ap_rst_n
-INFO: Add interrupt interface interrupt
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/software/common/Xilinx_Vitis/Vivado/2024.2/data/ip'.
 INFO: Add axi4stream interface input_real
 INFO: Add axi4stream interface input_imag
 INFO: Add axi4stream interface output_real
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/software/common/Xilinx_Vitis/Vivado/2024.2/data/ip'.
 INFO: Add axi4stream interface output_imag
 INFO: Calling post_process_vitis to specialize IP
 INFO: Calling post_process_sysgen to specialize IP
 Generating sysgen info xml from json file
 INFO: Created IP /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/component.xml
 INFO: Created IP archive /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/impl/ip/xilinx_com_hls_dft_1_0.zip
-INFO: [Common 17-206] Exiting Vivado at Thu Nov  6 17:54:49 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  7 16:18:34 2025...
 INFO: [HLS 200-802] Generated output file dft.comp/hls/impl/export.zip
-INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:00:55; Allocated memory: 21.223 MB.
-INFO: [HLS 200-112] Total CPU user time: 35.46 seconds. Total CPU system time: 3.7 seconds. Total elapsed time: 63.9 seconds; peak allocated memory: 720.484 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 1m 6s
+INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:01:03; Allocated memory: 21.332 MB.
+INFO: [HLS 200-112] Total CPU user time: 34.19 seconds. Total CPU system time: 3.37 seconds. Total elapsed time: 75.67 seconds; peak allocated memory: 729.512 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 1m 18s
 INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

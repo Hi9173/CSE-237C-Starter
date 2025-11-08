@@ -3,16 +3,16 @@
     "basicblocks": 7,
     "calls": "",
     "file": "dft.cpp",
-    "fileloc": 4,
-    "instructions": 53,
+    "fileloc": 6,
+    "instructions": 114,
     "loads": {
       "G": 2,
-      "L": 2
+      "L": 6
     },
     "name": "dft",
     "stores": {
-      "L": 2
+      "L": 10
     },
-    "total_instructions": 53
+    "total_instructions": 142
   }
 }

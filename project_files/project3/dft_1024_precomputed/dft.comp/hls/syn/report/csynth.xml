@@ -31,15 +31,15 @@
         <SummaryOfViolations>
             <IssueType>-</IssueType>
             <ViolationType>-</ViolationType>
-            <SourceLocation>dft.cpp:4</SourceLocation>
+            <SourceLocation>dft.cpp:6</SourceLocation>
         </SummaryOfViolations>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
             <BRAM_18K>8</BRAM_18K>
             <DSP>5</DSP>
-            <FF>1235</FF>
-            <LUT>1632</LUT>
+            <FF>1290</FF>
+            <LUT>1690</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -52,198 +52,11 @@
     </AreaEstimates>
     <InterfaceSummary>
         <RtlPorts>
-            <name>s_axi_control_AWVALID</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_AWREADY</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_AWADDR</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>4</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_WVALID</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_WREADY</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_WDATA</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>32</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_WSTRB</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>4</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_ARVALID</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_ARREADY</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_ARADDR</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>4</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_RVALID</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_RREADY</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_RDATA</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>out</Dir>
-            <Bits>32</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_RRESP</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>out</Dir>
-            <Bits>2</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_BVALID</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_BREADY</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_BRESP</name>
-            <Object>control</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>out</Dir>
-            <Bits>2</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
             <name>ap_clk</name>
             <Object>dft</Object>
             <Type>return value</Type>
             <Scope/>
-            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOProtocol>ap_ctrl_none</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
             <Bits>1</Bits>
@@ -254,26 +67,15 @@
             <Object>dft</Object>
             <Type>return value</Type>
             <Scope/>
-            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOProtocol>ap_ctrl_none</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>control</Attribute>
         </RtlPorts>
         <RtlPorts>
-            <name>interrupt</name>
-            <Object>dft</Object>
-            <Type>return value</Type>
-            <Scope/>
-            <IOProtocol>ap_ctrl_hs</IOProtocol>
-            <IOConfig/>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-        </RtlPorts>
-        <RtlPorts>
             <name>input_real_TDATA</name>
-            <Object>input_real</Object>
+            <Object>input_real_V_data_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -285,7 +87,7 @@
         </RtlPorts>
         <RtlPorts>
             <name>input_real_TVALID</name>
-            <Object>input_real</Object>
+            <Object>input_real_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -297,7 +99,7 @@
         </RtlPorts>
         <RtlPorts>
             <name>input_real_TREADY</name>
-            <Object>input_real</Object>
+            <Object>input_real_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -308,8 +110,44 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
+            <name>input_real_TLAST</name>
+            <Object>input_real_V_last_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>input_real_TKEEP</name>
+            <Object>input_real_V_keep_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>input_real_TSTRB</name>
+            <Object>input_real_V_strb_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
             <name>input_imag_TDATA</name>
-            <Object>input_imag</Object>
+            <Object>input_imag_V_data_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -321,7 +159,7 @@
         </RtlPorts>
         <RtlPorts>
             <name>input_imag_TVALID</name>
-            <Object>input_imag</Object>
+            <Object>input_imag_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -333,7 +171,7 @@
         </RtlPorts>
         <RtlPorts>
             <name>input_imag_TREADY</name>
-            <Object>input_imag</Object>
+            <Object>input_imag_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -344,8 +182,44 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
+            <name>input_imag_TLAST</name>
+            <Object>input_imag_V_last_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>input_imag_TKEEP</name>
+            <Object>input_imag_V_keep_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>input_imag_TSTRB</name>
+            <Object>input_imag_V_strb_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
             <name>output_real_TDATA</name>
-            <Object>output_real</Object>
+            <Object>output_real_V_data_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -357,7 +231,7 @@
         </RtlPorts>
         <RtlPorts>
             <name>output_real_TVALID</name>
-            <Object>output_real</Object>
+            <Object>output_real_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -369,7 +243,7 @@
         </RtlPorts>
         <RtlPorts>
             <name>output_real_TREADY</name>
-            <Object>output_real</Object>
+            <Object>output_real_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -380,8 +254,44 @@
             <CType>int</CType>
         </RtlPorts>
         <RtlPorts>
+            <name>output_real_TLAST</name>
+            <Object>output_real_V_last_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>output_real_TKEEP</name>
+            <Object>output_real_V_keep_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>output_real_TSTRB</name>
+            <Object>output_real_V_strb_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
             <name>output_imag_TDATA</name>
-            <Object>output_imag</Object>
+            <Object>output_imag_V_data_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -393,7 +303,7 @@
         </RtlPorts>
         <RtlPorts>
             <name>output_imag_TVALID</name>
-            <Object>output_imag</Object>
+            <Object>output_imag_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -405,7 +315,7 @@
         </RtlPorts>
         <RtlPorts>
             <name>output_imag_TREADY</name>
-            <Object>output_imag</Object>
+            <Object>output_imag_V_last_V</Object>
             <Type>pointer</Type>
             <Scope/>
             <IOProtocol>axis</IOProtocol>
@@ -415,34 +325,70 @@
             <Attribute>control</Attribute>
             <CType>int</CType>
         </RtlPorts>
+        <RtlPorts>
+            <name>output_imag_TLAST</name>
+            <Object>output_imag_V_last_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>output_imag_TKEEP</name>
+            <Object>output_imag_V_keep_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>output_imag_TSTRB</name>
+            <Object>output_imag_V_strb_V</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>axis</IOProtocol>
+            <IOConfig>register, both mode</IOConfig>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
     </InterfaceSummary>
     <RTLDesignHierarchy>
         <TopModule MAX_DEPTH="3">
             <ModuleName>dft</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_dft_Pipeline_READ_INPUT_fu_50</InstName>
-                    <ModuleName>dft_Pipeline_READ_INPUT</ModuleName>
+                    <InstName>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92</InstName>
+                    <ModuleName>dft_Pipeline_VITIS_LOOP_27_1</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>50</ID>
-                    <BindInstances>icmp_ln16_fu_92_p2 add_ln16_fu_98_p2</BindInstances>
+                    <ID>92</ID>
+                    <BindInstances>icmp_ln27_fu_152_p2 add_ln27_fu_158_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_dft_Pipeline_COMPUTE_DFT_INNER_LOOP_fu_60</InstName>
-                    <ModuleName>dft_Pipeline_COMPUTE_DFT_INNER_LOOP</ModuleName>
+                    <InstName>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116</InstName>
+                    <ModuleName>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>60</ID>
-                    <BindInstances>icmp_ln21_fu_181_p2 add_ln21_fu_187_p2 icmp_ln25_fu_196_p2 select_ln9_fu_202_p3 select_ln9_1_fu_290_p3 select_ln9_2_fu_280_p3 add_ln21_1_fu_245_p2 select_ln21_fu_251_p3 mul_10s_10s_10_1_1_U7 fmul_32ns_32ns_32_4_max_dsp_1_U6 fmul_32ns_32ns_32_4_max_dsp_1_U6 faddfsub_32ns_32ns_32_5_full_dsp_1_U5 faddfsub_32ns_32ns_32_5_full_dsp_1_U5 fmul_32ns_32ns_32_4_max_dsp_1_U6 fmul_32ns_32ns_32_4_max_dsp_1_U6 faddfsub_32ns_32ns_32_5_full_dsp_1_U5 faddfsub_32ns_32ns_32_5_full_dsp_1_U5 add_ln25_fu_220_p2 icmp_ln25_1_fu_226_p2 cos_coefficients_table_U sin_coefficients_table_U</BindInstances>
+                    <ID>116</ID>
+                    <BindInstances>icmp_ln35_fu_243_p2 add_ln35_fu_249_p2 icmp_ln39_fu_258_p2 select_ln16_fu_264_p3 select_ln16_1_fu_358_p3 select_ln16_2_fu_348_p3 add_ln35_1_fu_307_p2 select_ln35_fu_313_p3 mul_10s_10s_10_1_1_U15 fmul_32ns_32ns_32_4_max_dsp_1_U14 fmul_32ns_32ns_32_4_max_dsp_1_U14 faddfsub_32ns_32ns_32_5_full_dsp_1_U13 faddfsub_32ns_32ns_32_5_full_dsp_1_U13 fmul_32ns_32ns_32_4_max_dsp_1_U14 fmul_32ns_32ns_32_4_max_dsp_1_U14 faddfsub_32ns_32ns_32_5_full_dsp_1_U13 faddfsub_32ns_32ns_32_5_full_dsp_1_U13 add_ln39_fu_282_p2 icmp_ln39_1_fu_288_p2 pkt_real_last_fu_329_p2 cos_coefficients_table_U sin_coefficients_table_U</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>real_sample_U imag_sample_U control_s_axi_U</BindInstances>
+            <BindInstances>real_sample_U imag_sample_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>dft_Pipeline_READ_INPUT</Name>
+            <Name>dft_Pipeline_VITIS_LOOP_27_1</Name>
             <Loops>
-                <READ_INPUT/>
+                <VITIS_LOOP_27_1/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -461,8 +407,8 @@
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <READ_INPUT>
-                        <Name>READ_INPUT</Name>
+                    <VITIS_LOOP_27_1>
+                        <Name>VITIS_LOOP_27_1</Name>
                         <Slack>7.30</Slack>
                         <TripCount>1024</TripCount>
                         <Latency>1024</Latency>
@@ -471,25 +417,25 @@
                         <PipelineDepth>2</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </READ_INPUT>
+                    </VITIS_LOOP_27_1>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>dft.cpp:9</SourceLocation>
+                    <SourceLocation>dft.cpp:16</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <READ_INPUT>
-                            <Name>READ_INPUT</Name>
+                        <VITIS_LOOP_27_1>
+                            <Name>VITIS_LOOP_27_1</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>dft.cpp:16</SourceLocation>
-                        </READ_INPUT>
+                            <SourceLocation>dft.cpp:27</SourceLocation>
+                        </VITIS_LOOP_27_1>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>25</FF>
+                    <FF>33</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
                     <LUT>84</LUT>
@@ -507,14 +453,14 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="READ_INPUT" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln16_fu_92_p2" SOURCE="dft.cpp:16" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln16" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="READ_INPUT" OPTYPE="add" PRAGMA="" RTLNAME="add_ln16_fu_98_p2" SOURCE="dft.cpp:16" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln16" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln27_fu_152_p2" SOURCE="dft.cpp:27" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln27" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln27_fu_158_p2" SOURCE="dft.cpp:27" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln27" VISIBLE="true"/>
             </BindNodes>
         </Module>
         <Module>
-            <Name>dft_Pipeline_COMPUTE_DFT_INNER_LOOP</Name>
+            <Name>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</Name>
             <Loops>
-                <COMPUTE_DFT_INNER_LOOP/>
+                <VITIS_LOOP_35_2_VITIS_LOOP_39_3/>
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -533,8 +479,8 @@
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
-                    <COMPUTE_DFT_INNER_LOOP>
-                        <Name>COMPUTE_DFT_INNER_LOOP</Name>
+                    <VITIS_LOOP_35_2_VITIS_LOOP_39_3>
+                        <Name>VITIS_LOOP_35_2_VITIS_LOOP_39_3</Name>
                         <Slack>7.30</Slack>
                         <TripCount>1048576</TripCount>
                         <Latency>6291471</Latency>
@@ -543,20 +489,20 @@
                         <PipelineDepth>22</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
-                    </COMPUTE_DFT_INNER_LOOP>
+                    </VITIS_LOOP_35_2_VITIS_LOOP_39_3>
                 </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>dft.cpp:22</SourceLocation>
+                    <SourceLocation>dft.cpp:36</SourceLocation>
                     <SummaryOfLoopViolations>
-                        <COMPUTE_DFT_INNER_LOOP>
-                            <Name>COMPUTE_DFT_INNER_LOOP</Name>
+                        <VITIS_LOOP_35_2_VITIS_LOOP_39_3>
+                            <Name>VITIS_LOOP_35_2_VITIS_LOOP_39_3</Name>
                             <IssueType>II Violation</IssueType>
                             <ViolationType>Memory Dependency</ViolationType>
                             <IterationDistance>1</IterationDistance>
-                            <SourceLocation>dft.cpp:21</SourceLocation>
-                        </COMPUTE_DFT_INNER_LOOP>
+                            <SourceLocation>dft.cpp:35</SourceLocation>
+                        </VITIS_LOOP_35_2_VITIS_LOOP_39_3>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
@@ -568,10 +514,10 @@
                     <DSP>5</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>2</UTIL_DSP>
-                    <FF>1102</FF>
+                    <FF>1167</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>1</UTIL_FF>
-                    <LUT>1359</LUT>
+                    <LUT>1403</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>2</UTIL_LUT>
                     <URAM>0</URAM>
@@ -580,25 +526,26 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln21_fu_181_p2" SOURCE="dft.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln21" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln21_fu_187_p2" SOURCE="dft.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln21" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln25_fu_196_p2" SOURCE="dft.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln25" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln9_fu_202_p3" SOURCE="dft.cpp:9" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln9" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln9_1_fu_290_p3" SOURCE="dft.cpp:9" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln9_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln9_2_fu_280_p3" SOURCE="dft.cpp:9" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln9_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln21_1_fu_245_p2" SOURCE="dft.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln21_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln21_fu_251_p3" SOURCE="dft.cpp:21" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln21" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_10s_10s_10_1_1_U7" SOURCE="dft.cpp:26" STORAGESUBTYPE="" URAM="0" VARIABLE="idx" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U6" SOURCE="dft.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U6" SOURCE="dft.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="mul1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="fsub" PRAGMA="" RTLNAME="faddfsub_32ns_32ns_32_5_full_dsp_1_U5" SOURCE="dft.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="sub" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="fsub" PRAGMA="" RTLNAME="faddfsub_32ns_32ns_32_5_full_dsp_1_U5" SOURCE="dft.cpp:29" STORAGESUBTYPE="" URAM="0" VARIABLE="temp_real_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U6" SOURCE="dft.cpp:30" STORAGESUBTYPE="" URAM="0" VARIABLE="mul2" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U6" SOURCE="dft.cpp:30" STORAGESUBTYPE="" URAM="0" VARIABLE="mul3" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="fsub" PRAGMA="" RTLNAME="faddfsub_32ns_32ns_32_5_full_dsp_1_U5" SOURCE="dft.cpp:30" STORAGESUBTYPE="" URAM="0" VARIABLE="add1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="fsub" PRAGMA="" RTLNAME="faddfsub_32ns_32ns_32_5_full_dsp_1_U5" SOURCE="dft.cpp:30" STORAGESUBTYPE="" URAM="0" VARIABLE="temp_imag_1" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_fu_220_p2" SOURCE="dft.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="COMPUTE_DFT_INNER_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln25_1_fu_226_p2" SOURCE="dft.cpp:25" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln25_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln35_fu_243_p2" SOURCE="dft.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln35" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln35_fu_249_p2" SOURCE="dft.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln35" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln39_fu_258_p2" SOURCE="dft.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln39" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="select" PRAGMA="" RTLNAME="select_ln16_fu_264_p3" SOURCE="dft.cpp:16" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln16" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="select" PRAGMA="" RTLNAME="select_ln16_1_fu_358_p3" SOURCE="dft.cpp:16" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln16_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="select" PRAGMA="" RTLNAME="select_ln16_2_fu_348_p3" SOURCE="dft.cpp:16" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln16_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln35_1_fu_307_p2" SOURCE="dft.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln35_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="select" PRAGMA="" RTLNAME="select_ln35_fu_313_p3" SOURCE="dft.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln35" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="mul" PRAGMA="" RTLNAME="mul_10s_10s_10_1_1_U15" SOURCE="dft.cpp:41" STORAGESUBTYPE="" URAM="0" VARIABLE="idx" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U14" SOURCE="dft.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="mul" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U14" SOURCE="dft.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="mul1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="fsub" PRAGMA="" RTLNAME="faddfsub_32ns_32ns_32_5_full_dsp_1_U13" SOURCE="dft.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="sub" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="fsub" PRAGMA="" RTLNAME="faddfsub_32ns_32ns_32_5_full_dsp_1_U13" SOURCE="dft.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="temp_real_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U14" SOURCE="dft.cpp:45" STORAGESUBTYPE="" URAM="0" VARIABLE="mul2" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U14" SOURCE="dft.cpp:45" STORAGESUBTYPE="" URAM="0" VARIABLE="mul3" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="fsub" PRAGMA="" RTLNAME="faddfsub_32ns_32ns_32_5_full_dsp_1_U13" SOURCE="dft.cpp:45" STORAGESUBTYPE="" URAM="0" VARIABLE="add1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fsub" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="fsub" PRAGMA="" RTLNAME="faddfsub_32ns_32ns_32_5_full_dsp_1_U13" SOURCE="dft.cpp:45" STORAGESUBTYPE="" URAM="0" VARIABLE="temp_imag_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln39_fu_282_p2" SOURCE="dft.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln39" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln39_1_fu_288_p2" SOURCE="dft.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln39_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_35_2_VITIS_LOOP_39_3" OPTYPE="seteq" PRAGMA="" RTLNAME="pkt_real_last_fu_329_p2" SOURCE="dft.cpp:53" STORAGESUBTYPE="" URAM="0" VARIABLE="pkt_real_last" VISIBLE="false"/>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="cos_coefficients_table_U" SOURCE="" STORAGESIZE="32 1024 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="cos_coefficients_table" VISIBLE="true"/>
                 <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="sin_coefficients_table_U" SOURCE="" STORAGESIZE="32 1024 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="sin_coefficients_table" VISIBLE="true"/>
             </BindNodes>
@@ -624,7 +571,7 @@
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>dft.cpp:4</SourceLocation>
+                    <SourceLocation>dft.cpp:6</SourceLocation>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
@@ -635,10 +582,10 @@
                     <DSP>5</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>2</UTIL_DSP>
-                    <FF>1235</FF>
+                    <FF>1290</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>1</UTIL_FF>
-                    <LUT>1636</LUT>
+                    <LUT>1694</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>3</UTIL_LUT>
                     <URAM>0</URAM>
@@ -647,96 +594,39 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="real_sample_U" SOURCE="dft.cpp:13" STORAGESIZE="32 1024 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p array" URAM="0" VARIABLE="real_sample" VISIBLE="true"/>
-                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="imag_sample_U" SOURCE="dft.cpp:14" STORAGESIZE="32 1024 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p array" URAM="0" VARIABLE="imag_sample" VISIBLE="true"/>
-                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="real_sample_U" SOURCE="dft.cpp:21" STORAGESIZE="32 1024 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p array" URAM="0" VARIABLE="real_sample" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="imag_sample_U" SOURCE="dft.cpp:22" STORAGESIZE="32 1024 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p array" URAM="0" VARIABLE="imag_sample" VISIBLE="true"/>
             </BindNodes>
         </Module>
     </ModuleInformation>
     <FIFOInformation/>
     <UserConfigCommands/>
     <Args>
-        <Arg ArgName="input_real" index="0" direction="in" srcType="stream&lt;float, 0&gt;&amp;" srcSize="32">
+        <Arg ArgName="input_real" index="0" direction="in" srcType="stream&lt;hls::axis&lt;float, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" srcSize="96">
             <hwRefs>
                 <hwRef type="interface" interface="input_real" name="" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="input_imag" index="1" direction="in" srcType="stream&lt;float, 0&gt;&amp;" srcSize="32">
+        <Arg ArgName="input_imag" index="1" direction="in" srcType="stream&lt;hls::axis&lt;float, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" srcSize="96">
             <hwRefs>
                 <hwRef type="interface" interface="input_imag" name="" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="output_real" index="2" direction="out" srcType="stream&lt;float, 0&gt;&amp;" srcSize="32">
+        <Arg ArgName="output_real" index="2" direction="out" srcType="stream&lt;hls::axis&lt;float, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" srcSize="96">
             <hwRefs>
                 <hwRef type="interface" interface="output_real" name="" usage="data" direction="out"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="output_imag" index="3" direction="out" srcType="stream&lt;float, 0&gt;&amp;" srcSize="32">
+        <Arg ArgName="output_imag" index="3" direction="out" srcType="stream&lt;hls::axis&lt;float, 0, 0, 0, '8', false&gt;, 0&gt;&amp;" srcSize="96">
             <hwRefs>
                 <hwRef type="interface" interface="output_imag" name="" usage="data" direction="out"/>
             </hwRefs>
         </Arg>
     </Args>
     <Interfaces>
-        <Interface InterfaceName="s_axi_control" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="4" portPrefix="s_axi_control_" paramPrefix="C_S_AXI_CONTROL_">
-            <ports>
-                <port>s_axi_control_ARADDR</port>
-                <port>s_axi_control_ARREADY</port>
-                <port>s_axi_control_ARVALID</port>
-                <port>s_axi_control_AWADDR</port>
-                <port>s_axi_control_AWREADY</port>
-                <port>s_axi_control_AWVALID</port>
-                <port>s_axi_control_BREADY</port>
-                <port>s_axi_control_BRESP</port>
-                <port>s_axi_control_BVALID</port>
-                <port>s_axi_control_RDATA</port>
-                <port>s_axi_control_RREADY</port>
-                <port>s_axi_control_RRESP</port>
-                <port>s_axi_control_RVALID</port>
-                <port>s_axi_control_WDATA</port>
-                <port>s_axi_control_WREADY</port>
-                <port>s_axi_control_WSTRB</port>
-                <port>s_axi_control_WVALID</port>
-            </ports>
-            <registers>
-                <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
-                    <fields>
-                        <field offset="0" width="1" name="AP_START" access="RW" description="Control signal Register for 'ap_start'."/>
-                        <field offset="1" width="1" name="AP_DONE" access="R" description="Control signal Register for 'ap_done'."/>
-                        <field offset="2" width="1" name="AP_IDLE" access="R" description="Control signal Register for 'ap_idle'."/>
-                        <field offset="3" width="1" name="AP_READY" access="R" description="Control signal Register for 'ap_ready'."/>
-                        <field offset="4" width="3" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
-                        <field offset="7" width="1" name="AUTO_RESTART" access="RW" description="Control signal Register for 'auto_restart'."/>
-                        <field offset="8" width="1" name="RESERVED_2" access="R" description="Reserved.  0s on read."/>
-                        <field offset="9" width="1" name="INTERRUPT" access="R" description="Control signal Register for 'interrupt'."/>
-                        <field offset="10" width="22" name="RESERVED_3" access="R" description="Reserved.  0s on read."/>
-                    </fields>
-                </register>
-                <register offset="0x04" name="GIER" access="RW" description="Global Interrupt Enable Register" range="32">
-                    <fields>
-                        <field offset="0" width="1" name="Enable" access="RW" description="Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"/>
-                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
-                    </fields>
-                </register>
-                <register offset="0x08" name="IP_IER" access="RW" description="IP Interrupt Enable Register" range="32">
-                    <fields>
-                        <field offset="0" width="1" name="CHAN0_INT_EN" access="RW" description="Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."/>
-                        <field offset="1" width="1" name="CHAN1_INT_EN" access="RW" description="Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."/>
-                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
-                    </fields>
-                </register>
-                <register offset="0x0c" name="IP_ISR" access="RW" description="IP Interrupt Status Register" range="32">
-                    <fields>
-                        <field offset="0" width="1" name="CHAN0_INT_ST" access="RTOW" description="Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."/>
-                        <field offset="1" width="1" name="CHAN1_INT_ST" access="RTOW" description="Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."/>
-                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
-                    </fields>
-                </register>
-            </registers>
-        </Interface>
         <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
             <busParams>
-                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_control:input_real:input_imag:output_real:output_imag</busParam>
+                <busParam busParamName="ASSOCIATED_BUSIF">input_real:input_imag:output_real:output_imag</busParam>
                 <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
             </busParams>
             <portMaps>
@@ -757,21 +647,13 @@
                 <port>ap_rst_n</port>
             </ports>
         </Interface>
-        <Interface InterfaceName="interrupt" type="interrupt" busTypeName="interrupt" mode="master" dataWidth="1">
-            <busParams>
-                <busParam busParamName="SENSITIVITY">LEVEL_HIGH</busParam>
-            </busParams>
-            <portMaps>
-                <portMap portMapName="interrupt">INTERRUPT</portMap>
-            </portMaps>
-            <ports>
-                <port>interrupt</port>
-            </ports>
-        </Interface>
         <Interface InterfaceName="input_real" type="axi4stream" busTypeName="axis" mode="slave" direction="in" dataWidth="32" portPrefix="input_real_">
             <ports>
                 <port>input_real_TDATA</port>
+                <port>input_real_TKEEP</port>
+                <port>input_real_TLAST</port>
                 <port>input_real_TREADY</port>
+                <port>input_real_TSTRB</port>
                 <port>input_real_TVALID</port>
             </ports>
             <constraints>
@@ -781,7 +663,10 @@
         <Interface InterfaceName="input_imag" type="axi4stream" busTypeName="axis" mode="slave" direction="in" dataWidth="32" portPrefix="input_imag_">
             <ports>
                 <port>input_imag_TDATA</port>
+                <port>input_imag_TKEEP</port>
+                <port>input_imag_TLAST</port>
                 <port>input_imag_TREADY</port>
+                <port>input_imag_TSTRB</port>
                 <port>input_imag_TVALID</port>
             </ports>
             <constraints>
@@ -791,7 +676,10 @@
         <Interface InterfaceName="output_real" type="axi4stream" busTypeName="axis" mode="master" direction="out" dataWidth="32" portPrefix="output_real_">
             <ports>
                 <port>output_real_TDATA</port>
+                <port>output_real_TKEEP</port>
+                <port>output_real_TLAST</port>
                 <port>output_real_TREADY</port>
+                <port>output_real_TSTRB</port>
                 <port>output_real_TVALID</port>
             </ports>
             <constraints>
@@ -801,7 +689,10 @@
         <Interface InterfaceName="output_imag" type="axi4stream" busTypeName="axis" mode="master" direction="out" dataWidth="32" portPrefix="output_imag_">
             <ports>
                 <port>output_imag_TDATA</port>
+                <port>output_imag_TKEEP</port>
+                <port>output_imag_TLAST</port>
                 <port>output_imag_TREADY</port>
+                <port>output_imag_TSTRB</port>
                 <port>output_imag_TVALID</port>
             </ports>
             <constraints>
@@ -811,28 +702,13 @@
     </Interfaces>
     <ReportHWInterface>
         <section name="HW Interfaces" level="0">
-            <item name="S_AXILITE Interfaces">
-                <table>
-                    <keys size="3">Interface, Data Width, Address Width</keys>
-                    <column name="s_axi_control">32, 4</column>
-                </table>
-            </item>
-            <item name="S_AXILITE Registers">
-                <table>
-                    <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
-                    <column name="s_axi_control">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT</column>
-                    <column name="s_axi_control">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
-                    <column name="s_axi_control">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
-                    <column name="s_axi_control">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
-                </table>
-            </item>
             <item name="AXIS">
                 <table>
-                    <keys size="6">Interface, Direction, Register Mode, TDATA, TREADY, TVALID</keys>
-                    <column name="input_imag">in, both, 32, 1, 1</column>
-                    <column name="input_real">in, both, 32, 1, 1</column>
-                    <column name="output_imag">out, both, 32, 1, 1</column>
-                    <column name="output_real">out, both, 32, 1, 1</column>
+                    <keys size="9">Interface, Direction, Register Mode, TDATA, TKEEP, TLAST, TREADY, TSTRB, TVALID</keys>
+                    <column name="input_imag">in, both, 32, 4, 1, 1, 4, 1</column>
+                    <column name="input_real">in, both, 32, 4, 1, 1, 4, 1</column>
+                    <column name="output_imag">out, both, 32, 4, 1, 1, 4, 1</column>
+                    <column name="output_real">out, both, 32, 4, 1, 1, 4, 1</column>
                 </table>
             </item>
             <item name="TOP LEVEL CONTROL">
@@ -840,8 +716,7 @@
                     <keys size="3">Interface, Type, Ports</keys>
                     <column name="ap_clk">clock, ap_clk</column>
                     <column name="ap_rst_n">reset, ap_rst_n</column>
-                    <column name="interrupt">interrupt, interrupt</column>
-                    <column name="ap_ctrl">ap_ctrl_hs, </column>
+                    <column name="ap_ctrl">ap_ctrl_none, </column>
                 </table>
             </item>
         </section>
@@ -851,10 +726,10 @@
             <item name="Top Function Arguments">
                 <table>
                     <keys size="3">Argument, Direction, Datatype</keys>
-                    <column name="input_real">in, stream&lt;float 0&gt;&amp;</column>
-                    <column name="input_imag">in, stream&lt;float 0&gt;&amp;</column>
-                    <column name="output_real">out, stream&lt;float 0&gt;&amp;</column>
-                    <column name="output_imag">out, stream&lt;float 0&gt;&amp;</column>
+                    <column name="input_real">in, stream&lt;hls::axis&lt;float 0 0 0 '8' false&gt; 0&gt;&amp;</column>
+                    <column name="input_imag">in, stream&lt;hls::axis&lt;float 0 0 0 '8' false&gt; 0&gt;&amp;</column>
+                    <column name="output_real">out, stream&lt;hls::axis&lt;float 0 0 0 '8' false&gt; 0&gt;&amp;</column>
+                    <column name="output_imag">out, stream&lt;hls::axis&lt;float 0 0 0 '8' false&gt; 0&gt;&amp;</column>
                 </table>
             </item>
             <item name="SW-to-HW Mapping">
@@ -870,8 +745,11 @@
     </ReportSWInterface>
     <ResolutionUrl key="ZZZ">docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
     <PragmaReport>
-        <Pragma type="interface" location="dft.cpp:7" status="valid" parentFunction="dft" variable="input_real,input_imag,output_real,output_imag" isDirective="0" options="mode=axis port=input_real,input_imag,output_real,output_imag"/>
-        <Pragma type="interface" location="dft.cpp:8" status="valid" parentFunction="dft" variable="return" isDirective="0" options="mode=s_axilite port=return"/>
+        <Pragma type="interface" location="dft.cpp:10" status="valid" parentFunction="dft" variable="input_real" isDirective="0" options="axis port=input_real"/>
+        <Pragma type="interface" location="dft.cpp:11" status="valid" parentFunction="dft" variable="input_imag" isDirective="0" options="axis port=input_imag"/>
+        <Pragma type="interface" location="dft.cpp:12" status="valid" parentFunction="dft" variable="output_real" isDirective="0" options="axis port=output_real"/>
+        <Pragma type="interface" location="dft.cpp:13" status="valid" parentFunction="dft" variable="output_imag" isDirective="0" options="axis port=output_imag"/>
+        <Pragma type="interface" location="dft.cpp:14" status="valid" parentFunction="dft" variable="return" isDirective="0" options="ap_ctrl_none port=return"/>
     </PragmaReport>
 </profile>
 

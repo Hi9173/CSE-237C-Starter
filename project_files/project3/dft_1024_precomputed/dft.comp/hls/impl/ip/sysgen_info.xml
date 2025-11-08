@@ -7,7 +7,22 @@
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
+        <name>input_imag_TKEEP</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>input_imag_TLAST</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
         <name>input_imag_TREADY</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>input_imag_TSTRB</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
@@ -22,7 +37,22 @@
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
+        <name>input_real_TKEEP</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>input_real_TLAST</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
         <name>input_real_TREADY</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>input_real_TSTRB</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
@@ -37,7 +67,22 @@
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
+        <name>output_imag_TKEEP</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>output_imag_TLAST</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
         <name>output_imag_TREADY</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>output_imag_TSTRB</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
@@ -52,7 +97,22 @@
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
+        <name>output_real_TKEEP</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>output_real_TLAST</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
         <name>output_real_TREADY</name>
+        <type>Floating-point</type>
+        <fractionWidth>0</fractionWidth>
+      </RtlPort>
+      <RtlPort>
+        <name>output_real_TSTRB</name>
         <type>Floating-point</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
