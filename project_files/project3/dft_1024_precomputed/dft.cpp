@@ -11,7 +11,7 @@ void dft(hls::stream<transPkt> &input_real, hls::stream<transPkt> &input_imag,
  #pragma HLS INTERFACE axis port=input_imag
  #pragma HLS INTERFACE axis port=output_real
  #pragma HLS INTERFACE axis port=output_imag
- #pragma HLS INTERFACE ap_ctrl_none port=return
+ #pragma HLS INTERFACE mode=s_axilite port=return
  
  int i, j;
  int idx;
