@@ -34,7 +34,6 @@ int main()
 
  FILE * fp = fopen("out.gold.dat","r");
 
- // Create AXI-Stream objects for input and output
  hls::stream<transPkt> input_real;
  hls::stream<transPkt> input_imag;
  hls::stream<transPkt> output_real;
@@ -42,13 +41,11 @@ int main()
  
  transPkt pkt_real, pkt_imag;
 
- // Getting input data and writing to input streams
  for(int i=0; i<SIZE; i++)
  {
   In_R[i] = i;
   In_I[i] = 0.0;
   
-  // Create packets and write to input streams
   pkt_real.data = In_R[i];
   pkt_imag.data = In_I[i];
   pkt_real.keep = -1;
@@ -61,11 +58,9 @@ int main()
  }
  
 
- // Call DFT with streaming interface
  dft(input_real, input_imag, output_real, output_imag);
 
  
- // Read output from streams
  for(int i=0; i<SIZE; i++)
  {
   pkt_real = output_real.read();
@@ -74,7 +69,6 @@ int main()
   Out_I[i] = pkt_imag.data;
  }
 
- // Comparing with golden output
  for(int i=0; i<SIZE; i++)
  {
   fscanf(fp, "%d %f %f", &index, &gold_R, &gold_I);
@@ -84,7 +78,6 @@ int main()
  fclose(fp);
 
 
- // Printing error results
  printf("----------------------------------------------\n");
  printf("   RMSE(R)           RMSE(I)\n");
  printf("%0.15f %0.15f\n", rmse_R.error, rmse_I.error);
