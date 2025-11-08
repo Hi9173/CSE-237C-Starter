@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3'
 ================================================================
-* Date:           Fri Nov  7 16:16:58 2025
+* Date:           Fri Nov  7 16:25:54 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        dft.comp
@@ -110,10 +110,10 @@ ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%temp_imag = alloca i32 1" [dft.cpp
 ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%j = alloca i32 1" [dft.cpp:16]   --->   Operation 27 'alloca' 'j' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [dft.cpp:16]   --->   Operation 28 'alloca' 'i' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 29 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 0, i1 %output_real_V_last_V, i1 0, i1 0, void @empty_2"   --->   Operation 30 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %output_imag_V_data_V, i4 %output_imag_V_keep_V, i4 %output_imag_V_strb_V, i1 0, i1 %output_imag_V_last_V, i1 0, i1 0, void @empty_3"   --->   Operation 31 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %output_imag_V_last_V, i4 %output_imag_V_strb_V, i4 %output_imag_V_keep_V, i32 %output_imag_V_data_V, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %output_real_V_last_V, i4 %output_real_V_strb_V, i4 %output_real_V_keep_V, i32 %output_real_V_data_V, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 0, i1 %output_real_V_last_V, i1 0, i1 0, void @empty_3"   --->   Operation 30 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %output_imag_V_data_V, i4 %output_imag_V_keep_V, i4 %output_imag_V_strb_V, i1 0, i1 %output_imag_V_last_V, i1 0, i1 0, void @empty_2"   --->   Operation 31 'specaxissidechannel' 'specaxissidechannel_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %output_imag_V_last_V, i4 %output_imag_V_strb_V, i4 %output_imag_V_keep_V, i32 %output_imag_V_data_V, void @empty_8, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_6, void @empty_6, void @empty_6, i32 0, i32 0, i32 0, i32 0, void @empty_6, void @empty_6, i32 4294967295, i32 0, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %output_real_V_last_V, i4 %output_real_V_strb_V, i4 %output_real_V_keep_V, i32 %output_real_V_data_V, void @empty_8, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_6, void @empty_6, void @empty_6, i32 0, i32 0, i32 0, i32 0, void @empty_6, void @empty_6, i32 4294967295, i32 0, i32 0"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%p_phi5_reload_read = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %p_phi5_reload"   --->   Operation 34 'read' 'p_phi5_reload_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%p_phi_reload_read = read i4 @_ssdm_op_Read.ap_auto.i4, i4 %p_phi_reload"   --->   Operation 35 'read' 'p_phi_reload_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 36 [1/1] (1.58ns)   --->   "%store_ln0 = store i21 0, i21 %indvar_flatten"   --->   Operation 36 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
@@ -242,7 +242,7 @@ ST_21 : Operation 116 [1/5] (7.25ns)   --->   "%temp_imag_1 = fadd i32 %select_l
 State 22 <SV = 21> <Delay = 1.58>
 ST_22 : Operation 117 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_35_2_VITIS_LOOP_39_3_str"   --->   Operation 117 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
 ST_22 : Operation 118 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 1048576, i64 1048576, i64 1048576"   --->   Operation 118 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
-ST_22 : Operation 119 [1/1] (0.00ns)   --->   "%specpipeline_ln16 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_1" [dft.cpp:16]   --->   Operation 119 'specpipeline' 'specpipeline_ln16' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 119 [1/1] (0.00ns)   --->   "%specpipeline_ln16 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_6" [dft.cpp:16]   --->   Operation 119 'specpipeline' 'specpipeline_ln16' <Predicate = true> <Delay = 0.00>
 ST_22 : Operation 120 [1/1] (0.00ns)   --->   "%bitcast_ln56 = bitcast i32 %temp_real_1" [dft.cpp:56]   --->   Operation 120 'bitcast' 'bitcast_ln56' <Predicate = true> <Delay = 0.00>
 ST_22 : Operation 121 [1/1] (0.00ns)   --->   "%bitcast_ln57 = bitcast i32 %temp_imag_1" [dft.cpp:57]   --->   Operation 121 'bitcast' 'bitcast_ln57' <Predicate = true> <Delay = 0.00>
 ST_22 : Operation 122 [1/1] (1.29ns)   --->   "%write_ln56 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 %output_real_V_last_V, i32 %bitcast_ln56, i4 15, i4 %p_phi_reload_read, i1 %pkt_real_last" [dft.cpp:56]   --->   Operation 122 'write' 'write_ln56' <Predicate = (icmp_ln39_1)> <Delay = 1.29> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 1.86> <Adapter> <Opcode : 'read' 'write'>
@@ -521,7 +521,7 @@ ret_ln0                     (ret                ) [ 00000000000000000000000]
 <pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_2"/></StgValue>
+<StgValue><ssdm name="empty_3"/></StgValue>
 </bind>
 </comp>
 
@@ -530,7 +530,7 @@ ret_ln0                     (ret                ) [ 00000000000000000000000]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_3"/></StgValue>
+<StgValue><ssdm name="empty_2"/></StgValue>
 </bind>
 </comp>
 
@@ -548,7 +548,7 @@ ret_ln0                     (ret                ) [ 00000000000000000000000]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty"/></StgValue>
+<StgValue><ssdm name="empty_8"/></StgValue>
 </bind>
 </comp>
 
@@ -566,7 +566,7 @@ ret_ln0                     (ret                ) [ 00000000000000000000000]
 <pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_0"/></StgValue>
+<StgValue><ssdm name="empty_7"/></StgValue>
 </bind>
 </comp>
 
@@ -575,7 +575,7 @@ ret_ln0                     (ret                ) [ 00000000000000000000000]
 <pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_1"/></StgValue>
+<StgValue><ssdm name="empty_6"/></StgValue>
 </bind>
 </comp>
 

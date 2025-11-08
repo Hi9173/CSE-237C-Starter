@@ -16,9 +16,9 @@ INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
 INFO: [HLS 200-1510] Running: create_clock -period 10 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.12 seconds. CPU system time: 0.04 seconds. Elapsed time: 2.81 seconds; current allocated memory: 659.031 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.13 seconds. CPU system time: 0.03 seconds. Elapsed time: 7.85 seconds; current allocated memory: 659.031 MB.
 INFO: [HLS 200-10] Analyzing design file 'dft.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.34 seconds. CPU system time: 0.89 seconds. Elapsed time: 6.54 seconds; current allocated memory: 660.383 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.46 seconds. CPU system time: 0.84 seconds. Elapsed time: 6.96 seconds; current allocated memory: 660.383 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
 INFO: [HLS 200-1995] There were 420 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 200-1995] There were 179 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
@@ -38,16 +38,16 @@ INFO: [HLS 200-1995] There were 121 instructions in the design after the 'HW Tra
 INFO: [HLS 200-1995] There were 121 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.comp/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_27_1> at dft.cpp:27:19 
 INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_39_3> at dft.cpp:39:20 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.88 seconds. CPU system time: 0.78 seconds. Elapsed time: 10.03 seconds; current allocated memory: 669.996 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 669.996 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.8 seconds. CPU system time: 0.77 seconds. Elapsed time: 10.42 seconds; current allocated memory: 670.027 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 670.027 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.199 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 670.195 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 670.219 MB.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 691.980 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 670.215 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.14 seconds; current allocated memory: 691.969 MB.
 INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_35_2'(dft.cpp:35:19) and 'VITIS_LOOP_39_3'(dft.cpp:39:20) in function 'dft' into perfectly nested loops.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_35_2' (dft.cpp:35:19) in function 'dft'.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 701.938 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.16 seconds; current allocated memory: 701.945 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'dft' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -57,13 +57,13 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_27_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_27_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.28 seconds; current allocated memory: 702.879 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.19 seconds; current allocated memory: 702.887 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 702.879 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 702.887 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -76,31 +76,31 @@ WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_35_2_
 WARNING: [HLS 200-880] The II Violation in module 'dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3' (loop 'VITIS_LOOP_35_2_VITIS_LOOP_39_3'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 0) between 'store' operation 0 bit ('temp_real_write_ln36', dft.cpp:36) of variable 'temp_real', dft.cpp:44 on local variable 'temp_real', dft.cpp:36 and 'load' operation 32 bit ('temp_real_load', dft.cpp:16) on local variable 'temp_real', dft.cpp:36.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 22, loop 'VITIS_LOOP_35_2_VITIS_LOOP_39_3'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.28 seconds; current allocated memory: 702.941 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.36 seconds; current allocated memory: 702.949 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 702.941 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 702.949 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dft' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 702.941 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 702.949 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 702.941 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 702.949 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_27_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'dft_Pipeline_VITIS_LOOP_27_1' pipeline 'VITIS_LOOP_27_1' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_27_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 702.941 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 702.949 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -111,7 +111,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_10s_10s_10_1_1': 1 instance(s)
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3'.
 INFO: [RTMG 210-279] Implementing memory 'dft_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_cos_coefficients_table_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'dft_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_sin_coefficients_table_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.4 seconds; current allocated memory: 704.109 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.41 seconds; current allocated memory: 704.113 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dft' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -132,17 +132,18 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'dft/output_imag_V_data_V' 
 INFO: [RTGEN 206-500] Setting interface mode on port 'dft/output_imag_V_keep_V' to 'axis' (register, both mode).
 INFO: [RTGEN 206-500] Setting interface mode on port 'dft/output_imag_V_strb_V' to 'axis' (register, both mode).
 INFO: [RTGEN 206-500] Setting interface mode on port 'dft/output_imag_V_last_V' to 'axis' (register, both mode).
-INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'dft' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port control.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dft'.
 INFO: [RTMG 210-278] Implementing memory 'dft_real_sample_RAM_AUTO_1R1W' using auto RAMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.51 seconds; current allocated memory: 705.488 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.38 seconds. CPU system time: 0.06 seconds. Elapsed time: 1.09 seconds; current allocated memory: 708.773 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.43 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.84 seconds; current allocated memory: 711.426 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.53 seconds; current allocated memory: 705.582 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.41 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.96 seconds; current allocated memory: 708.934 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.53 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.94 seconds; current allocated memory: 713.035 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for dft.
 INFO: [VLOG 209-307] Generating Verilog RTL for dft.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:23; Allocated memory: 68.434 MB.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:29; Allocated memory: 70.074 MB.
 ==============================================================
 Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
 Tool Version Limit: 2024.11
@@ -166,4 +167,4 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1510] Running: export_design -format ip_catalog -rtl verilog -version 1.0 -ipname dft 
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
 INFO: [HLS 200-802] Generated output file dft.comp/hls/impl/export.zip
-INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:01:03; Allocated memory: 21.332 MB.
+INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:01:02; Allocated memory: 21.762 MB.

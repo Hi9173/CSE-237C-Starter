@@ -803,7 +803,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92</rtlName>
+              <rtlName>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -873,7 +873,7 @@
             <count>2</count>
             <item_version>0</item_version>
             <item>74</item>
-            <item>292</item>
+            <item>293</item>
           </oprand_edges>
           <opcode>load</opcode>
           <m_Display>0</m_Display>
@@ -916,7 +916,7 @@
             <count>2</count>
             <item_version>0</item_version>
             <item>75</item>
-            <item>293</item>
+            <item>294</item>
           </oprand_edges>
           <opcode>load</opcode>
           <m_Display>0</m_Display>
@@ -943,7 +943,7 @@
                 <item_version>0</item_version>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116</rtlName>
+              <rtlName>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118</rtlName>
               <control/>
               <opType/>
               <implIndex/>
@@ -973,8 +973,8 @@
             <item>89</item>
             <item>90</item>
             <item>91</item>
-            <item>291</item>
-            <item>294</item>
+            <item>292</item>
+            <item>295</item>
           </oprand_edges>
           <opcode>call</opcode>
           <m_Display>0</m_Display>
@@ -1423,28 +1423,28 @@
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_64">
-          <id>291</id>
+          <id>292</id>
           <edge_type>4</edge_type>
           <source_obj>49</source_obj>
           <sink_obj>52</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_65">
-          <id>292</id>
+          <id>293</id>
           <edge_type>4</edge_type>
           <source_obj>49</source_obj>
           <sink_obj>50</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_66">
-          <id>293</id>
+          <id>294</id>
           <edge_type>4</edge_type>
           <source_obj>49</source_obj>
           <sink_obj>51</sink_obj>
           <is_back_edge>0</is_back_edge>
         </item>
         <item class_id_reference="20" object_id="_67">
-          <id>294</id>
+          <id>295</id>
           <edge_type>4</edge_type>
           <source_obj>49</source_obj>
           <sink_obj>52</sink_obj>
@@ -1793,14 +1793,33 @@
     </fsm>
     <res class_id="34" tracking_level="1" version="0" object_id="_118">
       <dp_component_resource class_id="35" tracking_level="0" version="0">
-        <count>18</count>
+        <count>19</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92 (dft_Pipeline_VITIS_LOOP_27_1)</first>
+          <first>control_s_axi_U (control_s_axi)</first>
           <second class_id="37" tracking_level="0" version="0">
-            <count>2</count>
+            <count>3</count>
             <item_version>0</item_version>
             <item class_id="38" tracking_level="0" version="0">
+              <first>BRAM</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>36</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>40</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94 (dft_Pipeline_VITIS_LOOP_27_1)</first>
+          <second>
+            <count>2</count>
+            <item_version>0</item_version>
+            <item>
               <first>FF</first>
               <second>33</second>
             </item>
@@ -1811,7 +1830,7 @@
           </second>
         </item>
         <item>
-          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116 (dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3)</first>
+          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118 (dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3)</first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -1973,7 +1992,7 @@
           </second>
         </item>
         <item>
-          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116_output_imag_TREADY ( and ) </first>
+          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TREADY ( and ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -1996,7 +2015,7 @@
           </second>
         </item>
         <item>
-          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116_output_real_TREADY ( and ) </first>
+          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TREADY ( and ) </first>
           <second>
             <count>4</count>
             <item_version>0</item_version>
@@ -2591,7 +2610,7 @@
           </second>
         </item>
         <item>
-          <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92_ap_start_reg</first>
+          <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -2610,7 +2629,7 @@
           </second>
         </item>
         <item>
-          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116_ap_start_reg</first>
+          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -2782,17 +2801,24 @@
         </item>
       </dp_register_resource>
       <dp_dsp_resource>
-        <count>18</count>
+        <count>19</count>
         <item_version>0</item_version>
         <item>
-          <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92</first>
+          <first>control_s_axi_U</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116</first>
+          <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94</first>
+          <second>
+            <count>0</count>
+            <item_version>0</item_version>
+          </second>
+        </item>
+        <item>
+          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -2915,7 +2941,7 @@
         <count>2</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92 (dft_Pipeline_VITIS_LOOP_27_1)</first>
+          <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94 (dft_Pipeline_VITIS_LOOP_27_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -2923,7 +2949,7 @@
           </second>
         </item>
         <item>
-          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116 (dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3)</first>
+          <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118 (dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -2947,7 +2973,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>47</item>
+            <item>62</item>
           </second>
         </item>
         <item>
@@ -2955,7 +2981,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>38</item>
+            <item>53</item>
           </second>
         </item>
       </dp_memory_map>
@@ -3046,7 +3072,7 @@
       <count>8</count>
       <item_version>0</item_version>
       <item class_id="49" tracking_level="0" version="0">
-        <first>76</first>
+        <first>78</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3054,7 +3080,7 @@
         </second>
       </item>
       <item>
-        <first>80</first>
+        <first>82</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3062,7 +3088,7 @@
         </second>
       </item>
       <item>
-        <first>84</first>
+        <first>86</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3070,7 +3096,7 @@
         </second>
       </item>
       <item>
-        <first>88</first>
+        <first>90</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3078,7 +3104,7 @@
         </second>
       </item>
       <item>
-        <first>92</first>
+        <first>94</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -3087,7 +3113,7 @@
         </second>
       </item>
       <item>
-        <first>116</first>
+        <first>118</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -3096,7 +3122,7 @@
         </second>
       </item>
       <item>
-        <first>144</first>
+        <first>146</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3104,7 +3130,7 @@
         </second>
       </item>
       <item>
-        <first>148</first>
+        <first>150</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3116,7 +3142,7 @@
       <count>4</count>
       <item_version>0</item_version>
       <item class_id="52" tracking_level="0" version="0">
-        <first>imag_sample_alloca_fu_88</first>
+        <first>imag_sample_alloca_fu_90</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3124,7 +3150,7 @@
         </second>
       </item>
       <item>
-        <first>p_phi5_loc_fu_76</first>
+        <first>p_phi5_loc_fu_78</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3132,7 +3158,7 @@
         </second>
       </item>
       <item>
-        <first>p_phi_loc_fu_80</first>
+        <first>p_phi_loc_fu_82</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3140,7 +3166,7 @@
         </second>
       </item>
       <item>
-        <first>real_sample_alloca_fu_84</first>
+        <first>real_sample_alloca_fu_86</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3152,7 +3178,7 @@
       <count>2</count>
       <item_version>0</item_version>
       <item>
-        <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92</first>
+        <first>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -3161,7 +3187,7 @@
         </second>
       </item>
       <item>
-        <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116</first>
+        <first>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -3174,7 +3200,7 @@
       <count>2</count>
       <item_version>0</item_version>
       <item>
-        <first>p_phi5_loc_load_load_fu_148</first>
+        <first>p_phi5_loc_load_load_fu_150</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3182,7 +3208,7 @@
         </second>
       </item>
       <item>
-        <first>p_phi_loc_load_load_fu_144</first>
+        <first>p_phi_loc_load_load_fu_146</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3224,7 +3250,7 @@
       <count>2</count>
       <item_version>0</item_version>
       <item>
-        <first>152</first>
+        <first>154</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3232,7 +3258,7 @@
         </second>
       </item>
       <item>
-        <first>158</first>
+        <first>160</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3244,7 +3270,7 @@
       <count>2</count>
       <item_version>0</item_version>
       <item>
-        <first>p_phi5_loc_reg_152</first>
+        <first>p_phi5_loc_reg_154</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3252,7 +3278,7 @@
         </second>
       </item>
       <item>
-        <first>p_phi_loc_reg_158</first>
+        <first>p_phi_loc_reg_160</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

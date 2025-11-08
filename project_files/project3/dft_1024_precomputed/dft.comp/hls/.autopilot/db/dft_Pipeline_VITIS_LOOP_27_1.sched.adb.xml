@@ -70,7 +70,7 @@ newFuncRoot:2 %j = alloca i32 1
 
 <Node id="16" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1" op_5_bw="1" op_6_bw="1" op_7_bw="1" op_8_bw="0">
 <![CDATA[
-newFuncRoot:3 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 0, i1 %input_imag_V_last_V, i1 0, i1 0, void @empty_4
+newFuncRoot:3 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 0, i1 %input_imag_V_last_V, i1 0, i1 0, void @empty_1
 
 ]]></Node>
 <StgValue><ssdm name="specaxissidechannel_ln0"/></StgValue>
@@ -85,7 +85,7 @@ newFuncRoot:3 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_Spec
 
 <Node id="17" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1" op_5_bw="1" op_6_bw="1" op_7_bw="1" op_8_bw="0">
 <![CDATA[
-newFuncRoot:4 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %input_real_V_data_V, i4 %input_real_V_keep_V, i4 %input_real_V_strb_V, i1 0, i1 %input_real_V_last_V, i1 0, i1 0, void @empty_5
+newFuncRoot:4 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %input_real_V_data_V, i4 %input_real_V_keep_V, i4 %input_real_V_strb_V, i1 0, i1 %input_real_V_last_V, i1 0, i1 0, void @empty_9
 
 ]]></Node>
 <StgValue><ssdm name="specaxissidechannel_ln0"/></StgValue>
@@ -100,7 +100,7 @@ newFuncRoot:4 %specaxissidechannel_ln0 = specaxissidechannel void @_ssdm_op_Spec
 
 <Node id="18" bw="0" op_0_bw="0" op_1_bw="1" op_2_bw="4" op_3_bw="4" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="32" op_10_bw="32" op_11_bw="0" op_12_bw="0" op_13_bw="0" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="0" op_19_bw="0" op_20_bw="32" op_21_bw="32" op_22_bw="32">
 <![CDATA[
-newFuncRoot:5 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %input_imag_V_last_V, i4 %input_imag_V_strb_V, i4 %input_imag_V_keep_V, i32 %input_imag_V_data_V, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0
+newFuncRoot:5 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %input_imag_V_last_V, i4 %input_imag_V_strb_V, i4 %input_imag_V_keep_V, i32 %input_imag_V_data_V, void @empty_8, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_6, void @empty_6, void @empty_6, i32 0, i32 0, i32 0, i32 0, void @empty_6, void @empty_6, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -115,7 +115,7 @@ newFuncRoot:5 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i
 
 <Node id="19" bw="0" op_0_bw="0" op_1_bw="1" op_2_bw="4" op_3_bw="4" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="32" op_10_bw="32" op_11_bw="0" op_12_bw="0" op_13_bw="0" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="0" op_19_bw="0" op_20_bw="32" op_21_bw="32" op_22_bw="32">
 <![CDATA[
-newFuncRoot:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %input_real_V_last_V, i4 %input_real_V_strb_V, i4 %input_real_V_keep_V, i32 %input_real_V_data_V, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_1, void @empty_1, i32 0, i32 0, i32 0, i32 0, void @empty_1, void @empty_1, i32 4294967295, i32 0, i32 0
+newFuncRoot:6 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %input_real_V_last_V, i4 %input_real_V_strb_V, i4 %input_real_V_keep_V, i32 %input_real_V_data_V, void @empty_8, i32 0, i32 0, void @empty_7, i32 0, i32 0, void @empty_6, void @empty_6, void @empty_6, i32 0, i32 0, i32 0, i32 0, void @empty_6, void @empty_6, i32 4294967295, i32 0, i32 0
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -334,7 +334,7 @@ for.inc.split:0 %zext_ln27 = zext i11 %j_1
 
 <Node id="29" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.inc.split:1 %specpipeline_ln16 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_1
+for.inc.split:1 %specpipeline_ln16 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_6
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln16"/></StgValue>
@@ -364,7 +364,7 @@ for.inc.split:2 %speclooptripcount_ln16 = speclooptripcount void @_ssdm_op_SpecL
 
 <Node id="31" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.inc.split:3 %specloopname_ln27 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8
+for.inc.split:3 %specloopname_ln27 = specloopname void @_ssdm_op_SpecLoopName, void @empty
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln27"/></StgValue>
@@ -439,10 +439,10 @@ for.inc.split:7 %pkt_real_data = bitcast i32 %p_s
 
 <Node id="36" bw="41" op_0_bw="41" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1">
 <![CDATA[
-for.inc.split:8 %empty_12 = read i41 @_ssdm_op_Read.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 %input_imag_V_last_V
+for.inc.split:8 %empty_13 = read i41 @_ssdm_op_Read.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 %input_imag_V_last_V
 
 ]]></Node>
-<StgValue><ssdm name="empty_12"/></StgValue>
+<StgValue><ssdm name="empty_13"/></StgValue>
 </operation>
 
 <operation id="28" st_id="2" stage="1" lat="1">
@@ -454,7 +454,7 @@ for.inc.split:8 %empty_12 = read i41 @_ssdm_op_Read.axis.volatile.i32P0A.i4P0A.i
 
 <Node id="37" bw="32" op_0_bw="41">
 <![CDATA[
-for.inc.split:9 %p_2 = extractvalue i41 %empty_12
+for.inc.split:9 %p_2 = extractvalue i41 %empty_13
 
 ]]></Node>
 <StgValue><ssdm name="p_2"/></StgValue>
@@ -469,7 +469,7 @@ for.inc.split:9 %p_2 = extractvalue i41 %empty_12
 
 <Node id="38" bw="4" op_0_bw="41">
 <![CDATA[
-for.inc.split:10 %pkt_imag_strb = extractvalue i41 %empty_12
+for.inc.split:10 %pkt_imag_strb = extractvalue i41 %empty_13
 
 ]]></Node>
 <StgValue><ssdm name="pkt_imag_strb"/></StgValue>

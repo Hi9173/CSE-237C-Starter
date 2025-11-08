@@ -14,7 +14,7 @@
 <pragma file="dft.cpp" line="11" pragmaType="interface" parentfunction="dft" mode="axis" port="input_imag" register="1" register_mode="both" name="" depth="-1"/>
 <pragma file="dft.cpp" line="12" pragmaType="interface" parentfunction="dft" mode="axis" port="output_real" register="1" register_mode="both" name="" depth="-1"/>
 <pragma file="dft.cpp" line="13" pragmaType="interface" parentfunction="dft" mode="axis" port="output_imag" register="1" register_mode="both" name="" depth="-1"/>
-<pragma file="dft.cpp" line="14" pragmaType="interface" parentfunction="dft" mode="ap_ctrl_none" port="return" name=""/>
+<pragma file="dft.cpp" line="14" pragmaType="interface" parentfunction="dft" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<4>::ap_uint(int)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="get_id_ptr" off="0" region="0" recursive="0"/>

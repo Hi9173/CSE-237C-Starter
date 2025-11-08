@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dft'
 ================================================================
-* Date:           Fri Nov  7 16:17:00 2025
+* Date:           Fri Nov  7 16:25:55 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        dft.comp
@@ -38,8 +38,8 @@
         |                                                         |                                              |  Latency (cycles) |   Latency (absolute)  |      Interval     |                    Pipeline                    |
         |                         Instance                        |                    Module                    |   min   |   max   |    min    |    max    |   min   |   max   |                      Type                      |
         +---------------------------------------------------------+----------------------------------------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
-        |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92                   |dft_Pipeline_VITIS_LOOP_27_1                  |     1026|     1026|  10.260 us|  10.260 us|     1025|     1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116  |dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3  |  6291473|  6291473|  62.915 ms|  62.915 ms|  6291462|  6291462|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94                   |dft_Pipeline_VITIS_LOOP_27_1                  |     1026|     1026|  10.260 us|  10.260 us|     1025|     1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118  |dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3  |  6291473|  6291473|  62.915 ms|  62.915 ms|  6291462|  6291462|  loop auto-rewind stp (delay=0 clock cycles(s))|
         +---------------------------------------------------------+----------------------------------------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
 
         * Loop: 
@@ -57,12 +57,12 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       0|      6|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |        4|    5|    1200|   1483|    -|
+|Instance         |        4|    5|    1236|   1523|    -|
 |Memory           |        4|    -|       0|      0|    0|
 |Multiplexer      |        -|    -|       0|    201|    -|
 |Register         |        -|    -|      90|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        8|    5|    1290|   1690|    0|
+|Total            |        8|    5|    1326|   1730|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -74,10 +74,11 @@
     +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
     |                         Instance                        |                    Module                    | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
-    |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92                   |dft_Pipeline_VITIS_LOOP_27_1                  |        0|   0|    33|    84|    0|
-    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116  |dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3  |        4|   5|  1167|  1399|    0|
+    |control_s_axi_U                                          |control_s_axi                                 |        0|   0|    36|    40|    0|
+    |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94                   |dft_Pipeline_VITIS_LOOP_27_1                  |        0|   0|    33|    84|    0|
+    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118  |dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3  |        4|   5|  1167|  1399|    0|
     +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
-    |Total                                                    |                                              |        4|   5|  1200|  1483|    0|
+    |Total                                                    |                                              |        4|   5|  1236|  1523|    0|
     +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
 
     * DSP: 
@@ -100,8 +101,8 @@
     +----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
     |                                Variable Name                               | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
-    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116_output_imag_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116_output_real_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TREADY  |       and|   0|  0|   2|           1|           1|
     |ap_block_state6                                                             |        or|   0|  0|   2|           1|           1|
     +----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
     |Total                                                                       |          |   0|  0|   6|           3|           3|
@@ -137,8 +138,8 @@
     |                                 Name                                 | FF | LUT| Bits| Const Bits|
     +----------------------------------------------------------------------+----+----+-----+-----------+
     |ap_CS_fsm                                                             |   6|   0|    6|          0|
-    |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_92_ap_start_reg                   |   1|   0|    1|          0|
-    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_116_ap_start_reg  |   1|   0|    1|          0|
+    |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg                   |   1|   0|    1|          0|
+    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg  |   1|   0|    1|          0|
     |output_imag_TDATA_reg                                                 |  32|   0|   32|          0|
     |output_imag_TKEEP_reg                                                 |   4|   0|    4|          0|
     |output_imag_TLAST_reg                                                 |   1|   0|    1|          0|
@@ -157,34 +158,52 @@
 == Interface
 ================================================================
 * Summary: 
-+--------------------+-----+-----+--------------+----------------------+--------------+
-|      RTL Ports     | Dir | Bits|   Protocol   |     Source Object    |    C Type    |
-+--------------------+-----+-----+--------------+----------------------+--------------+
-|ap_clk              |   in|    1|  ap_ctrl_none|                   dft|  return value|
-|ap_rst_n            |   in|    1|  ap_ctrl_none|                   dft|  return value|
-|input_real_TDATA    |   in|   32|          axis|   input_real_V_data_V|       pointer|
-|input_real_TVALID   |   in|    1|          axis|   input_real_V_last_V|       pointer|
-|input_real_TREADY   |  out|    1|          axis|   input_real_V_last_V|       pointer|
-|input_real_TLAST    |   in|    1|          axis|   input_real_V_last_V|       pointer|
-|input_real_TKEEP    |   in|    4|          axis|   input_real_V_keep_V|       pointer|
-|input_real_TSTRB    |   in|    4|          axis|   input_real_V_strb_V|       pointer|
-|input_imag_TDATA    |   in|   32|          axis|   input_imag_V_data_V|       pointer|
-|input_imag_TVALID   |   in|    1|          axis|   input_imag_V_last_V|       pointer|
-|input_imag_TREADY   |  out|    1|          axis|   input_imag_V_last_V|       pointer|
-|input_imag_TLAST    |   in|    1|          axis|   input_imag_V_last_V|       pointer|
-|input_imag_TKEEP    |   in|    4|          axis|   input_imag_V_keep_V|       pointer|
-|input_imag_TSTRB    |   in|    4|          axis|   input_imag_V_strb_V|       pointer|
-|output_real_TDATA   |  out|   32|          axis|  output_real_V_data_V|       pointer|
-|output_real_TVALID  |  out|    1|          axis|  output_real_V_last_V|       pointer|
-|output_real_TREADY  |   in|    1|          axis|  output_real_V_last_V|       pointer|
-|output_real_TLAST   |  out|    1|          axis|  output_real_V_last_V|       pointer|
-|output_real_TKEEP   |  out|    4|          axis|  output_real_V_keep_V|       pointer|
-|output_real_TSTRB   |  out|    4|          axis|  output_real_V_strb_V|       pointer|
-|output_imag_TDATA   |  out|   32|          axis|  output_imag_V_data_V|       pointer|
-|output_imag_TVALID  |  out|    1|          axis|  output_imag_V_last_V|       pointer|
-|output_imag_TREADY  |   in|    1|          axis|  output_imag_V_last_V|       pointer|
-|output_imag_TLAST   |  out|    1|          axis|  output_imag_V_last_V|       pointer|
-|output_imag_TKEEP   |  out|    4|          axis|  output_imag_V_keep_V|       pointer|
-|output_imag_TSTRB   |  out|    4|          axis|  output_imag_V_strb_V|       pointer|
-+--------------------+-----+-----+--------------+----------------------+--------------+
++-----------------------+-----+-----+------------+----------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++-----------------------+-----+-----+------------+----------------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|               control|   return void|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|               control|   return void|
+|s_axi_control_AWADDR   |   in|    4|       s_axi|               control|   return void|
+|s_axi_control_WVALID   |   in|    1|       s_axi|               control|   return void|
+|s_axi_control_WREADY   |  out|    1|       s_axi|               control|   return void|
+|s_axi_control_WDATA    |   in|   32|       s_axi|               control|   return void|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|               control|   return void|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|               control|   return void|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|               control|   return void|
+|s_axi_control_ARADDR   |   in|    4|       s_axi|               control|   return void|
+|s_axi_control_RVALID   |  out|    1|       s_axi|               control|   return void|
+|s_axi_control_RREADY   |   in|    1|       s_axi|               control|   return void|
+|s_axi_control_RDATA    |  out|   32|       s_axi|               control|   return void|
+|s_axi_control_RRESP    |  out|    2|       s_axi|               control|   return void|
+|s_axi_control_BVALID   |  out|    1|       s_axi|               control|   return void|
+|s_axi_control_BREADY   |   in|    1|       s_axi|               control|   return void|
+|s_axi_control_BRESP    |  out|    2|       s_axi|               control|   return void|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|                   dft|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|                   dft|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|                   dft|  return value|
+|input_real_TDATA       |   in|   32|        axis|   input_real_V_data_V|       pointer|
+|input_real_TVALID      |   in|    1|        axis|   input_real_V_last_V|       pointer|
+|input_real_TREADY      |  out|    1|        axis|   input_real_V_last_V|       pointer|
+|input_real_TLAST       |   in|    1|        axis|   input_real_V_last_V|       pointer|
+|input_real_TKEEP       |   in|    4|        axis|   input_real_V_keep_V|       pointer|
+|input_real_TSTRB       |   in|    4|        axis|   input_real_V_strb_V|       pointer|
+|input_imag_TDATA       |   in|   32|        axis|   input_imag_V_data_V|       pointer|
+|input_imag_TVALID      |   in|    1|        axis|   input_imag_V_last_V|       pointer|
+|input_imag_TREADY      |  out|    1|        axis|   input_imag_V_last_V|       pointer|
+|input_imag_TLAST       |   in|    1|        axis|   input_imag_V_last_V|       pointer|
+|input_imag_TKEEP       |   in|    4|        axis|   input_imag_V_keep_V|       pointer|
+|input_imag_TSTRB       |   in|    4|        axis|   input_imag_V_strb_V|       pointer|
+|output_real_TDATA      |  out|   32|        axis|  output_real_V_data_V|       pointer|
+|output_real_TVALID     |  out|    1|        axis|  output_real_V_last_V|       pointer|
+|output_real_TREADY     |   in|    1|        axis|  output_real_V_last_V|       pointer|
+|output_real_TLAST      |  out|    1|        axis|  output_real_V_last_V|       pointer|
+|output_real_TKEEP      |  out|    4|        axis|  output_real_V_keep_V|       pointer|
+|output_real_TSTRB      |  out|    4|        axis|  output_real_V_strb_V|       pointer|
+|output_imag_TDATA      |  out|   32|        axis|  output_imag_V_data_V|       pointer|
+|output_imag_TVALID     |  out|    1|        axis|  output_imag_V_last_V|       pointer|
+|output_imag_TREADY     |   in|    1|        axis|  output_imag_V_last_V|       pointer|
+|output_imag_TLAST      |  out|    1|        axis|  output_imag_V_last_V|       pointer|
+|output_imag_TKEEP      |  out|    4|        axis|  output_imag_V_keep_V|       pointer|
+|output_imag_TSTRB      |  out|    4|        axis|  output_imag_V_strb_V|       pointer|
++-----------------------+-----+-----+------------+----------------------+--------------+
 

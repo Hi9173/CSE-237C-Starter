@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'dft'
 ================================================================
 + General Information: 
-    * Date:           Fri Nov  7 16:17:00 2025
+    * Date:           Fri Nov  7 16:25:55 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        dft.comp
     * Solution:       hls (Vivado IP Flow Target)
@@ -19,7 +19,7 @@
     |                     Modules                     | Issue|      | Latency |  Latency  | Iteration|         |   Trip  |          |        |        |           |           |     |
     |                     & Loops                     | Type | Slack| (cycles)|    (ns)   |  Latency | Interval|  Count  | Pipelined|  BRAM  |   DSP  |     FF    |    LUT    | URAM|
     +-------------------------------------------------+------+------+---------+-----------+----------+---------+---------+----------+--------+--------+-----------+-----------+-----+
-    |+ dft                                            |     -|  0.04|  6292504|  6.293e+07|         -|  6292505|        -|        no|  8 (2%)|  5 (2%)|  1290 (1%)|  1694 (3%)|    -|
+    |+ dft                                            |     -|  0.04|  6292504|  6.293e+07|         -|  6292505|        -|        no|  8 (2%)|  5 (2%)|  1326 (1%)|  1734 (3%)|    -|
     | + dft_Pipeline_VITIS_LOOP_27_1                  |     -|  2.48|     1026|  1.026e+04|         -|     1026|        -|        no|       -|       -|   33 (~0%)|   84 (~0%)|    -|
     |  o VITIS_LOOP_27_1                              |     -|  7.30|     1024|  1.024e+04|         2|        1|     1024|       yes|       -|       -|          -|          -|    -|
     | + dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3  |     -|  0.04|  6291473|  6.291e+07|         -|  6291473|        -|        no|  4 (1%)|  5 (2%)|  1167 (1%)|  1403 (2%)|    -|
@@ -30,6 +30,23 @@
 ================================================================
 == HW Interfaces
 ================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+
+| Interface     | Data Width | Address Width |
++---------------+------------+---------------+
+| s_axi_control | 32         | 4             |
++---------------+------------+---------------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
 * AXIS
 +-------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
 | Interface   | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
@@ -41,13 +58,14 @@
 +-------------+-----------+---------------+-------+-------+-------+--------+-------+--------+
 
 * TOP LEVEL CONTROL
-+-----------+--------------+----------+
-| Interface | Type         | Ports    |
-+-----------+--------------+----------+
-| ap_clk    | clock        | ap_clk   |
-| ap_rst_n  | reset        | ap_rst_n |
-| ap_ctrl   | ap_ctrl_none |          |
-+-----------+--------------+----------+
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
 
 
 ================================================================
@@ -111,31 +129,32 @@
 ================================================================
 == Storage Report
 ================================================================
-+-------------------------------------------------+--------------+------+------+------+--------+------------------------+------+---------+------------------+
-| Name                                            | Usage        | Type | BRAM | URAM | Pragma | Variable               | Impl | Latency | Bitwidth, Depth, |
-|                                                 |              |      |      |      |        |                        |      |         | Banks            |
-+-------------------------------------------------+--------------+------+------+------+--------+------------------------+------+---------+------------------+
-| + dft                                           |              |      | 8    | 0    |        |                        |      |         |                  |
-|   real_sample_U                                 | ram_1p array |      | 2    |      |        | real_sample            | auto | 1       | 32, 1024, 1      |
-|   imag_sample_U                                 | ram_1p array |      | 2    |      |        | imag_sample            | auto | 1       | 32, 1024, 1      |
-|  + dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3 |              |      | 4    | 0    |        |                        |      |         |                  |
-|    cos_coefficients_table_U                     | rom_1p       |      | 2    |      |        | cos_coefficients_table | auto | 1       | 32, 1024, 1      |
-|    sin_coefficients_table_U                     | rom_1p       |      | 2    |      |        | sin_coefficients_table | auto | 1       | 32, 1024, 1      |
-+-------------------------------------------------+--------------+------+------+------+--------+------------------------+------+---------+------------------+
++-------------------------------------------------+--------------+-----------+------+------+--------+------------------------+------+---------+------------------+
+| Name                                            | Usage        | Type      | BRAM | URAM | Pragma | Variable               | Impl | Latency | Bitwidth, Depth, |
+|                                                 |              |           |      |      |        |                        |      |         | Banks            |
++-------------------------------------------------+--------------+-----------+------+------+--------+------------------------+------+---------+------------------+
+| + dft                                           |              |           | 8    | 0    |        |                        |      |         |                  |
+|   control_s_axi_U                               | interface    | s_axilite |      |      |        |                        |      |         |                  |
+|   real_sample_U                                 | ram_1p array |           | 2    |      |        | real_sample            | auto | 1       | 32, 1024, 1      |
+|   imag_sample_U                                 | ram_1p array |           | 2    |      |        | imag_sample            | auto | 1       | 32, 1024, 1      |
+|  + dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3 |              |           | 4    | 0    |        |                        |      |         |                  |
+|    cos_coefficients_table_U                     | rom_1p       |           | 2    |      |        | cos_coefficients_table | auto | 1       | 32, 1024, 1      |
+|    sin_coefficients_table_U                     | rom_1p       |           | 2    |      |        | sin_coefficients_table | auto | 1       | 32, 1024, 1      |
++-------------------------------------------------+--------------+-----------+------+------+--------+------------------------+------+---------+------------------+
 
 
 ================================================================
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+-----------+--------------------------+--------------------------------+
-| Type      | Options                  | Location                       |
-+-----------+--------------------------+--------------------------------+
-| interface | axis port=input_real     | dft.cpp:10 in dft, input_real  |
-| interface | axis port=input_imag     | dft.cpp:11 in dft, input_imag  |
-| interface | axis port=output_real    | dft.cpp:12 in dft, output_real |
-| interface | axis port=output_imag    | dft.cpp:13 in dft, output_imag |
-| interface | ap_ctrl_none port=return | dft.cpp:14 in dft, return      |
-+-----------+--------------------------+--------------------------------+
++-----------+----------------------------+--------------------------------+
+| Type      | Options                    | Location                       |
++-----------+----------------------------+--------------------------------+
+| interface | axis port=input_real       | dft.cpp:10 in dft, input_real  |
+| interface | axis port=input_imag       | dft.cpp:11 in dft, input_imag  |
+| interface | axis port=output_real      | dft.cpp:12 in dft, output_real |
+| interface | axis port=output_imag      | dft.cpp:13 in dft, output_imag |
+| interface | mode=s_axilite port=return | dft.cpp:14 in dft, return      |
++-----------+----------------------------+--------------------------------+
 
 
