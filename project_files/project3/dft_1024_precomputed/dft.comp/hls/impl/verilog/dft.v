@@ -128,48 +128,48 @@ reg   [9:0] imag_sample_address0;
 reg    imag_sample_ce0;
 reg    imag_sample_we0;
 wire   [31:0] imag_sample_q0;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_done;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_idle;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_ready;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_input_real_TREADY;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_input_imag_TREADY;
-wire   [9:0] grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_address0;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_ce0;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_we0;
-wire   [31:0] grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_d0;
-wire   [9:0] grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_address0;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_ce0;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_we0;
-wire   [31:0] grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_d0;
-wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi_out;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi_out_ap_vld;
-wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi5_out;
-wire    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi5_out_ap_vld;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_done;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_idle;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_ready;
-wire   [31:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TDATA;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TREADY;
-wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TKEEP;
-wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TSTRB;
-wire   [0:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TLAST;
-wire   [31:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TDATA;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TREADY;
-wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TKEEP;
-wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TSTRB;
-wire   [0:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TLAST;
-wire   [9:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_real_sample_address0;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_real_sample_ce0;
-wire   [9:0] grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_imag_sample_address0;
-wire    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_imag_sample_ce0;
-reg    grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_done;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_idle;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_ready;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_input_real_TREADY;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_input_imag_TREADY;
+wire   [9:0] grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_address0;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_ce0;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_we0;
+wire   [31:0] grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_d0;
+wire   [9:0] grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_address0;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_ce0;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_we0;
+wire   [31:0] grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_d0;
+wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi_out;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi_out_ap_vld;
+wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi5_out;
+wire    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi5_out_ap_vld;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_done;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_idle;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_ready;
+wire   [31:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TDATA;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TREADY;
+wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TKEEP;
+wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TSTRB;
+wire   [0:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TLAST;
+wire   [31:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TDATA;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TREADY;
+wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TKEEP;
+wire   [3:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TSTRB;
+wire   [0:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TLAST;
+wire   [9:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_real_sample_address0;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_real_sample_ce0;
+wire   [9:0] grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_imag_sample_address0;
+wire    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_imag_sample_ce0;
+reg    grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start_reg;
 wire    ap_CS_fsm_state2;
 wire    ap_CS_fsm_state3;
-reg    grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg;
+reg    grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start_reg;
 wire    ap_CS_fsm_state4;
 wire    ap_CS_fsm_state5;
 reg   [31:0] output_real_TDATA_reg;
@@ -262,8 +262,8 @@ wire    ap_ce_reg;
 // power-on initialization
 initial begin
 #0 ap_CS_fsm = 6'd1;
-#0 grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg = 1'b0;
-#0 grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg = 1'b0;
+#0 grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start_reg = 1'b0;
+#0 grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start_reg = 1'b0;
 end
 
 dft_real_sample_RAM_AUTO_1R1W #(
@@ -276,7 +276,7 @@ real_sample_U(
     .address0(real_sample_address0),
     .ce0(real_sample_ce0),
     .we0(real_sample_we0),
-    .d0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_d0),
+    .d0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_d0),
     .q0(real_sample_q0)
 );
 
@@ -290,69 +290,69 @@ imag_sample_U(
     .address0(imag_sample_address0),
     .ce0(imag_sample_ce0),
     .we0(imag_sample_we0),
-    .d0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_d0),
+    .d0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_d0),
     .q0(imag_sample_q0)
 );
 
-dft_dft_Pipeline_VITIS_LOOP_27_1 grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94(
+dft_dft_Pipeline_VITIS_LOOP_23_1 grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start),
-    .ap_done(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_done),
-    .ap_idle(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_idle),
-    .ap_ready(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_ready),
+    .ap_start(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start),
+    .ap_done(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_done),
+    .ap_idle(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_idle),
+    .ap_ready(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_ready),
     .input_real_TVALID(input_real_TVALID_int_regslice),
     .input_imag_TVALID(input_imag_TVALID_int_regslice),
     .input_real_TDATA(input_real_TDATA_int_regslice),
-    .input_real_TREADY(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_input_real_TREADY),
+    .input_real_TREADY(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_input_real_TREADY),
     .input_real_TKEEP(input_real_TKEEP_int_regslice),
     .input_real_TSTRB(input_real_TSTRB_int_regslice),
     .input_real_TLAST(input_real_TLAST_int_regslice),
     .input_imag_TDATA(input_imag_TDATA_int_regslice),
-    .input_imag_TREADY(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_input_imag_TREADY),
+    .input_imag_TREADY(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_input_imag_TREADY),
     .input_imag_TKEEP(input_imag_TKEEP_int_regslice),
     .input_imag_TSTRB(input_imag_TSTRB_int_regslice),
     .input_imag_TLAST(input_imag_TLAST_int_regslice),
-    .real_sample_address0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_address0),
-    .real_sample_ce0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_ce0),
-    .real_sample_we0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_we0),
-    .real_sample_d0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_d0),
-    .imag_sample_address0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_address0),
-    .imag_sample_ce0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_ce0),
-    .imag_sample_we0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_we0),
-    .imag_sample_d0(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_d0),
-    .p_phi_out(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi_out),
-    .p_phi_out_ap_vld(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi_out_ap_vld),
-    .p_phi5_out(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi5_out),
-    .p_phi5_out_ap_vld(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi5_out_ap_vld)
+    .real_sample_address0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_address0),
+    .real_sample_ce0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_ce0),
+    .real_sample_we0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_we0),
+    .real_sample_d0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_d0),
+    .imag_sample_address0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_address0),
+    .imag_sample_ce0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_ce0),
+    .imag_sample_we0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_we0),
+    .imag_sample_d0(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_d0),
+    .p_phi_out(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi_out),
+    .p_phi_out_ap_vld(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi_out_ap_vld),
+    .p_phi5_out(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi5_out),
+    .p_phi5_out_ap_vld(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi5_out_ap_vld)
 );
 
-dft_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3 grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118(
+dft_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3 grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start),
-    .ap_done(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_done),
-    .ap_idle(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_idle),
-    .ap_ready(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_ready),
-    .p_phi_reload(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi_out),
-    .output_real_TDATA(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TDATA),
-    .output_real_TVALID(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID),
-    .output_real_TREADY(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TREADY),
-    .output_real_TKEEP(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TKEEP),
-    .output_real_TSTRB(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TSTRB),
-    .output_real_TLAST(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TLAST),
-    .p_phi5_reload(grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_p_phi5_out),
-    .output_imag_TDATA(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TDATA),
-    .output_imag_TVALID(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID),
-    .output_imag_TREADY(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TREADY),
-    .output_imag_TKEEP(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TKEEP),
-    .output_imag_TSTRB(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TSTRB),
-    .output_imag_TLAST(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TLAST),
-    .real_sample_address0(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_real_sample_address0),
-    .real_sample_ce0(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_real_sample_ce0),
+    .ap_start(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start),
+    .ap_done(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_done),
+    .ap_idle(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_idle),
+    .ap_ready(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_ready),
+    .p_phi_reload(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi_out),
+    .output_real_TDATA(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TDATA),
+    .output_real_TVALID(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID),
+    .output_real_TREADY(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TREADY),
+    .output_real_TKEEP(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TKEEP),
+    .output_real_TSTRB(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TSTRB),
+    .output_real_TLAST(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TLAST),
+    .p_phi5_reload(grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_p_phi5_out),
+    .output_imag_TDATA(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TDATA),
+    .output_imag_TVALID(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID),
+    .output_imag_TREADY(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TREADY),
+    .output_imag_TKEEP(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TKEEP),
+    .output_imag_TSTRB(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TSTRB),
+    .output_imag_TLAST(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TLAST),
+    .real_sample_address0(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_real_sample_address0),
+    .real_sample_ce0(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_real_sample_ce0),
     .real_sample_q0(real_sample_q0),
-    .imag_sample_address0(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_imag_sample_address0),
-    .imag_sample_ce0(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_imag_sample_ce0),
+    .imag_sample_address0(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_imag_sample_address0),
+    .imag_sample_ce0(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_imag_sample_ce0),
     .imag_sample_q0(imag_sample_q0)
 );
 
@@ -505,7 +505,7 @@ regslice_both_output_real_V_data_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .data_in(output_real_TDATA_int_regslice),
-    .vld_in(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID),
+    .vld_in(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID),
     .ack_in(output_real_TREADY_int_regslice),
     .data_out(output_real_TDATA),
     .vld_out(regslice_both_output_real_V_data_V_U_vld_out),
@@ -519,7 +519,7 @@ regslice_both_output_real_V_keep_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .data_in(output_real_TKEEP_int_regslice),
-    .vld_in(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID),
+    .vld_in(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID),
     .ack_in(regslice_both_output_real_V_keep_V_U_ack_in_dummy),
     .data_out(output_real_TKEEP),
     .vld_out(regslice_both_output_real_V_keep_V_U_vld_out),
@@ -533,7 +533,7 @@ regslice_both_output_real_V_strb_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .data_in(output_real_TSTRB_int_regslice),
-    .vld_in(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID),
+    .vld_in(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID),
     .ack_in(regslice_both_output_real_V_strb_V_U_ack_in_dummy),
     .data_out(output_real_TSTRB),
     .vld_out(regslice_both_output_real_V_strb_V_U_vld_out),
@@ -547,7 +547,7 @@ regslice_both_output_real_V_last_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .data_in(output_real_TLAST_int_regslice),
-    .vld_in(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID),
+    .vld_in(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID),
     .ack_in(regslice_both_output_real_V_last_V_U_ack_in_dummy),
     .data_out(output_real_TLAST),
     .vld_out(regslice_both_output_real_V_last_V_U_vld_out),
@@ -561,7 +561,7 @@ regslice_both_output_imag_V_data_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .data_in(output_imag_TDATA_int_regslice),
-    .vld_in(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID),
+    .vld_in(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID),
     .ack_in(output_imag_TREADY_int_regslice),
     .data_out(output_imag_TDATA),
     .vld_out(regslice_both_output_imag_V_data_V_U_vld_out),
@@ -575,7 +575,7 @@ regslice_both_output_imag_V_keep_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .data_in(output_imag_TKEEP_int_regslice),
-    .vld_in(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID),
+    .vld_in(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID),
     .ack_in(regslice_both_output_imag_V_keep_V_U_ack_in_dummy),
     .data_out(output_imag_TKEEP),
     .vld_out(regslice_both_output_imag_V_keep_V_U_vld_out),
@@ -589,7 +589,7 @@ regslice_both_output_imag_V_strb_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .data_in(output_imag_TSTRB_int_regslice),
-    .vld_in(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID),
+    .vld_in(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID),
     .ack_in(regslice_both_output_imag_V_strb_V_U_ack_in_dummy),
     .data_out(output_imag_TSTRB),
     .vld_out(regslice_both_output_imag_V_strb_V_U_vld_out),
@@ -603,7 +603,7 @@ regslice_both_output_imag_V_last_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
     .data_in(output_imag_TLAST_int_regslice),
-    .vld_in(grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID),
+    .vld_in(grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID),
     .ack_in(regslice_both_output_imag_V_last_V_U_ack_in_dummy),
     .data_out(output_imag_TLAST),
     .vld_out(regslice_both_output_imag_V_last_V_U_vld_out),
@@ -621,43 +621,43 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg <= 1'b0;
+        grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg <= 1'b1;
-        end else if ((grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_ready == 1'b1)) begin
-            grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg <= 1'b0;
+            grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start_reg <= 1'b1;
+        end else if ((grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_ready == 1'b1)) begin
+            grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg <= 1'b0;
+        grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state4)) begin
-            grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg <= 1'b1;
-        end else if ((grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_ready == 1'b1)) begin
-            grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg <= 1'b0;
+            grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start_reg <= 1'b1;
+        end else if ((grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_ready == 1'b1)) begin
+            grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID == 1'b1))) begin
-        output_imag_TDATA_reg <= grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TDATA;
-        output_imag_TKEEP_reg <= grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TKEEP;
-        output_imag_TLAST_reg <= grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TLAST;
-        output_imag_TSTRB_reg <= grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TSTRB;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID == 1'b1))) begin
+        output_imag_TDATA_reg <= grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TDATA;
+        output_imag_TKEEP_reg <= grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TKEEP;
+        output_imag_TLAST_reg <= grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TLAST;
+        output_imag_TSTRB_reg <= grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TSTRB;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID == 1'b1))) begin
-        output_real_TDATA_reg <= grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TDATA;
-        output_real_TKEEP_reg <= grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TKEEP;
-        output_real_TLAST_reg <= grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TLAST;
-        output_real_TSTRB_reg <= grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TSTRB;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID == 1'b1))) begin
+        output_real_TDATA_reg <= grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TDATA;
+        output_real_TKEEP_reg <= grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TKEEP;
+        output_real_TLAST_reg <= grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TLAST;
+        output_real_TSTRB_reg <= grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TSTRB;
     end
 end
 
@@ -672,7 +672,7 @@ end
 assign ap_ST_fsm_state2_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_done == 1'b0)) begin
+    if ((grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_done == 1'b0)) begin
         ap_ST_fsm_state3_blk = 1'b1;
     end else begin
         ap_ST_fsm_state3_blk = 1'b0;
@@ -682,7 +682,7 @@ end
 assign ap_ST_fsm_state4_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_done == 1'b0)) begin
+    if ((grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_done == 1'b0)) begin
         ap_ST_fsm_state5_blk = 1'b1;
     end else begin
         ap_ST_fsm_state5_blk = 1'b0;
@@ -723,9 +723,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        imag_sample_address0 = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_imag_sample_address0;
+        imag_sample_address0 = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_imag_sample_address0;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        imag_sample_address0 = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_address0;
+        imag_sample_address0 = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_address0;
     end else begin
         imag_sample_address0 = 'bx;
     end
@@ -733,9 +733,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        imag_sample_ce0 = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_imag_sample_ce0;
+        imag_sample_ce0 = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_imag_sample_ce0;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        imag_sample_ce0 = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_ce0;
+        imag_sample_ce0 = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_ce0;
     end else begin
         imag_sample_ce0 = 1'b0;
     end
@@ -743,7 +743,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        imag_sample_we0 = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_imag_sample_we0;
+        imag_sample_we0 = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_imag_sample_we0;
     end else begin
         imag_sample_we0 = 1'b0;
     end
@@ -751,7 +751,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        input_imag_TREADY_int_regslice = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_input_imag_TREADY;
+        input_imag_TREADY_int_regslice = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_input_imag_TREADY;
     end else begin
         input_imag_TREADY_int_regslice = 1'b0;
     end
@@ -759,71 +759,71 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        input_real_TREADY_int_regslice = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_input_real_TREADY;
+        input_real_TREADY_int_regslice = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_input_real_TREADY;
     end else begin
         input_real_TREADY_int_regslice = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID == 1'b1))) begin
-        output_imag_TDATA_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TDATA;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID == 1'b1))) begin
+        output_imag_TDATA_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TDATA;
     end else begin
         output_imag_TDATA_int_regslice = output_imag_TDATA_reg;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID == 1'b1))) begin
-        output_imag_TKEEP_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TKEEP;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID == 1'b1))) begin
+        output_imag_TKEEP_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TKEEP;
     end else begin
         output_imag_TKEEP_int_regslice = output_imag_TKEEP_reg;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID == 1'b1))) begin
-        output_imag_TLAST_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TLAST;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID == 1'b1))) begin
+        output_imag_TLAST_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TLAST;
     end else begin
         output_imag_TLAST_int_regslice = output_imag_TLAST_reg;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID == 1'b1))) begin
-        output_imag_TSTRB_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TSTRB;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID == 1'b1))) begin
+        output_imag_TSTRB_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TSTRB;
     end else begin
         output_imag_TSTRB_int_regslice = output_imag_TSTRB_reg;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID == 1'b1))) begin
-        output_real_TDATA_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TDATA;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID == 1'b1))) begin
+        output_real_TDATA_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TDATA;
     end else begin
         output_real_TDATA_int_regslice = output_real_TDATA_reg;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID == 1'b1))) begin
-        output_real_TKEEP_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TKEEP;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID == 1'b1))) begin
+        output_real_TKEEP_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TKEEP;
     end else begin
         output_real_TKEEP_int_regslice = output_real_TKEEP_reg;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID == 1'b1))) begin
-        output_real_TLAST_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TLAST;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID == 1'b1))) begin
+        output_real_TLAST_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TLAST;
     end else begin
         output_real_TLAST_int_regslice = output_real_TLAST_reg;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID == 1'b1))) begin
-        output_real_TSTRB_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TSTRB;
+    if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID == 1'b1))) begin
+        output_real_TSTRB_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TSTRB;
     end else begin
         output_real_TSTRB_int_regslice = output_real_TSTRB_reg;
     end
@@ -831,9 +831,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        real_sample_address0 = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_real_sample_address0;
+        real_sample_address0 = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_real_sample_address0;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        real_sample_address0 = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_address0;
+        real_sample_address0 = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_address0;
     end else begin
         real_sample_address0 = 'bx;
     end
@@ -841,9 +841,9 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        real_sample_ce0 = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_real_sample_ce0;
+        real_sample_ce0 = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_real_sample_ce0;
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
-        real_sample_ce0 = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_ce0;
+        real_sample_ce0 = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_ce0;
     end else begin
         real_sample_ce0 = 1'b0;
     end
@@ -851,7 +851,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        real_sample_we0 = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_real_sample_we0;
+        real_sample_we0 = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_real_sample_we0;
     end else begin
         real_sample_we0 = 1'b0;
     end
@@ -870,7 +870,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state3;
         end
         ap_ST_fsm_state3 : begin
-            if (((grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+            if (((grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
                 ap_NS_fsm = ap_ST_fsm_state4;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -880,7 +880,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state5;
         end
         ap_ST_fsm_state5 : begin
-            if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_done == 1'b1))) begin
+            if (((1'b1 == ap_CS_fsm_state5) & (grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_done == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state6;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state5;
@@ -919,13 +919,13 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start = grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg;
+assign grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start = grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start_reg;
 
-assign grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg;
+assign grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start_reg;
 
-assign grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TREADY = (output_imag_TREADY_int_regslice & ap_CS_fsm_state5);
+assign grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TREADY = (output_imag_TREADY_int_regslice & ap_CS_fsm_state5);
 
-assign grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TREADY = (output_real_TREADY_int_regslice & ap_CS_fsm_state5);
+assign grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TREADY = (output_real_TREADY_int_regslice & ap_CS_fsm_state5);
 
 assign input_imag_TREADY = regslice_both_input_imag_V_data_V_U_ack_in;
 
@@ -933,17 +933,10 @@ assign input_real_TREADY = regslice_both_input_real_V_data_V_U_ack_in;
 
 assign output_imag_TVALID = regslice_both_output_imag_V_data_V_U_vld_out;
 
-assign output_imag_TVALID_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TVALID;
+assign output_imag_TVALID_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TVALID;
 
 assign output_real_TVALID = regslice_both_output_real_V_data_V_U_vld_out;
 
-assign output_real_TVALID_int_regslice = grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TVALID;
-
-
-reg find_kernel_block = 0;
-// synthesis translate_off
-`include "dft_hls_deadlock_kernel_monitor_top.vh"
-// synthesis translate_on
+assign output_real_TVALID_int_regslice = grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TVALID;
 
 endmodule //dft
-

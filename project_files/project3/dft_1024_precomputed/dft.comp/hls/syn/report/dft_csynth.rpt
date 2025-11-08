@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dft'
 ================================================================
-* Date:           Fri Nov  7 16:25:55 2025
+* Date:           Fri Nov  7 16:49:51 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        dft.comp
@@ -38,8 +38,8 @@
         |                                                         |                                              |  Latency (cycles) |   Latency (absolute)  |      Interval     |                    Pipeline                    |
         |                         Instance                        |                    Module                    |   min   |   max   |    min    |    max    |   min   |   max   |                      Type                      |
         +---------------------------------------------------------+----------------------------------------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
-        |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94                   |dft_Pipeline_VITIS_LOOP_27_1                  |     1026|     1026|  10.260 us|  10.260 us|     1025|     1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118  |dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3  |  6291473|  6291473|  62.915 ms|  62.915 ms|  6291462|  6291462|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94                   |dft_Pipeline_VITIS_LOOP_23_1                  |     1026|     1026|  10.260 us|  10.260 us|     1025|     1025|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118  |dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3  |  6291473|  6291473|  62.915 ms|  62.915 ms|  6291462|  6291462|  loop auto-rewind stp (delay=0 clock cycles(s))|
         +---------------------------------------------------------+----------------------------------------------+---------+---------+-----------+-----------+---------+---------+------------------------------------------------+
 
         * Loop: 
@@ -75,8 +75,8 @@
     |                         Instance                        |                    Module                    | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
     |control_s_axi_U                                          |control_s_axi                                 |        0|   0|    36|    40|    0|
-    |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94                   |dft_Pipeline_VITIS_LOOP_27_1                  |        0|   0|    33|    84|    0|
-    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118  |dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3  |        4|   5|  1167|  1399|    0|
+    |grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94                   |dft_Pipeline_VITIS_LOOP_23_1                  |        0|   0|    33|    84|    0|
+    |grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118  |dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3  |        4|   5|  1167|  1399|    0|
     +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
     |Total                                                    |                                              |        4|   5|  1236|  1523|    0|
     +---------------------------------------------------------+----------------------------------------------+---------+----+------+------+-----+
@@ -101,8 +101,8 @@
     +----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
     |                                Variable Name                               | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
-    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_imag_TREADY  |       and|   0|  0|   2|           1|           1|
-    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_output_real_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_imag_TREADY  |       and|   0|  0|   2|           1|           1|
+    |grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_output_real_TREADY  |       and|   0|  0|   2|           1|           1|
     |ap_block_state6                                                             |        or|   0|  0|   2|           1|           1|
     +----------------------------------------------------------------------------+----------+----+---+----+------------+------------+
     |Total                                                                       |          |   0|  0|   6|           3|           3|
@@ -138,8 +138,8 @@
     |                                 Name                                 | FF | LUT| Bits| Const Bits|
     +----------------------------------------------------------------------+----+----+-----+-----------+
     |ap_CS_fsm                                                             |   6|   0|    6|          0|
-    |grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94_ap_start_reg                   |   1|   0|    1|          0|
-    |grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118_ap_start_reg  |   1|   0|    1|          0|
+    |grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94_ap_start_reg                   |   1|   0|    1|          0|
+    |grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118_ap_start_reg  |   1|   0|    1|          0|
     |output_imag_TDATA_reg                                                 |  32|   0|   32|          0|
     |output_imag_TKEEP_reg                                                 |   4|   0|    4|          0|
     |output_imag_TLAST_reg                                                 |   1|   0|    1|          0|

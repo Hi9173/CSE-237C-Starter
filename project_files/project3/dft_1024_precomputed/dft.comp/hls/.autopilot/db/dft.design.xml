@@ -5,14 +5,14 @@
 <ModuleName>dft</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94</InstName>
-<ModuleName>dft_Pipeline_VITIS_LOOP_27_1</ModuleName>
+<InstName>grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94</InstName>
+<ModuleName>dft_Pipeline_VITIS_LOOP_23_1</ModuleName>
 <IsCompInst>true</IsCompInst>
 <ID>94</ID>
 </Instance>
 <Instance>
-<InstName>grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118</InstName>
-<ModuleName>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</ModuleName>
+<InstName>grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118</InstName>
+<ModuleName>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</ModuleName>
 <IsCompInst>true</IsCompInst>
 <ID>118</ID>
 </Instance>
@@ -22,9 +22,9 @@
 
 <ModuleInformation>
 <Module>
-<Name>dft_Pipeline_VITIS_LOOP_27_1</Name>
+<Name>dft_Pipeline_VITIS_LOOP_23_1</Name>
 <Loops>
-<VITIS_LOOP_27_1></VITIS_LOOP_27_1>
+<VITIS_LOOP_23_1></VITIS_LOOP_23_1>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -43,8 +43,8 @@
 <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_27_1>
-<Name>VITIS_LOOP_27_1</Name>
+<VITIS_LOOP_23_1>
+<Name>VITIS_LOOP_23_1</Name>
 <Slack>7.30</Slack>
 <TripCount>1024</TripCount>
 <Latency>1024</Latency>
@@ -54,19 +54,19 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_27_1>
+</VITIS_LOOP_23_1>
 </SummaryOfLoopLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>dft.cpp:16</SourceLocation>
+<SourceLocation>dft.cpp:14</SourceLocation>
 <SummaryOfLoopViolations>
-<VITIS_LOOP_27_1>
-<Name>VITIS_LOOP_27_1</Name>
+<VITIS_LOOP_23_1>
+<Name>VITIS_LOOP_23_1</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>dft.cpp:27</SourceLocation>
-</VITIS_LOOP_27_1>
+<SourceLocation>dft.cpp:23</SourceLocation>
+</VITIS_LOOP_23_1>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
 </PerformanceEstimates>
@@ -92,7 +92,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>dft_Pipeline_VITIS_LOOP_27_1</Object>
+<Object>dft_Pipeline_VITIS_LOOP_23_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -103,7 +103,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>dft_Pipeline_VITIS_LOOP_27_1</Object>
+<Object>dft_Pipeline_VITIS_LOOP_23_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -114,7 +114,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>dft_Pipeline_VITIS_LOOP_27_1</Object>
+<Object>dft_Pipeline_VITIS_LOOP_23_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -125,7 +125,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>dft_Pipeline_VITIS_LOOP_27_1</Object>
+<Object>dft_Pipeline_VITIS_LOOP_23_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -136,7 +136,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>dft_Pipeline_VITIS_LOOP_27_1</Object>
+<Object>dft_Pipeline_VITIS_LOOP_23_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -147,7 +147,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>dft_Pipeline_VITIS_LOOP_27_1</Object>
+<Object>dft_Pipeline_VITIS_LOOP_23_1</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -423,9 +423,9 @@
 </InterfaceSummary>
 </Module>
 <Module>
-<Name>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</Name>
+<Name>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</Name>
 <Loops>
-<VITIS_LOOP_35_2_VITIS_LOOP_39_3></VITIS_LOOP_35_2_VITIS_LOOP_39_3>
+<VITIS_LOOP_30_2_VITIS_LOOP_34_3></VITIS_LOOP_30_2_VITIS_LOOP_34_3>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -444,8 +444,8 @@
 <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_35_2_VITIS_LOOP_39_3>
-<Name>VITIS_LOOP_35_2_VITIS_LOOP_39_3</Name>
+<VITIS_LOOP_30_2_VITIS_LOOP_34_3>
+<Name>VITIS_LOOP_30_2_VITIS_LOOP_34_3</Name>
 <Slack>7.30</Slack>
 <TripCount>1048576</TripCount>
 <Latency>6291471</Latency>
@@ -455,20 +455,20 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_35_2_VITIS_LOOP_39_3>
+</VITIS_LOOP_30_2_VITIS_LOOP_34_3>
 </SummaryOfLoopLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>dft.cpp:36</SourceLocation>
+<SourceLocation>dft.cpp:31</SourceLocation>
 <SummaryOfLoopViolations>
-<VITIS_LOOP_35_2_VITIS_LOOP_39_3>
-<Name>VITIS_LOOP_35_2_VITIS_LOOP_39_3</Name>
+<VITIS_LOOP_30_2_VITIS_LOOP_34_3>
+<Name>VITIS_LOOP_30_2_VITIS_LOOP_34_3</Name>
 <IssueType>II Violation</IssueType>
 <ViolationType>Memory Dependency</ViolationType>
 <IterationDistance>1</IterationDistance>
-<SourceLocation>dft.cpp:35</SourceLocation>
-</VITIS_LOOP_35_2_VITIS_LOOP_39_3>
+<SourceLocation>dft.cpp:30</SourceLocation>
+</VITIS_LOOP_30_2_VITIS_LOOP_34_3>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
 </PerformanceEstimates>
@@ -494,7 +494,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</Object>
+<Object>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -505,7 +505,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</Object>
+<Object>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -516,7 +516,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</Object>
+<Object>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -527,7 +527,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</Object>
+<Object>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -538,7 +538,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</Object>
+<Object>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -549,7 +549,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</Object>
+<Object>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -801,7 +801,7 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>dft.cpp:6</SourceLocation>
+<SourceLocation>dft.cpp:5</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 <AreaEstimates>

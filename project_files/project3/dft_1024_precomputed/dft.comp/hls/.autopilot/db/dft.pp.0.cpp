@@ -9003,7 +9003,6 @@ private:
 typedef float DTYPE;
 
 
-
 typedef hls::axis<float, 0, 0, 0> transPkt;
 
 __attribute__((sdx_kernel("dft", 0))) void dft(hls::stream<transPkt> &input_real, hls::stream<transPkt> &input_imag,
@@ -9018,14 +9017,12 @@ const float sin_coefficients_table[]={0.000000,-0.006136,-0.012272,-0.018407,-0.
 # 3 "dft.cpp" 2
 
 
-
 __attribute__((sdx_kernel("dft", 0))) void dft(hls::stream<transPkt> &input_real, hls::stream<transPkt> &input_imag,
          hls::stream<transPkt> &output_real, hls::stream<transPkt> &output_imag)
 {
 #line 9 "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed/dft.tcl"
 #pragma HLSDIRECTIVE TOP name=dft
-# 8 "dft.cpp"
-
+# 7 "dft.cpp"
 
 #pragma HLS INTERFACE axis port=input_real
 #pragma HLS INTERFACE axis port=input_imag
@@ -9037,34 +9034,29 @@ __attribute__((sdx_kernel("dft", 0))) void dft(hls::stream<transPkt> &input_real
  int idx;
  DTYPE c, s;
 
-
  DTYPE real_sample[1024];
  DTYPE imag_sample[1024];
 
  transPkt pkt_real, pkt_imag;
 
-
- VITIS_LOOP_27_1: for (j = 0; j < 1024; j++) {
+ VITIS_LOOP_23_1: for (j = 0; j < 1024; j++) {
   pkt_real = input_real.read();
   pkt_imag = input_imag.read();
   real_sample[j] = pkt_real.data;
   imag_sample[j] = pkt_imag.data;
  }
 
-
- VITIS_LOOP_35_2: for (i = 0; i < 1024; i++) {
+ VITIS_LOOP_30_2: for (i = 0; i < 1024; i++) {
   DTYPE temp_real = 0;
   DTYPE temp_imag = 0;
 
-  VITIS_LOOP_39_3: for (j = 0; j < 1024; j++) {
-
+  VITIS_LOOP_34_3: for (j = 0; j < 1024; j++) {
    idx = (i * j) % 1024;
    c = cos_coefficients_table[idx];
    s = sin_coefficients_table[idx];
    temp_real += (real_sample[j] * c - imag_sample[j] * s);
    temp_imag += (real_sample[j] * s + imag_sample[j] * c);
   }
-
 
   pkt_real.data = temp_real;
   pkt_imag.data = temp_imag;

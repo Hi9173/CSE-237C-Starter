@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'dft'
 ================================================================
 + General Information: 
-    * Date:           Fri Nov  7 16:25:55 2025
+    * Date:           Fri Nov  7 16:49:51 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        dft.comp
     * Solution:       hls (Vivado IP Flow Target)
@@ -20,10 +20,10 @@
     |                     & Loops                     | Type | Slack| (cycles)|    (ns)   |  Latency | Interval|  Count  | Pipelined|  BRAM  |   DSP  |     FF    |    LUT    | URAM|
     +-------------------------------------------------+------+------+---------+-----------+----------+---------+---------+----------+--------+--------+-----------+-----------+-----+
     |+ dft                                            |     -|  0.04|  6292504|  6.293e+07|         -|  6292505|        -|        no|  8 (2%)|  5 (2%)|  1326 (1%)|  1734 (3%)|    -|
-    | + dft_Pipeline_VITIS_LOOP_27_1                  |     -|  2.48|     1026|  1.026e+04|         -|     1026|        -|        no|       -|       -|   33 (~0%)|   84 (~0%)|    -|
-    |  o VITIS_LOOP_27_1                              |     -|  7.30|     1024|  1.024e+04|         2|        1|     1024|       yes|       -|       -|          -|          -|    -|
-    | + dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3  |     -|  0.04|  6291473|  6.291e+07|         -|  6291473|        -|        no|  4 (1%)|  5 (2%)|  1167 (1%)|  1403 (2%)|    -|
-    |  o VITIS_LOOP_35_2_VITIS_LOOP_39_3              |    II|  7.30|  6291471|  6.291e+07|        22|        6|  1048576|       yes|       -|       -|          -|          -|    -|
+    | + dft_Pipeline_VITIS_LOOP_23_1                  |     -|  2.48|     1026|  1.026e+04|         -|     1026|        -|        no|       -|       -|   33 (~0%)|   84 (~0%)|    -|
+    |  o VITIS_LOOP_23_1                              |     -|  7.30|     1024|  1.024e+04|         2|        1|     1024|       yes|       -|       -|          -|          -|    -|
+    | + dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3  |     -|  0.04|  6291473|  6.291e+07|         -|  6291473|        -|        no|  4 (1%)|  5 (2%)|  1167 (1%)|  1403 (2%)|    -|
+    |  o VITIS_LOOP_30_2_VITIS_LOOP_34_3              |    II|  7.30|  6291471|  6.291e+07|        22|        6|  1048576|       yes|       -|       -|          -|          -|    -|
     +-------------------------------------------------+------+------+---------+-----------+----------+---------+---------+----------+--------+--------+-----------+-----------+-----+
 
 
@@ -99,18 +99,18 @@
 | Name                                            | DSP | Pragma | Variable      | Op     | Impl     | Latency |
 +-------------------------------------------------+-----+--------+---------------+--------+----------+---------+
 | + dft                                           | 5   |        |               |        |          |         |
-|  + dft_Pipeline_VITIS_LOOP_27_1                 | 0   |        |               |        |          |         |
-|    icmp_ln27_fu_152_p2                          |     |        | icmp_ln27     | seteq  | auto     | 0       |
-|    add_ln27_fu_158_p2                           |     |        | add_ln27      | add    | fabric   | 0       |
-|  + dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3 | 5   |        |               |        |          |         |
-|    icmp_ln35_fu_243_p2                          |     |        | icmp_ln35     | seteq  | auto     | 0       |
-|    add_ln35_fu_249_p2                           |     |        | add_ln35      | add    | fabric   | 0       |
-|    icmp_ln39_fu_258_p2                          |     |        | icmp_ln39     | seteq  | auto     | 0       |
-|    select_ln16_fu_264_p3                        |     |        | select_ln16   | select | auto_sel | 0       |
-|    select_ln16_1_fu_358_p3                      |     |        | select_ln16_1 | select | auto_sel | 0       |
-|    select_ln16_2_fu_348_p3                      |     |        | select_ln16_2 | select | auto_sel | 0       |
-|    add_ln35_1_fu_307_p2                         |     |        | add_ln35_1    | add    | fabric   | 0       |
-|    select_ln35_fu_313_p3                        |     |        | select_ln35   | select | auto_sel | 0       |
+|  + dft_Pipeline_VITIS_LOOP_23_1                 | 0   |        |               |        |          |         |
+|    icmp_ln23_fu_152_p2                          |     |        | icmp_ln23     | seteq  | auto     | 0       |
+|    add_ln23_fu_158_p2                           |     |        | add_ln23      | add    | fabric   | 0       |
+|  + dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3 | 5   |        |               |        |          |         |
+|    icmp_ln30_fu_243_p2                          |     |        | icmp_ln30     | seteq  | auto     | 0       |
+|    add_ln30_fu_249_p2                           |     |        | add_ln30      | add    | fabric   | 0       |
+|    icmp_ln34_fu_258_p2                          |     |        | icmp_ln34     | seteq  | auto     | 0       |
+|    select_ln14_fu_264_p3                        |     |        | select_ln14   | select | auto_sel | 0       |
+|    select_ln14_1_fu_358_p3                      |     |        | select_ln14_1 | select | auto_sel | 0       |
+|    select_ln14_2_fu_348_p3                      |     |        | select_ln14_2 | select | auto_sel | 0       |
+|    add_ln30_1_fu_307_p2                         |     |        | add_ln30_1    | add    | fabric   | 0       |
+|    select_ln30_fu_313_p3                        |     |        | select_ln30   | select | auto_sel | 0       |
 |    mul_10s_10s_10_1_1_U15                       |     |        | idx           | mul    | auto     | 0       |
 |    fmul_32ns_32ns_32_4_max_dsp_1_U14            | 3   |        | mul           | fmul   | maxdsp   | 3       |
 |    fmul_32ns_32ns_32_4_max_dsp_1_U14            | 3   |        | mul1          | fmul   | maxdsp   | 3       |
@@ -120,8 +120,8 @@
 |    fmul_32ns_32ns_32_4_max_dsp_1_U14            | 3   |        | mul3          | fmul   | maxdsp   | 3       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U13       | 2   |        | add1          | fsub   | fulldsp  | 4       |
 |    faddfsub_32ns_32ns_32_5_full_dsp_1_U13       | 2   |        | temp_imag_1   | fsub   | fulldsp  | 4       |
-|    add_ln39_fu_282_p2                           |     |        | add_ln39      | add    | fabric   | 0       |
-|    icmp_ln39_1_fu_288_p2                        |     |        | icmp_ln39_1   | seteq  | auto     | 0       |
+|    add_ln34_fu_282_p2                           |     |        | add_ln34      | add    | fabric   | 0       |
+|    icmp_ln34_1_fu_288_p2                        |     |        | icmp_ln34_1   | seteq  | auto     | 0       |
 |    pkt_real_last_fu_329_p2                      |     |        | pkt_real_last | seteq  | auto     | 0       |
 +-------------------------------------------------+-----+--------+---------------+--------+----------+---------+
 
@@ -137,7 +137,7 @@
 |   control_s_axi_U                               | interface    | s_axilite |      |      |        |                        |      |         |                  |
 |   real_sample_U                                 | ram_1p array |           | 2    |      |        | real_sample            | auto | 1       | 32, 1024, 1      |
 |   imag_sample_U                                 | ram_1p array |           | 2    |      |        | imag_sample            | auto | 1       | 32, 1024, 1      |
-|  + dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3 |              |           | 4    | 0    |        |                        |      |         |                  |
+|  + dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3 |              |           | 4    | 0    |        |                        |      |         |                  |
 |    cos_coefficients_table_U                     | rom_1p       |           | 2    |      |        | cos_coefficients_table | auto | 1       | 32, 1024, 1      |
 |    sin_coefficients_table_U                     | rom_1p       |           | 2    |      |        | sin_coefficients_table | auto | 1       | 32, 1024, 1      |
 +-------------------------------------------------+--------------+-----------+------+------+--------+------------------------+------+---------+------------------+
@@ -150,11 +150,11 @@
 +-----------+----------------------------+--------------------------------+
 | Type      | Options                    | Location                       |
 +-----------+----------------------------+--------------------------------+
-| interface | axis port=input_real       | dft.cpp:10 in dft, input_real  |
-| interface | axis port=input_imag       | dft.cpp:11 in dft, input_imag  |
-| interface | axis port=output_real      | dft.cpp:12 in dft, output_real |
-| interface | axis port=output_imag      | dft.cpp:13 in dft, output_imag |
-| interface | mode=s_axilite port=return | dft.cpp:14 in dft, return      |
+| interface | axis port=input_real       | dft.cpp:8 in dft, input_real   |
+| interface | axis port=input_imag       | dft.cpp:9 in dft, input_imag   |
+| interface | axis port=output_real      | dft.cpp:10 in dft, output_real |
+| interface | axis port=output_imag      | dft.cpp:11 in dft, output_imag |
+| interface | mode=s_axilite port=return | dft.cpp:12 in dft, return      |
 +-----------+----------------------------+--------------------------------+
 
 

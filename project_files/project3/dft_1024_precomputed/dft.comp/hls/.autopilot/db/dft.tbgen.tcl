@@ -167,62 +167,62 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "input_real_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "input_real",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Port" : "input_real_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Port" : "input_real_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "input_real_V_keep_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "input_real",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Port" : "input_real_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Port" : "input_real_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "input_real_V_strb_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "input_real",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Port" : "input_real_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Port" : "input_real_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "input_real_V_last_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "input_real",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Port" : "input_real_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Port" : "input_real_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "input_imag_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "input_imag",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Port" : "input_imag_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Port" : "input_imag_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "input_imag_V_keep_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "input_imag",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Port" : "input_imag_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Port" : "input_imag_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "input_imag_V_strb_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "input_imag",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Port" : "input_imag_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Port" : "input_imag_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "input_imag_V_last_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "input_imag",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Port" : "input_imag_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+					{"ID" : "3", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Port" : "input_imag_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
 			{"Name" : "output_real_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "output_real",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "output_real_V_data_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "output_real_V_data_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "output_real_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "output_real",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "output_real_V_keep_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "output_real_V_keep_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "output_real_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "output_real",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "output_real_V_strb_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "output_real_V_strb_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "output_real_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "output_real",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "output_real_V_last_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "output_real_V_last_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "output_imag_V_data_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "output_imag",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "output_imag_V_data_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "output_imag_V_data_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "output_imag_V_keep_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "output_imag",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "output_imag_V_keep_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "output_imag_V_keep_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "output_imag_V_strb_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "output_imag",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "output_imag_V_strb_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "output_imag_V_strb_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "output_imag_V_last_V", "Type" : "Axis", "Direction" : "O", "BaseName" : "output_imag",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "output_imag_V_last_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "output_imag_V_last_V", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "cos_coefficients_table", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "cos_coefficients_table", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "cos_coefficients_table", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
 			{"Name" : "sin_coefficients_table", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Port" : "sin_coefficients_table", "Inst_start_state" : "4", "Inst_end_state" : "5"}]}]},
+					{"ID" : "5", "SubInstance" : "grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Port" : "sin_coefficients_table", "Inst_start_state" : "4", "Inst_end_state" : "5"}]}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.real_sample_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.imag_sample_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94", "Parent" : "0", "Child" : ["4"],
-		"CDFG" : "dft_Pipeline_VITIS_LOOP_27_1",
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94", "Parent" : "0", "Child" : ["4"],
+		"CDFG" : "dft_Pipeline_VITIS_LOOP_23_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -253,11 +253,11 @@ set RtlHierarchyInfo {[
 			{"Name" : "p_phi_out", "Type" : "Vld", "Direction" : "O"},
 			{"Name" : "p_phi5_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
-			{"Name" : "VITIS_LOOP_27_1", "PipelineType" : "UPC",
+			{"Name" : "VITIS_LOOP_23_1", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_27_1_fu_94.flow_control_loop_pipe_sequential_init_U", "Parent" : "3"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118", "Parent" : "0", "Child" : ["6", "7", "8", "9", "10", "11"],
-		"CDFG" : "dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3",
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_23_1_fu_94.flow_control_loop_pipe_sequential_init_U", "Parent" : "3"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118", "Parent" : "0", "Child" : ["6", "7", "8", "9", "10", "11"],
+		"CDFG" : "dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -290,14 +290,14 @@ set RtlHierarchyInfo {[
 			{"Name" : "cos_coefficients_table", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "sin_coefficients_table", "Type" : "Memory", "Direction" : "I"}],
 		"Loop" : [
-			{"Name" : "VITIS_LOOP_35_2_VITIS_LOOP_39_3", "PipelineType" : "UPC",
+			{"Name" : "VITIS_LOOP_30_2_VITIS_LOOP_34_3", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "6", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage3", "LastStateIter" : "ap_enable_reg_pp0_iter3", "LastStateBlock" : "ap_block_pp0_stage3_subdone", "QuitState" : "ap_ST_fsm_pp0_stage3", "QuitStateIter" : "ap_enable_reg_pp0_iter3", "QuitStateBlock" : "ap_block_pp0_stage3_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118.cos_coefficients_table_U", "Parent" : "5"},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118.sin_coefficients_table_U", "Parent" : "5"},
-	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118.faddfsub_32ns_32ns_32_5_full_dsp_1_U13", "Parent" : "5"},
-	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118.fmul_32ns_32ns_32_4_max_dsp_1_U14", "Parent" : "5"},
-	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118.mul_10s_10s_10_1_1_U15", "Parent" : "5"},
-	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3_fu_118.flow_control_loop_pipe_sequential_init_U", "Parent" : "5"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118.cos_coefficients_table_U", "Parent" : "5"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118.sin_coefficients_table_U", "Parent" : "5"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118.faddfsub_32ns_32ns_32_5_full_dsp_1_U13", "Parent" : "5"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118.fmul_32ns_32ns_32_4_max_dsp_1_U14", "Parent" : "5"},
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118.mul_10s_10s_10_1_1_U15", "Parent" : "5"},
+	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3_fu_118.flow_control_loop_pipe_sequential_init_U", "Parent" : "5"},
 	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
 	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_input_real_V_data_V_U", "Parent" : "0"},
 	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_input_real_V_keep_V_U", "Parent" : "0"},
@@ -337,7 +337,7 @@ set ArgLastReadFirstWriteLatency {
 		output_imag_V_last_V {Type O LastRead -1 FirstWrite 21}
 		cos_coefficients_table {Type I LastRead -1 FirstWrite -1}
 		sin_coefficients_table {Type I LastRead -1 FirstWrite -1}}
-	dft_Pipeline_VITIS_LOOP_27_1 {
+	dft_Pipeline_VITIS_LOOP_23_1 {
 		input_real_V_data_V {Type I LastRead 1 FirstWrite -1}
 		input_real_V_keep_V {Type I LastRead 1 FirstWrite -1}
 		input_real_V_strb_V {Type I LastRead 1 FirstWrite -1}
@@ -350,7 +350,7 @@ set ArgLastReadFirstWriteLatency {
 		imag_sample {Type O LastRead -1 FirstWrite 1}
 		p_phi_out {Type O LastRead -1 FirstWrite 0}
 		p_phi5_out {Type O LastRead -1 FirstWrite 0}}
-	dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3 {
+	dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3 {
 		p_phi_reload {Type I LastRead 0 FirstWrite -1}
 		output_real_V_data_V {Type O LastRead -1 FirstWrite 21}
 		output_real_V_keep_V {Type O LastRead -1 FirstWrite 21}

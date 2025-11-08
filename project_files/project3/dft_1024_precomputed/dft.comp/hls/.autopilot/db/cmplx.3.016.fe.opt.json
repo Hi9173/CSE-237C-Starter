@@ -3,7 +3,7 @@
     "basicblocks": 10,
     "calls": "",
     "file": "dft.cpp",
-    "fileloc": 6,
+    "fileloc": 5,
     "instructions": 121,
     "loads": {
       "G": 2,

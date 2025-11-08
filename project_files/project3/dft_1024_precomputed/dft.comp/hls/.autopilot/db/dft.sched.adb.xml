@@ -112,7 +112,7 @@ entry:25 %imag_sample = alloca i64 1
 
 <Node id="49" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1" op_5_bw="32" op_6_bw="4" op_7_bw="4" op_8_bw="1" op_9_bw="32" op_10_bw="32" op_11_bw="4" op_12_bw="4">
 <![CDATA[
-entry:30 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_27_1, i32 %input_real_V_data_V, i4 %input_real_V_keep_V, i4 %input_real_V_strb_V, i1 %input_real_V_last_V, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 %input_imag_V_last_V, i32 %real_sample, i32 %imag_sample, i4 %p_phi_loc, i4 %p_phi5_loc
+entry:30 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_23_1, i32 %input_real_V_data_V, i4 %input_real_V_keep_V, i4 %input_real_V_strb_V, i1 %input_real_V_last_V, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 %input_imag_V_last_V, i32 %real_sample, i32 %imag_sample, i4 %p_phi_loc, i4 %p_phi5_loc
 
 ]]></Node>
 <StgValue><ssdm name="call_ln0"/></StgValue>
@@ -130,7 +130,7 @@ entry:30 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_27_1, i32 %input_real_V_
 
 <Node id="49" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1" op_5_bw="32" op_6_bw="4" op_7_bw="4" op_8_bw="1" op_9_bw="32" op_10_bw="32" op_11_bw="4" op_12_bw="4">
 <![CDATA[
-entry:30 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_27_1, i32 %input_real_V_data_V, i4 %input_real_V_keep_V, i4 %input_real_V_strb_V, i1 %input_real_V_last_V, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 %input_imag_V_last_V, i32 %real_sample, i32 %imag_sample, i4 %p_phi_loc, i4 %p_phi5_loc
+entry:30 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_23_1, i32 %input_real_V_data_V, i4 %input_real_V_keep_V, i4 %input_real_V_strb_V, i1 %input_real_V_last_V, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 %input_imag_V_last_V, i32 %real_sample, i32 %imag_sample, i4 %p_phi_loc, i4 %p_phi5_loc
 
 ]]></Node>
 <StgValue><ssdm name="call_ln0"/></StgValue>
@@ -178,7 +178,7 @@ entry:32 %p_phi5_loc_load = load i4 %p_phi5_loc
 
 <Node id="52" bw="0" op_0_bw="0" op_1_bw="4" op_2_bw="32" op_3_bw="4" op_4_bw="4" op_5_bw="1" op_6_bw="4" op_7_bw="32" op_8_bw="4" op_9_bw="4" op_10_bw="1" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:33 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3, i4 %p_phi_loc_load, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 %output_real_V_last_V, i4 %p_phi5_loc_load, i32 %output_imag_V_data_V, i4 %output_imag_V_keep_V, i4 %output_imag_V_strb_V, i1 %output_imag_V_last_V, i32 %real_sample, i32 %imag_sample, i32 %cos_coefficients_table, i32 %sin_coefficients_table
+entry:33 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3, i4 %p_phi_loc_load, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 %output_real_V_last_V, i4 %p_phi5_loc_load, i32 %output_imag_V_data_V, i4 %output_imag_V_keep_V, i4 %output_imag_V_strb_V, i1 %output_imag_V_last_V, i32 %real_sample, i32 %imag_sample, i32 %cos_coefficients_table, i32 %sin_coefficients_table
 
 ]]></Node>
 <StgValue><ssdm name="call_ln0"/></StgValue>
@@ -196,7 +196,7 @@ entry:33 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3, i4
 
 <Node id="52" bw="0" op_0_bw="0" op_1_bw="4" op_2_bw="32" op_3_bw="4" op_4_bw="4" op_5_bw="1" op_6_bw="4" op_7_bw="32" op_8_bw="4" op_9_bw="4" op_10_bw="1" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:33 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3, i4 %p_phi_loc_load, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 %output_real_V_last_V, i4 %p_phi5_loc_load, i32 %output_imag_V_data_V, i4 %output_imag_V_keep_V, i4 %output_imag_V_strb_V, i1 %output_imag_V_last_V, i32 %real_sample, i32 %imag_sample, i32 %cos_coefficients_table, i32 %sin_coefficients_table
+entry:33 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3, i4 %p_phi_loc_load, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 %output_real_V_last_V, i4 %p_phi5_loc_load, i32 %output_imag_V_data_V, i4 %output_imag_V_keep_V, i4 %output_imag_V_strb_V, i1 %output_imag_V_last_V, i32 %real_sample, i32 %imag_sample, i32 %cos_coefficients_table, i32 %sin_coefficients_table
 
 ]]></Node>
 <StgValue><ssdm name="call_ln0"/></StgValue>
@@ -214,10 +214,10 @@ entry:33 %call_ln0 = call void @dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3, i4
 
 <Node id="21" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-entry:2 %spectopmodule_ln6 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_0
+entry:2 %spectopmodule_ln5 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_0
 
 ]]></Node>
-<StgValue><ssdm name="spectopmodule_ln6"/></StgValue>
+<StgValue><ssdm name="spectopmodule_ln5"/></StgValue>
 </operation>
 
 <operation id="18" st_id="6" stage="1" lat="1">
@@ -544,10 +544,10 @@ entry:23 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0,
 
 <Node id="45" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1" op_5_bw="1" op_6_bw="1" op_7_bw="1" op_8_bw="0">
 <![CDATA[
-entry:26 %specaxissidechannel_ln27 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 0, i1 %output_real_V_last_V, i1 0, i1 0, void @empty_3
+entry:26 %specaxissidechannel_ln23 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %output_real_V_data_V, i4 %output_real_V_keep_V, i4 %output_real_V_strb_V, i1 0, i1 %output_real_V_last_V, i1 0, i1 0, void @empty_3
 
 ]]></Node>
-<StgValue><ssdm name="specaxissidechannel_ln27"/></StgValue>
+<StgValue><ssdm name="specaxissidechannel_ln23"/></StgValue>
 </operation>
 
 <operation id="40" st_id="6" stage="1" lat="1">
@@ -559,10 +559,10 @@ entry:26 %specaxissidechannel_ln27 = specaxissidechannel void @_ssdm_op_SpecAXIS
 
 <Node id="46" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1" op_5_bw="1" op_6_bw="1" op_7_bw="1" op_8_bw="0">
 <![CDATA[
-entry:27 %specaxissidechannel_ln27 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %output_imag_V_data_V, i4 %output_imag_V_keep_V, i4 %output_imag_V_strb_V, i1 0, i1 %output_imag_V_last_V, i1 0, i1 0, void @empty_2
+entry:27 %specaxissidechannel_ln23 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %output_imag_V_data_V, i4 %output_imag_V_keep_V, i4 %output_imag_V_strb_V, i1 0, i1 %output_imag_V_last_V, i1 0, i1 0, void @empty_2
 
 ]]></Node>
-<StgValue><ssdm name="specaxissidechannel_ln27"/></StgValue>
+<StgValue><ssdm name="specaxissidechannel_ln23"/></StgValue>
 </operation>
 
 <operation id="41" st_id="6" stage="1" lat="1">
@@ -574,10 +574,10 @@ entry:27 %specaxissidechannel_ln27 = specaxissidechannel void @_ssdm_op_SpecAXIS
 
 <Node id="47" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1" op_5_bw="1" op_6_bw="1" op_7_bw="1" op_8_bw="0">
 <![CDATA[
-entry:28 %specaxissidechannel_ln27 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 0, i1 %input_imag_V_last_V, i1 0, i1 0, void @empty_1
+entry:28 %specaxissidechannel_ln23 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %input_imag_V_data_V, i4 %input_imag_V_keep_V, i4 %input_imag_V_strb_V, i1 0, i1 %input_imag_V_last_V, i1 0, i1 0, void @empty_1
 
 ]]></Node>
-<StgValue><ssdm name="specaxissidechannel_ln27"/></StgValue>
+<StgValue><ssdm name="specaxissidechannel_ln23"/></StgValue>
 </operation>
 
 <operation id="42" st_id="6" stage="1" lat="1">
@@ -589,10 +589,10 @@ entry:28 %specaxissidechannel_ln27 = specaxissidechannel void @_ssdm_op_SpecAXIS
 
 <Node id="48" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="4" op_3_bw="4" op_4_bw="1" op_5_bw="1" op_6_bw="1" op_7_bw="1" op_8_bw="0">
 <![CDATA[
-entry:29 %specaxissidechannel_ln27 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %input_real_V_data_V, i4 %input_real_V_keep_V, i4 %input_real_V_strb_V, i1 0, i1 %input_real_V_last_V, i1 0, i1 0, void @empty_9
+entry:29 %specaxissidechannel_ln23 = specaxissidechannel void @_ssdm_op_SpecAXISSideChannel, i32 %input_real_V_data_V, i4 %input_real_V_keep_V, i4 %input_real_V_strb_V, i1 0, i1 %input_real_V_last_V, i1 0, i1 0, void @empty_9
 
 ]]></Node>
-<StgValue><ssdm name="specaxissidechannel_ln27"/></StgValue>
+<StgValue><ssdm name="specaxissidechannel_ln23"/></StgValue>
 </operation>
 
 <operation id="43" st_id="6" stage="1" lat="1">
@@ -604,10 +604,10 @@ entry:29 %specaxissidechannel_ln27 = specaxissidechannel void @_ssdm_op_SpecAXIS
 
 <Node id="53" bw="0">
 <![CDATA[
-entry:34 %ret_ln59 = ret
+entry:34 %ret_ln52 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln59"/></StgValue>
+<StgValue><ssdm name="ret_ln52"/></StgValue>
 </operation>
 </state>
 </state_list>

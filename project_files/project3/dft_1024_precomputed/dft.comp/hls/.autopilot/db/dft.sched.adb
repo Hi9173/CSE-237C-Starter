@@ -683,7 +683,7 @@
 						<name>real_sample</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>21</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -699,7 +699,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>21</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -739,7 +739,7 @@
 						<name>imag_sample</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>22</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -755,7 +755,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>22</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -990,10 +990,10 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>_ln59</name>
+						<name>_ln52</name>
 						<fileName>dft.cpp</fileName>
 						<fileDirectory>/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project3/dft_1024_precomputed</fileDirectory>
-						<lineNumber>59</lineNumber>
+						<lineNumber>52</lineNumber>
 						<contextFuncName>dft</contextFuncName>
 						<contextNormFuncName>dft</contextNormFuncName>
 						<inlineStackInfo>
@@ -1009,7 +1009,7 @@
 											<first>dft.cpp</first>
 											<second>dft</second>
 										</first>
-										<second>59</second>
+										<second>52</second>
 									</item>
 								</second>
 							</item>
@@ -1080,7 +1080,7 @@
 					<Obj>
 						<type>2</type>
 						<id>60</id>
-						<name>dft_Pipeline_VITIS_LOOP_27_1</name>
+						<name>dft_Pipeline_VITIS_LOOP_23_1</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1104,14 +1104,14 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:dft_Pipeline_VITIS_LOOP_27_1&gt;</content>
+				<content>&lt;constant:dft_Pipeline_VITIS_LOOP_23_1&gt;</content>
 			</item>
 			<item class_id_reference="16" object_id="_28">
 				<Value>
 					<Obj>
 						<type>2</type>
 						<id>76</id>
-						<name>dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3</name>
+						<name>dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1135,7 +1135,7 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3&gt;</content>
+				<content>&lt;constant:dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">

@@ -1,8 +1,8 @@
 {
     "1": {
-        "name": "dft_Pipeline_VITIS_LOOP_27_1",
+        "name": "dft_Pipeline_VITIS_LOOP_23_1",
         "file": "dft.cpp",
-        "fileloc": "16",
+        "fileloc": "14",
         "instructions": "38",
         "total_instructions": "38",
         "calls": "",
@@ -20,7 +20,7 @@
     "0": {
         "name": "dft",
         "file": "dft.cpp",
-        "fileloc": "6",
+        "fileloc": "5",
         "instructions": "35",
         "total_instructions": "144",
         "calls": "1 2",
@@ -30,9 +30,9 @@
         }
     },
     "2": {
-        "name": "dft_Pipeline_VITIS_LOOP_35_2_VITIS_LOOP_39_3",
+        "name": "dft_Pipeline_VITIS_LOOP_30_2_VITIS_LOOP_34_3",
         "file": "dft.cpp",
-        "fileloc": "16",
+        "fileloc": "14",
         "instructions": "71",
         "total_instructions": "71",
         "calls": "",
