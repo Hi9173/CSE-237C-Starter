@@ -73,22 +73,26 @@ static int feed_forward_quantized(const DTYPE *input_bits,
 // Pack an array of bits (0/1) into 16-bit words (LSB-first).
 static void pack_bits(const unsigned char bits_in[],
                       int n_bits,
-                      DTYPE packed_out[])
+                      DTYPE packed_out[])  // packed_out must NOT be const
 {
 #pragma HLS INLINE
     const int n_words = (n_bits + 15) / 16;
 
     for (int w = 0; w < n_words; w++) {
 #pragma HLS UNROLL
-        DTYPE word = 0;
+        // IMPORTANT: local temp must be writable → cast away const
+        unsigned short word = 0;
+
         for (int b = 0; b < 16; b++) {
 #pragma HLS UNROLL
             int idx = w * 16 + b;
             if (idx < n_bits && bits_in[idx]) {
-                word |= (DTYPE)1 << b;
+                word |= (1u << b);
             }
         }
-        packed_out[w] = word;
+
+        // assigned into packed_out (must be non-const)
+        packed_out[w] = (DTYPE)word;
     }
 }
 
