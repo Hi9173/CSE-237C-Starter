@@ -4,7 +4,7 @@
 #
 
 # select the HLS compiler to use (vivado_hls or vitis)
-TOP = dft
+TOP = bnn
 # -------------------------------------------------------
 
 USE_VITIS=1
