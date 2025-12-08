@@ -255,6 +255,122 @@ class BNN_MNIST:
             for x in range(len(w3)):
                 file1.writelines(str(w3[x])+",")
 
+    def pack_int16(self, A, n):
+        num_int16 = n // 16
+        A_bit = np.array([0] * num_int16, dtype=np.int16)
+        A_lin = np.reshape(A, (n,))
+        
+        for i in range(0, n, 16):
+            result = np.int16(0)
+            for k in range(16):
+                idx = i + k
+                if idx < n:
+                    result = np.int16((result << 1) | int(A_lin[idx]))
+            A_bit[i // 16] = result
+        
+        return A_bit
+
+    
+    def generate_golden_header(self, num_samples=3):
+        import os
+        
+        mnist = np.load("dataset/mnist_test_data_original.npy", allow_pickle=True)
+        X = mnist.item().get("data")
+        y = mnist.item().get("label")
+        X = np.reshape(X, (10000, 784))
+        
+        header_content = """#ifndef __GOLDEN_H_\n#define __GOLDEN_H_\n#include <cstdint>\nconst int NUM_SAMPLES = {};\n""".format(num_samples)
+        
+        # pack the 1-bit weights into 16-bit integers
+        fc1w_flat = self.fc1w_qntz.flatten()
+        fc1w_packed = self.pack_int16(fc1w_flat, 128 * 784)
+        
+        fc2w_flat = self.fc2w_qntz.flatten()
+        fc2w_packed = self.pack_int16(fc2w_flat, 64 * 128)
+        
+        fc3w_flat = self.fc3w_qntz.flatten()
+        fc3w_packed = self.pack_int16(fc3w_flat, 10 * 64)
+        
+        header_content += "const int16_t w1[{}] = {{".format(len(fc1w_packed))
+        for i, val in enumerate(fc1w_packed):
+            if i % 16 == 0:
+                header_content += "\n    "
+            header_content += "{}, ".format(val)
+        header_content = header_content.rstrip(", ")
+        header_content += "\n};\n\n"
+        
+        header_content += "const int16_t w2[{}] = {{".format(len(fc2w_packed))
+        for i, val in enumerate(fc2w_packed):
+            if i % 16 == 0:
+                header_content += "\n    "
+            header_content += "{}, ".format(val)
+        header_content = header_content.rstrip(", ")
+        header_content += "\n};\n\n"
+        
+        header_content += "const int16_t w3[{}] = {{".format(len(fc3w_packed))
+        for i, val in enumerate(fc3w_packed):
+            if i % 16 == 0:
+                header_content += "\n    "
+            header_content += "{}, ".format(val)
+        header_content = header_content.rstrip(", ")
+        header_content += "\n};\n\n"
+        
+        inputs_list = []
+        outputs_list = []
+        labels_list = []
+        
+        for idx in range(num_samples):
+            xs = X[idx].astype(np.float32)
+            xs_2d = xs.reshape(1, 784)
+            ys_true = y[idx]
+            
+            X0_q = self.quantize(self.sign(self.adj(xs)))
+            
+            input_packed = self.pack_int16(X0_q, 784)
+            inputs_list.append(input_packed)
+            
+            golden_output = self.feed_forward_quantized(xs_2d)
+            outputs_list.append(golden_output.flatten())
+            labels_list.append(ys_true)
+        
+        header_content += "const int16_t inputs[{}][49] = {{\n".format(num_samples)
+        for i, inp in enumerate(inputs_list):
+            header_content += "    {"
+            for j, val in enumerate(inp):
+                if j % 10 == 0 and j > 0:
+                    header_content += "\n     "
+                header_content += "{}, ".format(val)
+            header_content = header_content.rstrip(", ")
+            header_content += "},\n"
+        header_content = header_content.rstrip(",\n")
+        header_content += "\n};\n\n"
+        
+        header_content += "const int golden_outputs[{}][10] = {{\n".format(num_samples)
+        for i, out in enumerate(outputs_list):
+            header_content += "    {"
+            for val in out:
+                header_content += "{}, ".format(int(val))
+            header_content = header_content.rstrip(", ")
+            header_content += "},\n"
+        header_content = header_content.rstrip(",\n")
+        header_content += "\n};\n\n"
+        
+        header_content += "const int true_labels[{}] = {{".format(num_samples)
+        for label in labels_list:
+            header_content += "{}, ".format(label)
+        header_content = header_content.rstrip(", ")
+        header_content += "};\n\n"
+        
+        header_content += "#endif\n"
+        
+        output_path = "../hls/golden.h"
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        with open(output_path, "w") as f:
+            f.write(header_content)
+        
+        print("Generated {} with {} samples".format(output_path, num_samples))
+
+
     def hlscode(self):
         """This is a reference implementation for HLS.
         Intentionally, left empty so that students implement the HLS ref design.
@@ -263,7 +379,7 @@ class BNN_MNIST:
         """
 
         print("Done")
-
+        
 
     def feed_forward_quantized(self, input):
         """This function does BNN. Uses XNOR.
@@ -395,7 +511,7 @@ class BNN_MNIST:
 
 
 if __name__ == "__main__":
-    run_option = 3
+    run_option = 8
     bnn = BNN_MNIST(batch_size=1)
 
     if run_option == 1:
@@ -419,5 +535,8 @@ if __name__ == "__main__":
     elif run_option == 7:
         print("BNN test")
         bnn.run_test_visalize(num_samples=3)
+    elif run_option == 8:
+        print("Generating golden header")
+        bnn.generate_golden_header(num_samples=3)
 
     #
