@@ -1,5 +1,9 @@
 #include "bnn.h"
 #include "golden.h"
+#include <type_traits>
+
+// Make a non-const version of DTYPE for internal storage
+typedef typename std::remove_const<DTYPE>::type DTYPE_NC;
 
 // BNN implementation using weights from golden.h
 // Weights available:
@@ -9,7 +13,7 @@
 
 
 // Assume:
-//   - DTYPE is a 16-bit unsigned type (e.g., ap_uint<16> or uint16_t)
+//   - DTYPE_NC is a 16-bit unsigned type (e.g., ap_uint<16> or uint16_t)
 //   - ITYPE is a signed integer type large enough for accumulated sums
 //   - SIZE == 49  (49 * 16 = 784 bits)
 //   - w1[6272] = 128 neurons * 49 words
@@ -36,8 +40,8 @@ static int popcount16(unsigned short x) {
 //   dot = sum_i (a_i * w_i),  a_i, w_i ∈ {-1, +1}
 // implemented via XNOR + popcount on {0,1} bits.
 //
-static int feed_forward_quantized(const DTYPE *input_bits,
-                                  const DTYPE *weight_bits,
+static int feed_forward_quantized(const DTYPE_NC *input_bits,
+                                  const DTYPE_NC *weight_bits,
                                   int n_bits)
 {
 #pragma HLS INLINE
@@ -73,26 +77,24 @@ static int feed_forward_quantized(const DTYPE *input_bits,
 // Pack an array of bits (0/1) into 16-bit words (LSB-first).
 static void pack_bits(const unsigned char bits_in[],
                       int n_bits,
-                      DTYPE packed_out[])  // packed_out must NOT be const
+                      DTYPE_NC packed_out[])  // packed_out is writable
 {
 #pragma HLS INLINE
     const int n_words = (n_bits + 15) / 16;
 
     for (int w = 0; w < n_words; w++) {
 #pragma HLS UNROLL
-        // IMPORTANT: local temp must be writable → cast away const
-        unsigned short word = 0;
+        DTYPE_NC word = 0;
 
         for (int b = 0; b < 16; b++) {
 #pragma HLS UNROLL
             int idx = w * 16 + b;
             if (idx < n_bits && bits_in[idx]) {
-                word |= (1u << b);
+                word |= (DTYPE_NC)1 << b;
             }
         }
 
-        // assigned into packed_out (must be non-const)
-        packed_out[w] = (DTYPE)word;
+        packed_out[w] = word;
     }
 }
 
@@ -113,11 +115,14 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
     unsigned char l1_bits[L1_OUT_NEUR];  // 0/1 activations
 #pragma HLS ARRAY_PARTITION variable=l1_bits complete
 
+    const DTYPE_NC *in_words = reinterpret_cast<const DTYPE_NC *>(IN);
+
     // For L1, input_bits is just IN[0..48] (already packed), no padding.
     for (int n = 0; n < L1_OUT_NEUR; n++) {
 #pragma HLS UNROLL
-        const DTYPE *w_ptr = &w1[n * L1_IN_WORDS];
-        int dot = feed_forward_quantized(IN, w_ptr, L1_IN_BITS);
+        const DTYPE_NC *w_ptr =
+            reinterpret_cast<const DTYPE_NC *>(&w1[n * L1_IN_WORDS]);
+        int dot = feed_forward_quantized(in_words, w_ptr, L1_IN_BITS);
 
         // Binarize: sign(dot) in {-1,+1} → bit in {0,1}
         l1_bits[n] = (dot >= 0) ? 1 : 0;
@@ -126,7 +131,7 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
     // Pack L1 activations for the next layer (128 bits → 8 words)
     const int L2_IN_BITS  = 128;
     const int L2_IN_WORDS = (L2_IN_BITS + 15) / 16; // 8
-    DTYPE l1_packed[L2_IN_WORDS];
+    DTYPE_NC l1_packed[L2_IN_WORDS];
 #pragma HLS ARRAY_PARTITION variable=l1_packed complete
     pack_bits(l1_bits, L2_IN_BITS, l1_packed);
 
@@ -137,7 +142,8 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
 
     for (int n = 0; n < L2_OUT_NEUR; n++) {
 #pragma HLS UNROLL
-        const DTYPE *w_ptr = &w2[n * L2_IN_WORDS];
+        const DTYPE_NC *w_ptr =
+            reinterpret_cast<const DTYPE_NC *>(&w2[n * L2_IN_WORDS]);
         int dot = feed_forward_quantized(l1_packed, w_ptr, L2_IN_BITS);
         l2_bits[n] = (dot >= 0) ? 1 : 0;
     }
@@ -145,7 +151,7 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
     // Pack L2 activations for the final layer (64 bits → 4 words)
     const int L3_IN_BITS  = 64;
     const int L3_IN_WORDS = (L3_IN_BITS + 15) / 16; // 4
-    DTYPE l2_packed[L3_IN_WORDS];
+    DTYPE_NC l2_packed[L3_IN_WORDS];
 #pragma HLS ARRAY_PARTITION variable=l2_packed complete
     pack_bits(l2_bits, L3_IN_BITS, l2_packed);
 
@@ -153,14 +159,11 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
     const int L3_OUT_NEUR = 10;
     for (int n = 0; n < L3_OUT_NEUR; n++) {
 #pragma HLS UNROLL
-        const DTYPE *w_ptr = &w3[n * L3_IN_WORDS];
+        const DTYPE_NC *w_ptr =
+            reinterpret_cast<const DTYPE_NC *>(&w3[n * L3_IN_WORDS]);
         int dot = feed_forward_quantized(l2_packed, w_ptr, L3_IN_BITS);
 
         // Final layer: keep integer scores (logits) for each class
         ys[n] = (ITYPE)dot;
     }
 }
-
-
-
-
