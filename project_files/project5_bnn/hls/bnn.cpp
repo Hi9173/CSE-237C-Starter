@@ -13,7 +13,7 @@ static int popcount16(uint16_t x) {
     return c;
 }
 
-// --------- pack 0/1 activations into 16-bit words (LSB-first) ----------
+// --------- pack 0/1 activations into 16-bit words (MSB-first, like pack_int16) ----------
 static void pack_bits(const unsigned char bits_in[],
                       int n_bits,
                       uint16_t packed_out[])
@@ -24,28 +24,24 @@ static void pack_bits(const unsigned char bits_in[],
     for (int w = 0; w < n_words; w++) {
 #pragma HLS UNROLL
         uint16_t word = 0;
-        for (int b = 0; b < 16; b++) {
+        for (int k = 0; k < 16; k++) {
 #pragma HLS UNROLL
-            int idx = w * 16 + b;
+            int idx = w * 16 + k;
+            word <<= 1;
             if (idx < n_bits && bits_in[idx]) {
-                word |= (uint16_t(1) << b);
+                word |= 1u;
             }
         }
         packed_out[w] = word;
     }
 }
 
-// --------- binary dot product over packed words, with weight stride ----------
-//  - input_words:   Nw words for the input activations
-//  - weight_base:   pointer to weight for (word 0, this neuron)
-//  - weight_stride: distance (in words) between consecutive input words
-//                   for this neuron (i.e., number of neurons in this layer)
-//  - total_bits:    total number of logical bits = 16 * Nw (here always exact)
-static int binary_dot(const uint16_t *input_words,
-                      const uint16_t *weight_base,
+// --------- binary dot product over packed words ----------
+//  encodes {-1,+1} as {1,0} or {0,1} – only equality matters
+static int binary_dot(const uint16_t *a_words,
+                      const uint16_t *b_words,
                       int n_words,
-                      int total_bits,
-                      int weight_stride)
+                      int total_bits)
 {
 #pragma HLS INLINE
 
@@ -53,16 +49,15 @@ static int binary_dot(const uint16_t *input_words,
 
     for (int w = 0; w < n_words; w++) {
 #pragma HLS UNROLL
-        uint16_t a = input_words[w];
-        uint16_t b = weight_base[w * weight_stride];
+        uint16_t a = a_words[w];
+        uint16_t b = b_words[w];
 
         uint16_t xnor = ~(a ^ b);
         same += popcount16(xnor);
     }
 
-    // map XNOR matches to {-1,+1} dot product
-    int dot = 2 * same - total_bits;
-    return dot;
+    //  dot = (#same) - (#diff) = 2*same - N
+    return 2 * same - total_bits;
 }
 
 // ------------------------ TOP BNN ------------------------ //
@@ -70,7 +65,7 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
 {
 #pragma HLS INLINE off
 
-    // Treat external data as raw 16-bit words
+    // reinterpret packed arrays as raw 16-bit words
     const uint16_t *in_words = reinterpret_cast<const uint16_t *>(IN);
     const uint16_t *w1_words = reinterpret_cast<const uint16_t *>(w1);
     const uint16_t *w2_words = reinterpret_cast<const uint16_t *>(w2);
@@ -86,11 +81,14 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
 
     for (int n = 0; n < L1_OUT_NEUR; n++) {
 #pragma HLS UNROLL
-        // weights laid out as w1[word][neuron] → index = word*128 + n
-        const uint16_t *w_base = w1_words + n;
-        int dot = binary_dot(in_words, w_base,
-                             L1_IN_WORDS, L1_IN_BITS, L1_OUT_NEUR);
-        l1_bits[n] = (dot >= 0) ? 1 : 0;
+        // weights for neuron n are contiguous: 49 words each
+        const uint16_t *w_ptr = w1_words + n * L1_IN_WORDS;
+
+        int dot = binary_dot(in_words, w_ptr, L1_IN_WORDS, L1_IN_BITS); // = 2*cnt - 784
+
+        // Python: sign(x) = 1 if x>0 else -1, then quantize
+        // bit = 0 for +1, 1 for -1  → we only care about equality later, so store 0/1
+        l1_bits[n] = (dot > 0) ? 0 : 1;
     }
 
     // ---------- Pack Layer-1 activations: 128 bits -> 8 words ----------
@@ -108,11 +106,12 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
 
     for (int n = 0; n < L2_OUT_NEUR; n++) {
 #pragma HLS UNROLL
-        // w2[word][neuron] → index = word*64 + n
-        const uint16_t *w_base = w2_words + n;
-        int dot = binary_dot(l1_packed, w_base,
-                             L2_IN_WORDS, L2_IN_BITS, L2_OUT_NEUR);
-        l2_bits[n] = (dot >= 0) ? 1 : 0;
+        const uint16_t *w_ptr = w2_words + n * L2_IN_WORDS;
+
+        int dot = binary_dot(l1_packed, w_ptr, L2_IN_WORDS, L2_IN_BITS); // 2*cnt - 128
+
+        // again, strict >0 like Python sign()
+        l2_bits[n] = (dot > 0) ? 0 : 1;
     }
 
     // ---------- Pack Layer-2 activations: 64 bits -> 4 words ----------
@@ -127,10 +126,10 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
     // ---------- Layer 3: 64 (4 words) -> 10 logits ----------
     for (int n = 0; n < L3_OUT_NEUR; n++) {
 #pragma HLS UNROLL
-        // w3[word][neuron] → index = word*10 + n
-        const uint16_t *w_base = w3_words + n;
-        int dot = binary_dot(l2_packed, w_base,
-                             L3_IN_WORDS, L3_IN_BITS, L3_OUT_NEUR);
-        ys[n] = (ITYPE)dot;
+        const uint16_t *w_ptr = w3_words + n * L3_IN_WORDS;
+
+        int dot = binary_dot(l2_packed, w_ptr, L3_IN_WORDS, L3_IN_BITS); // 2*cnt - 64
+
+        ys[n] = (ITYPE)dot;  // these should match golden_outputs[*][n]
     }
 }
