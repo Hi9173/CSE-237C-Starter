@@ -4,10 +4,10 @@
 
 // --------- 16-bit popcount ----------
 static int popcount16(uint16_t x) {
-	#pragma HLS INLINE
+	//#pragma HLS INLINE
     int c = 0;
     for (int i = 0; i < 16; i++) {
-	#pragma HLS UNROLL
+	//#pragma HLS UNROLL
         c += (x >> i) & 1u;
     }
     return c;
@@ -18,14 +18,14 @@ static void pack_bits(const unsigned char bits_in[],
                       int n_bits,
                       uint16_t packed_out[])
 {
-	#pragma HLS INLINE
+	//#pragma HLS INLINE
     const int n_words = (n_bits + 15) / 16;
 
     for (int w = 0; w < n_words; w++) {
-		#pragma HLS UNROLL
+		//#pragma HLS UNROLL
         uint16_t word = 0;
         for (int k = 0; k < 16; k++) {
-			#pragma HLS UNROLL
+			//#pragma HLS UNROLL
             int idx = w * 16 + k;
             word <<= 1;
             if (idx < n_bits && bits_in[idx]) {
@@ -43,12 +43,12 @@ static int binary_dot(const uint16_t *a_words,
                       int n_words,
                       int total_bits)
 {
-	#pragma HLS INLINE
+	//#pragma HLS INLINE
 
     int same = 0;
 
     for (int w = 0; w < n_words; w++) {
-	#pragma HLS UNROLL
+	//#pragma HLS UNROLL
         uint16_t a = a_words[w];
         uint16_t b = b_words[w];
 
@@ -63,7 +63,7 @@ static int binary_dot(const uint16_t *a_words,
 // ------------------------ TOP BNN ------------------------ //
 void bnn(DTYPE IN[SIZE], ITYPE ys[10])
 {
-	#pragma HLS INLINE off
+	//#pragma HLS INLINE off
 
     // reinterpret packed arrays as raw 16-bit words
     const uint16_t *in_words = reinterpret_cast<const uint16_t *>(IN);
@@ -77,10 +77,10 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
     const int L1_OUT_NEUR  = 128;
 
     unsigned char l1_bits[L1_OUT_NEUR];
-	#pragma HLS ARRAY_PARTITION variable=l1_bits complete
+	//#pragma HLS ARRAY_PARTITION variable=l1_bits complete
 
     for (int n = 0; n < L1_OUT_NEUR; n++) {
-	#pragma HLS UNROLL
+	//#pragma HLS UNROLL
         // weights for neuron n are contiguous: 49 words each
         const uint16_t *w_ptr = w1_words + n * L1_IN_WORDS;
 
@@ -97,16 +97,16 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
     const int L2_OUT_NEUR  = 64;
 
     uint16_t l1_packed[L2_IN_WORDS];
-	#pragma HLS ARRAY_PARTITION variable=l1_packed complete
+	//#pragma HLS ARRAY_PARTITION variable=l1_packed complete
 
     pack_bits(l1_bits, L2_IN_BITS, l1_packed);
 
     // ---------- Layer 2: 128 (8 words) -> 64 ----------
     unsigned char l2_bits[L2_OUT_NEUR];
-	#pragma HLS ARRAY_PARTITION variable=l2_bits complete
+	//#pragma HLS ARRAY_PARTITION variable=l2_bits complete
 
     for (int n = 0; n < L2_OUT_NEUR; n++) {
-	#pragma HLS UNROLL
+	//#pragma HLS UNROLL
         const uint16_t *w_ptr = w2_words + n * L2_IN_WORDS;
 
         int dot = binary_dot(l1_packed, w_ptr, L2_IN_WORDS, L2_IN_BITS); // 2*cnt - 128
@@ -121,13 +121,13 @@ void bnn(DTYPE IN[SIZE], ITYPE ys[10])
     const int L3_OUT_NEUR  = 10;
 
     uint16_t l2_packed[L3_IN_WORDS];
-	#pragma HLS ARRAY_PARTITION variable=l2_packed complete
+	//#pragma HLS ARRAY_PARTITION variable=l2_packed complete
 
     pack_bits(l2_bits, L3_IN_BITS, l2_packed);
 
     // ---------- Layer 3: 64 (4 words) -> 10 logits ----------
     for (int n = 0; n < L3_OUT_NEUR; n++) {
-		#pragma HLS UNROLL
+		//#pragma HLS UNROLL
         const uint16_t *w_ptr = w3_words + n * L3_IN_WORDS;
 
         int dot = binary_dot(l2_packed, w_ptr, L3_IN_WORDS, L3_IN_BITS); // 2*cnt - 64
