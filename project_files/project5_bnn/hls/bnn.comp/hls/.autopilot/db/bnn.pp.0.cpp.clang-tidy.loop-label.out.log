@@ -1,0 +1,55 @@
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:30590:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:30590:5: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:30604:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:30604:5: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:30618:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:30618:5: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:32252:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:32252:7: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34513:5: warning: Added loop label VITIS_LOOP_9_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 16; i++) {
+    ^~~
+    VITIS_LOOP_9_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34513:5: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34528:5: warning: Added loop label VITIS_LOOP_24_1:   [xilinx-label-all-loops]
+    for (int w = 0; w < n_words; w++) {
+    ^~~
+    VITIS_LOOP_24_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34528:5: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34531:9: warning: Added loop label VITIS_LOOP_27_2:   [xilinx-label-all-loops]
+        for (int k = 0; k < 16; k++) {
+        ^~~
+        VITIS_LOOP_27_2: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34531:9: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34554:5: warning: Added loop label VITIS_LOOP_50_1:   [xilinx-label-all-loops]
+    for (int w = 0; w < n_words; w++) {
+    ^~~
+    VITIS_LOOP_50_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34554:5: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34590:5: warning: Added loop label VITIS_LOOP_82_1:   [xilinx-label-all-loops]
+    for (int n = 0; n < L1_OUT_NEUR; n++) {
+    ^~~
+    VITIS_LOOP_82_1: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34590:5: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34616:5: warning: Added loop label VITIS_LOOP_108_2:   [xilinx-label-all-loops]
+    for (int n = 0; n < L2_OUT_NEUR; n++) {
+    ^~~
+    VITIS_LOOP_108_2: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34616:5: note: FIX-IT applied suggested code changes
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34637:5: warning: Added loop label VITIS_LOOP_129_3:   [xilinx-label-all-loops]
+    for (int n = 0; n < L3_OUT_NEUR; n++) {
+    ^~~
+    VITIS_LOOP_129_3: 
+/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/.autopilot/db/bnn.pp.0.cpp:34637:5: note: FIX-IT applied suggested code changes

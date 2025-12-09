@@ -1,0 +1,51 @@
+{
+  "0": {
+    "basicblocks": 19,
+    "calls": "3 1 3 1 3",
+    "file": "bnn.cpp",
+    "fileloc": 64,
+    "instructions": 85,
+    "name": "bnn",
+    "stores": {
+      "L": 2,
+      "T": 1
+    },
+    "total_instructions": 292
+  },
+  "1": {
+    "basicblocks": 16,
+    "calls": "",
+    "file": "bnn.cpp",
+    "fileloc": 17,
+    "instructions": 42,
+    "loads": {
+      "L": 1
+    },
+    "name": "pack_bits",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 42
+  },
+  "2": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "bnn.cpp",
+    "fileloc": 6,
+    "instructions": 15,
+    "name": "popcount16",
+    "total_instructions": 15
+  },
+  "3": {
+    "basicblocks": 7,
+    "calls": "2",
+    "file": "bnn.cpp",
+    "fileloc": 41,
+    "instructions": 26,
+    "loads": {
+      "L": 2
+    },
+    "name": "binary_dot",
+    "total_instructions": 41
+  }
+}

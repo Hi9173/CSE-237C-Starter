@@ -1,0 +1,109 @@
+{
+    "1": {
+        "name": "bnn_Pipeline_VITIS_LOOP_24_1",
+        "file": "bnn.cpp",
+        "fileloc": "102",
+        "instructions": "98",
+        "total_instructions": "98",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "17"
+        },
+        "stores": {
+            "L": "3"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1",
+        "file": "bnn.cpp",
+        "fileloc": "108",
+        "instructions": "229",
+        "total_instructions": "229",
+        "calls": "",
+        "basicblocks": "15",
+        "loads": {
+            "G": "1",
+            "L": "5"
+        },
+        "stores": {
+            "L": "16"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "bnn_Pipeline_VITIS_LOOP_129_3",
+        "file": "bnn.cpp",
+        "fileloc": "129",
+        "instructions": "653",
+        "total_instructions": "653",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "G": "4",
+            "L": "1"
+        },
+        "stores": {
+            "L": "2",
+            "T": "1"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "bnn",
+        "file": "bnn.cpp",
+        "fileloc": "64",
+        "instructions": "40",
+        "total_instructions": "1366",
+        "calls": "5 1 2 4 3",
+        "basicblocks": "1",
+        "loads": {
+            "L": "4"
+        }
+    },
+    "4": {
+        "name": "bnn_Pipeline_VITIS_LOOP_24_11",
+        "file": "bnn.cpp",
+        "fileloc": "123",
+        "instructions": "116",
+        "total_instructions": "116",
+        "calls": "",
+        "basicblocks": "9",
+        "loads": {
+            "L": "21"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "5": {
+        "name": "bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1",
+        "file": "bnn.cpp",
+        "fileloc": "82",
+        "instructions": "230",
+        "total_instructions": "230",
+        "calls": "",
+        "basicblocks": "15",
+        "loads": {
+            "G": "1",
+            "L": "4",
+            "T": "1"
+        },
+        "stores": {
+            "L": "16"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

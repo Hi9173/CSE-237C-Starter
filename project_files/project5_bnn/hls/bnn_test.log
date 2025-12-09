@@ -1,0 +1,25 @@
+============================================================
+Testing BNN with golden.h data
+============================================================
+
+Processing Sample 1 (true label: 7)
+Predicted label: 7
+-----------------------------------------------------------
+Verifying the sample: Sample 1
+Sample: Sample 1 PASSED
+
+Processing Sample 2 (true label: 2)
+Predicted label: 2
+-----------------------------------------------------------
+Verifying the sample: Sample 2
+Sample: Sample 2 PASSED
+
+Processing Sample 3 (true label: 1)
+Predicted label: 1
+-----------------------------------------------------------
+Verifying the sample: Sample 3
+Sample: Sample 3 PASSED
+
+============================================================
+Test Complete
+============================================================
