@@ -2,13 +2,23 @@
   <kernel src_name="bnn" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
     <args>
       <arg id="0" access_type="r" src_name="IN" src_type="short const *" src_isptr="1" src_bitwidth="16" src_size_or_depth="49">
-        <hw hw_usage="data" hw_interface="BRAM" hw_name="IN_r" hw_bitwidth="16" hw_size_or_depth="49" hw_kernel_support="false">
-          <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="CTRL" hw_bitwidth="16" hw_size_or_depth="49" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="128"/>
         </hw>
       </arg>
       <arg id="1" access_type="w" src_name="ys" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="10">
-        <hw hw_usage="data" hw_interface="BRAM" hw_name="ys" hw_bitwidth="32" hw_size_or_depth="10" hw_kernel_support="false">
-          <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="CTRL" hw_bitwidth="32" hw_size_or_depth="10" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="64"/>
+        </hw>
+      </arg>
+      <arg id="2" access_type="w" src_name="l1_out" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="128">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="CTRL" hw_bitwidth="32" hw_size_or_depth="128" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="512"/>
+        </hw>
+      </arg>
+      <arg id="3" access_type="w" src_name="l2_out" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="64">
+        <hw hw_usage="data" hw_interface="S_AXILite" hw_name="CTRL" hw_bitwidth="32" hw_size_or_depth="64" hw_kernel_support="true">
+          <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="256"/>
         </hw>
       </arg>
     </args>

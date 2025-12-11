@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'bnn'" level="0">
-<item name = "Date">Mon Dec  8 16:26:34 2025
+<item name = "Date">Wed Dec 10 17:07:58 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">bnn.comp</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.251 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.188 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,18 +24,18 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">6841, 6841, 68.410 us, 68.410 us, 6842, 6842, no</column>
+<column name="">294, 294, 2.940 us, 2.940 us, 295, 295, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124">bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1, 6280, 6280, 62.800 us, 62.800 us, 6273, 6273, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148">bnn_Pipeline_VITIS_LOOP_24_1, 12, 12, 0.120 us, 0.120 us, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161">bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1, 518, 518, 5.180 us, 5.180 us, 513, 513, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176">bnn_Pipeline_VITIS_LOOP_24_11, 8, 8, 80.000 ns, 80.000 ns, 5, 5, loop auto-rewind stp (delay=0 clock cycles(s))</column>
-<column name="grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192">bnn_Pipeline_VITIS_LOOP_129_3, 14, 14, 0.140 us, 0.140 us, 11, 11, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_bnn_Pipeline_l1_loop_fu_1420">bnn_Pipeline_l1_loop, 135, 135, 1.350 us, 1.350 us, 129, 129, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_bnn_Pipeline_pack_loop_fu_1606">bnn_Pipeline_pack_loop, 10, 10, 0.100 us, 0.100 us, 9, 9, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_bnn_Pipeline_l2_loop_fu_1746">bnn_Pipeline_l2_loop, 70, 70, 0.700 us, 0.700 us, 65, 65, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_bnn_Pipeline_pack_loop1_fu_1826">bnn_Pipeline_pack_loop1, 6, 6, 60.000 ns, 60.000 ns, 5, 5, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_bnn_Pipeline_l3_loop_fu_1898">bnn_Pipeline_l3_loop, 15, 15, 0.150 us, 0.150 us, 11, 11, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

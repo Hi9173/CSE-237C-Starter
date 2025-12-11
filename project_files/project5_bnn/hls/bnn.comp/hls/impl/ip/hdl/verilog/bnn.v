@@ -6,891 +6,1518 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="bnn_bnn,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.251500,HLS_SYN_LAT=6841,HLS_SYN_TPT=none,HLS_SYN_MEM=9,HLS_SYN_DSP=0,HLS_SYN_FF=1257,HLS_SYN_LUT=4183,HLS_VERSION=2024_2}" *)
+(* CORE_GENERATION_INFO="bnn_bnn,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=7.187500,HLS_SYN_LAT=294,HLS_SYN_TPT=none,HLS_SYN_MEM=208,HLS_SYN_DSP=0,HLS_SYN_FF=3782,HLS_SYN_LUT=15598,HLS_VERSION=2024_2}" *)
 
 module bnn (
         ap_clk,
-        ap_rst,
-        ap_start,
-        ap_done,
-        ap_idle,
-        ap_ready,
-        IN_r_address0,
-        IN_r_ce0,
-        IN_r_q0,
-        ys_address0,
-        ys_ce0,
-        ys_we0,
-        ys_d0
+        ap_rst_n,
+        s_axi_CTRL_AWVALID,
+        s_axi_CTRL_AWREADY,
+        s_axi_CTRL_AWADDR,
+        s_axi_CTRL_WVALID,
+        s_axi_CTRL_WREADY,
+        s_axi_CTRL_WDATA,
+        s_axi_CTRL_WSTRB,
+        s_axi_CTRL_ARVALID,
+        s_axi_CTRL_ARREADY,
+        s_axi_CTRL_ARADDR,
+        s_axi_CTRL_RVALID,
+        s_axi_CTRL_RREADY,
+        s_axi_CTRL_RDATA,
+        s_axi_CTRL_RRESP,
+        s_axi_CTRL_BVALID,
+        s_axi_CTRL_BREADY,
+        s_axi_CTRL_BRESP,
+        interrupt
 );
 
-parameter    ap_ST_fsm_state1 = 10'd1;
-parameter    ap_ST_fsm_state2 = 10'd2;
-parameter    ap_ST_fsm_state3 = 10'd4;
-parameter    ap_ST_fsm_state4 = 10'd8;
-parameter    ap_ST_fsm_state5 = 10'd16;
-parameter    ap_ST_fsm_state6 = 10'd32;
-parameter    ap_ST_fsm_state7 = 10'd64;
-parameter    ap_ST_fsm_state8 = 10'd128;
-parameter    ap_ST_fsm_state9 = 10'd256;
-parameter    ap_ST_fsm_state10 = 10'd512;
+parameter    ap_ST_fsm_state1 = 59'd1;
+parameter    ap_ST_fsm_state2 = 59'd2;
+parameter    ap_ST_fsm_state3 = 59'd4;
+parameter    ap_ST_fsm_state4 = 59'd8;
+parameter    ap_ST_fsm_state5 = 59'd16;
+parameter    ap_ST_fsm_state6 = 59'd32;
+parameter    ap_ST_fsm_state7 = 59'd64;
+parameter    ap_ST_fsm_state8 = 59'd128;
+parameter    ap_ST_fsm_state9 = 59'd256;
+parameter    ap_ST_fsm_state10 = 59'd512;
+parameter    ap_ST_fsm_state11 = 59'd1024;
+parameter    ap_ST_fsm_state12 = 59'd2048;
+parameter    ap_ST_fsm_state13 = 59'd4096;
+parameter    ap_ST_fsm_state14 = 59'd8192;
+parameter    ap_ST_fsm_state15 = 59'd16384;
+parameter    ap_ST_fsm_state16 = 59'd32768;
+parameter    ap_ST_fsm_state17 = 59'd65536;
+parameter    ap_ST_fsm_state18 = 59'd131072;
+parameter    ap_ST_fsm_state19 = 59'd262144;
+parameter    ap_ST_fsm_state20 = 59'd524288;
+parameter    ap_ST_fsm_state21 = 59'd1048576;
+parameter    ap_ST_fsm_state22 = 59'd2097152;
+parameter    ap_ST_fsm_state23 = 59'd4194304;
+parameter    ap_ST_fsm_state24 = 59'd8388608;
+parameter    ap_ST_fsm_state25 = 59'd16777216;
+parameter    ap_ST_fsm_state26 = 59'd33554432;
+parameter    ap_ST_fsm_state27 = 59'd67108864;
+parameter    ap_ST_fsm_state28 = 59'd134217728;
+parameter    ap_ST_fsm_state29 = 59'd268435456;
+parameter    ap_ST_fsm_state30 = 59'd536870912;
+parameter    ap_ST_fsm_state31 = 59'd1073741824;
+parameter    ap_ST_fsm_state32 = 59'd2147483648;
+parameter    ap_ST_fsm_state33 = 59'd4294967296;
+parameter    ap_ST_fsm_state34 = 59'd8589934592;
+parameter    ap_ST_fsm_state35 = 59'd17179869184;
+parameter    ap_ST_fsm_state36 = 59'd34359738368;
+parameter    ap_ST_fsm_state37 = 59'd68719476736;
+parameter    ap_ST_fsm_state38 = 59'd137438953472;
+parameter    ap_ST_fsm_state39 = 59'd274877906944;
+parameter    ap_ST_fsm_state40 = 59'd549755813888;
+parameter    ap_ST_fsm_state41 = 59'd1099511627776;
+parameter    ap_ST_fsm_state42 = 59'd2199023255552;
+parameter    ap_ST_fsm_state43 = 59'd4398046511104;
+parameter    ap_ST_fsm_state44 = 59'd8796093022208;
+parameter    ap_ST_fsm_state45 = 59'd17592186044416;
+parameter    ap_ST_fsm_state46 = 59'd35184372088832;
+parameter    ap_ST_fsm_state47 = 59'd70368744177664;
+parameter    ap_ST_fsm_state48 = 59'd140737488355328;
+parameter    ap_ST_fsm_state49 = 59'd281474976710656;
+parameter    ap_ST_fsm_state50 = 59'd562949953421312;
+parameter    ap_ST_fsm_state51 = 59'd1125899906842624;
+parameter    ap_ST_fsm_state52 = 59'd2251799813685248;
+parameter    ap_ST_fsm_state53 = 59'd4503599627370496;
+parameter    ap_ST_fsm_state54 = 59'd9007199254740992;
+parameter    ap_ST_fsm_state55 = 59'd18014398509481984;
+parameter    ap_ST_fsm_state56 = 59'd36028797018963968;
+parameter    ap_ST_fsm_state57 = 59'd72057594037927936;
+parameter    ap_ST_fsm_state58 = 59'd144115188075855872;
+parameter    ap_ST_fsm_state59 = 59'd288230376151711744;
+parameter    C_S_AXI_CTRL_DATA_WIDTH = 32;
+parameter    C_S_AXI_CTRL_ADDR_WIDTH = 10;
+parameter    C_S_AXI_DATA_WIDTH = 32;
+
+parameter C_S_AXI_CTRL_WSTRB_WIDTH = (32 / 8);
+parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
 
 input   ap_clk;
-input   ap_rst;
-input   ap_start;
-output   ap_done;
-output   ap_idle;
-output   ap_ready;
-output  [5:0] IN_r_address0;
-output   IN_r_ce0;
-input  [15:0] IN_r_q0;
-output  [3:0] ys_address0;
-output   ys_ce0;
-output   ys_we0;
-output  [31:0] ys_d0;
+input   ap_rst_n;
+input   s_axi_CTRL_AWVALID;
+output   s_axi_CTRL_AWREADY;
+input  [C_S_AXI_CTRL_ADDR_WIDTH - 1:0] s_axi_CTRL_AWADDR;
+input   s_axi_CTRL_WVALID;
+output   s_axi_CTRL_WREADY;
+input  [C_S_AXI_CTRL_DATA_WIDTH - 1:0] s_axi_CTRL_WDATA;
+input  [C_S_AXI_CTRL_WSTRB_WIDTH - 1:0] s_axi_CTRL_WSTRB;
+input   s_axi_CTRL_ARVALID;
+output   s_axi_CTRL_ARREADY;
+input  [C_S_AXI_CTRL_ADDR_WIDTH - 1:0] s_axi_CTRL_ARADDR;
+output   s_axi_CTRL_RVALID;
+input   s_axi_CTRL_RREADY;
+output  [C_S_AXI_CTRL_DATA_WIDTH - 1:0] s_axi_CTRL_RDATA;
+output  [1:0] s_axi_CTRL_RRESP;
+output   s_axi_CTRL_BVALID;
+input   s_axi_CTRL_BREADY;
+output  [1:0] s_axi_CTRL_BRESP;
+output   interrupt;
 
-reg ap_done;
-reg ap_idle;
-reg ap_ready;
-
-(* fsm_encoding = "none" *) reg   [9:0] ap_CS_fsm;
+ reg    ap_rst_n_inv;
+wire    ap_start;
+reg    ap_done;
+reg    ap_idle;
+(* fsm_encoding = "none" *) reg   [58:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [0:0] trunc_ln55_fu_226_p1;
-reg   [0:0] trunc_ln55_reg_282;
-wire    ap_CS_fsm_state9;
-wire   [0:0] trunc_ln55_174_fu_231_p1;
-reg   [0:0] trunc_ln55_174_reg_287;
-wire   [0:0] trunc_ln55_175_fu_236_p1;
-reg   [0:0] trunc_ln55_175_reg_292;
-wire   [0:0] trunc_ln55_176_fu_241_p1;
-reg   [0:0] trunc_ln55_176_reg_297;
-reg   [3:0] l1_bits_address0;
-reg    l1_bits_ce0;
-reg    l1_bits_we0;
-wire   [0:0] l1_bits_q0;
-reg    l1_bits_ce1;
-wire   [0:0] l1_bits_q1;
-reg   [3:0] l1_bits_1_address0;
-reg    l1_bits_1_ce0;
-reg    l1_bits_1_we0;
-wire   [0:0] l1_bits_1_q0;
-reg    l1_bits_1_ce1;
-wire   [0:0] l1_bits_1_q1;
-reg   [3:0] l1_bits_2_address0;
-reg    l1_bits_2_ce0;
-reg    l1_bits_2_we0;
-wire   [0:0] l1_bits_2_q0;
-reg    l1_bits_2_ce1;
-wire   [0:0] l1_bits_2_q1;
-reg   [3:0] l1_bits_3_address0;
-reg    l1_bits_3_ce0;
-reg    l1_bits_3_we0;
-wire   [0:0] l1_bits_3_q0;
-reg    l1_bits_3_ce1;
-wire   [0:0] l1_bits_3_q1;
-reg   [3:0] l1_bits_4_address0;
-reg    l1_bits_4_ce0;
-reg    l1_bits_4_we0;
-wire   [0:0] l1_bits_4_q0;
-reg    l1_bits_4_ce1;
-wire   [0:0] l1_bits_4_q1;
-reg   [3:0] l1_bits_5_address0;
-reg    l1_bits_5_ce0;
-reg    l1_bits_5_we0;
-wire   [0:0] l1_bits_5_q0;
-reg    l1_bits_5_ce1;
-wire   [0:0] l1_bits_5_q1;
-reg   [3:0] l1_bits_6_address0;
-reg    l1_bits_6_ce0;
-reg    l1_bits_6_we0;
-wire   [0:0] l1_bits_6_q0;
-reg    l1_bits_6_ce1;
-wire   [0:0] l1_bits_6_q1;
-reg   [3:0] l1_bits_7_address0;
-reg    l1_bits_7_ce0;
-reg    l1_bits_7_we0;
-wire   [0:0] l1_bits_7_q0;
-reg    l1_bits_7_ce1;
-wire   [0:0] l1_bits_7_q1;
-reg   [2:0] l1_packed_address0;
-reg    l1_packed_ce0;
-reg    l1_packed_we0;
-wire   [15:0] l1_packed_q0;
-reg   [2:0] l2_bits_address0;
-reg    l2_bits_ce0;
-reg    l2_bits_we0;
-wire   [0:0] l2_bits_q0;
-reg    l2_bits_ce1;
-wire   [0:0] l2_bits_q1;
-reg   [2:0] l2_bits_1_address0;
-reg    l2_bits_1_ce0;
-reg    l2_bits_1_we0;
-wire   [0:0] l2_bits_1_q0;
-reg    l2_bits_1_ce1;
-wire   [0:0] l2_bits_1_q1;
-reg   [2:0] l2_bits_2_address0;
-reg    l2_bits_2_ce0;
-reg    l2_bits_2_we0;
-wire   [0:0] l2_bits_2_q0;
-reg    l2_bits_2_ce1;
-wire   [0:0] l2_bits_2_q1;
-reg   [2:0] l2_bits_3_address0;
-reg    l2_bits_3_ce0;
-reg    l2_bits_3_we0;
-wire   [0:0] l2_bits_3_q0;
-reg    l2_bits_3_ce1;
-wire   [0:0] l2_bits_3_q1;
-reg   [2:0] l2_bits_4_address0;
-reg    l2_bits_4_ce0;
-reg    l2_bits_4_we0;
-wire   [0:0] l2_bits_4_q0;
-reg    l2_bits_4_ce1;
-wire   [0:0] l2_bits_4_q1;
-reg   [2:0] l2_bits_5_address0;
-reg    l2_bits_5_ce0;
-reg    l2_bits_5_we0;
-wire   [0:0] l2_bits_5_q0;
-reg    l2_bits_5_ce1;
-wire   [0:0] l2_bits_5_q1;
-reg   [2:0] l2_bits_6_address0;
-reg    l2_bits_6_ce0;
-reg    l2_bits_6_we0;
-wire   [0:0] l2_bits_6_q0;
-reg    l2_bits_6_ce1;
-wire   [0:0] l2_bits_6_q1;
-reg   [2:0] l2_bits_7_address0;
-reg    l2_bits_7_ce0;
-reg    l2_bits_7_we0;
-wire   [0:0] l2_bits_7_q0;
-reg    l2_bits_7_ce1;
-wire   [0:0] l2_bits_7_q1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_done;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_idle;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_ready;
-wire   [5:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_IN_r_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_IN_r_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_d0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_d0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_d0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_d0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_d0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_d0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_d0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_d0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_done;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_idle;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_ready;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_ce1;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_ce1;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_ce1;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_ce1;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_ce1;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_ce1;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_ce1;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_ce0;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_ce1;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_we0;
-wire   [15:0] grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_d0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_done;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_idle;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_ready;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l1_packed_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l1_packed_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_d0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_d0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_d0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_d0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_d0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_d0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_d0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_we0;
-wire   [0:0] grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_d0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_done;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_idle;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_ready;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_ce1;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_ce1;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_ce1;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_ce1;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_ce1;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_ce1;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_ce1;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_ce0;
-wire   [2:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_address1;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_ce1;
-wire   [15:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_3_out;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_3_out_ap_vld;
-wire   [15:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_2_out;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_2_out_ap_vld;
-wire   [15:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_1_out;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_1_out_ap_vld;
-wire   [15:0] grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_out;
-wire    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_out_ap_vld;
-wire    grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start;
-wire    grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_done;
-wire    grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_idle;
-wire    grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_ready;
-wire   [3:0] grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_address0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_ce0;
-wire    grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_we0;
-wire   [31:0] grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_d0;
-reg    grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start_reg;
+reg    ap_ready;
+wire   [15:0] IN_r_q0;
+reg   [15:0] IN_r_load_reg_3955;
 wire    ap_CS_fsm_state2;
-reg    grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start_reg;
+reg   [15:0] IN_r_load_1_reg_3965;
 wire    ap_CS_fsm_state3;
+reg   [15:0] IN_r_load_2_reg_3975;
 wire    ap_CS_fsm_state4;
-reg    grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start_reg;
+reg   [15:0] IN_r_load_3_reg_3985;
 wire    ap_CS_fsm_state5;
+reg   [15:0] IN_r_load_4_reg_3995;
 wire    ap_CS_fsm_state6;
-reg    grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start_reg;
+reg   [15:0] IN_r_load_5_reg_4005;
 wire    ap_CS_fsm_state7;
+reg   [15:0] IN_r_load_6_reg_4015;
 wire    ap_CS_fsm_state8;
-reg    grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start_reg;
+reg   [15:0] IN_r_load_7_reg_4025;
+wire    ap_CS_fsm_state9;
+reg   [15:0] IN_r_load_8_reg_4035;
 wire    ap_CS_fsm_state10;
-reg   [9:0] ap_NS_fsm;
+reg   [15:0] IN_r_load_9_reg_4045;
+wire    ap_CS_fsm_state11;
+reg   [15:0] IN_r_load_10_reg_4055;
+wire    ap_CS_fsm_state12;
+reg   [15:0] IN_r_load_11_reg_4065;
+wire    ap_CS_fsm_state13;
+reg   [15:0] IN_r_load_12_reg_4075;
+wire    ap_CS_fsm_state14;
+reg   [15:0] IN_r_load_13_reg_4085;
+wire    ap_CS_fsm_state15;
+reg   [15:0] IN_r_load_14_reg_4095;
+wire    ap_CS_fsm_state16;
+reg   [15:0] IN_r_load_15_reg_4105;
+wire    ap_CS_fsm_state17;
+reg   [15:0] IN_r_load_16_reg_4115;
+wire    ap_CS_fsm_state18;
+reg   [15:0] IN_r_load_17_reg_4125;
+wire    ap_CS_fsm_state19;
+reg   [15:0] IN_r_load_18_reg_4135;
+wire    ap_CS_fsm_state20;
+reg   [15:0] IN_r_load_19_reg_4145;
+wire    ap_CS_fsm_state21;
+reg   [15:0] IN_r_load_20_reg_4155;
+wire    ap_CS_fsm_state22;
+reg   [15:0] IN_r_load_21_reg_4165;
+wire    ap_CS_fsm_state23;
+reg   [15:0] IN_r_load_22_reg_4175;
+wire    ap_CS_fsm_state24;
+reg   [15:0] IN_r_load_23_reg_4185;
+wire    ap_CS_fsm_state25;
+reg   [15:0] IN_r_load_24_reg_4195;
+wire    ap_CS_fsm_state26;
+reg   [15:0] IN_r_load_25_reg_4205;
+wire    ap_CS_fsm_state27;
+reg   [15:0] IN_r_load_26_reg_4215;
+wire    ap_CS_fsm_state28;
+reg   [15:0] IN_r_load_27_reg_4225;
+wire    ap_CS_fsm_state29;
+reg   [15:0] IN_r_load_28_reg_4235;
+wire    ap_CS_fsm_state30;
+reg   [15:0] IN_r_load_29_reg_4245;
+wire    ap_CS_fsm_state31;
+reg   [15:0] IN_r_load_30_reg_4255;
+wire    ap_CS_fsm_state32;
+reg   [15:0] IN_r_load_31_reg_4265;
+wire    ap_CS_fsm_state33;
+reg   [15:0] IN_r_load_32_reg_4275;
+wire    ap_CS_fsm_state34;
+reg   [15:0] IN_r_load_33_reg_4285;
+wire    ap_CS_fsm_state35;
+reg   [15:0] IN_r_load_34_reg_4295;
+wire    ap_CS_fsm_state36;
+reg   [15:0] IN_r_load_35_reg_4305;
+wire    ap_CS_fsm_state37;
+reg   [15:0] IN_r_load_36_reg_4315;
+wire    ap_CS_fsm_state38;
+reg   [15:0] IN_r_load_37_reg_4325;
+wire    ap_CS_fsm_state39;
+reg   [15:0] IN_r_load_38_reg_4335;
+wire    ap_CS_fsm_state40;
+reg   [15:0] IN_r_load_39_reg_4345;
+wire    ap_CS_fsm_state41;
+reg   [15:0] IN_r_load_40_reg_4355;
+wire    ap_CS_fsm_state42;
+reg   [15:0] IN_r_load_41_reg_4365;
+wire    ap_CS_fsm_state43;
+reg   [15:0] IN_r_load_42_reg_4375;
+wire    ap_CS_fsm_state44;
+reg   [15:0] IN_r_load_43_reg_4385;
+wire    ap_CS_fsm_state45;
+reg   [15:0] IN_r_load_44_reg_4395;
+wire    ap_CS_fsm_state46;
+reg   [15:0] IN_r_load_45_reg_4405;
+wire    ap_CS_fsm_state47;
+reg   [15:0] IN_r_load_46_reg_4415;
+wire    ap_CS_fsm_state48;
+reg   [15:0] IN_r_load_47_reg_4425;
+wire    ap_CS_fsm_state49;
+reg   [15:0] IN_r_load_48_reg_4435;
+wire    ap_CS_fsm_state50;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_ap_start;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_ap_done;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_ap_idle;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_ap_ready;
+wire   [6:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_address0;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_ce0;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_we0;
+wire   [31:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_d0;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_127_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_127_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_126_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_126_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_125_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_125_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_124_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_124_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_123_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_123_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_122_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_122_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_121_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_121_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_120_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_120_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_119_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_119_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_118_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_118_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_117_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_117_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_116_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_116_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_115_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_115_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_114_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_114_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_113_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_113_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_112_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_112_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_111_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_111_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_110_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_110_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_109_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_109_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_108_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_108_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_107_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_107_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_106_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_106_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_105_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_105_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_104_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_104_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_103_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_103_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_102_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_102_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_101_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_101_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_100_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_100_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_99_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_99_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_98_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_98_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_97_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_97_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_96_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_96_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_95_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_95_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_94_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_94_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_93_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_93_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_92_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_92_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_91_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_91_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_90_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_90_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_89_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_89_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_88_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_88_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_87_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_87_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_86_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_86_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_85_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_85_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_84_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_84_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_83_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_83_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_82_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_82_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_81_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_81_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_80_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_80_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_79_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_79_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_78_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_78_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_77_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_77_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_76_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_76_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_75_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_75_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_74_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_74_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_73_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_73_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_72_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_72_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_71_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_71_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_70_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_70_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_69_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_69_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_68_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_68_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_67_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_67_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_66_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_66_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_65_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_65_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_64_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_64_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_63_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_63_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_62_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_62_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_61_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_61_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_60_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_60_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_59_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_59_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_58_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_58_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_57_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_57_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_56_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_56_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_55_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_55_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_54_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_54_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_53_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_53_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_52_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_52_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_51_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_51_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_50_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_50_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_49_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_49_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_48_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_48_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_47_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_47_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_46_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_46_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_45_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_45_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_44_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_44_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_43_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_43_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_42_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_42_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_41_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_41_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_40_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_40_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_39_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_39_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_38_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_38_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_37_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_37_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_36_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_36_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_35_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_35_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_34_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_34_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_33_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_33_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_32_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_32_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_31_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_31_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_30_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_30_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_29_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_29_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_28_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_28_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_27_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_27_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_26_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_26_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_25_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_25_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_24_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_24_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_23_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_23_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_22_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_22_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_21_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_21_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_20_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_20_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_19_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_19_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_18_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_18_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_17_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_17_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_16_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_16_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_15_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_15_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_14_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_14_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_13_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_13_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_12_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_12_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_11_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_11_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_10_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_10_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_9_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_9_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_8_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_8_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_7_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_7_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_6_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_6_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_5_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_5_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_4_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_4_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_3_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_3_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_2_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_2_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_1_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_1_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_out;
+wire    grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_out_ap_vld;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_ap_start;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_ap_done;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_ap_idle;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_ap_ready;
+wire   [15:0] grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_7102_out;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_7102_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_6100_out;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_6100_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_598_out;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_598_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_496_out;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_496_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_394_out;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_394_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_292_out;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_292_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_190_out;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_190_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop_fu_1606_p_0_028288_out;
+wire    grp_bnn_Pipeline_pack_loop_fu_1606_p_0_028288_out_ap_vld;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_ap_start;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_ap_done;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_ap_idle;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_ap_ready;
+wire   [5:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_address0;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_ce0;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_we0;
+wire   [31:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_d0;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_63_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_63_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_62_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_62_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_61_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_61_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_60_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_60_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_59_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_59_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_58_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_58_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_57_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_57_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_56_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_56_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_55_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_55_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_54_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_54_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_53_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_53_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_52_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_52_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_51_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_51_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_50_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_50_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_49_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_49_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_48_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_48_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_47_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_47_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_46_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_46_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_45_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_45_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_44_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_44_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_43_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_43_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_42_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_42_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_41_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_41_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_40_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_40_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_39_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_39_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_38_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_38_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_37_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_37_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_36_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_36_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_35_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_35_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_34_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_34_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_33_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_33_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_32_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_32_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_31_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_31_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_30_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_30_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_29_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_29_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_28_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_28_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_27_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_27_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_26_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_26_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_25_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_25_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_24_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_24_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_23_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_23_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_22_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_22_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_21_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_21_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_20_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_20_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_19_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_19_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_18_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_18_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_17_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_17_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_16_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_16_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_15_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_15_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_14_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_14_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_13_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_13_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_12_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_12_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_11_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_11_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_10_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_10_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_9_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_9_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_8_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_8_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_7_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_7_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_6_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_6_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_5_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_5_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_4_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_4_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_3_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_3_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_2_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_2_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_1_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_1_out_ap_vld;
+wire   [0:0] grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_out;
+wire    grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_out_ap_vld;
+wire    grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start;
+wire    grp_bnn_Pipeline_pack_loop1_fu_1826_ap_done;
+wire    grp_bnn_Pipeline_pack_loop1_fu_1826_ap_idle;
+wire    grp_bnn_Pipeline_pack_loop1_fu_1826_ap_ready;
+wire   [15:0] grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_3110_out;
+wire    grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_3110_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_2108_out;
+wire    grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_2108_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_1106_out;
+wire    grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_1106_out_ap_vld;
+wire   [15:0] grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271104_out;
+wire    grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271104_out_ap_vld;
+wire    grp_bnn_Pipeline_l3_loop_fu_1898_ap_start;
+wire    grp_bnn_Pipeline_l3_loop_fu_1898_ap_done;
+wire    grp_bnn_Pipeline_l3_loop_fu_1898_ap_idle;
+wire    grp_bnn_Pipeline_l3_loop_fu_1898_ap_ready;
+wire   [3:0] grp_bnn_Pipeline_l3_loop_fu_1898_ys_address0;
+wire    grp_bnn_Pipeline_l3_loop_fu_1898_ys_ce0;
+wire    grp_bnn_Pipeline_l3_loop_fu_1898_ys_we0;
+wire   [31:0] grp_bnn_Pipeline_l3_loop_fu_1898_ys_d0;
+reg    grp_bnn_Pipeline_l1_loop_fu_1420_ap_start_reg;
+wire    ap_CS_fsm_state51;
+reg    grp_bnn_Pipeline_pack_loop_fu_1606_ap_start_reg;
+wire    ap_CS_fsm_state52;
+wire    ap_CS_fsm_state53;
+reg    grp_bnn_Pipeline_l2_loop_fu_1746_ap_start_reg;
+wire    ap_CS_fsm_state54;
+wire    ap_CS_fsm_state55;
+reg    grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start_reg;
+wire    ap_CS_fsm_state56;
+wire    ap_CS_fsm_state57;
+reg    grp_bnn_Pipeline_l3_loop_fu_1898_ap_start_reg;
+wire    ap_CS_fsm_state58;
+wire    ap_CS_fsm_state59;
+reg    IN_r_ce0_local;
+reg   [5:0] IN_r_address0_local;
+reg   [58:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
-reg    ap_ST_fsm_state2_blk;
+wire    ap_ST_fsm_state2_blk;
 wire    ap_ST_fsm_state3_blk;
-reg    ap_ST_fsm_state4_blk;
+wire    ap_ST_fsm_state4_blk;
 wire    ap_ST_fsm_state5_blk;
-reg    ap_ST_fsm_state6_blk;
+wire    ap_ST_fsm_state6_blk;
 wire    ap_ST_fsm_state7_blk;
-reg    ap_ST_fsm_state8_blk;
+wire    ap_ST_fsm_state8_blk;
 wire    ap_ST_fsm_state9_blk;
-reg    ap_ST_fsm_state10_blk;
+wire    ap_ST_fsm_state10_blk;
+wire    ap_ST_fsm_state11_blk;
+wire    ap_ST_fsm_state12_blk;
+wire    ap_ST_fsm_state13_blk;
+wire    ap_ST_fsm_state14_blk;
+wire    ap_ST_fsm_state15_blk;
+wire    ap_ST_fsm_state16_blk;
+wire    ap_ST_fsm_state17_blk;
+wire    ap_ST_fsm_state18_blk;
+wire    ap_ST_fsm_state19_blk;
+wire    ap_ST_fsm_state20_blk;
+wire    ap_ST_fsm_state21_blk;
+wire    ap_ST_fsm_state22_blk;
+wire    ap_ST_fsm_state23_blk;
+wire    ap_ST_fsm_state24_blk;
+wire    ap_ST_fsm_state25_blk;
+wire    ap_ST_fsm_state26_blk;
+wire    ap_ST_fsm_state27_blk;
+wire    ap_ST_fsm_state28_blk;
+wire    ap_ST_fsm_state29_blk;
+wire    ap_ST_fsm_state30_blk;
+wire    ap_ST_fsm_state31_blk;
+wire    ap_ST_fsm_state32_blk;
+wire    ap_ST_fsm_state33_blk;
+wire    ap_ST_fsm_state34_blk;
+wire    ap_ST_fsm_state35_blk;
+wire    ap_ST_fsm_state36_blk;
+wire    ap_ST_fsm_state37_blk;
+wire    ap_ST_fsm_state38_blk;
+wire    ap_ST_fsm_state39_blk;
+wire    ap_ST_fsm_state40_blk;
+wire    ap_ST_fsm_state41_blk;
+wire    ap_ST_fsm_state42_blk;
+wire    ap_ST_fsm_state43_blk;
+wire    ap_ST_fsm_state44_blk;
+wire    ap_ST_fsm_state45_blk;
+wire    ap_ST_fsm_state46_blk;
+wire    ap_ST_fsm_state47_blk;
+wire    ap_ST_fsm_state48_blk;
+wire    ap_ST_fsm_state49_blk;
+wire    ap_ST_fsm_state50_blk;
+reg    ap_ST_fsm_state51_blk;
+wire    ap_ST_fsm_state52_blk;
+reg    ap_ST_fsm_state53_blk;
+wire    ap_ST_fsm_state54_blk;
+reg    ap_ST_fsm_state55_blk;
+wire    ap_ST_fsm_state56_blk;
+reg    ap_ST_fsm_state57_blk;
+wire    ap_ST_fsm_state58_blk;
+reg    ap_ST_fsm_state59_blk;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 10'd1;
-#0 grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start_reg = 1'b0;
-#0 grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start_reg = 1'b0;
-#0 grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start_reg = 1'b0;
-#0 grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start_reg = 1'b0;
-#0 grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start_reg = 1'b0;
+#0 ap_CS_fsm = 59'd1;
+#0 grp_bnn_Pipeline_l1_loop_fu_1420_ap_start_reg = 1'b0;
+#0 grp_bnn_Pipeline_pack_loop_fu_1606_ap_start_reg = 1'b0;
+#0 grp_bnn_Pipeline_l2_loop_fu_1746_ap_start_reg = 1'b0;
+#0 grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start_reg = 1'b0;
+#0 grp_bnn_Pipeline_l3_loop_fu_1898_ap_start_reg = 1'b0;
 end
 
-bnn_l1_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 16 ),
-    .AddressWidth( 4 ))
-l1_bits_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_bits_address0),
-    .ce0(l1_bits_ce0),
-    .we0(l1_bits_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_d0),
-    .q0(l1_bits_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_address1),
-    .ce1(l1_bits_ce1),
-    .q1(l1_bits_q1)
-);
-
-bnn_l1_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 16 ),
-    .AddressWidth( 4 ))
-l1_bits_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_bits_1_address0),
-    .ce0(l1_bits_1_ce0),
-    .we0(l1_bits_1_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_d0),
-    .q0(l1_bits_1_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_address1),
-    .ce1(l1_bits_1_ce1),
-    .q1(l1_bits_1_q1)
-);
-
-bnn_l1_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 16 ),
-    .AddressWidth( 4 ))
-l1_bits_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_bits_2_address0),
-    .ce0(l1_bits_2_ce0),
-    .we0(l1_bits_2_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_d0),
-    .q0(l1_bits_2_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_address1),
-    .ce1(l1_bits_2_ce1),
-    .q1(l1_bits_2_q1)
-);
-
-bnn_l1_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 16 ),
-    .AddressWidth( 4 ))
-l1_bits_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_bits_3_address0),
-    .ce0(l1_bits_3_ce0),
-    .we0(l1_bits_3_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_d0),
-    .q0(l1_bits_3_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_address1),
-    .ce1(l1_bits_3_ce1),
-    .q1(l1_bits_3_q1)
-);
-
-bnn_l1_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 16 ),
-    .AddressWidth( 4 ))
-l1_bits_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_bits_4_address0),
-    .ce0(l1_bits_4_ce0),
-    .we0(l1_bits_4_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_d0),
-    .q0(l1_bits_4_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_address1),
-    .ce1(l1_bits_4_ce1),
-    .q1(l1_bits_4_q1)
-);
-
-bnn_l1_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 16 ),
-    .AddressWidth( 4 ))
-l1_bits_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_bits_5_address0),
-    .ce0(l1_bits_5_ce0),
-    .we0(l1_bits_5_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_d0),
-    .q0(l1_bits_5_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_address1),
-    .ce1(l1_bits_5_ce1),
-    .q1(l1_bits_5_q1)
-);
-
-bnn_l1_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 16 ),
-    .AddressWidth( 4 ))
-l1_bits_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_bits_6_address0),
-    .ce0(l1_bits_6_ce0),
-    .we0(l1_bits_6_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_d0),
-    .q0(l1_bits_6_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_address1),
-    .ce1(l1_bits_6_ce1),
-    .q1(l1_bits_6_q1)
-);
-
-bnn_l1_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 16 ),
-    .AddressWidth( 4 ))
-l1_bits_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_bits_7_address0),
-    .ce0(l1_bits_7_ce0),
-    .we0(l1_bits_7_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_d0),
-    .q0(l1_bits_7_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_address1),
-    .ce1(l1_bits_7_ce1),
-    .q1(l1_bits_7_q1)
-);
-
-bnn_l1_packed_RAM_AUTO_1R1W #(
-    .DataWidth( 16 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l1_packed_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l1_packed_address0),
-    .ce0(l1_packed_ce0),
-    .we0(l1_packed_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_d0),
-    .q0(l1_packed_q0)
-);
-
-bnn_l2_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l2_bits_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l2_bits_address0),
-    .ce0(l2_bits_ce0),
-    .we0(l2_bits_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_d0),
-    .q0(l2_bits_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_address1),
-    .ce1(l2_bits_ce1),
-    .q1(l2_bits_q1)
-);
-
-bnn_l2_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l2_bits_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l2_bits_1_address0),
-    .ce0(l2_bits_1_ce0),
-    .we0(l2_bits_1_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_d0),
-    .q0(l2_bits_1_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_address1),
-    .ce1(l2_bits_1_ce1),
-    .q1(l2_bits_1_q1)
-);
-
-bnn_l2_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l2_bits_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l2_bits_2_address0),
-    .ce0(l2_bits_2_ce0),
-    .we0(l2_bits_2_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_d0),
-    .q0(l2_bits_2_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_address1),
-    .ce1(l2_bits_2_ce1),
-    .q1(l2_bits_2_q1)
-);
-
-bnn_l2_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l2_bits_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l2_bits_3_address0),
-    .ce0(l2_bits_3_ce0),
-    .we0(l2_bits_3_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_d0),
-    .q0(l2_bits_3_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_address1),
-    .ce1(l2_bits_3_ce1),
-    .q1(l2_bits_3_q1)
-);
-
-bnn_l2_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l2_bits_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l2_bits_4_address0),
-    .ce0(l2_bits_4_ce0),
-    .we0(l2_bits_4_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_d0),
-    .q0(l2_bits_4_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_address1),
-    .ce1(l2_bits_4_ce1),
-    .q1(l2_bits_4_q1)
-);
-
-bnn_l2_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l2_bits_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l2_bits_5_address0),
-    .ce0(l2_bits_5_ce0),
-    .we0(l2_bits_5_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_d0),
-    .q0(l2_bits_5_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_address1),
-    .ce1(l2_bits_5_ce1),
-    .q1(l2_bits_5_q1)
-);
-
-bnn_l2_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l2_bits_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l2_bits_6_address0),
-    .ce0(l2_bits_6_ce0),
-    .we0(l2_bits_6_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_d0),
-    .q0(l2_bits_6_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_address1),
-    .ce1(l2_bits_6_ce1),
-    .q1(l2_bits_6_q1)
-);
-
-bnn_l2_bits_RAM_AUTO_1R1W #(
-    .DataWidth( 1 ),
-    .AddressRange( 8 ),
-    .AddressWidth( 3 ))
-l2_bits_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .address0(l2_bits_7_address0),
-    .ce0(l2_bits_7_ce0),
-    .we0(l2_bits_7_we0),
-    .d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_d0),
-    .q0(l2_bits_7_q0),
-    .address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_address1),
-    .ce1(l2_bits_7_ce1),
-    .q1(l2_bits_7_q1)
-);
-
-bnn_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1 grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124(
+bnn_bnn_Pipeline_l1_loop grp_bnn_Pipeline_l1_loop_fu_1420(
     .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start),
-    .ap_done(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_done),
-    .ap_idle(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_idle),
-    .ap_ready(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_ready),
-    .IN_r_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_IN_r_address0),
-    .IN_r_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_IN_r_ce0),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_bnn_Pipeline_l1_loop_fu_1420_ap_start),
+    .ap_done(grp_bnn_Pipeline_l1_loop_fu_1420_ap_done),
+    .ap_idle(grp_bnn_Pipeline_l1_loop_fu_1420_ap_idle),
+    .ap_ready(grp_bnn_Pipeline_l1_loop_fu_1420_ap_ready),
+    .IN_r_load(IN_r_load_reg_3955),
+    .IN_r_load_1(IN_r_load_1_reg_3965),
+    .IN_r_load_2(IN_r_load_2_reg_3975),
+    .IN_r_load_3(IN_r_load_3_reg_3985),
+    .IN_r_load_4(IN_r_load_4_reg_3995),
+    .IN_r_load_5(IN_r_load_5_reg_4005),
+    .IN_r_load_6(IN_r_load_6_reg_4015),
+    .IN_r_load_7(IN_r_load_7_reg_4025),
+    .IN_r_load_8(IN_r_load_8_reg_4035),
+    .IN_r_load_9(IN_r_load_9_reg_4045),
+    .IN_r_load_10(IN_r_load_10_reg_4055),
+    .IN_r_load_11(IN_r_load_11_reg_4065),
+    .IN_r_load_12(IN_r_load_12_reg_4075),
+    .IN_r_load_13(IN_r_load_13_reg_4085),
+    .IN_r_load_14(IN_r_load_14_reg_4095),
+    .IN_r_load_15(IN_r_load_15_reg_4105),
+    .IN_r_load_16(IN_r_load_16_reg_4115),
+    .IN_r_load_17(IN_r_load_17_reg_4125),
+    .IN_r_load_18(IN_r_load_18_reg_4135),
+    .IN_r_load_19(IN_r_load_19_reg_4145),
+    .IN_r_load_20(IN_r_load_20_reg_4155),
+    .IN_r_load_21(IN_r_load_21_reg_4165),
+    .IN_r_load_22(IN_r_load_22_reg_4175),
+    .IN_r_load_23(IN_r_load_23_reg_4185),
+    .IN_r_load_24(IN_r_load_24_reg_4195),
+    .IN_r_load_25(IN_r_load_25_reg_4205),
+    .IN_r_load_26(IN_r_load_26_reg_4215),
+    .IN_r_load_27(IN_r_load_27_reg_4225),
+    .IN_r_load_28(IN_r_load_28_reg_4235),
+    .IN_r_load_29(IN_r_load_29_reg_4245),
+    .IN_r_load_30(IN_r_load_30_reg_4255),
+    .IN_r_load_31(IN_r_load_31_reg_4265),
+    .IN_r_load_32(IN_r_load_32_reg_4275),
+    .IN_r_load_33(IN_r_load_33_reg_4285),
+    .IN_r_load_34(IN_r_load_34_reg_4295),
+    .IN_r_load_35(IN_r_load_35_reg_4305),
+    .IN_r_load_36(IN_r_load_36_reg_4315),
+    .IN_r_load_37(IN_r_load_37_reg_4325),
+    .IN_r_load_38(IN_r_load_38_reg_4335),
+    .IN_r_load_39(IN_r_load_39_reg_4345),
+    .IN_r_load_40(IN_r_load_40_reg_4355),
+    .IN_r_load_41(IN_r_load_41_reg_4365),
+    .IN_r_load_42(IN_r_load_42_reg_4375),
+    .IN_r_load_43(IN_r_load_43_reg_4385),
+    .IN_r_load_44(IN_r_load_44_reg_4395),
+    .IN_r_load_45(IN_r_load_45_reg_4405),
+    .IN_r_load_46(IN_r_load_46_reg_4415),
+    .IN_r_load_47(IN_r_load_47_reg_4425),
+    .IN_r_load_48(IN_r_load_48_reg_4435),
+    .l1_out_address0(grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_address0),
+    .l1_out_ce0(grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_ce0),
+    .l1_out_we0(grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_we0),
+    .l1_out_d0(grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_d0),
+    .l1_bits_127_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_127_out),
+    .l1_bits_127_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_127_out_ap_vld),
+    .l1_bits_126_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_126_out),
+    .l1_bits_126_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_126_out_ap_vld),
+    .l1_bits_125_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_125_out),
+    .l1_bits_125_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_125_out_ap_vld),
+    .l1_bits_124_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_124_out),
+    .l1_bits_124_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_124_out_ap_vld),
+    .l1_bits_123_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_123_out),
+    .l1_bits_123_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_123_out_ap_vld),
+    .l1_bits_122_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_122_out),
+    .l1_bits_122_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_122_out_ap_vld),
+    .l1_bits_121_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_121_out),
+    .l1_bits_121_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_121_out_ap_vld),
+    .l1_bits_120_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_120_out),
+    .l1_bits_120_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_120_out_ap_vld),
+    .l1_bits_119_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_119_out),
+    .l1_bits_119_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_119_out_ap_vld),
+    .l1_bits_118_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_118_out),
+    .l1_bits_118_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_118_out_ap_vld),
+    .l1_bits_117_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_117_out),
+    .l1_bits_117_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_117_out_ap_vld),
+    .l1_bits_116_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_116_out),
+    .l1_bits_116_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_116_out_ap_vld),
+    .l1_bits_115_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_115_out),
+    .l1_bits_115_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_115_out_ap_vld),
+    .l1_bits_114_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_114_out),
+    .l1_bits_114_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_114_out_ap_vld),
+    .l1_bits_113_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_113_out),
+    .l1_bits_113_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_113_out_ap_vld),
+    .l1_bits_112_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_112_out),
+    .l1_bits_112_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_112_out_ap_vld),
+    .l1_bits_111_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_111_out),
+    .l1_bits_111_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_111_out_ap_vld),
+    .l1_bits_110_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_110_out),
+    .l1_bits_110_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_110_out_ap_vld),
+    .l1_bits_109_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_109_out),
+    .l1_bits_109_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_109_out_ap_vld),
+    .l1_bits_108_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_108_out),
+    .l1_bits_108_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_108_out_ap_vld),
+    .l1_bits_107_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_107_out),
+    .l1_bits_107_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_107_out_ap_vld),
+    .l1_bits_106_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_106_out),
+    .l1_bits_106_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_106_out_ap_vld),
+    .l1_bits_105_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_105_out),
+    .l1_bits_105_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_105_out_ap_vld),
+    .l1_bits_104_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_104_out),
+    .l1_bits_104_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_104_out_ap_vld),
+    .l1_bits_103_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_103_out),
+    .l1_bits_103_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_103_out_ap_vld),
+    .l1_bits_102_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_102_out),
+    .l1_bits_102_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_102_out_ap_vld),
+    .l1_bits_101_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_101_out),
+    .l1_bits_101_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_101_out_ap_vld),
+    .l1_bits_100_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_100_out),
+    .l1_bits_100_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_100_out_ap_vld),
+    .l1_bits_99_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_99_out),
+    .l1_bits_99_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_99_out_ap_vld),
+    .l1_bits_98_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_98_out),
+    .l1_bits_98_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_98_out_ap_vld),
+    .l1_bits_97_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_97_out),
+    .l1_bits_97_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_97_out_ap_vld),
+    .l1_bits_96_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_96_out),
+    .l1_bits_96_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_96_out_ap_vld),
+    .l1_bits_95_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_95_out),
+    .l1_bits_95_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_95_out_ap_vld),
+    .l1_bits_94_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_94_out),
+    .l1_bits_94_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_94_out_ap_vld),
+    .l1_bits_93_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_93_out),
+    .l1_bits_93_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_93_out_ap_vld),
+    .l1_bits_92_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_92_out),
+    .l1_bits_92_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_92_out_ap_vld),
+    .l1_bits_91_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_91_out),
+    .l1_bits_91_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_91_out_ap_vld),
+    .l1_bits_90_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_90_out),
+    .l1_bits_90_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_90_out_ap_vld),
+    .l1_bits_89_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_89_out),
+    .l1_bits_89_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_89_out_ap_vld),
+    .l1_bits_88_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_88_out),
+    .l1_bits_88_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_88_out_ap_vld),
+    .l1_bits_87_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_87_out),
+    .l1_bits_87_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_87_out_ap_vld),
+    .l1_bits_86_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_86_out),
+    .l1_bits_86_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_86_out_ap_vld),
+    .l1_bits_85_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_85_out),
+    .l1_bits_85_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_85_out_ap_vld),
+    .l1_bits_84_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_84_out),
+    .l1_bits_84_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_84_out_ap_vld),
+    .l1_bits_83_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_83_out),
+    .l1_bits_83_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_83_out_ap_vld),
+    .l1_bits_82_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_82_out),
+    .l1_bits_82_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_82_out_ap_vld),
+    .l1_bits_81_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_81_out),
+    .l1_bits_81_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_81_out_ap_vld),
+    .l1_bits_80_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_80_out),
+    .l1_bits_80_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_80_out_ap_vld),
+    .l1_bits_79_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_79_out),
+    .l1_bits_79_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_79_out_ap_vld),
+    .l1_bits_78_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_78_out),
+    .l1_bits_78_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_78_out_ap_vld),
+    .l1_bits_77_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_77_out),
+    .l1_bits_77_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_77_out_ap_vld),
+    .l1_bits_76_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_76_out),
+    .l1_bits_76_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_76_out_ap_vld),
+    .l1_bits_75_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_75_out),
+    .l1_bits_75_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_75_out_ap_vld),
+    .l1_bits_74_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_74_out),
+    .l1_bits_74_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_74_out_ap_vld),
+    .l1_bits_73_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_73_out),
+    .l1_bits_73_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_73_out_ap_vld),
+    .l1_bits_72_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_72_out),
+    .l1_bits_72_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_72_out_ap_vld),
+    .l1_bits_71_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_71_out),
+    .l1_bits_71_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_71_out_ap_vld),
+    .l1_bits_70_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_70_out),
+    .l1_bits_70_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_70_out_ap_vld),
+    .l1_bits_69_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_69_out),
+    .l1_bits_69_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_69_out_ap_vld),
+    .l1_bits_68_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_68_out),
+    .l1_bits_68_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_68_out_ap_vld),
+    .l1_bits_67_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_67_out),
+    .l1_bits_67_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_67_out_ap_vld),
+    .l1_bits_66_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_66_out),
+    .l1_bits_66_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_66_out_ap_vld),
+    .l1_bits_65_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_65_out),
+    .l1_bits_65_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_65_out_ap_vld),
+    .l1_bits_64_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_64_out),
+    .l1_bits_64_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_64_out_ap_vld),
+    .l1_bits_63_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_63_out),
+    .l1_bits_63_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_63_out_ap_vld),
+    .l1_bits_62_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_62_out),
+    .l1_bits_62_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_62_out_ap_vld),
+    .l1_bits_61_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_61_out),
+    .l1_bits_61_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_61_out_ap_vld),
+    .l1_bits_60_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_60_out),
+    .l1_bits_60_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_60_out_ap_vld),
+    .l1_bits_59_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_59_out),
+    .l1_bits_59_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_59_out_ap_vld),
+    .l1_bits_58_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_58_out),
+    .l1_bits_58_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_58_out_ap_vld),
+    .l1_bits_57_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_57_out),
+    .l1_bits_57_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_57_out_ap_vld),
+    .l1_bits_56_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_56_out),
+    .l1_bits_56_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_56_out_ap_vld),
+    .l1_bits_55_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_55_out),
+    .l1_bits_55_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_55_out_ap_vld),
+    .l1_bits_54_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_54_out),
+    .l1_bits_54_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_54_out_ap_vld),
+    .l1_bits_53_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_53_out),
+    .l1_bits_53_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_53_out_ap_vld),
+    .l1_bits_52_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_52_out),
+    .l1_bits_52_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_52_out_ap_vld),
+    .l1_bits_51_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_51_out),
+    .l1_bits_51_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_51_out_ap_vld),
+    .l1_bits_50_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_50_out),
+    .l1_bits_50_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_50_out_ap_vld),
+    .l1_bits_49_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_49_out),
+    .l1_bits_49_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_49_out_ap_vld),
+    .l1_bits_48_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_48_out),
+    .l1_bits_48_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_48_out_ap_vld),
+    .l1_bits_47_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_47_out),
+    .l1_bits_47_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_47_out_ap_vld),
+    .l1_bits_46_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_46_out),
+    .l1_bits_46_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_46_out_ap_vld),
+    .l1_bits_45_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_45_out),
+    .l1_bits_45_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_45_out_ap_vld),
+    .l1_bits_44_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_44_out),
+    .l1_bits_44_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_44_out_ap_vld),
+    .l1_bits_43_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_43_out),
+    .l1_bits_43_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_43_out_ap_vld),
+    .l1_bits_42_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_42_out),
+    .l1_bits_42_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_42_out_ap_vld),
+    .l1_bits_41_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_41_out),
+    .l1_bits_41_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_41_out_ap_vld),
+    .l1_bits_40_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_40_out),
+    .l1_bits_40_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_40_out_ap_vld),
+    .l1_bits_39_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_39_out),
+    .l1_bits_39_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_39_out_ap_vld),
+    .l1_bits_38_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_38_out),
+    .l1_bits_38_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_38_out_ap_vld),
+    .l1_bits_37_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_37_out),
+    .l1_bits_37_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_37_out_ap_vld),
+    .l1_bits_36_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_36_out),
+    .l1_bits_36_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_36_out_ap_vld),
+    .l1_bits_35_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_35_out),
+    .l1_bits_35_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_35_out_ap_vld),
+    .l1_bits_34_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_34_out),
+    .l1_bits_34_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_34_out_ap_vld),
+    .l1_bits_33_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_33_out),
+    .l1_bits_33_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_33_out_ap_vld),
+    .l1_bits_32_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_32_out),
+    .l1_bits_32_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_32_out_ap_vld),
+    .l1_bits_31_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_31_out),
+    .l1_bits_31_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_31_out_ap_vld),
+    .l1_bits_30_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_30_out),
+    .l1_bits_30_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_30_out_ap_vld),
+    .l1_bits_29_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_29_out),
+    .l1_bits_29_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_29_out_ap_vld),
+    .l1_bits_28_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_28_out),
+    .l1_bits_28_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_28_out_ap_vld),
+    .l1_bits_27_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_27_out),
+    .l1_bits_27_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_27_out_ap_vld),
+    .l1_bits_26_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_26_out),
+    .l1_bits_26_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_26_out_ap_vld),
+    .l1_bits_25_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_25_out),
+    .l1_bits_25_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_25_out_ap_vld),
+    .l1_bits_24_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_24_out),
+    .l1_bits_24_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_24_out_ap_vld),
+    .l1_bits_23_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_23_out),
+    .l1_bits_23_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_23_out_ap_vld),
+    .l1_bits_22_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_22_out),
+    .l1_bits_22_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_22_out_ap_vld),
+    .l1_bits_21_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_21_out),
+    .l1_bits_21_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_21_out_ap_vld),
+    .l1_bits_20_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_20_out),
+    .l1_bits_20_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_20_out_ap_vld),
+    .l1_bits_19_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_19_out),
+    .l1_bits_19_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_19_out_ap_vld),
+    .l1_bits_18_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_18_out),
+    .l1_bits_18_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_18_out_ap_vld),
+    .l1_bits_17_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_17_out),
+    .l1_bits_17_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_17_out_ap_vld),
+    .l1_bits_16_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_16_out),
+    .l1_bits_16_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_16_out_ap_vld),
+    .l1_bits_15_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_15_out),
+    .l1_bits_15_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_15_out_ap_vld),
+    .l1_bits_14_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_14_out),
+    .l1_bits_14_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_14_out_ap_vld),
+    .l1_bits_13_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_13_out),
+    .l1_bits_13_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_13_out_ap_vld),
+    .l1_bits_12_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_12_out),
+    .l1_bits_12_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_12_out_ap_vld),
+    .l1_bits_11_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_11_out),
+    .l1_bits_11_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_11_out_ap_vld),
+    .l1_bits_10_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_10_out),
+    .l1_bits_10_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_10_out_ap_vld),
+    .l1_bits_9_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_9_out),
+    .l1_bits_9_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_9_out_ap_vld),
+    .l1_bits_8_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_8_out),
+    .l1_bits_8_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_8_out_ap_vld),
+    .l1_bits_7_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_7_out),
+    .l1_bits_7_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_7_out_ap_vld),
+    .l1_bits_6_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_6_out),
+    .l1_bits_6_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_6_out_ap_vld),
+    .l1_bits_5_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_5_out),
+    .l1_bits_5_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_5_out_ap_vld),
+    .l1_bits_4_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_4_out),
+    .l1_bits_4_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_4_out_ap_vld),
+    .l1_bits_3_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_3_out),
+    .l1_bits_3_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_3_out_ap_vld),
+    .l1_bits_2_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_2_out),
+    .l1_bits_2_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_2_out_ap_vld),
+    .l1_bits_1_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_1_out),
+    .l1_bits_1_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_1_out_ap_vld),
+    .l1_bits_out(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_out),
+    .l1_bits_out_ap_vld(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_out_ap_vld)
+);
+
+bnn_bnn_Pipeline_pack_loop grp_bnn_Pipeline_pack_loop_fu_1606(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_bnn_Pipeline_pack_loop_fu_1606_ap_start),
+    .ap_done(grp_bnn_Pipeline_pack_loop_fu_1606_ap_done),
+    .ap_idle(grp_bnn_Pipeline_pack_loop_fu_1606_ap_idle),
+    .ap_ready(grp_bnn_Pipeline_pack_loop_fu_1606_ap_ready),
+    .l1_bits_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_out),
+    .l1_bits_16_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_16_out),
+    .l1_bits_32_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_32_out),
+    .l1_bits_48_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_48_out),
+    .l1_bits_64_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_64_out),
+    .l1_bits_80_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_80_out),
+    .l1_bits_96_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_96_out),
+    .l1_bits_112_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_112_out),
+    .l1_bits_1_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_1_out),
+    .l1_bits_17_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_17_out),
+    .l1_bits_33_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_33_out),
+    .l1_bits_49_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_49_out),
+    .l1_bits_65_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_65_out),
+    .l1_bits_81_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_81_out),
+    .l1_bits_97_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_97_out),
+    .l1_bits_113_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_113_out),
+    .l1_bits_2_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_2_out),
+    .l1_bits_18_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_18_out),
+    .l1_bits_34_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_34_out),
+    .l1_bits_50_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_50_out),
+    .l1_bits_66_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_66_out),
+    .l1_bits_82_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_82_out),
+    .l1_bits_98_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_98_out),
+    .l1_bits_114_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_114_out),
+    .l1_bits_3_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_3_out),
+    .l1_bits_19_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_19_out),
+    .l1_bits_35_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_35_out),
+    .l1_bits_51_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_51_out),
+    .l1_bits_67_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_67_out),
+    .l1_bits_83_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_83_out),
+    .l1_bits_99_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_99_out),
+    .l1_bits_115_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_115_out),
+    .l1_bits_4_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_4_out),
+    .l1_bits_20_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_20_out),
+    .l1_bits_36_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_36_out),
+    .l1_bits_52_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_52_out),
+    .l1_bits_68_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_68_out),
+    .l1_bits_84_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_84_out),
+    .l1_bits_100_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_100_out),
+    .l1_bits_116_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_116_out),
+    .l1_bits_5_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_5_out),
+    .l1_bits_21_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_21_out),
+    .l1_bits_37_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_37_out),
+    .l1_bits_53_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_53_out),
+    .l1_bits_69_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_69_out),
+    .l1_bits_85_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_85_out),
+    .l1_bits_101_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_101_out),
+    .l1_bits_117_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_117_out),
+    .l1_bits_6_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_6_out),
+    .l1_bits_22_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_22_out),
+    .l1_bits_38_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_38_out),
+    .l1_bits_54_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_54_out),
+    .l1_bits_70_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_70_out),
+    .l1_bits_86_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_86_out),
+    .l1_bits_102_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_102_out),
+    .l1_bits_118_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_118_out),
+    .l1_bits_7_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_7_out),
+    .l1_bits_23_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_23_out),
+    .l1_bits_39_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_39_out),
+    .l1_bits_55_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_55_out),
+    .l1_bits_71_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_71_out),
+    .l1_bits_87_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_87_out),
+    .l1_bits_103_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_103_out),
+    .l1_bits_119_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_119_out),
+    .l1_bits_8_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_8_out),
+    .l1_bits_24_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_24_out),
+    .l1_bits_40_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_40_out),
+    .l1_bits_56_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_56_out),
+    .l1_bits_72_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_72_out),
+    .l1_bits_88_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_88_out),
+    .l1_bits_104_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_104_out),
+    .l1_bits_120_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_120_out),
+    .l1_bits_9_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_9_out),
+    .l1_bits_25_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_25_out),
+    .l1_bits_41_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_41_out),
+    .l1_bits_57_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_57_out),
+    .l1_bits_73_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_73_out),
+    .l1_bits_89_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_89_out),
+    .l1_bits_105_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_105_out),
+    .l1_bits_121_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_121_out),
+    .l1_bits_10_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_10_out),
+    .l1_bits_26_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_26_out),
+    .l1_bits_42_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_42_out),
+    .l1_bits_58_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_58_out),
+    .l1_bits_74_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_74_out),
+    .l1_bits_90_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_90_out),
+    .l1_bits_106_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_106_out),
+    .l1_bits_122_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_122_out),
+    .l1_bits_11_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_11_out),
+    .l1_bits_27_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_27_out),
+    .l1_bits_43_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_43_out),
+    .l1_bits_59_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_59_out),
+    .l1_bits_75_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_75_out),
+    .l1_bits_91_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_91_out),
+    .l1_bits_107_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_107_out),
+    .l1_bits_123_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_123_out),
+    .l1_bits_12_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_12_out),
+    .l1_bits_28_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_28_out),
+    .l1_bits_44_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_44_out),
+    .l1_bits_60_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_60_out),
+    .l1_bits_76_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_76_out),
+    .l1_bits_92_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_92_out),
+    .l1_bits_108_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_108_out),
+    .l1_bits_124_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_124_out),
+    .l1_bits_13_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_13_out),
+    .l1_bits_29_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_29_out),
+    .l1_bits_45_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_45_out),
+    .l1_bits_61_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_61_out),
+    .l1_bits_77_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_77_out),
+    .l1_bits_93_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_93_out),
+    .l1_bits_109_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_109_out),
+    .l1_bits_125_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_125_out),
+    .l1_bits_14_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_14_out),
+    .l1_bits_30_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_30_out),
+    .l1_bits_46_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_46_out),
+    .l1_bits_62_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_62_out),
+    .l1_bits_78_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_78_out),
+    .l1_bits_94_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_94_out),
+    .l1_bits_110_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_110_out),
+    .l1_bits_126_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_126_out),
+    .l1_bits_15_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_15_out),
+    .l1_bits_31_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_31_out),
+    .l1_bits_47_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_47_out),
+    .l1_bits_63_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_63_out),
+    .l1_bits_79_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_79_out),
+    .l1_bits_95_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_95_out),
+    .l1_bits_111_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_111_out),
+    .l1_bits_127_reload(grp_bnn_Pipeline_l1_loop_fu_1420_l1_bits_127_out),
+    .p_0_0282_7102_out(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_7102_out),
+    .p_0_0282_7102_out_ap_vld(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_7102_out_ap_vld),
+    .p_0_0282_6100_out(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_6100_out),
+    .p_0_0282_6100_out_ap_vld(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_6100_out_ap_vld),
+    .p_0_0282_598_out(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_598_out),
+    .p_0_0282_598_out_ap_vld(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_598_out_ap_vld),
+    .p_0_0282_496_out(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_496_out),
+    .p_0_0282_496_out_ap_vld(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_496_out_ap_vld),
+    .p_0_0282_394_out(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_394_out),
+    .p_0_0282_394_out_ap_vld(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_394_out_ap_vld),
+    .p_0_0282_292_out(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_292_out),
+    .p_0_0282_292_out_ap_vld(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_292_out_ap_vld),
+    .p_0_0282_190_out(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_190_out),
+    .p_0_0282_190_out_ap_vld(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_190_out_ap_vld),
+    .p_0_028288_out(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_028288_out),
+    .p_0_028288_out_ap_vld(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_028288_out_ap_vld)
+);
+
+bnn_bnn_Pipeline_l2_loop grp_bnn_Pipeline_l2_loop_fu_1746(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_bnn_Pipeline_l2_loop_fu_1746_ap_start),
+    .ap_done(grp_bnn_Pipeline_l2_loop_fu_1746_ap_done),
+    .ap_idle(grp_bnn_Pipeline_l2_loop_fu_1746_ap_idle),
+    .ap_ready(grp_bnn_Pipeline_l2_loop_fu_1746_ap_ready),
+    .p_0_028288_reload(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_028288_out),
+    .p_0_0282_190_reload(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_190_out),
+    .p_0_0282_292_reload(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_292_out),
+    .p_0_0282_394_reload(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_394_out),
+    .p_0_0282_496_reload(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_496_out),
+    .p_0_0282_598_reload(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_598_out),
+    .p_0_0282_6100_reload(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_6100_out),
+    .p_0_0282_7102_reload(grp_bnn_Pipeline_pack_loop_fu_1606_p_0_0282_7102_out),
+    .l2_out_address0(grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_address0),
+    .l2_out_ce0(grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_ce0),
+    .l2_out_we0(grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_we0),
+    .l2_out_d0(grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_d0),
+    .l2_bits_63_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_63_out),
+    .l2_bits_63_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_63_out_ap_vld),
+    .l2_bits_62_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_62_out),
+    .l2_bits_62_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_62_out_ap_vld),
+    .l2_bits_61_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_61_out),
+    .l2_bits_61_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_61_out_ap_vld),
+    .l2_bits_60_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_60_out),
+    .l2_bits_60_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_60_out_ap_vld),
+    .l2_bits_59_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_59_out),
+    .l2_bits_59_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_59_out_ap_vld),
+    .l2_bits_58_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_58_out),
+    .l2_bits_58_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_58_out_ap_vld),
+    .l2_bits_57_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_57_out),
+    .l2_bits_57_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_57_out_ap_vld),
+    .l2_bits_56_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_56_out),
+    .l2_bits_56_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_56_out_ap_vld),
+    .l2_bits_55_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_55_out),
+    .l2_bits_55_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_55_out_ap_vld),
+    .l2_bits_54_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_54_out),
+    .l2_bits_54_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_54_out_ap_vld),
+    .l2_bits_53_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_53_out),
+    .l2_bits_53_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_53_out_ap_vld),
+    .l2_bits_52_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_52_out),
+    .l2_bits_52_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_52_out_ap_vld),
+    .l2_bits_51_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_51_out),
+    .l2_bits_51_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_51_out_ap_vld),
+    .l2_bits_50_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_50_out),
+    .l2_bits_50_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_50_out_ap_vld),
+    .l2_bits_49_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_49_out),
+    .l2_bits_49_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_49_out_ap_vld),
+    .l2_bits_48_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_48_out),
+    .l2_bits_48_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_48_out_ap_vld),
+    .l2_bits_47_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_47_out),
+    .l2_bits_47_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_47_out_ap_vld),
+    .l2_bits_46_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_46_out),
+    .l2_bits_46_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_46_out_ap_vld),
+    .l2_bits_45_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_45_out),
+    .l2_bits_45_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_45_out_ap_vld),
+    .l2_bits_44_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_44_out),
+    .l2_bits_44_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_44_out_ap_vld),
+    .l2_bits_43_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_43_out),
+    .l2_bits_43_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_43_out_ap_vld),
+    .l2_bits_42_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_42_out),
+    .l2_bits_42_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_42_out_ap_vld),
+    .l2_bits_41_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_41_out),
+    .l2_bits_41_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_41_out_ap_vld),
+    .l2_bits_40_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_40_out),
+    .l2_bits_40_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_40_out_ap_vld),
+    .l2_bits_39_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_39_out),
+    .l2_bits_39_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_39_out_ap_vld),
+    .l2_bits_38_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_38_out),
+    .l2_bits_38_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_38_out_ap_vld),
+    .l2_bits_37_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_37_out),
+    .l2_bits_37_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_37_out_ap_vld),
+    .l2_bits_36_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_36_out),
+    .l2_bits_36_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_36_out_ap_vld),
+    .l2_bits_35_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_35_out),
+    .l2_bits_35_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_35_out_ap_vld),
+    .l2_bits_34_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_34_out),
+    .l2_bits_34_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_34_out_ap_vld),
+    .l2_bits_33_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_33_out),
+    .l2_bits_33_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_33_out_ap_vld),
+    .l2_bits_32_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_32_out),
+    .l2_bits_32_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_32_out_ap_vld),
+    .l2_bits_31_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_31_out),
+    .l2_bits_31_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_31_out_ap_vld),
+    .l2_bits_30_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_30_out),
+    .l2_bits_30_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_30_out_ap_vld),
+    .l2_bits_29_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_29_out),
+    .l2_bits_29_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_29_out_ap_vld),
+    .l2_bits_28_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_28_out),
+    .l2_bits_28_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_28_out_ap_vld),
+    .l2_bits_27_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_27_out),
+    .l2_bits_27_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_27_out_ap_vld),
+    .l2_bits_26_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_26_out),
+    .l2_bits_26_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_26_out_ap_vld),
+    .l2_bits_25_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_25_out),
+    .l2_bits_25_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_25_out_ap_vld),
+    .l2_bits_24_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_24_out),
+    .l2_bits_24_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_24_out_ap_vld),
+    .l2_bits_23_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_23_out),
+    .l2_bits_23_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_23_out_ap_vld),
+    .l2_bits_22_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_22_out),
+    .l2_bits_22_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_22_out_ap_vld),
+    .l2_bits_21_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_21_out),
+    .l2_bits_21_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_21_out_ap_vld),
+    .l2_bits_20_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_20_out),
+    .l2_bits_20_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_20_out_ap_vld),
+    .l2_bits_19_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_19_out),
+    .l2_bits_19_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_19_out_ap_vld),
+    .l2_bits_18_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_18_out),
+    .l2_bits_18_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_18_out_ap_vld),
+    .l2_bits_17_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_17_out),
+    .l2_bits_17_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_17_out_ap_vld),
+    .l2_bits_16_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_16_out),
+    .l2_bits_16_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_16_out_ap_vld),
+    .l2_bits_15_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_15_out),
+    .l2_bits_15_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_15_out_ap_vld),
+    .l2_bits_14_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_14_out),
+    .l2_bits_14_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_14_out_ap_vld),
+    .l2_bits_13_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_13_out),
+    .l2_bits_13_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_13_out_ap_vld),
+    .l2_bits_12_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_12_out),
+    .l2_bits_12_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_12_out_ap_vld),
+    .l2_bits_11_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_11_out),
+    .l2_bits_11_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_11_out_ap_vld),
+    .l2_bits_10_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_10_out),
+    .l2_bits_10_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_10_out_ap_vld),
+    .l2_bits_9_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_9_out),
+    .l2_bits_9_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_9_out_ap_vld),
+    .l2_bits_8_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_8_out),
+    .l2_bits_8_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_8_out_ap_vld),
+    .l2_bits_7_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_7_out),
+    .l2_bits_7_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_7_out_ap_vld),
+    .l2_bits_6_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_6_out),
+    .l2_bits_6_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_6_out_ap_vld),
+    .l2_bits_5_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_5_out),
+    .l2_bits_5_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_5_out_ap_vld),
+    .l2_bits_4_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_4_out),
+    .l2_bits_4_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_4_out_ap_vld),
+    .l2_bits_3_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_3_out),
+    .l2_bits_3_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_3_out_ap_vld),
+    .l2_bits_2_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_2_out),
+    .l2_bits_2_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_2_out_ap_vld),
+    .l2_bits_1_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_1_out),
+    .l2_bits_1_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_1_out_ap_vld),
+    .l2_bits_out(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_out),
+    .l2_bits_out_ap_vld(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_out_ap_vld)
+);
+
+bnn_bnn_Pipeline_pack_loop1 grp_bnn_Pipeline_pack_loop1_fu_1826(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start),
+    .ap_done(grp_bnn_Pipeline_pack_loop1_fu_1826_ap_done),
+    .ap_idle(grp_bnn_Pipeline_pack_loop1_fu_1826_ap_idle),
+    .ap_ready(grp_bnn_Pipeline_pack_loop1_fu_1826_ap_ready),
+    .l2_bits_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_out),
+    .l2_bits_16_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_16_out),
+    .l2_bits_32_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_32_out),
+    .l2_bits_48_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_48_out),
+    .l2_bits_1_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_1_out),
+    .l2_bits_17_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_17_out),
+    .l2_bits_33_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_33_out),
+    .l2_bits_49_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_49_out),
+    .l2_bits_2_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_2_out),
+    .l2_bits_18_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_18_out),
+    .l2_bits_34_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_34_out),
+    .l2_bits_50_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_50_out),
+    .l2_bits_3_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_3_out),
+    .l2_bits_19_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_19_out),
+    .l2_bits_35_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_35_out),
+    .l2_bits_51_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_51_out),
+    .l2_bits_4_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_4_out),
+    .l2_bits_20_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_20_out),
+    .l2_bits_36_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_36_out),
+    .l2_bits_52_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_52_out),
+    .l2_bits_5_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_5_out),
+    .l2_bits_21_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_21_out),
+    .l2_bits_37_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_37_out),
+    .l2_bits_53_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_53_out),
+    .l2_bits_6_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_6_out),
+    .l2_bits_22_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_22_out),
+    .l2_bits_38_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_38_out),
+    .l2_bits_54_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_54_out),
+    .l2_bits_7_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_7_out),
+    .l2_bits_23_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_23_out),
+    .l2_bits_39_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_39_out),
+    .l2_bits_55_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_55_out),
+    .l2_bits_8_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_8_out),
+    .l2_bits_24_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_24_out),
+    .l2_bits_40_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_40_out),
+    .l2_bits_56_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_56_out),
+    .l2_bits_9_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_9_out),
+    .l2_bits_25_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_25_out),
+    .l2_bits_41_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_41_out),
+    .l2_bits_57_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_57_out),
+    .l2_bits_10_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_10_out),
+    .l2_bits_26_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_26_out),
+    .l2_bits_42_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_42_out),
+    .l2_bits_58_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_58_out),
+    .l2_bits_11_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_11_out),
+    .l2_bits_27_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_27_out),
+    .l2_bits_43_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_43_out),
+    .l2_bits_59_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_59_out),
+    .l2_bits_12_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_12_out),
+    .l2_bits_28_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_28_out),
+    .l2_bits_44_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_44_out),
+    .l2_bits_60_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_60_out),
+    .l2_bits_13_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_13_out),
+    .l2_bits_29_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_29_out),
+    .l2_bits_45_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_45_out),
+    .l2_bits_61_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_61_out),
+    .l2_bits_14_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_14_out),
+    .l2_bits_30_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_30_out),
+    .l2_bits_46_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_46_out),
+    .l2_bits_62_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_62_out),
+    .l2_bits_15_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_15_out),
+    .l2_bits_31_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_31_out),
+    .l2_bits_47_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_47_out),
+    .l2_bits_63_reload(grp_bnn_Pipeline_l2_loop_fu_1746_l2_bits_63_out),
+    .p_0_0271_3110_out(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_3110_out),
+    .p_0_0271_3110_out_ap_vld(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_3110_out_ap_vld),
+    .p_0_0271_2108_out(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_2108_out),
+    .p_0_0271_2108_out_ap_vld(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_2108_out_ap_vld),
+    .p_0_0271_1106_out(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_1106_out),
+    .p_0_0271_1106_out_ap_vld(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_1106_out_ap_vld),
+    .p_0_0271104_out(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271104_out),
+    .p_0_0271104_out_ap_vld(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271104_out_ap_vld)
+);
+
+bnn_bnn_Pipeline_l3_loop grp_bnn_Pipeline_l3_loop_fu_1898(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_bnn_Pipeline_l3_loop_fu_1898_ap_start),
+    .ap_done(grp_bnn_Pipeline_l3_loop_fu_1898_ap_done),
+    .ap_idle(grp_bnn_Pipeline_l3_loop_fu_1898_ap_idle),
+    .ap_ready(grp_bnn_Pipeline_l3_loop_fu_1898_ap_ready),
+    .p_0_0271104_reload(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271104_out),
+    .p_0_0271_1106_reload(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_1106_out),
+    .p_0_0271_2108_reload(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_2108_out),
+    .p_0_0271_3110_reload(grp_bnn_Pipeline_pack_loop1_fu_1826_p_0_0271_3110_out),
+    .ys_address0(grp_bnn_Pipeline_l3_loop_fu_1898_ys_address0),
+    .ys_ce0(grp_bnn_Pipeline_l3_loop_fu_1898_ys_ce0),
+    .ys_we0(grp_bnn_Pipeline_l3_loop_fu_1898_ys_we0),
+    .ys_d0(grp_bnn_Pipeline_l3_loop_fu_1898_ys_d0)
+);
+
+bnn_CTRL_s_axi #(
+    .C_S_AXI_ADDR_WIDTH( C_S_AXI_CTRL_ADDR_WIDTH ),
+    .C_S_AXI_DATA_WIDTH( C_S_AXI_CTRL_DATA_WIDTH ))
+CTRL_s_axi_U(
+    .AWVALID(s_axi_CTRL_AWVALID),
+    .AWREADY(s_axi_CTRL_AWREADY),
+    .AWADDR(s_axi_CTRL_AWADDR),
+    .WVALID(s_axi_CTRL_WVALID),
+    .WREADY(s_axi_CTRL_WREADY),
+    .WDATA(s_axi_CTRL_WDATA),
+    .WSTRB(s_axi_CTRL_WSTRB),
+    .ARVALID(s_axi_CTRL_ARVALID),
+    .ARREADY(s_axi_CTRL_ARREADY),
+    .ARADDR(s_axi_CTRL_ARADDR),
+    .RVALID(s_axi_CTRL_RVALID),
+    .RREADY(s_axi_CTRL_RREADY),
+    .RDATA(s_axi_CTRL_RDATA),
+    .RRESP(s_axi_CTRL_RRESP),
+    .BVALID(s_axi_CTRL_BVALID),
+    .BREADY(s_axi_CTRL_BREADY),
+    .BRESP(s_axi_CTRL_BRESP),
+    .ACLK(ap_clk),
+    .ARESET(ap_rst_n_inv),
+    .ACLK_EN(1'b1),
+    .ys_address0(grp_bnn_Pipeline_l3_loop_fu_1898_ys_address0),
+    .ys_ce0(grp_bnn_Pipeline_l3_loop_fu_1898_ys_ce0),
+    .ys_we0(grp_bnn_Pipeline_l3_loop_fu_1898_ys_we0),
+    .ys_d0(grp_bnn_Pipeline_l3_loop_fu_1898_ys_d0),
+    .IN_r_address0(IN_r_address0_local),
+    .IN_r_ce0(IN_r_ce0_local),
     .IN_r_q0(IN_r_q0),
-    .l1_bits_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_address0),
-    .l1_bits_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_ce0),
-    .l1_bits_we0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_we0),
-    .l1_bits_d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_d0),
-    .l1_bits_1_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_address0),
-    .l1_bits_1_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_ce0),
-    .l1_bits_1_we0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_we0),
-    .l1_bits_1_d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_d0),
-    .l1_bits_2_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_address0),
-    .l1_bits_2_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_ce0),
-    .l1_bits_2_we0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_we0),
-    .l1_bits_2_d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_d0),
-    .l1_bits_3_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_address0),
-    .l1_bits_3_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_ce0),
-    .l1_bits_3_we0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_we0),
-    .l1_bits_3_d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_d0),
-    .l1_bits_4_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_address0),
-    .l1_bits_4_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_ce0),
-    .l1_bits_4_we0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_we0),
-    .l1_bits_4_d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_d0),
-    .l1_bits_5_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_address0),
-    .l1_bits_5_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_ce0),
-    .l1_bits_5_we0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_we0),
-    .l1_bits_5_d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_d0),
-    .l1_bits_6_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_address0),
-    .l1_bits_6_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_ce0),
-    .l1_bits_6_we0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_we0),
-    .l1_bits_6_d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_d0),
-    .l1_bits_7_address0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_address0),
-    .l1_bits_7_ce0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_ce0),
-    .l1_bits_7_we0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_we0),
-    .l1_bits_7_d0(grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_d0)
-);
-
-bnn_bnn_Pipeline_VITIS_LOOP_24_1 grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start),
-    .ap_done(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_done),
-    .ap_idle(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_idle),
-    .ap_ready(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_ready),
-    .l1_bits_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_address0),
-    .l1_bits_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_ce0),
-    .l1_bits_q0(l1_bits_q0),
-    .l1_bits_address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_address1),
-    .l1_bits_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_ce1),
-    .l1_bits_q1(l1_bits_q1),
-    .l1_bits_1_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_address0),
-    .l1_bits_1_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_ce0),
-    .l1_bits_1_q0(l1_bits_1_q0),
-    .l1_bits_1_address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_address1),
-    .l1_bits_1_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_ce1),
-    .l1_bits_1_q1(l1_bits_1_q1),
-    .l1_bits_2_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_address0),
-    .l1_bits_2_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_ce0),
-    .l1_bits_2_q0(l1_bits_2_q0),
-    .l1_bits_2_address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_address1),
-    .l1_bits_2_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_ce1),
-    .l1_bits_2_q1(l1_bits_2_q1),
-    .l1_bits_3_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_address0),
-    .l1_bits_3_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_ce0),
-    .l1_bits_3_q0(l1_bits_3_q0),
-    .l1_bits_3_address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_address1),
-    .l1_bits_3_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_ce1),
-    .l1_bits_3_q1(l1_bits_3_q1),
-    .l1_bits_4_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_address0),
-    .l1_bits_4_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_ce0),
-    .l1_bits_4_q0(l1_bits_4_q0),
-    .l1_bits_4_address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_address1),
-    .l1_bits_4_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_ce1),
-    .l1_bits_4_q1(l1_bits_4_q1),
-    .l1_bits_5_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_address0),
-    .l1_bits_5_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_ce0),
-    .l1_bits_5_q0(l1_bits_5_q0),
-    .l1_bits_5_address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_address1),
-    .l1_bits_5_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_ce1),
-    .l1_bits_5_q1(l1_bits_5_q1),
-    .l1_bits_6_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_address0),
-    .l1_bits_6_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_ce0),
-    .l1_bits_6_q0(l1_bits_6_q0),
-    .l1_bits_6_address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_address1),
-    .l1_bits_6_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_ce1),
-    .l1_bits_6_q1(l1_bits_6_q1),
-    .l1_bits_7_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_address0),
-    .l1_bits_7_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_ce0),
-    .l1_bits_7_q0(l1_bits_7_q0),
-    .l1_bits_7_address1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_address1),
-    .l1_bits_7_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_ce1),
-    .l1_bits_7_q1(l1_bits_7_q1),
-    .l1_packed_address0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_address0),
-    .l1_packed_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_ce0),
-    .l1_packed_we0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_we0),
-    .l1_packed_d0(grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_d0)
-);
-
-bnn_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1 grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start),
-    .ap_done(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_done),
-    .ap_idle(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_idle),
-    .ap_ready(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_ready),
-    .l1_packed_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l1_packed_address0),
-    .l1_packed_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l1_packed_ce0),
-    .l1_packed_q0(l1_packed_q0),
-    .l2_bits_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_address0),
-    .l2_bits_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_ce0),
-    .l2_bits_we0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_we0),
-    .l2_bits_d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_d0),
-    .l2_bits_1_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_address0),
-    .l2_bits_1_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_ce0),
-    .l2_bits_1_we0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_we0),
-    .l2_bits_1_d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_d0),
-    .l2_bits_2_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_address0),
-    .l2_bits_2_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_ce0),
-    .l2_bits_2_we0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_we0),
-    .l2_bits_2_d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_d0),
-    .l2_bits_3_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_address0),
-    .l2_bits_3_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_ce0),
-    .l2_bits_3_we0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_we0),
-    .l2_bits_3_d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_d0),
-    .l2_bits_4_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_address0),
-    .l2_bits_4_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_ce0),
-    .l2_bits_4_we0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_we0),
-    .l2_bits_4_d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_d0),
-    .l2_bits_5_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_address0),
-    .l2_bits_5_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_ce0),
-    .l2_bits_5_we0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_we0),
-    .l2_bits_5_d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_d0),
-    .l2_bits_6_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_address0),
-    .l2_bits_6_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_ce0),
-    .l2_bits_6_we0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_we0),
-    .l2_bits_6_d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_d0),
-    .l2_bits_7_address0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_address0),
-    .l2_bits_7_ce0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_ce0),
-    .l2_bits_7_we0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_we0),
-    .l2_bits_7_d0(grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_d0)
-);
-
-bnn_bnn_Pipeline_VITIS_LOOP_24_11 grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start),
-    .ap_done(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_done),
-    .ap_idle(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_idle),
-    .ap_ready(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_ready),
-    .l2_bits_address0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_address0),
-    .l2_bits_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_ce0),
-    .l2_bits_q0(l2_bits_q0),
-    .l2_bits_address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_address1),
-    .l2_bits_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_ce1),
-    .l2_bits_q1(l2_bits_q1),
-    .l2_bits_1_address0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_address0),
-    .l2_bits_1_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_ce0),
-    .l2_bits_1_q0(l2_bits_1_q0),
-    .l2_bits_1_address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_address1),
-    .l2_bits_1_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_ce1),
-    .l2_bits_1_q1(l2_bits_1_q1),
-    .l2_bits_2_address0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_address0),
-    .l2_bits_2_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_ce0),
-    .l2_bits_2_q0(l2_bits_2_q0),
-    .l2_bits_2_address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_address1),
-    .l2_bits_2_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_ce1),
-    .l2_bits_2_q1(l2_bits_2_q1),
-    .l2_bits_3_address0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_address0),
-    .l2_bits_3_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_ce0),
-    .l2_bits_3_q0(l2_bits_3_q0),
-    .l2_bits_3_address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_address1),
-    .l2_bits_3_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_ce1),
-    .l2_bits_3_q1(l2_bits_3_q1),
-    .l2_bits_4_address0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_address0),
-    .l2_bits_4_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_ce0),
-    .l2_bits_4_q0(l2_bits_4_q0),
-    .l2_bits_4_address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_address1),
-    .l2_bits_4_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_ce1),
-    .l2_bits_4_q1(l2_bits_4_q1),
-    .l2_bits_5_address0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_address0),
-    .l2_bits_5_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_ce0),
-    .l2_bits_5_q0(l2_bits_5_q0),
-    .l2_bits_5_address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_address1),
-    .l2_bits_5_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_ce1),
-    .l2_bits_5_q1(l2_bits_5_q1),
-    .l2_bits_6_address0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_address0),
-    .l2_bits_6_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_ce0),
-    .l2_bits_6_q0(l2_bits_6_q0),
-    .l2_bits_6_address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_address1),
-    .l2_bits_6_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_ce1),
-    .l2_bits_6_q1(l2_bits_6_q1),
-    .l2_bits_7_address0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_address0),
-    .l2_bits_7_ce0(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_ce0),
-    .l2_bits_7_q0(l2_bits_7_q0),
-    .l2_bits_7_address1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_address1),
-    .l2_bits_7_ce1(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_ce1),
-    .l2_bits_7_q1(l2_bits_7_q1),
-    .l2_packed_3_out(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_3_out),
-    .l2_packed_3_out_ap_vld(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_3_out_ap_vld),
-    .l2_packed_2_out(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_2_out),
-    .l2_packed_2_out_ap_vld(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_2_out_ap_vld),
-    .l2_packed_1_out(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_1_out),
-    .l2_packed_1_out_ap_vld(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_1_out_ap_vld),
-    .l2_packed_out(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_out),
-    .l2_packed_out_ap_vld(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_out_ap_vld)
-);
-
-bnn_bnn_Pipeline_VITIS_LOOP_129_3 grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start),
-    .ap_done(grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_done),
-    .ap_idle(grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_idle),
-    .ap_ready(grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_ready),
-    .l2_packed_reload(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_out),
-    .empty_11(trunc_ln55_reg_282),
-    .l2_packed_1_reload(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_1_out),
-    .empty_12(trunc_ln55_174_reg_287),
-    .l2_packed_2_reload(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_2_out),
-    .empty_13(trunc_ln55_175_reg_292),
-    .l2_packed_3_reload(grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_3_out),
-    .empty(trunc_ln55_176_reg_297),
-    .ys_address0(grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_address0),
-    .ys_ce0(grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_ce0),
-    .ys_we0(grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_we0),
-    .ys_d0(grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_d0)
+    .l2_out_address0(grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_address0),
+    .l2_out_ce0(grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_ce0),
+    .l2_out_we0(grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_we0),
+    .l2_out_d0(grp_bnn_Pipeline_l2_loop_fu_1746_l2_out_d0),
+    .l1_out_address0(grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_address0),
+    .l1_out_ce0(grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_ce0),
+    .l1_out_we0(grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_we0),
+    .l1_out_d0(grp_bnn_Pipeline_l1_loop_fu_1420_l1_out_d0),
+    .ap_start(ap_start),
+    .interrupt(interrupt),
+    .ap_ready(ap_ready),
+    .ap_done(ap_done),
+    .ap_idle(ap_idle)
 );
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
+    if (ap_rst_n_inv == 1'b1) begin
         ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
@@ -898,81 +1525,491 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start_reg <= 1'b0;
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_bnn_Pipeline_l1_loop_fu_1420_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state5)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start_reg <= 1'b1;
-        end else if ((grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_ready == 1'b1)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state50)) begin
+            grp_bnn_Pipeline_l1_loop_fu_1420_ap_start_reg <= 1'b1;
+        end else if ((grp_bnn_Pipeline_l1_loop_fu_1420_ap_ready == 1'b1)) begin
+            grp_bnn_Pipeline_l1_loop_fu_1420_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start_reg <= 1'b0;
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_bnn_Pipeline_l2_loop_fu_1746_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state9)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start_reg <= 1'b1;
-        end else if ((grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_ready == 1'b1)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state54)) begin
+            grp_bnn_Pipeline_l2_loop_fu_1746_ap_start_reg <= 1'b1;
+        end else if ((grp_bnn_Pipeline_l2_loop_fu_1746_ap_ready == 1'b1)) begin
+            grp_bnn_Pipeline_l2_loop_fu_1746_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start_reg <= 1'b0;
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_bnn_Pipeline_l3_loop_fu_1898_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state7)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start_reg <= 1'b1;
-        end else if ((grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_ready == 1'b1)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state58)) begin
+            grp_bnn_Pipeline_l3_loop_fu_1898_ap_start_reg <= 1'b1;
+        end else if ((grp_bnn_Pipeline_l3_loop_fu_1898_ap_ready == 1'b1)) begin
+            grp_bnn_Pipeline_l3_loop_fu_1898_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start_reg <= 1'b0;
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state3)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start_reg <= 1'b1;
-        end else if ((grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_ready == 1'b1)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state56)) begin
+            grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start_reg <= 1'b1;
+        end else if ((grp_bnn_Pipeline_pack_loop1_fu_1826_ap_ready == 1'b1)) begin
+            grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start_reg <= 1'b0;
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_bnn_Pipeline_pack_loop_fu_1606_ap_start_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start_reg <= 1'b1;
-        end else if ((grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_ready == 1'b1)) begin
-            grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_CS_fsm_state52)) begin
+            grp_bnn_Pipeline_pack_loop_fu_1606_ap_start_reg <= 1'b1;
+        end else if ((grp_bnn_Pipeline_pack_loop_fu_1606_ap_ready == 1'b1)) begin
+            grp_bnn_Pipeline_pack_loop_fu_1606_ap_start_reg <= 1'b0;
         end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state12)) begin
+        IN_r_load_10_reg_4055 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state13)) begin
+        IN_r_load_11_reg_4065 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state14)) begin
+        IN_r_load_12_reg_4075 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state15)) begin
+        IN_r_load_13_reg_4085 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state16)) begin
+        IN_r_load_14_reg_4095 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state17)) begin
+        IN_r_load_15_reg_4105 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state18)) begin
+        IN_r_load_16_reg_4115 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state19)) begin
+        IN_r_load_17_reg_4125 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state20)) begin
+        IN_r_load_18_reg_4135 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state21)) begin
+        IN_r_load_19_reg_4145 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state3)) begin
+        IN_r_load_1_reg_3965 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state22)) begin
+        IN_r_load_20_reg_4155 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state23)) begin
+        IN_r_load_21_reg_4165 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state24)) begin
+        IN_r_load_22_reg_4175 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state25)) begin
+        IN_r_load_23_reg_4185 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state26)) begin
+        IN_r_load_24_reg_4195 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state27)) begin
+        IN_r_load_25_reg_4205 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state28)) begin
+        IN_r_load_26_reg_4215 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state29)) begin
+        IN_r_load_27_reg_4225 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state30)) begin
+        IN_r_load_28_reg_4235 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state31)) begin
+        IN_r_load_29_reg_4245 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        IN_r_load_2_reg_3975 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state32)) begin
+        IN_r_load_30_reg_4255 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state33)) begin
+        IN_r_load_31_reg_4265 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state34)) begin
+        IN_r_load_32_reg_4275 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state35)) begin
+        IN_r_load_33_reg_4285 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state36)) begin
+        IN_r_load_34_reg_4295 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state37)) begin
+        IN_r_load_35_reg_4305 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state38)) begin
+        IN_r_load_36_reg_4315 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state39)) begin
+        IN_r_load_37_reg_4325 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state40)) begin
+        IN_r_load_38_reg_4335 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state41)) begin
+        IN_r_load_39_reg_4345 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state5)) begin
+        IN_r_load_3_reg_3985 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state42)) begin
+        IN_r_load_40_reg_4355 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state43)) begin
+        IN_r_load_41_reg_4365 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state44)) begin
+        IN_r_load_42_reg_4375 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state45)) begin
+        IN_r_load_43_reg_4385 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state46)) begin
+        IN_r_load_44_reg_4395 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state47)) begin
+        IN_r_load_45_reg_4405 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state48)) begin
+        IN_r_load_46_reg_4415 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state49)) begin
+        IN_r_load_47_reg_4425 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state50)) begin
+        IN_r_load_48_reg_4435 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state6)) begin
+        IN_r_load_4_reg_3995 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state7)) begin
+        IN_r_load_5_reg_4005 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state8)) begin
+        IN_r_load_6_reg_4015 <= IN_r_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state9)) begin
-        trunc_ln55_174_reg_287 <= trunc_ln55_174_fu_231_p1;
-        trunc_ln55_175_reg_292 <= trunc_ln55_175_fu_236_p1;
-        trunc_ln55_176_reg_297 <= trunc_ln55_176_fu_241_p1;
-        trunc_ln55_reg_282 <= trunc_ln55_fu_226_p1;
+        IN_r_load_7_reg_4025 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state10)) begin
+        IN_r_load_8_reg_4035 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state11)) begin
+        IN_r_load_9_reg_4045 <= IN_r_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state2)) begin
+        IN_r_load_reg_3955 <= IN_r_q0;
     end
 end
 
 always @ (*) begin
-    if ((grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_done == 1'b0)) begin
-        ap_ST_fsm_state10_blk = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state49)) begin
+        IN_r_address0_local = 64'd48;
+    end else if ((1'b1 == ap_CS_fsm_state48)) begin
+        IN_r_address0_local = 64'd47;
+    end else if ((1'b1 == ap_CS_fsm_state47)) begin
+        IN_r_address0_local = 64'd46;
+    end else if ((1'b1 == ap_CS_fsm_state46)) begin
+        IN_r_address0_local = 64'd45;
+    end else if ((1'b1 == ap_CS_fsm_state45)) begin
+        IN_r_address0_local = 64'd44;
+    end else if ((1'b1 == ap_CS_fsm_state44)) begin
+        IN_r_address0_local = 64'd43;
+    end else if ((1'b1 == ap_CS_fsm_state43)) begin
+        IN_r_address0_local = 64'd42;
+    end else if ((1'b1 == ap_CS_fsm_state42)) begin
+        IN_r_address0_local = 64'd41;
+    end else if ((1'b1 == ap_CS_fsm_state41)) begin
+        IN_r_address0_local = 64'd40;
+    end else if ((1'b1 == ap_CS_fsm_state40)) begin
+        IN_r_address0_local = 64'd39;
+    end else if ((1'b1 == ap_CS_fsm_state39)) begin
+        IN_r_address0_local = 64'd38;
+    end else if ((1'b1 == ap_CS_fsm_state38)) begin
+        IN_r_address0_local = 64'd37;
+    end else if ((1'b1 == ap_CS_fsm_state37)) begin
+        IN_r_address0_local = 64'd36;
+    end else if ((1'b1 == ap_CS_fsm_state36)) begin
+        IN_r_address0_local = 64'd35;
+    end else if ((1'b1 == ap_CS_fsm_state35)) begin
+        IN_r_address0_local = 64'd34;
+    end else if ((1'b1 == ap_CS_fsm_state34)) begin
+        IN_r_address0_local = 64'd33;
+    end else if ((1'b1 == ap_CS_fsm_state33)) begin
+        IN_r_address0_local = 64'd32;
+    end else if ((1'b1 == ap_CS_fsm_state32)) begin
+        IN_r_address0_local = 64'd31;
+    end else if ((1'b1 == ap_CS_fsm_state31)) begin
+        IN_r_address0_local = 64'd30;
+    end else if ((1'b1 == ap_CS_fsm_state30)) begin
+        IN_r_address0_local = 64'd29;
+    end else if ((1'b1 == ap_CS_fsm_state29)) begin
+        IN_r_address0_local = 64'd28;
+    end else if ((1'b1 == ap_CS_fsm_state28)) begin
+        IN_r_address0_local = 64'd27;
+    end else if ((1'b1 == ap_CS_fsm_state27)) begin
+        IN_r_address0_local = 64'd26;
+    end else if ((1'b1 == ap_CS_fsm_state26)) begin
+        IN_r_address0_local = 64'd25;
+    end else if ((1'b1 == ap_CS_fsm_state25)) begin
+        IN_r_address0_local = 64'd24;
+    end else if ((1'b1 == ap_CS_fsm_state24)) begin
+        IN_r_address0_local = 64'd23;
+    end else if ((1'b1 == ap_CS_fsm_state23)) begin
+        IN_r_address0_local = 64'd22;
+    end else if ((1'b1 == ap_CS_fsm_state22)) begin
+        IN_r_address0_local = 64'd21;
+    end else if ((1'b1 == ap_CS_fsm_state21)) begin
+        IN_r_address0_local = 64'd20;
+    end else if ((1'b1 == ap_CS_fsm_state20)) begin
+        IN_r_address0_local = 64'd19;
+    end else if ((1'b1 == ap_CS_fsm_state19)) begin
+        IN_r_address0_local = 64'd18;
+    end else if ((1'b1 == ap_CS_fsm_state18)) begin
+        IN_r_address0_local = 64'd17;
+    end else if ((1'b1 == ap_CS_fsm_state17)) begin
+        IN_r_address0_local = 64'd16;
+    end else if ((1'b1 == ap_CS_fsm_state16)) begin
+        IN_r_address0_local = 64'd15;
+    end else if ((1'b1 == ap_CS_fsm_state15)) begin
+        IN_r_address0_local = 64'd14;
+    end else if ((1'b1 == ap_CS_fsm_state14)) begin
+        IN_r_address0_local = 64'd13;
+    end else if ((1'b1 == ap_CS_fsm_state13)) begin
+        IN_r_address0_local = 64'd12;
+    end else if ((1'b1 == ap_CS_fsm_state12)) begin
+        IN_r_address0_local = 64'd11;
+    end else if ((1'b1 == ap_CS_fsm_state11)) begin
+        IN_r_address0_local = 64'd10;
+    end else if ((1'b1 == ap_CS_fsm_state10)) begin
+        IN_r_address0_local = 64'd9;
+    end else if ((1'b1 == ap_CS_fsm_state9)) begin
+        IN_r_address0_local = 64'd8;
+    end else if ((1'b1 == ap_CS_fsm_state8)) begin
+        IN_r_address0_local = 64'd7;
+    end else if ((1'b1 == ap_CS_fsm_state7)) begin
+        IN_r_address0_local = 64'd6;
+    end else if ((1'b1 == ap_CS_fsm_state6)) begin
+        IN_r_address0_local = 64'd5;
+    end else if ((1'b1 == ap_CS_fsm_state5)) begin
+        IN_r_address0_local = 64'd4;
+    end else if ((1'b1 == ap_CS_fsm_state4)) begin
+        IN_r_address0_local = 64'd3;
+    end else if ((1'b1 == ap_CS_fsm_state3)) begin
+        IN_r_address0_local = 64'd2;
+    end else if ((1'b1 == ap_CS_fsm_state2)) begin
+        IN_r_address0_local = 64'd1;
+    end else if ((1'b1 == ap_CS_fsm_state1)) begin
+        IN_r_address0_local = 64'd0;
     end else begin
-        ap_ST_fsm_state10_blk = 1'b0;
+        IN_r_address0_local = 'bx;
     end
 end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state49) | (1'b1 == ap_CS_fsm_state48) | (1'b1 == ap_CS_fsm_state47) | (1'b1 == ap_CS_fsm_state46) | (1'b1 == ap_CS_fsm_state45) | (1'b1 == ap_CS_fsm_state44) | (1'b1 == ap_CS_fsm_state43) | (1'b1 == ap_CS_fsm_state42) | (1'b1 == ap_CS_fsm_state41) | (1'b1 == ap_CS_fsm_state40) | (1'b1 == ap_CS_fsm_state39) | (1'b1 == ap_CS_fsm_state38) | (1'b1 == ap_CS_fsm_state37) | (1'b1 == ap_CS_fsm_state36) | (1'b1 == ap_CS_fsm_state35) | (1'b1 == ap_CS_fsm_state34) | (1'b1 == ap_CS_fsm_state33) | (1'b1 == ap_CS_fsm_state32) | (1'b1 == ap_CS_fsm_state31) | (1'b1 == ap_CS_fsm_state30) | (1'b1 == ap_CS_fsm_state29) | (1'b1 == ap_CS_fsm_state28) | (1'b1 == ap_CS_fsm_state27) | (1'b1 == ap_CS_fsm_state26) | (1'b1 == ap_CS_fsm_state25) | (1'b1 == ap_CS_fsm_state24) | (1'b1 == ap_CS_fsm_state23) | (1'b1 == ap_CS_fsm_state22) | (1'b1 == ap_CS_fsm_state21) | (1'b1 == ap_CS_fsm_state20) | (1'b1 == ap_CS_fsm_state19) | (1'b1 == ap_CS_fsm_state18) | (1'b1 == ap_CS_fsm_state17) | (1'b1 == ap_CS_fsm_state16) | (1'b1 
+    == ap_CS_fsm_state15) | (1'b1 == ap_CS_fsm_state14) | (1'b1 == ap_CS_fsm_state13) | (1'b1 == ap_CS_fsm_state12) | (1'b1 == ap_CS_fsm_state11) | (1'b1 == ap_CS_fsm_state10) | (1'b1 == ap_CS_fsm_state9) | (1'b1 == ap_CS_fsm_state8) | (1'b1 == ap_CS_fsm_state7) | (1'b1 == ap_CS_fsm_state6) | (1'b1 == ap_CS_fsm_state5) | (1'b1 == ap_CS_fsm_state4) | (1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2) | ((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1)))) begin
+        IN_r_ce0_local = 1'b1;
+    end else begin
+        IN_r_ce0_local = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state10_blk = 1'b0;
+
+assign ap_ST_fsm_state11_blk = 1'b0;
+
+assign ap_ST_fsm_state12_blk = 1'b0;
+
+assign ap_ST_fsm_state13_blk = 1'b0;
+
+assign ap_ST_fsm_state14_blk = 1'b0;
+
+assign ap_ST_fsm_state15_blk = 1'b0;
+
+assign ap_ST_fsm_state16_blk = 1'b0;
+
+assign ap_ST_fsm_state17_blk = 1'b0;
+
+assign ap_ST_fsm_state18_blk = 1'b0;
+
+assign ap_ST_fsm_state19_blk = 1'b0;
 
 always @ (*) begin
     if ((ap_start == 1'b0)) begin
@@ -982,48 +2019,134 @@ always @ (*) begin
     end
 end
 
-always @ (*) begin
-    if ((grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_done == 1'b0)) begin
-        ap_ST_fsm_state2_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state2_blk = 1'b0;
-    end
-end
+assign ap_ST_fsm_state20_blk = 1'b0;
+
+assign ap_ST_fsm_state21_blk = 1'b0;
+
+assign ap_ST_fsm_state22_blk = 1'b0;
+
+assign ap_ST_fsm_state23_blk = 1'b0;
+
+assign ap_ST_fsm_state24_blk = 1'b0;
+
+assign ap_ST_fsm_state25_blk = 1'b0;
+
+assign ap_ST_fsm_state26_blk = 1'b0;
+
+assign ap_ST_fsm_state27_blk = 1'b0;
+
+assign ap_ST_fsm_state28_blk = 1'b0;
+
+assign ap_ST_fsm_state29_blk = 1'b0;
+
+assign ap_ST_fsm_state2_blk = 1'b0;
+
+assign ap_ST_fsm_state30_blk = 1'b0;
+
+assign ap_ST_fsm_state31_blk = 1'b0;
+
+assign ap_ST_fsm_state32_blk = 1'b0;
+
+assign ap_ST_fsm_state33_blk = 1'b0;
+
+assign ap_ST_fsm_state34_blk = 1'b0;
+
+assign ap_ST_fsm_state35_blk = 1'b0;
+
+assign ap_ST_fsm_state36_blk = 1'b0;
+
+assign ap_ST_fsm_state37_blk = 1'b0;
+
+assign ap_ST_fsm_state38_blk = 1'b0;
+
+assign ap_ST_fsm_state39_blk = 1'b0;
 
 assign ap_ST_fsm_state3_blk = 1'b0;
 
+assign ap_ST_fsm_state40_blk = 1'b0;
+
+assign ap_ST_fsm_state41_blk = 1'b0;
+
+assign ap_ST_fsm_state42_blk = 1'b0;
+
+assign ap_ST_fsm_state43_blk = 1'b0;
+
+assign ap_ST_fsm_state44_blk = 1'b0;
+
+assign ap_ST_fsm_state45_blk = 1'b0;
+
+assign ap_ST_fsm_state46_blk = 1'b0;
+
+assign ap_ST_fsm_state47_blk = 1'b0;
+
+assign ap_ST_fsm_state48_blk = 1'b0;
+
+assign ap_ST_fsm_state49_blk = 1'b0;
+
+assign ap_ST_fsm_state4_blk = 1'b0;
+
+assign ap_ST_fsm_state50_blk = 1'b0;
+
 always @ (*) begin
-    if ((grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_done == 1'b0)) begin
-        ap_ST_fsm_state4_blk = 1'b1;
+    if ((grp_bnn_Pipeline_l1_loop_fu_1420_ap_done == 1'b0)) begin
+        ap_ST_fsm_state51_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state4_blk = 1'b0;
+        ap_ST_fsm_state51_blk = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state52_blk = 1'b0;
+
+always @ (*) begin
+    if ((grp_bnn_Pipeline_pack_loop_fu_1606_ap_done == 1'b0)) begin
+        ap_ST_fsm_state53_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state53_blk = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state54_blk = 1'b0;
+
+always @ (*) begin
+    if ((grp_bnn_Pipeline_l2_loop_fu_1746_ap_done == 1'b0)) begin
+        ap_ST_fsm_state55_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state55_blk = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state56_blk = 1'b0;
+
+always @ (*) begin
+    if ((grp_bnn_Pipeline_pack_loop1_fu_1826_ap_done == 1'b0)) begin
+        ap_ST_fsm_state57_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state57_blk = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state58_blk = 1'b0;
+
+always @ (*) begin
+    if ((grp_bnn_Pipeline_l3_loop_fu_1898_ap_done == 1'b0)) begin
+        ap_ST_fsm_state59_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state59_blk = 1'b0;
     end
 end
 
 assign ap_ST_fsm_state5_blk = 1'b0;
 
-always @ (*) begin
-    if ((grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_done == 1'b0)) begin
-        ap_ST_fsm_state6_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state6_blk = 1'b0;
-    end
-end
+assign ap_ST_fsm_state6_blk = 1'b0;
 
 assign ap_ST_fsm_state7_blk = 1'b0;
 
-always @ (*) begin
-    if ((grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_done == 1'b0)) begin
-        ap_ST_fsm_state8_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state8_blk = 1'b0;
-    end
-end
+assign ap_ST_fsm_state8_blk = 1'b0;
 
 assign ap_ST_fsm_state9_blk = 1'b0;
 
 always @ (*) begin
-    if (((grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state10))) begin
+    if (((1'b1 == ap_CS_fsm_state59) & (grp_bnn_Pipeline_l3_loop_fu_1898_ap_done == 1'b1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -1031,7 +2154,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
+    if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -1039,7 +2162,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state10))) begin
+    if (((1'b1 == ap_CS_fsm_state59) & (grp_bnn_Pipeline_l3_loop_fu_1898_ap_done == 1'b1))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -1047,663 +2170,206 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_1_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_1_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_address0;
-    end else begin
-        l1_bits_1_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_1_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_1_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_ce0;
-    end else begin
-        l1_bits_1_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_1_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_1_ce1;
-    end else begin
-        l1_bits_1_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_1_we0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_1_we0;
-    end else begin
-        l1_bits_1_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_2_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_2_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_address0;
-    end else begin
-        l1_bits_2_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_2_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_2_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_ce0;
-    end else begin
-        l1_bits_2_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_2_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_2_ce1;
-    end else begin
-        l1_bits_2_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_2_we0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_2_we0;
-    end else begin
-        l1_bits_2_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_3_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_3_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_address0;
-    end else begin
-        l1_bits_3_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_3_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_3_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_ce0;
-    end else begin
-        l1_bits_3_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_3_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_3_ce1;
-    end else begin
-        l1_bits_3_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_3_we0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_3_we0;
-    end else begin
-        l1_bits_3_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_4_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_4_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_address0;
-    end else begin
-        l1_bits_4_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_4_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_4_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_ce0;
-    end else begin
-        l1_bits_4_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_4_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_4_ce1;
-    end else begin
-        l1_bits_4_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_4_we0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_4_we0;
-    end else begin
-        l1_bits_4_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_5_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_5_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_address0;
-    end else begin
-        l1_bits_5_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_5_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_5_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_ce0;
-    end else begin
-        l1_bits_5_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_5_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_5_ce1;
-    end else begin
-        l1_bits_5_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_5_we0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_5_we0;
-    end else begin
-        l1_bits_5_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_6_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_6_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_address0;
-    end else begin
-        l1_bits_6_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_6_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_6_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_ce0;
-    end else begin
-        l1_bits_6_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_6_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_6_ce1;
-    end else begin
-        l1_bits_6_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_6_we0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_6_we0;
-    end else begin
-        l1_bits_6_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_7_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_7_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_address0;
-    end else begin
-        l1_bits_7_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_7_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_7_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_ce0;
-    end else begin
-        l1_bits_7_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_7_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_7_ce1;
-    end else begin
-        l1_bits_7_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_7_we0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_7_we0;
-    end else begin
-        l1_bits_7_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_address0;
-    end else begin
-        l1_bits_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_ce0;
-    end else begin
-        l1_bits_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_bits_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_bits_ce1;
-    end else begin
-        l1_bits_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        l1_bits_we0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_l1_bits_we0;
-    end else begin
-        l1_bits_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l1_packed_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l1_packed_address0;
-    end else if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_packed_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_address0;
-    end else begin
-        l1_packed_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l1_packed_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l1_packed_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_packed_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_ce0;
-    end else begin
-        l1_packed_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        l1_packed_we0 = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_l1_packed_we0;
-    end else begin
-        l1_packed_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_1_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_address0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_1_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_address0;
-    end else begin
-        l2_bits_1_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_1_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_1_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_ce0;
-    end else begin
-        l2_bits_1_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_1_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_1_ce1;
-    end else begin
-        l2_bits_1_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_1_we0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_1_we0;
-    end else begin
-        l2_bits_1_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_2_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_address0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_2_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_address0;
-    end else begin
-        l2_bits_2_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_2_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_2_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_ce0;
-    end else begin
-        l2_bits_2_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_2_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_2_ce1;
-    end else begin
-        l2_bits_2_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_2_we0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_2_we0;
-    end else begin
-        l2_bits_2_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_3_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_address0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_3_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_address0;
-    end else begin
-        l2_bits_3_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_3_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_3_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_ce0;
-    end else begin
-        l2_bits_3_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_3_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_3_ce1;
-    end else begin
-        l2_bits_3_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_3_we0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_3_we0;
-    end else begin
-        l2_bits_3_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_4_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_address0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_4_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_address0;
-    end else begin
-        l2_bits_4_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_4_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_4_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_ce0;
-    end else begin
-        l2_bits_4_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_4_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_4_ce1;
-    end else begin
-        l2_bits_4_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_4_we0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_4_we0;
-    end else begin
-        l2_bits_4_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_5_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_address0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_5_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_address0;
-    end else begin
-        l2_bits_5_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_5_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_5_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_ce0;
-    end else begin
-        l2_bits_5_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_5_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_5_ce1;
-    end else begin
-        l2_bits_5_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_5_we0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_5_we0;
-    end else begin
-        l2_bits_5_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_6_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_address0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_6_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_address0;
-    end else begin
-        l2_bits_6_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_6_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_6_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_ce0;
-    end else begin
-        l2_bits_6_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_6_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_6_ce1;
-    end else begin
-        l2_bits_6_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_6_we0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_6_we0;
-    end else begin
-        l2_bits_6_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_7_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_address0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_7_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_address0;
-    end else begin
-        l2_bits_7_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_7_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_7_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_ce0;
-    end else begin
-        l2_bits_7_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_7_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_7_ce1;
-    end else begin
-        l2_bits_7_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_7_we0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_7_we0;
-    end else begin
-        l2_bits_7_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_address0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_address0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_address0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_address0;
-    end else begin
-        l2_bits_address0 = 'bx;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_ce0 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_ce0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_ce0;
-    end else begin
-        l2_bits_ce0 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state8)) begin
-        l2_bits_ce1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_bits_ce1;
-    end else begin
-        l2_bits_ce1 = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        l2_bits_we0 = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_l2_bits_we0;
-    end else begin
-        l2_bits_we0 = 1'b0;
-    end
-end
-
-always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+            if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
-                ap_NS_fsm = ap_ST_fsm_state3;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state2;
-            end
+            ap_NS_fsm = ap_ST_fsm_state3;
         end
         ap_ST_fsm_state3 : begin
             ap_NS_fsm = ap_ST_fsm_state4;
         end
         ap_ST_fsm_state4 : begin
-            if (((grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
-                ap_NS_fsm = ap_ST_fsm_state5;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state4;
-            end
+            ap_NS_fsm = ap_ST_fsm_state5;
         end
         ap_ST_fsm_state5 : begin
             ap_NS_fsm = ap_ST_fsm_state6;
         end
         ap_ST_fsm_state6 : begin
-            if (((grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
-                ap_NS_fsm = ap_ST_fsm_state7;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state6;
-            end
+            ap_NS_fsm = ap_ST_fsm_state7;
         end
         ap_ST_fsm_state7 : begin
             ap_NS_fsm = ap_ST_fsm_state8;
         end
         ap_ST_fsm_state8 : begin
-            if (((grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state8))) begin
-                ap_NS_fsm = ap_ST_fsm_state9;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_state8;
-            end
+            ap_NS_fsm = ap_ST_fsm_state9;
         end
         ap_ST_fsm_state9 : begin
             ap_NS_fsm = ap_ST_fsm_state10;
         end
         ap_ST_fsm_state10 : begin
-            if (((grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state10))) begin
+            ap_NS_fsm = ap_ST_fsm_state11;
+        end
+        ap_ST_fsm_state11 : begin
+            ap_NS_fsm = ap_ST_fsm_state12;
+        end
+        ap_ST_fsm_state12 : begin
+            ap_NS_fsm = ap_ST_fsm_state13;
+        end
+        ap_ST_fsm_state13 : begin
+            ap_NS_fsm = ap_ST_fsm_state14;
+        end
+        ap_ST_fsm_state14 : begin
+            ap_NS_fsm = ap_ST_fsm_state15;
+        end
+        ap_ST_fsm_state15 : begin
+            ap_NS_fsm = ap_ST_fsm_state16;
+        end
+        ap_ST_fsm_state16 : begin
+            ap_NS_fsm = ap_ST_fsm_state17;
+        end
+        ap_ST_fsm_state17 : begin
+            ap_NS_fsm = ap_ST_fsm_state18;
+        end
+        ap_ST_fsm_state18 : begin
+            ap_NS_fsm = ap_ST_fsm_state19;
+        end
+        ap_ST_fsm_state19 : begin
+            ap_NS_fsm = ap_ST_fsm_state20;
+        end
+        ap_ST_fsm_state20 : begin
+            ap_NS_fsm = ap_ST_fsm_state21;
+        end
+        ap_ST_fsm_state21 : begin
+            ap_NS_fsm = ap_ST_fsm_state22;
+        end
+        ap_ST_fsm_state22 : begin
+            ap_NS_fsm = ap_ST_fsm_state23;
+        end
+        ap_ST_fsm_state23 : begin
+            ap_NS_fsm = ap_ST_fsm_state24;
+        end
+        ap_ST_fsm_state24 : begin
+            ap_NS_fsm = ap_ST_fsm_state25;
+        end
+        ap_ST_fsm_state25 : begin
+            ap_NS_fsm = ap_ST_fsm_state26;
+        end
+        ap_ST_fsm_state26 : begin
+            ap_NS_fsm = ap_ST_fsm_state27;
+        end
+        ap_ST_fsm_state27 : begin
+            ap_NS_fsm = ap_ST_fsm_state28;
+        end
+        ap_ST_fsm_state28 : begin
+            ap_NS_fsm = ap_ST_fsm_state29;
+        end
+        ap_ST_fsm_state29 : begin
+            ap_NS_fsm = ap_ST_fsm_state30;
+        end
+        ap_ST_fsm_state30 : begin
+            ap_NS_fsm = ap_ST_fsm_state31;
+        end
+        ap_ST_fsm_state31 : begin
+            ap_NS_fsm = ap_ST_fsm_state32;
+        end
+        ap_ST_fsm_state32 : begin
+            ap_NS_fsm = ap_ST_fsm_state33;
+        end
+        ap_ST_fsm_state33 : begin
+            ap_NS_fsm = ap_ST_fsm_state34;
+        end
+        ap_ST_fsm_state34 : begin
+            ap_NS_fsm = ap_ST_fsm_state35;
+        end
+        ap_ST_fsm_state35 : begin
+            ap_NS_fsm = ap_ST_fsm_state36;
+        end
+        ap_ST_fsm_state36 : begin
+            ap_NS_fsm = ap_ST_fsm_state37;
+        end
+        ap_ST_fsm_state37 : begin
+            ap_NS_fsm = ap_ST_fsm_state38;
+        end
+        ap_ST_fsm_state38 : begin
+            ap_NS_fsm = ap_ST_fsm_state39;
+        end
+        ap_ST_fsm_state39 : begin
+            ap_NS_fsm = ap_ST_fsm_state40;
+        end
+        ap_ST_fsm_state40 : begin
+            ap_NS_fsm = ap_ST_fsm_state41;
+        end
+        ap_ST_fsm_state41 : begin
+            ap_NS_fsm = ap_ST_fsm_state42;
+        end
+        ap_ST_fsm_state42 : begin
+            ap_NS_fsm = ap_ST_fsm_state43;
+        end
+        ap_ST_fsm_state43 : begin
+            ap_NS_fsm = ap_ST_fsm_state44;
+        end
+        ap_ST_fsm_state44 : begin
+            ap_NS_fsm = ap_ST_fsm_state45;
+        end
+        ap_ST_fsm_state45 : begin
+            ap_NS_fsm = ap_ST_fsm_state46;
+        end
+        ap_ST_fsm_state46 : begin
+            ap_NS_fsm = ap_ST_fsm_state47;
+        end
+        ap_ST_fsm_state47 : begin
+            ap_NS_fsm = ap_ST_fsm_state48;
+        end
+        ap_ST_fsm_state48 : begin
+            ap_NS_fsm = ap_ST_fsm_state49;
+        end
+        ap_ST_fsm_state49 : begin
+            ap_NS_fsm = ap_ST_fsm_state50;
+        end
+        ap_ST_fsm_state50 : begin
+            ap_NS_fsm = ap_ST_fsm_state51;
+        end
+        ap_ST_fsm_state51 : begin
+            if (((grp_bnn_Pipeline_l1_loop_fu_1420_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state51))) begin
+                ap_NS_fsm = ap_ST_fsm_state52;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state51;
+            end
+        end
+        ap_ST_fsm_state52 : begin
+            ap_NS_fsm = ap_ST_fsm_state53;
+        end
+        ap_ST_fsm_state53 : begin
+            if (((grp_bnn_Pipeline_pack_loop_fu_1606_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state53))) begin
+                ap_NS_fsm = ap_ST_fsm_state54;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state53;
+            end
+        end
+        ap_ST_fsm_state54 : begin
+            ap_NS_fsm = ap_ST_fsm_state55;
+        end
+        ap_ST_fsm_state55 : begin
+            if (((grp_bnn_Pipeline_l2_loop_fu_1746_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state55))) begin
+                ap_NS_fsm = ap_ST_fsm_state56;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state55;
+            end
+        end
+        ap_ST_fsm_state56 : begin
+            ap_NS_fsm = ap_ST_fsm_state57;
+        end
+        ap_ST_fsm_state57 : begin
+            if (((1'b1 == ap_CS_fsm_state57) & (grp_bnn_Pipeline_pack_loop1_fu_1826_ap_done == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_state58;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state57;
+            end
+        end
+        ap_ST_fsm_state58 : begin
+            ap_NS_fsm = ap_ST_fsm_state59;
+        end
+        ap_ST_fsm_state59 : begin
+            if (((1'b1 == ap_CS_fsm_state59) & (grp_bnn_Pipeline_l3_loop_fu_1898_ap_done == 1'b1))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state10;
+                ap_NS_fsm = ap_ST_fsm_state59;
             end
         end
         default : begin
@@ -1712,21 +2378,115 @@ always @ (*) begin
     endcase
 end
 
-assign IN_r_address0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_IN_r_address0;
-
-assign IN_r_ce0 = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_IN_r_ce0;
-
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
 assign ap_CS_fsm_state10 = ap_CS_fsm[32'd9];
 
+assign ap_CS_fsm_state11 = ap_CS_fsm[32'd10];
+
+assign ap_CS_fsm_state12 = ap_CS_fsm[32'd11];
+
+assign ap_CS_fsm_state13 = ap_CS_fsm[32'd12];
+
+assign ap_CS_fsm_state14 = ap_CS_fsm[32'd13];
+
+assign ap_CS_fsm_state15 = ap_CS_fsm[32'd14];
+
+assign ap_CS_fsm_state16 = ap_CS_fsm[32'd15];
+
+assign ap_CS_fsm_state17 = ap_CS_fsm[32'd16];
+
+assign ap_CS_fsm_state18 = ap_CS_fsm[32'd17];
+
+assign ap_CS_fsm_state19 = ap_CS_fsm[32'd18];
+
 assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+
+assign ap_CS_fsm_state20 = ap_CS_fsm[32'd19];
+
+assign ap_CS_fsm_state21 = ap_CS_fsm[32'd20];
+
+assign ap_CS_fsm_state22 = ap_CS_fsm[32'd21];
+
+assign ap_CS_fsm_state23 = ap_CS_fsm[32'd22];
+
+assign ap_CS_fsm_state24 = ap_CS_fsm[32'd23];
+
+assign ap_CS_fsm_state25 = ap_CS_fsm[32'd24];
+
+assign ap_CS_fsm_state26 = ap_CS_fsm[32'd25];
+
+assign ap_CS_fsm_state27 = ap_CS_fsm[32'd26];
+
+assign ap_CS_fsm_state28 = ap_CS_fsm[32'd27];
+
+assign ap_CS_fsm_state29 = ap_CS_fsm[32'd28];
 
 assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
+assign ap_CS_fsm_state30 = ap_CS_fsm[32'd29];
+
+assign ap_CS_fsm_state31 = ap_CS_fsm[32'd30];
+
+assign ap_CS_fsm_state32 = ap_CS_fsm[32'd31];
+
+assign ap_CS_fsm_state33 = ap_CS_fsm[32'd32];
+
+assign ap_CS_fsm_state34 = ap_CS_fsm[32'd33];
+
+assign ap_CS_fsm_state35 = ap_CS_fsm[32'd34];
+
+assign ap_CS_fsm_state36 = ap_CS_fsm[32'd35];
+
+assign ap_CS_fsm_state37 = ap_CS_fsm[32'd36];
+
+assign ap_CS_fsm_state38 = ap_CS_fsm[32'd37];
+
+assign ap_CS_fsm_state39 = ap_CS_fsm[32'd38];
+
 assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
+assign ap_CS_fsm_state40 = ap_CS_fsm[32'd39];
+
+assign ap_CS_fsm_state41 = ap_CS_fsm[32'd40];
+
+assign ap_CS_fsm_state42 = ap_CS_fsm[32'd41];
+
+assign ap_CS_fsm_state43 = ap_CS_fsm[32'd42];
+
+assign ap_CS_fsm_state44 = ap_CS_fsm[32'd43];
+
+assign ap_CS_fsm_state45 = ap_CS_fsm[32'd44];
+
+assign ap_CS_fsm_state46 = ap_CS_fsm[32'd45];
+
+assign ap_CS_fsm_state47 = ap_CS_fsm[32'd46];
+
+assign ap_CS_fsm_state48 = ap_CS_fsm[32'd47];
+
+assign ap_CS_fsm_state49 = ap_CS_fsm[32'd48];
+
 assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
+
+assign ap_CS_fsm_state50 = ap_CS_fsm[32'd49];
+
+assign ap_CS_fsm_state51 = ap_CS_fsm[32'd50];
+
+assign ap_CS_fsm_state52 = ap_CS_fsm[32'd51];
+
+assign ap_CS_fsm_state53 = ap_CS_fsm[32'd52];
+
+assign ap_CS_fsm_state54 = ap_CS_fsm[32'd53];
+
+assign ap_CS_fsm_state55 = ap_CS_fsm[32'd54];
+
+assign ap_CS_fsm_state56 = ap_CS_fsm[32'd55];
+
+assign ap_CS_fsm_state57 = ap_CS_fsm[32'd56];
+
+assign ap_CS_fsm_state58 = ap_CS_fsm[32'd57];
+
+assign ap_CS_fsm_state59 = ap_CS_fsm[32'd58];
 
 assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
 
@@ -1736,30 +2496,18 @@ assign ap_CS_fsm_state8 = ap_CS_fsm[32'd7];
 
 assign ap_CS_fsm_state9 = ap_CS_fsm[32'd8];
 
-assign grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start = grp_bnn_Pipeline_VITIS_LOOP_108_2_VITIS_LOOP_50_1_fu_161_ap_start_reg;
+always @ (*) begin
+    ap_rst_n_inv = ~ap_rst_n;
+end
 
-assign grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start = grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ap_start_reg;
+assign grp_bnn_Pipeline_l1_loop_fu_1420_ap_start = grp_bnn_Pipeline_l1_loop_fu_1420_ap_start_reg;
 
-assign grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_ap_start_reg;
+assign grp_bnn_Pipeline_l2_loop_fu_1746_ap_start = grp_bnn_Pipeline_l2_loop_fu_1746_ap_start_reg;
 
-assign grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start = grp_bnn_Pipeline_VITIS_LOOP_24_1_fu_148_ap_start_reg;
+assign grp_bnn_Pipeline_l3_loop_fu_1898_ap_start = grp_bnn_Pipeline_l3_loop_fu_1898_ap_start_reg;
 
-assign grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start = grp_bnn_Pipeline_VITIS_LOOP_82_1_VITIS_LOOP_50_1_fu_124_ap_start_reg;
+assign grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start = grp_bnn_Pipeline_pack_loop1_fu_1826_ap_start_reg;
 
-assign trunc_ln55_174_fu_231_p1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_1_out[0:0];
-
-assign trunc_ln55_175_fu_236_p1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_2_out[0:0];
-
-assign trunc_ln55_176_fu_241_p1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_3_out[0:0];
-
-assign trunc_ln55_fu_226_p1 = grp_bnn_Pipeline_VITIS_LOOP_24_11_fu_176_l2_packed_out[0:0];
-
-assign ys_address0 = grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_address0;
-
-assign ys_ce0 = grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_ce0;
-
-assign ys_d0 = grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_d0;
-
-assign ys_we0 = grp_bnn_Pipeline_VITIS_LOOP_129_3_fu_192_ys_we0;
+assign grp_bnn_Pipeline_pack_loop_fu_1606_ap_start = grp_bnn_Pipeline_pack_loop_fu_1606_ap_start_reg;
 
 endmodule //bnn

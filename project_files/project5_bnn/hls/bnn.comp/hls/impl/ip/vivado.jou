@@ -3,13 +3,13 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Dec  8 16:30:48 2025
-# Process ID         : 1982995
+# Start of session at: Wed Dec 10 17:11:17 2025
+# Process ID         : 3785443
 # Current directory  : /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/impl/ip
 # Command line       : vivado -notrace -mode batch -source run_ippack.tcl
 # Log file           : /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/impl/ip/vivado.log
 # Journal file       : /home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.comp/hls/impl/ip/vivado.jou
-# Running On         : ieng6-240.ucsd.edu
+# Running On         : ieng6-248.ucsd.edu
 # Platform           : Linuxmint
 # Operating System   : Linux Mint 22.1
 # Processor Detail   : Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz
@@ -19,6 +19,6 @@
 # Host memory        : 33655 MB
 # Swap memory        : 1023 MB
 # Total Virtual      : 34679 MB
-# Available Virtual  : 25429 MB
+# Available Virtual  : 12278 MB
 #-----------------------------------------------------------
 source run_ippack.tcl -notrace

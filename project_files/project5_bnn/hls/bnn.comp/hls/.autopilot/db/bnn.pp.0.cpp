@@ -34035,7 +34035,7 @@ typedef const int16_t DTYPE;
 typedef int ITYPE;
 
 const int SIZE = 49;
-__attribute__((sdx_kernel("bnn", 0))) void bnn(DTYPE IN[SIZE], ITYPE ys[10]);
+__attribute__((sdx_kernel("bnn", 0))) void bnn(DTYPE IN[SIZE], ITYPE ys[10], ITYPE l1_out[128], ITYPE l2_out[64]);
 # 2 "bnn.cpp" 2
 # 1 "./golden.h" 1
 
@@ -34496,6 +34496,48 @@ const int16_t inputs[3][49] = {
      -4, 16383, -1, -1, -1, -1, -1, -1, -1}
 };
 
+const int golden_l1[3][128] = {
+    {-30, 18, -44, 70, 20, 32, -58, -58, 70, -52, -22, 20, 66, -8, -8, -22,
+     0, -26, -36, -80, 14, -32, 16, 38, -48, 2, -2, -40, 24, -28, 6, 22,
+     62, 54, -2, 78, 48, -56, -52, -30, -16, -52, 32, -96, -46, -60, -52, -10,
+     -52, 88, -16, 42, -64, -20, 44, 52, 72, -48, 68, 16, 74, -8, 60, -62,
+     -38, 84, 12, -38, 90, -64, 2, 44, -20, -42, 54, 62, -2, 74, 16, 80,
+     114, -90, -36, -6, -46, 26, -32, -34, -4, 58, -28, -8, -38, -70, -92, -22,
+     62, -42, 38, 0, -14, 12, -16, -42, 68, 22, -16, 44, 20, 84, -124, 40,
+     -46, -62, -18, -42, -2, 94, 20, 38, 6, -114, 44, -14, 56, -90, 56, -44},
+    {-36, 8, 134, -16, 30, 54, 72, -8, -76, 6, -4, -110, -40, -118, 86, 40,
+     -82, 56, -50, -54, -96, 50, -42, -12, -18, 8, 40, 122, 34, -90, 152, 116,
+     20, -48, -120, 36, 30, 2, -86, 4, -58, -42, -54, 38, -20, 22, -58, 28,
+     -26, -22, 14, -36, -74, 34, -10, 78, 70, 54, 42, 66, -8, 110, -10, -20,
+     -72, -10, -130, -68, 92, -22, 48, 94, 82, 28, -60, -84, -12, 20, -66, -26,
+     68, -8, 54, 44, 84, 104, 50, -28, 82, -28, 22, 58, 96, -36, -50, -128,
+     36, 36, 20, 42, 8, 22, 30, 60, 10, 52, 90, 70, -86, -70, 14, -42,
+     -24, 4, 24, -32, 72, 0, -10, 32, -64, -72, -22, -36, 38, -48, -34, 14},
+    {14, -30, 56, -6, 64, 12, -10, -22, -42, -8, 38, -28, -26, -64, -4, -14,
+     -24, -10, -16, -48, -46, -28, -4, -22, -40, 2, -2, 4, 8, -32, 42, 2,
+     30, 2, -74, 6, -20, 8, 20, -10, -56, -40, 12, 36, 42, 4, -32, -30,
+     -64, 80, -8, 22, -100, 0, 0, 68, 108, 12, 40, -16, 70, 4, -12, -14,
+     14, 16, -60, -58, 114, -4, 6, 24, 80, 22, -14, -6, -18, 30, -36, 84,
+     18, -14, -20, 22, 14, 66, 24, -46, -16, -10, -24, -28, 6, -94, -64, -38,
+     30, -42, 6, 8, -46, -36, -36, 18, -8, 50, 0, 48, -64, 16, -32, -4,
+     -14, 18, -38, -18, 30, 18, 40, -2, 18, 2, 24, -58, -12, -86, -12, -52}
+};
+
+const int golden_l2[3][64] = {
+    {4, 10, -16, 18, -16, -10, 2, 24, -22, -10, -4, -2, -12, 20, -24, 6,
+     0, -28, 10, -14, 4, 10, 18, 16, -16, 28, -26, 8, -6, -18, 22, -24,
+     22, 22, 6, 14, -22, 2, 6, -32, -10, -10, 22, -24, 12, -8, -14, -2,
+     -2, -20, -4, -16, -30, -22, 18, -30, -10, -4, 0, -18, -12, -30, -30, -6},
+    {-28, -2, 24, -10, -28, 14, -38, -8, -14, 14, 8, -2, -16, 32, -28, 6,
+     28, -8, 10, 22, 40, -30, 14, 20, -12, 8, 30, -24, 10, 22, 10, 16,
+     6, 10, 14, -38, -6, -2, -22, 36, 14, 18, -2, 8, -40, -20, 30, 2,
+     18, -4, -20, 20, -2, 10, -26, -22, 18, -12, 12, 34, 36, -2, 6, 58},
+    {10, -24, 6, 0, 14, -12, -28, -26, -4, 8, 18, 8, -22, -2, -2, 12,
+     6, -6, 8, -12, 14, -4, 8, 2, -2, -18, -8, 6, -28, 0, -12, -10,
+     8, 0, -4, -12, -12, -4, -4, 6, -16, -4, 24, 26, 14, -6, 0, -28,
+     8, -10, 14, 14, 20, -8, -28, 12, -8, -26, -18, -4, -14, 12, 28, 0}
+};
+
 const int golden_outputs[3][10] = {
     {-2, 4, -8, 14, -4, 0, -42, 48, -4, 2},
     {2, 0, 48, 10, -20, 4, 2, -16, 4, -14},
@@ -34504,36 +34546,41 @@ const int golden_outputs[3][10] = {
 
 const int true_labels[3] = {7, 2, 1};
 # 3 "bnn.cpp" 2
+# 1 "/software/common/Xilinx_Vitis/Vitis/2024.2/common/technology/autopilot/ap_int.h" 1
+# 4 "bnn.cpp" 2
 
 
-
-static int popcount16(uint16_t x) {
-
-    int c = 0;
+static inline ap_uint<5> popcount16(ap_uint<16> x) {
+#pragma HLS INLINE
+ ap_uint<5> cnt = 0;
     VITIS_LOOP_9_1: for (int i = 0; i < 16; i++) {
-
-        c += (x >> i) & 1u;
+#pragma HLS UNROLL
+ cnt += x[i];
     }
-    return c;
+    return cnt;
 }
 
 
-static void pack_bits(const unsigned char bits_in[],
-                      int n_bits,
-                      uint16_t packed_out[])
+static void pack_bits(
+        const ap_uint<1> bits_in[],
+        const int n_bits,
+        ap_uint<16> packed_out[])
 {
+#pragma HLS INLINE
+ const int n_words = (n_bits + 15) / 16;
 
-    const int n_words = (n_bits + 15) / 16;
+pack_loop:
+    for (int w = 0; w < n_words; w++) {
+#pragma HLS PIPELINE II=1
+ ap_uint<16> word = 0;
 
-    VITIS_LOOP_24_1: for (int w = 0; w < n_words; w++) {
-
-        uint16_t word = 0;
-        VITIS_LOOP_27_2: for (int k = 0; k < 16; k++) {
-
-            int idx = w * 16 + k;
+    pack_inner:
+        for (int k = 0; k < 16; k++) {
+#pragma HLS UNROLL
+ int idx = w * 16 + k;
             word <<= 1;
-            if (idx < n_bits && bits_in[idx]) {
-                word |= 1u;
+            if (idx < n_bits) {
+                word[0] = bits_in[idx];
             }
         }
         packed_out[w] = word;
@@ -34542,104 +34589,108 @@ static void pack_bits(const unsigned char bits_in[],
 
 
 
-static int binary_dot(const uint16_t *a_words,
-                      const uint16_t *b_words,
-                      int n_words,
-                      int total_bits)
+
+
+static inline int binary_dot(
+        const ap_uint<16> *a_words,
+        const ap_uint<16> *b_words,
+        const int n_words,
+        const int total_bits)
 {
+#pragma HLS INLINE
 
+ int same = 0;
 
-    int same = 0;
-
-    VITIS_LOOP_50_1: for (int w = 0; w < n_words; w++) {
-
-        uint16_t a = a_words[w];
-        uint16_t b = b_words[w];
-
-        uint16_t xnor = ~(a ^ b);
+dot_loop:
+    for (int w = 0; w < n_words; w++) {
+#pragma HLS UNROLL
+ ap_uint<16> xnor = ~(a_words[w] ^ b_words[w]);
         same += popcount16(xnor);
     }
 
-
-    return 2 * same - total_bits;
+    return (same << 1) - total_bits;
 }
 
 
-__attribute__((sdx_kernel("bnn", 0))) void bnn(DTYPE IN[SIZE], ITYPE ys[10])
+
+
+
+__attribute__((sdx_kernel("bnn", 0))) void bnn(DTYPE IN[SIZE], ITYPE ys[10], ITYPE l1_out[128], ITYPE l2_out[64])
 {
 #line 9 "/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.tcl"
 #pragma HLSDIRECTIVE TOP name=bnn
-# 65 "bnn.cpp"
+# 72 "bnn.cpp"
 
+#pragma HLS INTERFACE s_axilite port=return bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=IN bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=ys bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=l1_out bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=l2_out bundle=CTRL
 
+#pragma HLS INTERFACE ap_memory port=IN
+#pragma HLS INTERFACE ap_memory port=ys
+#pragma HLS INTERFACE ap_memory port=l1_out
+#pragma HLS INTERFACE ap_memory port=l2_out
 
+ const ap_uint<16> *in_words = (const ap_uint<16> *)IN;
+    const ap_uint<16> *w1_words = (const ap_uint<16> *)w1;
+    const ap_uint<16> *w2_words = (const ap_uint<16> *)w2;
+    const ap_uint<16> *w3_words = (const ap_uint<16> *)w3;
 
-    const uint16_t *in_words = reinterpret_cast<const uint16_t *>(IN);
-    const uint16_t *w1_words = reinterpret_cast<const uint16_t *>(w1);
-    const uint16_t *w2_words = reinterpret_cast<const uint16_t *>(w2);
-    const uint16_t *w3_words = reinterpret_cast<const uint16_t *>(w3);
-
-
-    const int L1_IN_BITS = 784;
     const int L1_IN_WORDS = 49;
     const int L1_OUT_NEUR = 128;
 
-    unsigned char l1_bits[L1_OUT_NEUR];
+    ap_uint<1> l1_bits[L1_OUT_NEUR];
+#pragma HLS ARRAY_PARTITION variable=l1_bits complete dim=1
+
+l1_loop:
+    for (int n = 0; n < L1_OUT_NEUR; n++) {
+#pragma HLS PIPELINE II=1
+ const ap_uint<16> *w_ptr = w1_words + n * L1_IN_WORDS;
+        int dot = binary_dot(in_words, w_ptr, L1_IN_WORDS, 784);
 
 
-    VITIS_LOOP_82_1: for (int n = 0; n < L1_OUT_NEUR; n++) {
+        l1_out[n] = (ITYPE)dot;
 
 
-        const uint16_t *w_ptr = w1_words + n * L1_IN_WORDS;
-
-        int dot = binary_dot(in_words, w_ptr, L1_IN_WORDS, L1_IN_BITS);
-
-
-
-        l1_bits[n] = (dot > 0) ? 0 : 1;
+        l1_bits[n] = (dot > 0 ? 0 : 1);
     }
 
 
-    const int L2_IN_BITS = 128;
+    ap_uint<16> l1_packed[8];
+#pragma HLS ARRAY_PARTITION variable=l1_packed complete
+ pack_bits(l1_bits, 128, l1_packed);
+
     const int L2_IN_WORDS = 8;
     const int L2_OUT_NEUR = 64;
 
-    uint16_t l1_packed[L2_IN_WORDS];
+    ap_uint<1> l2_bits[L2_OUT_NEUR];
+#pragma HLS ARRAY_PARTITION variable=l2_bits complete
+
+l2_loop:
+    for (int n = 0; n < L2_OUT_NEUR; n++) {
+#pragma HLS PIPELINE II=1
+ const ap_uint<16> *w_ptr = w2_words + n * L2_IN_WORDS;
+        int dot = binary_dot(l1_packed, w_ptr, L2_IN_WORDS, 128);
 
 
-    pack_bits(l1_bits, L2_IN_BITS, l1_packed);
+        l2_out[n] = (ITYPE)dot;
 
 
-    unsigned char l2_bits[L2_OUT_NEUR];
-
-
-    VITIS_LOOP_108_2: for (int n = 0; n < L2_OUT_NEUR; n++) {
-
-        const uint16_t *w_ptr = w2_words + n * L2_IN_WORDS;
-
-        int dot = binary_dot(l1_packed, w_ptr, L2_IN_WORDS, L2_IN_BITS);
-
-
-        l2_bits[n] = (dot > 0) ? 0 : 1;
+        l2_bits[n] = (dot > 0 ? 0 : 1);
     }
 
 
-    const int L3_IN_BITS = 64;
-    const int L3_IN_WORDS = 4;
-    const int L3_OUT_NEUR = 10;
-
-    uint16_t l2_packed[L3_IN_WORDS];
+    ap_uint<16> l2_packed[4];
+#pragma HLS ARRAY_PARTITION variable=l2_packed complete
+ pack_bits(l2_bits, 64, l2_packed);
 
 
-    pack_bits(l2_bits, L3_IN_BITS, l2_packed);
-
-
-    VITIS_LOOP_129_3: for (int n = 0; n < L3_OUT_NEUR; n++) {
-
-        const uint16_t *w_ptr = w3_words + n * L3_IN_WORDS;
-
-        int dot = binary_dot(l2_packed, w_ptr, L3_IN_WORDS, L3_IN_BITS);
-
+l3_loop:
+    for (int n = 0; n < 10; n++) {
+#pragma HLS PIPELINE II=1
+ const ap_uint<16> *w_ptr = w3_words + n * 4;
+        int dot = binary_dot(l2_packed, w_ptr, 4, 64);
         ys[n] = (ITYPE)dot;
     }
 }

@@ -1,71 +1,119 @@
 <xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="popcount16" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="popcount16" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="pack_bits" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="pack_bits" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:32:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="pack_bits" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:53:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="binary_dot" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:59:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="binary_dot" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/linux/ieng6/students/769/zeh003/Desktop/CSE-237C-Starter/project_files/project5_bnn/hls/bnn.tcl:9:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=bnn" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="bnn.cpp:45:0" msg_body="Inlining function 'popcount16(unsigned short)' into 'binary_dot(unsigned short const*, unsigned short const*, int, int)'">
-        <args Callee="popcount16(unsigned short)" Callee-DebugLoc="File bnn.cpp Line 6 Column 0" Caller="binary_dot(unsigned short const*, unsigned short const*, int, int)" Caller-DebugLoc="File bnn.cpp Line 45 Column 0"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:73:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="bnn.cpp:65:0" msg_body="Inlining function 'binary_dot(unsigned short const*, unsigned short const*, int, int)' into 'bnn(short const*, int*)'">
-        <args Callee="binary_dot(unsigned short const*, unsigned short const*, int, int)" Callee-DebugLoc="File bnn.cpp Line 45 Column 0" Caller="bnn(short const*, int*)" Caller-DebugLoc="File bnn.cpp Line 65 Column 0"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:74:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=IN bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="bnn.cpp:65:0" msg_body="Inlining function 'pack_bits(unsigned char const*, int, unsigned short*)' into 'bnn(short const*, int*)'">
-        <args Callee="pack_bits(unsigned char const*, int, unsigned short*)" Callee-DebugLoc="File bnn.cpp Line 20 Column 0" Caller="bnn(short const*, int*)" Caller-DebugLoc="File bnn.cpp Line 65 Column 0"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:75:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=ys bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="bnn.cpp:50:22" msg_body="Loop 'VITIS_LOOP_50_1' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_50_1"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:76:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=l1_out bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:77:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=l2_out bundle=CTRL" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:79:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_memory port=IN" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:80:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_memory port=ys" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:81:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_memory port=l1_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:82:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_memory port=l2_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:93:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=l1_bits complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:97:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:110:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=l1_packed complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:117:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=l2_bits complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:121:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:134:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=l2_packed complete" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bnn.cpp:140:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bnn" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="bnn.cpp:61:17" msg_body="Inlining function 'popcount16(ap_uint&lt;16&gt;)' into 'binary_dot(ap_uint&lt;16&gt; const*, ap_uint&lt;16&gt; const*, int, int)'">
+        <args Callee="popcount16(ap_uint&lt;16&gt;)" Callee-DebugLoc="File bnn.cpp Line 6 Column 0" Caller="binary_dot(ap_uint&lt;16&gt; const*, ap_uint&lt;16&gt; const*, int, int)" Caller-DebugLoc="File bnn.cpp Line 52 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="bnn.cpp:99:19" msg_body="Inlining function 'binary_dot(ap_uint&lt;16&gt; const*, ap_uint&lt;16&gt; const*, int, int)' into 'bnn(short const*, int*, int*, int*)'">
+        <args Callee="binary_dot(ap_uint&lt;16&gt; const*, ap_uint&lt;16&gt; const*, int, int)" Callee-DebugLoc="File bnn.cpp Line 52 Column 0" Caller="bnn(short const*, int*, int*, int*)" Caller-DebugLoc="File bnn.cpp Line 72 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="bnn.cpp:135:2" msg_body="Inlining function 'pack_bits(ap_uint&lt;1&gt; const*, int, ap_uint&lt;16&gt;*)' into 'bnn(short const*, int*, int*, int*)'">
+        <args Callee="pack_bits(ap_uint&lt;1&gt; const*, int, ap_uint&lt;16&gt;*)" Callee-DebugLoc="File bnn.cpp Line 21 Column 0" Caller="bnn(short const*, int*, int*, int*)" Caller-DebugLoc="File bnn.cpp Line 72 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="bnn.cpp:58:5" msg_body="Loop 'dot_loop' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="dot_loop"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="bnn.cpp:9:21" msg_body="Loop 'VITIS_LOOP_9_1' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="VITIS_LOOP_9_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="bnn.cpp:27:26" msg_body="Loop 'VITIS_LOOP_27_2' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_27_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="bnn.cpp:31:9" msg_body="Loop 'pack_inner' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="pack_inner"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="bnn.cpp:65:0" msg_body="Unrolling loop 'VITIS_LOOP_50_1' (bnn.cpp:50:22) in function 'bnn' completely with a factor of 4">
-        <args Factor="4" LoopLoc="bnn.cpp:50:22" LoopName="VITIS_LOOP_50_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="bnn.cpp:72:0" msg_body="Unrolling loop 'dot_loop' (bnn.cpp:58:5) in function 'bnn' completely with a factor of 4">
+        <args Factor="4" LoopLoc="bnn.cpp:58:5" LoopName="dot_loop"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="bnn.cpp:65:0" msg_body="Unrolling loop 'VITIS_LOOP_9_1' (bnn.cpp:9:21) in function 'bnn' completely with a factor of 16">
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="bnn.cpp:72:0" msg_body="Unrolling loop 'VITIS_LOOP_9_1' (bnn.cpp:9:21) in function 'bnn' completely with a factor of 16">
         <args Factor="16" LoopLoc="bnn.cpp:9:21" LoopName="VITIS_LOOP_9_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="bnn.cpp:65:0" msg_body="Unrolling loop 'VITIS_LOOP_27_2' (bnn.cpp:27:26) in function 'bnn' completely with a factor of 16">
-        <args Factor="16" LoopLoc="bnn.cpp:27:26" LoopName="VITIS_LOOP_27_2"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="bnn.cpp:72:0" msg_body="Unrolling loop 'pack_inner' (bnn.cpp:31:9) in function 'bnn' completely with a factor of 16">
+        <args Factor="16" LoopLoc="bnn.cpp:31:9" LoopName="pack_inner"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-421" msg_severity="INFO" msg_loc="bnn.cpp:123:14" msg_body="Automatically partitioning small array 'a_words' completely based on array size.">
-        <args Value="a_words"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="bnn.cpp:72:0" msg_body="Unrolling loop 'dot_loop' (bnn.cpp:58:5) in function 'bnn' completely with a factor of 8">
+        <args Factor="8" LoopLoc="bnn.cpp:58:5" LoopName="dot_loop"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="./golden.h:435:0" msg_body="array_partition dim=1 type=cyclic factor=2 variable=_ZL2w3 1 bnn ./golden.h:435:0 w3">
-        <args PragmaFunction="bnn" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=2 variable=_ZL2w3" PragmaType="array_partition" VarName="w3" varLoc="./golden.h:435:0"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="bnn.cpp:72:0" msg_body="Unrolling loop 'dot_loop' (bnn.cpp:58:5) in function 'bnn' completely with a factor of 49">
+        <args Factor="49" LoopLoc="bnn.cpp:58:5" LoopName="dot_loop"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="./golden.h:435:0" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'w3' due to pipeline pragma">
-        <args Dim="1" Factor="2" Mode="cyclic" Name="w3" PragmaType="array_partition"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="bnn.cpp:92:16" msg_body="Applying array_partition to 'l1_bits': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="l1_bits"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="bnn.cpp:79:19" msg_body="array_partition dim=1 type=cyclic factor=8 variable=l1_bits 1 bnn bnn.cpp:79:19 l1_bits">
-        <args PragmaFunction="bnn" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=8 variable=l1_bits" PragmaType="array_partition" VarName="l1_bits" varLoc="bnn.cpp:79:19"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="bnn.cpp:109:17" msg_body="Applying array_partition to 'l1_packed': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="l1_packed"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="bnn.cpp:79:19" msg_body="Inferring pragma 'array_partition type=cyclic factor=8 dim=1' for array 'l1_bits' due to pipeline pragma">
-        <args Dim="1" Factor="8" Mode="cyclic" Name="l1_bits" PragmaType="array_partition"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="bnn.cpp:116:16" msg_body="Applying array_partition to 'l2_bits': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="l2_bits"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="bnn.cpp:105:19" msg_body="array_partition dim=1 type=cyclic factor=8 variable=l2_bits 1 bnn bnn.cpp:105:19 l2_bits">
-        <args PragmaFunction="bnn" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=8 variable=l2_bits" PragmaType="array_partition" VarName="l2_bits" varLoc="bnn.cpp:105:19"/>
-    </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="bnn.cpp:105:19" msg_body="Inferring pragma 'array_partition type=cyclic factor=8 dim=1' for array 'l2_bits' due to pipeline pragma">
-        <args Dim="1" Factor="8" Mode="cyclic" Name="l2_bits" PragmaType="array_partition"/>
-    </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="bnn.cpp:123:14" msg_body="array_partition dim=1 type=complete  variable=l2_packed 1 bnn bnn.cpp:123:14 l2_packed">
-        <args PragmaFunction="bnn" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=l2_packed" PragmaType="array_partition" VarName="l2_packed" varLoc="bnn.cpp:123:14"/>
-    </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="bnn.cpp:123:14" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'l2_packed' due to pipeline pragma">
-        <args Dim="1" Mode="complete" Name="l2_packed" PragmaType="array_partition"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="./golden.h:435:0" msg_body="Applying array_partition to '_ZL2w3': Cyclic partitioning with factor 2 on dimension 1.">
-        <args Dim="1" Factor="2" Mode="Cyclic" UOName="_ZL2w3"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="bnn.cpp:79:19" msg_body="Applying array_partition to 'l1_bits': Cyclic partitioning with factor 8 on dimension 1.">
-        <args Dim="1" Factor="8" Mode="Cyclic" UOName="l1_bits"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="bnn.cpp:105:19" msg_body="Applying array_partition to 'l2_bits': Cyclic partitioning with factor 8 on dimension 1.">
-        <args Dim="1" Factor="8" Mode="Cyclic" UOName="l2_bits"/>
-    </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="bnn.cpp:123:14" msg_body="Applying array_partition to 'l2_packed': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="bnn.cpp:133:17" msg_body="Applying array_partition to 'l2_packed': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="l2_packed"/>
     </msg>
 </xilinx:hls_fe_msgs>

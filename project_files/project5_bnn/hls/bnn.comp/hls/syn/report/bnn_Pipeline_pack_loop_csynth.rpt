@@ -1,0 +1,305 @@
+
+
+================================================================
+== Vitis HLS Report for 'bnn_Pipeline_pack_loop'
+================================================================
+* Date:           Wed Dec 10 17:08:02 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        bnn.comp
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.911 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |       10|       10|  0.100 us|  0.100 us|    9|    9|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- pack_loop  |        8|        8|         1|          1|          1|     8|       yes|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     26|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       0|    672|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       0|     27|    -|
+|Register         |        -|    -|     134|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     134|    725|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+----------------------+---------+----+---+----+-----+
+    |          Instance         |        Module        | BRAM_18K| DSP| FF| LUT| URAM|
+    +---------------------------+----------------------+---------+----+---+----+-----+
+    |sparsemux_17_3_1_1_1_U180  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U181  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U182  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U183  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U184  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U185  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U186  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U187  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U188  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U189  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U190  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U191  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U192  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U193  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U194  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    |sparsemux_17_3_1_1_1_U195  |sparsemux_17_3_1_1_1  |        0|   0|  0|  42|    0|
+    +---------------------------+----------------------+---------+----+---+----+-----+
+    |Total                      |                      |        0|   0|  0| 672|    0|
+    +---------------------------+----------------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+----+---+----+------------+------------+
+    |add_ln26_fu_1194_p2   |         +|   0|  0|  13|           4|           1|
+    |icmp_ln26_fu_1188_p2  |      icmp|   0|  0|  13|           4|           5|
+    +----------------------+----------+----+---+----+------------+------------+
+    |Total                 |          |   0|  0|  26|           8|           6|
+    +----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |ap_done_int           |   9|          2|    1|          2|
+    |ap_sig_allocacmp_w_2  |   9|          2|    4|          8|
+    |w_fu_320              |   9|          2|    4|          8|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 |  27|          6|    9|         18|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------+----+----+-----+-----------+
+    |         Name         | FF | LUT| Bits| Const Bits|
+    +----------------------+----+----+-----+-----------+
+    |ap_CS_fsm             |   1|   0|    1|          0|
+    |ap_done_reg           |   1|   0|    1|          0|
+    |p_0_028288_fu_324     |  16|   0|   16|          0|
+    |p_0_0282_190_fu_328   |  16|   0|   16|          0|
+    |p_0_0282_292_fu_332   |  16|   0|   16|          0|
+    |p_0_0282_394_fu_336   |  16|   0|   16|          0|
+    |p_0_0282_496_fu_340   |  16|   0|   16|          0|
+    |p_0_0282_598_fu_344   |  16|   0|   16|          0|
+    |p_0_0282_6100_fu_348  |  16|   0|   16|          0|
+    |p_0_0282_7102_fu_352  |  16|   0|   16|          0|
+    |w_fu_320              |   4|   0|    4|          0|
+    +----------------------+----+----+-----+-----------+
+    |Total                 | 134|   0|  134|          0|
+    +----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+------------------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++--------------------------+-----+-----+------------+------------------------+--------------+
+|ap_clk                    |   in|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop|  return value|
+|ap_rst                    |   in|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop|  return value|
+|ap_start                  |   in|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop|  return value|
+|ap_done                   |  out|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop|  return value|
+|ap_idle                   |  out|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop|  return value|
+|ap_ready                  |  out|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop|  return value|
+|l1_bits_reload            |   in|    1|     ap_none|          l1_bits_reload|        scalar|
+|l1_bits_16_reload         |   in|    1|     ap_none|       l1_bits_16_reload|        scalar|
+|l1_bits_32_reload         |   in|    1|     ap_none|       l1_bits_32_reload|        scalar|
+|l1_bits_48_reload         |   in|    1|     ap_none|       l1_bits_48_reload|        scalar|
+|l1_bits_64_reload         |   in|    1|     ap_none|       l1_bits_64_reload|        scalar|
+|l1_bits_80_reload         |   in|    1|     ap_none|       l1_bits_80_reload|        scalar|
+|l1_bits_96_reload         |   in|    1|     ap_none|       l1_bits_96_reload|        scalar|
+|l1_bits_112_reload        |   in|    1|     ap_none|      l1_bits_112_reload|        scalar|
+|l1_bits_1_reload          |   in|    1|     ap_none|        l1_bits_1_reload|        scalar|
+|l1_bits_17_reload         |   in|    1|     ap_none|       l1_bits_17_reload|        scalar|
+|l1_bits_33_reload         |   in|    1|     ap_none|       l1_bits_33_reload|        scalar|
+|l1_bits_49_reload         |   in|    1|     ap_none|       l1_bits_49_reload|        scalar|
+|l1_bits_65_reload         |   in|    1|     ap_none|       l1_bits_65_reload|        scalar|
+|l1_bits_81_reload         |   in|    1|     ap_none|       l1_bits_81_reload|        scalar|
+|l1_bits_97_reload         |   in|    1|     ap_none|       l1_bits_97_reload|        scalar|
+|l1_bits_113_reload        |   in|    1|     ap_none|      l1_bits_113_reload|        scalar|
+|l1_bits_2_reload          |   in|    1|     ap_none|        l1_bits_2_reload|        scalar|
+|l1_bits_18_reload         |   in|    1|     ap_none|       l1_bits_18_reload|        scalar|
+|l1_bits_34_reload         |   in|    1|     ap_none|       l1_bits_34_reload|        scalar|
+|l1_bits_50_reload         |   in|    1|     ap_none|       l1_bits_50_reload|        scalar|
+|l1_bits_66_reload         |   in|    1|     ap_none|       l1_bits_66_reload|        scalar|
+|l1_bits_82_reload         |   in|    1|     ap_none|       l1_bits_82_reload|        scalar|
+|l1_bits_98_reload         |   in|    1|     ap_none|       l1_bits_98_reload|        scalar|
+|l1_bits_114_reload        |   in|    1|     ap_none|      l1_bits_114_reload|        scalar|
+|l1_bits_3_reload          |   in|    1|     ap_none|        l1_bits_3_reload|        scalar|
+|l1_bits_19_reload         |   in|    1|     ap_none|       l1_bits_19_reload|        scalar|
+|l1_bits_35_reload         |   in|    1|     ap_none|       l1_bits_35_reload|        scalar|
+|l1_bits_51_reload         |   in|    1|     ap_none|       l1_bits_51_reload|        scalar|
+|l1_bits_67_reload         |   in|    1|     ap_none|       l1_bits_67_reload|        scalar|
+|l1_bits_83_reload         |   in|    1|     ap_none|       l1_bits_83_reload|        scalar|
+|l1_bits_99_reload         |   in|    1|     ap_none|       l1_bits_99_reload|        scalar|
+|l1_bits_115_reload        |   in|    1|     ap_none|      l1_bits_115_reload|        scalar|
+|l1_bits_4_reload          |   in|    1|     ap_none|        l1_bits_4_reload|        scalar|
+|l1_bits_20_reload         |   in|    1|     ap_none|       l1_bits_20_reload|        scalar|
+|l1_bits_36_reload         |   in|    1|     ap_none|       l1_bits_36_reload|        scalar|
+|l1_bits_52_reload         |   in|    1|     ap_none|       l1_bits_52_reload|        scalar|
+|l1_bits_68_reload         |   in|    1|     ap_none|       l1_bits_68_reload|        scalar|
+|l1_bits_84_reload         |   in|    1|     ap_none|       l1_bits_84_reload|        scalar|
+|l1_bits_100_reload        |   in|    1|     ap_none|      l1_bits_100_reload|        scalar|
+|l1_bits_116_reload        |   in|    1|     ap_none|      l1_bits_116_reload|        scalar|
+|l1_bits_5_reload          |   in|    1|     ap_none|        l1_bits_5_reload|        scalar|
+|l1_bits_21_reload         |   in|    1|     ap_none|       l1_bits_21_reload|        scalar|
+|l1_bits_37_reload         |   in|    1|     ap_none|       l1_bits_37_reload|        scalar|
+|l1_bits_53_reload         |   in|    1|     ap_none|       l1_bits_53_reload|        scalar|
+|l1_bits_69_reload         |   in|    1|     ap_none|       l1_bits_69_reload|        scalar|
+|l1_bits_85_reload         |   in|    1|     ap_none|       l1_bits_85_reload|        scalar|
+|l1_bits_101_reload        |   in|    1|     ap_none|      l1_bits_101_reload|        scalar|
+|l1_bits_117_reload        |   in|    1|     ap_none|      l1_bits_117_reload|        scalar|
+|l1_bits_6_reload          |   in|    1|     ap_none|        l1_bits_6_reload|        scalar|
+|l1_bits_22_reload         |   in|    1|     ap_none|       l1_bits_22_reload|        scalar|
+|l1_bits_38_reload         |   in|    1|     ap_none|       l1_bits_38_reload|        scalar|
+|l1_bits_54_reload         |   in|    1|     ap_none|       l1_bits_54_reload|        scalar|
+|l1_bits_70_reload         |   in|    1|     ap_none|       l1_bits_70_reload|        scalar|
+|l1_bits_86_reload         |   in|    1|     ap_none|       l1_bits_86_reload|        scalar|
+|l1_bits_102_reload        |   in|    1|     ap_none|      l1_bits_102_reload|        scalar|
+|l1_bits_118_reload        |   in|    1|     ap_none|      l1_bits_118_reload|        scalar|
+|l1_bits_7_reload          |   in|    1|     ap_none|        l1_bits_7_reload|        scalar|
+|l1_bits_23_reload         |   in|    1|     ap_none|       l1_bits_23_reload|        scalar|
+|l1_bits_39_reload         |   in|    1|     ap_none|       l1_bits_39_reload|        scalar|
+|l1_bits_55_reload         |   in|    1|     ap_none|       l1_bits_55_reload|        scalar|
+|l1_bits_71_reload         |   in|    1|     ap_none|       l1_bits_71_reload|        scalar|
+|l1_bits_87_reload         |   in|    1|     ap_none|       l1_bits_87_reload|        scalar|
+|l1_bits_103_reload        |   in|    1|     ap_none|      l1_bits_103_reload|        scalar|
+|l1_bits_119_reload        |   in|    1|     ap_none|      l1_bits_119_reload|        scalar|
+|l1_bits_8_reload          |   in|    1|     ap_none|        l1_bits_8_reload|        scalar|
+|l1_bits_24_reload         |   in|    1|     ap_none|       l1_bits_24_reload|        scalar|
+|l1_bits_40_reload         |   in|    1|     ap_none|       l1_bits_40_reload|        scalar|
+|l1_bits_56_reload         |   in|    1|     ap_none|       l1_bits_56_reload|        scalar|
+|l1_bits_72_reload         |   in|    1|     ap_none|       l1_bits_72_reload|        scalar|
+|l1_bits_88_reload         |   in|    1|     ap_none|       l1_bits_88_reload|        scalar|
+|l1_bits_104_reload        |   in|    1|     ap_none|      l1_bits_104_reload|        scalar|
+|l1_bits_120_reload        |   in|    1|     ap_none|      l1_bits_120_reload|        scalar|
+|l1_bits_9_reload          |   in|    1|     ap_none|        l1_bits_9_reload|        scalar|
+|l1_bits_25_reload         |   in|    1|     ap_none|       l1_bits_25_reload|        scalar|
+|l1_bits_41_reload         |   in|    1|     ap_none|       l1_bits_41_reload|        scalar|
+|l1_bits_57_reload         |   in|    1|     ap_none|       l1_bits_57_reload|        scalar|
+|l1_bits_73_reload         |   in|    1|     ap_none|       l1_bits_73_reload|        scalar|
+|l1_bits_89_reload         |   in|    1|     ap_none|       l1_bits_89_reload|        scalar|
+|l1_bits_105_reload        |   in|    1|     ap_none|      l1_bits_105_reload|        scalar|
+|l1_bits_121_reload        |   in|    1|     ap_none|      l1_bits_121_reload|        scalar|
+|l1_bits_10_reload         |   in|    1|     ap_none|       l1_bits_10_reload|        scalar|
+|l1_bits_26_reload         |   in|    1|     ap_none|       l1_bits_26_reload|        scalar|
+|l1_bits_42_reload         |   in|    1|     ap_none|       l1_bits_42_reload|        scalar|
+|l1_bits_58_reload         |   in|    1|     ap_none|       l1_bits_58_reload|        scalar|
+|l1_bits_74_reload         |   in|    1|     ap_none|       l1_bits_74_reload|        scalar|
+|l1_bits_90_reload         |   in|    1|     ap_none|       l1_bits_90_reload|        scalar|
+|l1_bits_106_reload        |   in|    1|     ap_none|      l1_bits_106_reload|        scalar|
+|l1_bits_122_reload        |   in|    1|     ap_none|      l1_bits_122_reload|        scalar|
+|l1_bits_11_reload         |   in|    1|     ap_none|       l1_bits_11_reload|        scalar|
+|l1_bits_27_reload         |   in|    1|     ap_none|       l1_bits_27_reload|        scalar|
+|l1_bits_43_reload         |   in|    1|     ap_none|       l1_bits_43_reload|        scalar|
+|l1_bits_59_reload         |   in|    1|     ap_none|       l1_bits_59_reload|        scalar|
+|l1_bits_75_reload         |   in|    1|     ap_none|       l1_bits_75_reload|        scalar|
+|l1_bits_91_reload         |   in|    1|     ap_none|       l1_bits_91_reload|        scalar|
+|l1_bits_107_reload        |   in|    1|     ap_none|      l1_bits_107_reload|        scalar|
+|l1_bits_123_reload        |   in|    1|     ap_none|      l1_bits_123_reload|        scalar|
+|l1_bits_12_reload         |   in|    1|     ap_none|       l1_bits_12_reload|        scalar|
+|l1_bits_28_reload         |   in|    1|     ap_none|       l1_bits_28_reload|        scalar|
+|l1_bits_44_reload         |   in|    1|     ap_none|       l1_bits_44_reload|        scalar|
+|l1_bits_60_reload         |   in|    1|     ap_none|       l1_bits_60_reload|        scalar|
+|l1_bits_76_reload         |   in|    1|     ap_none|       l1_bits_76_reload|        scalar|
+|l1_bits_92_reload         |   in|    1|     ap_none|       l1_bits_92_reload|        scalar|
+|l1_bits_108_reload        |   in|    1|     ap_none|      l1_bits_108_reload|        scalar|
+|l1_bits_124_reload        |   in|    1|     ap_none|      l1_bits_124_reload|        scalar|
+|l1_bits_13_reload         |   in|    1|     ap_none|       l1_bits_13_reload|        scalar|
+|l1_bits_29_reload         |   in|    1|     ap_none|       l1_bits_29_reload|        scalar|
+|l1_bits_45_reload         |   in|    1|     ap_none|       l1_bits_45_reload|        scalar|
+|l1_bits_61_reload         |   in|    1|     ap_none|       l1_bits_61_reload|        scalar|
+|l1_bits_77_reload         |   in|    1|     ap_none|       l1_bits_77_reload|        scalar|
+|l1_bits_93_reload         |   in|    1|     ap_none|       l1_bits_93_reload|        scalar|
+|l1_bits_109_reload        |   in|    1|     ap_none|      l1_bits_109_reload|        scalar|
+|l1_bits_125_reload        |   in|    1|     ap_none|      l1_bits_125_reload|        scalar|
+|l1_bits_14_reload         |   in|    1|     ap_none|       l1_bits_14_reload|        scalar|
+|l1_bits_30_reload         |   in|    1|     ap_none|       l1_bits_30_reload|        scalar|
+|l1_bits_46_reload         |   in|    1|     ap_none|       l1_bits_46_reload|        scalar|
+|l1_bits_62_reload         |   in|    1|     ap_none|       l1_bits_62_reload|        scalar|
+|l1_bits_78_reload         |   in|    1|     ap_none|       l1_bits_78_reload|        scalar|
+|l1_bits_94_reload         |   in|    1|     ap_none|       l1_bits_94_reload|        scalar|
+|l1_bits_110_reload        |   in|    1|     ap_none|      l1_bits_110_reload|        scalar|
+|l1_bits_126_reload        |   in|    1|     ap_none|      l1_bits_126_reload|        scalar|
+|l1_bits_15_reload         |   in|    1|     ap_none|       l1_bits_15_reload|        scalar|
+|l1_bits_31_reload         |   in|    1|     ap_none|       l1_bits_31_reload|        scalar|
+|l1_bits_47_reload         |   in|    1|     ap_none|       l1_bits_47_reload|        scalar|
+|l1_bits_63_reload         |   in|    1|     ap_none|       l1_bits_63_reload|        scalar|
+|l1_bits_79_reload         |   in|    1|     ap_none|       l1_bits_79_reload|        scalar|
+|l1_bits_95_reload         |   in|    1|     ap_none|       l1_bits_95_reload|        scalar|
+|l1_bits_111_reload        |   in|    1|     ap_none|      l1_bits_111_reload|        scalar|
+|l1_bits_127_reload        |   in|    1|     ap_none|      l1_bits_127_reload|        scalar|
+|p_0_0282_7102_out         |  out|   16|      ap_vld|       p_0_0282_7102_out|       pointer|
+|p_0_0282_7102_out_ap_vld  |  out|    1|      ap_vld|       p_0_0282_7102_out|       pointer|
+|p_0_0282_6100_out         |  out|   16|      ap_vld|       p_0_0282_6100_out|       pointer|
+|p_0_0282_6100_out_ap_vld  |  out|    1|      ap_vld|       p_0_0282_6100_out|       pointer|
+|p_0_0282_598_out          |  out|   16|      ap_vld|        p_0_0282_598_out|       pointer|
+|p_0_0282_598_out_ap_vld   |  out|    1|      ap_vld|        p_0_0282_598_out|       pointer|
+|p_0_0282_496_out          |  out|   16|      ap_vld|        p_0_0282_496_out|       pointer|
+|p_0_0282_496_out_ap_vld   |  out|    1|      ap_vld|        p_0_0282_496_out|       pointer|
+|p_0_0282_394_out          |  out|   16|      ap_vld|        p_0_0282_394_out|       pointer|
+|p_0_0282_394_out_ap_vld   |  out|    1|      ap_vld|        p_0_0282_394_out|       pointer|
+|p_0_0282_292_out          |  out|   16|      ap_vld|        p_0_0282_292_out|       pointer|
+|p_0_0282_292_out_ap_vld   |  out|    1|      ap_vld|        p_0_0282_292_out|       pointer|
+|p_0_0282_190_out          |  out|   16|      ap_vld|        p_0_0282_190_out|       pointer|
+|p_0_0282_190_out_ap_vld   |  out|    1|      ap_vld|        p_0_0282_190_out|       pointer|
+|p_0_028288_out            |  out|   16|      ap_vld|          p_0_028288_out|       pointer|
+|p_0_028288_out_ap_vld     |  out|    1|      ap_vld|          p_0_028288_out|       pointer|
++--------------------------+-----+-----+------------+------------------------+--------------+
+

@@ -1,0 +1,316 @@
+
+
+================================================================
+== Vitis HLS Report for 'bnn_Pipeline_pack_loop'
+================================================================
+* Date:           Wed Dec 10 17:07:56 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        bnn.comp
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.911 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |       10|       10|  0.100 us|  0.100 us|    9|    9|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- pack_loop  |        8|        8|         1|          1|          1|     8|       yes|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.91>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%w = alloca i32 1" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 4 'alloca' 'w' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_0_028288 = alloca i32 1"   --->   Operation 5 'alloca' 'p_0_028288' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_0_0282_190 = alloca i32 1"   --->   Operation 6 'alloca' 'p_0_0282_190' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%p_0_0282_292 = alloca i32 1"   --->   Operation 7 'alloca' 'p_0_0282_292' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%p_0_0282_394 = alloca i32 1"   --->   Operation 8 'alloca' 'p_0_0282_394' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_0_0282_496 = alloca i32 1"   --->   Operation 9 'alloca' 'p_0_0282_496' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_0_0282_598 = alloca i32 1"   --->   Operation 10 'alloca' 'p_0_0282_598' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%p_0_0282_6100 = alloca i32 1"   --->   Operation 11 'alloca' 'p_0_0282_6100' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_0_0282_7102 = alloca i32 1"   --->   Operation 12 'alloca' 'p_0_0282_7102' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%l1_bits_127_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_127_reload"   --->   Operation 13 'read' 'l1_bits_127_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%l1_bits_111_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_111_reload"   --->   Operation 14 'read' 'l1_bits_111_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%l1_bits_95_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_95_reload"   --->   Operation 15 'read' 'l1_bits_95_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%l1_bits_79_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_79_reload"   --->   Operation 16 'read' 'l1_bits_79_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%l1_bits_63_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_63_reload"   --->   Operation 17 'read' 'l1_bits_63_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%l1_bits_47_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_47_reload"   --->   Operation 18 'read' 'l1_bits_47_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%l1_bits_31_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_31_reload"   --->   Operation 19 'read' 'l1_bits_31_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%l1_bits_15_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_15_reload"   --->   Operation 20 'read' 'l1_bits_15_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%l1_bits_126_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_126_reload"   --->   Operation 21 'read' 'l1_bits_126_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%l1_bits_110_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_110_reload"   --->   Operation 22 'read' 'l1_bits_110_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%l1_bits_94_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_94_reload"   --->   Operation 23 'read' 'l1_bits_94_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%l1_bits_78_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_78_reload"   --->   Operation 24 'read' 'l1_bits_78_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%l1_bits_62_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_62_reload"   --->   Operation 25 'read' 'l1_bits_62_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%l1_bits_46_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_46_reload"   --->   Operation 26 'read' 'l1_bits_46_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%l1_bits_30_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_30_reload"   --->   Operation 27 'read' 'l1_bits_30_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%l1_bits_14_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_14_reload"   --->   Operation 28 'read' 'l1_bits_14_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%l1_bits_125_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_125_reload"   --->   Operation 29 'read' 'l1_bits_125_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%l1_bits_109_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_109_reload"   --->   Operation 30 'read' 'l1_bits_109_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%l1_bits_93_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_93_reload"   --->   Operation 31 'read' 'l1_bits_93_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%l1_bits_77_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_77_reload"   --->   Operation 32 'read' 'l1_bits_77_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%l1_bits_61_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_61_reload"   --->   Operation 33 'read' 'l1_bits_61_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%l1_bits_45_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_45_reload"   --->   Operation 34 'read' 'l1_bits_45_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%l1_bits_29_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_29_reload"   --->   Operation 35 'read' 'l1_bits_29_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%l1_bits_13_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_13_reload"   --->   Operation 36 'read' 'l1_bits_13_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%l1_bits_124_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_124_reload"   --->   Operation 37 'read' 'l1_bits_124_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%l1_bits_108_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_108_reload"   --->   Operation 38 'read' 'l1_bits_108_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%l1_bits_92_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_92_reload"   --->   Operation 39 'read' 'l1_bits_92_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%l1_bits_76_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_76_reload"   --->   Operation 40 'read' 'l1_bits_76_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%l1_bits_60_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_60_reload"   --->   Operation 41 'read' 'l1_bits_60_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%l1_bits_44_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_44_reload"   --->   Operation 42 'read' 'l1_bits_44_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%l1_bits_28_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_28_reload"   --->   Operation 43 'read' 'l1_bits_28_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%l1_bits_12_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_12_reload"   --->   Operation 44 'read' 'l1_bits_12_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%l1_bits_123_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_123_reload"   --->   Operation 45 'read' 'l1_bits_123_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%l1_bits_107_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_107_reload"   --->   Operation 46 'read' 'l1_bits_107_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%l1_bits_91_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_91_reload"   --->   Operation 47 'read' 'l1_bits_91_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%l1_bits_75_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_75_reload"   --->   Operation 48 'read' 'l1_bits_75_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%l1_bits_59_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_59_reload"   --->   Operation 49 'read' 'l1_bits_59_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%l1_bits_43_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_43_reload"   --->   Operation 50 'read' 'l1_bits_43_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%l1_bits_27_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_27_reload"   --->   Operation 51 'read' 'l1_bits_27_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%l1_bits_11_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_11_reload"   --->   Operation 52 'read' 'l1_bits_11_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%l1_bits_122_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_122_reload"   --->   Operation 53 'read' 'l1_bits_122_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%l1_bits_106_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_106_reload"   --->   Operation 54 'read' 'l1_bits_106_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%l1_bits_90_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_90_reload"   --->   Operation 55 'read' 'l1_bits_90_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%l1_bits_74_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_74_reload"   --->   Operation 56 'read' 'l1_bits_74_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%l1_bits_58_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_58_reload"   --->   Operation 57 'read' 'l1_bits_58_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%l1_bits_42_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_42_reload"   --->   Operation 58 'read' 'l1_bits_42_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%l1_bits_26_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_26_reload"   --->   Operation 59 'read' 'l1_bits_26_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%l1_bits_10_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_10_reload"   --->   Operation 60 'read' 'l1_bits_10_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%l1_bits_121_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_121_reload"   --->   Operation 61 'read' 'l1_bits_121_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%l1_bits_105_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_105_reload"   --->   Operation 62 'read' 'l1_bits_105_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%l1_bits_89_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_89_reload"   --->   Operation 63 'read' 'l1_bits_89_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%l1_bits_73_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_73_reload"   --->   Operation 64 'read' 'l1_bits_73_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%l1_bits_57_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_57_reload"   --->   Operation 65 'read' 'l1_bits_57_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%l1_bits_41_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_41_reload"   --->   Operation 66 'read' 'l1_bits_41_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%l1_bits_25_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_25_reload"   --->   Operation 67 'read' 'l1_bits_25_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%l1_bits_9_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_9_reload"   --->   Operation 68 'read' 'l1_bits_9_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%l1_bits_120_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_120_reload"   --->   Operation 69 'read' 'l1_bits_120_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%l1_bits_104_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_104_reload"   --->   Operation 70 'read' 'l1_bits_104_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%l1_bits_88_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_88_reload"   --->   Operation 71 'read' 'l1_bits_88_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%l1_bits_72_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_72_reload"   --->   Operation 72 'read' 'l1_bits_72_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%l1_bits_56_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_56_reload"   --->   Operation 73 'read' 'l1_bits_56_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%l1_bits_40_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_40_reload"   --->   Operation 74 'read' 'l1_bits_40_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%l1_bits_24_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_24_reload"   --->   Operation 75 'read' 'l1_bits_24_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%l1_bits_8_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_8_reload"   --->   Operation 76 'read' 'l1_bits_8_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%l1_bits_119_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_119_reload"   --->   Operation 77 'read' 'l1_bits_119_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%l1_bits_103_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_103_reload"   --->   Operation 78 'read' 'l1_bits_103_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%l1_bits_87_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_87_reload"   --->   Operation 79 'read' 'l1_bits_87_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%l1_bits_71_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_71_reload"   --->   Operation 80 'read' 'l1_bits_71_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%l1_bits_55_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_55_reload"   --->   Operation 81 'read' 'l1_bits_55_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%l1_bits_39_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_39_reload"   --->   Operation 82 'read' 'l1_bits_39_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%l1_bits_23_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_23_reload"   --->   Operation 83 'read' 'l1_bits_23_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%l1_bits_7_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_7_reload"   --->   Operation 84 'read' 'l1_bits_7_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%l1_bits_118_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_118_reload"   --->   Operation 85 'read' 'l1_bits_118_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%l1_bits_102_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_102_reload"   --->   Operation 86 'read' 'l1_bits_102_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%l1_bits_86_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_86_reload"   --->   Operation 87 'read' 'l1_bits_86_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%l1_bits_70_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_70_reload"   --->   Operation 88 'read' 'l1_bits_70_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%l1_bits_54_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_54_reload"   --->   Operation 89 'read' 'l1_bits_54_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%l1_bits_38_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_38_reload"   --->   Operation 90 'read' 'l1_bits_38_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%l1_bits_22_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_22_reload"   --->   Operation 91 'read' 'l1_bits_22_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%l1_bits_6_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_6_reload"   --->   Operation 92 'read' 'l1_bits_6_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%l1_bits_117_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_117_reload"   --->   Operation 93 'read' 'l1_bits_117_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%l1_bits_101_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_101_reload"   --->   Operation 94 'read' 'l1_bits_101_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%l1_bits_85_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_85_reload"   --->   Operation 95 'read' 'l1_bits_85_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%l1_bits_69_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_69_reload"   --->   Operation 96 'read' 'l1_bits_69_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%l1_bits_53_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_53_reload"   --->   Operation 97 'read' 'l1_bits_53_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%l1_bits_37_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_37_reload"   --->   Operation 98 'read' 'l1_bits_37_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%l1_bits_21_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_21_reload"   --->   Operation 99 'read' 'l1_bits_21_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%l1_bits_5_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_5_reload"   --->   Operation 100 'read' 'l1_bits_5_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%l1_bits_116_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_116_reload"   --->   Operation 101 'read' 'l1_bits_116_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%l1_bits_100_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_100_reload"   --->   Operation 102 'read' 'l1_bits_100_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%l1_bits_84_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_84_reload"   --->   Operation 103 'read' 'l1_bits_84_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%l1_bits_68_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_68_reload"   --->   Operation 104 'read' 'l1_bits_68_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.00ns)   --->   "%l1_bits_52_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_52_reload"   --->   Operation 105 'read' 'l1_bits_52_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%l1_bits_36_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_36_reload"   --->   Operation 106 'read' 'l1_bits_36_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.00ns)   --->   "%l1_bits_20_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_20_reload"   --->   Operation 107 'read' 'l1_bits_20_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%l1_bits_4_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_4_reload"   --->   Operation 108 'read' 'l1_bits_4_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%l1_bits_115_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_115_reload"   --->   Operation 109 'read' 'l1_bits_115_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%l1_bits_99_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_99_reload"   --->   Operation 110 'read' 'l1_bits_99_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%l1_bits_83_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_83_reload"   --->   Operation 111 'read' 'l1_bits_83_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%l1_bits_67_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_67_reload"   --->   Operation 112 'read' 'l1_bits_67_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%l1_bits_51_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_51_reload"   --->   Operation 113 'read' 'l1_bits_51_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%l1_bits_35_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_35_reload"   --->   Operation 114 'read' 'l1_bits_35_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%l1_bits_19_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_19_reload"   --->   Operation 115 'read' 'l1_bits_19_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%l1_bits_3_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_3_reload"   --->   Operation 116 'read' 'l1_bits_3_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%l1_bits_114_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_114_reload"   --->   Operation 117 'read' 'l1_bits_114_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%l1_bits_98_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_98_reload"   --->   Operation 118 'read' 'l1_bits_98_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%l1_bits_82_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_82_reload"   --->   Operation 119 'read' 'l1_bits_82_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%l1_bits_66_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_66_reload"   --->   Operation 120 'read' 'l1_bits_66_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%l1_bits_50_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_50_reload"   --->   Operation 121 'read' 'l1_bits_50_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 122 [1/1] (0.00ns)   --->   "%l1_bits_34_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_34_reload"   --->   Operation 122 'read' 'l1_bits_34_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%l1_bits_18_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_18_reload"   --->   Operation 123 'read' 'l1_bits_18_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 124 [1/1] (0.00ns)   --->   "%l1_bits_2_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_2_reload"   --->   Operation 124 'read' 'l1_bits_2_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 125 [1/1] (0.00ns)   --->   "%l1_bits_113_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_113_reload"   --->   Operation 125 'read' 'l1_bits_113_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 126 [1/1] (0.00ns)   --->   "%l1_bits_97_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_97_reload"   --->   Operation 126 'read' 'l1_bits_97_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 127 [1/1] (0.00ns)   --->   "%l1_bits_81_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_81_reload"   --->   Operation 127 'read' 'l1_bits_81_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%l1_bits_65_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_65_reload"   --->   Operation 128 'read' 'l1_bits_65_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 129 [1/1] (0.00ns)   --->   "%l1_bits_49_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_49_reload"   --->   Operation 129 'read' 'l1_bits_49_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 130 [1/1] (0.00ns)   --->   "%l1_bits_33_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_33_reload"   --->   Operation 130 'read' 'l1_bits_33_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 131 [1/1] (0.00ns)   --->   "%l1_bits_17_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_17_reload"   --->   Operation 131 'read' 'l1_bits_17_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 132 [1/1] (0.00ns)   --->   "%l1_bits_1_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_1_reload"   --->   Operation 132 'read' 'l1_bits_1_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 133 [1/1] (0.00ns)   --->   "%l1_bits_112_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_112_reload"   --->   Operation 133 'read' 'l1_bits_112_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%l1_bits_96_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_96_reload"   --->   Operation 134 'read' 'l1_bits_96_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 135 [1/1] (0.00ns)   --->   "%l1_bits_80_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_80_reload"   --->   Operation 135 'read' 'l1_bits_80_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%l1_bits_64_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_64_reload"   --->   Operation 136 'read' 'l1_bits_64_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 137 [1/1] (0.00ns)   --->   "%l1_bits_48_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_48_reload"   --->   Operation 137 'read' 'l1_bits_48_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 138 [1/1] (0.00ns)   --->   "%l1_bits_32_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_32_reload"   --->   Operation 138 'read' 'l1_bits_32_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 139 [1/1] (0.00ns)   --->   "%l1_bits_16_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_16_reload"   --->   Operation 139 'read' 'l1_bits_16_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 140 [1/1] (0.00ns)   --->   "%l1_bits_reload_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %l1_bits_reload"   --->   Operation 140 'read' 'l1_bits_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 141 [1/1] (1.58ns)   --->   "%store_ln26 = store i4 0, i4 %w" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 141 'store' 'store_ln26' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 142 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.body.i147"   --->   Operation 142 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 143 [1/1] (0.00ns)   --->   "%w_2 = load i4 %w" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 143 'load' 'w_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 144 [1/1] (1.73ns)   --->   "%icmp_ln26 = icmp_eq  i4 %w_2, i4 8" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 144 'icmp' 'icmp_ln26' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 145 [1/1] (1.73ns)   --->   "%add_ln26 = add i4 %w_2, i4 1" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 145 'add' 'add_ln26' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 146 [1/1] (0.00ns)   --->   "%br_ln26 = br i1 %icmp_ln26, void %for.body.i147.split, void %for.body9.preheader.exitStub" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 146 'br' 'br_ln26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 147 [1/1] (0.00ns)   --->   "%trunc_ln26 = trunc i4 %w_2" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 147 'trunc' 'trunc_ln26' <Predicate = (!icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 148 [1/1] (0.00ns)   --->   "%specpipeline_ln27 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_8" [bnn.cpp:27->bnn.cpp:111]   --->   Operation 148 'specpipeline' 'specpipeline_ln27' <Predicate = (!icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 149 [1/1] (0.00ns)   --->   "%speclooptripcount_ln26 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 8, i64 8, i64 8" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 149 'speclooptripcount' 'speclooptripcount_ln26' <Predicate = (!icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 150 [1/1] (0.00ns)   --->   "%specloopname_ln26 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 150 'specloopname' 'specloopname_ln26' <Predicate = (!icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 151 [1/1] (2.30ns)   --->   "%word = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_reload_read, i3 1, i1 %l1_bits_16_reload_read, i3 2, i1 %l1_bits_32_reload_read, i3 3, i1 %l1_bits_48_reload_read, i3 4, i1 %l1_bits_64_reload_read, i3 5, i1 %l1_bits_80_reload_read, i3 6, i1 %l1_bits_96_reload_read, i3 7, i1 %l1_bits_112_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 151 'sparsemux' 'word' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 152 [1/1] (2.30ns)   --->   "%tmp_s = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_1_reload_read, i3 1, i1 %l1_bits_17_reload_read, i3 2, i1 %l1_bits_33_reload_read, i3 3, i1 %l1_bits_49_reload_read, i3 4, i1 %l1_bits_65_reload_read, i3 5, i1 %l1_bits_81_reload_read, i3 6, i1 %l1_bits_97_reload_read, i3 7, i1 %l1_bits_113_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 152 'sparsemux' 'tmp_s' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 153 [1/1] (2.30ns)   --->   "%tmp_15 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_2_reload_read, i3 1, i1 %l1_bits_18_reload_read, i3 2, i1 %l1_bits_34_reload_read, i3 3, i1 %l1_bits_50_reload_read, i3 4, i1 %l1_bits_66_reload_read, i3 5, i1 %l1_bits_82_reload_read, i3 6, i1 %l1_bits_98_reload_read, i3 7, i1 %l1_bits_114_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 153 'sparsemux' 'tmp_15' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 154 [1/1] (2.30ns)   --->   "%tmp_16 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_3_reload_read, i3 1, i1 %l1_bits_19_reload_read, i3 2, i1 %l1_bits_35_reload_read, i3 3, i1 %l1_bits_51_reload_read, i3 4, i1 %l1_bits_67_reload_read, i3 5, i1 %l1_bits_83_reload_read, i3 6, i1 %l1_bits_99_reload_read, i3 7, i1 %l1_bits_115_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 154 'sparsemux' 'tmp_16' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 155 [1/1] (2.30ns)   --->   "%tmp_17 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_4_reload_read, i3 1, i1 %l1_bits_20_reload_read, i3 2, i1 %l1_bits_36_reload_read, i3 3, i1 %l1_bits_52_reload_read, i3 4, i1 %l1_bits_68_reload_read, i3 5, i1 %l1_bits_84_reload_read, i3 6, i1 %l1_bits_100_reload_read, i3 7, i1 %l1_bits_116_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 155 'sparsemux' 'tmp_17' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 156 [1/1] (2.30ns)   --->   "%tmp_18 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_5_reload_read, i3 1, i1 %l1_bits_21_reload_read, i3 2, i1 %l1_bits_37_reload_read, i3 3, i1 %l1_bits_53_reload_read, i3 4, i1 %l1_bits_69_reload_read, i3 5, i1 %l1_bits_85_reload_read, i3 6, i1 %l1_bits_101_reload_read, i3 7, i1 %l1_bits_117_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 156 'sparsemux' 'tmp_18' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 157 [1/1] (2.30ns)   --->   "%tmp_19 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_6_reload_read, i3 1, i1 %l1_bits_22_reload_read, i3 2, i1 %l1_bits_38_reload_read, i3 3, i1 %l1_bits_54_reload_read, i3 4, i1 %l1_bits_70_reload_read, i3 5, i1 %l1_bits_86_reload_read, i3 6, i1 %l1_bits_102_reload_read, i3 7, i1 %l1_bits_118_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 157 'sparsemux' 'tmp_19' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 158 [1/1] (2.30ns)   --->   "%tmp_20 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_7_reload_read, i3 1, i1 %l1_bits_23_reload_read, i3 2, i1 %l1_bits_39_reload_read, i3 3, i1 %l1_bits_55_reload_read, i3 4, i1 %l1_bits_71_reload_read, i3 5, i1 %l1_bits_87_reload_read, i3 6, i1 %l1_bits_103_reload_read, i3 7, i1 %l1_bits_119_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 158 'sparsemux' 'tmp_20' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 159 [1/1] (2.30ns)   --->   "%tmp_21 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_8_reload_read, i3 1, i1 %l1_bits_24_reload_read, i3 2, i1 %l1_bits_40_reload_read, i3 3, i1 %l1_bits_56_reload_read, i3 4, i1 %l1_bits_72_reload_read, i3 5, i1 %l1_bits_88_reload_read, i3 6, i1 %l1_bits_104_reload_read, i3 7, i1 %l1_bits_120_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 159 'sparsemux' 'tmp_21' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 160 [1/1] (2.30ns)   --->   "%tmp_22 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_9_reload_read, i3 1, i1 %l1_bits_25_reload_read, i3 2, i1 %l1_bits_41_reload_read, i3 3, i1 %l1_bits_57_reload_read, i3 4, i1 %l1_bits_73_reload_read, i3 5, i1 %l1_bits_89_reload_read, i3 6, i1 %l1_bits_105_reload_read, i3 7, i1 %l1_bits_121_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 160 'sparsemux' 'tmp_22' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 161 [1/1] (2.30ns)   --->   "%tmp_23 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_10_reload_read, i3 1, i1 %l1_bits_26_reload_read, i3 2, i1 %l1_bits_42_reload_read, i3 3, i1 %l1_bits_58_reload_read, i3 4, i1 %l1_bits_74_reload_read, i3 5, i1 %l1_bits_90_reload_read, i3 6, i1 %l1_bits_106_reload_read, i3 7, i1 %l1_bits_122_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 161 'sparsemux' 'tmp_23' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 162 [1/1] (2.30ns)   --->   "%tmp_24 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_11_reload_read, i3 1, i1 %l1_bits_27_reload_read, i3 2, i1 %l1_bits_43_reload_read, i3 3, i1 %l1_bits_59_reload_read, i3 4, i1 %l1_bits_75_reload_read, i3 5, i1 %l1_bits_91_reload_read, i3 6, i1 %l1_bits_107_reload_read, i3 7, i1 %l1_bits_123_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 162 'sparsemux' 'tmp_24' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 163 [1/1] (2.30ns)   --->   "%tmp_25 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_12_reload_read, i3 1, i1 %l1_bits_28_reload_read, i3 2, i1 %l1_bits_44_reload_read, i3 3, i1 %l1_bits_60_reload_read, i3 4, i1 %l1_bits_76_reload_read, i3 5, i1 %l1_bits_92_reload_read, i3 6, i1 %l1_bits_108_reload_read, i3 7, i1 %l1_bits_124_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 163 'sparsemux' 'tmp_25' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 164 [1/1] (2.30ns)   --->   "%tmp_26 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_13_reload_read, i3 1, i1 %l1_bits_29_reload_read, i3 2, i1 %l1_bits_45_reload_read, i3 3, i1 %l1_bits_61_reload_read, i3 4, i1 %l1_bits_77_reload_read, i3 5, i1 %l1_bits_93_reload_read, i3 6, i1 %l1_bits_109_reload_read, i3 7, i1 %l1_bits_125_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 164 'sparsemux' 'tmp_26' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 165 [1/1] (2.30ns)   --->   "%tmp_27 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_14_reload_read, i3 1, i1 %l1_bits_30_reload_read, i3 2, i1 %l1_bits_46_reload_read, i3 3, i1 %l1_bits_62_reload_read, i3 4, i1 %l1_bits_78_reload_read, i3 5, i1 %l1_bits_94_reload_read, i3 6, i1 %l1_bits_110_reload_read, i3 7, i1 %l1_bits_126_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 165 'sparsemux' 'tmp_27' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 166 [1/1] (2.30ns)   --->   "%tmp_28 = sparsemux i1 @_ssdm_op_SparseMux.ap_auto.8i1.i1.i3, i3 0, i1 %l1_bits_15_reload_read, i3 1, i1 %l1_bits_31_reload_read, i3 2, i1 %l1_bits_47_reload_read, i3 3, i1 %l1_bits_63_reload_read, i3 4, i1 %l1_bits_79_reload_read, i3 5, i1 %l1_bits_95_reload_read, i3 6, i1 %l1_bits_111_reload_read, i3 7, i1 %l1_bits_127_reload_read, i1 0, i3 %trunc_ln26" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 166 'sparsemux' 'tmp_28' <Predicate = (!icmp_ln26)> <Delay = 2.30> <CoreInst = "BinarySparseMux_DontCare">   --->   Core 137 'BinarySparseMux_DontCare' <Latency = 0> <II = 1> <Delay = 2.30> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 167 [1/1] (0.00ns)   --->   "%word_4 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i1.i1.i1.i1.i1.i1.i1.i1.i1.i1.i1.i1.i1.i1.i1.i1, i1 %word, i1 %tmp_s, i1 %tmp_15, i1 %tmp_16, i1 %tmp_17, i1 %tmp_18, i1 %tmp_19, i1 %tmp_20, i1 %tmp_21, i1 %tmp_22, i1 %tmp_23, i1 %tmp_24, i1 %tmp_25, i1 %tmp_26, i1 %tmp_27, i1 %tmp_28" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 167 'bitconcatenate' 'word_4' <Predicate = (!icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 168 [1/1] (1.65ns)   --->   "%switch_ln39 = switch i3 %trunc_ln26, void %arrayidx9.i216250.case.7, i3 0, void %for.body.i147.split.arrayidx9.i216250.exit_crit_edge, i3 1, void %arrayidx9.i216250.case.1, i3 2, void %arrayidx9.i216250.case.2, i3 3, void %arrayidx9.i216250.case.3, i3 4, void %arrayidx9.i216250.case.4, i3 5, void %arrayidx9.i216250.case.5, i3 6, void %arrayidx9.i216250.case.6" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 168 'switch' 'switch_ln39' <Predicate = (!icmp_ln26)> <Delay = 1.65>
+ST_1 : Operation 169 [1/1] (0.00ns)   --->   "%store_ln36 = store i16 %word_4, i16 %p_0_0282_6100" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 169 'store' 'store_ln36' <Predicate = (!icmp_ln26 & trunc_ln26 == 6)> <Delay = 0.00>
+ST_1 : Operation 170 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx9.i216250.exit" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 170 'br' 'br_ln39' <Predicate = (!icmp_ln26 & trunc_ln26 == 6)> <Delay = 0.00>
+ST_1 : Operation 171 [1/1] (0.00ns)   --->   "%store_ln36 = store i16 %word_4, i16 %p_0_0282_598" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 171 'store' 'store_ln36' <Predicate = (!icmp_ln26 & trunc_ln26 == 5)> <Delay = 0.00>
+ST_1 : Operation 172 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx9.i216250.exit" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 172 'br' 'br_ln39' <Predicate = (!icmp_ln26 & trunc_ln26 == 5)> <Delay = 0.00>
+ST_1 : Operation 173 [1/1] (0.00ns)   --->   "%store_ln36 = store i16 %word_4, i16 %p_0_0282_496" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 173 'store' 'store_ln36' <Predicate = (!icmp_ln26 & trunc_ln26 == 4)> <Delay = 0.00>
+ST_1 : Operation 174 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx9.i216250.exit" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 174 'br' 'br_ln39' <Predicate = (!icmp_ln26 & trunc_ln26 == 4)> <Delay = 0.00>
+ST_1 : Operation 175 [1/1] (0.00ns)   --->   "%store_ln36 = store i16 %word_4, i16 %p_0_0282_394" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 175 'store' 'store_ln36' <Predicate = (!icmp_ln26 & trunc_ln26 == 3)> <Delay = 0.00>
+ST_1 : Operation 176 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx9.i216250.exit" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 176 'br' 'br_ln39' <Predicate = (!icmp_ln26 & trunc_ln26 == 3)> <Delay = 0.00>
+ST_1 : Operation 177 [1/1] (0.00ns)   --->   "%store_ln36 = store i16 %word_4, i16 %p_0_0282_292" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 177 'store' 'store_ln36' <Predicate = (!icmp_ln26 & trunc_ln26 == 2)> <Delay = 0.00>
+ST_1 : Operation 178 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx9.i216250.exit" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 178 'br' 'br_ln39' <Predicate = (!icmp_ln26 & trunc_ln26 == 2)> <Delay = 0.00>
+ST_1 : Operation 179 [1/1] (0.00ns)   --->   "%store_ln36 = store i16 %word_4, i16 %p_0_0282_190" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 179 'store' 'store_ln36' <Predicate = (!icmp_ln26 & trunc_ln26 == 1)> <Delay = 0.00>
+ST_1 : Operation 180 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx9.i216250.exit" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 180 'br' 'br_ln39' <Predicate = (!icmp_ln26 & trunc_ln26 == 1)> <Delay = 0.00>
+ST_1 : Operation 181 [1/1] (0.00ns)   --->   "%store_ln36 = store i16 %word_4, i16 %p_0_028288" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 181 'store' 'store_ln36' <Predicate = (!icmp_ln26 & trunc_ln26 == 0)> <Delay = 0.00>
+ST_1 : Operation 182 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx9.i216250.exit" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 182 'br' 'br_ln39' <Predicate = (!icmp_ln26 & trunc_ln26 == 0)> <Delay = 0.00>
+ST_1 : Operation 183 [1/1] (0.00ns)   --->   "%store_ln36 = store i16 %word_4, i16 %p_0_0282_7102" [bnn.cpp:36->bnn.cpp:111]   --->   Operation 183 'store' 'store_ln36' <Predicate = (!icmp_ln26 & trunc_ln26 == 7)> <Delay = 0.00>
+ST_1 : Operation 184 [1/1] (0.00ns)   --->   "%br_ln39 = br void %arrayidx9.i216250.exit" [bnn.cpp:39->bnn.cpp:111]   --->   Operation 184 'br' 'br_ln39' <Predicate = (!icmp_ln26 & trunc_ln26 == 7)> <Delay = 0.00>
+ST_1 : Operation 185 [1/1] (1.58ns)   --->   "%store_ln26 = store i4 %add_ln26, i4 %w" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 185 'store' 'store_ln26' <Predicate = (!icmp_ln26)> <Delay = 1.58>
+ST_1 : Operation 186 [1/1] (0.00ns)   --->   "%br_ln26 = br void %for.body.i147" [bnn.cpp:26->bnn.cpp:111]   --->   Operation 186 'br' 'br_ln26' <Predicate = (!icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 187 [1/1] (0.00ns)   --->   "%p_0_028288_load = load i16 %p_0_028288"   --->   Operation 187 'load' 'p_0_028288_load' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 188 [1/1] (0.00ns)   --->   "%p_0_0282_190_load = load i16 %p_0_0282_190"   --->   Operation 188 'load' 'p_0_0282_190_load' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 189 [1/1] (0.00ns)   --->   "%p_0_0282_292_load = load i16 %p_0_0282_292"   --->   Operation 189 'load' 'p_0_0282_292_load' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 190 [1/1] (0.00ns)   --->   "%p_0_0282_394_load = load i16 %p_0_0282_394"   --->   Operation 190 'load' 'p_0_0282_394_load' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 191 [1/1] (0.00ns)   --->   "%p_0_0282_496_load = load i16 %p_0_0282_496"   --->   Operation 191 'load' 'p_0_0282_496_load' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 192 [1/1] (0.00ns)   --->   "%p_0_0282_598_load = load i16 %p_0_0282_598"   --->   Operation 192 'load' 'p_0_0282_598_load' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 193 [1/1] (0.00ns)   --->   "%p_0_0282_6100_load = load i16 %p_0_0282_6100"   --->   Operation 193 'load' 'p_0_0282_6100_load' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 194 [1/1] (0.00ns)   --->   "%p_0_0282_7102_load = load i16 %p_0_0282_7102"   --->   Operation 194 'load' 'p_0_0282_7102_load' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 195 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0282_7102_out, i16 %p_0_0282_7102_load"   --->   Operation 195 'write' 'write_ln0' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 196 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0282_6100_out, i16 %p_0_0282_6100_load"   --->   Operation 196 'write' 'write_ln0' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 197 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0282_598_out, i16 %p_0_0282_598_load"   --->   Operation 197 'write' 'write_ln0' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 198 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0282_496_out, i16 %p_0_0282_496_load"   --->   Operation 198 'write' 'write_ln0' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 199 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0282_394_out, i16 %p_0_0282_394_load"   --->   Operation 199 'write' 'write_ln0' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 200 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0282_292_out, i16 %p_0_0282_292_load"   --->   Operation 200 'write' 'write_ln0' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 201 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_0282_190_out, i16 %p_0_0282_190_load"   --->   Operation 201 'write' 'write_ln0' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 202 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %p_0_028288_out, i16 %p_0_028288_load"   --->   Operation 202 'write' 'write_ln0' <Predicate = (icmp_ln26)> <Delay = 0.00>
+ST_1 : Operation 203 [1/1] (1.58ns)   --->   "%ret_ln0 = ret"   --->   Operation 203 'ret' 'ret_ln0' <Predicate = (icmp_ln26)> <Delay = 1.58>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 4.911ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln26', bnn.cpp:26->bnn.cpp:111) of constant 0 on local variable 'w', bnn.cpp:26->bnn.cpp:111 [274]  (1.588 ns)
+	'load' operation 4 bit ('w', bnn.cpp:26->bnn.cpp:111) on local variable 'w', bnn.cpp:26->bnn.cpp:111 [277]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln26', bnn.cpp:26->bnn.cpp:111) [278]  (1.735 ns)
+	'store' operation 0 bit ('store_ln26', bnn.cpp:26->bnn.cpp:111) of variable 'add_ln26', bnn.cpp:26->bnn.cpp:111 on local variable 'w', bnn.cpp:26->bnn.cpp:111 [329]  (1.588 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

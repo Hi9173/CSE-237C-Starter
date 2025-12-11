@@ -1,20 +1,18 @@
 {
   "0": {
-    "basicblocks": 44,
+    "basicblocks": 220,
     "calls": "",
     "file": "bnn.cpp",
-    "fileloc": 64,
-    "instructions": 745,
+    "fileloc": 71,
+    "instructions": 4183,
     "loads": {
-      "G": 6,
-      "L": 33,
-      "T": 1
+      "G": 61,
+      "T": 49
     },
     "name": "bnn",
     "stores": {
-      "L": 17,
-      "T": 1
+      "T": 3
     },
-    "total_instructions": 745
+    "total_instructions": 4183
   }
 }

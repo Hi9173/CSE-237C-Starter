@@ -1,0 +1,229 @@
+
+
+================================================================
+== Vitis HLS Report for 'bnn_Pipeline_pack_loop1'
+================================================================
+* Date:           Wed Dec 10 17:08:03 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        bnn.comp
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.826 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    | min | max |                      Type                      |
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+    |        6|        6|  60.000 ns|  60.000 ns|    5|    5|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |             |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- pack_loop  |        4|        4|         1|          1|          1|     4|       yes|
+        +-------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     24|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       0|    320|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       0|     27|    -|
+|Register         |        -|    -|      69|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      69|    371|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+---------------------+---------+----+---+----+-----+
+    |         Instance         |        Module       | BRAM_18K| DSP| FF| LUT| URAM|
+    +--------------------------+---------------------+---------+----+---+----+-----+
+    |sparsemux_9_2_1_1_1_U407  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U408  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U409  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U410  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U411  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U412  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U413  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U414  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U415  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U416  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U417  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U418  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U419  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U420  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U421  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    |sparsemux_9_2_1_1_1_U422  |sparsemux_9_2_1_1_1  |        0|   0|  0|  20|    0|
+    +--------------------------+---------------------+---------+----+---+----+-----+
+    |Total                     |                     |        0|   0|  0| 320|    0|
+    +--------------------------+---------------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln26_fu_622_p2   |         +|   0|  0|  11|           3|           1|
+    |icmp_ln26_fu_616_p2  |      icmp|   0|  0|  13|           3|           4|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  24|           6|           5|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------+----+-----------+-----+-----------+
+    |         Name         | LUT| Input Size| Bits| Total Bits|
+    +----------------------+----+-----------+-----+-----------+
+    |ap_done_int           |   9|          2|    1|          2|
+    |ap_sig_allocacmp_w_1  |   9|          2|    3|          6|
+    |w_fu_176              |   9|          2|    3|          6|
+    +----------------------+----+-----------+-----+-----------+
+    |Total                 |  27|          6|    7|         14|
+    +----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------+----+----+-----+-----------+
+    |         Name         | FF | LUT| Bits| Const Bits|
+    +----------------------+----+----+-----+-----------+
+    |ap_CS_fsm             |   1|   0|    1|          0|
+    |ap_done_reg           |   1|   0|    1|          0|
+    |p_0_0271104_fu_180    |  16|   0|   16|          0|
+    |p_0_0271_1106_fu_184  |  16|   0|   16|          0|
+    |p_0_0271_2108_fu_188  |  16|   0|   16|          0|
+    |p_0_0271_3110_fu_192  |  16|   0|   16|          0|
+    |w_fu_176              |   3|   0|    3|          0|
+    +----------------------+----+----+-----+-----------+
+    |Total                 |  69|   0|   69|          0|
+    +----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------------+-----+-----+------------+-------------------------+--------------+
+|         RTL Ports        | Dir | Bits|  Protocol  |      Source Object      |    C Type    |
++--------------------------+-----+-----+------------+-------------------------+--------------+
+|ap_clk                    |   in|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop1|  return value|
+|ap_rst                    |   in|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop1|  return value|
+|ap_start                  |   in|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop1|  return value|
+|ap_done                   |  out|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop1|  return value|
+|ap_idle                   |  out|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop1|  return value|
+|ap_ready                  |  out|    1|  ap_ctrl_hs|  bnn_Pipeline_pack_loop1|  return value|
+|l2_bits_reload            |   in|    1|     ap_none|           l2_bits_reload|        scalar|
+|l2_bits_16_reload         |   in|    1|     ap_none|        l2_bits_16_reload|        scalar|
+|l2_bits_32_reload         |   in|    1|     ap_none|        l2_bits_32_reload|        scalar|
+|l2_bits_48_reload         |   in|    1|     ap_none|        l2_bits_48_reload|        scalar|
+|l2_bits_1_reload          |   in|    1|     ap_none|         l2_bits_1_reload|        scalar|
+|l2_bits_17_reload         |   in|    1|     ap_none|        l2_bits_17_reload|        scalar|
+|l2_bits_33_reload         |   in|    1|     ap_none|        l2_bits_33_reload|        scalar|
+|l2_bits_49_reload         |   in|    1|     ap_none|        l2_bits_49_reload|        scalar|
+|l2_bits_2_reload          |   in|    1|     ap_none|         l2_bits_2_reload|        scalar|
+|l2_bits_18_reload         |   in|    1|     ap_none|        l2_bits_18_reload|        scalar|
+|l2_bits_34_reload         |   in|    1|     ap_none|        l2_bits_34_reload|        scalar|
+|l2_bits_50_reload         |   in|    1|     ap_none|        l2_bits_50_reload|        scalar|
+|l2_bits_3_reload          |   in|    1|     ap_none|         l2_bits_3_reload|        scalar|
+|l2_bits_19_reload         |   in|    1|     ap_none|        l2_bits_19_reload|        scalar|
+|l2_bits_35_reload         |   in|    1|     ap_none|        l2_bits_35_reload|        scalar|
+|l2_bits_51_reload         |   in|    1|     ap_none|        l2_bits_51_reload|        scalar|
+|l2_bits_4_reload          |   in|    1|     ap_none|         l2_bits_4_reload|        scalar|
+|l2_bits_20_reload         |   in|    1|     ap_none|        l2_bits_20_reload|        scalar|
+|l2_bits_36_reload         |   in|    1|     ap_none|        l2_bits_36_reload|        scalar|
+|l2_bits_52_reload         |   in|    1|     ap_none|        l2_bits_52_reload|        scalar|
+|l2_bits_5_reload          |   in|    1|     ap_none|         l2_bits_5_reload|        scalar|
+|l2_bits_21_reload         |   in|    1|     ap_none|        l2_bits_21_reload|        scalar|
+|l2_bits_37_reload         |   in|    1|     ap_none|        l2_bits_37_reload|        scalar|
+|l2_bits_53_reload         |   in|    1|     ap_none|        l2_bits_53_reload|        scalar|
+|l2_bits_6_reload          |   in|    1|     ap_none|         l2_bits_6_reload|        scalar|
+|l2_bits_22_reload         |   in|    1|     ap_none|        l2_bits_22_reload|        scalar|
+|l2_bits_38_reload         |   in|    1|     ap_none|        l2_bits_38_reload|        scalar|
+|l2_bits_54_reload         |   in|    1|     ap_none|        l2_bits_54_reload|        scalar|
+|l2_bits_7_reload          |   in|    1|     ap_none|         l2_bits_7_reload|        scalar|
+|l2_bits_23_reload         |   in|    1|     ap_none|        l2_bits_23_reload|        scalar|
+|l2_bits_39_reload         |   in|    1|     ap_none|        l2_bits_39_reload|        scalar|
+|l2_bits_55_reload         |   in|    1|     ap_none|        l2_bits_55_reload|        scalar|
+|l2_bits_8_reload          |   in|    1|     ap_none|         l2_bits_8_reload|        scalar|
+|l2_bits_24_reload         |   in|    1|     ap_none|        l2_bits_24_reload|        scalar|
+|l2_bits_40_reload         |   in|    1|     ap_none|        l2_bits_40_reload|        scalar|
+|l2_bits_56_reload         |   in|    1|     ap_none|        l2_bits_56_reload|        scalar|
+|l2_bits_9_reload          |   in|    1|     ap_none|         l2_bits_9_reload|        scalar|
+|l2_bits_25_reload         |   in|    1|     ap_none|        l2_bits_25_reload|        scalar|
+|l2_bits_41_reload         |   in|    1|     ap_none|        l2_bits_41_reload|        scalar|
+|l2_bits_57_reload         |   in|    1|     ap_none|        l2_bits_57_reload|        scalar|
+|l2_bits_10_reload         |   in|    1|     ap_none|        l2_bits_10_reload|        scalar|
+|l2_bits_26_reload         |   in|    1|     ap_none|        l2_bits_26_reload|        scalar|
+|l2_bits_42_reload         |   in|    1|     ap_none|        l2_bits_42_reload|        scalar|
+|l2_bits_58_reload         |   in|    1|     ap_none|        l2_bits_58_reload|        scalar|
+|l2_bits_11_reload         |   in|    1|     ap_none|        l2_bits_11_reload|        scalar|
+|l2_bits_27_reload         |   in|    1|     ap_none|        l2_bits_27_reload|        scalar|
+|l2_bits_43_reload         |   in|    1|     ap_none|        l2_bits_43_reload|        scalar|
+|l2_bits_59_reload         |   in|    1|     ap_none|        l2_bits_59_reload|        scalar|
+|l2_bits_12_reload         |   in|    1|     ap_none|        l2_bits_12_reload|        scalar|
+|l2_bits_28_reload         |   in|    1|     ap_none|        l2_bits_28_reload|        scalar|
+|l2_bits_44_reload         |   in|    1|     ap_none|        l2_bits_44_reload|        scalar|
+|l2_bits_60_reload         |   in|    1|     ap_none|        l2_bits_60_reload|        scalar|
+|l2_bits_13_reload         |   in|    1|     ap_none|        l2_bits_13_reload|        scalar|
+|l2_bits_29_reload         |   in|    1|     ap_none|        l2_bits_29_reload|        scalar|
+|l2_bits_45_reload         |   in|    1|     ap_none|        l2_bits_45_reload|        scalar|
+|l2_bits_61_reload         |   in|    1|     ap_none|        l2_bits_61_reload|        scalar|
+|l2_bits_14_reload         |   in|    1|     ap_none|        l2_bits_14_reload|        scalar|
+|l2_bits_30_reload         |   in|    1|     ap_none|        l2_bits_30_reload|        scalar|
+|l2_bits_46_reload         |   in|    1|     ap_none|        l2_bits_46_reload|        scalar|
+|l2_bits_62_reload         |   in|    1|     ap_none|        l2_bits_62_reload|        scalar|
+|l2_bits_15_reload         |   in|    1|     ap_none|        l2_bits_15_reload|        scalar|
+|l2_bits_31_reload         |   in|    1|     ap_none|        l2_bits_31_reload|        scalar|
+|l2_bits_47_reload         |   in|    1|     ap_none|        l2_bits_47_reload|        scalar|
+|l2_bits_63_reload         |   in|    1|     ap_none|        l2_bits_63_reload|        scalar|
+|p_0_0271_3110_out         |  out|   16|      ap_vld|        p_0_0271_3110_out|       pointer|
+|p_0_0271_3110_out_ap_vld  |  out|    1|      ap_vld|        p_0_0271_3110_out|       pointer|
+|p_0_0271_2108_out         |  out|   16|      ap_vld|        p_0_0271_2108_out|       pointer|
+|p_0_0271_2108_out_ap_vld  |  out|    1|      ap_vld|        p_0_0271_2108_out|       pointer|
+|p_0_0271_1106_out         |  out|   16|      ap_vld|        p_0_0271_1106_out|       pointer|
+|p_0_0271_1106_out_ap_vld  |  out|    1|      ap_vld|        p_0_0271_1106_out|       pointer|
+|p_0_0271104_out           |  out|   16|      ap_vld|          p_0_0271104_out|       pointer|
+|p_0_0271104_out_ap_vld    |  out|    1|      ap_vld|          p_0_0271104_out|       pointer|
++--------------------------+-----+-----+------------+-------------------------+--------------+
+
