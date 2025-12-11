@@ -271,7 +271,7 @@ class BNN_MNIST:
         return A_bit
 
     
-    def generate_golden_header(self, num_samples=3):
+    def create_header(self, num_samples=3):
         import os
         
         mnist = np.load("dataset/mnist_test_data_original.npy", allow_pickle=True)
@@ -279,7 +279,11 @@ class BNN_MNIST:
         y = mnist.item().get("label")
         X = np.reshape(X, (10000, 784))
         
-        header_content = """#ifndef __GOLDEN_H_\n#define __GOLDEN_H_\n#include <cstdint>\nconst int NUM_SAMPLES = {};\n""".format(num_samples)
+        header_content = """#ifndef __GOLDEN_H_
+#define __GOLDEN_H_
+#include <cstdint>
+const int NUM_SAMPLES = {};
+""".format(num_samples)
         
         # pack the 1-bit weights into 16-bit integers
         fc1w_flat = self.fc1w_qntz.flatten()
@@ -291,6 +295,7 @@ class BNN_MNIST:
         fc3w_flat = self.fc3w_qntz.flatten()
         fc3w_packed = self.pack_int16(fc3w_flat, 10 * 64)
         
+        # ----- Weights -----
         header_content += "const int16_t w1[{}] = {{".format(len(fc1w_packed))
         for i, val in enumerate(fc1w_packed):
             if i % 16 == 0:
@@ -315,36 +320,69 @@ class BNN_MNIST:
         header_content = header_content.rstrip(", ")
         header_content += "\n};\n\n"
         
+        # ----- Inputs & layer outputs -----
         inputs_list = []
+        l1_list = []
+        l2_list = []
         outputs_list = []
         labels_list = []
         
         for idx in range(num_samples):
             xs = X[idx].astype(np.float32)
-            xs_2d = xs.reshape(1, 784)
-            ys_true = y[idx]
+            ys_true = int(y[idx])
             
+            # 1-bit input, then pack into int16
             X0_q = self.quantize(self.sign(self.adj(xs)))
-            
             input_packed = self.pack_int16(X0_q, 784)
             inputs_list.append(input_packed)
             
-            golden_output = self.feed_forward_quantized(xs_2d)
-            outputs_list.append(golden_output.flatten())
+            # Full quantized forward with layer outputs
+            l1_act, l2_act, final_output = self.feed_forward_quantized_layers(xs)
+            l1_list.append(l1_act)
+            l2_list.append(l2_act)
+            outputs_list.append(final_output)
             labels_list.append(ys_true)
         
+        # inputs[NUM_SAMPLES][49]
         header_content += "const int16_t inputs[{}][49] = {{\n".format(num_samples)
         for i, inp in enumerate(inputs_list):
             header_content += "    {"
             for j, val in enumerate(inp):
                 if j % 10 == 0 and j > 0:
                     header_content += "\n     "
-                header_content += "{}, ".format(val)
+                header_content += "{}, ".format(int(val))
             header_content = header_content.rstrip(", ")
             header_content += "},\n"
         header_content = header_content.rstrip(",\n")
         header_content += "\n};\n\n"
         
+        # golden_l1[NUM_SAMPLES][128]
+        header_content += "const int golden_l1[{}][128] = {{\n".format(num_samples)
+        for i, l1 in enumerate(l1_list):
+            header_content += "    {"
+            for j, val in enumerate(l1):
+                if j % 16 == 0 and j > 0:
+                    header_content += "\n     "
+                header_content += "{}, ".format(int(val))
+            header_content = header_content.rstrip(", ")
+            header_content += "},\n"
+        header_content = header_content.rstrip(",\n")
+        header_content += "\n};\n\n"
+        
+        # golden_l2[NUM_SAMPLES][64]
+        header_content += "const int golden_l2[{}][64] = {{\n".format(num_samples)
+        for i, l2 in enumerate(l2_list):
+            header_content += "    {"
+            for j, val in enumerate(l2):
+                if j % 16 == 0 and j > 0:
+                    header_content += "\n     "
+                header_content += "{}, ".format(int(val))
+            header_content = header_content.rstrip(", ")
+            header_content += "},\n"
+        header_content = header_content.rstrip(",\n")
+        header_content += "\n};\n\n"
+        
+        # golden_outputs[NUM_SAMPLES][10]  (final logits)
         header_content += "const int golden_outputs[{}][10] = {{\n".format(num_samples)
         for i, out in enumerate(outputs_list):
             header_content += "    {"
@@ -355,9 +393,10 @@ class BNN_MNIST:
         header_content = header_content.rstrip(",\n")
         header_content += "\n};\n\n"
         
+        # true_labels[NUM_SAMPLES]
         header_content += "const int true_labels[{}] = {{".format(num_samples)
         for label in labels_list:
-            header_content += "{}, ".format(label)
+            header_content += "{}, ".format(int(label))
         header_content = header_content.rstrip(", ")
         header_content += "};\n\n"
         
@@ -380,6 +419,43 @@ class BNN_MNIST:
 
         print("Done")
         
+    def feed_forward_quantized_layers(self, input_vec):
+        """
+        Same logic as feed_forward_quantized, but also returns the
+        intermediate layer activations for L1 and L2.
+
+        :param input_vec: 1D MNIST sample of shape (784,)
+        :return: (l1_activations[128], l2_activations[64], final_output[10])
+        """
+
+        # ----- Layer 1 -----
+        # Quantize input to {0,1}
+        X0_input = self.quantize(self.sign(self.adj(input_vec)))
+        # For layer 1 we need shape (1, 784) so matmul_xnor uses A[0][y]
+        X0_input_2d = X0_input.reshape(1, -1)
+
+        layer1_output = self.matmul_xnor(X0_input_2d, self.fc1w_qntz.T)
+        layer1_activations = layer1_output * 2 - 784  # [-784, 784]
+
+        # ----- Layer 2 -----
+        layer2_input = self.sign(layer1_activations)
+        layer2_quantized = self.quantize(layer2_input)
+        layer2_output = self.matmul_xnor(layer2_quantized, self.fc2w_qntz.T)
+        layer2_activations = layer2_output * 2 - 128  # [-128, 128]
+
+        # ----- Layer 3 -----
+        layer3_input = self.sign(layer2_activations)
+        layer3_quantized = self.quantize(layer3_input)
+        layer3_output = self.matmul_xnor(layer3_quantized, self.fc3w_qntz.T)
+        final_output = layer3_output * 2 - 64  # [-64, 64]
+
+        # Return as int32 arrays for clean C header output
+        return (
+            layer1_activations.astype(np.int32),
+            layer2_activations.astype(np.int32),
+            final_output.astype(np.int32),
+        )
+
 
     def feed_forward_quantized(self, input):
         """This function does BNN. Uses XNOR.
@@ -537,6 +613,6 @@ if __name__ == "__main__":
         bnn.run_test_visalize(num_samples=3)
     elif run_option == 8:
         print("Generating golden header")
-        bnn.generate_golden_header(num_samples=3)
+        bnn.create_header(num_samples=3)
 
     #

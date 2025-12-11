@@ -66,8 +66,9 @@ dot_loop:
 
 // ====================================================
 //  TOP BNN FUNCTION
+//  Now also returns per-layer activations for L1 and L2
 // ====================================================
-void bnn(DTYPE IN[SIZE], ITYPE ys[10])
+void bnn(DTYPE IN[SIZE], ITYPE ys[10], ITYPE l1_out[128], ITYPE l2_out[64])
 {
     // reinterpret packed arrays as raw 16-bit words
     const ap_uint<16> *in_words = (const ap_uint<16> *)IN;
@@ -86,6 +87,11 @@ l1_loop:
 #pragma HLS PIPELINE II=1
         const ap_uint<16> *w_ptr = w1_words + n * L1_IN_WORDS;
         int dot = binary_dot(in_words, w_ptr, L1_IN_WORDS, 784);
+
+        // store full L1 activation (matches golden_l1)
+        l1_out[n] = (ITYPE)dot;
+
+        // binarize for next layer
         l1_bits[n] = (dot > 0 ? 0 : 1);
     }
 
@@ -105,6 +111,11 @@ l2_loop:
 #pragma HLS PIPELINE II=1
         const ap_uint<16> *w_ptr = w2_words + n * L2_IN_WORDS;
         int dot = binary_dot(l1_packed, w_ptr, L2_IN_WORDS, 128);
+
+        // store full L2 activation (matches golden_l2)
+        l2_out[n] = (ITYPE)dot;
+
+        // binarize for next layer
         l2_bits[n] = (dot > 0 ? 0 : 1);
     }
 
@@ -119,6 +130,6 @@ l3_loop:
 #pragma HLS PIPELINE II=1
         const ap_uint<16> *w_ptr = w3_words + n * 4;
         int dot = binary_dot(l2_packed, w_ptr, 4, 64);
-        ys[n] = dot;
+        ys[n] = (ITYPE)dot;   // final logits, match golden_outputs
     }
 }
