@@ -70,6 +70,16 @@ dot_loop:
 // ====================================================
 void bnn(DTYPE IN[SIZE], ITYPE ys[10], ITYPE l1_out[128], ITYPE l2_out[64])
 {
+#pragma HLS INTERFACE s_axilite port=return       bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=IN          bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=ys          bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=l1_out      bundle=CTRL
+#pragma HLS INTERFACE s_axilite port=l2_out      bundle=CTRL
+
+#pragma HLS INTERFACE ap_memory port=IN
+#pragma HLS INTERFACE ap_memory port=ys
+#pragma HLS INTERFACE ap_memory port=l1_out
+#pragma HLS INTERFACE ap_memory port=l2_out
     // reinterpret packed arrays as raw 16-bit words
     const ap_uint<16> *in_words = (const ap_uint<16> *)IN;
     const ap_uint<16> *w1_words = (const ap_uint<16> *)w1;
